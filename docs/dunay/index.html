@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Дунай — автомойка, химчистка и шиномонтаж на Дунаевского, 11 к1</title>
+<meta name="description" content="Автокомплекс в Калининском районе: комплексная мойка от 1400 ₽, химчистка салона, полировка, керамика, шиномонтаж, мойка самообслуживания. С 7:00 до 22:00.">
+<meta property="og:title" content="Автокомплекс Дунай — мойка и химчистка в Калининском районе">
+<meta property="og:description" content="Автокомплекс в Калининском районе: комплексная мойка от 1400 ₽, химчистка салона, полировка, керамика, шиномонтаж, мойка самообслуживания. С 7:00 до 22:00.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23ffffff'/><text x='16' y='23' font-size='18' font-family='Georgia' text-anchor='middle' fill='%230891b2'>Д</text></svg>">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#ffffff;--bg2:#f2f9fb;--bg3:#e6f3f7;--line:#d3e6ec;--fg:#0c2028;--mut:#4f6b76;
+  --acc:#0891b2;--acc2:#0a7490;--on-acc:#ffffff;--grad:linear-gradient(135deg,#0891b2,#22c55e);
+  --r:14px;--wrap:1180px;--ease:cubic-bezier(.4,0,.2,1);
+  --s3:24px;--s4:40px;--s5:64px;--s6:96px}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.12;letter-spacing:-.022em;font-weight:800}
+h1{font-size:clamp(32px,5.6vw,58px)}
+h2{font-size:clamp(26px,4vw,40px);margin-bottom:var(--s3)}
+h3{font-size:19px}
+section{padding:var(--s6) 0}
+.lead{color:var(--mut);font-size:clamp(16px,2vw,19px);max-width:62ch}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:15px 26px;border-radius:999px;font-weight:700;font-size:16px;border:1.5px solid transparent;cursor:pointer;transition:transform .18s var(--ease),background .18s,border-color .18s,color .18s}
+.btn:hover{transform:translateY(-2px)}
+.btn-a{background:var(--acc);color:var(--on-acc)}
+.btn-a:hover{background:var(--acc2)}
+.btn-b{border-color:var(--line);color:var(--fg)}
+.btn-b:hover{border-color:var(--acc);color:var(--acc)}
+.ic{width:19px;height:19px;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .25s}
+header.on{border-bottom-color:var(--line)}
+.nav{display:flex;align-items:center;gap:var(--s3);padding:16px 0}
+.logo{font-weight:800;font-size:18px;letter-spacing:-.02em;margin-right:auto;display:flex;align-items:center;gap:10px}
+.logo span{color:var(--acc)}
+.dot{width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.16);animation:pulse 2.4s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(34,197,94,0)}}
+.nav a.lnk{color:var(--mut);font-size:15px;font-weight:600;transition:color .18s}
+.nav a.lnk:hover{color:var(--fg)}
+@media(max-width:900px){.nav a.lnk{display:none}}
+.hero{position:relative;min-height:min(86vh,760px);display:flex;align-items:center;padding:var(--s6) 0 var(--s5);overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.03)}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,#ffffff 18%,#fffffff2 48%,#ffffffb3 100%)}
+.hero .wrap{position:relative;z-index:1}
+/* светлая тема: фото не фоном, а карточкой рядом — так оно читается, а не выцветает */
+.hero.split{min-height:0;padding:var(--s5) 0}
+.hero.split .hero-bg{display:none}
+.hero.split .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--s5);align-items:center}
+.hero.split h1{max-width:14ch}
+.shot{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line);
+  box-shadow:0 26px 60px -22px rgba(15,23,41,.32);aspect-ratio:4/5}
+.shot img{width:100%;height:100%;object-fit:cover}
+.shot figcaption{position:absolute;left:14px;right:14px;bottom:14px;padding:11px 15px;border-radius:13px;
+  background:rgba(255,255,255,.93);backdrop-filter:blur(8px);font-size:13.5px;color:var(--mut);font-weight:600}
+@media(max-width:900px){.hero.split .wrap{grid-template-columns:1fr;gap:var(--s4)}
+  .hero.split .stats{order:3} .shot{aspect-ratio:16/10;order:2}}
+.badge{display:inline-flex;align-items:center;gap:9px;padding:8px 16px;border-radius:999px;background:rgba(8,145,178,.09);border:1px solid rgba(8,145,178,.3);color:var(--acc);font-size:14px;font-weight:700;margin-bottom:var(--s3)}
+.hero h1{max-width:17ch;margin-bottom:var(--s3)}
+.hero h1 em{font-style:normal;color:var(--acc)}
+.hero .lead{margin-bottom:var(--s4)}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:var(--s5)}
+.stats{display:flex;gap:var(--s4);flex-wrap:wrap;padding-top:var(--s3);border-top:1px solid var(--line)}
+.stat b{display:block;font-size:clamp(23px,3.2vw,32px);font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.stat span{font-size:13.5px;color:var(--mut)}
+.stars{color:var(--acc);letter-spacing:2px}
+.grid{display:grid;gap:14px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(285px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(330px,1fr))}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:transform .22s var(--ease),border-color .22s,box-shadow .22s}
+.card:hover{transform:translateY(-3px);border-color:var(--acc);box-shadow:0 12px 30px rgba(15,23,41,.10)}
+.card h3{margin-bottom:9px}
+.card p{color:var(--mut);font-size:15px}
+.ico{width:42px;height:42px;border-radius:11px;background:rgba(8,145,178,.09);display:grid;place-items:center;margin-bottom:16px;color:var(--acc)}
+.ico svg{width:21px;height:21px}
+.alt{background:var(--bg2);border-block:1px solid var(--line)}
+.alt .card{background:var(--bg3)}
+.rev{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:14px}
+.rev p{font-size:15.5px}
+.rev .who{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:14px;border-top:1px solid var(--line)}
+.av{width:38px;height:38px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-weight:800;color:#fff;flex:none;font-size:15px}
+.who b{font-size:14.5px;display:block}
+.who small{color:var(--mut);font-size:12.5px}
+.rating-box{display:flex;align-items:center;gap:var(--s3);flex-wrap:wrap;background:rgba(8,145,178,.09);border:1px solid rgba(8,145,178,.3);border-radius:var(--r);padding:22px 26px;margin-bottom:var(--s4)}
+.rating-box .big{font-size:44px;font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--acc)}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4);align-items:start}
+@media(max-width:860px){.contact{grid-template-columns:1fr}}
+.info li{list-style:none;display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.info li:last-child{border-bottom:0}
+.info .k{color:var(--mut);font-size:13.5px;margin-bottom:3px}
+.info .v{font-weight:600}
+.info .ic{color:var(--acc);margin-top:3px}
+.sched{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-size:15px}
+.sched span:nth-child(odd){color:var(--mut)}
+.map{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;background:var(--bg2)}
+.map iframe{width:100%;height:100%;border:0}
+form{display:grid;gap:12px}
+label{font-size:13.5px;color:var(--mut);font-weight:600}
+input,textarea{width:100%;padding:14px 16px;border-radius:11px;background:var(--bg3);border:1.5px solid var(--line);color:var(--fg);font:inherit;font-size:15px;transition:border-color .18s}
+input:focus,textarea:focus{outline:0;border-color:var(--acc)}
+input:user-invalid{border-color:#ef4444}
+textarea{resize:vertical;min-height:88px}
+.note{font-size:12.5px;color:var(--mut);line-height:1.5}
+.sent{display:none;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.4);color:#16a34a;border-radius:11px;padding:14px 16px;font-size:15px;font-weight:600;margin-bottom:14px}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.gal img{border-radius:var(--r);border:1px solid var(--line);aspect-ratio:4/3;object-fit:cover;width:100%;cursor:zoom-in;transition:transform .25s var(--ease)}
+.gal img:hover{transform:scale(1.02)}
+dialog{border:0;padding:0;background:transparent;max-width:min(94vw,1100px)}
+dialog::backdrop{background:rgba(0,0,0,.86);backdrop-filter:blur(4px)}
+dialog img{border-radius:var(--r);max-height:88vh;width:auto;margin:0 auto}
+footer{border-top:1px solid var(--line);padding:var(--s4) 0 120px;color:var(--mut);font-size:14px}
+.fgrid{display:flex;gap:var(--s3);flex-wrap:wrap;align-items:center;justify-content:space-between}
+footer a:hover{color:var(--acc)}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:10px;padding:11px 14px;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s var(--ease)}
+.bar.on{transform:none}
+.bar .btn{flex:1;justify-content:center;padding:14px 12px;font-size:15px}
+@media(max-width:760px){.bar{display:flex}footer{padding-bottom:96px}}
+.rise{opacity:0;transform:translateY(22px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.rise.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rise{opacity:1;transform:none}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+<header id="hdr"><div class="wrap nav">
+  <div class="logo"><span class="dot" aria-hidden="true"></span>Автокомплекс <span>Дунай</span></div>
+  <a class="lnk" href="#services">Услуги</a>
+  <a class="lnk" href="#why">Почему мы</a>
+  <a class="lnk" href="#reviews">Отзывы</a>
+  <a class="lnk" href="#contacts">Контакты</a>
+  <a class="btn btn-a" href="tel:+79139150068">Позвонить</a>
+</div></header>
+<main>
+<section class="hero split">
+  <div class="hero-bg"><img src="img/photo-01.jpg" alt="Дунай, Новосибирск" fetchpriority="high"></div>
+  <div class="wrap">
+    <div>
+      <div class="badge">Открыто с 7 утра до 10 вечера, каждый день</div>
+      <h1>Заехали по пути — <em>уехали на чистой</em></h1>
+      <p class="lead">Автокомплекс на Дунаевского, 11 к1 в Калининском районе. Мойка, химчистка, полировка и шиномонтаж с семи утра. Очередей почти не бывает — самая частая фраза в наших отзывах.</p>
+      <div class="cta">
+        <a class="btn btn-a" href="tel:+79139150068">+7 913 915-00-68</a>
+        <a class="btn btn-b" href="#services">Услуги и цены</a>
+      </div>
+      <div class="stats"><div class="stat"><b>4.5 ★</b><span>417 отзывов в 2ГИС</span></div><div class="stat"><b>от 1400 ₽</b><span>комплексная мойка</span></div><div class="stat"><b>7:00–22:00</b><span>без выходных</span></div><div class="stat"><b>Без очередей</b><span>по отзывам клиентов</span></div></div>
+    </div>
+    <figure class="shot rise"><img src="img/photo-01.jpg" alt="Дунай, Новосибирск" fetchpriority="high"><figcaption>Автокомплекс на Дунаевского, 11 к1</figcaption></figure>
+  </div>
+</section>
+
+<section id="services"><div class="wrap">
+  <h2 class="rise">Что можно сделать у нас</h2>
+  <p class="lead rise" style="margin-bottom:40px">От быстрой мойки по дороге с работы до керамики и полного восстановления салона после ремонта.</p>
+  <div class="grid g3"><article class="card rise"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M12 2s6 7.2 6 11a6 6 0 0 1-12 0c0-3.8 6-11 6-11Z"/></svg></div><h3>Комплексная мойка</h3><p>Бесконтактная мойка, стёкла, диски, пылесос салона. Быстро и без разводов — заезжайте по пути.</p><p style="color:var(--acc);font-weight:700;margin-top:12px">от 1400 ₽</p></article><article class="card rise"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M6 20v-3h9v3M7 17V7a3 3 0 0 1 3-3h1a3 3 0 0 1 3 3v10M15 12h2a2 2 0 0 1 2 2v3"/></svg></div><h3>Химчистка салона</h3><p>Кресла, потолок, ковролин, багажник. Убираем пятна и запахи полностью — в том числе после стройки, животных и долгих поездок.</p></article><article class="card rise"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="m12 2 2.2 6.4L21 11l-6.8 2.6L12 20l-2.2-6.4L3 11l6.8-2.6z"/></svg></div><h3>Полировка и керамика</h3><p>Полировка кузова и фар, нанесение защитного состава. Блестит, и грязь потом отлетает сама — цитата из отзыва.</p></article><article class="card rise"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M4 9h3l2-3h6l2 3h3v7h-3l-2 3H9l-2-3H4z"/><circle cx="12" cy="12.5" r="2"/></svg></div><h3>Мойка двигателя и днища</h3><p>Аккуратно, с защитой электрики. Особенно нужна после зимы, когда снизу накопился реагент.</p></article><article class="card rise"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6m0 6v6M3 12h6m6 0h6"/></svg></div><h3>Шиномонтаж</h3><p>Ремонт порезов, правка и прокатка дисков, ошиповка, мойка шин. Есть аренда колёс на время ремонта.</p></article><article class="card rise"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Мойка самообслуживания и тёплый бокс</h3><p>Хотите помыть сами — есть посты самообслуживания. Нужно поработать с машиной в тепле — сдаём бокс в аренду.</p></article></div>
+</div></section>
+
+<section id="why" class="alt"><div class="wrap">
+  <h2 class="rise">Почему к нам возвращаются</h2>
+  <div class="grid g2"><article class="card rise"><h3>Очередей почти не бывает</h3><p>«Ехала мимо, решила заехать помыться — очереди нет, классно, быстро». Так пишут чаще всего. Заехать без записи здесь реально.</p></article><article class="card rise"><h3>Открываемся в семь утра</h3><p>Можно помыться до работы, а не вместо выходного. Закрываемся в десять вечера — успеете и после смены.</p></article><article class="card rise"><h3>Химчистка, которая правда убирает запах</h3><p>«Отдал на химчистку — запахи убрали полностью». Работаем с салоном всерьёз, а не просто проходим пылесосом.</p></article><article class="card rise"><h3>Всё в одном дворе</h3><p>Помыть, вычистить салон, отполировать и переобуться можно за один заезд. Кофе и чай с собой, Wi-Fi, зал ожидания.</p></article></div>
+</div></section>
+
+
+
+<section id="reviews"><div class="wrap">
+  <h2 class="rise">Что говорят клиенты</h2>
+  <div class="rating-box rise">
+    <div><div class="big">4.5</div><div class="stars" style="font-size:18px">★★★★★</div></div>
+    <div style="flex:1;min-width:200px">
+      <b style="font-size:17px">417 отзывов в 2ГИС</b>
+      <p style="color:var(--mut);font-size:14.5px;margin-top:4px">Отзывы ниже настоящие, скопированы с карточки без правок.</p>
+    </div>
+    <a class="btn btn-b" href="https://2gis.ru/firm/141265771678108" target="_blank" rel="noopener">Читать все</a>
+  </div>
+  <div class="grid g3"><article class="rev rise"><div class="stars">★★★★★</div><p>«Приезжал на комплексную мойку Хонды Стрим + полировка фар, всё заняло около часа. Результатом более чем доволен: фары как новые, авто чистое как снаружи, так и изнутри. Спасибо большое, буду приезжать ещё»</p><div class="who"><div class="av">И</div><div><b>Илья Петров</b><small>2 августа 2026</small></div></div></article><article class="rev rise"><div class="stars">★★★★★</div><p>«Отдал на химчистку. Запахи убрали полностью. Работу выполнили просто великолепно, и кузов теперь сверкает на солнце. Буду обращаться ещё»</p><div class="who"><div class="av">П</div><div><b>Павел В. Т.</b><small>5 июля 2026</small></div></div></article><article class="rev rise"><div class="stars">★★★★★</div><p>«Сделали химчистку отлично. Цены адекватные, расположение удобное, рядом с домом. Обязательно приеду ещё. Спасибо»</p><div class="who"><div class="av">Т</div><div><b>Татьяна Крылова</b><small>5 августа 2026</small></div></div></article><article class="rev rise"><div class="stars">★★★★★</div><p>«Ехала мимо, решила заехать помыться. Очереди нет, классно, быстро, помыли машину, всё очень понравилось»</p><div class="who"><div class="av">С</div><div><b>Сонька Крышкина</b><small>31 июля 2026</small></div></div></article><article class="rev rise"><div class="stars">★★★★★</div><p>«Нанёс кварц на кузов. Блестит, грязь сама отлетает. Советую»</p><div class="who"><div class="av">М</div><div><b>Марк Сергулин</b><small>6 августа 2026</small></div></div></article><article class="rev rise" style="justify-content:center;border-style:dashed"><h3>Ещё 412 отзывов</h3><p style="color:var(--mut)">Мы не прячем и те, где нами были недовольны. Читайте всё как есть.</p><a class="btn btn-b" style="align-self:flex-start" href="https://2gis.ru/firm/141265771678108" target="_blank" rel="noopener">Смотреть в 2ГИС</a></article></div>
+</div></section>
+
+<section id="contacts" class="alt"><div class="wrap">
+  <h2 class="rise">Как доехать</h2>
+  <div class="contact">
+    <div class="rise">
+      <ul class="info">
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><div class="k">Адрес</div><div class="v">улица Дунаевского, 11 к1</div><div class="k" style="margin-top:4px">Калининский район, Новосибирск</div></div></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+          <div><div class="k">Телефон</div><a class="v" href="tel:+79139150068" style="display:block">+7 913 915-00-68</a><a class="v" href="tel:+73832910068" style="display:block">+7 383 291-00-68</a></div></li>
+        
+        <li><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><div class="k">Режим работы</div><div class="sched"><span>Пн–Вс</span><span class='v'>07:00–22:00</span></div></div></li>
+      </ul>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px">
+        <a class="btn btn-a" href="https://2gis.ru/firm/141265771678108" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+        <a class="btn btn-b" href="https://yandex.ru/maps/?rtext=~55.101952,82.972919&rtt=auto" target="_blank" rel="noopener">Маршрут в Яндексе</a>
+      </div>
+    </div>
+    <div class="rise"><div class="map">
+      <iframe loading="lazy" title="Карта: улица Дунаевского, 11 к1" src="https://yandex.ru/map-widget/v1/?ll=82.972919%2C55.101952&z=17&pt=82.972919,55.101952,pm2rdm"></iframe>
+    </div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap" style="max-width:640px">
+  <h2 class="rise" style="text-align:center">Оставьте заявку</h2>
+  <p class="lead rise" style="text-align:center;margin:0 auto 32px">Перезвоним, скажем цену и подскажем, когда меньше всего машин.</p>
+  <div class="sent" id="sent"></div>
+  <form class="rise" id="frm" data-endpoint="" data-mail="" novalidate>
+    <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Иван"></div>
+    <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 913 000-00-00"></div>
+    <div><label for="m">Что нужно сделать (необязательно)</label><textarea id="m" name="message" placeholder="Комплекс + химчистка после переезда, когда лучше подъехать?"></textarea></div>
+    <button class="btn btn-a" type="submit" style="justify-content:center">Жду звонка</button>
+    <p class="note">Нажимая кнопку, вы соглашаетесь на обработку своих контактов, чтобы мы могли перезвонить. Больше ни для чего они не используются.</p>
+  </form>
+</div></section>
+</main>
+<footer><div class="wrap fgrid">
+  <div><div class="logo" style="margin-bottom:8px">Автокомплекс <span>Дунай</span></div><div>улица Дунаевского, 11 к1, Новосибирск · ежедневно 7:00–22:00</div></div>
+  <div style="display:flex;gap:20px;flex-wrap:wrap">
+    <a href="tel:+79139150068">+7 913 915-00-68</a>
+    <a href="https://2gis.ru/firm/141265771678108" target="_blank" rel="noopener">2ГИС</a>
+  </div>
+</div></footer>
+<div class="bar" id="bar">
+  <a class="btn btn-a" href="tel:+79139150068">Позвонить</a>
+  <a class="btn btn-b" href="https://2gis.ru/firm/141265771678108" target="_blank" rel="noopener">Маршрут</a>
+</div>
+<dialog id="lb"><img alt=""></dialog>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "AutoWash", "name": "Дунай", "description": "Автокомплекс в Калининском районе: комплексная мойка от 1400 ₽, химчистка салона, полировка, керамика, шиномонтаж, мойка самообслуживания. С 7:00 до 22:00.", "telephone": "+79139150068", "address": {"@type": "PostalAddress", "streetAddress": "улица Дунаевского, 11 к1", "addressLocality": "Новосибирск", "addressRegion": "Новосибирская область", "addressCountry": "RU"}, "geo": {"@type": "GeoCoordinates", "latitude": 55.101952, "longitude": 82.972919}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "07:00", "closes": "22:00"}], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.5", "reviewCount": "417", "bestRating": "5"}, "sameAs": ["https://2gis.ru/firm/141265771678108"], "review": [{"@type": "Review", "author": {"@type": "Person", "name": "Илья Петров"}, "reviewRating": {"@type": "Rating", "ratingValue": "5"}, "reviewBody": "Приезжал на комплексную мойку Хонды Стрим + полировка фар, всё заняло около часа. Результатом более чем доволен: фары как новые, авто чистое как снаружи, так и изнутри. Спасибо большое, буду приезжать ещё"}, {"@type": "Review", "author": {"@type": "Person", "name": "Павел В. Т."}, "reviewRating": {"@type": "Rating", "ratingValue": "5"}, "reviewBody": "Отдал на химчистку. Запахи убрали полностью. Работу выполнили просто великолепно, и кузов теперь сверкает на солнце. Буду обращаться ещё"}, {"@type": "Review", "author": {"@type": "Person", "name": "Татьяна Крылова"}, "reviewRating": {"@type": "Rating", "ratingValue": "5"}, "reviewBody": "Сделали химчистку отлично. Цены адекватные, расположение удобное, рядом с домом. Обязательно приеду ещё. Спасибо"}], "image": "img/photo-01.jpg"}</script>
+<script>
+const hdr=document.getElementById('hdr'),bar=document.getElementById('bar');
+addEventListener('scroll',()=>{hdr.classList.toggle('on',scrollY>10);bar.classList.toggle('on',scrollY>620)},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -60px'});
+document.querySelectorAll('.rise').forEach((el,i)=>{el.style.transitionDelay=(i%3*70)+'ms';io.observe(el)});
+const lb=document.getElementById('lb');
+document.querySelectorAll('.gal img').forEach(im=>im.addEventListener('click',()=>{lb.querySelector('img').src=im.src;lb.querySelector('img').alt=im.alt;lb.showModal()}));
+lb?.addEventListener('click',()=>lb.close());
+/* Заявка. Пока приём заявок не подключён — открывается почта.
+   Чтобы заявки приходили автоматически: зарегистрируйтесь на formspree.io,
+   создайте форму и вставьте её адрес в data-endpoint у <form>. Больше ничего менять не нужно. */
+const frm=document.getElementById('frm'),sent=document.getElementById('sent');
+frm.addEventListener('submit',async e=>{
+  e.preventDefault();
+  if(!frm.reportValidity())return;
+  const d=Object.fromEntries(new FormData(frm)),url=frm.dataset.endpoint,mail=frm.dataset.mail;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(frm)});
+    if(r.ok){sent.textContent='Спасибо! Заявка принята, перезвоним в ближайшее время.';sent.style.display='block';frm.reset();return}}catch(_){}}
+  if(mail){location.href='mailto:'+mail+'?subject='+encodeURIComponent('Заявка с сайта — '+d.name)
+    +'&body='+encodeURIComponent('Имя: '+d.name+'\nТелефон: '+d.phone+'\nКомментарий: '+(d.message||'—'));
+    sent.textContent='Открылось окно почты — отправьте письмо, и мы перезвоним.';}
+  else{sent.textContent='Спасибо! Позвоните нам — так быстрее всего: +7 913 915-00-68';}
+  sent.style.display='block';
+});
+</script>
+</body>
+</html>

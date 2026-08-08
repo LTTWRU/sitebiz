@@ -11,4 +11,5 @@ leads*.md
 brief*.json
 promo*.md
 assets/
+!docs/*/img/
 out/
