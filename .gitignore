@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Результаты сканирования и сгенерированные материалы
+leads*.csv
+leads*.html
+leads*.json
+leads*.md
+brief*.json
+promo*.md
+assets/
+out/
