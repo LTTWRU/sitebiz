@@ -17,6 +17,17 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 # Что показываем в фильтрах. Порядок = порядок кнопок.
+REGISTRY = ROOT / "registry.json"
+
+
+def done_map():
+    """{ссылка на карточку 2ГИС: slug} — по кому сайт уже сделан."""
+    if not REGISTRY.exists():
+        return {}
+    data = json.loads(REGISTRY.read_text(encoding="utf-8"))
+    return {s["url2gis"]: s["slug"] for s in data.get("sites", [])}
+
+
 BUCKETS = [
     ("none", "Сайта нет вообще", "Ни ссылки, ни соцсетей в карточке"),
     ("broken", "Сайт битый", "Не открывается, заглушка или домен припаркован"),
@@ -39,8 +50,10 @@ def bucket_of(lead):
     return "social"
 
 
-def compact(lead):
+def compact(lead, done=None):
+    done = done or {}
     return {
+        "done": done.get(lead["url_2gis"], ""),
         "n": lead["name"],
         "c": lead["categories"][:70],
         "a": lead["address"],
@@ -95,6 +108,9 @@ th{{background:rgba(127,127,127,.07);font-size:12.5px;color:var(--mut);white-spa
 th.nos{{cursor:default}}
 tr:last-child td{{border-bottom:0}}
 tr.sel td{{background:rgba(37,99,235,.07)}}
+tr.isdone td{{background:rgba(22,163,74,.06)}}
+.ready{{margin-top:6px;font-size:12.5px;font-weight:700;color:var(--ok)}}
+.ready a{{color:var(--ok)}}
 td.c{{width:38px;text-align:center}}
 input[type=checkbox]{{width:18px;height:18px;accent-color:var(--acc);cursor:pointer}}
 .nm{{font-weight:700;font-size:15px}}
@@ -129,7 +145,7 @@ a.ph:hover{{text-decoration:underline}}
 <h1>{title}</h1>
 <p class="sub">Найдено <b>{total}</b> организаций. У каждой проверено, есть ли сайт и открывается ли он на самом деле.
 Отметь галочками тех, кому хочешь сделать сайт, и нажми «Скопировать выбранные» — пришлёшь мне список, я соберу демо.
-Сканирование от {when}.</p>
+Сайтов уже сделано: <b>{made}</b> — они помечены зелёным и опущены в конец списка. Сканирование от {when}.</p>
 
 <div class="panel">
   <div class="row">
@@ -175,6 +191,7 @@ const BUCKETS = {buckets};
 const sel = new Set();
 let sortKey = 's', sortDir = -1;
 const active = new Set(['none','broken','social','unknown']);
+let hideDone = false;
 
 const chips = document.getElementById('chips');
 BUCKETS.forEach(([k,label,hintText])=>{{
@@ -185,12 +202,21 @@ BUCKETS.forEach(([k,label,hintText])=>{{
   b.onclick = ()=>{{ active.has(k)?active.delete(k):active.add(k); b.classList.toggle('on'); render(); }};
   chips.appendChild(b);
 }});
+const dn = DATA.filter(d=>d.done).length;
+if(dn){{
+  const b = document.createElement('button');
+  b.className='chip'; b.title='Спрятать тех, по кому сайт уже сделан';
+  b.innerHTML='Скрыть готовые<small>'+dn+'</small>';
+  b.onclick=()=>{{ hideDone=!hideDone; b.classList.toggle('on',hideDone); render(); }};
+  chips.appendChild(b);
+}}
 
 function visible(){{
   const q = document.getElementById('q').value.trim().toLowerCase();
   const minv = +document.getElementById('minv').value || 0;
   const mins = +document.getElementById('mins').value || 0;
   let rows = DATA.filter(d=>active.has(d.b) && d.v>=minv && d.s>=mins);
+  if(hideDone) rows = rows.filter(d=>!d.done);
   if(q) rows = rows.filter(d=>(d.n+' '+d.c+' '+d.a).toLowerCase().includes(q));
   rows.sort((a,b)=>{{
     const x=a[sortKey], y=b[sortKey];
@@ -206,11 +232,12 @@ function render(){{
     const label = (BUCKETS.find(b=>b[0]===d.b)||[])[1] || d.b;
     const phones = d.p.map(p=>`<a class="ph" href="tel:${{p.replace(/[^+0-9]/g,'')}}">${{p}}</a>`).join('');
     const site = d.w ? `<div class="sm"><a class="ph" href="${{d.w}}" target="_blank" rel="noopener">${{d.w.replace(/^https?:\\/\\//,'').slice(0,34)}}</a></div>` : '';
-    return `<tr data-u="${{d.u}}" class="${{sel.has(d.u)?'sel':''}}">
+    const done = d.done ? `<div class="ready">✓ сайт готов · <a href="../${{d.done}}/" target="_blank" rel="noopener">открыть</a></div>` : '';
+    return `<tr data-u="${{d.u}}" class="${{sel.has(d.u)?'sel':''}}${{d.done?' isdone':''}}">
       <td class="c"><input type="checkbox" ${{sel.has(d.u)?'checked':''}}></td>
       <td class="sc">${{d.s}}</td>
       <td><div class="nm"><a href="${{d.u}}" target="_blank" rel="noopener">${{d.n}}</a></div><div class="sm">${{d.c}}</div></td>
-      <td><span class="tag t-${{d.b}}">${{label}}</span><div class="sm">${{d.d}}</div>${{site}}</td>
+      <td><span class="tag t-${{d.b}}">${{label}}</span><div class="sm">${{d.d}}</div>${{site}}${{done}}</td>
       <td><b>${{d.r||'—'}}</b> ★<div class="sm">${{d.v}} отз.</div></td>
       <td>${{phones}}<div class="sm">${{d.e||''}}</div></td>
       <td class="hide">${{d.a}}<div class="sm">${{d.h}}</div></td>
@@ -280,13 +307,16 @@ def main():
     args = ap.parse_args()
 
     leads = json.loads(Path(args.source).read_text(encoding="utf-8"))
-    rows = [compact(x) for x in leads]
-    rows.sort(key=lambda x: (-x["s"], -x["v"]))
+    made = done_map()
+    rows = [compact(x, made) for x in leads]
+    # сделанные — вниз: они уже отработаны
+    rows.sort(key=lambda x: (bool(x["done"]), -x["s"], -x["v"]))
 
     out_dir = ROOT / "docs" / args.slug
     out_dir.mkdir(parents=True, exist_ok=True)
     page = PAGE.format(
         title=html.escape(args.title), total=len(rows),
+        made=sum(1 for r in rows if r["done"]),
         when=f"{date.today():%d.%m.%Y}",
         data=json.dumps(rows, ensure_ascii=False, separators=(",", ":")),
         buckets=json.dumps(BUCKETS, ensure_ascii=False),
