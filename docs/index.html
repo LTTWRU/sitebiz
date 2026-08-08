@@ -17,6 +17,14 @@ h1{font-size:clamp(28px,5vw,42px);letter-spacing:-.025em;margin-bottom:10px}
 .sub{color:var(--mut);margin-bottom:36px;max-width:70ch}
 a{color:var(--acc);text-decoration:none}
 a:hover{text-decoration:underline}
+.banner{display:flex;align-items:center;gap:20px;justify-content:space-between;
+  background:linear-gradient(135deg,rgba(37,99,235,.12),rgba(37,99,235,.03));
+  border:1px solid rgba(37,99,235,.3);border-radius:16px;padding:22px 26px;margin-bottom:30px;
+  color:var(--fg);transition:border-color .18s,transform .18s}
+.banner:hover{border-color:var(--acc);transform:translateY(-2px);text-decoration:none}
+.banner b{display:block;font-size:18px;letter-spacing:-.015em;margin-bottom:5px}
+.banner span{color:var(--mut);font-size:14.5px}
+.banner .arr{font-size:26px;color:var(--acc);flex:none}
 .list{display:grid;gap:16px}
 .item{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;
   display:grid;grid-template-columns:1fr auto;gap:18px;align-items:start}
@@ -51,6 +59,15 @@ code{background:rgba(127,127,127,.14);padding:2px 7px;border-radius:6px;font-siz
 <p class="sub">Пять сайтов, собранных по карточкам 2ГИС. Все услуги, режим работы, отзывы и фото —
 настоящие, взяты из карточки бизнеса. Нажми «Открыть сайт», чтобы посмотреть, и «Скопировать
 сообщение», чтобы отправить владельцу.</p>
+
+<a class="banner" href="nsk-auto/">
+  <div>
+    <b>Полный список: 500 автосервисов Новосибирска</b>
+    <span>39 без сайта · 23 с битым сайтом или заглушкой · 206 только с соцсетями.
+    Отмечай галочками, кого берём в работу — и присылай мне список.</span>
+  </div>
+  <span class="arr">→</span>
+</a>
 
 <div class="list">
 

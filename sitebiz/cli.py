@@ -81,6 +81,10 @@ def cmd_scan(args) -> int:
             return _err(str(exc))
 
     total_found = len(collected)
+
+    if args.check_sites:
+        collected = _check_live_sites(collected, quiet=args.quiet)
+
     result = [
         lead
         for lead in collected
@@ -115,6 +119,51 @@ def cmd_scan(args) -> int:
         file=sys.stderr,
     )
     return 0
+
+
+def _check_live_sites(leads: list, quiet: bool = False) -> list:
+    """Открыть сайты тех, у кого они «есть», и понизить статус мёртвым и заглушкам."""
+    from . import sitecheck
+
+    targets = {}
+    for lead in leads:
+        if lead["website_status"] == website.HAS and lead["sites"]:
+            targets.setdefault(lead["sites"].split(",")[0].strip(), []).append(lead)
+
+    if not targets:
+        return leads
+
+    if not quiet:
+        print(f"→ Проверяю {len(targets)} сайтов на живость…", file=sys.stderr)
+
+    def progress(done, total, res):
+        if not quiet and (done % 20 == 0 or done == total):
+            print(f"   проверено {done}/{total}", file=sys.stderr)
+
+    checked = sitecheck.check_many(list(targets), on_done=progress)
+    broken = 0
+
+    for url, res in checked.items():
+        for lead in targets[url]:
+            lead["live_status"] = res["status"]
+            lead["live_label"] = res["label"]
+            lead["live_title"] = res.get("title", "")
+            if res["status"] in (sitecheck.DEAD, sitecheck.STUB, sitecheck.PARKED):
+                # Сайт формально есть, но по факту его нет — это тёплый лид.
+                lead["website_status"] = website.WEAK
+                lead["website_status_label"] = website.STATUS_LABELS[website.WEAK]
+                lead["website_note"] = f"{res['label']}: {website.host_of(url)}"
+                lead["score"] = leads_mod.score(lead)
+                broken += 1
+
+    for lead in leads:
+        lead.setdefault("live_status", "")
+        lead.setdefault("live_label", "")
+        lead.setdefault("live_title", "")
+
+    if not quiet:
+        print(f"   мёртвых сайтов и заглушек: {broken}", file=sys.stderr)
+    return leads
 
 
 def _print_table(rows: list) -> None:
@@ -244,6 +293,8 @@ def build_parser() -> argparse.ArgumentParser:
                         help="убрать сети (больше 3 филиалов)")
     p_scan.add_argument("--all-branches", action="store_true",
                         help="показывать все филиалы, а не одну точку на организацию")
+    p_scan.add_argument("--check-sites", action="store_true",
+                        help="открыть найденные сайты и поймать мёртвые, заглушки и парковки")
     p_scan.add_argument("-o", "--out", help="файл: .csv, .xlsx→csv, .json, .md, .html")
     p_scan.add_argument("--show", type=int, default=20, help="сколько строк вывести в консоль")
     p_scan.add_argument("-q", "--quiet", action="store_true")

@@ -113,6 +113,7 @@ COLUMNS = [
     ("schedule", "Режим"),
     ("socials", "Соцсети"),
     ("sites", "Ссылки"),
+    ("live_label", "Состояние сайта"),
     ("branch_count", "Филиалов"),
     ("photos", "Фото"),
     ("url_2gis", "Карточка 2ГИС"),
