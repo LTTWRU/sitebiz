@@ -4,7 +4,7 @@ from . import twogis, website
 from .leads import normalize
 
 
-def build(item: dict, reviews_limit: int = 30) -> dict:
+def build(item: dict, reviews_limit: int = 30, photo_depth: int = 250) -> dict:
     """Карточка 2ГИС + отзывы → структурированный бриф для генерации сайта."""
     lead = normalize(item)
     contacts = website.extract_contacts(item)
@@ -15,11 +15,21 @@ def build(item: dict, reviews_limit: int = 30) -> dict:
     except Exception as exc:  # отзывы — приятный бонус, а не блокер
         review_data = {"meta": {}, "reviews": [], "error": str(exc)}
 
+    # За фотографиями идём глубже, чем за текстом: снимки выкладывает малая
+    # часть авторов, и на первых тридцати отзывах их почти нет.
+    photo_source = review_data.get("reviews") or []
+    if photo_depth > reviews_limit:
+        try:
+            deep = twogis.get_reviews(item_id, limit=photo_depth)
+            photo_source = deep.get("reviews") or photo_source
+        except Exception:
+            pass
+
     reviews = [_review(r) for r in review_data.get("reviews") or []]
     # Сначала хвалебные и залайканные — из них и собирается блок отзывов на сайте,
     # негатив оставляем в хвосте: он показывает слабые места, которые стоит закрыть текстом.
     reviews.sort(key=lambda r: (-(r["rating"] or 0), -r["likes"], -len(r["text"])))
-    photos = _photos(item, review_data.get("reviews") or [])
+    photos = _photos(item, photo_source)
 
     return {
         "business": {

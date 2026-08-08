@@ -141,7 +141,9 @@ def get_reviews(item_id: str, limit: int = 30) -> dict:
                 "fields": "meta.branch_rating,meta.branch_reviews_count,meta.total_count",
                 "without_my_first_review": "false",
                 "rated": "true",
-                "sort_by": "friends",
+                # API запрещает слать сортировку вместе со смещением: на первой
+                # странице сортируем, дальше идём по offset_date.
+                "sort_by": None if offset_date else "friends",
                 "offset_date": offset_date,
                 "locale": "ru_RU",
                 "key": config.REVIEWS_KEY,

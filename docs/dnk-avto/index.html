@@ -3,258 +3,364 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ДНК авто — автосервис на Нижегородской, 268 к3, Новосибирск</title>
-<meta name="description" content="Автосервис полного цикла: диагностика, ремонт дизельных и бензиновых двигателей, ходовая, МКПП, турбины, рулевые рейки. Легковые и грузовые. 4.8 по 222 отзывам.">
-<meta property="og:title" content="ДНК авто — ремонт двигателей и ходовой, Октябрьский район">
-<meta property="og:description" content="Автосервис полного цикла: диагностика, ремонт дизельных и бензиновых двигателей, ходовая, МКПП, турбины, рулевые рейки. Легковые и грузовые. 4.8 по 222 отзывам.">
-<meta property="og:type" content="website">
-<!-- Демо закрыто от поисковиков. При передаче сайта владельцу эту строку убрать. -->
+<title>ДНК авто — автосервис на Нижегородской 268 к3, Новосибирск</title>
+<meta name="description" content="Автосервис полного цикла в Октябрьском районе: дизель и бензин, ходовая, МКПП, турбины, рулевые рейки, своя мойка. Легковые и грузовые. 4.8 по 222 отзывам.">
 <meta name="robots" content="noindex,nofollow">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23ffffff'/><text x='16' y='23' font-size='18' font-family='Georgia' text-anchor='middle' fill='%231d4ed8'>Д</text></svg>">
+<meta property="og:title" content="ДНК авто — сначала находим причину, потом чиним">
+<meta property="og:description" content="Автосервис полного цикла на Нижегородской, 268 к3. Двадцать пять направлений работ и своя мойка.">
+<meta property="og:image" content="photo/reception.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230e5c63'/><text x='16' y='23' font-size='16' font-family='Verdana' text-anchor='middle' fill='%23fff'>ДНК</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+/* Светлый и клинический: сервис, который сначала ставит диагноз. Петроль вместо
+   дежурного синего, тонкие линии, никакой тяжести — всё читается как заключение. */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#ffffff;--bg2:#f4f6fa;--bg3:#eaeef5;--line:#dde3ec;--fg:#0f1729;--mut:#5b6880;
-  --acc:#1d4ed8;--acc2:#1739a8;--on-acc:#ffffff;--grad:linear-gradient(135deg,#1d4ed8,#0ea5e9);
-  --r:14px;--wrap:1180px;--ease:cubic-bezier(.4,0,.2,1);
-  --s3:24px;--s4:40px;--s5:64px;--s6:96px}
+  --paper:#fbfbfa; --paper-2:#f1f4f4; --card:#fff; --rule:#dde5e5;
+  --ink:#101a1c; --soft:#5c6f72; --petrol:#0e5c63; --petrol-d:#0a464b; --signal:#ee5622;
+  --wrap:1180px; --ease:cubic-bezier(.4,0,.2,1);
+}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--paper);color:var(--ink);
+  font:400 16px/1.68 Manrope,-apple-system,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block;height:auto}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
-h1,h2,h3{line-height:1.12;letter-spacing:-.022em;font-weight:800}
-h1{font-size:clamp(32px,5.6vw,58px)}
-h2{font-size:clamp(26px,4vw,40px);margin-bottom:var(--s3)}
-h3{font-size:19px}
-section{padding:var(--s6) 0}
-.lead{color:var(--mut);font-size:clamp(16px,2vw,19px);max-width:62ch}
-.btn{display:inline-flex;align-items:center;gap:9px;padding:15px 26px;border-radius:999px;font-weight:700;font-size:16px;border:1.5px solid transparent;cursor:pointer;transition:transform .18s var(--ease),background .18s,border-color .18s,color .18s}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-weight:800;line-height:1.13;letter-spacing:-.03em;text-wrap:balance}
+h1{font-size:clamp(33px,5.2vw,58px)}
+h2{font-size:clamp(25px,3.5vw,38px);margin-bottom:18px}
+h3{font-size:18px;font-weight:600;letter-spacing:-.015em}
+section{padding:clamp(56px,8vw,102px) 0}
+p{max-width:62ch}
+.soft{color:var(--soft)}
+.mono{font-family:"JetBrains Mono",monospace;font-variant-numeric:tabular-nums}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--petrol);margin-bottom:13px}
+
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 25px;border-radius:8px;
+  font-weight:600;font-size:15.5px;border:1.5px solid transparent;cursor:pointer;font-family:inherit;
+  transition:background .16s,color .16s,border-color .16s,transform .16s var(--ease)}
 .btn:hover{transform:translateY(-2px)}
-.btn-a{background:var(--acc);color:var(--on-acc)}
-.btn-a:hover{background:var(--acc2)}
-.btn-b{border-color:var(--line);color:var(--fg)}
-.btn-b:hover{border-color:var(--acc);color:var(--acc)}
-.ic{width:19px;height:19px;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .25s}
-header.on{border-bottom-color:var(--line)}
-.nav{display:flex;align-items:center;gap:var(--s3);padding:16px 0}
-.logo{font-weight:800;font-size:18px;letter-spacing:-.02em;margin-right:auto;display:flex;align-items:center;gap:10px}
-.logo span{color:var(--acc)}
-.dot{width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.16);animation:pulse 2.4s infinite}
-@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(34,197,94,0)}}
-.nav a.lnk{color:var(--mut);font-size:15px;font-weight:600;transition:color .18s}
-.nav a.lnk:hover{color:var(--fg)}
-@media(max-width:900px){.nav a.lnk{display:none}}
-.hero{position:relative;min-height:min(86vh,760px);display:flex;align-items:center;padding:var(--s6) 0 var(--s5);overflow:hidden}
-.hero-bg{position:absolute;inset:0;z-index:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.03)}
-.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,#ffffff 18%,#fffffff2 48%,#ffffffb3 100%)}
-.hero .wrap{position:relative;z-index:1}
-/* светлая тема: фото не фоном, а карточкой рядом — так оно читается, а не выцветает */
-.hero.split{min-height:0;padding:var(--s5) 0}
-.hero.split .hero-bg{display:none}
-.hero.split .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--s5);align-items:center}
-.hero.split h1{max-width:14ch}
-.shot{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line);
-  box-shadow:0 26px 60px -22px rgba(15,23,41,.32);aspect-ratio:4/5}
+.a{background:var(--petrol);color:#fff}
+.a:hover{background:var(--petrol-d)}
+.b{border-color:var(--rule);color:var(--ink)}
+.b:hover{border-color:var(--petrol);color:var(--petrol)}
+
+header{position:sticky;top:0;z-index:70;background:rgba(251,251,250,.9);backdrop-filter:blur(12px);
+  border-bottom:1px solid transparent;transition:border-color .3s}
+header.on{border-bottom-color:var(--rule)}
+.nav{display:flex;align-items:center;gap:26px;padding:14px 0}
+.brand{margin-right:auto;font-weight:800;font-size:20px;letter-spacing:-.02em}
+.brand span{color:var(--petrol)}
+.lk{font-size:15px;color:var(--soft);transition:color .16s}
+.lk:hover{color:var(--ink)}
+@media(max-width:960px){.lk{display:none}}
+@media(max-width:430px){.nav{gap:12px}.brand{font-size:17px}.nav .btn{padding:12px 15px;font-size:14.5px}}
+
+.hero{padding:clamp(42px,6vw,74px) 0 clamp(50px,7vw,84px)}
+.hero .w{display:grid;grid-template-columns:1.04fr .96fr;gap:clamp(30px,4.5vw,58px);align-items:center}
+@media(max-width:920px){.hero .w{grid-template-columns:1fr;gap:30px}}
+.hero h1{margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--petrol)}
+.hero .lead{font-size:clamp(16px,1.75vw,18.5px);color:var(--soft);margin-bottom:26px}
+.cta{display:flex;gap:11px;flex-wrap:wrap}
+.shot{border-radius:12px;overflow:hidden;aspect-ratio:4/3;position:relative;
+  box-shadow:0 30px 60px -28px rgba(16,26,28,.35)}
 .shot img{width:100%;height:100%;object-fit:cover}
-.shot figcaption{position:absolute;left:14px;right:14px;bottom:14px;padding:11px 15px;border-radius:13px;
-  background:rgba(255,255,255,.93);backdrop-filter:blur(8px);font-size:13.5px;color:var(--mut);font-weight:600}
-@media(max-width:900px){.hero.split .wrap{grid-template-columns:1fr;gap:var(--s4)}
-  .hero.split .stats{order:3} .shot{aspect-ratio:16/10;order:2}}
-.badge{display:inline-flex;align-items:center;gap:9px;padding:8px 16px;border-radius:999px;background:rgba(29,78,216,.09);border:1px solid rgba(29,78,216,.3);color:var(--acc);font-size:14px;font-weight:700;margin-bottom:var(--s3)}
-.hero h1{max-width:17ch;margin-bottom:var(--s3)}
-.hero h1 em{font-style:normal;color:var(--acc)}
-.hero .lead{margin-bottom:var(--s4)}
-.cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:var(--s5)}
-.stats{display:flex;gap:var(--s4);flex-wrap:wrap;padding-top:var(--s3);border-top:1px solid var(--line)}
-.stat b{display:block;font-size:clamp(23px,3.2vw,32px);font-weight:800;letter-spacing:-.03em;line-height:1.1}
-.stat span{font-size:13.5px;color:var(--mut)}
-.stars{color:var(--acc);letter-spacing:2px}
-.grid{display:grid;gap:14px}
-.g3{grid-template-columns:repeat(auto-fit,minmax(285px,1fr))}
-.g2{grid-template-columns:repeat(auto-fit,minmax(330px,1fr))}
-.card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:transform .22s var(--ease),border-color .22s,box-shadow .22s}
-.card:hover{transform:translateY(-3px);border-color:var(--acc);box-shadow:0 12px 30px rgba(15,23,41,.10)}
-.card h3{margin-bottom:9px}
-.card p{color:var(--mut);font-size:15px}
-.ico{width:42px;height:42px;border-radius:11px;background:rgba(29,78,216,.09);display:grid;place-items:center;margin-bottom:16px;color:var(--acc)}
-.ico svg{width:21px;height:21px}
-.alt{background:var(--bg2);border-block:1px solid var(--line)}
-.alt .card{background:var(--bg3)}
-.rev{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:14px}
-.rev p{font-size:15.5px}
-.rev .who{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:14px;border-top:1px solid var(--line)}
-.av{width:38px;height:38px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-weight:800;color:#fff;flex:none;font-size:15px}
-.who b{font-size:14.5px;display:block}
-.who small{color:var(--mut);font-size:12.5px}
-.rating-box{display:flex;align-items:center;gap:var(--s3);flex-wrap:wrap;background:rgba(29,78,216,.09);border:1px solid rgba(29,78,216,.3);border-radius:var(--r);padding:22px 26px;margin-bottom:var(--s4)}
-.rating-box .big{font-size:44px;font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--acc)}
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4);align-items:start}
-@media(max-width:860px){.contact{grid-template-columns:1fr}}
-.info li{list-style:none;display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
-.info li:last-child{border-bottom:0}
-.info .k{color:var(--mut);font-size:13.5px;margin-bottom:3px}
-.info .v{font-weight:600}
-.info .ic{color:var(--acc);margin-top:3px}
-.sched{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-size:15px}
-.sched span:nth-child(odd){color:var(--mut)}
-.map{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;background:var(--bg2)}
+.shot figcaption{position:absolute;inset:auto 0 0 0;padding:16px 18px;font-size:13px;color:#fff;
+  background:linear-gradient(transparent,rgba(6,16,18,.86))}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--rule);border-radius:12px;
+  background:var(--card);margin-top:28px;overflow:hidden}
+.facts div{padding:18px 20px;border-right:1px solid var(--rule)}
+.facts div:last-child{border-right:0}
+.facts b{display:block;font-size:clamp(21px,2.6vw,29px);font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.facts span{font-size:12.5px;color:var(--soft);display:block;margin-top:3px}
+@media(max-width:700px){.facts{grid-template-columns:1fr 1fr}
+  .facts div:nth-child(2n){border-right:0}.facts div:nth-child(-n+2){border-bottom:1px solid var(--rule)}}
+
+/* НАПРАВЛЕНИЯ — сгруппированы, потому что их реально много */
+.groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:32px}
+.group{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:26px;
+  transition:border-color .2s,transform .2s var(--ease),box-shadow .2s}
+.group:hover{border-color:var(--petrol);transform:translateY(-3px);box-shadow:0 16px 34px -20px rgba(14,92,99,.4)}
+.group h3{margin-bottom:12px}
+.group ul{list-style:none;display:grid;gap:7px}
+.group li{font-size:14.5px;color:var(--soft);padding-left:17px;position:relative}
+.group li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;
+  border-radius:50%;background:var(--petrol);opacity:.45}
+
+.tint{background:var(--paper-2);border-block:1px solid var(--rule)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:46px}
+@media(max-width:880px){.two{grid-template-columns:1fr;gap:30px}}
+.claims{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:12px;overflow:hidden}
+.claim{background:var(--card);padding:24px 26px}
+.claim h3{margin-bottom:7px}
+.claim p{color:var(--soft);font-size:15px}
+
+.rate{display:flex;align-items:center;gap:22px;flex-wrap:wrap;background:var(--card);
+  border:1px solid var(--rule);border-radius:12px;padding:22px 26px}
+.rate .big{font-size:44px;font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--petrol)}
+.stars{color:var(--signal);letter-spacing:2px;font-size:14px}
+.revs{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px;margin-top:22px}
+.rev{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:25px;
+  display:flex;flex-direction:column;gap:13px}
+.rev p{font-size:15.5px;line-height:1.62}
+.rev footer{margin-top:auto;padding-top:13px;border-top:1px solid var(--rule);display:flex;
+  justify-content:space-between;gap:10px;font-size:12.5px;color:var(--soft)}
+.rev footer b{color:var(--ink);font-weight:600}
+
+.rows{border-top:1px solid var(--rule)}
+.rows>div{display:grid;grid-template-columns:118px 1fr;gap:16px;padding:15px 0;
+  border-bottom:1px solid var(--rule);font-size:15.5px}
+.rows dt{color:var(--soft);font-size:12.5px;font-family:"JetBrains Mono",monospace;
+  letter-spacing:.07em;text-transform:uppercase;padding-top:3px}
+@media(max-width:520px){.rows>div{grid-template-columns:1fr;gap:4px}}
+.map{aspect-ratio:4/3;border:1px solid var(--rule);border-radius:12px;overflow:hidden}
 .map iframe{width:100%;height:100%;border:0}
-form{display:grid;gap:12px}
-label{font-size:13.5px;color:var(--mut);font-weight:600}
-input,textarea{width:100%;padding:14px 16px;border-radius:11px;background:var(--bg3);border:1.5px solid var(--line);color:var(--fg);font:inherit;font-size:15px;transition:border-color .18s}
-input:focus,textarea:focus{outline:0;border-color:var(--acc)}
-input:user-invalid{border-color:#ef4444}
-textarea{resize:vertical;min-height:88px}
-.note{font-size:12.5px;color:var(--mut);line-height:1.5}
-.sent{display:none;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.4);color:#16a34a;border-radius:11px;padding:14px 16px;font-size:15px;font-weight:600;margin-bottom:14px}
-.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-.gal img{border-radius:var(--r);border:1px solid var(--line);aspect-ratio:4/3;object-fit:cover;width:100%;cursor:zoom-in;transition:transform .25s var(--ease)}
-.gal img:hover{transform:scale(1.02)}
-dialog{border:0;padding:0;background:transparent;max-width:min(94vw,1100px)}
-dialog::backdrop{background:rgba(0,0,0,.86);backdrop-filter:blur(4px)}
-dialog img{border-radius:var(--r);max-height:88vh;width:auto;margin:0 auto}
-footer{border-top:1px solid var(--line);padding:var(--s4) 0 120px;color:var(--mut);font-size:14px}
-.fgrid{display:flex;gap:var(--s3);flex-wrap:wrap;align-items:center;justify-content:space-between}
-footer a:hover{color:var(--acc)}
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:10px;padding:11px 14px;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s var(--ease)}
+
+form{display:grid;gap:12px;max-width:500px;margin-top:16px}
+label{font-size:12.5px;color:var(--soft);font-family:"JetBrains Mono",monospace;
+  letter-spacing:.06em;text-transform:uppercase}
+input,textarea{width:100%;padding:14px 15px;border-radius:8px;background:var(--card);border:1.5px solid var(--rule);
+  color:var(--ink);font:inherit;font-size:15.5px;transition:border-color .16s}
+input:focus,textarea:focus{outline:0;border-color:var(--petrol)}
+input:user-invalid{border-color:var(--signal)}
+textarea{min-height:92px;resize:vertical}
+.sent{display:none;padding:14px 15px;border:1.5px solid #1f9d5b;color:#1f9d5b;font-size:15px;
+  margin-top:14px;border-radius:8px}
+.fine{font-size:12.5px;color:var(--soft);line-height:1.5;max-width:52ch}
+
+footer.page{border-top:1px solid var(--rule);padding:36px 0 110px;color:var(--soft);font-size:14.5px}
+.fin{display:flex;gap:24px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+footer.page a:hover{color:var(--petrol)}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:80;display:none;gap:9px;padding:10px 13px;width:100%;
+  background:rgba(251,251,250,.97);backdrop-filter:blur(12px);border-top:1px solid var(--rule);
+  transform:translateY(115%);transition:transform .3s var(--ease)}
 .bar.on{transform:none}
-.bar .btn{flex:1;justify-content:center;padding:14px 12px;font-size:15px}
-@media(max-width:760px){.bar{display:flex}footer{padding-bottom:96px}}
-.rise{opacity:0;transform:translateY(22px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
-.rise.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rise{opacity:1;transform:none}html{scroll-behavior:auto}}
-:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:4px}
+.bar .btn{flex:1 1 0;min-width:0;justify-content:center;padding:14px 8px;white-space:nowrap}
+@media(max-width:760px){.bar{display:flex}footer.page{padding-bottom:88px}}
+
+.up{opacity:0;transform:translateY(22px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--petrol);outline-offset:3px;border-radius:4px}
 </style>
 </head>
 <body>
-<header id="hdr"><div class="wrap nav">
-  <div class="logo">ДНК <span>авто</span></div>
-  <a class="lnk" href="#services">Услуги</a>
-  <a class="lnk" href="#why">Почему мы</a>
-  <a class="lnk" href="#reviews">Отзывы</a>
-  <a class="lnk" href="#contacts">Контакты</a>
-  <a class="btn btn-a" href="tel:+73833549944">Позвонить</a>
+
+<header id="hd"><div class="w nav">
+  <div class="brand">ДНК <span>авто</span></div>
+  <a class="lk" href="#raboty">Что делаем</a>
+  <a class="lk" href="#podhod">Подход</a>
+  <a class="lk" href="#otzyvy">Отзывы</a>
+  <a class="lk" href="#kontakty">Контакты</a>
+  <a class="btn a" href="tel:+73833549944">Позвонить</a>
 </div></header>
+
 <main>
-<section class="hero split">
-  <div class="hero-bg"><img src="img/photo-01.jpg" alt="ДНК авто, Новосибирск" fetchpriority="high"></div>
-  <div class="wrap">
+<section class="hero">
+  <div class="w">
     <div>
-      <div class="badge">Диагностика перед ремонтом — обязательно</div>
+      <div class="eyebrow">Нижегородская 268 к3 · Октябрьский район</div>
       <h1>Сначала находим причину. <em>Потом чиним.</em></h1>
-      <p class="lead">Автосервис полного цикла на Нижегородской, 268 к3. Двигатели, ходовая, коробки, турбины, рулевые рейки — легковые, микроавтобусы и грузовые. Говорим, что нужно делать сейчас, а что подождёт до следующего раза.</p>
+      <p class="lead">Автосервис полного цикла: двигатели, ходовая, коробки, турбины, рулевые рейки —
+        легковые, микроавтобусы и грузовые. Плюс своя мойка и детейлинг. Говорим, что нужно делать
+        сейчас, а что спокойно подождёт.</p>
       <div class="cta">
-        <a class="btn btn-a" href="tel:+73833549944">+7 383 354-99-44</a>
-        <a class="btn btn-b" href="#services">Услуги и цены</a>
+        <a class="btn a" href="tel:+73833549944">+7 383 354-99-44</a>
+        <a class="btn b" href="#raboty">Все направления</a>
       </div>
-      <div class="stats"><div class="stat"><b>4.8 ★</b><span>222 отзыва в 2ГИС</span></div><div class="stat"><b>25+</b><span>видов работ</span></div><div class="stat"><b>Пн–Сб</b><span>Нижегородская, 268 к3</span></div><div class="stat"><b>Своя мойка</b><span>от 1500 ₽</span></div></div>
     </div>
-    <figure class="shot rise"><img src="img/photo-01.jpg" alt="ДНК авто, Новосибирск" fetchpriority="high"><figcaption>Ремонтная зона на Нижегородской, 268 к3</figcaption></figure>
+    <figure class="shot up">
+      <img src="photo/reception.jpg" alt="Приёмная ДНК авто на Нижегородской" fetchpriority="high">
+      <figcaption>Приёмная на Нижегородской, 268 к3</figcaption>
+    </figure>
+  </div>
+  <div class="w"><div class="facts">
+    <div><b>4.8</b><span>222 отзыва в 2ГИС</span></div>
+    <div><b>25+</b><span>видов работ</span></div>
+    <div><b>от 1500 ₽</b><span>комплексная мойка</span></div>
+    <div><b>Пн–Сб</b><span>9:00–19:00, сб до 14:00</span></div>
+  </div></div>
+</section>
+
+<section id="raboty">
+  <div class="w">
+    <div class="eyebrow up">Направления</div>
+    <h2 class="up">Один адрес вместо четырёх</h2>
+    <p class="soft up">К нам едут и с легковой, и с газелью, и просто помыться. Не нужно возить
+      машину по городу от специалиста к специалисту.</p>
+    <div class="groups">
+      <article class="group up"><h3>Диагностика</h3><ul>
+        <li>Компьютерная диагностика</li><li>Эндоскоп, замер показателей</li>
+        <li>Подбор автомобиля перед покупкой</li><li>Поиск причины, а не симптома</li></ul></article>
+      <article class="group up"><h3>Двигатель</h3><ul>
+        <li>Дизельные и бензиновые моторы</li><li>Шлифовка, расточка, гильзовка</li>
+        <li>Ремонт турбин</li><li>Дизельная топливная система</li></ul></article>
+      <article class="group up"><h3>Ходовая и трансмиссия</h3><ul>
+        <li>Стойки, рычаги, пневмоподвеска</li><li>Ремонт МКПП</li>
+        <li>Рулевые рейки, карданные валы</li><li>Развал-схождение, проточка дисков</li></ul></article>
+      <article class="group up"><h3>Обслуживание</h3><ul>
+        <li>Аппаратная замена масла</li><li>ТО по регламенту</li>
+        <li>Заправка кондиционера</li><li>Выхлопная система</li></ul></article>
+      <article class="group up"><h3>Мойка и детейлинг</h3><ul>
+        <li>Комплексная мойка от 1500 ₽</li><li>Химчистка салона</li>
+        <li>Полировка кузова</li><li>Аренда тёплого бокса</li></ul></article>
+      <article class="group up"><h3>Грузовые и автобусы</h3><ul>
+        <li>Грузовой автосервис</li><li>Ремонт автобусов</li>
+        <li>Мойка грузовиков</li><li>Запчасти для общественного транспорта</li></ul></article>
+    </div>
   </div>
 </section>
 
-<section id="services"><div class="wrap">
-  <h2 class="rise">Что мы ремонтируем</h2>
-  <p class="lead rise" style="margin-bottom:40px">От компьютерной диагностики до расточки блока. Один сервис вместо четырёх адресов по городу.</p>
-  <div class="grid g3"><article class="card rise"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></svg></div><h3>Компьютерная диагностика</h3><p>Считываем ошибки, замеряем показатели, смотрим эндоскопом. Показываем на приборе, что происходит с мотором, и объясняем человеческим языком.</p></article><article class="card rise"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M4 9h3l2-3h6l2 3h3v7h-3l-2 3H9l-2-3H4z"/><circle cx="12" cy="12.5" r="2"/></svg></div><h3>Ремонт двигателей</h3><p>Бензин и дизель. Шлифовка, расточка, гильзовка, опрессовка. Прежде чем предлагать капиталку, проверяем, нельзя ли обойтись малой кровью.</p></article><article class="card rise"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M6 3v4M18 3v4M6 21v-4M18 21v-4"/><path d="M6 7c4 0 4 3 0 3s-4 3 0 3 4 3 0 3M18 7c-4 0-4 3 0 3s4 3 0 3-4 3 0 3"/></svg></div><h3>Ходовая и подвеска</h3><p>Стойки, пневмоподвеска, рычаги, развал-схождение, проточка тормозных дисков. Всё, что стучит и вибрирует.</p></article><article class="card rise"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M5 20h14M7 20V9l5-5 5 5v11"/><path d="M10 13h4"/></svg></div><h3>ТО и замена масла</h3><p>Аппаратная замена масла в двигателе и коробке, фильтры, свечи, антифриз. Регламентное ТО без навязанных «доп. работ».</p></article><article class="card rise"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9l-3.8 3.8Z"/></svg></div><h3>МКПП, турбины, рейки, карданы</h3><p>Узкие работы, за которые берутся не все: ремонт МКПП, турбин, рулевых реек, карданных валов и дизельной топливной системы.</p></article><article class="card rise"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><h3>Грузовой сервис и автобусы</h3><p>Отдельное направление: грузовые авто, микроавтобусы, общественный транспорт. Есть тёплый бокс и запчасти.</p></article></div>
-</div></section>
-
-<section id="why" class="alt"><div class="wrap">
-  <h2 class="rise">Почему к нам возвращаются</h2>
-  <div class="grid g2"><article class="card rise"><h3>Не навязываем лишнее</h3><p>«Мастера с руками, не навязывают лишнее» — самая частая формулировка в наших отзывах. Скажем, что критично сейчас, а что можно спокойно отложить.</p></article><article class="card rise"><h3>Находим то, что не нашли другие</h3><p>К нам регулярно приезжают после двух-трёх сервисов, где причину так и не определили. Диагностика у нас — это работа, а не формальность перед счётом.</p></article><article class="card rise"><h3>Считаем ваши деньги</h3><p>«Оказалось, проблема решаема, и обошлось всё при минимальных затратах» — это отзыв, а не рекламный слоган. Дорогое решение предлагаем последним, а не первым.</p></article><article class="card rise"><h3>Легковые и грузовые в одном месте</h3><p>Если у вас парк из легковой и газели — не нужно искать два разных сервиса. Обслуживаем и то, и другое, и моем на своей мойке.</p></article></div>
-</div></section>
-
-
-
-<section id="reviews"><div class="wrap">
-  <h2 class="rise">Что говорят клиенты</h2>
-  <div class="rating-box rise">
-    <div><div class="big">4.8</div><div class="stars" style="font-size:18px">★★★★★</div></div>
-    <div style="flex:1;min-width:200px">
-      <b style="font-size:17px">222 отзывов в 2ГИС</b>
-      <p style="color:var(--mut);font-size:14.5px;margin-top:4px">Отзывы ниже настоящие, скопированы с карточки без правок.</p>
-    </div>
-    <a class="btn btn-b" href="https://2gis.ru/firm/70000001055759455" target="_blank" rel="noopener">Читать все</a>
-  </div>
-  <div class="grid g3"><article class="rev rise"><div class="stars">★★★★★</div><p>«Попал серьёзно, двигатель барахлил так, что думал — всё, пора новый искать. Приехал сюда по совету друга. И не зря! Оказалось, проблема решаема, и обошлось всё при минимальных затратах. Очень грамотный специалист, всё быстро диагностировал, объяснил. Не обманут и не разорят»</p><div class="who"><div class="av">A</div><div><b>Alexey Mikhaylov</b><small>27 мая 2026</small></div></div></article><article class="rev rise"><div class="stars">★★★★★</div><p>«Делал здесь полную диагностику подвески. Потом пригнал на ТО и замену масла в двигателе. Мастера с руками, не навязывают лишнее, скажут, что уже нужно делать и что на будущее. Цены доступны. Работой доволен, рекомендую»</p><div class="who"><div class="av">А</div><div><b>Анатолий Герасимов</b><small>9 июня 2026</small></div></div></article><article class="rev rise"><div class="stars">★★★★★</div><p>«Рады, что нашли этот сервис! Не раз обращались. Ребята ответственно подходят к своему делу! Разбираются, находят причины поломки! Была течь масла на RX350, думали, придётся менять кардан — предложили другое решение»</p><div class="who"><div class="av">Ю</div><div><b>Юлия Кузнецова</b><small>27 июля 2026</small></div></div></article><article class="rev rise"><div class="stars">★★★★★</div><p>«Отличная мойка. Давно мою тут машину, деньги = качество. Сегодня мыл комплекс + багажник, по времени очень быстро и без разводов. Всем советую»</p><div class="who"><div class="av">Г</div><div><b>Городской житель</b><small>27 июня 2026</small></div></div></article><article class="rev rise"><div class="stars">★★★★★</div><p>«Очень грамотный специалист, всё быстро диагностировал, объяснил, что случилось. Сделали качественно, машина летает. Однозначно рекомендую»</p><div class="who"><div class="av">М</div><div><b>Марат Пузиков</b><small>27 мая 2026</small></div></div></article><article class="rev rise" style="justify-content:center;border-style:dashed"><h3>Ещё 217 отзывов</h3><p style="color:var(--mut)">Мы не прячем и те, где нами были недовольны. Читайте всё как есть.</p><a class="btn btn-b" style="align-self:flex-start" href="https://2gis.ru/firm/70000001055759455" target="_blank" rel="noopener">Смотреть в 2ГИС</a></article></div>
-</div></section>
-
-<section id="contacts" class="alt"><div class="wrap">
-  <h2 class="rise">Как доехать</h2>
-  <div class="contact">
-    <div class="rise">
-      <ul class="info">
-        <li><svg class="ic" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          <div><div class="k">Адрес</div><div class="v">Нижегородская улица, 268 к3</div><div class="k" style="margin-top:4px">Октябрьский район, Новосибирск</div></div></li>
-        <li><svg class="ic" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
-          <div><div class="k">Телефон</div><a class="v" href="tel:+73833549944" style="display:block">+7 383 354-99-44</a><a class="v" href="tel:+79069957306" style="display:block">+7 906 995-73-06</a></div></li>
-        <li><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg><div><div class="k">Почта</div><a class="v" href="mailto:dnkauto54@yandex.ru">dnkauto54@yandex.ru</a></div></li>
-        <li><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-          <div><div class="k">Режим работы</div><div class="sched"><span>Пн–Пт</span><span class='v'>09:00–19:00</span><span>Сб</span><span class='v'>09:00–14:00</span><span>Вс</span><span class='v'>выходной</span></div></div></li>
-      </ul>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px">
-        <a class="btn btn-a" href="https://2gis.ru/firm/70000001055759455" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
-        <a class="btn btn-b" href="https://yandex.ru/maps/?rtext=~55.002321,82.97508&rtt=auto" target="_blank" rel="noopener">Маршрут в Яндексе</a>
+<section id="podhod" class="tint">
+  <div class="w two">
+    <div class="up">
+      <div class="eyebrow">Подход</div>
+      <h2>Почему к нам возвращаются</h2>
+      <div class="claims">
+        <div class="claim"><h3>Не навязываем лишнее</h3>
+          <p>«Мастера с руками, не навязывают лишнее» — самая частая формулировка в наших отзывах.
+            Скажем, что критично сейчас, а что можно спокойно отложить.</p></div>
+        <div class="claim"><h3>Ищем дешёвое решение первым</h3>
+          <p>«Оказалось, проблема решаема, и обошлось всё при минимальных затратах». Капиталка
+            и замена узла — последний вариант, а не первый.</p></div>
+        <div class="claim"><h3>Находим то, что не нашли другие</h3>
+          <p>К нам регулярно приезжают после двух-трёх сервисов, где причину так и не определили.
+            Диагностика у нас — работа, а не формальность перед счётом.</p></div>
       </div>
     </div>
-    <div class="rise"><div class="map">
-      <iframe loading="lazy" title="Карта: Нижегородская улица, 268 к3" src="https://yandex.ru/map-widget/v1/?ll=82.97508%2C55.002321&z=17&pt=82.97508,55.002321,pm2rdm"></iframe>
+    <div class="up">
+      <figure><img src="photo/bay.jpg" alt="Ремонтная зона ДНК авто" loading="lazy" decoding="async"
+                   style="border-radius:12px;border:1px solid var(--rule)"></figure>
+      <figure style="margin-top:18px"><img src="photo/wash.jpg" alt="Своя мойка" loading="lazy" decoding="async"
+                   style="border-radius:12px;border:1px solid var(--rule)">
+        <figcaption class="soft" style="padding-top:10px;font-size:13.5px">
+          Ремзона и своя мойка. Фото из карточки 2ГИС — снимали клиенты.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy">
+  <div class="w">
+    <div class="eyebrow up">Отзывы</div>
+    <div class="rate up">
+      <span class="big">4.8</span>
+      <div><div class="stars">★★★★★</div>
+        <div class="soft" style="font-size:14px;margin-top:4px">222 отзыва в 2ГИС · ниже дословно, без правок</div></div>
+      <a class="btn b" style="margin-left:auto" href="https://2gis.ru/firm/70000001055759455" target="_blank" rel="noopener">Читать все</a>
+    </div>
+    <div class="revs">
+      <article class="rev up"><div class="stars">★★★★★</div>
+        <p>Попал серьёзно, двигатель барахлил так, что думал — всё, пора новый искать. Оказалось,
+          проблема решаема, и обошлось всё при минимальных затратах. Всё быстро диагностировал,
+          объяснил. Не обманут и не разорят.</p>
+        <footer><b>Alexey Mikhaylov</b><span>27.05.2026</span></footer></article>
+      <article class="rev up"><div class="stars">★★★★★</div>
+        <p>Делал здесь полную диагностику подвески. Потом пригнал на ТО и замену масла. Мастера
+          с руками, не навязывают лишнее, скажут, что уже нужно делать и что на будущее.
+          Цены доступны.</p>
+        <footer><b>Анатолий Герасимов</b><span>09.06.2026</span></footer></article>
+      <article class="rev up"><div class="stars">★★★★★</div>
+        <p>Рады, что нашли этот сервис! Ребята ответственно подходят к своему делу, разбираются,
+          находят причины поломки. Была течь масла на RX350, думали, придётся менять кардан —
+          предложили другое решение.</p>
+        <footer><b>Юлия Кузнецова</b><span>27.07.2026</span></footer></article>
+      <article class="rev up"><div class="stars">★★★★★</div>
+        <p>Отличная мойка. Давно мою тут машину, деньги = качество. Сегодня мыл комплекс + багажник,
+          по времени очень быстро и без разводов. Всем советую.</p>
+        <footer><b>Городской житель</b><span>27.06.2026</span></footer></article>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty" class="tint">
+  <div class="w two">
+    <div class="up">
+      <div class="eyebrow">Контакты</div>
+      <h2>Как доехать</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>Нижегородская улица, 268 к3<br>
+          <span class="soft">Октябрьский район, Новосибирск</span></dd></div>
+        <div><dt>Телефоны</dt><dd class="mono">
+          <a href="tel:+73833549944" style="color:var(--petrol);display:block">+7 383 354-99-44</a>
+          <a href="tel:+79069957306" style="display:block">+7 906 995-73-06</a></dd></div>
+        <div><dt>Почта</dt><dd><a href="mailto:dnkauto54@yandex.ru">dnkauto54@yandex.ru</a></dd></div>
+        <div><dt>Режим</dt><dd class="mono">Пн–Пт 09:00–19:00<br>Сб 09:00–14:00<br>
+          <span class="soft">Вс — выходной</span></dd></div>
+      </div>
+      <div class="cta" style="margin-top:22px">
+        <a class="btn a" href="https://2gis.ru/firm/70000001055759455" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+        <a class="btn b" href="https://yandex.ru/maps/?rtext=~55.002321,82.97508&rtt=auto" target="_blank" rel="noopener">В Яндексе</a>
+      </div>
+      <h3 style="margin-top:38px">Записаться</h3>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Иван"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 913 000-00-00"></div>
+        <div><label for="m">Машина и что беспокоит</label><textarea id="m" name="message" placeholder="Ford Transit, дизель, троит на холодную и дымит…"></textarea></div>
+        <button class="btn a" type="submit" style="justify-content:center">Жду звонка</button>
+        <p class="fine">Нажимая кнопку, вы соглашаетесь на обработку своих контактов, чтобы мы могли
+          перезвонить. Больше ни для чего они не используются.</p>
+      </form>
+    </div>
+    <div class="up"><div class="map">
+      <iframe loading="lazy" title="Карта: Нижегородская, 268 к3"
+        src="https://yandex.ru/map-widget/v1/?ll=82.97508%2C55.002321&z=17&pt=82.97508,55.002321,pm2rdm"></iframe>
     </div></div>
   </div>
-</div></section>
-
-<section><div class="wrap" style="max-width:640px">
-  <h2 class="rise" style="text-align:center">Оставьте заявку</h2>
-  <p class="lead rise" style="text-align:center;margin:0 auto 32px">Опишите симптом — скажем, с чего начинать и сколько будет стоить диагностика.</p>
-  <div class="sent" id="sent"></div>
-  <form class="rise" id="frm" data-endpoint="" data-mail="dnkauto54@yandex.ru" novalidate>
-    <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Иван"></div>
-    <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 913 000-00-00"></div>
-    <div><label for="m">Что нужно сделать (необязательно)</label><textarea id="m" name="message" placeholder="Ford Transit, дизель, троит на холодную и дымит…"></textarea></div>
-    <button class="btn btn-a" type="submit" style="justify-content:center">Жду звонка</button>
-    <p class="note">Нажимая кнопку, вы соглашаетесь на обработку своих контактов, чтобы мы могли перезвонить. Больше ни для чего они не используются.</p>
-  </form>
-</div></section>
+</section>
 </main>
-<footer><div class="wrap fgrid">
-  <div><div class="logo" style="margin-bottom:8px">ДНК <span>авто</span></div><div>Нижегородская улица, 268 к3, Новосибирск · Пн–Пт 9:00–19:00, Сб 9:00–14:00</div></div>
-  <div style="display:flex;gap:20px;flex-wrap:wrap">
+
+<footer class="page"><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">ДНК <span>авто</span></div>
+    Нижегородская улица, 268 к3, Новосибирск · Пн–Пт 9:00–19:00, Сб 9:00–14:00</div>
+  <div style="display:flex;gap:22px;flex-wrap:wrap">
     <a href="tel:+73833549944">+7 383 354-99-44</a>
+    <a href="mailto:dnkauto54@yandex.ru">Написать</a>
     <a href="https://2gis.ru/firm/70000001055759455" target="_blank" rel="noopener">2ГИС</a>
   </div>
 </div></footer>
+
 <div class="bar" id="bar">
-  <a class="btn btn-a" href="tel:+73833549944">Позвонить</a>
-  <a class="btn btn-b" href="https://2gis.ru/firm/70000001055759455" target="_blank" rel="noopener">Маршрут</a>
+  <a class="btn a" href="tel:+73833549944">Позвонить</a>
+  <a class="btn b" href="https://2gis.ru/firm/70000001055759455" target="_blank" rel="noopener">Маршрут</a>
 </div>
-<dialog id="lb"><img alt=""></dialog>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "AutoRepair", "name": "ДНК авто", "description": "Автосервис полного цикла: диагностика, ремонт дизельных и бензиновых двигателей, ходовая, МКПП, турбины, рулевые рейки. Легковые и грузовые. 4.8 по 222 отзывам.", "telephone": "+73833549944", "address": {"@type": "PostalAddress", "streetAddress": "Нижегородская улица, 268 к3", "addressLocality": "Новосибирск", "addressRegion": "Новосибирская область", "addressCountry": "RU"}, "geo": {"@type": "GeoCoordinates", "latitude": 55.002321, "longitude": 82.97508}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "19:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "09:00", "closes": "14:00"}], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "222", "bestRating": "5"}, "sameAs": ["https://2gis.ru/firm/70000001055759455"], "review": [{"@type": "Review", "author": {"@type": "Person", "name": "Alexey Mikhaylov"}, "reviewRating": {"@type": "Rating", "ratingValue": "5"}, "reviewBody": "Попал серьёзно, двигатель барахлил так, что думал — всё, пора новый искать. Приехал сюда по совету друга. И не зря! Оказалось, проблема решаема, и обошлось всё при минимальных затратах. Очень грамотный специалист, всё быстро диагностировал, объяснил. Не обманут и не разорят"}, {"@type": "Review", "author": {"@type": "Person", "name": "Анатолий Герасимов"}, "reviewRating": {"@type": "Rating", "ratingValue": "5"}, "reviewBody": "Делал здесь полную диагностику подвески. Потом пригнал на ТО и замену масла в двигателе. Мастера с руками, не навязывают лишнее, скажут, что уже нужно делать и что на будущее. Цены доступны. Работой доволен, рекомендую"}, {"@type": "Review", "author": {"@type": "Person", "name": "Юлия Кузнецова"}, "reviewRating": {"@type": "Rating", "ratingValue": "5"}, "reviewBody": "Рады, что нашли этот сервис! Не раз обращались. Ребята ответственно подходят к своему делу! Разбираются, находят причины поломки! Была течь масла на RX350, думали, придётся менять кардан — предложили другое решение"}], "image": "img/photo-01.jpg", "email": "dnkauto54@yandex.ru"}</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"ДНК авто",
+"description":"Автосервис полного цикла в Октябрьском районе Новосибирска: диагностика, дизельные и бензиновые двигатели, ходовая, МКПП, турбины, рулевые рейки, своя мойка.",
+"image":"photo/reception.jpg","telephone":"+73833549944","email":"dnkauto54@yandex.ru",
+"address":{"@type":"PostalAddress","streetAddress":"Нижегородская улица, 268 к3","addressLocality":"Новосибирск","addressRegion":"Новосибирская область","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":55.002321,"longitude":82.97508},
+"openingHoursSpecification":[
+ {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"19:00"},
+ {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"09:00","closes":"14:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"222","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/70000001055759455"]}
+</script>
+
 <script>
-const hdr=document.getElementById('hdr'),bar=document.getElementById('bar');
-addEventListener('scroll',()=>{hdr.classList.toggle('on',scrollY>10);bar.classList.toggle('on',scrollY>620)},{passive:true});
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -60px'});
-document.querySelectorAll('.rise').forEach((el,i)=>{el.style.transitionDelay=(i%3*70)+'ms';io.observe(el)});
-const lb=document.getElementById('lb');
-document.querySelectorAll('.gal img').forEach(im=>im.addEventListener('click',()=>{lb.querySelector('img').src=im.src;lb.querySelector('img').alt=im.alt;lb.showModal()}));
-lb?.addEventListener('click',()=>lb.close());
-/* Заявка. Пока приём заявок не подключён — открывается почта.
-   Чтобы заявки приходили автоматически: зарегистрируйтесь на formspree.io,
-   создайте форму и вставьте её адрес в data-endpoint у <form>. Больше ничего менять не нужно. */
-const frm=document.getElementById('frm'),sent=document.getElementById('sent');
-frm.addEventListener('submit',async e=>{
-  e.preventDefault();
-  if(!frm.reportValidity())return;
-  const d=Object.fromEntries(new FormData(frm)),url=frm.dataset.endpoint,mail=frm.dataset.mail;
-  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(frm)});
-    if(r.ok){sent.textContent='Спасибо! Заявка принята, перезвоним в ближайшее время.';sent.style.display='block';frm.reset();return}}catch(_){}}
-  if(mail){location.href='mailto:'+mail+'?subject='+encodeURIComponent('Заявка с сайта — '+d.name)
-    +'&body='+encodeURIComponent('Имя: '+d.name+'\nТелефон: '+d.phone+'\nКомментарий: '+(d.message||'—'));
-    sent.textContent='Открылось окно почты — отправьте письмо, и мы перезвоним.';}
-  else{sent.textContent='Спасибо! Позвоните нам — так быстрее всего: +7 383 354-99-44';}
-  sent.style.display='block';
+const hd=document.getElementById('hd'),bar=document.getElementById('bar');
+addEventListener('scroll',()=>{hd.classList.toggle('on',scrollY>8);bar.classList.toggle('on',scrollY>620)},{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.1,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%3*70)+'ms';io.observe(el)});
+
+/* Заявка. Пока приём не подключён — открывается почта. Чтобы заявки приходили автоматически:
+   заведите форму на formspree.io и впишите её адрес в data-endpoint у <form>. */
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const d=Object.fromEntries(new FormData(f)),url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и подберём время.';ok.style.display='block';f.reset();return}}catch(_){}}
+  location.href='mailto:dnkauto54@yandex.ru?subject='+encodeURIComponent('Заявка с сайта — '+d.name)
+    +'&body='+encodeURIComponent('Имя: '+d.name+'\nТелефон: '+d.phone+'\nМашина и симптом: '+(d.message||'—'));
+  ok.textContent='Открылось окно почты — отправьте письмо. Или позвоните, так быстрее.';
+  ok.style.display='block';
 });
 </script>
 </body>

@@ -189,7 +189,8 @@ def _resolve_brief(args) -> dict:
     resolved = links.resolve(args.link, city=getattr(args, "city", None))
     if resolved["note"]:
         print(f"! {resolved['note']}", file=sys.stderr)
-    return brief_mod.build(resolved["item"], reviews_limit=args.reviews)
+    return brief_mod.build(resolved["item"], reviews_limit=args.reviews,
+                           photo_depth=getattr(args, "photo_depth", 250))
 
 
 def cmd_brief(args) -> int:
@@ -307,6 +308,8 @@ def build_parser() -> argparse.ArgumentParser:
     p_brief.add_argument("--reviews", type=int, default=30, help="сколько отзывов тянуть")
     p_brief.add_argument("--download-photos", metavar="DIR",
                          help="скачать фото бизнеса в папку")
+    p_brief.add_argument("--photo-depth", type=int, default=250,
+                         help="по скольким отзывам собирать фотографии")
     p_brief.add_argument("-o", "--out")
     p_brief.set_defaults(func=cmd_brief)
 
