@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Autobox54 — развал-схождение и ходовая на Широкой 40/1, Новосибирск</title>
+<meta name="description" content="Autobox54 на Широкой, 40/1: развал-схождение, ремонт ходовой, выхлопные системы, диагностика, замена масла. 5,0 из 5 по 304 отзывам в 2ГИС. Ежедневно 9:00–20:00, перерыв 13:00–14:00.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Autobox54 — развал-схождение и ходовая в Ленинском районе">
+<meta property="og:description" content="5,0 из 5 по 304 отзывам. Развал-схождение, ходовая, выхлоп. Широкая, 40/1.">
+<meta property="og:image" content="photo/shop.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230E1214'/><text x='16' y='22' font-size='14' font-family='Helvetica' font-weight='700' text-anchor='middle' fill='%2396D93F'>54</text></svg>">
+<link rel="stylesheet" href="../fonts/exo-2.css">
+<link rel="stylesheet" href="../fonts/ibm-plex-mono.css">
+<style>
+/* Точность и геометрия. Сервис живёт на развале-схождении — то есть на углах,
+   которые нельзя увидеть, но можно измерить. Отсюда чертёжная манера: тонкие
+   линии, настоящая схема углов, моноширинные цифры. Кислотная зелень взята
+   с пола их собственного цеха — единственное яркое пятно на странице. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0E1214; --bg-2:#151B1E; --card:#1B2226; --line:#242D31; --line-2:#33403f;
+  --fg:#EDF2F0; --fg-2:#9AA7A5; --fg-3:#697673;
+  --lime:#96D93F; --lime-dim:#5E8A28;
+  --wrap:1160px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--fg);
+  font:400 16.5px/1.72 "Exo 2",-apple-system,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(64px,9vw,124px) 0}
+h1,h2{font-family:"Exo 2",sans-serif;font-weight:200;letter-spacing:-.03em;
+  line-height:1.05;text-wrap:balance}
+h1{font-size:clamp(38px,6.4vw,88px)}
+h2{font-size:clamp(27px,3.9vw,52px)}
+h3{font-size:18.5px;font-weight:600;letter-spacing:-.01em;line-height:1.35}
+p{max-width:60ch}
+.tag{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.17em;
+  text-transform:uppercase;color:var(--fg-3)}
+.q2{color:var(--fg-2)}
+
+.btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15.5px;
+  padding:15px 26px;background:var(--lime);color:#0E1214;border-radius:2px;
+  transition:background .2s var(--ease),transform .2s}
+.btn:hover{background:#A9E85B;transform:translateY(-2px)}
+.btn.g{background:transparent;color:var(--fg);border:1px solid var(--line-2)}
+.btn.g:hover{border-color:var(--lime);color:var(--lime)}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:16px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(14,18,20,.92);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:10px 0}
+.nav{display:flex;align-items:center;gap:26px}
+.brand{margin-right:auto;font-weight:600;font-size:19px;letter-spacing:-.02em}
+.brand i{font-style:normal;color:var(--lime)}
+.lk{font-size:14.5px;color:var(--fg-2);transition:color .2s}
+.lk:hover{color:var(--lime)}
+@media(max-width:980px){.lk{display:none}}
+@media(max-width:420px){.nav{gap:12px}.btn{padding:12px 17px;font-size:14px}}
+
+.hero{padding-top:clamp(120px,16vw,200px);padding-bottom:clamp(38px,5vw,64px)}
+.hero h1{margin:20px 0 26px}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.hero .sub{font-size:clamp(16.5px,1.8vw,20px);color:var(--fg-2);max-width:47ch;line-height:1.62}
+.acts{display:flex;gap:13px;flex-wrap:wrap;margin-top:32px}
+
+/* Оценка — цифра, которую стоит показать крупно: 5,0 по 304 отзывам */
+.score{display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,4vw,54px);align-items:center;
+  margin-top:clamp(48px,6.5vw,86px);padding-top:28px;border-top:1px solid var(--line)}
+@media(max-width:620px){.score{grid-template-columns:1fr;gap:20px}}
+.score b{font-weight:200;font-size:clamp(64px,11vw,152px);letter-spacing:-.06em;line-height:.86;
+  color:var(--lime);font-variant-numeric:tabular-nums}
+.stars{display:flex;gap:5px;margin-bottom:14px}
+.stars svg{width:19px;height:19px;fill:var(--lime)}
+.score p{color:var(--fg-2);font-size:16.5px}
+
+.plate{overflow:hidden;background:var(--bg-2)}
+.plate img{width:100%;aspect-ratio:2/1;object-fit:cover}
+@media(max-width:700px){.plate img{aspect-ratio:4/3}}
+.cap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:11px;
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--fg-3)}
+
+/* Схема углов — объяснение для тех, кто впервые слышит слова «развал» и «схождение» */
+.angles{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,36px);
+  margin-top:clamp(34px,4.5vw,56px)}
+@media(max-width:760px){.angles{grid-template-columns:1fr;gap:26px}}
+.ang{background:var(--card);border:1px solid var(--line);padding:clamp(24px,3vw,34px)}
+.ang svg{width:100%;height:auto;display:block;margin-bottom:22px}
+.ang h3{margin-bottom:9px}
+.ang p{font-size:15.5px;color:var(--fg-2)}
+.ang .lbl{font-family:"IBM Plex Mono",monospace;font-size:10.5px;fill:var(--fg-3);letter-spacing:.08em}
+
+/* Симптомы — по ним человек узнаёт свою машину */
+.symp{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+  margin-top:clamp(34px,4.5vw,56px);border:1px solid var(--line)}
+.symp>div{background:var(--bg);padding:26px 22px}
+.symp b{display:block;font-family:"IBM Plex Mono",monospace;font-size:11.5px;
+  letter-spacing:.1em;color:var(--lime);margin-bottom:13px}
+.symp p{font-size:15px;color:var(--fg-2);line-height:1.6}
+@media(max-width:900px){.symp{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.symp{grid-template-columns:1fr}}
+
+.works{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(30px,5vw,72px);
+  margin-top:clamp(32px,4vw,54px);border-top:1px solid var(--line-2)}
+.works div{padding:16px 0;border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:16px;align-items:baseline;font-size:16px}
+.works em{font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:11.5px;
+  color:var(--fg-3);white-space:nowrap}
+@media(max-width:720px){.works{grid-template-columns:1fr}}
+
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px);
+  margin-top:clamp(34px,4.5vw,56px)}
+@media(max-width:760px){.g3{grid-template-columns:1fr;gap:24px}}
+.g3 img{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--bg-2)}
+.g3 figcaption{margin-top:12px;font-size:14.5px;color:var(--fg-2)}
+
+.said{background:var(--bg-2)}
+.bigq{font-weight:200;font-size:clamp(23px,3.5vw,44px);line-height:1.2;
+  letter-spacing:-.035em;max-width:20ch}
+.by{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--fg-3);margin-top:22px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,58px);
+  margin-top:clamp(40px,5.5vw,74px)}
+@media(max-width:820px){.pair{grid-template-columns:1fr;gap:32px}}
+.pair p{font-size:16px;color:var(--fg-2)}
+.pair cite{display:block;font-style:normal;font-family:"IBM Plex Mono",monospace;
+  font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-3);margin-top:13px}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,70px)}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
+.rows{border-top:1px solid var(--line-2);margin-top:28px}
+.rows>div{display:grid;grid-template-columns:118px 1fr;gap:18px;padding:15px 0;
+  border-bottom:1px solid var(--line);font-size:16px}
+.rows dt{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--fg-3);padding-top:5px}
+.rows a:hover{color:var(--lime)}
+@media(max-width:520px){.rows>div{grid-template-columns:1fr;gap:3px}}
+.map{aspect-ratio:16/10;background:var(--bg-2);overflow:hidden;border:1px solid var(--line)}
+.map iframe{width:100%;height:100%;border:0;filter:invert(.9) hue-rotate(180deg) saturate(.5)}
+form{margin-top:20px;display:grid;gap:15px}
+label{display:block;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--fg-3);margin-bottom:7px}
+input,textarea{width:100%;background:var(--bg);border:1px solid var(--line-2);color:var(--fg);
+  padding:13px 14px;font:400 16px/1.5 "Exo 2",sans-serif;border-radius:2px;transition:border-color .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--lime)}
+textarea{min-height:100px;resize:vertical}
+.fine{font-size:12.5px;color:var(--fg-3);line-height:1.6;max-width:52ch}
+.sent{display:none;padding:13px 15px;border:1px solid var(--lime-dim);
+  background:rgba(150,217,63,.08);font-size:15px;border-radius:2px}
+
+footer{border-top:1px solid var(--line);padding:34px 0 44px;font-size:14px;color:var(--fg-3)}
+.fin{display:flex;gap:26px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+footer a:hover{color:var(--lime)}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <nav class="w nav">
+    <a class="brand" href="#">AUTOBOX<i>54</i></a>
+    <a class="lk" href="#razval">Развал-схождение</a>
+    <a class="lk" href="#simptomy">Симптомы</a>
+    <a class="lk" href="#raboty">Работы</a>
+    <a class="lk" href="#otzyvy">Отзывы</a>
+    <a class="lk" href="#kontakty">Контакты</a>
+    <a class="btn" href="tel:+79930077951">Записаться</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Развал-схождение и ходовая · Широкая, 40/1 · Ленинский район</p>
+    <h1 class="up">Руль перестанет<br>тянуть <em>в сторону</em></h1>
+    <p class="sub up">Стенд, чистые боксы и мастера, которые выставляют углы до цифры,
+      а не «на глаз». Приезжайте с колёсами, которые едят резину, — уедете с ровной машиной.</p>
+    <div class="acts up">
+      <a class="btn" href="tel:+79930077951">+7 993 007-79-51
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="https://wa.me/79930077951" target="_blank" rel="noopener">Написать в WhatsApp</a>
+    </div>
+    <div class="score up">
+      <b>5,0</b>
+      <div>
+        <div class="stars" aria-label="5 из 5">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg>
+        </div>
+        <p>Ровно пять из пяти по 304 оценкам в 2ГИС — за всё время работы ни одной оценки
+          ниже пятёрки. Чаще всего в отзывах два слова: «чисто в боксе» и «руль больше не ведёт».</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="w up">
+    <div class="plate"><img src="photo/shop.jpg"
+      alt="Цех Autobox54: подъёмники и рабочие места" fetchpriority="high"></div>
+    <div class="cap"><span>Широкая, 40/1</span><span>Снимок клиента, 2ГИС</span></div>
+  </div>
+</section>
+
+<section id="razval">
+  <div class="w">
+    <p class="tag up">Что это вообще такое</p>
+    <h2 class="up" style="margin-top:16px">Развал и схождение —<br>это два разных угла</h2>
+    <p class="q2 up" style="margin-top:20px;font-size:17px">Слова знают все, а разницу —
+      почти никто. Объясняем за полминуты, чтобы вы понимали, за что платите.</p>
+    <div class="angles">
+      <div class="ang up">
+        <svg viewBox="0 0 260 150" role="img" aria-label="Схема: развал — наклон колеса внутрь или наружу, если смотреть спереди">
+          <line x1="20" y1="128" x2="240" y2="128" stroke="#33403f" stroke-width="1.5"/>
+          <g stroke="#697673" stroke-width="1.2" fill="none" stroke-dasharray="4 4">
+            <line x1="70" y1="26" x2="70" y2="128"/><line x1="190" y1="26" x2="190" y2="128"/>
+          </g>
+          <rect x="55" y="30" width="26" height="94" rx="4" fill="#96D93F" opacity=".9"
+                transform="rotate(-9 68 77)"/>
+          <rect x="179" y="30" width="26" height="94" rx="4" fill="#96D93F" opacity=".9"
+                transform="rotate(9 192 77)"/>
+          <text class="lbl" x="20" y="18">РАЗВАЛ · ВИД СПЕРЕДИ</text>
+          <text class="lbl" x="46" y="144">наклон внутрь</text>
+          <text class="lbl" x="168" y="144">наклон наружу</text>
+        </svg>
+        <h3>Развал</h3>
+        <p>Наклон колеса вбок, если смотреть на машину спереди. Ушёл развал — резина
+          стирается по одному краю, а машину может уводить.</p>
+      </div>
+      <div class="ang up">
+        <svg viewBox="0 0 260 150" role="img" aria-label="Схема: схождение — поворот колёс друг к другу, если смотреть сверху">
+          <line x1="130" y1="18" x2="130" y2="136" stroke="#33403f" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <rect x="62" y="34" width="18" height="76" rx="4" fill="#96D93F" opacity=".9"
+                transform="rotate(7 71 72)"/>
+          <rect x="180" y="34" width="18" height="76" rx="4" fill="#96D93F" opacity=".9"
+                transform="rotate(-7 189 72)"/>
+          <path d="M96 72h68" stroke="#697673" stroke-width="1.2" marker-start="url(#a)" marker-end="url(#a)"/>
+          <defs><marker id="a" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0 3h6M3 0l3 3-3 3" stroke="#697673" fill="none" stroke-width="1"/></marker></defs>
+          <text class="lbl" x="20" y="18">СХОЖДЕНИЕ · ВИД СВЕРХУ</text>
+          <text class="lbl" x="86" y="146">колёса смотрят друг на друга</text>
+        </svg>
+        <h3>Схождение</h3>
+        <p>Поворот колёс друг к другу, если смотреть сверху. Ушло схождение — резину
+          «пилит» поперёк, руль стоит криво, расход растёт.</p>
+      </div>
+    </div>
+    <p class="q2 up" style="margin-top:26px;font-size:15.5px">Оба угла проверяются на стенде
+      и выставляются в цифрах производителя. Но сначала — осмотр ходовой: на убитых
+      сайлентблоках развал не держится, и честнее сказать об этом до работы, а не после.</p>
+  </div>
+</section>
+
+<section id="simptomy">
+  <div class="w">
+    <p class="tag up">Когда пора</p>
+    <h2 class="up" style="margin-top:16px">Четыре признака,<br>что углы ушли</h2>
+    <div class="symp">
+      <div class="up"><b>01</b><p>Руль стоит криво, когда машина едет прямо.</p></div>
+      <div class="up"><b>02</b><p>На ровной дороге тянет вправо или влево, приходится держать.</p></div>
+      <div class="up"><b>03</b><p>Резина стёрта с одной стороны сильнее, чем с другой.</p></div>
+      <div class="up"><b>04</b><p>Вы только что меняли стойки, рычаги или наконечники.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="raboty">
+  <div class="w">
+    <p class="tag up">Работы</p>
+    <h2 class="up" style="margin-top:16px">Ходовая, выхлоп,<br>диагностика, свет</h2>
+    <div class="works">
+      <div class="up"><span>Развал-схождение</span><em>на стенде</em></div>
+      <div class="up"><span>Ремонт ходовой части</span><em>стойки, рычаги</em></div>
+      <div class="up"><span>Проточка тормозных дисков</span><em>без снятия ступицы</em></div>
+      <div class="up"><span>Компьютерная диагностика</span><em>по коду ошибки</em></div>
+      <div class="up"><span>Ремонт бензиновых двигателей</span><em>по машине</em></div>
+      <div class="up"><span>Ремонт выхлопных систем</span><em>сварка</em></div>
+      <div class="up"><span>Тюнинг выхлопной системы</span><em>по заказу</em></div>
+      <div class="up"><span>Замена масла и фильтров</span><em>ТО</em></div>
+      <div class="up"><span>Обслуживание кондиционера</span><em>сезонно</em></div>
+      <div class="up"><span>Установка и ремонт автооптики</span><em>фары, ДХО</em></div>
+      <div class="up"><span>Ремонт электронных систем</span><em>блоки, проводка</em></div>
+      <div class="up"><span>Шиномонтаж</span><em>по радиусу</em></div>
+    </div>
+    <div class="g3">
+      <figure class="up"><img src="photo/lift.jpg" alt="Автомобиль на подъёмнике в цехе Autobox54" loading="lazy" decoding="async">
+        <figcaption>«Все чётко, и чисто в боксе» — Александр Соболев.</figcaption></figure>
+      <figure class="up"><img src="photo/ramp.jpg" alt="Эстакада для регулировки углов установки колёс" loading="lazy" decoding="async">
+        <figcaption>Площадка для развала: ровная, с разметкой — иначе замер врёт.</figcaption></figure>
+      <figure class="up"><img src="photo/lounge.jpg" alt="Зона ожидания Autobox54" loading="lazy" decoding="async">
+        <figcaption>Зона ожидания с Wi-Fi: развал занимает около часа.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy" class="said">
+  <div class="w">
+    <p class="tag up">Отзывы · 5,0 из 5 по 304 оценкам в 2ГИС</p>
+    <blockquote class="up" style="margin-top:24px">
+      <p class="bigq">«Объездил весь город, пока не позвонил сюда»</p>
+      <p class="by">Александр Г. · 29 ноября 2025</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>Хочу от всей души отблагодарить ребят, что выставили развал! Объездил весь город,
+          пока не позвонил в Autobox54. На «Цэшке» теперь не ведёт руль и всё отлично.
+          Максимально рекомендую!</p>
+        <cite>Александр Г. · 29 ноября 2025</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Хорошее СТО, персонал вежливый, в боксах чистенько. Пригонял автомобиль супруги
+          вчера — устранили неисправность быстро. Буду ещё обращаться.</p>
+        <cite>Павел Мовчан · 13 октября 2025</cite>
+      </blockquote>
+    </div>
+    <div class="acts up" style="margin-top:40px">
+      <a class="btn g" href="https://2gis.ru/firm/70000001025742434" target="_blank" rel="noopener">
+        Все 304 отзыва в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty">
+  <div class="w split">
+    <div class="up">
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:16px">Широкая, 40/1</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>Широкая улица, 40/1<br><span class="q2">Ленинский район, Новосибирск</span></dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+79930077951">+7 993 007-79-51</a></dd></div>
+        <div><dt>WhatsApp</dt><dd><a href="https://wa.me/79930077951" target="_blank" rel="noopener">Написать в WhatsApp</a></dd></div>
+        <div><dt>Почта</dt><dd><a href="mailto:autobox054@gmail.com">autobox054@gmail.com</a></dd></div>
+        <div><dt>Режим</dt><dd>Ежедневно 9:00–20:00<br><span class="q2">перерыв 13:00–14:00</span></dd></div>
+        <div><dt>Оплата</dt><dd>Наличные, через банк</dd></div>
+      </div>
+      <div class="acts" style="margin-top:26px">
+        <a class="btn" href="tel:+79930077951">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/70000001025742434" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <iframe loading="lazy" title="Карта: Широкая улица, 40/1"
+          src="https://yandex.ru/map-widget/v1/?ll=82.840276%2C54.993942&z=17&pt=82.840276,54.993942,pm2rdm"></iframe>
+      </div>
+      <h2 style="font-size:clamp(22px,2.6vw,32px);margin-top:36px">Записаться</h2>
+      <div class="sent" id="ok"></div>
+      <!-- Заявка. Пока приём не подключён — открывается почта. Чтобы заявки приходили
+           автоматически: заведите форму на formspree.io и впишите адрес в data-endpoint. -->
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Иван"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 913 000-00-00"></div>
+        <div><label for="c">Машина</label><input id="c" name="car" placeholder="Mercedes C-класс, 2012"></div>
+        <div><label for="m">Что беспокоит</label><textarea id="m" name="message" placeholder="Тянет вправо после замены стоек, нужен развал"></textarea></div>
+        <button class="btn" type="submit">Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Нажимая кнопку, вы соглашаетесь на обработку своих контактов, чтобы мы
+          могли перезвонить. Больше ни для чего они не используются.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">AUTOBOX<i>54</i></div>
+    Широкая улица, 40/1, Новосибирск · ежедневно 9:00–20:00, перерыв 13:00–14:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+79930077951">+7 993 007-79-51</a>
+    <a href="https://wa.me/79930077951" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://2gis.ru/firm/70000001025742434" target="_blank" rel="noopener">2ГИС</a>
+  </div>
+</div></footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"Autobox54",
+"address":{"@type":"PostalAddress","streetAddress":"Широкая улица, 40/1","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":54.993942,"longitude":82.840276},
+"telephone":"+79930077951","email":"autobox054@gmail.com",
+"openingHoursSpecification":[
+ {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"09:00","closes":"13:00"},
+ {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"14:00","closes":"20:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"304","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/70000001025742434"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const d=Object.fromEntries(new FormData(f)),url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и согласуем время.';ok.style.display='block';f.reset();return}}catch(_){}}
+  location.href='mailto:autobox054@gmail.com?subject='+encodeURIComponent('Запись с сайта — '+d.name)
+    +'&body='+encodeURIComponent(d.name+', '+d.phone+'\n'+(d.car||'')+'\n\n'+(d.message||''));
+});
+</script>
+</body>
+</html>

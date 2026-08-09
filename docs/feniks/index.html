@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Феникс — автосервис и запчасти на Молодогвардейской 2, Новосибирск</title>
+<meta name="description" content="Автосервис «Феникс» на Молодогвардейской, 2: расточка, шлифовка и гильзовка двигателей, ультразвуковая мойка деталей, кузовной цех, авторазбор, шиномонтаж. Ежедневно 9:00–20:00. 4.8 по 259 отзывам.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Феникс — моторный цех и авторазбор в Первомайском районе">
+<meta property="og:description" content="Деталь восстанавливают, а не выбрасывают. Расточка, гильзовка, ультразвук.">
+<meta property="og:image" content="photo/ultrasonic.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23151A1D'/><text x='16' y='23' font-size='18' font-family='Helvetica' font-weight='700' text-anchor='middle' fill='%23B33A1A'>Ф</text></svg>">
+<link rel="stylesheet" href="../fonts/oswald.css">
+<link rel="stylesheet" href="../fonts/golos-text.css">
+<style>
+/* Механический цех. Всё, что здесь делают, — это вторая жизнь детали:
+   ультразвук, расточка, гильзовка, авторазбор. Отсюда холодный металл,
+   узкий гротеск в заголовках, жёсткие линейки и единственный тёплый цвет —
+   калёный металл, — который появляется только на номерах этапов. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --steel:#E6E8E9; --steel-2:#D9DCDE; --card:#F4F5F6; --dark:#151A1D; --dark-2:#1F262A;
+  --ink:#11161A; --ink-2:#4E575D; --ink-3:#828C93; --line:#C8CDD0; --line-2:#AEB5B9;
+  --ember:#B33A1A;
+  --wrap:1160px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--steel);color:var(--ink);
+  font:400 16.5px/1.72 "Golos Text",-apple-system,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(62px,8.5vw,118px) 0}
+h1,h2,.dsp{font-family:"Oswald","Golos Text",sans-serif;font-weight:300;
+  letter-spacing:-.005em;line-height:1.02;text-transform:uppercase;text-wrap:balance}
+h1{font-size:clamp(40px,7vw,98px)}
+h2{font-size:clamp(28px,4.2vw,56px)}
+h3{font-size:18px;font-weight:600;font-family:"Golos Text",sans-serif;line-height:1.38;text-transform:none}
+p{max-width:60ch}
+.tag{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
+.q2{color:var(--ink-2)}
+
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:"Oswald",sans-serif;
+  font-weight:500;font-size:15px;letter-spacing:.06em;text-transform:uppercase;
+  padding:15px 26px;background:var(--dark);color:var(--steel);
+  transition:background .2s var(--ease),transform .2s}
+.btn:hover{background:var(--ember);transform:translateY(-2px)}
+.btn.g{background:transparent;color:var(--ink);border:1px solid var(--line-2)}
+.btn.g:hover{background:var(--card);border-color:var(--ember);color:var(--ember)}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:16px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(230,232,233,.94);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:10px 0}
+.nav{display:flex;align-items:center;gap:26px}
+.brand{margin-right:auto;font-family:"Oswald",sans-serif;font-weight:500;font-size:21px;
+  letter-spacing:.1em;text-transform:uppercase}
+.brand i{font-style:normal;color:var(--ember)}
+.lk{font-size:14.5px;color:var(--ink-2);transition:color .2s}
+.lk:hover{color:var(--ember)}
+@media(max-width:980px){.lk{display:none}}
+@media(max-width:420px){.nav{gap:12px}.btn{padding:12px 16px;font-size:13.5px}}
+
+.hero{padding-top:clamp(118px,16vw,196px);padding-bottom:clamp(38px,5vw,62px)}
+.hero h1{margin:18px 0 26px}
+.hero h1 em{font-style:normal;color:var(--ember)}
+.hero .sub{font-size:clamp(16.5px,1.8vw,20px);color:var(--ink-2);max-width:48ch;line-height:1.64;
+  text-transform:none}
+.acts{display:flex;gap:13px;flex-wrap:wrap;margin-top:32px}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+  margin-top:clamp(46px,6vw,80px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.figs>div{background:var(--steel);padding:20px 18px 24px}
+.figs b{display:block;font-family:"Oswald",sans-serif;font-weight:300;
+  font-size:clamp(26px,3.2vw,42px);line-height:1;font-variant-numeric:tabular-nums}
+.figs span{display:block;margin-top:10px;font-size:12.5px;color:var(--ink-3);line-height:1.5}
+@media(max-width:700px){.figs{grid-template-columns:repeat(2,1fr)}}
+
+.plate{overflow:hidden;background:var(--steel-2)}
+.plate img{width:100%;aspect-ratio:2/1;object-fit:cover}
+@media(max-width:700px){.plate img{aspect-ratio:4/3}}
+.cap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:11px;
+  font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3)}
+
+/* Цикл восстановления — настоящая последовательность операций */
+.cycle{background:var(--dark);color:var(--steel);padding:clamp(30px,4.5vw,62px)}
+.cycle h2{color:var(--steel)}
+.cycle>p{color:#9AA4AA}
+.ops{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--dark-2);
+  margin-top:clamp(28px,3.6vw,46px);border:1px solid var(--dark-2)}
+.ops>div{background:var(--dark);padding:24px 20px 26px}
+.ops span{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ember)}
+.ops h3{margin:14px 0 8px;color:var(--steel)}
+.ops p{font-size:14px;color:#8E979D;line-height:1.6}
+@media(max-width:1000px){.ops{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.ops{grid-template-columns:1fr}}
+
+/* Направления — плотный список без карточек */
+.dirs{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(30px,5vw,72px);
+  margin-top:clamp(32px,4vw,54px);border-top:2px solid var(--ink)}
+.dirs div{padding:15px 0;border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:16px;align-items:baseline;font-size:16px}
+.dirs em{font-style:normal;font-size:12.5px;color:var(--ink-3);white-space:nowrap}
+@media(max-width:720px){.dirs{grid-template-columns:1fr}}
+
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px);
+  margin-top:clamp(34px,4.5vw,56px)}
+@media(max-width:760px){.g3{grid-template-columns:1fr;gap:24px}}
+.g3 img{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--steel-2)}
+.g3 figcaption{margin-top:12px;font-size:14.5px;color:var(--ink-2)}
+
+.said{background:var(--card)}
+.bigq{font-family:"Oswald",sans-serif;font-weight:300;font-size:clamp(24px,3.6vw,46px);
+  line-height:1.16;text-transform:uppercase;max-width:19ch}
+.by{font-size:13px;color:var(--ink-3);margin-top:22px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,58px);
+  margin-top:clamp(40px,5.5vw,74px)}
+@media(max-width:820px){.pair{grid-template-columns:1fr;gap:32px}}
+.pair p{font-size:16px;color:var(--ink-2)}
+.pair cite{display:block;font-style:normal;font-size:13px;color:var(--ink-3);margin-top:13px}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,70px)}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
+.rows{border-top:2px solid var(--ink);margin-top:28px}
+.rows>div{display:grid;grid-template-columns:112px 1fr;gap:18px;padding:15px 0;
+  border-bottom:1px solid var(--line);font-size:16px}
+.rows dt{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);padding-top:5px}
+.rows a:hover{color:var(--ember)}
+.rows .ph{display:flex;flex-direction:column;gap:3px}
+@media(max-width:520px){.rows>div{grid-template-columns:1fr;gap:3px}}
+.map{aspect-ratio:16/10;background:var(--steel-2);overflow:hidden;border:1px solid var(--line)}
+.map iframe{width:100%;height:100%;border:0}
+form{margin-top:20px;display:grid;gap:15px}
+label{display:block;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:7px}
+input,textarea{width:100%;background:var(--card);border:1px solid var(--line-2);color:var(--ink);
+  padding:13px 15px;font:400 16px/1.5 "Golos Text",sans-serif;transition:border-color .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--ember)}
+textarea{min-height:100px;resize:vertical}
+.fine{font-size:12.5px;color:var(--ink-3);line-height:1.6;max-width:52ch}
+.sent{display:none;padding:13px 15px;border:1px solid var(--ember);background:#F6E7E2;font-size:15px}
+
+footer{border-top:1px solid var(--line);padding:34px 0 44px;font-size:14px;color:var(--ink-3)}
+.fin{display:flex;gap:26px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+footer a:hover{color:var(--ember)}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <nav class="w nav">
+    <a class="brand" href="#">Феникс<i>.</i></a>
+    <a class="lk" href="#motor">Моторный цех</a>
+    <a class="lk" href="#napravleniya">Направления</a>
+    <a class="lk" href="#otzyvy">Отзывы</a>
+    <a class="lk" href="#kontakty">Контакты</a>
+    <a class="btn" href="tel:+79133761688">Позвонить</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Автосервис и запчасти · Молодогвардейская, 2 · Первомайский район</p>
+    <h1 class="up">Деталь чинят,<br>а не <em>выбрасывают</em></h1>
+    <p class="sub up">Расточка, шлифовка, гильзовка, ультразвуковая мойка. Там, где другие
+      говорят «под замену», здесь сначала считают, сколько будет стоить восстановить.</p>
+    <div class="acts up">
+      <a class="btn" href="tel:+79133761688">+7 913 376-16-88
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#napravleniya">Что делаем</a>
+    </div>
+    <div class="figs up">
+      <div><b>4,8</b><span>по 259 отзывам в 2ГИС</span></div>
+      <div><b>74</b><span>марки по запчастям</span></div>
+      <div><b>9–20</b><span>каждый день, без выходных</span></div>
+      <div><b>0 ₽</b><span>стоит услышать «этого делать не надо»</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="w up">
+    <div class="plate"><img src="photo/ultrasonic.jpg"
+      alt="Головка блока цилиндров в ультразвуковой мойке" fetchpriority="high"></div>
+    <div class="cap"><span>Ультразвуковая мойка деталей</span><span>Снимок клиента, 2ГИС</span></div>
+  </div>
+</section>
+
+<section id="motor">
+  <div class="w">
+    <div class="cycle up">
+      <p class="tag" style="color:var(--ember)">Моторный цех</p>
+      <h2 style="margin-top:16px">Пять операций,<br>после которых мотор ходит дальше</h2>
+      <p style="margin-top:20px;font-size:17px">Новый двигатель стоит как половина машины.
+        Поэтому сначала — разбор и замер: если геометрию можно вернуть, её возвращают.</p>
+      <div class="ops">
+        <div><span>01</span><h3>Разбор и дефектовка</h3>
+          <p>Снимаем, разбираем, смотрим, что именно ушло за допуск.</p></div>
+        <div><span>02</span><h3>Ультразвук</h3>
+          <p>Деталь моют в ультразвуковой ванне: нагар уходит из каналов, куда рукой не добраться.</p></div>
+        <div><span>03</span><h3>Опрессовка</h3>
+          <p>Ищем трещины и течи до сборки, а не после того, как мотор собран.</p></div>
+        <div><span>04</span><h3>Шлифовка и расточка</h3>
+          <p>Возвращаем плоскости головке и коленвалу, цилиндрам — ремонтный размер.</p></div>
+        <div><span>05</span><h3>Гильзовка</h3>
+          <p>Если цилиндр не спасти расточкой, ставим новую гильзу. Блок остаётся родным.</p></div>
+      </div>
+      <p style="margin-top:26px;font-size:15px">Отдельно — дизельные двигатели, турбины,
+        топливная аппаратура и ремонт инжекторов.</p>
+    </div>
+  </div>
+</section>
+
+<section id="napravleniya">
+  <div class="w">
+    <p class="tag up">Направления</p>
+    <h2 class="up" style="margin-top:16px">Сервис, кузов,<br>колёса, разбор</h2>
+    <p class="q2 up" style="margin-top:20px">Всё на одной площадке: и ремонт, и магазин
+      запчастей, и авторазбор. Если новой детали нет или она стоит неадекватно,
+      подбирают контрактную.</p>
+    <div class="dirs">
+      <div class="up"><span>Ремонт бензиновых двигателей</span><em>с разбором</em></div>
+      <div class="up"><span>Ремонт дизельных двигателей</span><em>с разбором</em></div>
+      <div class="up"><span>Ремонт турбин</span><em>по узлу</em></div>
+      <div class="up"><span>Ремонт инжекторов</span><em>топливная</em></div>
+      <div class="up"><span>Компьютерная диагностика</span><em>по коду ошибки</em></div>
+      <div class="up"><span>Ремонт ходовой части</span><em>стойки, рычаги</em></div>
+      <div class="up"><span>Проточка тормозных дисков</span><em>без снятия ступицы</em></div>
+      <div class="up"><span>Развал-схождение</span><em>на стенде</em></div>
+      <div class="up"><span>Ремонт рулевых реек</span><em>с восстановлением</em></div>
+      <div class="up"><span>Ремонт карданных валов</span><em>балансировка</em></div>
+      <div class="up"><span>Стартеры и генераторы</span><em>электрика</em></div>
+      <div class="up"><span>Ремонт выхлопных систем</span><em>сварка, тюнинг</em></div>
+      <div class="up"><span>Замена масла, аппаратная</span><em>ТО</em></div>
+      <div class="up"><span>Обслуживание кондиционера</span><em>сезонно</em></div>
+      <div class="up"><span>Кузовной ремонт и покраска</span><em>с геометрией</em></div>
+      <div class="up"><span>Установка и ремонт автостёкол</span><em>по стеклу</em></div>
+      <div class="up"><span>Шиномонтаж и ошиповка</span><em>по колесу</em></div>
+      <div class="up"><span>Хранение шин</span><em>по сезону</em></div>
+      <div class="up"><span>Детейлинг и полировка</span><em>по машине</em></div>
+      <div class="up"><span>Отогрев автомобилей</span><em>зимой</em></div>
+      <div class="up"><span>Авторазбор и контрактные запчасти</span><em>подбор</em></div>
+      <div class="up"><span>Скупка автомобилей на запчасти</span><em>оценка</em></div>
+      <div class="up"><span>Аренда тёплого бокса</span><em>по часам</em></div>
+      <div class="up"><span>Доставка запчастей</span><em>по городу</em></div>
+    </div>
+    <div class="g3">
+      <figure class="up"><img src="photo/head.jpg" alt="Головка блока цилиндров после мойки" loading="lazy" decoding="async">
+        <figcaption>Та же головка после ультразвука — перед замером и шлифовкой.</figcaption></figure>
+      <figure class="up"><img src="photo/lift.jpg" alt="Автомобиль на подъёмнике в цехе" loading="lazy" decoding="async">
+        <figcaption>«Приехал на развал утром без записи — приняли сразу» — Александр Балабанов.</figcaption></figure>
+      <figure class="up"><img src="photo/facade.jpg" alt="Здание автосервиса «Феникс»" loading="lazy" decoding="async">
+        <figcaption>Молодогвардейская, 2. Сервис, шиномонтаж и запчасти в одном здании.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy" class="said">
+  <div class="w">
+    <p class="tag up">Отзывы · 4,8 из 5 по 259 оценкам в 2ГИС</p>
+    <blockquote class="up" style="margin-top:24px">
+      <p class="bigq">«Не заявляют выдуманных неисправностей»</p>
+      <p class="by">Наталья Сальникова · 19 апреля 2026</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>Раньше я жила рядом, а теперь почти на другом конце города, но еду всё равно сюда.
+          Никогда не обманут, всё внимательно посмотрят и очень качественно сделают.
+          На многих СТО обманывают, особенно женщин. Сюда можно ехать без опаски,
+          всё прозрачно и честно.</p>
+        <cite>Студия «Дзынь» · 4 мая 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>На развал-схождение приехал утром без записи, приняли сразу. Мастер ещё подсказал,
+          что резина неравномерно изнашивается из-за старых сайлентблоков, но не настаивал
+          на замене тут же. Вежливо, профессионально.</p>
+        <cite>Александр Балабанов · 5 мая 2026</cite>
+      </blockquote>
+    </div>
+    <div class="acts up" style="margin-top:40px">
+      <a class="btn g" href="https://2gis.ru/firm/70000001020283303" target="_blank" rel="noopener">
+        Все 259 отзывов в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty">
+  <div class="w split">
+    <div class="up">
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:16px">Молодогвардейская, 2</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>Молодогвардейская улица, 2<br><span class="q2">Первомайский район, Новосибирск</span></dd></div>
+        <div><dt>Телефоны</dt><dd class="ph">
+          <a href="tel:+79133761688">+7 913 376-16-88</a>
+          <a href="tel:+79237054444">+7 923 705-44-44</a>
+          <a href="tel:+79231720777">+7 923 172-07-77</a></dd></div>
+        <div><dt>Режим</dt><dd>Ежедневно, 9:00–20:00</dd></div>
+        <div><dt>Оплата</dt><dd>Карта, наличные, перевод, QR-код</dd></div>
+        <div><dt>Ещё</dt><dd>Wi-Fi, аренда тёплого бокса, доставка запчастей</dd></div>
+      </div>
+      <div class="acts" style="margin-top:26px">
+        <a class="btn" href="tel:+79133761688">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/70000001020283303" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <iframe loading="lazy" title="Карта: Молодогвардейская улица, 2"
+          src="https://yandex.ru/map-widget/v1/?ll=83.072717%2C54.978424&z=17&pt=83.072717,54.978424,pm2rdm"></iframe>
+      </div>
+      <h2 style="font-size:clamp(22px,2.6vw,32px);margin-top:36px">Спросить цену</h2>
+      <div class="sent" id="ok"></div>
+      <!-- Заявка. Пока приём не подключён — предлагаем позвонить: почты в карточке 2ГИС нет.
+           Чтобы заявки приходили автоматически, заведите форму на formspree.io
+           и впишите её адрес в data-endpoint. -->
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Иван"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 913 000-00-00"></div>
+        <div><label for="c">Машина</label><input id="c" name="car" placeholder="Toyota Camry, 2.4, 2007"></div>
+        <div><label for="m">Что нужно</label><textarea id="m" name="message" placeholder="Мотор ест масло. Сколько будет стоить дефектовка и расточка?"></textarea></div>
+        <button class="btn" type="submit">Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Нажимая кнопку, вы соглашаетесь на обработку своих контактов, чтобы мы
+          могли перезвонить. Больше ни для чего они не используются.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">Феникс<i>.</i></div>
+    Молодогвардейская улица, 2, Новосибирск · ежедневно 9:00–20:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+79133761688">+7 913 376-16-88</a>
+    <a href="tel:+79237054444">+7 923 705-44-44</a>
+    <a href="https://2gis.ru/firm/70000001020283303" target="_blank" rel="noopener">2ГИС</a>
+  </div>
+</div></footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"Феникс, автосервис и магазин автозапчастей",
+"address":{"@type":"PostalAddress","streetAddress":"Молодогвардейская улица, 2","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":54.978424,"longitude":83.072717},
+"telephone":"+79133761688",
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"09:00","closes":"20:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"259","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/70000001020283303"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и назовём цену.';ok.style.display='block';f.reset();return}}catch(_){}}
+  /* Почты в карточке 2ГИС нет, поэтому запасной путь — звонок. */
+  ok.textContent='Почты у сервиса нет — позвоните, пожалуйста: +7 913 376-16-88.';
+  ok.style.display='block';
+});
+</script>
+</body>
+</html>

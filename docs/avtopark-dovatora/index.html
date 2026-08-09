@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Автопарк — автосервис на Доватора 11, Новосибирск</title>
+<meta name="description" content="Автосервис «Автопарк» на улице Доватора, 11. Диагностика бесплатно, скидка 10 % на запчасти. Двигатели, АКПП и МКПП, ходовая, кузовной ремонт, развал-схождение. 4.9 по 163 отзывам.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Автопарк — автосервис в Дзержинском районе">
+<meta property="og:description" content="Диагностика бесплатно, скидка 10 % на запчасти. Улица Доватора, 11.">
+<meta property="og:image" content="photo/sign.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23F6F2E9'/><text x='16' y='23' font-size='20' font-family='Georgia' text-anchor='middle' fill='%234E5B33'>А</text></svg>">
+<link rel="stylesheet" href="../fonts/literata.css">
+<link rel="stylesheet" href="../fonts/golos-text.css">
+<style>
+/* Письмо, а не витрина. Этот сервис в отзывах хвалят поимённо — приёмщика
+   Станислава и мастера Александра, — поэтому страница написана голосом
+   человека: книжная антиква, тёплая бумага, узкая колонка, минимум блоков. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#F6F2E9; --paper-2:#EDE8DB; --card:#FBF9F4;
+  --ink:#1B1A17; --ink-2:#57544C; --ink-3:#8B877C; --line:#DCD5C4; --line-2:#C6BDA6;
+  --olive:#4E5B33; --ochre:#A9762B;
+  --wrap:1040px; --narrow:660px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);
+  font:400 17px/1.78 "Golos Text",-apple-system,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+.n{max-width:var(--narrow)}
+section{padding:clamp(64px,9vw,120px) 0}
+h1,h2,.dsp{font-family:"Literata",Georgia,serif;font-weight:300;letter-spacing:-.022em;
+  line-height:1.14;text-wrap:balance}
+h1{font-size:clamp(34px,5.2vw,68px)}
+h2{font-size:clamp(26px,3.4vw,44px)}
+h3{font-size:19px;font-weight:600;font-family:"Golos Text",sans-serif;line-height:1.35}
+p{max-width:60ch}
+.tag{font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ochre)}
+.q2{color:var(--ink-2)}
+
+.btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:16px;
+  padding:15px 26px;background:var(--olive);color:#FBF9F4;border-radius:4px;
+  transition:background .2s var(--ease),transform .2s}
+.btn:hover{background:#3E4A26;transform:translateY(-2px)}
+.btn.g{background:transparent;color:var(--ink);border:1px solid var(--line-2)}
+.btn.g:hover{background:var(--card);border-color:var(--olive);color:var(--olive)}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:18px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(246,242,233,.93);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:11px 0}
+.nav{display:flex;align-items:center;gap:26px}
+.brand{margin-right:auto;font-family:"Literata",Georgia,serif;font-weight:400;
+  font-size:22px;letter-spacing:-.01em}
+.lk{font-size:14.5px;color:var(--ink-2);transition:color .2s}
+.lk:hover{color:var(--olive)}
+@media(max-width:940px){.lk{display:none}}
+@media(max-width:420px){.nav{gap:12px}.btn{padding:12px 17px;font-size:14.5px}}
+
+.hero{padding-top:clamp(122px,17vw,200px);padding-bottom:clamp(40px,5vw,66px)}
+.hero h1{margin:20px 0 26px}
+.hero h1 em{font-style:italic;color:var(--olive)}
+.hero .sub{font-size:clamp(17px,1.8vw,20.5px);color:var(--ink-2);max-width:46ch;line-height:1.68}
+.acts{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+
+/* Две вещи, которые в отзывах повторяют чаще всего */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+  margin-top:clamp(50px,7vw,86px);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.two>div{background:var(--card);padding:clamp(26px,3.4vw,40px)}
+.two b{display:block;font-family:"Literata",Georgia,serif;font-weight:300;
+  font-size:clamp(30px,3.6vw,46px);letter-spacing:-.03em;line-height:1;color:var(--olive)}
+.two h3{margin:16px 0 8px}
+.two p{font-size:15.5px;color:var(--ink-2)}
+@media(max-width:700px){.two{grid-template-columns:1fr}}
+
+.plate{overflow:hidden;background:var(--paper-2);border-radius:6px}
+.plate img{width:100%;aspect-ratio:21/9;object-fit:cover}
+@media(max-width:700px){.plate img{aspect-ratio:4/3}}
+.cap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:11px;
+  font-size:12.5px;color:var(--ink-3)}
+
+/* Письмо — узкая колонка с висячим инициалом */
+.letter{max-width:var(--narrow)}
+.letter p{font-size:18px;line-height:1.8;color:var(--ink-2);margin-top:22px}
+.letter p:first-of-type{margin-top:26px}
+.letter p:first-of-type::first-letter{float:left;font-family:"Literata",Georgia,serif;
+  font-size:66px;line-height:.82;font-weight:300;color:var(--olive);margin:6px 12px 0 0}
+.sign{margin-top:34px;padding-top:22px;border-top:1px solid var(--line);
+  font-size:15px;color:var(--ink-3)}
+
+/* Работы — простой список с ровными линейками */
+.list{margin-top:clamp(32px,4vw,54px);border-top:1px solid var(--line-2)}
+.list>div{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:baseline;
+  padding:18px 0;border-bottom:1px solid var(--line);transition:padding-left .28s var(--ease)}
+.list>div:hover{padding-left:9px}
+.list p{font-size:15px;color:var(--ink-2);margin-top:5px;max-width:54ch}
+.list em{font-style:normal;font-size:13px;color:var(--ink-3);white-space:nowrap}
+@media(max-width:560px){.list>div{grid-template-columns:1fr;gap:6px}}
+
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,28px);
+  margin-top:clamp(34px,4.5vw,56px)}
+@media(max-width:660px){.g2{grid-template-columns:1fr;gap:24px}}
+.g2 img{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--paper-2);border-radius:6px}
+.g2 figcaption{margin-top:12px;font-size:14.5px;color:var(--ink-2)}
+
+.said{background:var(--paper-2)}
+.bigq{font-family:"Literata",Georgia,serif;font-weight:300;font-size:clamp(22px,3.2vw,40px);
+  line-height:1.32;letter-spacing:-.02em;max-width:21ch}
+.by{font-size:13.5px;color:var(--ink-3);margin-top:22px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,58px);
+  margin-top:clamp(40px,5.5vw,72px)}
+@media(max-width:820px){.pair{grid-template-columns:1fr;gap:32px}}
+.pair p{font-size:16.5px;color:var(--ink-2)}
+.pair cite{display:block;font-style:normal;font-size:13.5px;color:var(--ink-3);margin-top:13px}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,70px)}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
+.rows{border-top:1px solid var(--line-2);margin-top:28px}
+.rows>div{display:grid;grid-template-columns:112px 1fr;gap:18px;padding:15px 0;
+  border-bottom:1px solid var(--line);font-size:16px}
+.rows dt{font-size:12.5px;color:var(--ink-3);padding-top:5px}
+.rows a:hover{color:var(--olive)}
+@media(max-width:520px){.rows>div{grid-template-columns:1fr;gap:3px}}
+.map{aspect-ratio:16/10;background:var(--paper-2);overflow:hidden;border-radius:6px}
+.map iframe{width:100%;height:100%;border:0}
+form{margin-top:20px;display:grid;gap:15px}
+label{display:block;font-size:12.5px;color:var(--ink-3);margin-bottom:7px}
+input,textarea{width:100%;background:var(--card);border:1px solid var(--line-2);color:var(--ink);
+  padding:13px 15px;font:400 16px/1.5 "Golos Text",sans-serif;border-radius:4px;transition:border-color .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--olive)}
+textarea{min-height:100px;resize:vertical}
+.fine{font-size:12.5px;color:var(--ink-3);line-height:1.6;max-width:52ch}
+.sent{display:none;padding:13px 15px;border:1px solid var(--olive);background:#E9EDE0;
+  font-size:15px;border-radius:4px}
+
+footer{border-top:1px solid var(--line);padding:34px 0 44px;font-size:14px;color:var(--ink-3)}
+.fin{display:flex;gap:26px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+footer a:hover{color:var(--olive)}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--olive);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <nav class="w nav">
+    <a class="brand" href="#">Автопарк</a>
+    <a class="lk" href="#diagnostika">Диагностика</a>
+    <a class="lk" href="#raboty">Работы</a>
+    <a class="lk" href="#otzyvy">Отзывы</a>
+    <a class="lk" href="#kontakty">Контакты</a>
+    <a class="btn" href="tel:+73833105555">Позвонить</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Автосервис · улица Доватора, 11 · Дзержинский район, Новосибирск</p>
+    <h1 class="up">Сначала посмотрим,<br>и <em>только потом</em><br>назовём сумму</h1>
+    <p class="sub up">Диагностика бесплатная. Скидка 10 % на запчасти. Двигатели, коробки,
+      ходовая и кузов — в одном месте, рядом с рядами магазинов автозапчастей.</p>
+    <div class="acts up">
+      <a class="btn" href="tel:+73833105555">+7 383 310-55-55
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#raboty">Что делаем</a>
+    </div>
+    <div class="two up">
+      <div><b>0 ₽</b><h3>Диагностика</h3>
+        <p>Посмотреть машину и сказать, что с ней, — бесплатно. Платите только за работу,
+          на которую согласились.</p></div>
+      <div><b>−10 %</b><h3>На запчасти</h3>
+        <p>Приёмщик помогает подобрать деталь и сразу даёт скидку. Магазины запчастей —
+          в соседних зданиях, ждать поставку не нужно.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="w up">
+    <div class="plate"><img src="photo/sign.jpg"
+      alt="Вывеска автосервиса «Автопарк» на улице Доватора" fetchpriority="high"></div>
+    <div class="cap"><span>Улица Доватора, 11</span><span>Снимок клиента, 2ГИС</span></div>
+  </div>
+</section>
+
+<section id="diagnostika">
+  <div class="w">
+    <div class="letter up">
+      <p class="tag">Как здесь принято</p>
+      <h2 style="margin-top:16px">Объясняют<br>без заумных слов</h2>
+      <p>Если прочитать сто шестьдесят три отзыва подряд, окажется, что люди хвалят
+        не оборудование и не цены. Они называют имена: приёмщика Станислава, который
+        помогает с запчастями и объясняет всё по-человечески, и мастера Александра,
+        который разбирает по деталям, что и зачем меняется.</p>
+      <p>Так и работаем. Сначала смотрим машину и говорим, что нашли. Отдельно —
+        что нужно делать сейчас, а что подождёт до следующего раза. Ничего не навязываем:
+        если стук в подвеске не опасен ещё полгода, так и скажем.</p>
+      <p>Оплата любая — карта, наличные, перевод, QR-код или через банк.
+        Есть аренда тёплого бокса, если хотите повозиться с машиной сами.</p>
+      <p class="sign">Автосервис «Автопарк», улица Доватора, 11 · 4,9 из 5 по 163 отзывам в 2ГИС</p>
+    </div>
+  </div>
+</section>
+
+<section id="raboty">
+  <div class="w">
+    <p class="tag up">Работы</p>
+    <h2 class="up" style="margin-top:16px">Двигатель, коробка,<br>ходовая, кузов</h2>
+    <div class="list">
+      <div class="up"><div><h3>Ремонт АКПП и МКПП</h3>
+        <p>Коробку меняют и перебирают. «Нужно было поменять КПП — сделали быстро и дёшево».</p></div>
+        <em>с диагностикой</em></div>
+      <div class="up"><div><h3>Ремонт бензиновых двигателей</h3>
+        <p>От замены навесного до разбора. Мастера сильны именно по моторам.</p></div>
+        <em>по машине</em></div>
+      <div class="up"><div><h3>Ремонт ходовой части</h3>
+        <p>Стойки, рычаги, сайлентблоки, колодки. «Теперь ничего не бренькает на ямах».</p></div>
+        <em>по машине</em></div>
+      <div class="up"><div><h3>Развал-схождение</h3>
+        <p>После замены деталей подвески — обязательно, иначе резина съедается неровно.</p></div>
+        <em>на стенде</em></div>
+      <div class="up"><div><h3>Кузовной ремонт</h3>
+        <p>Вмятины, сварка, подготовка. Отдельно смотрим, что дешевле — править или менять.</p></div>
+        <em>по осмотру</em></div>
+      <div class="up"><div><h3>Замена масла, аппаратная</h3>
+        <p>Меняем полностью, а не сливаем самотёком. Заодно смотрим фильтры и уровни.</p></div>
+        <em>ТО</em></div>
+      <div class="up"><div><h3>Заправка кондиционера</h3>
+        <p>С проверкой на утечки — иначе фреон уйдёт через месяц.</p></div>
+        <em>сезонно</em></div>
+      <div class="up"><div><h3>Аренда тёплого бокса</h3>
+        <p>Если хотите сделать что-то сами, но не на морозе во дворе.</p></div>
+        <em>по часам</em></div>
+    </div>
+    <div class="g2">
+      <figure class="up"><img src="photo/engine.jpg" alt="Двигатель Volkswagen в работе" loading="lazy" decoding="async">
+        <figcaption>Мотор разбирают до той детали, из-за которой всё началось, — и не дальше.</figcaption></figure>
+      <figure class="up"><img src="photo/hub.jpg" alt="Ступица и тормозной механизм со снятым колесом" loading="lazy" decoding="async">
+        <figcaption>Ходовая: показываем снятые детали и объясняем, почему их пора менять.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy" class="said">
+  <div class="w">
+    <p class="tag up">Отзывы · 4,9 из 5 по 163 оценкам в 2ГИС</p>
+    <blockquote class="up" style="margin-top:24px">
+      <p class="bigq">«Всё объяснил по-человечески, без заумных слов»</p>
+      <p class="by">Давид Комиссаров · 11 августа 2025</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>Делал здесь ремонт ходовой и заправку кондиционера у мастера Александра —
+          всё на высшем уровне, объяснил все детали. Отдельное спасибо приёмщику Станиславу:
+          помог с выбором запчастей и сразу дал скидку 10 %. Честные, не навязывают лишнего.</p>
+        <cite>Никита Вельмякин · 1 августа 2025</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Решил обслужить ходовую часть и отдал свою машину сюда. Ребята управились
+          довольно быстро, также установили новые колодки. По цене мне всё понравилось,
+          теперь ничего не бренькает на ямах.</p>
+        <cite>Влад Патарая · 5 августа 2025</cite>
+      </blockquote>
+    </div>
+    <div class="acts up" style="margin-top:40px">
+      <a class="btn g" href="https://2gis.ru/firm/70000001035370648" target="_blank" rel="noopener">
+        Все 163 отзыва в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty">
+  <div class="w split">
+    <div class="up">
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:16px">Доватора, 11</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>улица Доватора, 11, 1 этаж<br><span class="q2">Дзержинский район, Новосибирск</span></dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+73833105555">+7 383 310-55-55</a></dd></div>
+        <div><dt>Почта</dt><dd><a href="mailto:ip.yundin.vs@gmail.com">ip.yundin.vs@gmail.com</a></dd></div>
+        <div><dt>Режим</dt><dd>Пн–Пт 9:00–18:00<br>Сб–Вс 10:00–17:00</dd></div>
+        <div><dt>Оплата</dt><dd>Карта, наличные, перевод, QR-код, через банк</dd></div>
+      </div>
+      <div class="acts" style="margin-top:26px">
+        <a class="btn" href="tel:+73833105555">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/70000001035370648" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <iframe loading="lazy" title="Карта: улица Доватора, 11"
+          src="https://yandex.ru/map-widget/v1/?ll=82.99703%2C55.047409&z=17&pt=82.99703,55.047409,pm2rdm"></iframe>
+      </div>
+      <h2 style="font-size:clamp(22px,2.4vw,30px);margin-top:36px">Записаться</h2>
+      <div class="sent" id="ok"></div>
+      <!-- Заявка. Пока приём не подключён — открывается почта. Чтобы заявки приходили
+           автоматически: заведите форму на formspree.io и впишите адрес в data-endpoint. -->
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Иван"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 913 000-00-00"></div>
+        <div><label for="c">Машина</label><input id="c" name="car" placeholder="Volkswagen Passat, 2011"></div>
+        <div><label for="m">Что беспокоит</label><textarea id="m" name="message" placeholder="Пинается коробка при переключении на вторую"></textarea></div>
+        <button class="btn" type="submit">Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Нажимая кнопку, вы соглашаетесь на обработку своих контактов, чтобы мы
+          могли перезвонить. Больше ни для чего они не используются.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">Автопарк</div>
+    улица Доватора, 11, Новосибирск · Пн–Пт 9:00–18:00, Сб–Вс 10:00–17:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+73833105555">+7 383 310-55-55</a>
+    <a href="mailto:ip.yundin.vs@gmail.com">Написать</a>
+    <a href="https://2gis.ru/firm/70000001035370648" target="_blank" rel="noopener">2ГИС</a>
+  </div>
+</div></footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"Автопарк, автосервис",
+"address":{"@type":"PostalAddress","streetAddress":"улица Доватора, 11","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":55.047409,"longitude":82.99703},
+"telephone":"+73833105555","email":"ip.yundin.vs@gmail.com",
+"openingHoursSpecification":[
+ {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"},
+ {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"10:00","closes":"17:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"163","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/70000001035370648"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const d=Object.fromEntries(new FormData(f)),url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и согласуем время.';ok.style.display='block';f.reset();return}}catch(_){}}
+  location.href='mailto:ip.yundin.vs@gmail.com?subject='+encodeURIComponent('Запись с сайта — '+d.name)
+    +'&body='+encodeURIComponent(d.name+', '+d.phone+'\n'+(d.car||'')+'\n\n'+(d.message||''));
+});
+</script>
+</body>
+</html>
