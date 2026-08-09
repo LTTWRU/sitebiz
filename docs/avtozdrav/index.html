@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>АвтоЗдрав — СТО на Волочаевской 64а, Новосибирск</title>
-<meta name="description" content="СТО «АвтоЗдрав» на Волочаевской, 64а: диагностика, двигатель, ходовая, АКПП, развал-схождение, шиномонтаж, гибриды, предпусковые подогреватели. Сервисная книжка на каждую машину. 4.6 по 128 отзывам.">
+<meta name="description" content="СТО «АвтоЗдрав» на Волочаевской, 64а: диагностика, двигатель, ходовая, АКПП, развал-схождение, шиномонтаж, гибриды, предпусковые подогреватели. Сервисная книжка на каждую машину: записи остаются между вами и сервисом. 4.6 по 128 отзывам.">
 <meta name="robots" content="noindex,nofollow">
 <meta property="og:title" content="АвтоЗдрав — СТО в Дзержинском районе Новосибирска">
-<meta property="og:description" content="Каждой машине заводят сервисную книжку: видно, когда и что делали.">
+<meta property="og:description" content="Каждой машине заводят сервисную книжку: видно, когда и что делали. Записи никуда не передаются.">
 <meta property="og:image" content="brand/logo@2x.png">
 <link rel="icon" href="brand/icon.png" type="image/png">
 <link rel="apple-touch-icon" href="brand/icon.png">
@@ -104,6 +104,21 @@ header.on .logo img{width:104px}
 .rec .next i{font-style:normal;color:var(--green);font-weight:700}
 @media(max-width:820px){.rec{grid-template-columns:1fr 1fr;gap:6px 18px;padding:16px 20px}
   .rec .did{grid-column:1/-1}.rec .next{grid-column:1/-1}}
+
+/* КОНФИДЕНЦИАЛЬНОСТЬ — записи о машине остаются между клиентом и сервисом.
+   Стоит сразу после примера книжки: именно там у человека и возникает вопрос
+   «а куда потом уходит вся эта история про мою машину». */
+.privacy{display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,3vw,30px);
+  margin-top:clamp(20px,2.6vw,30px);padding:clamp(24px,3vw,34px);
+  background:var(--green-soft);border-radius:12px;border-left:4px solid var(--green)}
+.privacy>svg{width:32px;height:32px;stroke:var(--green);fill:none;stroke-width:1.5;flex:none}
+.privacy h3{color:var(--green);margin-bottom:10px}
+.privacy p{font-size:15.5px;color:var(--ink-2)}
+.privacy ul{margin-top:14px;list-style:none;display:grid;gap:8px}
+.privacy li{position:relative;padding-left:24px;font-size:15px;color:var(--ink-2)}
+.privacy li::before{content:"";position:absolute;left:2px;top:9px;width:9px;height:9px;
+  border-radius:50%;background:var(--green)}
+@media(max-width:620px){.privacy{grid-template-columns:1fr;gap:14px}}
 
 /* ПРИЁМ — ответ на единственную низкую оценку «не оправдано дорого» */
 .flow{counter-reset:s;margin-top:clamp(30px,4vw,50px);border-top:2px solid var(--blue)}
@@ -264,7 +279,8 @@ footer a:hover{color:var(--blue)}
     <h2 class="up" style="margin-top:14px">Видно, когда<br>и что делали</h2>
     <p class="q2 up" style="margin-top:20px;font-size:17.5px">Это обычная бумажная книжка,
       которую мы заводим на вашу машину и заполняем после каждого визита. Она остаётся у вас
-      и очень выручает при продаже: покупателю видно, что за машиной следили.</p>
+      и очень выручает при продаже: покупателю видно, что за машиной следили. Кому её
+      показывать — решаете только вы.</p>
     <div class="book up">
       <div class="book-h"><b>Так выглядит запись</b><span>Пример заполнения</span></div>
       <div class="rec"><dt>14.03.2026</dt><div class="km">128 400 км</div>
@@ -279,6 +295,31 @@ footer a:hover{color:var(--blue)}
       <div class="rec"><dt>21.11.2026</dt><div class="km">142 100 км</div>
         <div class="did">Установка предпускового подогревателя, промывка радиатора печки</div>
         <div class="next">К зиме <i>готова</i></div></div>
+    </div>
+
+    <div class="privacy up">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2.5l7.5 3v5.4c0 4.6-3 8.4-7.5 10.6-4.5-2.2-7.5-6-7.5-10.6V5.5z"/>
+        <path d="M9.6 12.2l1.8 1.8 3.4-3.6"/>
+      </svg>
+      <div>
+        <h3>Эти записи никуда не уходят</h3>
+        <p>История вашей машины — внутреннее дело между вами и сервисом. Мы ведём её,
+          чтобы в следующий раз не гадать, что и когда делали, а не для того,
+          чтобы кому-то её показывать.</p>
+        <ul>
+          <li>Книжка бумажная и остаётся у вас на руках. Второй экземпляр записи — в нашем
+            заказ-наряде, в сервисе.</li>
+          <li>Мы не передаём данные о вас и вашей машине страховым компаниям, дилерам,
+            автосалонам, банкам и любым другим третьим лицам.</li>
+          <li>Не продаём базу, не отдаём в сервисы проверки истории автомобиля,
+            не рассылаем рекламу.</li>
+          <li>Телефон нужен ровно для одного — позвонить вам по вашей машине.</li>
+          <li>Захотите — выдадим копию всех записей или уничтожим их по вашей просьбе.</li>
+        </ul>
+        <p style="margin-top:14px;font-size:14.5px;color:var(--ink-3)">Показать книжку
+          покупателю при продаже машины — ваше решение и только ваше.</p>
+      </div>
     </div>
   </div>
 </section>
