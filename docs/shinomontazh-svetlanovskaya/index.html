@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Koltsov Motors — шиномонтаж на Светлановской, 2/2, Новосибирск</title>
+<meta name="description" content="Шиномонтажная мастерская Koltsov Motors на Светлановской, 2/2: переобувка, ремонт порезов, правка и сварка дисков, полимерная порошковая окраска, хранение шин, выкуп и продажа б/у резины, заправка кондиционера. 5,0 по 96 отзывам, номинант премии 2ГИС 2026. Ежедневно 10:00–21:00.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Koltsov Motors — можно даже не приезжать самому">
+<meta property="og:description" content="5,0 по 96 отзывам. Переобувка, правка и покраска дисков, хранение. Светлановская, 2/2.">
+<meta property="og:image" content="photo/night.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2314171A'/><text x='16' y='23' font-size='16' font-family='Helvetica' font-weight='700' text-anchor='middle' fill='%233FBF8F'>KM</text></svg>">
+<link rel="stylesheet" href="../fonts/manrope.css">
+<link rel="stylesheet" href="../fonts/ibm-plex-mono.css">
+<style>
+/* «Отправили курьером покрышки, машину привезли на эвакуаторе — ребята
+   организовали полный сервис». Человек ни разу не приехал сам, и всё
+   получилось. Это редкость, и это главный сюжет страницы. Ночной фон —
+   потому что работают до девяти вечера, и половина заездов вечерние. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#14171A; --bg-2:#1B1F23; --card:#20252A;
+  --mint:#3FBF8F; --mint-2:#63D6A9; --mint-soft:rgba(63,191,143,.12);
+  --text:#EAEEEC; --text-2:#A5B0AB; --text-3:#74807B;
+  --line:#2A3035; --line-2:#3A424A;
+  --wrap:1100px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);
+  font:400 16.5px/1.74 Manrope,-apple-system,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(58px,8vw,108px) 0}
+h1,h2{font-family:Manrope,-apple-system,sans-serif;font-weight:800;
+  line-height:1.06;letter-spacing:-.045em;text-wrap:balance}
+h1{font-size:clamp(33px,5.4vw,70px)}
+h2{font-size:clamp(26px,3.5vw,45px)}
+h3{font-family:Manrope,sans-serif;font-size:18.5px;font-weight:700;line-height:1.34;letter-spacing:-.02em}
+p{max-width:60ch}
+em{font-style:normal;color:var(--mint)}
+.tag{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--mint)}
+.q2{color:var(--text-2)}
+
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:Manrope,sans-serif;
+  font-weight:700;font-size:15.5px;padding:15px 26px;background:var(--mint);color:#0B1512;
+  border-radius:6px;transition:background .22s var(--ease),transform .22s}
+.btn:hover{background:var(--mint-2);transform:translateY(-2px)}
+.btn.g{background:transparent;color:var(--text);border:1px solid var(--line-2)}
+.btn.g:hover{border-color:var(--mint);color:var(--mint)}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:16px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(20,23,26,.94);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:10px 0}
+.nav{display:flex;align-items:center;gap:26px}
+.brand{margin-right:auto;font-family:Manrope,sans-serif;font-weight:800;
+  font-size:20px;letter-spacing:-.02em;line-height:1.1}
+.brand s{display:block;text-decoration:none;font-family:"IBM Plex Mono",monospace;font-size:9px;
+  font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--mint);margin-top:3px}
+.lk{font-size:14.5px;color:var(--text-2);transition:color .2s}
+.lk:hover{color:var(--mint)}
+@media(max-width:1000px){.lk{display:none}}
+@media(max-width:420px){.nav{gap:12px}.btn{padding:12px 16px;font-size:14px}}
+
+.hero{padding-top:clamp(120px,16vw,192px);padding-bottom:clamp(34px,5vw,58px)}
+.hero h1{margin:18px 0 24px}
+.hero .sub{font-size:clamp(16.5px,1.8vw,19.5px);color:var(--text-2);max-width:47ch;line-height:1.68}
+.acts{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,40px);
+  margin-top:clamp(42px,6vw,74px);padding-top:26px;border-top:1px solid var(--line)}
+.figs b{display:block;font-family:Manrope,sans-serif;font-weight:800;
+  font-size:clamp(24px,3vw,39px);letter-spacing:-.055em;line-height:1;font-variant-numeric:tabular-nums}
+.figs span{display:block;margin-top:10px;font-size:12.5px;color:var(--text-3);line-height:1.5}
+@media(max-width:700px){.figs{grid-template-columns:repeat(2,1fr)}}
+
+.plate{overflow:hidden;background:var(--bg-2);border-radius:8px}
+.plate img{width:100%;aspect-ratio:21/9;object-fit:cover}
+@media(max-width:700px){.plate img{aspect-ratio:4/3}}
+.cap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:11px;
+  font-size:12.5px;color:var(--text-3)}
+
+/* Три способа отдать нам колёса — включая тот, где вы вообще не приезжаете */
+.ways{counter-reset:wy;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+  margin-top:clamp(32px,4.4vw,52px);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.ways>div{background:var(--bg-2);padding:clamp(24px,3vw,34px)}
+.ways>div::before{counter-increment:wy;content:"0" counter(wy);display:block;
+  font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.16em;color:var(--mint);
+  margin-bottom:16px}
+.ways b{display:block;font-family:Manrope,sans-serif;font-size:18px;font-weight:800;
+  letter-spacing:-.03em;margin-bottom:11px}
+.ways p{font-size:15px;color:var(--text-2)}
+@media(max-width:860px){.ways{grid-template-columns:1fr}}
+
+/* Порошковая окраска и правка — то, ради чего к ним везут диски */
+.disks{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--mint);
+  border-radius:8px;padding:clamp(26px,4vw,52px);margin-top:clamp(32px,4.4vw,52px)}
+.disks ul{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:14px 32px;margin-top:24px}
+.disks li{font-size:15.5px;color:var(--text-2);padding-left:20px;position:relative}
+.disks li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;
+  background:var(--mint);border-radius:50%}
+@media(max-width:660px){.disks ul{grid-template-columns:1fr}}
+
+.price{margin-top:clamp(30px,4vw,50px);border-top:2px solid var(--mint)}
+.price>div{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:baseline;
+  padding:19px 0;border-bottom:1px solid var(--line);transition:padding-left .28s var(--ease)}
+.price>div:hover{padding-left:9px}
+.price p{font-size:14.5px;color:var(--text-2);margin-top:5px;max-width:58ch}
+.price b{font-family:"IBM Plex Mono",monospace;font-size:12px;white-space:nowrap;color:var(--text-3);
+  font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+@media(max-width:560px){.price>div{grid-template-columns:1fr;gap:6px}}
+
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px);
+  margin-top:clamp(32px,4.5vw,54px)}
+@media(max-width:760px){.g3{grid-template-columns:1fr;gap:24px}}
+.g3 img{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--bg-2);border-radius:8px}
+.g3 figcaption{margin-top:12px;font-size:14.5px;color:var(--text-2)}
+
+.said{background:var(--bg-2)}
+.bigq{font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(21px,3vw,38px);
+  line-height:1.18;letter-spacing:-.045em;max-width:23ch}
+.by{font-size:13.5px;color:var(--text-3);margin-top:22px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,58px);
+  margin-top:clamp(38px,5.5vw,70px)}
+@media(max-width:820px){.pair{grid-template-columns:1fr;gap:32px}}
+.pair p{font-size:16px;color:var(--text-2)}
+.pair cite{display:block;font-style:normal;font-size:13.5px;color:var(--text-3);margin-top:13px}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,70px)}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
+.rows{border-top:2px solid var(--mint);margin-top:26px}
+.rows>div{display:grid;grid-template-columns:118px 1fr;gap:18px;padding:15px 0;
+  border-bottom:1px solid var(--line);font-size:16px}
+.rows dt{font-size:12.5px;color:var(--text-3);padding-top:4px}
+.rows a:hover{color:var(--mint)}
+@media(max-width:520px){.rows>div{grid-template-columns:1fr;gap:3px}}
+.map{aspect-ratio:16/10;background:var(--bg-2);overflow:hidden;border-radius:8px}
+.map iframe{width:100%;height:100%;border:0}
+form{margin-top:20px;display:grid;gap:15px}
+label{display:block;font-size:12.5px;color:var(--text-3);margin-bottom:7px}
+input,textarea{width:100%;background:var(--card);border:1px solid var(--line-2);color:var(--text);
+  padding:13px 15px;font:400 16px/1.5 Manrope,sans-serif;border-radius:6px;transition:border-color .2s}
+input::placeholder,textarea::placeholder{color:var(--text-3)}
+input:focus,textarea:focus{outline:none;border-color:var(--mint)}
+textarea{min-height:100px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fine{font-size:12.5px;color:var(--text-3);line-height:1.6;max-width:52ch}
+.sent{display:none;padding:13px 15px;border:1px solid var(--mint);background:var(--mint-soft);
+  font-size:15px;border-radius:6px}
+.sent a{color:var(--mint);text-decoration:underline}
+
+footer{border-top:1px solid var(--line);padding:34px 0 44px;font-size:14px;color:var(--text-3)}
+.fin{display:flex;gap:26px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+footer a:hover{color:var(--mint)}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:8px;padding:9px 12px;
+  background:rgba(20,23,26,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  width:100%;max-width:100vw}
+.bar a{flex:1 1 0;min-width:0;white-space:nowrap;text-align:center;justify-content:center;
+  padding:13px 10px;font-size:15px}
+@media(max-width:760px){.bar{display:flex}body{padding-bottom:70px}}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--mint);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <nav class="w nav">
+    <a class="brand" href="#">KOLTSOV MOTORS<s>Шиномонтаж · Светлановская, 2/2</s></a>
+    <a class="lk" href="#sposoby">Как отдать колёса</a>
+    <a class="lk" href="#diski">Диски</a>
+    <a class="lk" href="#raboty">Работы</a>
+    <a class="lk" href="#otzyvy">Отзывы</a>
+    <a class="lk" href="#kontakty">Контакты</a>
+    <a class="btn" href="tel:+79930039999">Записаться</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Шиномонтажная мастерская · Светлановская, 2/2 · Заельцовский район</p>
+    <h1 class="up">Можно даже<br><em>не приезжать самому</em></h1>
+    <p class="sub up">Один клиент прислал покрышки курьером, а машину привёз эвакуатор —
+      потому что на ней стояла летняя резина. Мы собрали всё сами. Так тоже можно:
+      скажите, что у вас есть, остальное организуем.</p>
+    <div class="acts up">
+      <a class="btn" href="tel:+79930039999">+7 993 003-99-99
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#diski">Покраска дисков</a>
+    </div>
+    <div class="figs up">
+      <div><b>5,0</b><span>по 96 отзывам в 2ГИС</span></div>
+      <div><b>2026</b><span>номинант премии 2ГИС</span></div>
+      <div><b>10–21</b><span>каждый день, включая выходные</span></div>
+      <div><b>Хранение</b><span>второй комплект живёт у нас</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="w up">
+    <div class="plate"><img src="photo/night.jpg"
+      alt="Мастерская Koltsov Motors вечером, машины у бокса" fetchpriority="high"></div>
+    <div class="cap"><span>Светлановская, 2/2</span><span>Работаем до девяти вечера — заезжают после работы</span></div>
+  </div>
+</section>
+
+<section id="sposoby">
+  <div class="w">
+    <p class="tag up">Как отдать колёса</p>
+    <h2 class="up" style="margin-top:14px">Три способа,<br>и один без вас</h2>
+    <p class="q2 up" style="margin-top:20px;font-size:17px">Обычно шиномонтаж — это когда вы
+      везёте машину, ждёте и везёте обратно. У нас необязательно так.</p>
+    <div class="ways">
+      <div class="up"><b>Приехать самому</b>
+        <p>Классика: звоните, договариваемся на время и переобуваем. Есть запись,
+          чтобы не стоять в общей очереди.</p></div>
+      <div class="up"><b>Оставить машину</b>
+        <p>Отдали ключи и уехали по делам. Позвоним, когда всё готово, — а второй комплект
+          можно сразу оставить на хранение.</p></div>
+      <div class="up"><b>Не приезжать вообще</b>
+        <p>Резину пришлите курьером, машину — эвакуатором. Соберём, поставим,
+          отдадим. Так уже было, и работает.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="diski">
+  <div class="w">
+    <p class="tag up">Диски</p>
+    <h2 class="up" style="margin-top:14px">Диск не выбрасывают —<br>его чинят и красят</h2>
+    <div class="disks up">
+      <p class="q2" style="font-size:17px">Правка после ямы, сварка трещин и полимерная
+        порошковая окраска. Порошок запекается, поэтому покрытие держится лучше обычной
+        краски и не боится реагентов.</p>
+      <ul>
+        <li>Правка и прокатка литья и штамповки</li>
+        <li>Сварка трещин и сколов с проверкой на герметичность</li>
+        <li>Полимерная порошковая окраска в выбранный цвет</li>
+        <li>Балансировка после любой работы с диском</li>
+        <li>Выкуп б/у шин и продажа хорошей бывшей в употреблении резины</li>
+        <li>Сезонное хранение комплекта с записью к сроку</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="raboty">
+  <div class="w">
+    <p class="tag up">Работы</p>
+    <h2 class="up" style="margin-top:14px">Что делаем</h2>
+    <div class="price">
+      <div class="up"><div><h3>Переобувка и балансировка</h3>
+        <p>Снять, разбортировать, поставить, отбалансировать. По записи —
+          и без очереди на улице.</p></div>
+        <b>по радиусу</b></div>
+      <div class="up"><div><h3>Ремонт порезов и проколов</h3>
+        <p>Жгут, латка или камера — выбираем по месту повреждения и говорим цену заранее.</p></div>
+        <b>по колесу</b></div>
+      <div class="up"><div><h3>Правка и прокатка дисков</h3>
+        <p>Литьё и штамповка. После ямы биение в руле уходит.</p></div>
+        <b>по диску</b></div>
+      <div class="up"><div><h3>Сварка дисков</h3>
+        <p>Завариваем трещину, зачищаем шов, проверяем на герметичность.</p></div>
+        <b>по диску</b></div>
+      <div class="up"><div><h3>Полимерная порошковая окраска</h3>
+        <p>Запекание в печи, ровное покрытие. Комплект выглядит как новый.</p></div>
+        <b>по комплекту</b></div>
+      <div class="up"><div><h3>Хранение шин</h3>
+        <p>Второй комплект остаётся у нас до сезона. К сроку позвоним и запишем.</p></div>
+        <b>за сезон</b></div>
+      <div class="up"><div><h3>Продажа и выкуп б/у шин</h3>
+        <p>Подберём комплект под машину и бюджет, старый выкупим.</p></div>
+        <b>по размеру</b></div>
+      <div class="up"><div><h3>Заправка кондиционера</h3>
+        <p>Обслуживание климатической системы — заодно с колёсами, чтобы не ездить
+          во второе место.</p></div>
+        <b>сезонно</b></div>
+      <div class="up"><div><h3>Сварочные работы</h3>
+        <p>Мелкая сварка по кузову и креплениям.</p></div>
+        <b>по объёму</b></div>
+    </div>
+    <div class="g3">
+      <figure class="up"><img src="photo/x6.jpg" alt="Автомобиль на домкратах во время переобувки" loading="lazy" decoding="async">
+        <figcaption>Работаем и с крупными машинами, и с премиум-классом.</figcaption></figure>
+      <figure class="up"><img src="photo/wheel.jpg" alt="Колесо с фирменным колпаком после установки" loading="lazy" decoding="async">
+        <figcaption>Колёса собираем аккуратно — колпаки и датчики на месте.</figcaption></figure>
+      <figure class="up"><img src="photo/work.jpg" alt="Мастер работает с колесом автомобиля" loading="lazy" decoding="async">
+        <figcaption>Обслуживаем на месте, не гоняя машину по городу.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy" class="said">
+  <div class="w">
+    <p class="tag up">Отзывы · 5,0 из 5 по 96 оценкам в 2ГИС</p>
+    <blockquote class="up" style="margin-top:22px">
+      <p class="bigq">«Отправили курьером покрышки, машину привезли на эвакуаторе.
+        Ребята организовали полный сервис»</p>
+      <p class="by">Юрий Р · 9 января 2026</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>Вежливые, общительные, доброжелательные и отзывчивые. Можно довериться, однозначно.
+          Дали профессиональную консультацию. Очень понравилось, что не пытаются обмануть —
+          просто сталкивались с таким на других станциях.</p>
+        <cite>Юрий Р · 9 января 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Пять из пяти по 96 отзывам. За всё время в карточке 2ГИС нет ни одной оценки
+          ниже пятёрки — и это при том, что шиномонтаж считают местом,
+          где ругаются чаще всего.</p>
+        <cite>Данные карточки 2ГИС на 10 августа 2026</cite>
+      </blockquote>
+    </div>
+    <div class="g3">
+      <figure class="up"><img src="photo/merc.jpg" alt="Mercedes у мастерской во время переобувки" loading="lazy" decoding="async">
+        <figcaption>Машины клиентов — от рабочих до представительских.</figcaption></figure>
+      <figure class="up"><img src="photo/lounge.jpg" alt="Зона ожидания мастерской" loading="lazy" decoding="async">
+        <figcaption>Есть где подождать, пока идёт работа.</figcaption></figure>
+      <figure class="up"><img src="photo/honda.jpg" alt="Спортивный автомобиль у вывески Koltsov Motors" loading="lazy" decoding="async">
+        <figcaption>Светлановская, 2/2 — заезд прямо с улицы.</figcaption></figure>
+    </div>
+    <div class="acts up" style="margin-top:38px">
+      <a class="btn g" href="https://2gis.ru/firm/70000001082507563" target="_blank" rel="noopener">
+        Все 96 отзывов в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty">
+  <div class="w split">
+    <div class="up">
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:14px">Светлановская, 2/2</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>Светлановская улица, 2/2<br><span class="q2">Заельцовский район, Новосибирск</span></dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+79930039999">+7 993 003-99-99</a></dd></div>
+        <div><dt>Режим</dt><dd>Ежедневно, 10:00–21:00</dd></div>
+        <div><dt>Почта</dt><dd><a href="mailto:koltsov-motors@yandex.ru">koltsov-motors@yandex.ru</a></dd></div>
+        <div><dt>Запись</dt><dd>По телефону — так не придётся ждать в очереди</dd></div>
+        <div><dt>Оплата</dt><dd>Наличные, перевод с карты, QR-код</dd></div>
+      </div>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="tel:+79930039999">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/70000001082507563" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <iframe loading="lazy" title="Карта: Светлановская улица, 2/2"
+          src="https://yandex.ru/map-widget/v1/?ll=82.91405%2C55.072026&z=16&text=Новосибирск%2C%20Светлановская%20улица%2C%202%2F2"></iframe>
+      </div>
+      <h2 style="font-size:clamp(22px,2.6vw,32px);margin-top:34px">Записаться</h2>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Юрий"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 913 000-00-00"></div>
+        <div><label for="c">Машина и размер</label><input id="c" name="car" placeholder="BMW X6, 275/40 R20"></div>
+        <div><label for="m">Что нужно</label><textarea id="m" name="message" placeholder="Переобуться и покрасить диски"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cmp">Компания</label><input id="cmp" name="company" tabindex="-1" autocomplete="off"></div>
+        <button class="btn" type="submit">Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Нажимая кнопку, вы соглашаетесь на обработку своих контактов, чтобы мы
+          могли перезвонить. Больше ни для чего они не используются.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">KOLTSOV MOTORS<s>Шиномонтаж · Светлановская, 2/2</s></div>
+    Светлановская улица, 2/2, Новосибирск · ежедневно 10:00–21:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+79930039999">+7 993 003-99-99</a>
+    <a href="mailto:koltsov-motors@yandex.ru">koltsov-motors@yandex.ru</a>
+    <a href="https://2gis.ru/firm/70000001082507563" target="_blank" rel="noopener">2ГИС</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+79930039999">Позвонить</a>
+  <a class="btn g" href="#raboty">Работы</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"Шиномонтажная мастерская Koltsov Motors",
+"description":"Шиномонтаж: переобувка и балансировка, ремонт порезов, правка и сварка дисков, полимерная порошковая окраска, хранение шин, выкуп и продажа б/у резины",
+"address":{"@type":"PostalAddress","streetAddress":"Светлановская улица, 2/2","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":55.072026,"longitude":82.91405},
+"telephone":"+79930039999","email":"koltsov-motors@yandex.ru",
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"10:00","closes":"21:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"96","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/70000001082507563"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и запишем на время.';ok.style.display='block';f.reset();return}}catch(_){}}
+  ok.innerHTML='Приём заявок пока настраивается. Позвоните, пожалуйста: <a href="tel:+79930039999">+7 993 003-99-99</a> — или напишите на <a href="mailto:koltsov-motors@yandex.ru">koltsov-motors@yandex.ru</a>.';
+  ok.style.display='block';
+});
+</script>
+</body>
+</html>
