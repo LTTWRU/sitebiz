@@ -3,167 +3,193 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Автосервис Азия — ремонт рулевых реек на Николая Островского 70, Новосибирск</title>
+<title>Автосервис Азия — ремонт рулевых реек в Новосибирске</title>
 <meta name="description" content="Автосервис «Азия» на улице Николая Островского, 70: ремонт рулевых реек и насосов ГУР, ходовая часть, шиномонтаж. Восстанавливаем рейку вместо замены. 4.9 по 249 отзывам.">
-<meta property="og:title" content="Автосервис Азия — ремонт рулевых реек в центре Новосибирска">
-<meta property="og:description" content="Рейку не меняют — её восстанавливают. Улица Николая Островского, 70.">
-<meta property="og:image" content="photo/rack-1.jpg">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231C4C86'/><text x='16' y='23' font-size='19' font-family='Georgia' font-weight='700' text-anchor='middle' fill='%23F2C500'>А</text></svg>">
-<link rel="stylesheet" href="fonts/bitter.css">
-<link rel="stylesheet" href="fonts/golos-text.css">
+<meta property="og:title" content="Автосервис Азия — ремонт рулевых реек">
+<meta property="og:description" content="Рейку не меняют — её восстанавливают. Николая Островского, 70, Новосибирск.">
+<meta property="og:image" content="brand/logo.png">
+<link rel="icon" href="brand/icon.png" type="image/png">
+<link rel="apple-touch-icon" href="brand/icon.png">
+<link rel="stylesheet" href="fonts/montserrat.css">
 <style>
-/* Специалист одной детали. Весь их фотоархив — это рулевые рейки, снятые
-   на бетоне одинаково, почти типология. На этом и построена страница:
-   бетонный фон, синий и жёлтый с их вывески, брусковая антиква в заголовках. */
+/* Фирменный стиль «Автосервиса Азия» по брендбуку 2026.
+   Палитра оттуда дословно: #F2B900 — акцент, #14161A — чёрный, #2A2D31 —
+   графит, #7A7F86 — серый, #E6E6E6 — светло-серый, #FFFFFF — белый.
+   Гарнитура — Montserrat: ExtraBold в заголовках, Medium в тексте.
+
+   Правило брендбука «жёлтый используется дозированно: акценты, линии, CTA»
+   соблюдается буквально: жёлтым покрашены только кнопки, подчёркивание
+   в заголовке, номера шагов и тонкие линейки. Основа — чёрный и белый.
+   Тёмные полосы — это утверждённая инверсия, там стоит белая версия знака. */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --con:#E4E3DF; --con-2:#D8D7D2; --card:#F2F1EE;
-  --ink:#16181A; --ink-2:#4F545A; --ink-3:#868C93; --line:#C9C8C3; --line-2:#B0AFA9;
-  --blue:#1C4C86; --blue-2:#123663; --yellow:#F2C500;
-  --wrap:1140px;
+  --yellow:#F2B900; --yellow-dark:#D6A400; --yellow-soft:#FFF6DC;
+  --black:#14161A; --graphite:#2A2D31; --grey:#7A7F86;
+  --light:#E6E6E6; --white:#FFFFFF;
+  --line:#DCDCDC; --line-dark:#3A3E44;
+  --wrap:1140px; --narrow:680px;
   --ease:cubic-bezier(.22,.61,.36,1);
 }
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--con);color:var(--ink);
-  font:400 16.5px/1.74 "Golos Text",-apple-system,sans-serif;overflow-x:hidden;
+body{background:var(--white);color:var(--black);
+  font:500 16.5px/1.7 "Montserrat",-apple-system,sans-serif;overflow-x:hidden;
   -webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block;height:auto}
 a{color:inherit;text-decoration:none}
 .w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
-section{padding:clamp(64px,9vw,122px) 0}
-h1,h2{font-family:"Bitter",Georgia,serif;font-weight:300;letter-spacing:-.025em;
-  line-height:1.1;text-wrap:balance}
-h1{font-size:clamp(36px,5.8vw,80px)}
-h2{font-size:clamp(27px,3.8vw,50px)}
-h3{font-size:18px;font-weight:600;font-family:"Golos Text",sans-serif;line-height:1.38}
+.n{max-width:var(--narrow)}
+section{padding:clamp(58px,8vw,110px) 0}
+h1,h2{font-weight:800;letter-spacing:-.03em;line-height:1.08;text-wrap:balance}
+h1{font-size:clamp(32px,5.4vw,72px)}
+h2{font-size:clamp(25px,3.6vw,46px)}
+h3{font-size:17px;font-weight:700;letter-spacing:-.01em;line-height:1.4}
 p{max-width:60ch}
-.tag{font-size:11px;font-weight:600;letter-spacing:.19em;text-transform:uppercase;color:var(--ink-3)}
-.q2{color:var(--ink-2)}
+.tag{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--grey)}
+.q2{color:var(--graphite)}
 
-.btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15.5px;
-  padding:15px 26px;background:var(--blue);color:#fff;border-radius:3px;
+/* Кнопки: жёлтая — целевая, чёрная и светлая — вспомогательные */
+.btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15px;
+  padding:15px 26px;background:var(--yellow);color:var(--black);border-radius:4px;
   transition:background .2s var(--ease),transform .2s}
-.btn:hover{background:var(--blue-2);transform:translateY(-2px)}
-.btn.y{background:var(--yellow);color:#16181A}
-.btn.y:hover{background:#FFD426}
-.btn.g{background:transparent;color:var(--ink);border:1px solid var(--line-2)}
-.btn.g:hover{border-color:var(--blue);color:var(--blue)}
-.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+.btn:hover{background:var(--yellow-dark);transform:translateY(-2px)}
+.btn.d{background:var(--black);color:var(--white)}
+.btn.d:hover{background:var(--graphite)}
+.btn.g{background:transparent;color:var(--black);border:1.5px solid var(--black)}
+.btn.g:hover{background:var(--black);color:var(--white)}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2}
 
-header{position:fixed;inset:0 0 auto;z-index:60;padding:16px 0;border-bottom:1px solid transparent;
-  transition:background .3s var(--ease),padding .3s,border-color .3s}
-header.on{background:rgba(228,227,223,.94);backdrop-filter:blur(14px);
-  border-bottom-color:var(--line);padding:10px 0}
-.nav{display:flex;align-items:center;gap:26px}
-.brand{margin-right:auto;font-family:"Bitter",Georgia,serif;font-weight:700;
-  font-size:21px;letter-spacing:-.01em;display:flex;align-items:center;gap:9px}
-.brand s{text-decoration:none;width:9px;height:22px;background:var(--yellow);display:block}
-.lk{font-size:14.5px;color:var(--ink-2);transition:color .2s}
-.lk:hover{color:var(--blue)}
-@media(max-width:980px){.lk{display:none}}
-@media(max-width:420px){.nav{gap:12px}.btn{padding:12px 17px;font-size:14px}}
+/* Шапка — чёрная плашка, как вывеска, со знаком в инверсии */
+header{position:fixed;inset:0 0 auto;z-index:60;background:var(--black);
+  padding:9px 0;transition:padding .3s var(--ease),box-shadow .3s}
+header.on{padding:5px 0;box-shadow:0 6px 24px rgba(20,22,26,.28)}
+.nav{display:flex;align-items:center;gap:24px}
+.logo{margin-right:auto;display:block;flex:none}
+.logo img{height:68px;width:auto;transition:height .3s var(--ease)}
+header.on .logo img{height:52px}
+.lk{font-size:14px;font-weight:600;color:#C9CCD0;transition:color .2s}
+.lk:hover{color:var(--yellow)}
+@media(max-width:1020px){.lk{display:none}}
+@media(max-width:430px){.nav{gap:12px}.logo img{height:50px}.btn{padding:12px 16px;font-size:13.5px}}
 
-.hero{padding-top:clamp(120px,16vw,198px);padding-bottom:clamp(38px,5vw,64px)}
-.hero h1{margin:20px 0 26px}
-.hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--yellow) 62%)}
-.hero .sub{font-size:clamp(16.5px,1.8vw,20px);color:var(--ink-2);max-width:47ch;line-height:1.64}
-.acts{display:flex;gap:13px;flex-wrap:wrap;margin-top:32px}
+/* Первый экран */
+.hero{padding-top:clamp(124px,15vw,182px);padding-bottom:clamp(34px,4.5vw,58px)}
+.hero h1{margin:16px 0 22px}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 76%,var(--yellow) 76%)}
+.hero .sub{font-size:clamp(16px,1.7vw,19px);color:var(--graphite);max-width:47ch;line-height:1.62}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
 
 /* Вместо замены — четыре узла, которые здесь чинят */
 .instead{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
-  margin-top:clamp(46px,6vw,82px);border:1px solid var(--line)}
-.instead>div{background:var(--con);padding:24px 20px 26px;transition:background .3s var(--ease)}
-.instead>div:hover{background:var(--card)}
-.instead b{display:block;font-family:"Bitter",Georgia,serif;font-weight:300;font-size:19px;
-  letter-spacing:-.02em}
-.instead s{display:block;text-decoration:none;font-size:12.5px;color:var(--ink-3);margin-top:10px}
+  margin-top:clamp(40px,5.5vw,74px);border:1px solid var(--line)}
+.instead>div{background:var(--white);padding:24px 20px 26px;transition:background .3s var(--ease)}
+.instead>div:hover{background:var(--yellow-soft)}
+.instead b{display:block;font-weight:800;font-size:17px;letter-spacing:-.02em}
+.instead s{display:block;text-decoration:none;font-size:12.5px;color:var(--grey);margin-top:10px;
+  line-height:1.55}
 .instead s i{font-style:normal;text-decoration:line-through}
-.instead s b{display:inline;font-family:"Golos Text",sans-serif;font-weight:600;font-size:12.5px;
-  color:var(--blue);letter-spacing:0}
+.instead s b{display:inline;font-weight:700;font-size:12.5px;color:var(--black);
+  border-bottom:2px solid var(--yellow)}
 @media(max-width:900px){.instead{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:460px){.instead{grid-template-columns:1fr}}
 
-.plate{overflow:hidden;background:var(--con-2)}
+.plate{overflow:hidden;background:var(--light)}
 .plate img{width:100%;aspect-ratio:2/1;object-fit:cover}
 @media(max-width:700px){.plate img{aspect-ratio:4/3}}
 .cap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:11px;
-  font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3)}
+  font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
 
 /* Типология: одна и та же деталь, снятая одинаково */
 .typo{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.6vw,18px);
-  margin-top:clamp(34px,4.5vw,54px)}
+  margin-top:clamp(30px,4vw,50px)}
 @media(max-width:820px){.typo{grid-template-columns:repeat(2,1fr)}}
-.typo figure{background:var(--con-2)}
-.typo img{aspect-ratio:3/4;object-fit:cover;width:100%;
-  transition:transform .5s var(--ease)}
+.typo figure{background:var(--light)}
+.typo img{aspect-ratio:3/4;object-fit:cover;width:100%;transition:transform .5s var(--ease)}
 .typo figure:hover img{transform:scale(1.03)}
-.typo figcaption{padding:12px 2px 0;font-size:13px;color:var(--ink-3)}
+.typo figcaption{padding:11px 2px 0;font-size:12.5px;font-weight:600;color:var(--grey)}
 
-/* Порядок работы */
-.proto{counter-reset:s;margin-top:clamp(34px,4.5vw,56px);border-top:2px solid var(--ink)}
+/* Порядок работы — тёмная полоса, утверждённая инверсия бренда */
+.dark{background:var(--black);color:var(--white)}
+.dark h2{color:var(--white)}
+.dark .tag{color:var(--yellow)}
+.proto{counter-reset:s;margin-top:clamp(30px,4vw,50px);border-top:2px solid var(--yellow)}
 .proto>div{display:grid;grid-template-columns:56px 1fr 1fr;gap:clamp(16px,3vw,44px);
-  padding:clamp(20px,2.6vw,32px) 0;border-bottom:1px solid var(--line);align-items:start}
+  padding:clamp(20px,2.6vw,32px) 0;border-bottom:1px solid var(--line-dark);align-items:start}
 .proto>div::before{counter-increment:s;content:counter(s,decimal-leading-zero);
-  font-family:"Bitter",Georgia,serif;font-size:14px;color:var(--blue)}
-.proto h3{font-size:clamp(18px,1.9vw,23px);font-family:"Bitter",Georgia,serif;
-  font-weight:500;letter-spacing:-.02em}
-.proto p{font-size:15.5px;color:var(--ink-2)}
+  font-weight:800;font-size:14px;color:var(--yellow)}
+.proto h3{font-size:clamp(17px,1.8vw,22px);font-weight:800;letter-spacing:-.025em;color:var(--white)}
+.proto p{font-size:15px;color:#B4B8BD}
 @media(max-width:760px){.proto>div{grid-template-columns:40px 1fr;gap:12px}.proto p{grid-column:2}}
 
 .works{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(30px,5vw,70px);
-  margin-top:clamp(32px,4vw,54px);border-top:1px solid var(--line-2)}
-.works div{padding:16px 0;border-bottom:1px solid var(--line);
-  display:flex;justify-content:space-between;gap:16px;align-items:baseline;font-size:16px}
-.works em{font-style:normal;font-size:12.5px;color:var(--ink-3);white-space:nowrap}
+  margin-top:clamp(30px,4vw,50px);border-top:2px solid var(--black)}
+.works div{padding:15px 0;border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:16px;align-items:baseline;font-size:15.5px;
+  font-weight:600}
+.works em{font-style:normal;font-size:12px;font-weight:500;color:var(--grey);white-space:nowrap}
 @media(max-width:720px){.works{grid-template-columns:1fr}}
 
-.said{background:var(--card)}
-.bigq{font-family:"Bitter",Georgia,serif;font-weight:300;font-size:clamp(22px,3.3vw,42px);
-  line-height:1.24;letter-spacing:-.025em;max-width:21ch}
-.by{font-size:13.5px;color:var(--ink-3);margin-top:22px}
+.said{background:var(--light)}
+.bigq{font-weight:800;font-size:clamp(21px,3.2vw,40px);line-height:1.22;
+  letter-spacing:-.03em;max-width:21ch}
+.by{font-size:13px;font-weight:600;color:var(--grey);margin-top:20px}
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,58px);
-  margin-top:clamp(40px,5.5vw,74px)}
-@media(max-width:820px){.pair{grid-template-columns:1fr;gap:32px}}
-.pair p{font-size:16px;color:var(--ink-2)}
-.pair cite{display:block;font-style:normal;font-size:13.5px;color:var(--ink-3);margin-top:13px}
+  margin-top:clamp(36px,5vw,68px)}
+@media(max-width:820px){.pair{grid-template-columns:1fr;gap:30px}}
+.pair p{font-size:15.5px;color:var(--graphite)}
+.pair cite{display:block;font-style:normal;font-size:13px;font-weight:600;color:var(--grey);margin-top:12px}
 
 .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,70px)}
-@media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
-.rows{border-top:2px solid var(--ink);margin-top:28px}
-.rows>div{display:grid;grid-template-columns:114px 1fr;gap:18px;padding:15px 0;
-  border-bottom:1px solid var(--line);font-size:16px}
-.rows dt{font-size:12.5px;color:var(--ink-3);padding-top:4px}
-.rows a:hover{color:var(--blue)}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:34px}}
+.rows{border-top:2px solid var(--black);margin-top:24px}
+.rows>div{display:grid;grid-template-columns:114px 1fr;gap:18px;padding:14px 0;
+  border-bottom:1px solid var(--line);font-size:15.5px}
+.rows dt{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--grey);padding-top:4px}
+.rows dd{font-weight:600}
+.rows a:hover{color:var(--yellow-dark)}
 .rows .ph{display:flex;flex-direction:column;gap:3px}
 @media(max-width:520px){.rows>div{grid-template-columns:1fr;gap:3px}}
-.map{aspect-ratio:16/10;background:var(--con-2);overflow:hidden;border:1px solid var(--line)}
+.map{aspect-ratio:16/10;background:var(--light);overflow:hidden}
 .map iframe{width:100%;height:100%;border:0}
-form{margin-top:20px;display:grid;gap:15px}
-label{display:block;font-size:12.5px;color:var(--ink-3);margin-bottom:7px}
-input,textarea{width:100%;background:var(--card);border:1px solid var(--line-2);color:var(--ink);
-  padding:13px 15px;font:400 16px/1.5 "Golos Text",sans-serif;border-radius:3px;transition:border-color .2s}
-input:focus,textarea:focus{outline:none;border-color:var(--blue)}
+form{margin-top:18px;display:grid;gap:14px}
+label{display:block;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--grey);margin-bottom:7px}
+input,textarea{width:100%;background:var(--white);border:1.5px solid var(--line);color:var(--black);
+  padding:13px 15px;font:500 16px/1.5 "Montserrat",sans-serif;border-radius:4px;transition:border-color .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--yellow)}
 textarea{min-height:100px;resize:vertical}
-.fine{font-size:12.5px;color:var(--ink-3);line-height:1.6;max-width:52ch}
-.sent{display:none;padding:13px 15px;border:1px solid var(--blue);background:#E3EAF3;
-  font-size:15px;border-radius:3px}
+.fine{font-size:12px;color:var(--grey);line-height:1.6;max-width:52ch}
+.sent{display:none;padding:13px 15px;border-left:4px solid var(--yellow);background:var(--yellow-soft);
+  font-size:14.5px;font-weight:600}
+.sent a{border-bottom:2px solid var(--yellow)}
 
-footer{border-top:1px solid var(--line);padding:34px 0 44px;font-size:14px;color:var(--ink-3)}
-.fin{display:flex;gap:26px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
-footer a:hover{color:var(--blue)}
+footer{background:var(--black);color:#9BA0A6;padding:38px 0 44px;font-size:13.5px}
+.fin{display:flex;gap:28px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+.fin img{height:70px;width:auto;margin-bottom:14px}
+footer a{font-weight:600;color:#C9CCD0}
+footer a:hover{color:var(--yellow)}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:8px;padding:9px 12px;
+  background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  width:100%;max-width:100vw}
+.bar a{flex:1 1 0;min-width:0;white-space:nowrap;text-align:center;justify-content:center;
+  padding:13px 10px;font-size:14.5px}
+@media(max-width:760px){.bar{display:flex}body{padding-bottom:70px}}
 
 .up{opacity:0;transform:translateY(16px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
 .up.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
   .up{opacity:1;transform:none}html{scroll-behavior:auto}}
-:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
 </style>
 </head>
 <body>
 
 <header id="hd">
   <nav class="w nav">
-    <a class="brand" href="#"><s></s>Автосервис Азия</a>
+    <a class="logo" href="#" aria-label="Автосервис Азия — на главную">
+      <img src="brand/logo-inverse.png" width="640" height="526" alt="Автосервис Азия — ремонт рулевых реек">
+    </a>
     <a class="lk" href="#reyka">Рулевые рейки</a>
     <a class="lk" href="#poryadok">Порядок работы</a>
     <a class="lk" href="#raboty">Работы</a>
@@ -177,7 +203,7 @@ footer a:hover{color:var(--blue)}
 
 <section class="hero">
   <div class="w">
-    <p class="tag up">Автосервис · улица Николая Островского, 70 · Центральный район</p>
+    <p class="tag up">Автосервис · улица Николая Островского, 70 · Новосибирск</p>
     <h1 class="up">Рейку не меняют.<br>Её <em>восстанавливают</em></h1>
     <p class="sub up">Специализация — рулевое управление. Разбираем, дефектуем и ремонтируем
       то, что в других сервисах сразу «приговаривают» к замене на новый узел.</p>
@@ -206,8 +232,8 @@ footer a:hover{color:var(--blue)}
 <section id="reyka">
   <div class="w">
     <p class="tag up">Одна деталь, снятая четыре раза</p>
-    <h2 class="up" style="margin-top:16px">Как выглядит рейка,<br>которую сняли с машины</h2>
-    <p class="q2 up" style="margin-top:20px;font-size:17px">Течь по штоку, стук в крайних
+    <h2 class="up" style="margin-top:14px">Как выглядит рейка,<br>которую сняли с машины</h2>
+    <p class="q2 up" style="margin-top:18px;font-size:16.5px">Течь по штоку, стук в крайних
       положениях, тугой руль на парковке — почти всё это лечится ремонтом. Новый узел
       нужен редко, и мы честно скажем, когда именно.</p>
     <div class="typo">
@@ -223,10 +249,10 @@ footer a:hover{color:var(--blue)}
   </div>
 </section>
 
-<section id="poryadok">
+<section id="poryadok" class="dark">
   <div class="w">
     <p class="tag up">Порядок работы</p>
-    <h2 class="up" style="margin-top:16px">Сначала снимаем<br>и смотрим</h2>
+    <h2 class="up" style="margin-top:14px">Сначала снимаем<br>и смотрим</h2>
     <div class="proto">
       <div class="up"><h3>Диагностика на подъёмнике</h3>
         <p>Проверяем, точно ли дело в рейке: люфт может давать тяга, наконечник
@@ -249,7 +275,7 @@ footer a:hover{color:var(--blue)}
 <section id="raboty">
   <div class="w">
     <p class="tag up">Работы</p>
-    <h2 class="up" style="margin-top:16px">Рулевое, ходовая<br>и колёса</h2>
+    <h2 class="up" style="margin-top:14px">Рулевое, ходовая<br>и колёса</h2>
     <div class="works">
       <div class="up"><span>Ремонт рулевых реек</span><em>с восстановлением</em></div>
       <div class="up"><span>Ремонт насосов ГУР</span><em>переборка</em></div>
@@ -265,7 +291,7 @@ footer a:hover{color:var(--blue)}
       <div class="up"><span>Шиномонтаж и балансировка</span><em>по радиусу</em></div>
     </div>
     <div class="typo" style="grid-template-columns:repeat(3,1fr)">
-      <figure class="up"><img src="photo/facade.jpg" alt="Боксы СТО «Азия» на Островского" loading="lazy" decoding="async"
+      <figure class="up"><img src="photo/facade.jpg" alt="Боксы автосервиса «Азия» на Островского" loading="lazy" decoding="async"
         style="aspect-ratio:4/3">
         <figcaption>Островского, 70 — синие боксы во дворе</figcaption></figure>
       <figure class="up"><img src="photo/strut.jpg" alt="Стойка амортизатора в разборе" loading="lazy" decoding="async"
@@ -281,7 +307,7 @@ footer a:hover{color:var(--blue)}
 <section id="otzyvy" class="said">
   <div class="w">
     <p class="tag up">Отзывы · 4,9 из 5 по 249 оценкам в 2ГИС</p>
-    <blockquote class="up" style="margin-top:24px">
+    <blockquote class="up" style="margin-top:20px">
       <p class="bigq">«Мне с ходу приговорили рейку. Здесь разобрали и восстановили мою»</p>
       <p class="by">Ваня Титов · 24 июля 2026</p>
     </blockquote>
@@ -299,8 +325,8 @@ footer a:hover{color:var(--blue)}
         <cite>Тимур Лапшин · 5 июля 2026</cite>
       </blockquote>
     </div>
-    <div class="acts up" style="margin-top:40px">
-      <a class="btn g" href="https://2gis.ru/firm/141265769359700" target="_blank" rel="noopener">
+    <div class="acts up" style="margin-top:34px">
+      <a class="btn d" href="https://2gis.ru/firm/141265769359700" target="_blank" rel="noopener">
         Все 249 отзывов в 2ГИС</a>
     </div>
   </div>
@@ -310,19 +336,19 @@ footer a:hover{color:var(--blue)}
   <div class="w split">
     <div class="up">
       <p class="tag">Контакты</p>
-      <h2 style="margin-top:16px">Николая<br>Островского, 70</h2>
+      <h2 style="margin-top:14px">Николая<br>Островского, 70</h2>
       <div class="rows">
-        <div><dt>Адрес</dt><dd>улица Николая Островского, 70<br><span class="q2">Центральный район, Новосибирск</span></dd></div>
+        <div><dt>Адрес</dt><dd>улица Николая Островского, 70<br><span class="q2" style="font-weight:500">Центральный район, Новосибирск</span></dd></div>
         <div><dt>Телефоны</dt><dd class="ph">
           <a href="tel:+73832867394">+7 383 286-73-94</a>
           <a href="tel:+79130027394">+7 913 002-73-94</a>
           <a href="tel:+79059518447">+7 905 951-84-47</a></dd></div>
-        <div><dt>MAX</dt><dd>+7 996 381-20-55<br><span class="q2">Найдите нас в MAX по этому номеру</span></dd></div>
+        <div><dt>MAX</dt><dd>+7 996 381-20-55<br><span class="q2" style="font-weight:500">Найдите нас в MAX по этому номеру</span></dd></div>
         <div><dt>Почта</dt><dd><a href="mailto:asia.nsk@mail.ru">asia.nsk@mail.ru</a></dd></div>
         <div><dt>Режим</dt><dd>Ежедневно, 9:00–20:00</dd></div>
         <div><dt>Оплата</dt><dd>Карта, наличные, перевод с карты</dd></div>
       </div>
-      <div class="acts" style="margin-top:26px">
+      <div class="acts" style="margin-top:24px">
         <a class="btn" href="tel:+73832867394">Позвонить
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a class="btn g" href="https://2gis.ru/firm/141265769359700" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
@@ -333,8 +359,8 @@ footer a:hover{color:var(--blue)}
         <iframe loading="lazy" title="Карта: улица Николая Островского, 70"
           src="https://yandex.ru/map-widget/v1/?ll=82.932333%2C55.050957&z=17&pt=82.932333,55.050957,pm2rdm"></iframe>
       </div>
-      <h2 style="font-size:clamp(22px,2.6vw,32px);margin-top:36px">Записаться</h2>
-      <p class="q2" style="margin-top:10px;font-size:15px">Заполните — мы получим заявку
+      <h2 style="font-size:clamp(21px,2.4vw,30px);margin-top:32px">Записаться</h2>
+      <p class="q2" style="margin-top:10px;font-size:14.5px">Заполните — мы получим заявку
         и перезвоним, чтобы согласовать время. Никуда переходить не нужно.</p>
       <div class="sent" id="ok"></div>
       <!-- Приём заявок. data-endpoint — адрес скрипта-приёмника на хостинге сервиса
@@ -358,8 +384,10 @@ footer a:hover{color:var(--blue)}
 </main>
 
 <footer><div class="w fin">
-  <div><div class="brand" style="margin-bottom:9px"><s></s>Автосервис Азия</div>
-    улица Николая Островского, 70, Новосибирск · ежедневно 9:00–20:00</div>
+  <div>
+    <img src="brand/logo-inverse.png" width="640" height="526" alt="Автосервис Азия">
+    улица Николая Островского, 70, Новосибирск<br>ежедневно 9:00–20:00
+  </div>
   <div style="display:flex;gap:24px;flex-wrap:wrap">
     <a href="tel:+73832867394">+7 383 286-73-94</a>
     <span>MAX: +7 996 381-20-55</span>
@@ -367,8 +395,14 @@ footer a:hover{color:var(--blue)}
   </div>
 </div></footer>
 
+<div class="bar">
+  <a class="btn" href="tel:+73832867394">Позвонить</a>
+  <a class="btn g" href="#kontakty">Оставить заявку</a>
+</div>
+
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"AutoRepair","name":"Автосервис Азия",
+"description":"Ремонт рулевых реек, ходовой части и шиномонтаж",
 "address":{"@type":"PostalAddress","streetAddress":"улица Николая Островского, 70","addressLocality":"Новосибирск","addressCountry":"RU"},
 "geo":{"@type":"GeoCoordinates","latitude":55.050957,"longitude":82.932333},
 "telephone":"+73832867394","email":"asia.nsk@mail.ru",
@@ -383,6 +417,7 @@ addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true
 const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
   {threshold:.05,rootMargin:'0px 0px -50px'});
 document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+
 const f=document.getElementById('f'),ok=document.getElementById('ok'),sb=document.getElementById('sb');
 function say(html){ ok.innerHTML=html; ok.style.display='block'; }
 f.addEventListener('submit',async e=>{
@@ -391,8 +426,8 @@ f.addEventListener('submit',async e=>{
   if(!url){
     /* Демо-версия: приёмник ещё не подключён. Не притворяемся, что отправили. */
     say('Приём заявок пока настраивается. Позвоните, пожалуйста: '
-      +'<a href="tel:+73832867394">+7 383 286-73-94</a> — или напишите в '
-      +'MAX по номеру +7 996 381-20-55.');
+      +'<a href="tel:+73832867394">+7 383 286-73-94</a> — или найдите нас в MAX '
+      +'по номеру +7 996 381-20-55.');
     return;
   }
   const was=sb.textContent; sb.disabled=true; sb.textContent='Отправляем…';

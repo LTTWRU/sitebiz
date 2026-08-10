@@ -23,5 +23,5 @@ return [
 
     // Обратный адрес письма. Должен быть на том же домене, что и сайт, —
     // иначе почтовые службы отправят письмо в спам.
-    'mail_from' => 'no-reply@asia-avtoservis.ru',
+    'mail_from' => 'no-reply@asia-reika.ru',
 ];
