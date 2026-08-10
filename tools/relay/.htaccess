@@ -1,0 +1,45 @@
+# Кэширование и мелкие настройки сайта на обычном хостинге с Apache.
+#
+# Смысл: страницу браузер должен перечитывать почти всегда, а картинки
+# и шрифты — держать долго. Иначе после правок клиент видит старую версию
+# и решает, что ничего не поменялось.
+
+<IfModule mod_headers.c>
+  # Страницу не кэшируем: правки должны появляться сразу
+  <FilesMatch "\.(html|php)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+
+  # Картинки, шрифты и стили меняются редко — пусть лежат в браузере год.
+  # Если понадобится заменить, файл переименовывается или к нему в коде
+  # добавляется ?v=2 — тогда браузер считает его новым.
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|woff2|css|js)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Не даём чужим сайтам показывать наш в рамке
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Сжатие: страница со шрифтами весит заметно меньше
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml
+</IfModule>
+
+# Настройки приёмника заявок не должны быть видны снаружи
+<Files "config.php">
+  Require all denied
+</Files>
+<Files "zayavki.log">
+  Require all denied
+</Files>
+
+# Всегда работаем по защищённому соединению
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+</IfModule>

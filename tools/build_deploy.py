@@ -88,6 +88,8 @@ def main() -> int:
     shutil.copy2(RELAY / "send.php", out / "send.php")
     shutil.copy2(RELAY / "config.example.php", out / "config.example.php")
     shutil.copy2(RELAY / "README.md", out / "README.md")
+    # Настройки кэша и защиты: без них после правок клиенты видят старую версию
+    shutil.copy2(RELAY / ".htaccess", out / ".htaccess")
 
     # 6. Пускаем поисковики
     (out / "robots.txt").write_text(
