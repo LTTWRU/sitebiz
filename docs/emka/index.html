@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Emka — автосервис на Большой 307а, Новосибирск</title>
+<meta name="description" content="Автосервис Emka на Большой, 307а: кондиционеры, электроника, ходовая, развал-схождение, фаркопы. 4.9 по 578 отзывам. Ежедневно 9:00–20:00. +7 383 207-57-16.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Emka — автосервис в Ленинском районе">
+<meta property="og:description" content="Кондиционер, который снова холодит. Диагностика с приборами, рассрочка без процентов.">
+<meta property="og:image" content="photo/ac-station.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23F4F8FA'/><text x='16' y='24' font-size='21' font-family='Helvetica' font-weight='300' text-anchor='middle' fill='%230E7FA8'>e</text></svg>">
+<link rel="stylesheet" href="../fonts/exo-2.css">
+<link rel="stylesheet" href="../fonts/golos-text.css">
+<style>
+/* Холод и свет. Цех у них светлый, в белой плитке, а самый сильный отзыв —
+   про то, как здесь победили кондиционер, который не смогли починить нигде.
+   Отсюда ледяная палитра и раздел, объясняющий, почему кондиционер перестаёт
+   холодить: это единственный текст на странице, который читают целиком. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ice:#F4F8FA; --ice-2:#E7EFF3; --card:#FFFFFF;
+  --ink:#0F1D24; --ink-2:#4A5B64; --ink-3:#87979F; --line:#DBE4E9; --line-2:#BECBD2;
+  --blue:#0E7FA8; --blue-dark:#0A6386; --blue-soft:#DFF0F6;
+  --wrap:1140px; --narrow:680px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ice);color:var(--ink);
+  font:400 16.5px/1.74 "Golos Text",-apple-system,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+.n{max-width:var(--narrow)}
+section{padding:clamp(60px,8.5vw,118px) 0}
+h1,h2{font-family:"Exo 2",sans-serif;font-weight:200;letter-spacing:-.03em;
+  line-height:1.06;text-wrap:balance}
+h1{font-size:clamp(37px,6.2vw,84px)}
+h2{font-size:clamp(27px,3.8vw,50px)}
+h3{font-size:18.5px;font-weight:600;letter-spacing:-.01em;line-height:1.38}
+p{max-width:60ch}
+.tag{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--blue)}
+.q2{color:var(--ink-2)}
+
+.btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15.5px;
+  padding:15px 26px;background:var(--blue);color:#fff;border-radius:6px;
+  transition:background .2s var(--ease),transform .2s}
+.btn:hover{background:var(--blue-dark);transform:translateY(-2px)}
+.btn.g{background:var(--card);color:var(--ink);border:1px solid var(--line-2)}
+.btn.g:hover{border-color:var(--blue);color:var(--blue)}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:16px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(244,248,250,.94);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:10px 0}
+.nav{display:flex;align-items:center;gap:26px}
+.brand{margin-right:auto;font-family:"Exo 2",sans-serif;font-weight:600;font-size:22px;
+  letter-spacing:-.03em;color:var(--blue)}
+.lk{font-size:14.5px;color:var(--ink-2);transition:color .2s}
+.lk:hover{color:var(--blue)}
+@media(max-width:960px){.lk{display:none}}
+@media(max-width:420px){.nav{gap:12px}.btn{padding:12px 17px;font-size:14px}}
+
+.hero{padding-top:clamp(118px,16vw,196px);padding-bottom:clamp(36px,5vw,60px)}
+.hero h1{margin:18px 0 24px}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero .sub{font-size:clamp(16.5px,1.8vw,20px);color:var(--ink-2);max-width:47ch;line-height:1.62}
+.acts{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+  margin-top:clamp(44px,6vw,78px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.figs>div{background:var(--ice);padding:20px 18px 24px}
+.figs b{display:block;font-family:"Exo 2",sans-serif;font-weight:200;
+  font-size:clamp(26px,3.2vw,42px);letter-spacing:-.04em;line-height:1;
+  font-variant-numeric:tabular-nums;color:var(--blue)}
+.figs span{display:block;margin-top:10px;font-size:12.5px;color:var(--ink-3);line-height:1.5}
+@media(max-width:700px){.figs{grid-template-columns:repeat(2,1fr)}}
+
+.plate{overflow:hidden;background:var(--ice-2);border-radius:8px}
+.plate img{width:100%;aspect-ratio:2/1;object-fit:cover}
+@media(max-width:700px){.plate img{aspect-ratio:4/3}}
+.cap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:11px;
+  font-size:12.5px;color:var(--ink-3)}
+
+/* Климат — настоящий порядок диагностики, взятый из их же отзыва */
+.klimat{counter-reset:k;margin-top:clamp(30px,4vw,50px);border-top:2px solid var(--blue)}
+.klimat>div{display:grid;grid-template-columns:50px 1fr 1fr;gap:clamp(16px,3vw,44px);
+  padding:clamp(20px,2.6vw,32px) 0;border-bottom:1px solid var(--line);align-items:start}
+.klimat>div::before{counter-increment:k;content:counter(k,decimal-leading-zero);
+  font-family:"Exo 2",sans-serif;font-size:13px;color:var(--blue);font-weight:600}
+.klimat h3{font-size:clamp(18px,1.9vw,24px);font-weight:400;font-family:"Exo 2",sans-serif;
+  letter-spacing:-.028em}
+.klimat p{font-size:15.5px;color:var(--ink-2)}
+@media(max-width:760px){.klimat>div{grid-template-columns:36px 1fr;gap:12px}.klimat p{grid-column:2}}
+
+/* Симптомы кондиционера — человек узнаёт свою машину */
+.symp{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px);
+  margin-top:clamp(30px,4vw,50px)}
+@media(max-width:860px){.symp{grid-template-columns:1fr}}
+.symp>div{background:var(--card);border:1px solid var(--line);border-radius:8px;
+  padding:clamp(22px,2.6vw,30px)}
+.symp b{display:block;font-family:"Exo 2",sans-serif;font-size:13px;font-weight:600;
+  letter-spacing:.1em;color:var(--blue);margin-bottom:12px}
+.symp p{font-size:15.5px;color:var(--ink-2)}
+
+/* Рассрочка — редкая для автосервиса вещь, поэтому отдельным блоком */
+.pay{background:var(--blue);color:#fff;border-radius:8px;padding:clamp(28px,4vw,54px);
+  margin-top:clamp(32px,4.5vw,54px)}
+.pay h2{color:#fff}
+.pay p{color:#CFE7F1;margin-top:16px;font-size:17px}
+.pay .lines{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,36px);
+  margin-top:clamp(24px,3vw,36px);padding-top:22px;border-top:1px solid rgba(255,255,255,.22)}
+@media(max-width:760px){.pay .lines{grid-template-columns:1fr;gap:18px}}
+.pay .lines b{display:block;font-family:"Exo 2",sans-serif;font-weight:200;font-size:26px;
+  letter-spacing:-.03em}
+.pay .lines span{display:block;margin-top:8px;font-size:14.5px;color:#CFE7F1;line-height:1.55}
+
+.works{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(30px,5vw,70px);
+  margin-top:clamp(30px,4vw,50px);border-top:1px solid var(--line-2)}
+.works div{padding:16px 0;border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:16px;align-items:baseline;font-size:16px}
+.works em{font-style:normal;font-size:12.5px;color:var(--ink-3);white-space:nowrap}
+@media(max-width:720px){.works{grid-template-columns:1fr}}
+
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px);
+  margin-top:clamp(32px,4.5vw,54px)}
+@media(max-width:760px){.g3{grid-template-columns:1fr;gap:24px}}
+.g3 img{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--ice-2);border-radius:8px}
+.g3 figcaption{margin-top:12px;font-size:14.5px;color:var(--ink-2)}
+
+.said{background:var(--ice-2)}
+.bigq{font-family:"Exo 2",sans-serif;font-weight:200;font-size:clamp(22px,3.4vw,42px);
+  line-height:1.22;letter-spacing:-.035em;max-width:21ch}
+.by{font-size:13.5px;color:var(--ink-3);margin-top:22px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,58px);
+  margin-top:clamp(38px,5.5vw,70px)}
+@media(max-width:820px){.pair{grid-template-columns:1fr;gap:32px}}
+.pair p{font-size:16px;color:var(--ink-2)}
+.pair cite{display:block;font-style:normal;font-size:13.5px;color:var(--ink-3);margin-top:13px}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,70px)}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
+.rows{border-top:2px solid var(--ink);margin-top:26px}
+.rows>div{display:grid;grid-template-columns:112px 1fr;gap:18px;padding:15px 0;
+  border-bottom:1px solid var(--line);font-size:16px}
+.rows dt{font-size:12.5px;color:var(--ink-3);padding-top:4px}
+.rows a:hover{color:var(--blue)}
+@media(max-width:520px){.rows>div{grid-template-columns:1fr;gap:3px}}
+.chan{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.chan a{background:var(--card);border:1px solid var(--line-2);border-radius:999px;
+  padding:10px 17px;font-size:14.5px;font-weight:500;transition:border-color .2s,color .2s}
+.chan a:hover{border-color:var(--blue);color:var(--blue)}
+.map{aspect-ratio:16/10;background:var(--ice-2);overflow:hidden;border-radius:8px}
+.map iframe{width:100%;height:100%;border:0}
+form{margin-top:20px;display:grid;gap:15px}
+label{display:block;font-size:12.5px;color:var(--ink-3);margin-bottom:7px}
+input,textarea{width:100%;background:var(--card);border:1px solid var(--line-2);color:var(--ink);
+  padding:13px 15px;font:400 16px/1.5 "Golos Text",sans-serif;border-radius:6px;transition:border-color .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--blue)}
+textarea{min-height:100px;resize:vertical}
+.fine{font-size:12.5px;color:var(--ink-3);line-height:1.6;max-width:52ch}
+.sent{display:none;padding:13px 15px;border:1px solid var(--blue);background:var(--blue-soft);
+  font-size:15px;border-radius:6px}
+.sent a{color:var(--blue);text-decoration:underline}
+
+footer{border-top:1px solid var(--line);padding:34px 0 44px;font-size:14px;color:var(--ink-3)}
+.fin{display:flex;gap:26px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+footer a:hover{color:var(--blue)}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:8px;padding:9px 12px;
+  background:rgba(244,248,250,.96);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  width:100%;max-width:100vw}
+.bar a{flex:1 1 0;min-width:0;white-space:nowrap;text-align:center;justify-content:center;
+  padding:13px 10px;font-size:15px}
+@media(max-width:760px){.bar{display:flex}body{padding-bottom:70px}}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <nav class="w nav">
+    <a class="brand" href="#">emka</a>
+    <a class="lk" href="#klimat">Кондиционер</a>
+    <a class="lk" href="#rassrochka">Рассрочка</a>
+    <a class="lk" href="#raboty">Работы</a>
+    <a class="lk" href="#otzyvy">Отзывы</a>
+    <a class="lk" href="#kontakty">Контакты</a>
+    <a class="btn" href="tel:+73832075716">Записаться</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Автосервис · Большая улица, 307а · Ленинский район, Новосибирск</p>
+    <h1 class="up">Кондиционер,<br>который снова <em>холодит</em></h1>
+    <p class="sub up">Заправка станцией с вакуумацией, поиск утечек красителем, замер
+      давления в контурах. Плюс всё остальное: ходовая, электрика, развал, фаркопы.</p>
+    <div class="acts up">
+      <a class="btn" href="tel:+73832075716">+7 383 207-57-16
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="https://wa.me/79139011741" target="_blank" rel="noopener">Написать в WhatsApp</a>
+    </div>
+    <div class="figs up">
+      <div><b>4,9</b><span>по 578 отзывам в 2ГИС</span></div>
+      <div><b>58</b><span>марок по запчастям</span></div>
+      <div><b>0 %</b><span>рассрочка на ремонт от 10 000 ₽</span></div>
+      <div><b>9–20</b><span>каждый день, без выходных</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="w up">
+    <div class="plate"><img src="photo/ac-station.jpg"
+      alt="Станция заправки кондиционеров в цехе Emka" fetchpriority="high"></div>
+    <div class="cap"><span>Большая, 307а</span><span>Снимок клиента, 2ГИС</span></div>
+  </div>
+</section>
+
+<section id="klimat">
+  <div class="w">
+    <p class="tag up">Климат</p>
+    <h2 class="up" style="margin-top:14px">Почему кондиционер<br>перестаёт холодить</h2>
+    <p class="q2 up" style="margin-top:20px;font-size:17px">Чаще всего дело не в компрессоре,
+      хотя менять предлагают именно его. Мы идём по порядку и не меняем узлы наугад —
+      это дольше на один визит, зато дешевле в разы.</p>
+    <div class="klimat">
+      <div class="up"><h3>Полная заправка с вакуумацией</h3>
+        <p>Сначала убираем из системы сомнительный фреон и заправляем начисто. Часто
+          проблема заканчивается здесь — просто было мало газа или залито не то.</p></div>
+      <div class="up"><h3>Краситель для поиска утечек</h3>
+        <p>Добавляем в систему проявочный краситель. Если где-то травит — он покажет
+          место: чаще всего это соединения трубок у компрессора.</p></div>
+      <div class="up"><h3>Тест на жаре с манометрами</h3>
+        <p>Машина стоит на солнце, а к системе подключён аппарат: смотрим, в какой момент
+          начинает расти давление и в каком контуре.</p></div>
+      <div class="up"><h3>Фильтр-осушитель и кольца</h3>
+        <p>Забитый фильтр даёт ровно ту картину, когда «сначала холодит, а через полчаса
+          дует тёплым». Меняем фильтр и уплотнители, заправляем заново.</p></div>
+      <div class="up"><h3>Проверка на повторе</h3>
+        <p>Заново гоняем систему и смотрим давление. Компрессор меняем только тогда,
+          когда доказано, что дело в нём.</p></div>
+    </div>
+    <div class="symp">
+      <div class="up"><b>СИМПТОМ 01</b>
+        <p>Холодит первые двадцать минут, потом дует тёплым. В жару — и того меньше.</p></div>
+      <div class="up"><b>СИМПТОМ 02</b>
+        <p>Заправляли у уличных заправщиков — и стало хуже, чем было.</p></div>
+      <div class="up"><b>СИМПТОМ 03</b>
+        <p>В трёх местах развели руками или сразу предложили менять компрессор и радиатор.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="rassrochka">
+  <div class="w">
+    <div class="pay up">
+      <p class="tag" style="color:#9FD3E6">Оплата</p>
+      <h2 style="margin-top:12px">Рассрочка без процентов</h2>
+      <p>Крупный ремонт не всегда случается в удобный месяц. На работы от 10 000 ₽
+        можно разбить оплату на части — переплаты нет.</p>
+      <div class="lines">
+        <div><b>от 10 000 ₽</b><span>сумма, с которой доступна рассрочка</span></div>
+        <div><b>Без переплаты</b><span>процентов и скрытых комиссий нет</span></div>
+        <div><b>Карта, QR, банк</b><span>или наличными, как удобно</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="raboty">
+  <div class="w">
+    <p class="tag up">Работы</p>
+    <h2 class="up" style="margin-top:14px">Электрика, ходовая,<br>мотор, переоборудование</h2>
+    <div class="works">
+      <div class="up"><span>Обслуживание кондиционера</span><em>станцией</em></div>
+      <div class="up"><span>Ремонт электронных систем</span><em>блоки, проводка</em></div>
+      <div class="up"><span>Компьютерная диагностика</span><em>по коду ошибки</em></div>
+      <div class="up"><span>Ремонт ходовой части</span><em>стойки, рычаги</em></div>
+      <div class="up"><span>Развал-схождение</span><em>на стенде</em></div>
+      <div class="up"><span>Ремонт рулевых реек</span><em>с восстановлением</em></div>
+      <div class="up"><span>Ремонт карданных валов</span><em>балансировка</em></div>
+      <div class="up"><span>Ремонт бензиновых двигателей</span><em>с разбором</em></div>
+      <div class="up"><span>Стартеры и генераторы</span><em>электрика</em></div>
+      <div class="up"><span>Ремонт выхлопных систем</span><em>сварка</em></div>
+      <div class="up"><span>Сварочные работы</span><em>кузов, глушитель</em></div>
+      <div class="up"><span>Замена масла и фильтров</span><em>ТО</em></div>
+      <div class="up"><span>Установка фаркопа</span><em>переоборудование</em></div>
+      <div class="up"><span>Отогрев автомобилей</span><em>зимой</em></div>
+    </div>
+    <div class="g3">
+      <figure class="up"><img src="photo/ac-work.jpg" alt="Работа с системой кондиционирования автомобиля" loading="lazy" decoding="async">
+        <figcaption>Кондиционер разбирают по контуру, а не меняют компрессор наугад.</figcaption></figure>
+      <figure class="up"><img src="photo/scanner.jpg" alt="Диагностический сканер в салоне автомобиля" loading="lazy" decoding="async">
+        <figcaption>Диагностика прибором: ошибку показывают вам на экране.</figcaption></figure>
+      <figure class="up"><img src="photo/coffee.jpg" alt="Кофейный аппарат в зоне ожидания" loading="lazy" decoding="async">
+        <figcaption>Кофе бесплатно, Wi-Fi есть — ремонт редко бывает быстрым.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy" class="said">
+  <div class="w">
+    <p class="tag up">Отзывы · 4,9 из 5 по 578 оценкам в 2ГИС</p>
+    <blockquote class="up" style="margin-top:22px">
+      <p class="bigq">«Объездил кучу станций — все разводили руками»</p>
+      <p class="by">Иван Максимов · 23 июня 2026</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>Наконец-то кто-то помог мне полностью победить кондиционер на моём Субару.
+          Услышав симптомы, сразу предупредили, что диагностика будет непростая. Сделали
+          заправку, добавили краситель, подключили аппарат и на тесте увидели, что зашкаливает
+          давление в контуре. Поменяли фильтр и уплотнители — езжу уже месяц, морозит хорошо.</p>
+        <cite>Иван Максимов · 23 июня 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Заправлял кондиционер после уличных заправщиков, который плохо холодил.
+          Заправили специальной станцией, сделали вакуумацию, сомнительный фреон
+          из моей машины удалили. Сейчас езжу с кондиционером, не открывая окон.</p>
+        <cite>Евгений Антоненко · 6 июля 2026</cite>
+      </blockquote>
+    </div>
+    <div class="acts up" style="margin-top:38px">
+      <a class="btn g" href="https://2gis.ru/firm/70000001066416107" target="_blank" rel="noopener">
+        Все 578 отзывов в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty">
+  <div class="w split">
+    <div class="up">
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:14px">Большая, 307а</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>Большая улица, 307а<br><span class="q2">Ленинский район, Новосибирск</span></dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+73832075716">+7 383 207-57-16</a></dd></div>
+        <div><dt>Режим</dt><dd>Ежедневно, 9:00–20:00</dd></div>
+        <div><dt>Оплата</dt><dd>Карта, наличные, QR-код, через банк, рассрочка</dd></div>
+        <div><dt>Ещё</dt><dd>Бесплатный кофе, Wi-Fi для клиентов</dd></div>
+      </div>
+      <div class="chan">
+        <a href="https://wa.me/79139011741" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://t.me/emkaservice" target="_blank" rel="noopener">Telegram</a>
+      </div>
+      <div class="acts" style="margin-top:22px">
+        <a class="btn" href="tel:+73832075716">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/70000001066416107" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <iframe loading="lazy" title="Карта: Большая улица, 307а"
+          src="https://yandex.ru/map-widget/v1/?ll=82.856859%2C55.0108&z=17&pt=82.856859,55.0108,pm2rdm"></iframe>
+      </div>
+      <h2 style="font-size:clamp(22px,2.6vw,32px);margin-top:34px">Записаться</h2>
+      <div class="sent" id="ok"></div>
+      <!-- Заявка. Пока приём не подключён — предлагаем позвонить или написать в WhatsApp:
+           почты в карточке 2ГИС нет. Чтобы заявки приходили автоматически, заведите форму
+           на formspree.io и впишите её адрес в data-endpoint. -->
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Иван"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 913 000-00-00"></div>
+        <div><label for="c">Машина</label><input id="c" name="car" placeholder="Subaru Forester, 2014"></div>
+        <div><label for="m">Что беспокоит</label><textarea id="m" name="message" placeholder="Кондиционер холодит минут двадцать, потом дует тёплым"></textarea></div>
+        <button class="btn" type="submit">Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Нажимая кнопку, вы соглашаетесь на обработку своих контактов, чтобы мы
+          могли перезвонить. Больше ни для чего они не используются.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">emka</div>
+    Большая улица, 307а, Новосибирск · ежедневно 9:00–20:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+73832075716">+7 383 207-57-16</a>
+    <a href="https://wa.me/79139011741" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://2gis.ru/firm/70000001066416107" target="_blank" rel="noopener">2ГИС</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+73832075716">Позвонить</a>
+  <a class="btn g" href="https://wa.me/79139011741" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"Emka, автосервис",
+"address":{"@type":"PostalAddress","streetAddress":"Большая улица, 307а","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":55.0108,"longitude":82.856859},
+"telephone":"+73832075716",
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"09:00","closes":"20:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"578","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/70000001066416107"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и согласуем время.';ok.style.display='block';f.reset();return}}catch(_){}}
+  /* Почты в карточке 2ГИС нет — предлагаем звонок или мессенджер. */
+  ok.innerHTML='Почты у сервиса нет — позвоните: <a href="tel:+73832075716">+7 383 207-57-16</a> '
+    +'или напишите в <a href="https://wa.me/79139011741" target="_blank" rel="noopener">WhatsApp</a>.';
+  ok.style.display='block';
+});
+</script>
+</body>
+</html>
