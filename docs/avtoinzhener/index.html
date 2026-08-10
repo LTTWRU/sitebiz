@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>АВТОИНЖЕНЕР — ремонт рулевых реек и автосервис на Северном проезде, 29</title>
+<meta name="description" content="АВТОИНЖЕНЕР, Северный проезд, 29: профессиональный ремонт рулевых реек, ходовая часть, двигатели, электрика, развал-схождение, климат, сварка. Официальный центр Mobil 1. Запчасти подбираем сами, диагностика ходовой бесплатная, гарантия на работу. 4,8 по 254 отзывам, ежедневно 9:00–20:00.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="АВТОИНЖЕНЕР — рейку чинят там, где её умеют разбирать">
+<meta property="og:description" content="Ремонт рулевых реек, ходовая, двигатели, электрика. Северный проезд, 29. 4,8 по 254 отзывам.">
+<meta property="og:image" content="photo/facade.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231F5FA8'/><text x='16' y='23' font-size='17' font-family='Helvetica' font-weight='700' text-anchor='middle' fill='%23fff'>АИ</text></svg>">
+<link rel="stylesheet" href="../fonts/montserrat.css">
+<link rel="stylesheet" href="../fonts/onest.css">
+<link rel="stylesheet" href="../fonts/ibm-plex-mono.css">
+<style>
+/* «Инженер» в названии — не украшение: их профиль по карточке 2ГИС это
+   профессиональный ремонт рулевых реек. Поэтому главный разворот страницы —
+   чертёж рейки с позициями, а не ещё один список услуг. Слабое место из
+   отзыва на 3★ (компьютерная диагностика «ошибок не выдала», хотя лямбда
+   неисправна) закрыто отдельным блоком про то, что сканер видит не всё. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#EEF1F5; --paper-2:#E0E6ED; --card:#FAFBFC;
+  --ink:#101823; --ink-2:#465264; --ink-3:#7F8B9B;
+  --line:#D2DAE3; --line-2:#B6C1CE;
+  --blue:#1F5FA8; --blue-2:#143F70; --blue-soft:#E3ECF6; --blue-lt:#9FC6EE;
+  --wrap:1080px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);
+  font:400 16.5px/1.75 Onest,-apple-system,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(58px,8vw,106px) 0}
+h1,h2,h3{font-family:Montserrat,-apple-system,sans-serif}
+h1,h2{font-weight:700;line-height:1.1;letter-spacing:-.035em;text-wrap:balance}
+h1{font-size:clamp(31px,5vw,63px)}
+h2{font-size:clamp(24px,3.3vw,42px)}
+h3{font-size:18px;font-weight:650;line-height:1.36;letter-spacing:-.015em}
+p{max-width:60ch}
+em{font-style:normal;color:var(--blue)}
+.tag{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:500;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--blue)}
+.q2{color:var(--ink-2)}
+
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:Montserrat,sans-serif;
+  font-weight:650;font-size:15px;padding:15px 25px;background:var(--blue);color:#fff;
+  border-radius:3px;transition:background .22s var(--ease),transform .22s}
+.btn:hover{background:var(--blue-2);transform:translateY(-2px)}
+.btn.g{background:transparent;color:var(--ink);border:1px solid var(--line-2)}
+.btn.g:hover{border-color:var(--blue);color:var(--blue)}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:16px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(238,241,245,.95);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:10px 0}
+.nav{display:flex;align-items:center;gap:24px}
+.brand{margin-right:auto;font-family:Montserrat,sans-serif;font-weight:800;
+  font-size:19px;letter-spacing:-.02em;line-height:1.1}
+.brand s{display:block;text-decoration:none;font-family:"IBM Plex Mono",monospace;font-size:9px;
+  font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-top:3px}
+.lk{font-size:14.5px;color:var(--ink-2);transition:color .2s}
+.lk:hover{color:var(--blue)}
+@media(max-width:1000px){.lk{display:none}}
+@media(max-width:420px){.nav{gap:12px}.btn{padding:12px 16px;font-size:14px}}
+
+.hero{padding-top:clamp(120px,16vw,190px);padding-bottom:clamp(34px,5vw,56px)}
+.hero h1{margin:18px 0 24px}
+.hero .sub{font-size:clamp(16.5px,1.8vw,19px);color:var(--ink-2);max-width:48ch;line-height:1.68}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,40px);
+  margin-top:clamp(42px,6vw,72px);padding-top:26px;border-top:1px solid var(--line)}
+.figs b{display:block;font-family:Montserrat,sans-serif;font-weight:700;
+  font-size:clamp(22px,2.8vw,35px);letter-spacing:-.045em;line-height:1;font-variant-numeric:tabular-nums}
+.figs span{display:block;margin-top:10px;font-size:12.5px;color:var(--ink-3);line-height:1.5}
+@media(max-width:700px){.figs{grid-template-columns:repeat(2,1fr)}}
+
+.plate{overflow:hidden;background:var(--paper-2);border-radius:3px}
+.plate img{width:100%;aspect-ratio:21/9;object-fit:cover;object-position:center 58%}
+@media(max-width:700px){.plate img{aspect-ratio:4/3}}
+.cap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:11px;
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-3)}
+
+/* Чертёж рулевой рейки с позициями — главный разворот страницы */
+.bp{background:var(--blue-2);color:#fff;border-radius:3px;overflow:hidden;
+  padding:clamp(26px,4.2vw,54px);margin-top:clamp(30px,4vw,48px)}
+.bp h2{color:#fff}
+.bp .tag{color:var(--blue-lt)}
+.bp>p{color:#C6DAF0;margin-top:16px;font-size:16.5px}
+.draw{margin:clamp(26px,4vw,44px) 0 clamp(22px,3vw,34px);overflow-x:auto}
+.draw svg{display:block;width:100%;min-width:620px;height:auto}
+.pos{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:16px 34px}
+.pos li{display:grid;grid-template-columns:30px 1fr;gap:14px;align-items:start}
+.pos i{font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:500;
+  width:30px;height:30px;border:1px solid var(--blue-lt);border-radius:50%;color:var(--blue-lt);
+  display:flex;align-items:center;justify-content:center;margin-top:2px}
+.pos b{display:block;font-family:Montserrat,sans-serif;font-size:16px;font-weight:650;
+  letter-spacing:-.015em;margin-bottom:4px}
+.pos span{display:block;font-size:14.5px;color:#B9CFE7;line-height:1.6}
+@media(max-width:760px){.pos{grid-template-columns:1fr}}
+.bpnote{margin-top:clamp(24px,3vw,34px);padding-top:20px;border-top:1px solid rgba(159,198,238,.3);
+  font-size:15px;color:#C6DAF0;max-width:66ch}
+
+/* Честная диагностика — ответ на отзыв про «ошибок не выдало» */
+.scan{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+  margin-top:clamp(28px,3.8vw,44px);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.scan>div{background:var(--card);padding:clamp(24px,3.2vw,36px)}
+.scan .tag{font-size:10.5px}
+.scan b{display:block;font-family:Montserrat,sans-serif;font-size:19px;font-weight:700;
+  letter-spacing:-.025em;margin:10px 0 11px}
+.scan p{font-size:15.5px;color:var(--ink-2)}
+@media(max-width:720px){.scan{grid-template-columns:1fr}}
+
+.price{margin-top:clamp(30px,4vw,50px);border-top:2px solid var(--ink)}
+.price>div{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:baseline;
+  padding:19px 0;border-bottom:1px solid var(--line);transition:padding-left .28s var(--ease)}
+.price>div:hover{padding-left:9px}
+.price p{font-size:14.5px;color:var(--ink-2);margin-top:5px;max-width:58ch}
+.price b{font-family:"IBM Plex Mono",monospace;font-size:11.5px;white-space:nowrap;color:var(--ink-3);
+  font-weight:500;letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:560px){.price>div{grid-template-columns:1fr;gap:6px}}
+
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px);
+  margin-top:clamp(32px,4.5vw,54px)}
+@media(max-width:860px){.g3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.g3{grid-template-columns:1fr;gap:22px}}
+.g3 img{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--paper-2);border-radius:3px}
+.g3 figcaption{margin-top:11px;font-size:14px;color:var(--ink-2)}
+
+.said{background:var(--paper-2)}
+.bigq{font-family:Montserrat,sans-serif;font-weight:700;font-size:clamp(20px,2.7vw,35px);
+  line-height:1.22;letter-spacing:-.035em;max-width:24ch}
+.by{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-3);margin-top:22px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,56px);
+  margin-top:clamp(38px,5.5vw,68px)}
+@media(max-width:820px){.pair{grid-template-columns:1fr;gap:32px}}
+.pair p{font-size:16px;color:var(--ink-2)}
+.pair cite{display:block;font-style:normal;font-family:"IBM Plex Mono",monospace;
+  font-size:12px;color:var(--ink-3);margin-top:13px}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,68px)}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
+.rows{border-top:2px solid var(--ink);margin-top:26px}
+.rows>div{display:grid;grid-template-columns:118px 1fr;gap:18px;padding:15px 0;
+  border-bottom:1px solid var(--line);font-size:16px}
+.rows dt{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-3);padding-top:5px;
+  text-transform:uppercase;letter-spacing:.08em}
+.rows a:hover{color:var(--blue)}
+@media(max-width:520px){.rows>div{grid-template-columns:1fr;gap:3px}}
+.map{aspect-ratio:16/10;background:var(--paper-2);overflow:hidden;border-radius:3px}
+.map iframe{width:100%;height:100%;border:0}
+form{margin-top:20px;display:grid;gap:15px}
+label{display:block;font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-3);
+  margin-bottom:7px;text-transform:uppercase;letter-spacing:.08em}
+input,textarea{width:100%;background:var(--card);border:1px solid var(--line-2);color:var(--ink);
+  padding:13px 15px;font:400 16px/1.5 Onest,sans-serif;border-radius:3px;transition:border-color .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--blue)}
+textarea{min-height:100px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fine{font-size:12.5px;color:var(--ink-3);line-height:1.6;max-width:52ch}
+.sent{display:none;padding:13px 15px;border:1px solid var(--blue);background:var(--blue-soft);
+  font-size:15px;border-radius:3px}
+.sent a{color:var(--blue);text-decoration:underline}
+
+footer{border-top:1px solid var(--line);padding:34px 0 44px;font-size:14px;color:var(--ink-3)}
+.fin{display:flex;gap:26px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+footer a:hover{color:var(--blue)}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:8px;padding:9px 12px;
+  background:rgba(238,241,245,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  width:100%;max-width:100vw}
+.bar a{flex:1 1 0;min-width:0;white-space:nowrap;text-align:center;justify-content:center;
+  padding:13px 10px;font-size:15px}
+@media(max-width:760px){.bar{display:flex}body{padding-bottom:70px}}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <nav class="w nav">
+    <a class="brand" href="#">АВТОИНЖЕНЕР<s>Северный проезд, 29</s></a>
+    <a class="lk" href="#reika">Рулевые рейки</a>
+    <a class="lk" href="#skaner">Диагностика</a>
+    <a class="lk" href="#raboty">Работы</a>
+    <a class="lk" href="#otzyvy">Отзывы</a>
+    <a class="lk" href="#kontakty">Контакты</a>
+    <a class="btn" href="tel:+73832926999">Записаться</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Автосервис · Северный проезд, 29 · Кировский район</p>
+    <h1 class="up">Рейку чинят там,<br>где её умеют <em>разбирать</em></h1>
+    <p class="sub up">Профессиональный ремонт рулевых реек стоит прямо в нашем названии —
+      это отдельная специализация, а не строчка в прайсе. Всё остальное тоже делаем:
+      ходовую, двигатель, электрику, развал. Запчасти подбираем и покупаем сами.</p>
+    <div class="acts up">
+      <a class="btn" href="tel:+73832926999">+7 383 292-69-99
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#reika">Что внутри рейки</a>
+    </div>
+    <div class="figs up">
+      <div><b>4,8</b><span>по 254 отзывам в 2ГИС</span></div>
+      <div><b>7 дней</b><span>ежедневно с 9:00 до 20:00</span></div>
+      <div><b>Mobil 1</b><span>официальный центр, масло аппаратной заменой</span></div>
+      <div><b>0 ₽</b><span>диагностика ходовой части</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="w up">
+    <div class="plate"><img src="photo/facade.jpg"
+      alt="Здание автосервиса АВТОИНЖЕНЕР на Северном проезде с четырьмя воротами" fetchpriority="high"></div>
+    <div class="cap"><span>Северный проезд, 29 · четыре поста</span><span>Заезд с площадки, парковка перед боксами</span></div>
+  </div>
+</section>
+
+<section id="reika">
+  <div class="w">
+    <div class="bp up">
+      <p class="tag">Рулевая рейка · разбор по позициям</p>
+      <h2 style="margin-top:14px">Течёт не «рейка».<br>Течёт что-то внутри неё</h2>
+      <p>Новая рейка в сборе стоит дороже, чем весь ремонт вместе с работой. Почти всегда
+        виновата одна позиция из пяти — и её можно заменить, не покупая узел целиком.
+        Вот они, по порядку от края к центру.</p>
+
+      <div class="draw">
+        <svg viewBox="0 0 900 300" role="img"
+          aria-label="Схема рулевой рейки: наконечники, пыльники и сальники, корпус со втулками, распределитель гидроусилителя и приводной вал с шестернёй">
+          <g fill="none" stroke="#9FC6EE" stroke-width="2" stroke-linecap="round">
+            <!-- ось -->
+            <line x1="40" y1="168" x2="860" y2="168" stroke="#3E6E9E" stroke-width="1" stroke-dasharray="12 6 3 6"/>
+            <!-- корпус -->
+            <rect x="170" y="150" width="520" height="36" rx="18" stroke-width="2.4"/>
+            <!-- штоки -->
+            <line x1="100" y1="168" x2="170" y2="168" stroke-width="4"/>
+            <line x1="690" y1="168" x2="790" y2="168" stroke-width="4"/>
+            <!-- наконечники -->
+            <circle cx="86" cy="168" r="14" stroke-width="2.4"/>
+            <circle cx="804" cy="168" r="14" stroke-width="2.4"/>
+            <!-- пыльники-гофры -->
+            <g stroke-width="1.6">
+              <line x1="124" y1="150" x2="124" y2="186"/><line x1="134" y1="147" x2="134" y2="189"/>
+              <line x1="144" y1="150" x2="144" y2="186"/><line x1="154" y1="147" x2="154" y2="189"/>
+              <line x1="710" y1="150" x2="710" y2="186"/><line x1="720" y1="147" x2="720" y2="189"/>
+              <line x1="730" y1="150" x2="730" y2="186"/><line x1="740" y1="147" x2="740" y2="189"/>
+            </g>
+            <!-- зубья рейки -->
+            <g stroke-width="1.4" stroke="#6F9EC9">
+              <line x1="300" y1="150" x2="300" y2="163"/><line x1="316" y1="150" x2="316" y2="163"/>
+              <line x1="332" y1="150" x2="332" y2="163"/><line x1="348" y1="150" x2="348" y2="163"/>
+              <line x1="364" y1="150" x2="364" y2="163"/><line x1="380" y1="150" x2="380" y2="163"/>
+              <line x1="396" y1="150" x2="396" y2="163"/><line x1="412" y1="150" x2="412" y2="163"/>
+            </g>
+            <!-- распределитель ГУР -->
+            <rect x="556" y="138" width="94" height="60" rx="6" stroke-width="2.4"/>
+            <line x1="576" y1="138" x2="576" y2="198" stroke-width="1.2" stroke="#6F9EC9"/>
+            <line x1="630" y1="138" x2="630" y2="198" stroke-width="1.2" stroke="#6F9EC9"/>
+            <!-- приводной вал и шестерня -->
+            <line x1="603" y1="138" x2="603" y2="80" stroke-width="4"/>
+            <circle cx="603" cy="62" r="19" stroke-width="2.4"/>
+            <line x1="592" y1="52" x2="614" y2="72" stroke-width="1.4"/>
+            <line x1="614" y1="52" x2="592" y2="72" stroke-width="1.4"/>
+            <!-- выноски -->
+            <g stroke-width="1.2" stroke="#6F9EC9">
+              <line x1="86" y1="152" x2="86" y2="118"/>
+              <line x1="139" y1="192" x2="139" y2="236"/>
+              <line x1="356" y1="188" x2="356" y2="236"/>
+              <line x1="603" y1="200" x2="603" y2="236"/>
+              <line x1="624" y1="62" x2="700" y2="62"/>
+            </g>
+          </g>
+          <g font-family="'IBM Plex Mono',monospace" font-size="14" fill="#9FC6EE">
+            <circle cx="86" cy="102" r="16" fill="none" stroke="#9FC6EE" stroke-width="1.6"/>
+            <text x="86" y="107" text-anchor="middle">5</text>
+            <circle cx="139" cy="252" r="16" fill="none" stroke="#9FC6EE" stroke-width="1.6"/>
+            <text x="139" y="257" text-anchor="middle">1</text>
+            <circle cx="356" cy="252" r="16" fill="none" stroke="#9FC6EE" stroke-width="1.6"/>
+            <text x="356" y="257" text-anchor="middle">2</text>
+            <circle cx="603" cy="252" r="16" fill="none" stroke="#9FC6EE" stroke-width="1.6"/>
+            <text x="603" y="257" text-anchor="middle">3</text>
+            <circle cx="718" cy="62" r="16" fill="none" stroke="#9FC6EE" stroke-width="1.6"/>
+            <text x="718" y="67" text-anchor="middle">4</text>
+          </g>
+        </svg>
+      </div>
+
+      <ul class="pos">
+        <li><i>1</i><div><b>Пыльник и сальники</b>
+          <span>Порванный пыльник — это песок и вода внутри. Если под машиной пятно,
+            а на пыльнике жирный налёт, начинается всё отсюда.</span></div></li>
+        <li><i>2</i><div><b>Втулка и зубья рейки</b>
+          <span>Стук на неровностях и люфт в руле. Втулка меняется, зубья
+            проверяются на выработку — иногда достаточно регулировки.</span></div></li>
+        <li><i>3</i><div><b>Распределитель гидроусилителя</b>
+          <span>Руль тяжелеет в одну сторону или «закусывает». Разбираем узел,
+            меняем уплотнения и золотник.</span></div></li>
+        <li><i>4</i><div><b>Вал-шестерня и подшипник</b>
+          <span>Хруст при повороте, гул на месте. Подшипник и вал меняются
+            отдельно от корпуса.</span></div></li>
+        <li><i>5</i><div><b>Тяги и наконечники</b>
+          <span>Формально не рейка, но стучит так же. И после их замены
+            обязателен развал-схождение — делаем здесь же.</span></div></li>
+      </ul>
+
+      <p class="bpnote">Что мы делаем на приёмке: вывешиваем машину, смотрим течь, люфт и ход
+        рулевого вала руками. Только после этого называем, что именно менять и сколько
+        это стоит. Диагностика ходовой при этом бесплатная.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skaner">
+  <div class="w">
+    <p class="tag up">Компьютерная диагностика</p>
+    <h2 class="up" style="margin-top:14px">Сканер показывает<br>не всё — и мы об этом<em> говорим</em></h2>
+    <div class="scan">
+      <div class="up">
+        <p class="tag">Что видит сканер</p>
+        <b>Список ошибок</b>
+        <p>Блок управления записывает ошибку только тогда, когда параметр вышел
+          за порог. Датчик может врать в пределах допуска — и в памяти будет пусто.
+          Так бывает с лямбда-зондом, расходомером, датчиками температуры.</p>
+      </div>
+      <div class="up">
+        <p class="tag">Что смотрим дополнительно</p>
+        <b>Показания в движении</b>
+        <p>Живые данные на прогретом моторе и под нагрузкой: как отрабатывает
+          лямбда, что с топливными коррекциями, есть ли подсос воздуха. Если
+          причину не нашли — так и скажем, а не отпустим с «ошибок нет».</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="raboty">
+  <div class="w">
+    <p class="tag up">Работы</p>
+    <h2 class="up" style="margin-top:14px">Что делаем</h2>
+    <div class="price">
+      <div class="up"><div><h3>Рулевые рейки</h3>
+        <p>Ремонт узла по позициям с чертежа выше, а не замена в сборе.
+          После — развал-схождение.</p></div>
+        <b>профиль</b></div>
+      <div class="up"><div><h3>Ходовая часть</h3>
+        <p>Стойки, рычаги, сайлентблоки, ступицы, тормоза. Проточка тормозных
+          дисков вместо покупки комплекта.</p></div>
+        <b>диагностика 0 ₽</b></div>
+      <div class="up"><div><h3>Развал-схождение</h3>
+        <p>После любой работы с ходовой и рулевым. Отдельно — если машину
+          уводит или резину ест с одной стороны.</p></div>
+        <b>на стенде</b></div>
+      <div class="up"><div><h3>Двигатель</h3>
+        <p>Бензиновые и дизельные моторы: течи, ремни, ГРМ, навесное,
+          снятие и переборка узлов.</p></div>
+        <b>по дефектовке</b></div>
+      <div class="up"><div><h3>Сцепление</h3>
+        <p>Корзина, диск, выжимной подшипник. Коробку снимаем сами —
+          отправлять машину в другое место не нужно.</p></div>
+        <b>комплектом</b></div>
+      <div class="up"><div><h3>Замена масла</h3>
+        <p>Аппаратная замена, официальный центр Mobil 1. Масло и фильтры
+          в наличии, ждать поставки не нужно.</p></div>
+        <b>Mobil 1</b></div>
+      <div class="up"><div><h3>Электрика и электроника</h3>
+        <p>Проводка, датчики, стартеры и генераторы, сигнализации.
+          Компьютерная диагностика.</p></div>
+        <b>по проблеме</b></div>
+      <div class="up"><div><h3>Климат и кондиционер</h3>
+        <p>Заправка, поиск утечек, замена компрессора и радиатора,
+          обслуживание отопителя.</p></div>
+        <b>сезонно</b></div>
+      <div class="up"><div><h3>Выхлопная система и сварка</h3>
+        <p>Глушитель, гофра, катализатор, пороги и крепления —
+          варим на месте.</p></div>
+        <b>по объёму</b></div>
+      <div class="up"><div><h3>Шиномонтаж</h3>
+        <p>С записью на время, чтобы не стоять в очереди.
+          Замена колодок при том же заезде.</p></div>
+        <b>по записи</b></div>
+    </div>
+
+    <div class="g3">
+      <figure class="up"><img src="photo/hall.jpg" alt="Ремонтная зона АВТОИНЖЕНЕР: машины на подъёмниках" loading="lazy" decoding="async">
+        <figcaption>Четыре поста работают одновременно — поэтому запись обычно на ближайшие дни.</figcaption></figure>
+      <figure class="up"><img src="photo/valvebody.jpg" alt="Разобранный гидроблок на верстаке" loading="lazy" decoding="async">
+        <figcaption>Узлы разбираем и дефектуем, а не отправляем клиента за новым в сборе.</figcaption></figure>
+      <figure class="up"><img src="photo/gearbox.jpg" alt="Разобранная коробка передач с шестернями" loading="lazy" decoding="async">
+        <figcaption>Внутренности коробки — то, что обычно клиенту не показывают. Мы показываем.</figcaption></figure>
+      <figure class="up"><img src="photo/lift.jpg" alt="Автомобиль на подъёмнике в боксе" loading="lazy" decoding="async">
+        <figcaption>Диагностика ходовой — на подъёмнике и бесплатно, до разговора о деньгах.</figcaption></figure>
+      <figure class="up"><img src="photo/pit.jpg" alt="Мастер работает с автомобилем на смотровой яме" loading="lazy" decoding="async">
+        <figcaption>Яма — для быстрых работ: масло, глушитель, осмотр перед покупкой.</figcaption></figure>
+      <figure class="up"><img src="photo/desk.jpg" alt="Стойка приёмки с образцами масла" loading="lazy" decoding="async">
+        <figcaption>Приёмка: здесь же масло, фильтры и расходники — искать по магазинам не нужно.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy" class="said">
+  <div class="w">
+    <p class="tag up">Отзывы · 4,8 из 5 по 254 оценкам в 2ГИС</p>
+    <blockquote class="up" style="margin-top:22px">
+      <p class="bigq">«Не пришлось искать запчасти — всё в одном месте. И гарантия
+        на всю проделанную работу»</p>
+      <p class="by">Надежда Баркова · 13 апреля 2026</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>Обратилась после ДТП. Сотрудники с пониманием отнеслись к моей проблеме,
+          сами приобрели запчасти, оперативно произвели ремонт. Хочется отметить
+          внимательность к клиентам и профессионализм мастеров.</p>
+        <cite>Татьяна Петрачкова · 1 июля 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Заехал поменять тормозные диски и колодки, тормозуху и антифриз. Сказали,
+          за два часа сделают — справились за час. Расходники брал свои, машина
+          Suzuki Solio Hybrid 2021 года, редкая.</p>
+        <cite>Антон Начаров · 17 мая 2026</cite>
+      </blockquote>
+    </div>
+    <div class="acts up" style="margin-top:36px">
+      <a class="btn g" href="https://2gis.ru/firm/141265769420320" target="_blank" rel="noopener">
+        Все 254 отзыва в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty">
+  <div class="w split">
+    <div class="up">
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:14px">Северный проезд, 29</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>Северный проезд, 29<br><span class="q2">Кировский район, Новосибирск</span></dd></div>
+        <div><dt>Телефоны</dt><dd><a href="tel:+73832926999">+7 383 292-69-99</a><br>
+          <a href="tel:+79139166999">+7 913 916-69-99</a><br>
+          <a href="tel:+79130186999">+7 913 018-69-99</a></dd></div>
+        <div><dt>Почта</dt><dd><a href="mailto:autoingener@mail.ru">autoingener@mail.ru</a></dd></div>
+        <div><dt>Режим</dt><dd>Ежедневно 9:00–20:00, без выходных</dd></div>
+        <div><dt>Оплата</dt><dd>Картой, наличными, по QR-коду, переводом с расчётного счёта</dd></div>
+        <div><dt>В ожидании</dt><dd>Wi-Fi для клиентов</dd></div>
+      </div>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="tel:+73832926999">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/141265769420320" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <iframe loading="lazy" title="Карта: Северный проезд, 29"
+          src="https://yandex.ru/map-widget/v1/?ll=82.935714%2C54.952024&z=16&text=Новосибирск%2C%20Северный%20проезд%2C%2029"></iframe>
+      </div>
+      <h2 style="font-size:clamp(21px,2.5vw,31px);margin-top:34px">Записаться</h2>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Алексей"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 913 000-00-00"></div>
+        <div><label for="c">Машина</label><input id="c" name="car" placeholder="Volkswagen Jetta, 2013"></div>
+        <div><label for="m">Что нужно</label><textarea id="m" name="message" placeholder="Тяжело крутится руль, под машиной пятно"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cmp">Компания</label><input id="cmp" name="company" tabindex="-1" autocomplete="off"></div>
+        <button class="btn" type="submit">Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Нажимая кнопку, вы соглашаетесь на обработку своих контактов, чтобы мы
+          могли перезвонить. Больше ни для чего они не используются.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">АВТОИНЖЕНЕР<s>Северный проезд, 29</s></div>
+    Северный проезд, 29, Новосибирск · ежедневно 9:00–20:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+73832926999">+7 383 292-69-99</a>
+    <a href="mailto:autoingener@mail.ru">autoingener@mail.ru</a>
+    <a href="https://2gis.ru/firm/141265769420320" target="_blank" rel="noopener">2ГИС</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+73832926999">Позвонить</a>
+  <a class="btn g" href="#reika">Рейки</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"АВТОИНЖЕНЕР",
+"description":"Профессиональный ремонт рулевых реек, ходовая часть, развал-схождение, двигатели, сцепление, электрика, климат, сварочные работы, шиномонтаж. Официальный центр Mobil 1.",
+"address":{"@type":"PostalAddress","streetAddress":"Северный проезд, 29","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":54.952024,"longitude":82.935714},
+"telephone":"+73832926999","email":"autoingener@mail.ru",
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"09:00","closes":"20:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"254","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/141265769420320"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и запишем на время.';ok.style.display='block';f.reset();return}}catch(_){}}
+  ok.innerHTML='Приём заявок пока настраивается. Позвоните, пожалуйста: <a href="tel:+73832926999">+7 383 292-69-99</a>.';
+  ok.style.display='block';
+});
+</script>
+</body>
+</html>
