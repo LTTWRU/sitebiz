@@ -32,6 +32,21 @@ a:hover{text-decoration:underline}
 .tag.st-sold{background:rgba(22,163,74,.14);color:var(--ok)}
 .tag.st-no{background:rgba(220,38,38,.12);color:#dc2626}
 .tag.money{background:rgba(22,163,74,.14);color:var(--ok)}
+.tag.due{background:rgba(220,38,38,.14);color:#dc2626}
+.tag.later{background:rgba(127,127,127,.16);color:var(--mut)}
+.today{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--warn);
+  border-radius:16px;padding:18px 24px;margin-bottom:24px}
+.today b{display:block;font-size:12.5px;color:var(--warn);text-transform:uppercase;
+  letter-spacing:.06em;margin-bottom:10px}
+.today ul{list-style:none;display:grid;gap:7px}
+.today li{display:flex;gap:12px;justify-content:space-between;align-items:baseline;
+  border-bottom:1px solid var(--line);padding-bottom:7px}
+.today li:last-child{border-bottom:0;padding-bottom:0}
+.today a{font-weight:600}
+.today span{color:var(--mut);font-size:13.5px;white-space:nowrap}
+.today li.hot span{color:#dc2626;font-weight:700}
+.item .note{margin:0 0 12px;padding:0;background:none;border:0;border-radius:0;
+  font-size:14px;color:var(--mut)}
 .money-bar{background:var(--card);border:1px solid var(--line);border-radius:16px;
   padding:20px 24px;margin-bottom:24px;display:flex;gap:32px;flex-wrap:wrap}
 .money-bar div b{display:block;font-size:26px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
@@ -59,41 +74,30 @@ a:hover{text-decoration:underline}
 режим работы, отзывы и фото. Кнопка «Скопировать сообщение» подставит правильную ссылку
 и положит текст в буфер: остаётся вставить в WhatsApp или Telegram владельцу.</p>
 
+<div class="today"><b>Ближайшие звонки</b><ul><li><a href="tel:+73833549944">ДНК авто</a><span>11 августа</span></li><li><a href="tel:+79538022663">Рем Зона</a><span>11 августа</span></li><li><a href="tel:+79137210061">LEVEL</a><span>17 августа</span></li><li><a href="tel:+73832867560">ОНИКС</a><span>24 августа</span></li></ul></div>
 <div class="money-bar"><div><b>2 000 ₽</b><span>в месяц с 1 клиента</span></div><div><b>8 000 ₽</b><span>разовыми за сайты и логотипы</span></div><div><b>24 000 ₽</b><span>обслуживание за год, если никто не уйдёт</span></div></div>
 <div class="list">
 <article class="item">
   <div>
-    <h2>Шиномонтажная мастерская — улица Титова, 220 к1</h2>
-    <div class="meta">Ленинский район · 4.8 ★ по 544 отзывам · +7 913 386-62-09 · varfolomeevvas@icloud.com</div>
-    <div class="tags"><span class="tag">сайта нет вообще</span><span class="tag">скор 98</span><span class="tag">круглосуточно</span><span class="tag st-new">не звонил</span></div>
-    <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! У вас 544 отзыва и 4.8 — по шиномонтажу это очень много. Сделал вам сайт, вот он: {URL}shinomontazh-titova/ — все услуги, отзывы и фото уже внутри. Оставить его вам?</span></div>
+    <h2>Азия — ремонт рулевых реек, улица Николая Островского, 70</h2>
+    <div class="meta">Центральный район · 4.9 ★ по 249 отзывам · +7 383 286-73-94 · +7 905 951-84-47 · asia.nsk@mail.ru</div>
+    <div class="tags"><span class="tag">заглушка вместо сайта</span><span class="tag">4.9 ★</span><span class="tag">рулевые рейки</span><span class="tag st-call">согласовал, ждём оплату</span><span class="tag money">сайт 5 000 ₽ · логотип 3 000 ₽ · 2 000 ₽/мес</span></div>
+    <p class="note">Согласовал: сайт 5 000 ₽ + логотип 3 000 ₽ разово, обслуживание 2 000 ₽/мес. Ждём оплату, затем публикация на домене.</p>
+    <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! На asia-avtoservis.ru сейчас стоит заглушка — клиент, который перешёл по ссылке, ничего о вас не узнаёт. Сделал вам нормальный сайт: {URL}asia-ostrovskogo/ — весь про ремонт рулевых реек, ваши отзывы и порядок работы. Оставить его вам?</span></div>
   </div>
   <div class="side">
-    <a class="btn p" href="shinomontazh-titova/">Открыть сайт</a>
+    <a class="btn p" href="asia-ostrovskogo/">Открыть сайт</a>
     <button class="btn copy">Скопировать сообщение</button>
-    <a class="btn" href="tel:+79133866209">Позвонить</a>
-    <a class="btn" href="https://2gis.ru/firm/70000001045544020" target="_blank" rel="noopener">Карточка 2ГИС</a>
-  </div>
-</article>
-<article class="item">
-  <div>
-    <h2>ОНИКС — автотехцентр, улица Петухова, 69/3</h2>
-    <div class="meta">Кировский район · 4.8 ★ по 598 отзывам · +7 383 286-75-60 · +7 952 911-44-22 · atcentr.oniks@mail.ru</div>
-    <div class="tags"><span class="tag">сайта нет вообще</span><span class="tag">скор 93</span><span class="tag">премия 2ГИС 2023</span><span class="tag st-new">не звонил</span></div>
-    <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! Вы лучший автосервис 2023 по версии 2ГИС и держите 4.8 на 598 отзывах — а в поиске вас нет. Собрал вам сайт: {URL}oniks/ — с вашими услугами, отзывами и фото. Скинуть исходники?</span></div>
-  </div>
-  <div class="side">
-    <a class="btn p" href="oniks/">Открыть сайт</a>
-    <button class="btn copy">Скопировать сообщение</button>
-    <a class="btn" href="tel:+73832867560">Позвонить</a>
-    <a class="btn" href="https://2gis.ru/firm/141266769590733" target="_blank" rel="noopener">Карточка 2ГИС</a>
+    <a class="btn" href="tel:+73832867394">Позвонить</a>
+    <a class="btn" href="https://2gis.ru/firm/141265769359700" target="_blank" rel="noopener">Карточка 2ГИС</a>
   </div>
 </article>
 <article class="item">
   <div>
     <h2>ДНК авто — Нижегородская улица, 268 к3</h2>
     <div class="meta">Октябрьский район · 4.8 ★ по 222 отзывам · +7 383 354-99-44 · +7 906 995-73-06 · dnkauto54@yandex.ru</div>
-    <div class="tags"><span class="tag">сайта нет вообще</span><span class="tag">скор 94</span><span class="tag">25+ видов работ</span><span class="tag st-new">не звонил</span></div>
+    <div class="tags"><span class="tag">сайта нет вообще</span><span class="tag">скор 94</span><span class="tag">25+ видов работ</span><span class="tag st-call">перезвонить</span><span class="tag later">созвон 11 августа</span></div>
+    <p class="note">Договорились созвониться.</p>
     <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! У вас в карточке 2ГИС больше двадцати видов работ — от турбин до грузовых. Люди этого не находят, потому что сайта нет. Сделал вам его: {URL}dnk-avto/ — весь список услуг и ваши отзывы внутри. Оставить вам?</span></div>
   </div>
   <div class="side">
@@ -105,9 +109,25 @@ a:hover{text-decoration:underline}
 </article>
 <article class="item">
   <div>
+    <h2>Рем Зона — автокомплекс, Большая улица, 580а</h2>
+    <div class="meta">Ленинский район · 4.9 ★ по 704 отзывам · +7 953 802-26-63</div>
+    <div class="tags"><span class="tag">только WhatsApp</span><span class="tag">704 отзыва</span><span class="tag">4.9 ★</span><span class="tag st-call">перезвонить</span><span class="tag later">созвон 11 августа</span></div>
+    <p class="note">Договорились созвониться.</p>
+    <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! У вас 704 отзыва и 4,9 — столько нет ни у одного автосервиса по соседству, а сайта нет, только WhatsApp. Сделал вам сайт: {URL}rem-zona/ — все работы, отзывы и марки внутри. Оставить его вам?</span></div>
+  </div>
+  <div class="side">
+    <a class="btn p" href="rem-zona/">Открыть сайт</a>
+    <button class="btn copy">Скопировать сообщение</button>
+    <a class="btn" href="tel:+79538022663">Позвонить</a>
+    <a class="btn" href="https://2gis.ru/firm/70000001031929834" target="_blank" rel="noopener">Карточка 2ГИС</a>
+  </div>
+</article>
+<article class="item">
+  <div>
     <h2>LEVEL — автомойка и детейлинг, Семьи Шамшиных, 61 к1</h2>
     <div class="meta">Центральный район · 4.8 ★ по 239 отзывам · +7 913 721-00-61 · inbox@levelwash.ru</div>
-    <div class="tags"><span class="tag">сайта нет вообще</span><span class="tag">скор 94</span><span class="tag">центр города</span><span class="tag st-new">не звонил</span></div>
+    <div class="tags"><span class="tag">сайта нет вообще</span><span class="tag">скор 94</span><span class="tag">центр города</span><span class="tag st-call">думает</span><span class="tag later">созвон 17 августа</span></div>
+    <p class="note">Просил перезвонить через неделю.</p>
     <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! У вас почта levelwash.ru в карточке, а сайта по ней нет. Собрал вам его: {URL}level-wash/ — с записью, услугами и вашими отзывами про детский уголок и администратора. Оставить себе?</span></div>
   </div>
   <div class="side">
@@ -119,9 +139,70 @@ a:hover{text-decoration:underline}
 </article>
 <article class="item">
   <div>
+    <h2>ОНИКС — автотехцентр, улица Петухова, 69/3</h2>
+    <div class="meta">Кировский район · 4.8 ★ по 598 отзывам · +7 383 286-75-60 · +7 952 911-44-22 · atcentr.oniks@mail.ru</div>
+    <div class="tags"><span class="tag">сайта нет вообще</span><span class="tag">скор 93</span><span class="tag">премия 2ГИС 2023</span><span class="tag st-call">думает</span><span class="tag later">созвон 24 августа</span></div>
+    <p class="note">Перезвонит сам через две недели.</p>
+    <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! Вы лучший автосервис 2023 по версии 2ГИС и держите 4.8 на 598 отзывах — а в поиске вас нет. Собрал вам сайт: {URL}oniks/ — с вашими услугами, отзывами и фото. Скинуть исходники?</span></div>
+  </div>
+  <div class="side">
+    <a class="btn p" href="oniks/">Открыть сайт</a>
+    <button class="btn copy">Скопировать сообщение</button>
+    <a class="btn" href="tel:+73832867560">Позвонить</a>
+    <a class="btn" href="https://2gis.ru/firm/141266769590733" target="_blank" rel="noopener">Карточка 2ГИС</a>
+  </div>
+</article>
+<article class="item">
+  <div>
+    <h2>Автосервис и автомойка — улица Сибиряков-Гвардейцев, 56Б</h2>
+    <div class="meta">Кировский район · 4.5 ★ по 262 отзывам · +7 953 885-57-88 · +7 953 895-94-88</div>
+    <div class="tags"><span class="tag">сайта нет вообще</span><span class="tag">262 отзыва</span><span class="tag">сервис + мойка</span><span class="tag st-call">позвонил, ждём ответа</span></div>
+    <p class="note">Ссылка отправлена, ждём ответа.</p>
+    <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! В отзывах у вас чаще всего вспоминают не мойку, а двор в цветах и лавочки. Сделал вам сайт вокруг этого: {URL}avtoservis-sibiryakov/ — плюс список услуг и честный блок «что входит в комплекс, а что считается отдельно». Оставить его вам?</span></div>
+  </div>
+  <div class="side">
+    <a class="btn p" href="avtoservis-sibiryakov/">Открыть сайт</a>
+    <button class="btn copy">Скопировать сообщение</button>
+    <a class="btn" href="tel:+79538855788">Позвонить</a>
+    <a class="btn" href="https://2gis.ru/firm/141265769348224" target="_blank" rel="noopener">Карточка 2ГИС</a>
+  </div>
+</article>
+<article class="item">
+  <div>
+    <h2>Autobox54 — развал-схождение и ходовая, Широкая улица, 40/1</h2>
+    <div class="meta">Ленинский район · 5.0 ★ по 304 отзывам · +7 993 007-79-51 · autobox054@gmail.com</div>
+    <div class="tags"><span class="tag">сайт не открывается</span><span class="tag">5.0 ★</span><span class="tag">304 отзыва</span><span class="tag st-call">позвонил, ждём ответа</span></div>
+    <p class="note">Ссылка отправлена, ждём ответа.</p>
+    <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! Ваш сайт autobox54.pro сейчас не открывается — проверьте с телефона, люди на него не попадают. Пока сделал вам рабочий: {URL}autobox54/ — с вашими 5,0 из 304 отзывов и схемой развала-схождения. Оставить его вам?</span></div>
+  </div>
+  <div class="side">
+    <a class="btn p" href="autobox54/">Открыть сайт</a>
+    <button class="btn copy">Скопировать сообщение</button>
+    <a class="btn" href="tel:+79930077951">Позвонить</a>
+    <a class="btn" href="https://2gis.ru/firm/70000001025742434" target="_blank" rel="noopener">Карточка 2ГИС</a>
+  </div>
+</article>
+<article class="item">
+  <div>
+    <h2>Шиномонтажная мастерская — улица Титова, 220 к1</h2>
+    <div class="meta">Ленинский район · 4.8 ★ по 544 отзывам · +7 913 386-62-09 · varfolomeevvas@icloud.com</div>
+    <div class="tags"><span class="tag">сайта нет вообще</span><span class="tag">скор 98</span><span class="tag">круглосуточно</span><span class="tag st-new">не звонил</span></div>
+    
+    <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! У вас 544 отзыва и 4.8 — по шиномонтажу это очень много. Сделал вам сайт, вот он: {URL}shinomontazh-titova/ — все услуги, отзывы и фото уже внутри. Оставить его вам?</span></div>
+  </div>
+  <div class="side">
+    <a class="btn p" href="shinomontazh-titova/">Открыть сайт</a>
+    <button class="btn copy">Скопировать сообщение</button>
+    <a class="btn" href="tel:+79133866209">Позвонить</a>
+    <a class="btn" href="https://2gis.ru/firm/70000001045544020" target="_blank" rel="noopener">Карточка 2ГИС</a>
+  </div>
+</article>
+<article class="item">
+  <div>
     <h2>Дунай — автокомплекс, улица Дунаевского, 11 к1</h2>
     <div class="meta">Калининский район · 4.5 ★ по 417 отзывам · +7 913 915-00-68 · +7 383 291-00-68</div>
     <div class="tags"><span class="tag">сайта нет вообще</span><span class="tag">скор 93</span><span class="tag">мойка + шиномонтаж</span><span class="tag st-new">не звонил</span></div>
+    
     <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! 417 отзывов, и почти в каждом «очереди нет, быстро». Это сильный аргумент, но его никто не видит — сайта у вас нет. Я его сделал: {URL}dunay/ — с вашими ценами, услугами и отзывами. Оставить вам?</span></div>
   </div>
   <div class="side">
@@ -136,6 +217,7 @@ a:hover{text-decoration:underline}
     <h2>Автопарк — автосервис, улица Доватора, 11</h2>
     <div class="meta">Дзержинский район · 4.9 ★ по 163 отзывам · +7 383 310-55-55 · ip.yundin.vs@gmail.com</div>
     <div class="tags"><span class="tag">сайта нет вообще</span><span class="tag">4.9 ★</span><span class="tag">бесплатная диагностика</span><span class="tag st-new">не звонил</span></div>
+    
     <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! У вас 4,9 и 163 отзыва — по Дзержинскому это лучший показатель среди автосервисов. Сделал вам сайт, вот он: {URL}avtopark-dovatora/ — услуги, отзывы и контакты уже внутри, отдельно вынес бесплатную диагностику и скидку 10 %. Оставить его вам?</span></div>
   </div>
   <div class="side">
@@ -150,6 +232,7 @@ a:hover{text-decoration:underline}
     <h2>Сити Моторс Плюс — автомастерская, улица Связистов, 131/1Б</h2>
     <div class="meta">Ленинский район · 4.5 ★ по 118 отзывам · +7 383 239-09-72 · +7 383 239-09-73 · max_maos@mail.ru</div>
     <div class="tags"><span class="tag">сайта нет вообще</span><span class="tag">4.5 ★</span><span class="tag">15 марок</span><span class="tag st-new">не звонил</span></div>
+    
     <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! Читал ваши отзывы — люди пишут, что ездят к вам по шесть лет и что вы никогда не говорите «продай её». Сделал вам сайт ровно про это: {URL}city-motors-plus/ — там же ваша работа по фарам «до и после». Оставить его вам?</span></div>
   </div>
   <div class="side">
@@ -161,107 +244,10 @@ a:hover{text-decoration:underline}
 </article>
 <article class="item">
   <div>
-    <h2>Renault Center — сервис и запчасти, улица Кошурникова, 61Б</h2>
-    <div class="meta">Октябрьский район · 4.6 ★ по 355 отзывам · +7 383 287-67-77 · +7 913 480-00-95 · renault-center@mail.ru</div>
-    <div class="tags"><span class="tag">сайта нет вообще</span><span class="tag">355 отзывов</span><span class="tag">кузовной цех</span><span class="tag st-new">не звонил</span></div>
-    <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! У вас 355 отзывов и узкая специализация — Renault, Peugeot, Citroen. Сделал вам сайт: {URL}renault-center/ — три марки, кузовной цех с восстановлением геометрии и гарантия на запчасти и работу. Оставить его вам?</span></div>
-  </div>
-  <div class="side">
-    <a class="btn p" href="renault-center/">Открыть сайт</a>
-    <button class="btn copy">Скопировать сообщение</button>
-    <a class="btn" href="tel:+73832876777">Позвонить</a>
-    <a class="btn" href="https://2gis.ru/firm/70000001019382933" target="_blank" rel="noopener">Карточка 2ГИС</a>
-  </div>
-</article>
-<article class="item">
-  <div>
-    <h2>Автосервис и автомойка — улица Сибиряков-Гвардейцев, 56Б</h2>
-    <div class="meta">Кировский район · 4.5 ★ по 262 отзывам · +7 953 885-57-88 · +7 953 895-94-88</div>
-    <div class="tags"><span class="tag">сайта нет вообще</span><span class="tag">262 отзыва</span><span class="tag">сервис + мойка</span><span class="tag st-new">не звонил</span></div>
-    <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! В отзывах у вас чаще всего вспоминают не мойку, а двор в цветах и лавочки. Сделал вам сайт вокруг этого: {URL}avtoservis-sibiryakov/ — плюс список услуг и честный блок «что входит в комплекс, а что считается отдельно». Оставить его вам?</span></div>
-  </div>
-  <div class="side">
-    <a class="btn p" href="avtoservis-sibiryakov/">Открыть сайт</a>
-    <button class="btn copy">Скопировать сообщение</button>
-    <a class="btn" href="tel:+79538855788">Позвонить</a>
-    <a class="btn" href="https://2gis.ru/firm/141265769348224" target="_blank" rel="noopener">Карточка 2ГИС</a>
-  </div>
-</article>
-<article class="item">
-  <div>
-    <h2>Феникс — автосервис и запчасти, Молодогвардейская улица, 2</h2>
-    <div class="meta">Первомайский район · 4.8 ★ по 259 отзывам · +7 913 376-16-88 · +7 923 705-44-44</div>
-    <div class="tags"><span class="tag">сайта нет вообще</span><span class="tag">моторный цех</span><span class="tag">авторазбор</span><span class="tag st-new">не звонил</span></div>
-    <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! Вы делаете то, чего почти нет у соседей: расточку, гильзовку и ультразвуковую мойку деталей. Сделал вам сайт про это: {URL}feniks/ — весь моторный цех по шагам и 24 направления списком. Оставить его вам?</span></div>
-  </div>
-  <div class="side">
-    <a class="btn p" href="feniks/">Открыть сайт</a>
-    <button class="btn copy">Скопировать сообщение</button>
-    <a class="btn" href="tel:+79133761688">Позвонить</a>
-    <a class="btn" href="https://2gis.ru/firm/70000001020283303" target="_blank" rel="noopener">Карточка 2ГИС</a>
-  </div>
-</article>
-<article class="item">
-  <div>
-    <h2>Autobox54 — развал-схождение и ходовая, Широкая улица, 40/1</h2>
-    <div class="meta">Ленинский район · 5.0 ★ по 304 отзывам · +7 993 007-79-51 · autobox054@gmail.com</div>
-    <div class="tags"><span class="tag">сайт не открывается</span><span class="tag">5.0 ★</span><span class="tag">304 отзыва</span><span class="tag st-new">не звонил</span></div>
-    <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! Ваш сайт autobox54.pro сейчас не открывается — проверьте с телефона, люди на него не попадают. Пока сделал вам рабочий: {URL}autobox54/ — с вашими 5,0 из 304 отзывов и схемой развала-схождения. Оставить его вам?</span></div>
-  </div>
-  <div class="side">
-    <a class="btn p" href="autobox54/">Открыть сайт</a>
-    <button class="btn copy">Скопировать сообщение</button>
-    <a class="btn" href="tel:+79930077951">Позвонить</a>
-    <a class="btn" href="https://2gis.ru/firm/70000001025742434" target="_blank" rel="noopener">Карточка 2ГИС</a>
-  </div>
-</article>
-<article class="item">
-  <div>
-    <h2>Азия — ремонт рулевых реек, улица Николая Островского, 70</h2>
-    <div class="meta">Центральный район · 4.9 ★ по 249 отзывам · +7 383 286-73-94 · +7 905 951-84-47 · asia.nsk@mail.ru</div>
-    <div class="tags"><span class="tag">заглушка вместо сайта</span><span class="tag">4.9 ★</span><span class="tag">рулевые рейки</span><span class="tag st-call">согласовал, ждём оплату</span><span class="tag money">сайт 5 000 ₽ · логотип 3 000 ₽ · 2 000 ₽/мес</span></div>
-    <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! На asia-avtoservis.ru сейчас стоит заглушка — клиент, который перешёл по ссылке, ничего о вас не узнаёт. Сделал вам нормальный сайт: {URL}asia-ostrovskogo/ — весь про ремонт рулевых реек, ваши отзывы и порядок работы. Оставить его вам?</span></div>
-  </div>
-  <div class="side">
-    <a class="btn p" href="asia-ostrovskogo/">Открыть сайт</a>
-    <button class="btn copy">Скопировать сообщение</button>
-    <a class="btn" href="tel:+73832867394">Позвонить</a>
-    <a class="btn" href="https://2gis.ru/firm/141265769359700" target="_blank" rel="noopener">Карточка 2ГИС</a>
-  </div>
-</article>
-<article class="item">
-  <div>
-    <h2>АвтоЗдрав — СТО, Волочаевская улица, 64а</h2>
-    <div class="meta">Дзержинский район · 4.6 ★ по 128 отзывам · +7 383 255-02-10 · +7 962 835-02-10</div>
-    <div class="tags"><span class="tag">сайт не адаптивный</span><span class="tag">4.6 ★</span><span class="tag">сервисная книжка</span><span class="tag st-new">не звонил</span></div>
-    <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! Ваш сайт avtozdrav.ru работает, но он не адаптирован под телефон — а в 2ГИС почти все смотрят с телефона. Проверьте сами: страница открывается шириной под компьютер, текст мелкий, и её ещё уводит вбок. Плюс защищённый адрес перебрасывает на незащищённый, браузер пишет «Не защищено». Сделал вам версию, которая нормально открывается с телефона: {URL}avtozdrav/ — с вашей сервисной книжкой, отзывами и всеми мессенджерами. Посмотрите?</span></div>
-  </div>
-  <div class="side">
-    <a class="btn p" href="avtozdrav/">Открыть сайт</a>
-    <button class="btn copy">Скопировать сообщение</button>
-    <a class="btn" href="tel:+73832550210">Позвонить</a>
-    <a class="btn" href="https://2gis.ru/firm/141265771763497" target="_blank" rel="noopener">Карточка 2ГИС</a>
-  </div>
-</article>
-<article class="item">
-  <div>
-    <h2>Рем Зона — автокомплекс, Большая улица, 580а</h2>
-    <div class="meta">Ленинский район · 4.9 ★ по 704 отзывам · +7 953 802-26-63</div>
-    <div class="tags"><span class="tag">только WhatsApp</span><span class="tag">704 отзыва</span><span class="tag">4.9 ★</span><span class="tag st-new">не звонил</span></div>
-    <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! У вас 704 отзыва и 4,9 — столько нет ни у одного автосервиса по соседству, а сайта нет, только WhatsApp. Сделал вам сайт: {URL}rem-zona/ — все работы, отзывы и марки внутри. Оставить его вам?</span></div>
-  </div>
-  <div class="side">
-    <a class="btn p" href="rem-zona/">Открыть сайт</a>
-    <button class="btn copy">Скопировать сообщение</button>
-    <a class="btn" href="tel:+79538022663">Позвонить</a>
-    <a class="btn" href="https://2gis.ru/firm/70000001031929834" target="_blank" rel="noopener">Карточка 2ГИС</a>
-  </div>
-</article>
-<article class="item">
-  <div>
     <h2>Хонда-Сан — автокомплекс, Большевистская улица, 125/3</h2>
     <div class="meta">Октябрьский район · 4.5 ★ по 598 отзывам · +7 933 350-23-99 · +7 952 911-54-76</div>
     <div class="tags"><span class="tag">только соцсети</span><span class="tag">598 отзывов</span><span class="tag">одна марка</span><span class="tag st-new">не звонил</span></div>
+    
     <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! Вы работаете по одной марке, и это сильная сторона — но в интернете вас видно только через 2ГИС и ВК. Сделал вам сайт: {URL}honda-san/ — про узкую специализацию, склад запчастей и ваше кафе, которое хвалят в отзывах. Оставить его вам?</span></div>
   </div>
   <div class="side">
@@ -276,6 +262,7 @@ a:hover{text-decoration:underline}
     <h2>Emka — автосервис, Большая улица, 307а</h2>
     <div class="meta">Ленинский район · 4.9 ★ по 578 отзывам · +7 383 207-57-16</div>
     <div class="tags"><span class="tag">только соцсети</span><span class="tag">578 отзывов</span><span class="tag">рассрочка 0 %</span><span class="tag st-new">не звонил</span></div>
+    
     <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! У вас 4,9 по 578 отзывам — по автосервисам это очень много, а сайта нет, только мессенджеры. Сделал вам сайт: {URL}emka/ — все работы, отзывы и блок про рассрочку внутри. Оставить его вам?</span></div>
   </div>
   <div class="side">
@@ -290,6 +277,7 @@ a:hover{text-decoration:underline}
     <h2>Bykof — шиномонтаж и хранение шин, Пермская улица, 59/2</h2>
     <div class="meta">Новосибирск · 4.9 ★ по 371 отзыву · +7 913 018-15-15</div>
     <div class="tags"><span class="tag">домен припаркован</span><span class="tag">4.9 ★</span><span class="tag">хранение шин</span><span class="tag st-new">не звонил</span></div>
+    
     <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! Ваш домен bykof.ru сейчас припаркован — там висит заглушка хостинга, и человек, который на него зашёл, о вас ничего не узнаёт. Сделал вам рабочий сайт: {URL}bykof/ — про хранение шин, подбор резины и те мелочи со ступицами и медной смазкой, за которые вас хвалят. Оставить его вам?</span></div>
   </div>
   <div class="side">
@@ -304,6 +292,7 @@ a:hover{text-decoration:underline}
     <h2>Авто Премиум — автосервис Infiniti, Nissan, Lexus, улица Фрунзе, 104Б</h2>
     <div class="meta">Центральный район · 4.9 ★ по 201 отзыву · +7 383 239-22-10 · +7 383 310-58-08 · autopremium54@gmail.com</div>
     <div class="tags"><span class="tag">только Telegram</span><span class="tag">3 премии 2ГИС</span><span class="tag">свой магазин запчастей</span><span class="tag st-new">не звонил</span></div>
+    
     <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! У вас три премии 2ГИС — 2023, 2025 и номинант 2026 — и 4,9 по 201 отзыву. Такого нет почти ни у кого в городе, а сайта нет, только телеграм. Сделал вам его: {URL}avto-premium/ — про ремонт вместо замены в сборе, ваш магазин запчастей и выбор «оригинал или аналог». Оставить его вам?</span></div>
   </div>
   <div class="side">
@@ -318,6 +307,7 @@ a:hover{text-decoration:underline}
     <h2>Макс — кузовной ремонт, покраска и детейлинг, Пролетарская улица, 271а</h2>
     <div class="meta">Октябрьский район · 5.0 ★ по 440 отзывам · +7 913 913-00-36 · +7 999 321-00-36</div>
     <div class="tags"><span class="tag">только WhatsApp</span><span class="tag">5.0 ★</span><span class="tag">440 отзывов</span><span class="tag st-new">не звонил</span></div>
+    
     <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! 5,0 при 440 отзывах — это редчайший случай, я по городу такого больше не встречал. А в интернете вас видно только через 2ГИС и ватсап. Сделал вам сайт: {URL}maks-detailing/ — там все 440 оценок нарисованы одной картинкой, и это работает сильнее любого текста. Оставить его вам?</span></div>
   </div>
   <div class="side">
@@ -332,6 +322,7 @@ a:hover{text-decoration:underline}
     <h2>Мост — СТО, Владимировская улица, 2ж к3</h2>
     <div class="meta">Железнодорожный район · 4.9 ★ по 89 отзывам · +7 913 377-98-66</div>
     <div class="tags"><span class="tag">сайта нет вообще</span><span class="tag">лучший 2025 и 2026</span><span class="tag">ремонт электромобилей</span><span class="tag st-new">не звонил</span></div>
+    
     <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! Вы лучший автосервис 2ГИС два года подряд и берётесь за электромобили — в городе таких единицы. Люди этого не находят, потому что сайта нет. Сделал вам его: {URL}most/ — отдельный блок про электромобили и ваше «снятую деталь отдаём в руки». Оставить его вам?</span></div>
   </div>
   <div class="side">
@@ -346,6 +337,7 @@ a:hover{text-decoration:underline}
     <h2>Subaru Service Nsk — сервис только для Subaru, Сибиряков-Гвардейцев, 47 к9</h2>
     <div class="meta">Кировский район · 4.8 ★ по 332 отзывам · +7 383 255-00-30 · +7 983 000-03-03 · +7 983 000-05-05</div>
     <div class="tags"><span class="tag">только соцсети</span><span class="tag">одна марка</span><span class="tag">запчасти из Японии</span><span class="tag st-new">не звонил</span></div>
+    
     <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! В отзыве человек написал: «купил Субару из-за наличия данного сервиса в НСК». Сильнее про специализацию не скажешь — но сайта у вас нет, только соцсети. Сделал: {URL}subaru-service-nsk/ — про то, что берёте только Subaru, контракт с аукционов Японии и свой разбор. Оставить его вам?</span></div>
   </div>
   <div class="side">
@@ -360,6 +352,7 @@ a:hover{text-decoration:underline}
     <h2>Авто-Франция — сервис Citroen и Peugeot, Выборная улица, 26 к1</h2>
     <div class="meta">Октябрьский район · 4.9 ★ по 366 отзывам · +7 913 207-38-14 · +7 383 380-36-47 · +7 952 912-56-06</div>
     <div class="tags"><span class="tag">только соцсети</span><span class="tag">две марки</span><span class="tag">свой эвакуатор</span><span class="tag st-new">не звонил</span></div>
+    
     <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! Прочитал все ваши отзывы подряд — они про одно и то же: в другом месте предлагали менять блок или моторчик, а вы находили окисленный контакт. Сделал сайт ровно про это: {URL}avto-frantsiya/ — там таблица «что предлагали заменить / что оказалось на самом деле», все строки из ваших отзывов. Оставить его вам?</span></div>
   </div>
   <div class="side">
@@ -374,6 +367,7 @@ a:hover{text-decoration:underline}
     <h2>Луна авто — сервисная станция, Станционная улица, 98/2</h2>
     <div class="meta">Ленинский район · 4.7 ★ по 340 отзывам · +7 383 233-53-33</div>
     <div class="tags"><span class="tag">только ВКонтакте</span><span class="tag">номинант 2026</span><span class="tag">грузовой и дизель</span><span class="tag st-new">не звонил</span></div>
+    
     <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! У вас 340 отзывов и номинация 2ГИС, а сайта нет — только ВКонтакте. Сделал вам сайт: {URL}luna-avto/ — главный блок про гарантию завода, как в отзыве Светланы, где вы устранили рейку по гарантии, а другой сервис предлагал за свои деньги. Оставить его вам?</span></div>
   </div>
   <div class="side">
@@ -388,6 +382,7 @@ a:hover{text-decoration:underline}
     <h2>Авто-Точка — автосервис в Бердске, Водосточная улица, 18</h2>
     <div class="meta">Бердск · 4.8 ★ по 438 отзывам · +7 913 001-77-99</div>
     <div class="tags"><span class="tag">только соцсети</span><span class="tag">438 отзывов</span><span class="tag">3D-развал</span><span class="tag st-new">не звонил</span></div>
+    
     <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! 438 отзывов и 4,8 — по Бердску это лучший результат среди автосервисов, а сайта у вас нет. Сделал: {URL}avto-tochka/ — про то, что у вас закрывается одним заездом то, за чем обычно ездят по пяти адресам: 3D-развал, сварка, печка, карбюраторы, отогрев. Оставить его вам?</span></div>
   </div>
   <div class="side">
@@ -402,6 +397,7 @@ a:hover{text-decoration:underline}
     <h2>АБСДиск54 — шинный центр и покраска дисков, Бориса Богаткова, 163а к2</h2>
     <div class="meta">Октябрьский район · 4.6 ★ по 410 отзывам · +7 913 067-05-42 · 3310085@gmail.com</div>
     <div class="tags"><span class="tag">только соцсети</span><span class="tag">13 лет</span><span class="tag">порошковая окраска</span><span class="tag st-new">не звонил</span></div>
+    
     <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! Порошковая окраска дисков по RAL — то, чего почти ни у кого рядом нет, а найти вас можно только через 2ГИС. Сделал вам сайт: {URL}absdisk54/ — покраска расписана по этапам, есть раскладка цветов и ваша гарантия 3 года. Оставить его вам?</span></div>
   </div>
   <div class="side">
@@ -416,6 +412,7 @@ a:hover{text-decoration:underline}
     <h2>STOAvto — автосервис, шиномонтаж и мойка, улица Курчатова, 37 к1</h2>
     <div class="meta">Калининский район · 4.5 ★ по 215 отзывам · +7 913 006-57-99 · d-petrovich@yandex.ru</div>
     <div class="tags"><span class="tag">только мессенджеры</span><span class="tag">сервис + мойка</span><span class="tag">моторный цех</span><span class="tag st-new">не звонил</span></div>
+    
     <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! У вас в одном дворе сервис, шиномонтаж и мойка — и всё до девяти вечера каждый день. Это сильный аргумент, но его никто не видит: сайта нет. Сделал: {URL}stoavto/ — отдельно вынес моторный цех с расточкой и гильзовкой, этого у соседей нет. Оставить его вам?</span></div>
   </div>
   <div class="side">
@@ -430,6 +427,7 @@ a:hover{text-decoration:underline}
     <h2>Сибирия Моторс — автокомплекс, 2-я Высокогорная улица, 40</h2>
     <div class="meta">Октябрьский район · 4.8 ★ по 210 отзывам · +7 952 921-50-04 · sibiriamotors@gmail.com</div>
     <div class="tags"><span class="tag">только мессенджеры</span><span class="tag">турбины и дизель</span><span class="tag">40 марок</span><span class="tag st-new">не звонил</span></div>
+    
     <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! В отзыве человек написал, что у вас можно ходить следом за мастером и смотреть, что проверяют, — а не сидеть в комнате ожидания. Сделал сайт вокруг этого: {URL}sibiriya-motors/ — плюс турбины, дизель и предпусковые подогреватели отдельным блоком. Оставить его вам?</span></div>
   </div>
   <div class="side">
@@ -444,6 +442,7 @@ a:hover{text-decoration:underline}
     <h2>Академия Сервиса — автосервис и запчасти, Червонная улица, 20/1</h2>
     <div class="meta">Первомайский район · 4.8 ★ по 153 отзывам · +7 913 708-90-90 · +7 913 069-69-57 · ooo.sibmarket@yandex.ru</div>
     <div class="tags"><span class="tag">только WhatsApp</span><span class="tag">свой разбор</span><span class="tag">антикор</span><span class="tag st-new">не звонил</span></div>
+    
     <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! В отзывах у вас пишут то, что редко пишут про сервисы: подбираете деталь под бюджет клиента и объясняете разницу. Сделал сайт про это: {URL}akademiya-servisa/ — три варианта цены на одну деталь и блок про то, что недочёты вы исправляете за свой счёт. Оставить его вам?</span></div>
   </div>
   <div class="side">
@@ -458,6 +457,7 @@ a:hover{text-decoration:underline}
     <h2>Мамитсу — автосервис Mazda, Mitsubishi и Subaru, Станционная улица, 51</h2>
     <div class="meta">Ленинский район · 4.7 ★ по 147 отзывам · +7 983 001-22-24 · +7 983 138-88-98 · info@mamitsu.com</div>
     <div class="tags"><span class="tag">только соцсети</span><span class="tag">три марки</span><span class="tag">клиент-центр</span><span class="tag st-new">не звонил</span></div>
+    
     <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! У вас в названии зашиты три марки — МАзда, МИцубиси, СУбару, и в отзывах пишут «знают модель до винтика». Сделал сайт ровно на этом: {URL}mamitsu/ — плюс отдельный блок про клиент-центр с детским уголком, его тоже хвалят. Оставить его вам?</span></div>
   </div>
   <div class="side">
@@ -472,6 +472,7 @@ a:hover{text-decoration:underline}
     <h2>Автоклубсервис — автосервис, Светлановская улица, 50/6</h2>
     <div class="meta">Заельцовский район · 4.7 ★ по 93 отзывам · +7 383 214-50-93 · +7 951 393-53-93</div>
     <div class="tags"><span class="tag">сайта нет вообще</span><span class="tag">19 марок</span><span class="tag">акт на работы</span><span class="tag st-new">не звонил</span></div>
+    
     <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! У вас в отзывах есть история, ради которой люди и возвращаются: мастер перезвонил через три часа сам — узнать, решила ли клиентка вопрос, а потом ещё раз, чтобы подсказать, где купить клипсу. Сделал сайт вокруг этого: {URL}avtoklubservis/. У вас сейчас нет ни сайта, ни соцсетей — только два телефона. Оставить его вам?</span></div>
   </div>
   <div class="side">
@@ -486,6 +487,7 @@ a:hover{text-decoration:underline}
     <h2>MAXservice 54 — развал-схождение и шиномонтаж, Троллейная улица, 76 к1</h2>
     <div class="meta">Ленинский район · 4.7 ★ по 408 отзывам · +7 383 380-22-86 · +7 953 790-61-16 · maxservice54@mail.ru</div>
     <div class="tags"><span class="tag">только соцсети</span><span class="tag">408 отзывов</span><span class="tag">гарантия полгода</span><span class="tag st-new">не звонил</span></div>
+    
     <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! Лучший ваш отзыв — про то, как человек приехал на развал, а вы замерили, сказали «всё в допусках», и отпустили без работы и без денег. Такое продаёт сильнее любой рекламы. Сделал сайт вокруг этого: {URL}maxservice54/ — плюс гарантия полгода и три дня на проверку контрактной запчасти. Оставить его вам?</span></div>
   </div>
   <div class="side">
@@ -500,6 +502,7 @@ a:hover{text-decoration:underline}
     <h2>Автокомплекс54 — автосервис, улица Петухова, 152/2</h2>
     <div class="meta">Кировский район · 4.5 ★ по 277 отзывам · +7 383 288-48-48</div>
     <div class="tags"><span class="tag">сайта нет вообще</span><span class="tag">277 отзывов</span><span class="tag">антикор</span><span class="tag st-new">не звонил</span></div>
+    
     <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! В отзывах у вас пишут: «машина не новая, ребята не боятся работы» и «не стали навязывать выдуманные дефекты». Это редкость, и её стоит показывать. Сделал вам сайт: {URL}avtokompleks54/ — про возрастные машины, сварку вместо замены и запчасти под ключ. У вас сейчас ни сайта, ни соцсетей. Оставить его вам?</span></div>
   </div>
   <div class="side">
@@ -514,6 +517,7 @@ a:hover{text-decoration:underline}
     <h2>СТО Починок — автосервис, улица Баумана, 27</h2>
     <div class="meta">Первомайский район · 4.5 ★ по 124 отзывам · +7 383 335-74-16 · +7 993 017-86-80 · stopochinok@mail.ru</div>
     <div class="tags"><span class="tag">только мессенджеры</span><span class="tag">мониторы из бокса</span><span class="tag">моторный цех</span><span class="tag st-new">не звонил</span></div>
+    
     <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! У вас в зале ожидания стоят мониторы с камерами из бокса — клиент своими глазами видит, что делают с его машиной. Такого почти нигде нет, а рассказать об этом негде: сайта нет. Сделал: {URL}sto-pochinok/ — плюс ваша приёмка с пакетом на сиденье и оплата частями. Оставить его вам?</span></div>
   </div>
   <div class="side">
@@ -521,6 +525,51 @@ a:hover{text-decoration:underline}
     <button class="btn copy">Скопировать сообщение</button>
     <a class="btn" href="tel:+73833357416">Позвонить</a>
     <a class="btn" href="https://2gis.ru/firm/70000001026793495" target="_blank" rel="noopener">Карточка 2ГИС</a>
+  </div>
+</article>
+<article class="item">
+  <div>
+    <h2>Renault Center — сервис и запчасти, улица Кошурникова, 61Б</h2>
+    <div class="meta">Октябрьский район · 4.6 ★ по 355 отзывам · +7 383 287-67-77 · +7 913 480-00-95 · renault-center@mail.ru</div>
+    <div class="tags"><span class="tag">сайта нет вообще</span><span class="tag">355 отзывов</span><span class="tag">кузовной цех</span><span class="tag st-no">отказался</span></div>
+    <p class="note">Сказал, что сайт не нужен.</p>
+    <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! У вас 355 отзывов и узкая специализация — Renault, Peugeot, Citroen. Сделал вам сайт: {URL}renault-center/ — три марки, кузовной цех с восстановлением геометрии и гарантия на запчасти и работу. Оставить его вам?</span></div>
+  </div>
+  <div class="side">
+    <a class="btn p" href="renault-center/">Открыть сайт</a>
+    <button class="btn copy">Скопировать сообщение</button>
+    <a class="btn" href="tel:+73832876777">Позвонить</a>
+    <a class="btn" href="https://2gis.ru/firm/70000001019382933" target="_blank" rel="noopener">Карточка 2ГИС</a>
+  </div>
+</article>
+<article class="item">
+  <div>
+    <h2>Феникс — автосервис и запчасти, Молодогвардейская улица, 2</h2>
+    <div class="meta">Первомайский район · 4.8 ★ по 259 отзывам · +7 913 376-16-88 · +7 923 705-44-44</div>
+    <div class="tags"><span class="tag">сайта нет вообще</span><span class="tag">моторный цех</span><span class="tag">авторазбор</span><span class="tag st-no">отказался</span></div>
+    <p class="note">Сказал, что сайт не нужен.</p>
+    <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! Вы делаете то, чего почти нет у соседей: расточку, гильзовку и ультразвуковую мойку деталей. Сделал вам сайт про это: {URL}feniks/ — весь моторный цех по шагам и 24 направления списком. Оставить его вам?</span></div>
+  </div>
+  <div class="side">
+    <a class="btn p" href="feniks/">Открыть сайт</a>
+    <button class="btn copy">Скопировать сообщение</button>
+    <a class="btn" href="tel:+79133761688">Позвонить</a>
+    <a class="btn" href="https://2gis.ru/firm/70000001020283303" target="_blank" rel="noopener">Карточка 2ГИС</a>
+  </div>
+</article>
+<article class="item">
+  <div>
+    <h2>АвтоЗдрав — СТО, Волочаевская улица, 64а</h2>
+    <div class="meta">Дзержинский район · 4.6 ★ по 128 отзывам · +7 383 255-02-10 · +7 962 835-02-10</div>
+    <div class="tags"><span class="tag">сайт не адаптивный</span><span class="tag">4.6 ★</span><span class="tag">сервисная книжка</span><span class="tag st-no">отказался</span></div>
+    <p class="note">Сказал, что сайт не нужен.</p>
+    <div class="msg"><b>Сообщение владельцу</b><span class="t">Здравствуйте! Ваш сайт avtozdrav.ru работает, но он не адаптирован под телефон — а в 2ГИС почти все смотрят с телефона. Проверьте сами: страница открывается шириной под компьютер, текст мелкий, и её ещё уводит вбок. Плюс защищённый адрес перебрасывает на незащищённый, браузер пишет «Не защищено». Сделал вам версию, которая нормально открывается с телефона: {URL}avtozdrav/ — с вашей сервисной книжкой, отзывами и всеми мессенджерами. Посмотрите?</span></div>
+  </div>
+  <div class="side">
+    <a class="btn p" href="avtozdrav/">Открыть сайт</a>
+    <button class="btn copy">Скопировать сообщение</button>
+    <a class="btn" href="tel:+73832550210">Позвонить</a>
+    <a class="btn" href="https://2gis.ru/firm/141265771763497" target="_blank" rel="noopener">Карточка 2ГИС</a>
   </div>
 </article>
 </div>

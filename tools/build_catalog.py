@@ -9,6 +9,7 @@
 
 import html
 import json
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -20,10 +21,14 @@ STATUS = {
     "новый": ("new", "не звонил"),
     "позвонил": ("call", "позвонил, ждём ответа"),
     "думает": ("call", "думает"),
+    "перезвонить": ("call", "перезвонить"),
     "согласовал": ("call", "согласовал, ждём оплату"),
     "продан": ("sold", "продан"),
     "отказ": ("no", "отказался"),
 }
+
+MONTHS = ("января", "февраля", "марта", "апреля", "мая", "июня",
+          "июля", "августа", "сентября", "октября", "ноября", "декабря")
 
 PAGE = """<!doctype html>
 <html lang="ru">
@@ -59,6 +64,21 @@ a:hover{{text-decoration:underline}}
 .tag.st-sold{{background:rgba(22,163,74,.14);color:var(--ok)}}
 .tag.st-no{{background:rgba(220,38,38,.12);color:#dc2626}}
 .tag.money{{background:rgba(22,163,74,.14);color:var(--ok)}}
+.tag.due{{background:rgba(220,38,38,.14);color:#dc2626}}
+.tag.later{{background:rgba(127,127,127,.16);color:var(--mut)}}
+.today{{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--warn);
+  border-radius:16px;padding:18px 24px;margin-bottom:24px}}
+.today b{{display:block;font-size:12.5px;color:var(--warn);text-transform:uppercase;
+  letter-spacing:.06em;margin-bottom:10px}}
+.today ul{{list-style:none;display:grid;gap:7px}}
+.today li{{display:flex;gap:12px;justify-content:space-between;align-items:baseline;
+  border-bottom:1px solid var(--line);padding-bottom:7px}}
+.today li:last-child{{border-bottom:0;padding-bottom:0}}
+.today a{{font-weight:600}}
+.today span{{color:var(--mut);font-size:13.5px;white-space:nowrap}}
+.today li.hot span{{color:#dc2626;font-weight:700}}
+.item .note{{margin:0 0 12px;padding:0;background:none;border:0;border-radius:0;
+  font-size:14px;color:var(--mut)}}
 .money-bar{{background:var(--card);border:1px solid var(--line);border-radius:16px;
   padding:20px 24px;margin-bottom:24px;display:flex;gap:32px;flex-wrap:wrap}}
 .money-bar div b{{display:block;font-size:26px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}}
@@ -86,6 +106,7 @@ a:hover{{text-decoration:underline}}
 режим работы, отзывы и фото. Кнопка «Скопировать сообщение» подставит правильную ссылку
 и положит текст в буфер: остаётся вставить в WhatsApp или Telegram владельцу.</p>
 
+{today}
 {money}
 <div class="list">
 {items}
@@ -121,6 +142,7 @@ ITEM = """<article class="item">
     <h2>{headline}</h2>
     <div class="meta">{meta}{contacts}</div>
     <div class="tags">{tags}{money}</div>
+    {note}
     <div class="msg"><b>Сообщение владельцу</b><span class="t">{message}</span></div>
   </div>
   <div class="side">
@@ -162,11 +184,58 @@ def main():
                  f'<div><b>{rub(monthly*12)}\u00a0₽</b><span>обслуживание за год, если никто не уйдёт</span></div>'
                  '</div>')
 
+    # Кого набирать сегодня — самое важное, поэтому наверх и отдельной плашкой.
+    today = date.today()
+
+    def due(s):
+        """Дата, к которой обещали перезвонить (или None)."""
+        try:
+            return date.fromisoformat(s["followup"])
+        except (KeyError, ValueError):
+            return None
+
+    def order(s):
+        """Сверху — просроченные звонки, снизу — отказы."""
+        d, st = due(s), s.get("status", "новый")
+        if d and d <= today:
+            return (0, d.toordinal())
+        if st in ("согласовал", "продан"):
+            return (1, 0)
+        if d:
+            return (2, d.toordinal())
+        return ({"позвонил": 3, "думает": 3, "перезвонить": 3,
+                 "новый": 4, "отказ": 5}.get(st, 4), 0)
+
+    sites = sorted(sites, key=order)
+
+    # Кому и когда обещали перезвонить. Держать это в голове — верный способ
+    # потерять клиента, который сказал «наберите через две недели».
+    planned = [s for s in sites if due(s)]
+    todo = ""
+    if planned:
+        rows = []
+        for s in planned:
+            d = due(s)
+            phone = "".join(c for c in (s.get("phones") or [""])[0] if c.isdigit() or c == "+")
+            when = "сегодня" if d == today else ("просрочено" if d < today
+                                                 else f"{d.day} {MONTHS[d.month - 1]}")
+            cl = ' class="hot"' if d <= today else ""
+            rows.append(f'<li{cl}><a href="tel:{phone}">{html.escape(s["name"])}</a>'
+                        f'<span>{when}</span></li>')
+        hot = sum(1 for s in planned if due(s) <= today)
+        head = f"Звонить сегодня — {hot}" if hot else "Ближайшие звонки"
+        todo = f'<div class="today"><b>{head}</b><ul>{"".join(rows)}</ul></div>'
+
     blocks = []
     for s in sites:
         cls, label = STATUS.get(s.get("status", "новый"), STATUS["новый"])
         tags = "".join(f'<span class="tag">{html.escape(t)}</span>' for t in s.get("tags", []))
         tags += f'<span class="tag st-{cls}">{html.escape(label)}</span>'
+        if (d := due(s)):
+            when = f"{d.day} {MONTHS[d.month - 1]}"
+            cl = "due" if d <= today else "later"
+            word = "звонить" if d <= today else "созвон"
+            tags += f'<span class="tag {cl}">{word} {when}</span>'
         contacts = " · " + " · ".join(s.get("phones", []))
         if s.get("email"):
             contacts += " · " + s["email"]
@@ -182,9 +251,11 @@ def main():
             contacts=html.escape(contacts), tags=tags,
             message=html.escape(s["message"]), slug=s["slug"],
             url2gis=s["url2gis"], call=call, money=money_tag,
+            note=(f'<p class="note">{html.escape(s["note"])}</p>' if s.get("note") else ""),
         ))
 
-    OUT.write_text(PAGE.format(count=len(sites), items="\n".join(blocks), money=money),
+    OUT.write_text(PAGE.format(count=len(sites), items="\n".join(blocks), money=money,
+                               today=todo),
                    encoding="utf-8")
     print(f"{OUT}  ({len(sites)} сайтов)")
 
