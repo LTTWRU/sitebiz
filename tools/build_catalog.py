@@ -58,6 +58,11 @@ a:hover{{text-decoration:underline}}
 .tag.st-call{{background:rgba(180,83,9,.15);color:var(--warn)}}
 .tag.st-sold{{background:rgba(22,163,74,.14);color:var(--ok)}}
 .tag.st-no{{background:rgba(220,38,38,.12);color:#dc2626}}
+.tag.money{{background:rgba(22,163,74,.14);color:var(--ok)}}
+.money-bar{{background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:20px 24px;margin-bottom:24px;display:flex;gap:32px;flex-wrap:wrap}}
+.money-bar div b{{display:block;font-size:26px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}}
+.money-bar div span{{display:block;font-size:13px;color:var(--mut);margin-top:3px}}
 .msg{{background:rgba(127,127,127,.07);border-left:3px solid var(--acc);border-radius:0 10px 10px 0;
   padding:13px 16px;font-size:14.5px;line-height:1.55}}
 .msg b{{display:block;font-size:12.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;font-weight:700}}
@@ -81,6 +86,7 @@ a:hover{{text-decoration:underline}}
 режим работы, отзывы и фото. Кнопка «Скопировать сообщение» подставит правильную ссылку
 и положит текст в буфер: остаётся вставить в WhatsApp или Telegram владельцу.</p>
 
+{money}
 <div class="list">
 {items}
 </div>
@@ -114,7 +120,7 @@ ITEM = """<article class="item">
   <div>
     <h2>{headline}</h2>
     <div class="meta">{meta}{contacts}</div>
-    <div class="tags">{tags}</div>
+    <div class="tags">{tags}{money}</div>
     <div class="msg"><b>Сообщение владельцу</b><span class="t">{message}</span></div>
   </div>
   <div class="side">
@@ -130,6 +136,32 @@ def main():
     data = json.loads(REGISTRY.read_text(encoding="utf-8"))
     sites = data.get("sites", [])
 
+    def rub(v):
+        """Разряды пробелами: 14900 -> 14 900."""
+        return f"{v:,}".replace(",", "\u00a0")
+
+    def plural(n, one, few, many):
+        """«1 клиента», «2 клиентов», «5 клиентов» — иначе сводка выглядит неряшливо."""
+        n10, n100 = n % 10, n % 100
+        if n10 == 1 and n100 != 11:
+            return one
+        if 2 <= n10 <= 4 and not 12 <= n100 <= 14:
+            return few
+        return many
+
+    # Считаем только то, за что уже договорились: «согласовал» и «продан».
+    paid = [x for x in sites if x.get("status") in ("согласовал", "продан")]
+    once = sum(int(x.get("price_site", 0)) + int(x.get("price_extra", 0)) for x in paid)
+    monthly = sum(int(x.get("price_month", 0)) for x in paid)
+    word = plural(len(paid), "клиента", "клиентов", "клиентов")
+    money = ""
+    if paid:
+        money = ('<div class="money-bar">'
+                 f'<div><b>{rub(monthly)}\u00a0₽</b><span>в месяц с {len(paid)} {word}</span></div>'
+                 f'<div><b>{rub(once)}\u00a0₽</b><span>разовыми за сайты и логотипы</span></div>'
+                 f'<div><b>{rub(monthly*12)}\u00a0₽</b><span>обслуживание за год, если никто не уйдёт</span></div>'
+                 '</div>')
+
     blocks = []
     for s in sites:
         cls, label = STATUS.get(s.get("status", "новый"), STATUS["новый"])
@@ -140,14 +172,20 @@ def main():
             contacts += " · " + s["email"]
         phone = "".join(c for c in (s.get("phones") or [""])[0] if c.isdigit() or c == "+")
         call = f'<a class="btn" href="tel:{phone}">Позвонить</a>' if phone else ""
+        deal = []
+        if s.get("price_site"):  deal.append(f'сайт {rub(int(s["price_site"]))}\u00a0₽')
+        if s.get("price_extra"): deal.append(f'логотип {rub(int(s["price_extra"]))}\u00a0₽')
+        if s.get("price_month"): deal.append(f'{rub(int(s["price_month"]))}\u00a0₽/мес')
+        money_tag = f'<span class="tag money">{html.escape(" · ".join(deal))}</span>' if deal else ""
         blocks.append(ITEM.format(
             headline=html.escape(s["headline"]), meta=html.escape(s["meta"]),
             contacts=html.escape(contacts), tags=tags,
             message=html.escape(s["message"]), slug=s["slug"],
-            url2gis=s["url2gis"], call=call,
+            url2gis=s["url2gis"], call=call, money=money_tag,
         ))
 
-    OUT.write_text(PAGE.format(count=len(sites), items="\n".join(blocks)), encoding="utf-8")
+    OUT.write_text(PAGE.format(count=len(sites), items="\n".join(blocks), money=money),
+                   encoding="utf-8")
     print(f"{OUT}  ({len(sites)} сайтов)")
 
 
