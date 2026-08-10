@@ -13,3 +13,5 @@ promo*.md
 assets/
 !docs/*/img/
 out/
+deploy/*/config.php
+deploy/*/zayavki.log
