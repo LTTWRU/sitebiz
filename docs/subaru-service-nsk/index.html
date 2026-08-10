@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Subaru Service Nsk — сервис только для Subaru, Сибиряков-Гвардейцев, 47 к9</title>
+<meta name="description" content="Subaru Service Nsk на Сибиряков-Гвардейцев, 47 к9: обслуживание и ремонт Subaru, оппозитные двигатели, ходовая, рейки, тюнинг, контрактные запчасти с аукционов Японии и свой авторазбор. 4,8 по 332 отзывам. Пн–Пт 9:00–19:00.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Subaru Service Nsk — сервис, который занимается только Subaru">
+<meta property="og:description" content="Ремонт, тюнинг и запчасти Subaru. Контракт с аукционов Японии, свой разбор. Сибиряков-Гвардейцев, 47 к9.">
+<meta property="og:image" content="photo/impreza.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230C1526'/><text x='16' y='23' font-size='19' font-family='Helvetica' font-weight='700' text-anchor='middle' fill='%236BA6E8'>S</text></svg>">
+<link rel="stylesheet" href="../fonts/manrope.css">
+<link rel="stylesheet" href="../fonts/golos-text.css">
+<style>
+/* «Купил Субару из-за наличия данного сервиса в НСК» — сильнее об узкой
+   специализации не скажешь. Поэтому сайт не про «любые марки», а про одну:
+   ночное небо и холодный звёздный синий — Плеяды, шесть звёзд, по которым
+   Subaru и названа. Все разделы отмечены звёздами, их ровно шесть. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --night:#0C1526; --night-2:#131F35; --card:#16233B;
+  --sky:#6BA6E8; --sky-2:#93C2F2; --sky-deep:#1E4E8C;
+  --text:#E8EDF4; --text-2:#A9B8CC; --text-3:#71829A;
+  --line:#233553; --line-2:#2F456A;
+  --wrap:1120px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--night);color:var(--text);
+  font:400 16.5px/1.74 "Golos Text",-apple-system,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(58px,8vw,110px) 0}
+h1,h2{font-family:Manrope,-apple-system,sans-serif;font-weight:800;
+  line-height:1.08;letter-spacing:-.04em;text-wrap:balance}
+h1{font-size:clamp(34px,5.6vw,72px)}
+h2{font-size:clamp(26px,3.6vw,46px)}
+h3{font-family:Manrope,sans-serif;font-size:19px;font-weight:700;line-height:1.36;letter-spacing:-.018em}
+p{max-width:62ch}
+em{font-style:normal;color:var(--sky)}
+.tag{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--sky)}
+.q2{color:var(--text-2)}
+
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:Manrope,sans-serif;
+  font-weight:700;font-size:15.5px;padding:15px 26px;background:var(--sky);color:#08111F;
+  border-radius:999px;transition:background .22s var(--ease),transform .22s}
+.btn:hover{background:var(--sky-2);transform:translateY(-2px)}
+.btn.g{background:transparent;color:var(--text);border:1px solid var(--line-2)}
+.btn.g:hover{border-color:var(--sky);color:var(--sky)}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:16px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(12,21,38,.92);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:10px 0}
+.nav{display:flex;align-items:center;gap:26px}
+.brand{margin-right:auto;font-family:Manrope,sans-serif;font-weight:800;
+  font-size:19px;letter-spacing:-.03em;line-height:1.1}
+.brand s{display:block;text-decoration:none;font-size:9px;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--sky);margin-top:2px}
+.lk{font-size:14.5px;color:var(--text-2);transition:color .2s}
+.lk:hover{color:var(--sky)}
+@media(max-width:1000px){.lk{display:none}}
+@media(max-width:420px){.nav{gap:12px}.btn{padding:12px 16px;font-size:14px}}
+
+.hero{padding-top:clamp(120px,16vw,194px);padding-bottom:clamp(34px,5vw,58px);position:relative}
+.hero h1{margin:18px 0 24px}
+.hero .sub{font-size:clamp(16.5px,1.8vw,19.5px);color:var(--text-2);max-width:48ch;line-height:1.66}
+.acts{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,40px);
+  margin-top:clamp(42px,6vw,74px);padding-top:26px;border-top:1px solid var(--line)}
+.figs b{display:block;font-family:Manrope,sans-serif;font-weight:800;
+  font-size:clamp(25px,3.1vw,40px);letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}
+.figs span{display:block;margin-top:10px;font-size:12.5px;color:var(--text-3);line-height:1.5}
+@media(max-width:700px){.figs{grid-template-columns:repeat(2,1fr)}}
+
+.plate{overflow:hidden;background:var(--night-2);border-radius:12px}
+.plate img{width:100%;aspect-ratio:21/9;object-fit:cover}
+@media(max-width:700px){.plate img{aspect-ratio:4/3}}
+.cap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:11px;
+  font-size:12.5px;color:var(--text-3)}
+
+/* Шесть звёзд Плеяд — по числу звёзд, от которых Subaru получила имя.
+   Поэтому и причин ровно шесть, ни одной лишней. */
+.stars{display:flex;gap:12px;align-items:center;margin-top:26px}
+.stars svg{width:17px;height:17px;fill:var(--sky);opacity:.85}
+.stars svg:nth-child(2){width:25px;height:25px;opacity:1}
+.six{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+  margin-top:clamp(34px,4.6vw,54px);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.six>div{background:var(--night-2);padding:clamp(24px,3vw,34px);position:relative}
+.six svg{width:17px;height:17px;fill:var(--sky);margin-bottom:16px;display:block}
+.six h3{margin-bottom:10px}
+.six p{font-size:15px;color:var(--text-2)}
+@media(max-width:900px){.six{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.six{grid-template-columns:1fr}}
+
+/* Запчасти: контракт с аукционов Японии, новое и свой разбор */
+.parts{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px);
+  margin-top:clamp(30px,4vw,48px)}
+.parts>div{background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:clamp(24px,3vw,34px)}
+.parts b{display:block;font-family:Manrope,sans-serif;font-size:20px;font-weight:800;
+  letter-spacing:-.025em;margin-bottom:12px}
+.parts p{font-size:15px;color:var(--text-2)}
+@media(max-width:860px){.parts{grid-template-columns:1fr}}
+
+.price{margin-top:clamp(30px,4vw,50px);border-top:2px solid var(--sky)}
+.price>div{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:baseline;
+  padding:19px 0;border-bottom:1px solid var(--line);transition:padding-left .28s var(--ease)}
+.price>div:hover{padding-left:9px}
+.price p{font-size:14.5px;color:var(--text-2);margin-top:5px;max-width:58ch}
+.price b{font-size:13px;white-space:nowrap;color:var(--text-3);font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase}
+@media(max-width:560px){.price>div{grid-template-columns:1fr;gap:6px}}
+
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px);
+  margin-top:clamp(32px,4.5vw,54px)}
+@media(max-width:760px){.g3{grid-template-columns:1fr;gap:24px}}
+.g3 img{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--night-2);border-radius:12px}
+.g3 figcaption{margin-top:12px;font-size:14.5px;color:var(--text-2)}
+
+.said{background:var(--night-2)}
+.bigq{font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(22px,3.2vw,42px);
+  line-height:1.2;letter-spacing:-.04em;max-width:21ch}
+.by{font-size:13.5px;color:var(--text-3);margin-top:22px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,58px);
+  margin-top:clamp(38px,5.5vw,70px)}
+@media(max-width:820px){.pair{grid-template-columns:1fr;gap:32px}}
+.pair p{font-size:16px;color:var(--text-2)}
+.pair cite{display:block;font-style:normal;font-size:13.5px;color:var(--text-3);margin-top:13px}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,70px)}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
+.rows{border-top:2px solid var(--sky);margin-top:26px}
+.rows>div{display:grid;grid-template-columns:118px 1fr;gap:18px;padding:15px 0;
+  border-bottom:1px solid var(--line);font-size:16px}
+.rows dt{font-size:12.5px;color:var(--text-3);padding-top:4px}
+.rows a:hover{color:var(--sky)}
+@media(max-width:520px){.rows>div{grid-template-columns:1fr;gap:3px}}
+.map{aspect-ratio:16/10;background:var(--night-2);overflow:hidden;border-radius:12px}
+.map iframe{width:100%;height:100%;border:0}
+form{margin-top:20px;display:grid;gap:15px}
+label{display:block;font-size:12.5px;color:var(--text-3);margin-bottom:7px}
+input,textarea{width:100%;background:var(--card);border:1px solid var(--line-2);color:var(--text);
+  padding:13px 15px;font:400 16px/1.5 "Golos Text",sans-serif;border-radius:8px;transition:border-color .2s}
+input::placeholder,textarea::placeholder{color:var(--text-3)}
+input:focus,textarea:focus{outline:none;border-color:var(--sky)}
+textarea{min-height:100px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fine{font-size:12.5px;color:var(--text-3);line-height:1.6;max-width:52ch}
+.sent{display:none;padding:13px 15px;border:1px solid var(--sky);background:rgba(107,166,232,.12);
+  font-size:15px;border-radius:8px}
+.sent a{color:var(--sky);text-decoration:underline}
+
+footer{border-top:1px solid var(--line);padding:34px 0 44px;font-size:14px;color:var(--text-3)}
+.fin{display:flex;gap:26px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+footer a:hover{color:var(--sky)}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:8px;padding:9px 12px;
+  background:rgba(12,21,38,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  width:100%;max-width:100vw}
+.bar a{flex:1 1 0;min-width:0;white-space:nowrap;text-align:center;justify-content:center;
+  padding:13px 10px;font-size:15px}
+@media(max-width:760px){.bar{display:flex}body{padding-bottom:70px}}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--sky);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <nav class="w nav">
+    <a class="brand" href="#">SUBARU SERVICE<s>Новосибирск</s></a>
+    <a class="lk" href="#pochemu">Почему сюда</a>
+    <a class="lk" href="#zapchasti">Запчасти</a>
+    <a class="lk" href="#raboty">Работы</a>
+    <a class="lk" href="#otzyvy">Отзывы</a>
+    <a class="lk" href="#kontakty">Контакты</a>
+    <a class="btn" href="tel:+73832550030">Записаться</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Специализированный сервис Subaru · Сибиряков-Гвардейцев, 47 к9 · Новосибирск</p>
+    <h1 class="up">Здесь занимаются<br><em>только Subaru.</em><br>Больше ничем</h1>
+    <p class="sub up">Оппозитные моторы, полный привод, свои болячки по годам и кузовам —
+      мастер слышит их с полуоборота, потому что не отвлекается на остальные марки.
+      Контрактные запчасти с аукционов Японии и собственный разбор Subaru.</p>
+    <div class="stars up" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 0l3.3 8.7L24 12l-8.7 3.3L12 24l-3.3-8.7L0 12l8.7-3.3z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 0l3.3 8.7L24 12l-8.7 3.3L12 24l-3.3-8.7L0 12l8.7-3.3z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 0l3.3 8.7L24 12l-8.7 3.3L12 24l-3.3-8.7L0 12l8.7-3.3z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 0l3.3 8.7L24 12l-8.7 3.3L12 24l-3.3-8.7L0 12l8.7-3.3z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 0l3.3 8.7L24 12l-8.7 3.3L12 24l-3.3-8.7L0 12l8.7-3.3z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 0l3.3 8.7L24 12l-8.7 3.3L12 24l-3.3-8.7L0 12l8.7-3.3z"/></svg>
+    </div>
+    <div class="acts up">
+      <a class="btn" href="tel:+73832550030">+7 383 255-00-30
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#zapchasti">Запчасти и разбор</a>
+    </div>
+    <div class="figs up">
+      <div><b>4,8</b><span>по 332 отзывам в 2ГИС</span></div>
+      <div><b>2025</b><span>лучший автосервис 2ГИС, номинант 2026</span></div>
+      <div><b>Только Subaru</b><span>других марок в работе нет</span></div>
+      <div><b>Япония</b><span>контрактные запчасти с аукционов</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="w up">
+    <div class="plate"><img src="photo/impreza.jpg"
+      alt="Subaru Impreza у здания сервиса Subaru Service Nsk" fetchpriority="high"></div>
+    <div class="cap"><span>Сибиряков-Гвардейцев, 47 к9</span><span>Клиентские машины у боксов</span></div>
+  </div>
+</section>
+
+<section id="pochemu">
+  <div class="w">
+    <p class="tag up">Почему сюда</p>
+    <h2 class="up" style="margin-top:14px">Шесть звёзд — шесть причин</h2>
+    <p class="q2 up" style="margin-top:20px;font-size:17px">Subaru названа по Плеядам:
+      шесть звёзд в рассеянном скоплении. Причин ехать в профильный сервис, а не к универсалу,
+      тоже ровно шесть — и все они про то, чего у универсала нет.</p>
+    <div class="six">
+      <div class="up"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0l3.3 8.7L24 12l-8.7 3.3L12 24l-3.3-8.7L0 12l8.7-3.3z"/></svg>
+        <h3>Знают болячки наизусть</h3>
+        <p>Прокладки, вкладыши, приводы, редукторы — по каждому поколению известно,
+          что и когда начинает шуметь. Диагностику часто ставят на слух.</p></div>
+      <div class="up"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0l3.3 8.7L24 12l-8.7 3.3L12 24l-3.3-8.7L0 12l8.7-3.3z"/></svg>
+        <h3>Оппозит — не экзотика</h3>
+        <p>Мотор, до которого в обычном сервисе неудобно добираться, здесь разбирают
+          каждую неделю. Это разница в часах работы, а значит и в чеке.</p></div>
+      <div class="up"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0l3.3 8.7L24 12l-8.7 3.3L12 24l-3.3-8.7L0 12l8.7-3.3z"/></svg>
+        <h3>Свой разбор Subaru</h3>
+        <p>Деталь, которой нет в продаже новой, часто стоит на разборе в соседнем боксе.
+          Не нужно ждать поставку месяц.</p></div>
+      <div class="up"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0l3.3 8.7L24 12l-8.7 3.3L12 24l-3.3-8.7L0 12l8.7-3.3z"/></svg>
+        <h3>Аукционы Японии</h3>
+        <p>Контрактные узлы везём напрямую. Для машин, которых официально в стране
+          не продавали, это единственный вменяемый источник.</p></div>
+      <div class="up"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0l3.3 8.7L24 12l-8.7 3.3L12 24l-3.3-8.7L0 12l8.7-3.3z"/></svg>
+        <h3>Свои электрики</h3>
+        <p>Проводка, блоки, прошивки — то, от чего чаще всего отказываются
+          и советуют «ехать к дилеру».</p></div>
+      <div class="up"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0l3.3 8.7L24 12l-8.7 3.3L12 24l-3.3-8.7L0 12l8.7-3.3z"/></svg>
+        <h3>Тюнинг без самодеятельности</h3>
+        <p>Выхлоп, подвеска, мотор, обвесы. Советуют, что реально даст результат,
+          а что просто заберёт деньги.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="zapchasti">
+  <div class="w">
+    <p class="tag up">Запчасти</p>
+    <h2 class="up" style="margin-top:14px">Три источника<br>на одну деталь</h2>
+    <p class="q2 up" style="margin-top:20px;font-size:17px">На каждую позицию обычно есть
+      выбор из трёх вариантов. Разницу в цене и ресурсе объясняем — решаете вы.</p>
+    <div class="parts">
+      <div class="up"><b>Оригинал</b>
+        <p>Новая заводская деталь. Дольше по срокам и дороже, но с предсказуемым ресурсом.
+          Нужен, когда экономить нельзя.</p></div>
+      <div class="up"><b>Контракт из Японии</b>
+        <p>Снятый с донора узел с реальным малым пробегом, привезённый с аукциона.
+          Часто лучше нового неоригинала и заметно дешевле.</p></div>
+      <div class="up"><b>Свой разбор</b>
+        <p>Наш склад Subaru прямо здесь. Есть на месте — поставим сегодня,
+          без ожидания доставки.</p></div>
+    </div>
+    <p class="q2 up" style="margin-top:24px;font-size:15px">«Огромный выбор запчастей, как
+      контрактных, так и новых оригинальных, либо хороших дубликатных. Запчасти для тюнинга
+      тоже подберут и посоветуют» — из отзыва Константина Толоконникова.</p>
+  </div>
+</section>
+
+<section id="raboty">
+  <div class="w">
+    <p class="tag up">Работы</p>
+    <h2 class="up" style="margin-top:14px">Что делаем</h2>
+    <div class="price">
+      <div class="up"><div><h3>Диагностика</h3>
+        <p>Сканером и на слух. По звуку мастер отсекает половину вариантов
+          за первые минуты — на профильных машинах это работает.</p></div>
+        <b>от 30 минут</b></div>
+      <div class="up"><div><h3>Оппозитные двигатели</h3>
+        <p>Ремонт бензиновых моторов Subaru: прокладки, ГРМ, поршневая, течи, вкладыши.
+          Атмосферные и турбо.</p></div>
+        <b>по дефектовке</b></div>
+      <div class="up"><div><h3>Трансмиссия и редукторы</h3>
+        <p>Полный привод — сильная сторона машины и частая статья ремонта.
+          Редукторы, приводы, раздатка.</p></div>
+        <b>по узлу</b></div>
+      <div class="up"><div><h3>Ходовая часть</h3>
+        <p>Стойки, рычаги, сайлентблоки, пневмоподвеска. Проточка тормозных дисков
+          вместо замены комплекта.</p></div>
+        <b>по осмотру</b></div>
+      <div class="up"><div><h3>Рулевые рейки</h3>
+        <p>Ремонт узла: течь, стук, закусывание. Не только замена в сборе.</p></div>
+        <b>ремонт узла</b></div>
+      <div class="up"><div><h3>Замена масла и ТО</h3>
+        <p>По регламенту с учётом реального пробега и того, как машину эксплуатируют.</p></div>
+        <b>по регламенту</b></div>
+      <div class="up"><div><h3>Электрика и сигнализации</h3>
+        <p>Проводка, датчики, блоки управления, установка и ремонт сигнализаций,
+          стартеры и генераторы.</p></div>
+        <b>по проблеме</b></div>
+      <div class="up"><div><h3>Тюнинг</h3>
+        <p>Выхлоп, подвеска, мотор, обвесы и спойлеры, врезка люка, хромирование.</p></div>
+        <b>по проекту</b></div>
+    </div>
+    <div class="g3">
+      <figure class="up"><img src="photo/row.jpg" alt="Ряд автомобилей Subaru у боксов сервиса" loading="lazy" decoding="async">
+        <figcaption>Обычный будний день: у боксов стоят одни Subaru.</figcaption></figure>
+      <figure class="up"><img src="photo/trophies.jpg" alt="Полка с наградами в клиентской зоне Subaru Service Nsk" loading="lazy" decoding="async">
+        <figcaption>Клиентская зона: кубки за соревнования, в которых участвуют свои машины.</figcaption></figure>
+      <figure class="up"><img src="photo/foresters.jpg" alt="Subaru Forester на площадке сервиса" loading="lazy" decoding="async">
+        <figcaption>Forester, Legacy, Impreza, Outback — весь модельный ряд.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy" class="said">
+  <div class="w">
+    <p class="tag up">Отзывы · 4,8 из 5 по 332 оценкам в 2ГИС</p>
+    <blockquote class="up" style="margin-top:22px">
+      <p class="bigq">«Купил Субару из-за наличия данного сервиса в НСК»</p>
+      <p class="by">Николай Коперник · 1 июля 2026</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>Если у тебя Субару, не стоит думать о выборе сервиса. Любой вопрос — плановое ТО,
+          тюнинг, заправить кондиционер или просто проконсультироваться — ответят и помогут.
+          Постов для ремонта много, долго ждать не приходится. В команде грамотные электрики,
+          которые решают даже супер сложные вопросы.</p>
+        <cite>Константин Толоконников · 1 июля 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Обращался с проблемой — мастер по диагностике определяет её по звуку.
+          Полчаса, и проблемы нет. Супер.</p>
+        <cite>Владимир Сахаров · 29 июня 2026</cite>
+      </blockquote>
+    </div>
+    <div class="g3">
+      <figure class="up"><img src="photo/forest.jpg" alt="Subaru Forester на лесной дороге" loading="lazy" decoding="async">
+        <figcaption>Машину готовят к тому, для чего её и покупали.</figcaption></figure>
+      <figure class="up"><img src="photo/legacy.jpg" alt="Subaru Legacy у здания сервиса" loading="lazy" decoding="async">
+        <figcaption>Обслуживаются годами: «со дня покупки только здесь».</figcaption></figure>
+      <figure class="up"><img src="photo/cap.jpg" alt="Фирменная кепка Subaru Service" loading="lazy" decoding="async">
+        <figcaption>Свой клуб вокруг сервиса — с выездами и мерчем.</figcaption></figure>
+    </div>
+    <div class="acts up" style="margin-top:38px">
+      <a class="btn g" href="https://2gis.ru/firm/141266769701112" target="_blank" rel="noopener">
+        Все 332 отзыва в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty">
+  <div class="w split">
+    <div class="up">
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:14px">Сибиряков-Гвардейцев, 47 к9</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>улица Сибиряков-Гвардейцев, 47 к9<br><span class="q2">Кировский район, Новосибирск</span></dd></div>
+        <div><dt>Телефоны</dt><dd><a href="tel:+73832550030">+7 383 255-00-30</a><br>
+          <a href="tel:+79830000303">+7 983 000-03-03</a><br>
+          <a href="tel:+79830000505">+7 983 000-05-05</a></dd></div>
+        <div><dt>Режим</dt><dd>Пн–Пт 9:00–19:00<br>Сб, Вс — выходные</dd></div>
+        <div><dt>Ещё</dt><dd><a href="https://t.me/subaruservicensk" target="_blank" rel="noopener">Telegram</a> ·
+          <a href="https://vk.com/subaruservicensk" target="_blank" rel="noopener">ВКонтакте</a> ·
+          <a href="https://youtube.com/@subaruservicensk1918" target="_blank" rel="noopener">YouTube</a></dd></div>
+        <div><dt>Оплата</dt><dd>Карта, наличные, перевод, счёт для юрлиц</dd></div>
+      </div>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="tel:+73832550030">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/141266769701112" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <iframe loading="lazy" title="Карта: улица Сибиряков-Гвардейцев, 47 к9"
+          src="https://yandex.ru/map-widget/v1/?ll=82.90231%2C54.954834&z=16&text=Новосибирск%2C%20улица%20Сибиряков-Гвардейцев%2C%2047%20к9"></iframe>
+      </div>
+      <h2 style="font-size:clamp(22px,2.6vw,32px);margin-top:34px">Записаться</h2>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Михаил"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 913 000-00-00"></div>
+        <div><label for="c">Машина</label><input id="c" name="car" placeholder="Subaru Forester SH, 2011"></div>
+        <div><label for="m">Что нужно</label><textarea id="m" name="message" placeholder="Гул сзади на скорости, похоже на редуктор"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cmp">Компания</label><input id="cmp" name="company" tabindex="-1" autocomplete="off"></div>
+        <button class="btn" type="submit">Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Нажимая кнопку, вы соглашаетесь на обработку своих контактов, чтобы мы
+          могли перезвонить. Больше ни для чего они не используются.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">SUBARU SERVICE<s>Новосибирск</s></div>
+    улица Сибиряков-Гвардейцев, 47 к9 · Пн–Пт 9:00–19:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+73832550030">+7 383 255-00-30</a>
+    <a href="https://t.me/subaruservicensk" target="_blank" rel="noopener">Telegram</a>
+    <a href="https://2gis.ru/firm/141266769701112" target="_blank" rel="noopener">2ГИС</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+73832550030">Позвонить</a>
+  <a class="btn g" href="#zapchasti">Запчасти</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"Subaru Service Nsk",
+"description":"Специализированный автосервис по обслуживанию автомобилей Subaru и продаже запчастей с аукционов Японии",
+"address":{"@type":"PostalAddress","streetAddress":"улица Сибиряков-Гвардейцев, 47 к9","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":54.954834,"longitude":82.90231},
+"telephone":"+73832550030",
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"19:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"332","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/141266769701112","https://vk.com/subaruservicensk","https://t.me/subaruservicensk"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и запишем на время.';ok.style.display='block';f.reset();return}}catch(_){}}
+  ok.innerHTML='Приём заявок пока настраивается. Позвоните, пожалуйста: <a href="tel:+73832550030">+7 383 255-00-30</a> — или напишите в <a href="https://t.me/subaruservicensk" target="_blank" rel="noopener">Telegram</a>.';
+  ok.style.display='block';
+});
+</script>
+</body>
+</html>
