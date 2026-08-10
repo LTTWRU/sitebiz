@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Луна авто — сервисная станция на Станционной, 98/2, Новосибирск</title>
+<meta name="description" content="Луна авто на Станционной, 98/2: сервис Citroen и Peugeot, гарантийный ремонт, кузовной цех, развал-схождение, дизель и грузовой автосервис, тонирование, запчасти. 4,7 по 340 отзывам. Ежедневно 8:00–20:00.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Луна авто — сервисная станция на Станционной, 98/2">
+<meta property="og:description" content="Citroen и Peugeot, гарантийный ремонт, кузовной цех, грузовой автосервис. Ежедневно 8:00–20:00.">
+<meta property="og:image" content="photo/salon.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23F5F6F7'/><text x='16' y='23' font-size='19' font-family='Helvetica' font-weight='800' text-anchor='middle' fill='%23A8192B'>Л</text></svg>">
+<link rel="stylesheet" href="../fonts/montserrat.css">
+<link rel="stylesheet" href="../fonts/golos-text.css">
+<style>
+/* Главный отзыв: в официальном сервисе на Владимировской выпустили машину
+   с неисправной рейкой и предложили чинить за свои деньги, а здесь провели
+   повторный осмотр и устранили по гарантии завода. Это и есть предложение:
+   не «мы дешевле», а «мы проверим ещё раз». Отсюда сдержанный дилерский
+   свет, графит и один глубокий красный. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#F5F6F7; --paper-2:#E7E9EB; --card:#FFFFFF;
+  --graphite:#22262B; --graphite-2:#333940;
+  --ink:#16191D; --ink-2:#4D555E; --ink-3:#868E98;
+  --line:#DBDEE2; --line-2:#C3C8CE;
+  --red:#A8192B; --red-2:#C42133; --red-soft:#F7E7E9;
+  --wrap:1120px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);
+  font:400 16.5px/1.74 "Golos Text",-apple-system,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(58px,8vw,110px) 0}
+h1,h2,h3{font-family:Montserrat,-apple-system,sans-serif}
+h1,h2{font-weight:800;line-height:1.1;letter-spacing:-.035em;text-wrap:balance}
+h1{font-size:clamp(31px,5vw,64px)}
+h2{font-size:clamp(25px,3.4vw,43px)}
+h3{font-size:18.5px;font-weight:700;line-height:1.36;letter-spacing:-.015em}
+p{max-width:62ch}
+em{font-style:normal;color:var(--red)}
+.tag{font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--red)}
+.q2{color:var(--ink-2)}
+
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:Montserrat,sans-serif;
+  font-weight:700;font-size:15px;padding:15px 26px;background:var(--red);color:#fff;
+  border-radius:2px;transition:background .22s var(--ease),transform .22s}
+.btn:hover{background:var(--red-2);transform:translateY(-2px)}
+.btn.g{background:transparent;color:var(--ink);border:1px solid var(--line-2)}
+.btn.g:hover{border-color:var(--red);color:var(--red)}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:16px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(245,246,247,.95);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:10px 0}
+.nav{display:flex;align-items:center;gap:26px}
+.brand{margin-right:auto;font-family:Montserrat,sans-serif;font-weight:800;
+  font-size:19px;letter-spacing:-.02em;line-height:1.1;text-transform:uppercase}
+.brand s{display:block;text-decoration:none;font-family:"Golos Text",sans-serif;font-size:9px;
+  font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-top:3px}
+.lk{font-size:14.5px;color:var(--ink-2);transition:color .2s}
+.lk:hover{color:var(--red)}
+@media(max-width:1010px){.lk{display:none}}
+@media(max-width:420px){.nav{gap:12px}.btn{padding:12px 15px;font-size:13.5px}}
+
+.hero{padding-top:clamp(120px,16vw,194px);padding-bottom:clamp(34px,5vw,58px)}
+.hero h1{margin:18px 0 24px}
+.hero .sub{font-size:clamp(16.5px,1.8vw,19.5px);color:var(--ink-2);max-width:48ch;line-height:1.66}
+.acts{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,40px);
+  margin-top:clamp(42px,6vw,74px);padding-top:26px;border-top:1px solid var(--line)}
+.figs b{display:block;font-family:Montserrat,sans-serif;font-weight:800;
+  font-size:clamp(23px,2.9vw,37px);letter-spacing:-.045em;line-height:1;font-variant-numeric:tabular-nums}
+.figs span{display:block;margin-top:10px;font-size:12.5px;color:var(--ink-3);line-height:1.5}
+@media(max-width:700px){.figs{grid-template-columns:repeat(2,1fr)}}
+
+.plate{overflow:hidden;background:var(--paper-2);border-radius:2px}
+.plate img{width:100%;aspect-ratio:21/9;object-fit:cover}
+@media(max-width:700px){.plate img{aspect-ratio:4/3}}
+.cap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:11px;
+  font-size:12.5px;color:var(--ink-3)}
+
+/* Гарантия завода — главный аргумент, поэтому отдельный тёмный блок */
+.warranty{background:var(--graphite);color:#fff;border-radius:2px;
+  padding:clamp(28px,4.4vw,58px);margin-top:clamp(32px,4.4vw,54px)}
+.warranty h2{color:#fff}
+.warranty .tag{color:#E58A96}
+.warranty p{color:#C3CAD2;margin-top:18px;font-size:17px}
+.wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.13);
+  margin-top:clamp(26px,3.4vw,40px);border:1px solid rgba(255,255,255,.13)}
+.wgrid>div{background:var(--graphite);padding:clamp(22px,2.8vw,30px)}
+.wgrid b{display:block;font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:.13em;text-transform:uppercase;color:#E58A96;margin-bottom:11px}
+.wgrid p{color:#CBD2D9;font-size:15px;margin-top:0}
+@media(max-width:820px){.wgrid{grid-template-columns:1fr}}
+
+/* Три цеха под одной крышей — по ним и разложено */
+.shops{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px);
+  margin-top:clamp(30px,4vw,48px)}
+.shops>div{background:var(--card);border:1px solid var(--line);padding:clamp(24px,3vw,34px)}
+.shops b{display:block;font-family:Montserrat,sans-serif;font-size:19px;font-weight:800;
+  letter-spacing:-.028em;margin-bottom:12px}
+.shops p{font-size:15px;color:var(--ink-2)}
+.shops u{display:block;text-decoration:none;margin-top:14px;font-family:Montserrat,sans-serif;
+  font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+@media(max-width:860px){.shops{grid-template-columns:1fr}}
+
+.price{margin-top:clamp(30px,4vw,50px);border-top:2px solid var(--graphite)}
+.price>div{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:baseline;
+  padding:19px 0;border-bottom:1px solid var(--line);transition:padding-left .28s var(--ease)}
+.price>div:hover{padding-left:9px}
+.price p{font-size:14.5px;color:var(--ink-2);margin-top:5px;max-width:58ch}
+.price b{font-family:Montserrat,sans-serif;font-size:12px;white-space:nowrap;color:var(--ink-3);
+  font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+@media(max-width:560px){.price>div{grid-template-columns:1fr;gap:6px}}
+
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px);
+  margin-top:clamp(32px,4.5vw,54px)}
+@media(max-width:760px){.g3{grid-template-columns:1fr;gap:24px}}
+.g3 img{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--paper-2);border-radius:2px}
+.g3 figcaption{margin-top:12px;font-size:14.5px;color:var(--ink-2)}
+
+.said{background:var(--paper-2)}
+.bigq{font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(19px,2.7vw,35px);
+  line-height:1.25;letter-spacing:-.035em;max-width:24ch}
+.by{font-size:13.5px;color:var(--ink-3);margin-top:22px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,58px);
+  margin-top:clamp(38px,5.5vw,70px)}
+@media(max-width:820px){.pair{grid-template-columns:1fr;gap:32px}}
+.pair p{font-size:16px;color:var(--ink-2)}
+.pair cite{display:block;font-style:normal;font-size:13.5px;color:var(--ink-3);margin-top:13px}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,70px)}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
+.rows{border-top:2px solid var(--graphite);margin-top:26px}
+.rows>div{display:grid;grid-template-columns:118px 1fr;gap:18px;padding:15px 0;
+  border-bottom:1px solid var(--line);font-size:16px}
+.rows dt{font-size:12.5px;color:var(--ink-3);padding-top:4px}
+.rows a:hover{color:var(--red)}
+@media(max-width:520px){.rows>div{grid-template-columns:1fr;gap:3px}}
+.map{aspect-ratio:16/10;background:var(--paper-2);overflow:hidden;border-radius:2px}
+.map iframe{width:100%;height:100%;border:0}
+form{margin-top:20px;display:grid;gap:15px}
+label{display:block;font-size:12.5px;color:var(--ink-3);margin-bottom:7px}
+input,textarea{width:100%;background:var(--card);border:1px solid var(--line-2);color:var(--ink);
+  padding:13px 15px;font:400 16px/1.5 "Golos Text",sans-serif;border-radius:2px;transition:border-color .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--red)}
+textarea{min-height:100px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fine{font-size:12.5px;color:var(--ink-3);line-height:1.6;max-width:52ch}
+.sent{display:none;padding:13px 15px;border:1px solid var(--red);background:var(--red-soft);
+  font-size:15px;border-radius:2px}
+.sent a{color:var(--red);text-decoration:underline}
+
+footer{border-top:1px solid var(--line);padding:34px 0 44px;font-size:14px;color:var(--ink-3)}
+.fin{display:flex;gap:26px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+footer a:hover{color:var(--red)}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:8px;padding:9px 12px;
+  background:rgba(245,246,247,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  width:100%;max-width:100vw}
+.bar a{flex:1 1 0;min-width:0;white-space:nowrap;text-align:center;justify-content:center;
+  padding:13px 10px;font-size:15px}
+@media(max-width:760px){.bar{display:flex}body{padding-bottom:70px}}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <nav class="w nav">
+    <a class="brand" href="#">Луна авто<s>Сервисная станция</s></a>
+    <a class="lk" href="#garantiya">Гарантия</a>
+    <a class="lk" href="#tsekha">Цеха</a>
+    <a class="lk" href="#raboty">Работы</a>
+    <a class="lk" href="#otzyvy">Отзывы</a>
+    <a class="lk" href="#kontakty">Контакты</a>
+    <a class="btn" href="tel:+73832335333">Записаться</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Сервисная станция · Станционная, 98/2 · Новосибирск</p>
+    <h1 class="up">Прежде чем платить<br>за ремонт — <em>проверим,<br>не гарантийный ли он</em></h1>
+    <p class="sub up">Сервис Citroen и Peugeot, кузовной цех, дизель и грузовые машины —
+      всё на одной площадке. Работаем каждый день с восьми утра до восьми вечера,
+      включая субботу и воскресенье.</p>
+    <div class="acts up">
+      <a class="btn" href="tel:+73832335333">+7 383 233-53-33
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#garantiya">Про гарантию</a>
+    </div>
+    <div class="figs up">
+      <div><b>4,7</b><span>по 340 отзывам в 2ГИС</span></div>
+      <div><b>2026</b><span>номинант премии 2ГИС</span></div>
+      <div><b>8–20</b><span>каждый день, без выходных</span></div>
+      <div><b>Легковые<br>и грузовые</b><span>бензин и дизель, один адрес</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="w up">
+    <div class="plate"><img src="photo/salon.jpg"
+      alt="Здание Луна авто на Станционной улице в Новосибирске" fetchpriority="high"></div>
+    <div class="cap"><span>Станционная, 98 — сервис и автосалон на одной площадке</span><span>Новосибирск</span></div>
+  </div>
+</section>
+
+<section id="garantiya">
+  <div class="w">
+    <div class="warranty up">
+      <p class="tag">Гарантия завода</p>
+      <h2 style="margin-top:14px">Гарантия сервиса и гарантия завода —<br>это разные вещи</h2>
+      <p>Бывает, что неисправность попадает под заводскую гарантию, а в сервисе, где машину
+        обслуживали, об этом не сказали — и предложили ремонт за ваши деньги. Мы смотрим
+        машину заново и, если случай гарантийный, оформляем его как гарантийный.
+        Именно так было с рулевой рейкой из отзыва Светланы.</p>
+      <div class="wgrid">
+        <div><b>Осмотр заново</b>
+          <p>Не переписываем чужое заключение, а смотрим сами — особенно если машина
+            только что была в другом сервисе.</p></div>
+        <div><b>Оформление</b>
+          <p>Если случай гарантийный, готовим документы и ведём его до устранения.
+            Вы за такой ремонт не платите.</p></div>
+        <div><b>Если не гарантийный</b>
+          <p>Говорим прямо и называем цену. Без «может, попробуем провести как гарантию».</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tsekha">
+  <div class="w">
+    <p class="tag up">Цеха</p>
+    <h2 class="up" style="margin-top:14px">Три направления<br>на одной площадке</h2>
+    <p class="q2 up" style="margin-top:20px;font-size:17px">Не нужно возить машину по городу:
+      диагностика, кузовной и грузовой участки стоят рядом, и между ними машину перегоняют
+      своим ходом, а не эвакуатором.</p>
+    <div class="shops">
+      <div class="up"><b>Легковой сервис</b>
+        <p>Citroen и Peugeot — профильные марки. Двигатели, ходовая, рулевые рейки,
+          стартеры и генераторы, электроника, климат, замена масла, развал-схождение.</p>
+        <u>Запчасти под VIN</u></div>
+      <div class="up"><b>Кузовной цех</b>
+        <p>Ремонт после ДТП и мелких повреждений, подбор цвета, покраска, полировка.
+          Дефекты показываем на фото до начала работ.</p>
+        <u>Смета до ремонта</u></div>
+      <div class="up"><b>Дизель и грузовые</b>
+        <p>Дизельные двигатели и грузовой автосервис — то, за что берётся далеко
+          не каждая станция. Запчасти для грузовых тоже подбираем.</p>
+        <u>Отдельный участок</u></div>
+    </div>
+  </div>
+</section>
+
+<section id="raboty">
+  <div class="w">
+    <p class="tag up">Работы</p>
+    <h2 class="up" style="margin-top:14px">Что делаем</h2>
+    <div class="price">
+      <div class="up"><div><h3>Компьютерная диагностика</h3>
+        <p>Полный съём ошибок и проверка узлов, а не только той системы, на которую жалуетесь.
+          Так меньше повторных заездов.</p></div>
+        <b>перед сметой</b></div>
+      <div class="up"><div><h3>Ремонт двигателей</h3>
+        <p>Бензиновые и дизельные. Ремень, помпа, шкивы, течи, ГРМ, топливная аппаратура.</p></div>
+        <b>по дефектовке</b></div>
+      <div class="up"><div><h3>Рулевые рейки</h3>
+        <p>Ремонт и замена. Проверяем люфт и течь — иногда это гарантийный случай.</p></div>
+        <b>ремонт узла</b></div>
+      <div class="up"><div><h3>Ходовая и развал-схождение</h3>
+        <p>Стойки, рычаги, сайлентблоки и настройка углов на стенде после ремонта.</p></div>
+        <b>со стендом</b></div>
+      <div class="up"><div><h3>Кузовной ремонт</h3>
+        <p>Восстановление после ДТП, подбор цвета, покраска элемента или машины целиком.</p></div>
+        <b>по объёму</b></div>
+      <div class="up"><div><h3>Стартеры и генераторы</h3>
+        <p>Ремонт узла: щётки, бендикс, обмотка, регулятор напряжения.</p></div>
+        <b>ремонт узла</b></div>
+      <div class="up"><div><h3>Климат и кондиционер</h3>
+        <p>Диагностика, поиск утечек, заправка, обслуживание системы отопления.</p></div>
+        <b>сезонно</b></div>
+      <div class="up"><div><h3>Тонирование стёкол</h3>
+        <p>Плёнка по ГОСТу на боковые и заднее, атермальная на лобовое.</p></div>
+        <b>по стёклам</b></div>
+      <div class="up"><div><h3>Запчасти</h3>
+        <p>Для легковых и грузовых: подвеска, тормоза, электрика, оптика, кузов, салон.
+          Есть доставка.</p></div>
+        <b>под заказ</b></div>
+    </div>
+    <div class="g3">
+      <figure class="up"><img src="photo/kuzov.jpg" alt="Повреждение кузова автомобиля до и после ремонта" loading="lazy" decoding="async">
+        <figcaption>Кузовной цех: до и после — фото по каждому этапу.</figcaption></figure>
+      <figure class="up"><img src="photo/pickup.jpg" alt="Пикап в шоуруме Луна авто" loading="lazy" decoding="async">
+        <figcaption>Берём и крупные машины: пикапы, внедорожники, коммерческие.</figcaption></figure>
+      <figure class="up"><img src="photo/rox.jpg" alt="Новый автомобиль с бантом в салоне Луна авто" loading="lazy" decoding="async">
+        <figcaption>Рядом автосалон: машину можно и купить, и потом обслуживать здесь же.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy" class="said">
+  <div class="w">
+    <p class="tag up">Отзывы · 4,7 из 5 по 340 оценкам в 2ГИС</p>
+    <blockquote class="up" style="margin-top:22px">
+      <p class="bigq">«Неисправность была устранена за счёт гарантии завода изготовителя.
+        В то время как в другом сервисе предложили ремонт за собственные средства»</p>
+      <p class="by">Светлана Дильдина · 11 июля 2026 · рулевая рейка</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>Приобрёл машину в данном салоне, выражаю благодарность за отличную работу.
+          Рекомендую.</p>
+        <cite>Александр Ушаков · 18 апреля 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Спасибо мастеру-приёмщику Вячеславу за клиентоориентированность, включённость
+          и желание помочь. А также за терпение и поддержку на всём этом непростом пути.
+          Сейчас всё работает как часы.</p>
+        <cite>Клиент 2ГИС · 22 июня 2026 · случай признан гарантийным</cite>
+      </blockquote>
+    </div>
+    <div class="g3">
+      <figure class="up"><img src="photo/bow-silver.jpg" alt="Автомобиль с праздничным бантом в салоне" loading="lazy" decoding="async">
+        <figcaption>Выдача машины — тоже часть работы станции.</figcaption></figure>
+      <figure class="up"><img src="photo/bow-black.jpg" alt="Чёрный автомобиль в шоуруме Луна авто" loading="lazy" decoding="async">
+        <figcaption>Станционная, 98 — светлый шоурум и клиентская зона.</figcaption></figure>
+      <figure class="up"><img src="photo/altai.jpg" alt="Автомобиль клиента в горах Алтая" loading="lazy" decoding="async">
+        <figcaption>Машины клиентов после подготовки — на Алтае и дальше.</figcaption></figure>
+    </div>
+    <div class="acts up" style="margin-top:38px">
+      <a class="btn g" href="https://2gis.ru/firm/70000001033836273" target="_blank" rel="noopener">
+        Все 340 отзывов в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty">
+  <div class="w split">
+    <div class="up">
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:14px">Станционная, 98/2</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>Станционная улица, 98/2, 1 этаж<br><span class="q2">Ленинский район, Новосибирск</span></dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+73832335333">+7 383 233-53-33</a></dd></div>
+        <div><dt>Режим</dt><dd>Ежедневно, 8:00–20:00</dd></div>
+        <div><dt>Ещё</dt><dd><a href="https://vk.com/psa_lunaavto" target="_blank" rel="noopener">ВКонтакте</a> ·
+          доставка запчастей</dd></div>
+        <div><dt>Оплата</dt><dd>Карта, наличные, счёт для юрлиц</dd></div>
+      </div>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="tel:+73832335333">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/70000001033836273" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <iframe loading="lazy" title="Карта: Станционная улица, 98/2"
+          src="https://yandex.ru/map-widget/v1/?ll=82.78105%2C54.996341&z=16&text=Новосибирск%2C%20Станционная%20улица%2C%2098%2F2"></iframe>
+      </div>
+      <h2 style="font-size:clamp(21px,2.5vw,31px);margin-top:34px">Записаться</h2>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Светлана"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 913 000-00-00"></div>
+        <div><label for="c">Машина</label><input id="c" name="car" placeholder="Citroen C4, 2019"></div>
+        <div><label for="m">Что нужно</label><textarea id="m" name="message" placeholder="Стук в рейке, была в другом сервисе — хочу второе мнение"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cmp">Компания</label><input id="cmp" name="company" tabindex="-1" autocomplete="off"></div>
+        <button class="btn" type="submit">Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Нажимая кнопку, вы соглашаетесь на обработку своих контактов, чтобы мы
+          могли перезвонить. Больше ни для чего они не используются.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">Луна авто<s>Сервисная станция</s></div>
+    Станционная улица, 98/2, Новосибирск · ежедневно 8:00–20:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+73832335333">+7 383 233-53-33</a>
+    <a href="https://vk.com/psa_lunaavto" target="_blank" rel="noopener">ВКонтакте</a>
+    <a href="https://2gis.ru/firm/70000001033836273" target="_blank" rel="noopener">2ГИС</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+73832335333">Позвонить</a>
+  <a class="btn g" href="#garantiya">Гарантия</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"Луна авто, сервисная станция",
+"description":"Сервис Citroen и Peugeot, кузовной цех, дизельный и грузовой автосервис, развал-схождение, запчасти",
+"address":{"@type":"PostalAddress","streetAddress":"Станционная улица, 98/2","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":54.996341,"longitude":82.78105},
+"telephone":"+73832335333",
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"20:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"340","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/70000001033836273","https://vk.com/psa_lunaavto"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и запишем на время.';ok.style.display='block';f.reset();return}}catch(_){}}
+  ok.innerHTML='Приём заявок пока настраивается. Позвоните, пожалуйста: <a href="tel:+73832335333">+7 383 233-53-33</a>.';
+  ok.style.display='block';
+});
+</script>
+</body>
+</html>

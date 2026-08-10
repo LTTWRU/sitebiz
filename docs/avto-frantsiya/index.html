@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Авто-Франция — сервис Citroen и Peugeot на Выборной, 26 к1, Новосибирск</title>
+<meta name="description" content="Авто-Франция на Выборной, 26 к1: ремонт Citroen и Peugeot — двигатели, АКПП и МКПП, ходовая, электрика, кондиционеры, диагностика. Свой эвакуатор, запчасти под заказ. 4,9 по 366 отзывам. Пн–Пт 10:00–19:00.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Авто-Франция — меняем то, что сломалось, а не то, что проще заменить">
+<meta property="og:description" content="Citroen и Peugeot. Ремонт узла вместо замены в сборе. Свой эвакуатор. Выборная, 26 к1, Новосибирск.">
+<meta property="og:image" content="photo/night.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23F7F5F0'/><text x='16' y='23' font-size='19' font-family='Helvetica' font-weight='700' text-anchor='middle' fill='%23C4283A'>Ф</text></svg>">
+<link rel="stylesheet" href="../fonts/commissioner.css">
+<link rel="stylesheet" href="../fonts/literata.css">
+<style>
+/* Двенадцать отзывов подряд — про одно и то же: «в другом месте сказали
+   менять моторчик / блок / механизм, а здесь почистили и смазали».
+   Значит, весь сайт про это, и главный блок — список реальных случаев
+   «что предлагали заменить» против «что оказалось на самом деле».
+   Спокойная бумага, синий французских номеров и один красный акцент. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#F7F5F0; --paper-2:#ECE8E0; --card:#FFFFFF;
+  --navy:#16233F; --navy-2:#243456;
+  --ink:#171A22; --ink-2:#4B5364; --ink-3:#868D9C;
+  --line:#DED9CF; --line-2:#C6C0B2;
+  --red:#C4283A; --red-2:#A31E2E; --red-soft:#F8E7E8;
+  --wrap:1120px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);
+  font:400 16.5px/1.78 Literata,Georgia,serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(58px,8vw,110px) 0}
+h1,h2,h3{font-family:Commissioner,-apple-system,sans-serif}
+h1,h2{font-weight:700;line-height:1.1;letter-spacing:-.032em;text-wrap:balance}
+h1{font-size:clamp(32px,5.2vw,66px)}
+h2{font-size:clamp(25px,3.4vw,44px)}
+h3{font-size:19px;font-weight:650;line-height:1.36;letter-spacing:-.015em}
+p{max-width:60ch}
+em{font-style:normal;color:var(--red)}
+.tag{font-family:Commissioner,sans-serif;font-size:11px;font-weight:700;letter-spacing:.19em;
+  text-transform:uppercase;color:var(--red)}
+.q2{color:var(--ink-2)}
+
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:Commissioner,sans-serif;
+  font-weight:650;font-size:15.5px;padding:15px 26px;background:var(--navy);color:#fff;
+  border-radius:4px;transition:background .22s var(--ease),transform .22s}
+.btn:hover{background:var(--navy-2);transform:translateY(-2px)}
+.btn.g{background:transparent;color:var(--ink);border:1px solid var(--line-2)}
+.btn.g:hover{border-color:var(--red);color:var(--red)}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:16px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(247,245,240,.95);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:10px 0}
+.nav{display:flex;align-items:center;gap:26px}
+.brand{margin-right:auto;font-family:Commissioner,sans-serif;font-weight:800;
+  font-size:20px;letter-spacing:-.03em;line-height:1.1}
+.brand s{display:block;text-decoration:none;font-size:9px;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-top:2px}
+.lk{font-family:Commissioner,sans-serif;font-size:14.5px;color:var(--ink-2);transition:color .2s}
+.lk:hover{color:var(--red)}
+@media(max-width:1000px){.lk{display:none}}
+@media(max-width:420px){.nav{gap:12px}.btn{padding:12px 16px;font-size:14px}}
+
+.hero{padding-top:clamp(120px,16vw,194px);padding-bottom:clamp(34px,5vw,58px)}
+.hero h1{margin:18px 0 24px}
+.hero .sub{font-size:clamp(16.5px,1.8vw,19px);color:var(--ink-2);max-width:46ch;line-height:1.72}
+.acts{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,40px);
+  margin-top:clamp(42px,6vw,74px);padding-top:26px;border-top:1px solid var(--line)}
+.figs b{display:block;font-family:Commissioner,sans-serif;font-weight:700;
+  font-size:clamp(24px,3vw,39px);letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.figs span{display:block;margin-top:10px;font-size:12.5px;color:var(--ink-3);line-height:1.5;
+  font-family:Commissioner,sans-serif}
+@media(max-width:700px){.figs{grid-template-columns:repeat(2,1fr)}}
+
+.plate{overflow:hidden;background:var(--paper-2);border-radius:5px}
+.plate img{width:100%;aspect-ratio:21/9;object-fit:cover}
+@media(max-width:700px){.plate img{aspect-ratio:4/3}}
+.cap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:11px;
+  font-family:Commissioner,sans-serif;font-size:12.5px;color:var(--ink-3)}
+
+/* Ведомость случаев: слева — что предлагали заменить, справа — что было на самом
+   деле. Все строки взяты из отзывов, ничего не придумано. */
+.ledger{margin:0;margin-top:clamp(32px,4.4vw,54px);border-top:2px solid var(--navy)}
+.ledger>div{display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border-bottom:1px solid var(--line)}
+.ledger>div>*{padding:18px 22px 18px 0}
+.ledger>div>*+*{padding-left:22px;border-left:1px solid var(--line)}
+.ledger dt{font-family:Commissioner,sans-serif;font-size:15.5px;color:var(--ink-3);
+  text-decoration:line-through;text-decoration-color:var(--line-2)}
+.ledger dd{font-family:Commissioner,sans-serif;font-size:15.5px;font-weight:600;color:var(--ink)}
+.ledger dd i{display:block;font-style:normal;font-weight:400;font-size:13px;
+  color:var(--ink-3);margin-top:5px}
+.lhead{display:grid;grid-template-columns:1fr 1fr;font-family:Commissioner,sans-serif;
+  font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);
+  padding-bottom:11px}
+.lhead span+span{padding-left:22px;color:var(--red)}
+@media(max-width:700px){
+  .ledger>div{grid-template-columns:1fr}
+  .ledger>div>*{padding:14px 0}
+  .ledger>div>*+*{padding-left:0;border-left:0;padding-top:0;padding-bottom:18px}
+  .lhead{display:none}}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+  margin-top:clamp(30px,4vw,48px);border:1px solid var(--line);border-radius:5px;overflow:hidden}
+.two>div{background:var(--card);padding:clamp(26px,3.4vw,38px)}
+.two b{display:block;font-family:Commissioner,sans-serif;font-size:21px;font-weight:700;
+  letter-spacing:-.025em;margin-bottom:12px}
+.two p{font-size:15.5px;color:var(--ink-2)}
+@media(max-width:720px){.two{grid-template-columns:1fr}}
+
+.price{margin-top:clamp(30px,4vw,50px);border-top:2px solid var(--navy)}
+.price>div{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:baseline;
+  padding:19px 0;border-bottom:1px solid var(--line);transition:padding-left .28s var(--ease)}
+.price>div:hover{padding-left:9px}
+.price p{font-size:14.5px;color:var(--ink-2);margin-top:5px;max-width:58ch}
+.price b{font-family:Commissioner,sans-serif;font-size:12.5px;white-space:nowrap;color:var(--ink-3);
+  font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+@media(max-width:560px){.price>div{grid-template-columns:1fr;gap:6px}}
+
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px);
+  margin-top:clamp(32px,4.5vw,54px)}
+@media(max-width:760px){.g3{grid-template-columns:1fr;gap:24px}}
+.g3 img{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--paper-2);border-radius:5px}
+.g3 figcaption{margin-top:12px;font-size:14.5px;color:var(--ink-2)}
+
+.said{background:var(--paper-2)}
+.bigq{font-family:Commissioner,sans-serif;font-weight:700;font-size:clamp(20px,2.9vw,37px);
+  line-height:1.26;letter-spacing:-.032em;max-width:24ch}
+.by{font-family:Commissioner,sans-serif;font-size:13.5px;color:var(--ink-3);margin-top:22px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,58px);
+  margin-top:clamp(38px,5.5vw,70px)}
+@media(max-width:820px){.pair{grid-template-columns:1fr;gap:32px}}
+.pair p{font-size:16px;color:var(--ink-2)}
+.pair cite{display:block;font-style:normal;font-family:Commissioner,sans-serif;
+  font-size:13.5px;color:var(--ink-3);margin-top:13px}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,70px)}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
+.rows{border-top:2px solid var(--navy);margin-top:26px}
+.rows>div{display:grid;grid-template-columns:118px 1fr;gap:18px;padding:15px 0;
+  border-bottom:1px solid var(--line);font-size:16px}
+.rows dt{font-family:Commissioner,sans-serif;font-size:12.5px;color:var(--ink-3);padding-top:5px}
+.rows a:hover{color:var(--red)}
+@media(max-width:520px){.rows>div{grid-template-columns:1fr;gap:3px}}
+.map{aspect-ratio:16/10;background:var(--paper-2);overflow:hidden;border-radius:5px}
+.map iframe{width:100%;height:100%;border:0}
+form{margin-top:20px;display:grid;gap:15px}
+label{display:block;font-family:Commissioner,sans-serif;font-size:12.5px;color:var(--ink-3);margin-bottom:7px}
+input,textarea{width:100%;background:var(--card);border:1px solid var(--line-2);color:var(--ink);
+  padding:13px 15px;font:400 16px/1.5 Commissioner,sans-serif;border-radius:4px;transition:border-color .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--red)}
+textarea{min-height:100px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fine{font-family:Commissioner,sans-serif;font-size:12.5px;color:var(--ink-3);line-height:1.6;max-width:52ch}
+.sent{display:none;padding:13px 15px;border:1px solid var(--red);background:var(--red-soft);
+  font-size:15px;border-radius:4px}
+.sent a{color:var(--red-2);text-decoration:underline}
+
+footer{border-top:1px solid var(--line);padding:34px 0 44px;font-family:Commissioner,sans-serif;
+  font-size:14px;color:var(--ink-3)}
+.fin{display:flex;gap:26px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+footer a:hover{color:var(--red)}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:8px;padding:9px 12px;
+  background:rgba(247,245,240,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  width:100%;max-width:100vw}
+.bar a{flex:1 1 0;min-width:0;white-space:nowrap;text-align:center;justify-content:center;
+  padding:13px 10px;font-size:15px}
+@media(max-width:760px){.bar{display:flex}body{padding-bottom:70px}}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <nav class="w nav">
+    <a class="brand" href="#">АВТО-ФРАНЦИЯ<s>Citroen · Peugeot</s></a>
+    <a class="lk" href="#sluchai">Случаи</a>
+    <a class="lk" href="#raboty">Работы</a>
+    <a class="lk" href="#evakuator">Эвакуатор</a>
+    <a class="lk" href="#otzyvy">Отзывы</a>
+    <a class="lk" href="#kontakty">Контакты</a>
+    <a class="btn" href="tel:+79132073814">Записаться</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Сервис Citroen и Peugeot · Выборная, 26 к1 · Новосибирск</p>
+    <h1 class="up">Меняем то, что сломалось.<br>А не то, что <em>проще заменить</em></h1>
+    <p class="sub up">Две марки, которые знаем наизусть, и привычка искать настоящую причину.
+      Одну катушку вместо комплекта, окисленный контакт вместо нового блока,
+      чистку направляющих вместо стеклоподъёмника в сборе.</p>
+    <div class="acts up">
+      <a class="btn" href="tel:+79132073814">+7 913 207-38-14
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#sluchai">Реальные случаи</a>
+    </div>
+    <div class="figs up">
+      <div><b>4,9</b><span>по 366 отзывам в 2ГИС</span></div>
+      <div><b>2 марки</b><span>Citroen и Peugeot — и ничего кроме</span></div>
+      <div><b>с 2016</b><span>к нам возят одни и те же машины</span></div>
+      <div><b>Эвакуатор</b><span>свой — не заводится, значит привезём</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="w up">
+    <div class="plate"><img src="photo/night.jpg"
+      alt="Peugeot 307 CC клиента Авто-Франции вечером в Новосибирске" fetchpriority="high"></div>
+    <div class="cap"><span>Машина клиента после ремонта</span><span>Выборная, 26 к1</span></div>
+  </div>
+</section>
+
+<section id="sluchai">
+  <div class="w">
+    <p class="tag up">Случаи</p>
+    <h2 class="up" style="margin-top:14px">Что предлагали заменить —<br>и что оказалось на самом деле</h2>
+    <p class="q2 up" style="margin-top:20px;font-size:17px">Ни одна строка не придумана: всё это
+      написали клиенты в отзывах за последние месяцы. Разница в чеке между левой
+      и правой колонкой — обычно в несколько раз.</p>
+    <div class="up" style="margin-top:clamp(30px,4vw,46px)">
+      <div class="lhead"><span>Так предлагали</span><span>Так сделали</span></div>
+      <dl class="ledger">
+        <div><dt>Заменить блок парктроников</dt>
+          <dd>Нашли окисление в фишке под обшивкой багажника<i>Citroen Berlingo · прочистили и заизолировали</i></dd></div>
+        <div><dt>Заменить все четыре катушки комплектом</dt>
+          <dd>Заменили одну — ту, что реально умерла<i>Расход вернулся в норму</i></dd></div>
+        <div><dt>Заменить механизм стеклоподъёмника</dt>
+          <dd>Сняли обшивку, почистили направляющие, смазали<i>Ходит как новое</i></dd></div>
+        <div><dt>Заменить моторчик печки</dt>
+          <dd>Вычистили грязь с крыльчатки и смазали подшипники<i>Работает тихо и мощно</i></dd></div>
+        <div><dt>Менять всю магистраль кондиционера</dt>
+          <dd>Нашли микроподтекание в трубке у радиатора и запаяли<i>Peugeot 2008 · заправили, держит</i></dd></div>
+        <div><dt>Проточить или заменить тормозные диски</dt>
+          <dd>Грязь между ступицей и диском: зачистили, посадили на пасту<i>Peugeot 308 · вибрация ушла</i></dd></div>
+        <div><dt>Менять датчик ABS</dt>
+          <dd>Разъём стёрся о колёсный диск — закрепили и заизолировали<i>Ошибка стёрлась, датчик живой</i></dd></div>
+        <div><dt>Ремонт замка водительской двери</dt>
+          <dd>Окислился контакт: почистили и смазали<i>Центральный замок заработал целиком</i></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="raboty">
+  <div class="w">
+    <p class="tag up">Работы</p>
+    <h2 class="up" style="margin-top:14px">Только Citroen и Peugeot</h2>
+    <p class="q2 up" style="margin-top:20px;font-size:17px">Одни и те же болячки на одних
+      и тех же кузовах — поэтому диагноз ставится быстрее, а запчасть подбирается с первого раза.
+      На чужие марки не отвлекаемся.</p>
+    <div class="price">
+      <div class="up"><div><h3>Компьютерная диагностика</h3>
+        <p>Читаем ошибки и проверяем причину руками. Ошибка про катушку не значит,
+          что нужен комплект катушек.</p></div>
+        <b>с проверкой</b></div>
+      <div class="up"><div><h3>Ремонт бензиновых двигателей</h3>
+        <p>От пропусков зажигания и течей до шлифовки. Разбираем, дефектуем, показываем.</p></div>
+        <b>по дефектовке</b></div>
+      <div class="up"><div><h3>АКПП и МКПП</h3>
+        <p>Ремонт и обслуживание коробок. Иногда дело не в коробке, а в регулировке
+          троса кулисы — проверяем это первым.</p></div>
+        <b>по осмотру</b></div>
+      <div class="up"><div><h3>Ходовая часть</h3>
+        <p>Стойки, рычаги, сайлентблоки, ступицы. Проточка тормозных дисков
+          вместо покупки новых.</p></div>
+        <b>по осмотру</b></div>
+      <div class="up"><div><h3>Электрика</h3>
+        <p>Проводка, разъёмы, датчики, стеклоподъёмники, центральный замок.
+          Самая частая находка — окисленный контакт.</p></div>
+        <b>по проблеме</b></div>
+      <div class="up"><div><h3>Кондиционер и климат</h3>
+        <p>Диагностика, поиск утечек, пайка трубок, заправка. Не заправляем «в никуда»,
+          сначала ищем, куда уходит.</p></div>
+        <b>с поиском утечки</b></div>
+      <div class="up"><div><h3>Запчасти Citroen и Peugeot</h3>
+        <p>Подбираем и заказываем под VIN: оригинал или проверенный аналог, на выбор.</p></div>
+        <b>под заказ</b></div>
+      <div class="up"><div><h3>Автохимия</h3>
+        <p>Расходники и составы, которыми работаем сами, можно купить здесь же.</p></div>
+        <b>в наличии</b></div>
+    </div>
+    <div class="g3">
+      <figure class="up"><img src="photo/shop.jpg" alt="Ремонтный цех Авто-Франции с автомобилями на подъёмниках" loading="lazy" decoding="async">
+        <figcaption>Цех: несколько подъёмников, машины не стоят в очереди на улице.</figcaption></figure>
+      <figure class="up"><img src="photo/lift.jpg" alt="Peugeot на подъёмнике в сервисе Авто-Франция" loading="lazy" decoding="async">
+        <figcaption>Подняли — и вместе смотрим, что там на самом деле.</figcaption></figure>
+      <figure class="up"><img src="photo/facade.jpg" alt="Вывеска Авто-Франция на Выборной улице" loading="lazy" decoding="async">
+        <figcaption>Выборная, 26 к1 — заезд во двор, машины стоят у ворот.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="evakuator">
+  <div class="w">
+    <p class="tag up">Если не заводится</p>
+    <h2 class="up" style="margin-top:14px">Свой эвакуатор</h2>
+    <div class="two">
+      <div class="up"><b>Привезём</b>
+        <p>Машина не едет — звоните, приедет наш эвакуатор. Не нужно искать перевозчика
+          отдельно и объяснять ему, куда везти.</p></div>
+      <div class="up"><b>Посмотрим сразу</b>
+        <p>Привезённую машину принимаем и смотрим в тот же день, а не ставим в очередь
+          «на послезавтра».</p></div>
+    </div>
+    <div class="g3">
+      <figure class="up"><img src="photo/under.jpg" alt="Осмотр днища автомобиля на подъёмнике" loading="lazy" decoding="async">
+        <figcaption>Днище и подрамник смотрим при каждом заезде на подъёмник.</figcaption></figure>
+      <figure class="up"><img src="photo/forest.jpg" alt="Citroen C4 клиента зимой на лесной дороге" loading="lazy" decoding="async">
+        <figcaption>После ремонта машина едет туда, куда её и покупали.</figcaption></figure>
+      <figure class="up"><img src="photo/p2008.jpg" alt="Peugeot 2008 во дворе сервиса" loading="lazy" decoding="async">
+        <figcaption>Peugeot 2008, 308, Partner, Citroen C4, Berlingo, C3 — обычный день.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy" class="said">
+  <div class="w">
+    <p class="tag up">Отзывы · 4,9 из 5 по 366 оценкам в 2ГИС</p>
+    <blockquote class="up" style="margin-top:22px">
+      <p class="bigq">«Мастер сразу полез в фишку под обшивкой багажника — нашёл окисление,
+        прочистил, заизолировал, всё ожило, а не повёл менять блок»</p>
+      <p class="by">Олег Черенков · 22 июля 2026 · Citroen Berlingo</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>Загорелся чек, компьютерная диагностика показала пропуски зажигания. Заменили одну
+          катушку, которая реально сдохла, а не все четыре комплектом, как обычно предлагают.
+          Машина поехала ровно, расход вернулся в норму.</p>
+        <cite>Сильвестр Селивахин · 8 августа 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>У меня Пежо. С 2016 года ремонтирую у них все машины. Очень довольна.</p>
+        <cite>Аксиния Шестель · 27 июля 2026</cite>
+      </blockquote>
+    </div>
+    <div class="acts up" style="margin-top:38px">
+      <a class="btn g" href="https://2gis.ru/firm/70000001027010947" target="_blank" rel="noopener">
+        Все 366 отзывов в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty">
+  <div class="w split">
+    <div class="up">
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:14px">Выборная, 26 к1</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>Выборная улица, 26 к1<br><span class="q2">Октябрьский район, Новосибирск</span></dd></div>
+        <div><dt>Телефоны</dt><dd><a href="tel:+79132073814">+7 913 207-38-14</a><br>
+          <a href="tel:+73833803647">+7 383 380-36-47</a><br>
+          <a href="tel:+79529125606">+7 952 912-56-06</a></dd></div>
+        <div><dt>Режим</dt><dd>Пн–Пт 10:00–13:00 и 14:00–19:00<br>Сб, Вс — выходные</dd></div>
+        <div><dt>Ещё</dt><dd><a href="https://vk.com/avtofrance54" target="_blank" rel="noopener">ВКонтакте</a> ·
+          <a href="https://t.me/+79537803647" target="_blank" rel="noopener">Telegram</a></dd></div>
+        <div><dt>Оплата</dt><dd>Карта, наличные, перевод, счёт для юрлиц</dd></div>
+      </div>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="tel:+79132073814">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/70000001027010947" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <iframe loading="lazy" title="Карта: Выборная улица, 26 к1"
+          src="https://yandex.ru/map-widget/v1/?ll=82.987889%2C54.991041&z=16&text=Новосибирск%2C%20Выборная%20улица%2C%2026%20к1"></iframe>
+      </div>
+      <h2 style="font-size:clamp(21px,2.5vw,31px);margin-top:34px">Записаться</h2>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Олег"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 913 000-00-00"></div>
+        <div><label for="c">Машина</label><input id="c" name="car" placeholder="Peugeot 308, 2013"></div>
+        <div><label for="m">Что беспокоит</label><textarea id="m" name="message" placeholder="Троит в пробке, загорелся чек"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cmp">Компания</label><input id="cmp" name="company" tabindex="-1" autocomplete="off"></div>
+        <button class="btn" type="submit">Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Нажимая кнопку, вы соглашаетесь на обработку своих контактов, чтобы мы
+          могли перезвонить. Больше ни для чего они не используются.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">АВТО-ФРАНЦИЯ<s>Citroen · Peugeot</s></div>
+    Выборная улица, 26 к1, Новосибирск · Пн–Пт 10:00–19:00, перерыв 13:00–14:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+79132073814">+7 913 207-38-14</a>
+    <a href="https://vk.com/avtofrance54" target="_blank" rel="noopener">ВКонтакте</a>
+    <a href="https://2gis.ru/firm/70000001027010947" target="_blank" rel="noopener">2ГИС</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+79132073814">Позвонить</a>
+  <a class="btn g" href="#sluchai">Случаи</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"Авто-Франция",
+"description":"Автосервис по ремонту Citroen и Peugeot: двигатели, АКПП и МКПП, ходовая, электрика, кондиционеры, эвакуатор",
+"address":{"@type":"PostalAddress","streetAddress":"Выборная улица, 26 к1","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":54.991041,"longitude":82.987889},
+"telephone":"+79132073814",
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"10:00","closes":"19:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"366","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/70000001027010947","https://vk.com/avtofrance54"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и запишем на время.';ok.style.display='block';f.reset();return}}catch(_){}}
+  ok.innerHTML='Приём заявок пока настраивается. Позвоните, пожалуйста: <a href="tel:+79132073814">+7 913 207-38-14</a>.';
+  ok.style.display='block';
+});
+</script>
+</body>
+</html>
