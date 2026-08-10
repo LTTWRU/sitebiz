@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>STOAvto — автосервис, мойка и моторный цех на Курчатова, 37 к1, Новосибирск</title>
+<meta name="description" content="STOAvto на Курчатова, 37 к1: ремонт двигателя с расточкой и гильзовкой, ходовая, развал-схождение, шиномонтаж с правкой дисков, сварка, автозвук и сигнализации, комплексная мойка от 1400 ₽. 4,5 по 215 отзывам. Ежедневно 9:00–21:00.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="STOAvto — сервис, мойка и моторный цех на одном заезде">
+<meta property="og:description" content="Курчатова, 37 к1. Ремонт, шиномонтаж, мойка от 1400 ₽. Ежедневно с 9:00 до 21:00.">
+<meta property="og:image" content="photo/wash.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23F0E9DD'/><text x='16' y='23' font-size='18' font-family='Helvetica' font-weight='700' text-anchor='middle' fill='%238C3A2B'>S</text></svg>">
+<link rel="stylesheet" href="../fonts/onest.css">
+<link rel="stylesheet" href="../fonts/commissioner.css">
+<style>
+/* Три вещи в одном дворе: сервис, шиномонтаж и мойка, и всё это до девяти
+   вечера каждый день. Поэтому сайт построен вокруг одного заезда, а не
+   вокруг списка услуг. Отдельный раздел — про то, что стоит денег: в одном
+   из отзывов человека не предупредили, что диагностика платная, и это
+   единственное, из-за чего он не вернулся. Такое лечится честной строкой,
+   а не молчанием. Кирпич и песок — цвет их же двора. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --sand:#F0E9DD; --sand-2:#E2D8C6; --card:#FBF8F2;
+  --ink:#2A211B; --ink-2:#5C4F44; --ink-3:#93867A;
+  --line:#DCD0BC; --line-2:#C3B49C;
+  --brick:#8C3A2B; --brick-2:#6F2C20; --brick-soft:#F5E4DF;
+  --wrap:1120px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--sand);color:var(--ink);
+  font:400 16.5px/1.75 Commissioner,-apple-system,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(58px,8vw,110px) 0}
+h1,h2,h3{font-family:Onest,-apple-system,sans-serif}
+h1,h2{font-weight:700;line-height:1.08;letter-spacing:-.038em;text-wrap:balance}
+h1{font-size:clamp(33px,5.4vw,70px)}
+h2{font-size:clamp(26px,3.5vw,45px)}
+h3{font-size:19px;font-weight:600;line-height:1.35;letter-spacing:-.018em}
+p{max-width:61ch}
+em{font-style:normal;color:var(--brick)}
+.tag{font-family:Onest,sans-serif;font-size:11px;font-weight:700;letter-spacing:.19em;
+  text-transform:uppercase;color:var(--brick)}
+.q2{color:var(--ink-2)}
+
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:Onest,sans-serif;
+  font-weight:600;font-size:15.5px;padding:15px 26px;background:var(--brick);color:#fff;
+  border-radius:6px;transition:background .22s var(--ease),transform .22s}
+.btn:hover{background:var(--brick-2);transform:translateY(-2px)}
+.btn.g{background:transparent;color:var(--ink);border:1px solid var(--line-2)}
+.btn.g:hover{border-color:var(--brick);color:var(--brick)}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:16px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(240,233,221,.95);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:10px 0}
+.nav{display:flex;align-items:center;gap:26px}
+.brand{margin-right:auto;font-family:Onest,sans-serif;font-weight:800;
+  font-size:21px;letter-spacing:-.04em;line-height:1.1}
+.brand s{display:block;text-decoration:none;font-family:Commissioner,sans-serif;font-size:9px;
+  font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--brick);margin-top:2px}
+.lk{font-size:14.5px;color:var(--ink-2);transition:color .2s}
+.lk:hover{color:var(--brick)}
+@media(max-width:1000px){.lk{display:none}}
+@media(max-width:420px){.nav{gap:12px}.btn{padding:12px 16px;font-size:14px}}
+
+.hero{padding-top:clamp(120px,16vw,194px);padding-bottom:clamp(34px,5vw,58px)}
+.hero h1{margin:18px 0 24px}
+.hero .sub{font-size:clamp(16.5px,1.8vw,19.5px);color:var(--ink-2);max-width:47ch;line-height:1.68}
+.acts{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,40px);
+  margin-top:clamp(42px,6vw,74px);padding-top:26px;border-top:1px solid var(--line)}
+.figs b{display:block;font-family:Onest,sans-serif;font-weight:700;
+  font-size:clamp(24px,3vw,39px);letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}
+.figs span{display:block;margin-top:10px;font-size:12.5px;color:var(--ink-3);line-height:1.5}
+@media(max-width:700px){.figs{grid-template-columns:repeat(2,1fr)}}
+
+.plate{overflow:hidden;background:var(--sand-2);border-radius:8px}
+.plate img{width:100%;aspect-ratio:21/9;object-fit:cover}
+@media(max-width:700px){.plate img{aspect-ratio:4/3}}
+.cap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:11px;
+  font-size:12.5px;color:var(--ink-3)}
+
+/* Один заезд — три участка. Это и есть предложение целиком. */
+.yard{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+  margin-top:clamp(32px,4.4vw,52px);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.yard>div{background:var(--card);padding:clamp(26px,3.2vw,36px)}
+.yard b{display:block;font-family:Onest,sans-serif;font-size:20px;font-weight:700;
+  letter-spacing:-.03em;margin-bottom:12px}
+.yard p{font-size:15px;color:var(--ink-2)}
+.yard u{display:block;text-decoration:none;margin-top:15px;font-family:Onest,sans-serif;
+  font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)}
+@media(max-width:860px){.yard{grid-template-columns:1fr}}
+
+/* Честный блок про деньги — прямой ответ на единственную реальную претензию */
+.money{background:var(--card);border:1px solid var(--line);border-radius:8px;
+  padding:clamp(26px,4vw,52px);margin-top:clamp(32px,4.4vw,52px)}
+.money .lst{margin-top:24px;border-top:1px solid var(--line)}
+.money .lst>div{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:baseline;
+  padding:15px 0;border-bottom:1px solid var(--line)}
+.money .lst p{font-size:15px;color:var(--ink-2)}
+.money .lst b{font-family:Onest,sans-serif;font-size:14px;white-space:nowrap;color:var(--brick);font-weight:700}
+@media(max-width:560px){.money .lst>div{grid-template-columns:1fr;gap:5px}}
+
+.price{margin-top:clamp(30px,4vw,50px);border-top:2px solid var(--ink)}
+.price>div{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:baseline;
+  padding:19px 0;border-bottom:1px solid var(--line);transition:padding-left .28s var(--ease)}
+.price>div:hover{padding-left:9px}
+.price p{font-size:14.5px;color:var(--ink-2);margin-top:5px;max-width:58ch}
+.price b{font-family:Onest,sans-serif;font-size:12.5px;white-space:nowrap;color:var(--ink-3);
+  font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:560px){.price>div{grid-template-columns:1fr;gap:6px}}
+
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px);
+  margin-top:clamp(32px,4.5vw,54px)}
+@media(max-width:760px){.g3{grid-template-columns:1fr;gap:24px}}
+.g3 img{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--sand-2);border-radius:8px}
+.g3 figcaption{margin-top:12px;font-size:14.5px;color:var(--ink-2)}
+
+.said{background:var(--sand-2)}
+.bigq{font-family:Onest,sans-serif;font-weight:700;font-size:clamp(21px,3vw,38px);
+  line-height:1.2;letter-spacing:-.038em;max-width:23ch}
+.by{font-size:13.5px;color:var(--ink-3);margin-top:22px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,58px);
+  margin-top:clamp(38px,5.5vw,70px)}
+@media(max-width:820px){.pair{grid-template-columns:1fr;gap:32px}}
+.pair p{font-size:16px;color:var(--ink-2)}
+.pair cite{display:block;font-style:normal;font-size:13.5px;color:var(--ink-3);margin-top:13px}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,70px)}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
+.rows{border-top:2px solid var(--ink);margin-top:26px}
+.rows>div{display:grid;grid-template-columns:118px 1fr;gap:18px;padding:15px 0;
+  border-bottom:1px solid var(--line);font-size:16px}
+.rows dt{font-size:12.5px;color:var(--ink-3);padding-top:4px}
+.rows a:hover{color:var(--brick)}
+@media(max-width:520px){.rows>div{grid-template-columns:1fr;gap:3px}}
+.map{aspect-ratio:16/10;background:var(--sand-2);overflow:hidden;border-radius:8px}
+.map iframe{width:100%;height:100%;border:0}
+form{margin-top:20px;display:grid;gap:15px}
+label{display:block;font-size:12.5px;color:var(--ink-3);margin-bottom:7px}
+input,textarea{width:100%;background:var(--card);border:1px solid var(--line-2);color:var(--ink);
+  padding:13px 15px;font:400 16px/1.5 Commissioner,sans-serif;border-radius:6px;transition:border-color .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--brick)}
+textarea{min-height:100px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fine{font-size:12.5px;color:var(--ink-3);line-height:1.6;max-width:52ch}
+.sent{display:none;padding:13px 15px;border:1px solid var(--brick);background:var(--brick-soft);
+  font-size:15px;border-radius:6px}
+.sent a{color:var(--brick-2);text-decoration:underline}
+
+footer{border-top:1px solid var(--line);padding:34px 0 44px;font-size:14px;color:var(--ink-3)}
+.fin{display:flex;gap:26px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+footer a:hover{color:var(--brick)}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:8px;padding:9px 12px;
+  background:rgba(240,233,221,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  width:100%;max-width:100vw}
+.bar a{flex:1 1 0;min-width:0;white-space:nowrap;text-align:center;justify-content:center;
+  padding:13px 10px;font-size:15px}
+@media(max-width:760px){.bar{display:flex}body{padding-bottom:70px}}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--brick);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <nav class="w nav">
+    <a class="brand" href="#">STOAvto<s>Курчатова, 37 к1</s></a>
+    <a class="lk" href="#zaezd">Один заезд</a>
+    <a class="lk" href="#motor">Моторный цех</a>
+    <a class="lk" href="#dengi">Что стоит денег</a>
+    <a class="lk" href="#otzyvy">Отзывы</a>
+    <a class="lk" href="#kontakty">Контакты</a>
+    <a class="btn" href="tel:+79130065799">Записаться</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Автосервис, шиномонтаж и мойка · Курчатова, 37 к1 · Новосибирск</p>
+    <h1 class="up">Починили, переобули<br>и <em>вымыли</em> —<br>за один заезд</h1>
+    <p class="sub up">Сервис, шиномонтаж и мойка стоят в одном дворе и работают до девяти
+      вечера каждый день. Можно приехать после работы, отдать машину и забрать её чистой
+      и на новых колёсах.</p>
+    <div class="acts up">
+      <a class="btn" href="tel:+79130065799">+7 913 006-57-99
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#motor">Моторный цех</a>
+    </div>
+    <div class="figs up">
+      <div><b>4,5</b><span>по 215 отзывам в 2ГИС</span></div>
+      <div><b>9–21</b><span>каждый день, включая выходные</span></div>
+      <div><b>от 1400 ₽</b><span>комплексная мойка</span></div>
+      <div><b>3 участка</b><span>сервис, шиномонтаж и мойка в одном дворе</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="w up">
+    <div class="plate"><img src="photo/wash.jpg"
+      alt="Бокс автомойки STOAvto на Курчатова" fetchpriority="high"></div>
+    <div class="cap"><span>Мойка на территории сервиса</span><span>Курчатова, 37 к1</span></div>
+  </div>
+</section>
+
+<section id="zaezd">
+  <div class="w">
+    <p class="tag up">Один заезд</p>
+    <h2 class="up" style="margin-top:14px">Три участка,<br>один двор</h2>
+    <p class="q2 up" style="margin-top:20px;font-size:17px">Обычно после ремонта машину везут
+      на шиномонтаж, а потом отдельно на мойку. Здесь всё это рядом, и пока идёт работа,
+      можно посидеть в зале ожидания с кофе.</p>
+    <div class="yard">
+      <div class="up"><b>Сервис</b>
+        <p>Двигатель, ходовая, электроника, инжекторы, выхлоп, климат, развал-схождение,
+          сварочные работы, автозвук и сигнализации.</p>
+        <u>Диагностика перед ремонтом</u></div>
+      <div class="up"><b>Шиномонтаж</b>
+        <p>Переобувка, ремонт порезов, правка и сварка дисков, ошиповка, наварка,
+          мойка шин, замена колодок заодно.</p>
+        <u>Колесо чинят за 10 минут</u></div>
+      <div class="up"><b>Мойка</b>
+        <p>Комплексная от 1400 ₽, бесконтактная, мойка двигателя, химчистка салона.
+          Одна машина за раз — моют не спеша.</p>
+        <u>Зал ожидания, кофе и чай</u></div>
+    </div>
+  </div>
+</section>
+
+<section id="motor">
+  <div class="w">
+    <p class="tag up">Моторный цех</p>
+    <h2 class="up" style="margin-top:14px">Двигатель ремонтируют,<br>а не только меняют</h2>
+    <p class="q2 up" style="margin-top:20px;font-size:17px">Расточка, гильзовка, шлифовка
+      и опрессовка — это станочные работы, которых нет у большинства сервисов: они отправляют
+      блок на сторону или предлагают контрактный мотор. Здесь блок обрабатывают на месте.</p>
+    <div class="price">
+      <div class="up"><div><h3>Расточка блока цилиндров</h3>
+        <p>Восстановление геометрии цилиндров под ремонтный размер поршней.</p></div>
+        <b>станочные работы</b></div>
+      <div class="up"><div><h3>Гильзовка</h3>
+        <p>Установка ремонтных гильз, когда расточка уже не спасает. Блок остаётся родным.</p></div>
+        <b>станочные работы</b></div>
+      <div class="up"><div><h3>Шлифовка</h3>
+        <p>Плоскости головки и блока после перегрева — иначе прокладку будет пробивать снова.</p></div>
+        <b>станочные работы</b></div>
+      <div class="up"><div><h3>Опрессовка</h3>
+        <p>Проверка головки и блока на трещины под давлением, до сборки, а не после.</p></div>
+        <b>проверка</b></div>
+      <div class="up"><div><h3>Сварка</h3>
+        <p>Если нужной детали нет в продаже — иногда её проще заварить. Так однажды спасли
+          пробитую крышку поддона и вернули машину в тот же день.</p></div>
+        <b>по месту</b></div>
+    </div>
+    <div class="g3">
+      <figure class="up"><img src="photo/shop.jpg" alt="Мастер в шиномонтажном цехе STOAvto" loading="lazy" decoding="async">
+        <figcaption>Шиномонтажный цех: тёплое помещение, а не навес на улице.</figcaption></figure>
+      <figure class="up"><img src="photo/disc.jpg" alt="Станок для правки дисков с колесом" loading="lazy" decoding="async">
+        <figcaption>Правка дисков на станке — после ямы биение уходит.</figcaption></figure>
+      <figure class="up"><img src="photo/ac.jpg" alt="Заправка кондиционера автомобиля станцией" loading="lazy" decoding="async">
+        <figcaption>Обслуживание климата со станцией и поиском утечек.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="dengi">
+  <div class="w">
+    <p class="tag up">Что стоит денег</p>
+    <h2 class="up" style="margin-top:14px">Говорим цену до того,<br>как взяли машину</h2>
+    <div class="money up">
+      <p class="q2" style="font-size:17px">Самая неприятная история в сервисе — когда счёт
+        оказывается больше, чем человек ожидал. Поэтому здесь несколько правил, и они
+        действуют для всех.</p>
+      <div class="lst">
+        <div><div><h3>Диагностика ходовой перед развалом</h3>
+          <p>Оплачивается отдельно, даже если сам развал вы делать передумали.
+            Мастер обязан назвать сумму до заезда на подъёмник.</p></div><b>называем заранее</b></div>
+        <div><div><h3>Смета до начала работ</h3>
+          <p>Разобрали, посмотрели, посчитали — и только потом начинаем. Если по ходу
+            вскрылось что-то ещё, звоним, а не дописываем в чек.</p></div><b>с вашего согласия</b></div>
+        <div><div><h3>Расходники и запчасти</h3>
+          <p>Показываем, что ставим. Можно привезти своё — скажем честно, подойдёт или нет.</p></div><b>на выбор</b></div>
+        <div><div><h3>Если что-то не так после ремонта</h3>
+          <p>Приезжайте, смотрим вместе. На территории есть камеры, и любую спорную
+            ситуацию разбираем по записям, а не на словах.</p></div><b>разбираем на месте</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy" class="said">
+  <div class="w">
+    <p class="tag up">Отзывы · 4,5 из 5 по 215 оценкам в 2ГИС</p>
+    <blockquote class="up" style="margin-top:22px">
+      <p class="bigq">«Когда не получилось найти контрактную крышку, мастера заварили
+        повреждённую и вернули авто в тот же день»</p>
+      <p class="by">Евгений Зайцев · 21 июля 2026 · пробой крышки поддона</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>Заехала починить колесо, спускало сильно. Мужчина буквально за 10 минут снял,
+          починил, поставил обратно. Всё отлично, спасибо!</p>
+        <cite>S S · 4 августа 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Уже не раз заезжали сюда на мойку, просто огонь. Отличный специалист, вежливый,
+          аккуратный, моет всё до мелочей.</p>
+        <cite>Сергей Бруня · 22 июня 2026</cite>
+      </blockquote>
+    </div>
+    <div class="g3">
+      <figure class="up"><img src="photo/cut.jpg" alt="Порез на боковине шины" loading="lazy" decoding="async">
+        <figcaption>Такой порез многие считают приговором. Здесь чинят.</figcaption></figure>
+      <figure class="up"><img src="photo/patch.jpg" alt="Шина с установленной латкой изнутри" loading="lazy" decoding="async">
+        <figcaption>Латка изнутри: держит давление, колесо служит дальше.</figcaption></figure>
+      <figure class="up"><img src="photo/wheel.jpg" alt="Мастер работает с колесом автомобиля" loading="lazy" decoding="async">
+        <figcaption>Работают во дворе и в боксе — как удобнее по погоде.</figcaption></figure>
+    </div>
+    <div class="acts up" style="margin-top:38px">
+      <a class="btn g" href="https://2gis.ru/firm/70000001029392115" target="_blank" rel="noopener">
+        Все 215 отзывов в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty">
+  <div class="w split">
+    <div class="up">
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:14px">Курчатова, 37 к1</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>улица Курчатова, 37 к1<br><span class="q2">Калининский район, Новосибирск</span></dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+79130065799">+7 913 006-57-99</a></dd></div>
+        <div><dt>Режим</dt><dd>Ежедневно, 9:00–21:00</dd></div>
+        <div><dt>Почта</dt><dd><a href="mailto:d-petrovich@yandex.ru">d-petrovich@yandex.ru</a></dd></div>
+        <div><dt>Ещё</dt><dd>Зал ожидания, Wi-Fi, кофе и чай с собой</dd></div>
+        <div><dt>Оплата</dt><dd>Карта, наличные, QR-код, счёт для юрлиц</dd></div>
+      </div>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="tel:+79130065799">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/70000001029392115" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <iframe loading="lazy" title="Карта: улица Курчатова, 37 к1"
+          src="https://yandex.ru/map-widget/v1/?ll=82.962515%2C55.109624&z=16&text=Новосибирск%2C%20улица%20Курчатова%2C%2037%20к1"></iframe>
+      </div>
+      <h2 style="font-size:clamp(22px,2.6vw,32px);margin-top:34px">Записаться</h2>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Евгений"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 913 000-00-00"></div>
+        <div><label for="c">Машина</label><input id="c" name="car" placeholder="Mazda 6, 2011"></div>
+        <div><label for="m">Что нужно</label><textarea id="m" name="message" placeholder="ТО, переобувка и комплексная мойка"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cmp">Компания</label><input id="cmp" name="company" tabindex="-1" autocomplete="off"></div>
+        <button class="btn" type="submit">Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Нажимая кнопку, вы соглашаетесь на обработку своих контактов, чтобы мы
+          могли перезвонить. Больше ни для чего они не используются.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">STOAvto<s>Курчатова, 37 к1</s></div>
+    улица Курчатова, 37 к1, Новосибирск · ежедневно 9:00–21:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+79130065799">+7 913 006-57-99</a>
+    <a href="mailto:d-petrovich@yandex.ru">d-petrovich@yandex.ru</a>
+    <a href="https://2gis.ru/firm/70000001029392115" target="_blank" rel="noopener">2ГИС</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+79130065799">Позвонить</a>
+  <a class="btn g" href="#zaezd">Что делаем</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"STOAvto, автосервис",
+"description":"Автосервис, шиномонтаж и автомойка: ремонт двигателя с расточкой и гильзовкой, ходовая, развал-схождение, сварка, автозвук, комплексная мойка",
+"address":{"@type":"PostalAddress","streetAddress":"улица Курчатова, 37 к1","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":55.109624,"longitude":82.962515},
+"telephone":"+79130065799","email":"d-petrovich@yandex.ru",
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"09:00","closes":"21:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.5","reviewCount":"215","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/70000001029392115"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и запишем на время.';ok.style.display='block';f.reset();return}}catch(_){}}
+  ok.innerHTML='Приём заявок пока настраивается. Позвоните, пожалуйста: <a href="tel:+79130065799">+7 913 006-57-99</a> — или напишите на <a href="mailto:d-petrovich@yandex.ru">d-petrovich@yandex.ru</a>.';
+  ok.style.display='block';
+});
+</script>
+</body>
+</html>

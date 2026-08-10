@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Академия Сервиса — автосервис на Червонной, 20/1, Новосибирск</title>
+<meta name="description" content="Академия Сервиса на Червонной, 20/1: ходовая, двигатели, инжекторы, электроника, стартеры и генераторы, климат, аппаратная замена масла, антикоррозийная обработка, шиномонтаж, свой разбор и запчасти по 25 маркам. 4,8 по 153 отзывам.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Академия Сервиса — деталь подбирают под ваш бюджет, а не под свой">
+<meta property="og:description" content="Ходовая, двигатель, антикор, свой разбор и склад запчастей. Червонная, 20/1, Новосибирск.">
+<meta property="og:image" content="photo/arm.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23F4F5F7'/><text x='16' y='24' font-size='21' font-family='Georgia' font-weight='700' text-anchor='middle' fill='%2323306B'>А</text></svg>">
+<link rel="stylesheet" href="../fonts/cormorant-garamond.css">
+<link rel="stylesheet" href="../fonts/manrope.css">
+<style>
+/* «Подбирают детали от дешёвых китайских до оригинальных японских —
+   всё зависит от вашего бюджета». Это редкая честность, и это главный
+   раздел сайта: три уровня детали с прямым разговором о том, чем они
+   отличаются. Второй по силе факт — директор сам исправил чужой недочёт
+   и не взял за это денег. Отсюда спокойная антиква и глубокий синий:
+   «Академия» обязывает выглядеть основательно, а не броско. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#F4F5F7; --paper-2:#E6E8EC; --card:#FFFFFF;
+  --navy:#23306B; --navy-2:#33438A; --navy-soft:#E7EAF4;
+  --ink:#15171D; --ink-2:#4A5160; --ink-3:#858C9B;
+  --line:#D8DBE2; --line-2:#BFC4CE;
+  --wrap:1120px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);
+  font:400 16.5px/1.74 Manrope,-apple-system,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(58px,8vw,110px) 0}
+h1,h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;
+  line-height:1.05;letter-spacing:-.012em;text-wrap:balance}
+h1{font-size:clamp(40px,6.6vw,86px)}
+h2{font-size:clamp(30px,4.2vw,56px)}
+h3{font-family:Manrope,sans-serif;font-size:18.5px;font-weight:700;line-height:1.36;letter-spacing:-.018em}
+p{max-width:62ch}
+em{font-style:italic;color:var(--navy)}
+.tag{font-family:Manrope,sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--navy)}
+.q2{color:var(--ink-2)}
+
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:Manrope,sans-serif;
+  font-weight:700;font-size:15px;padding:15px 26px;background:var(--navy);color:#fff;
+  border-radius:3px;transition:background .22s var(--ease),transform .22s}
+.btn:hover{background:var(--navy-2);transform:translateY(-2px)}
+.btn.g{background:transparent;color:var(--ink);border:1px solid var(--line-2)}
+.btn.g:hover{border-color:var(--navy);color:var(--navy)}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:16px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(244,245,247,.95);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:10px 0}
+.nav{display:flex;align-items:center;gap:26px}
+.brand{margin-right:auto;font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;
+  font-size:23px;letter-spacing:0;line-height:1.05}
+.brand s{display:block;text-decoration:none;font-family:Manrope,sans-serif;font-size:9px;
+  font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);margin-top:1px}
+.lk{font-size:14.5px;color:var(--ink-2);transition:color .2s}
+.lk:hover{color:var(--navy)}
+@media(max-width:1000px){.lk{display:none}}
+@media(max-width:420px){.nav{gap:12px}.btn{padding:12px 16px;font-size:14px}}
+
+.hero{padding-top:clamp(120px,16vw,194px);padding-bottom:clamp(34px,5vw,58px)}
+.hero h1{margin:16px 0 26px}
+.hero .sub{font-size:clamp(16.5px,1.8vw,19.5px);color:var(--ink-2);max-width:48ch;line-height:1.66}
+.acts{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,40px);
+  margin-top:clamp(42px,6vw,74px);padding-top:26px;border-top:1px solid var(--line)}
+.figs b{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;
+  font-size:clamp(30px,3.7vw,48px);letter-spacing:-.01em;line-height:1;font-variant-numeric:tabular-nums}
+.figs span{display:block;margin-top:8px;font-size:12.5px;color:var(--ink-3);line-height:1.5}
+@media(max-width:700px){.figs{grid-template-columns:repeat(2,1fr)}}
+
+.plate{overflow:hidden;background:var(--paper-2);border-radius:3px}
+.plate img{width:100%;aspect-ratio:21/9;object-fit:cover}
+@media(max-width:700px){.plate img{aspect-ratio:4/3}}
+.cap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:11px;
+  font-size:12.5px;color:var(--ink-3)}
+
+/* Три уровня детали — так они и предлагают на самом деле, по бюджету */
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+  margin-top:clamp(32px,4.4vw,52px);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.tiers>div{background:var(--card);padding:clamp(26px,3.2vw,36px)}
+.tiers b{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;
+  font-weight:500;margin-bottom:6px;line-height:1.1}
+.tiers u{display:block;text-decoration:none;font-family:Manrope,sans-serif;font-size:11px;
+  font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin-bottom:16px}
+.tiers p{font-size:15px;color:var(--ink-2)}
+@media(max-width:860px){.tiers{grid-template-columns:1fr}}
+
+/* Что делаем, если сами ошиблись — прямое обещание, а не «мы за качество» */
+.fix{background:var(--navy);color:#fff;border-radius:3px;
+  padding:clamp(28px,4.4vw,58px);margin-top:clamp(32px,4.4vw,52px)}
+.fix h2{color:#fff}
+.fix .tag{color:#AEB9E0}
+.fix p{color:#C9D0E8;margin-top:18px;font-size:17px}
+.fix .two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3.4vw,44px);margin-top:28px}
+.fix b{display:block;font-family:Manrope,sans-serif;font-size:16px;font-weight:800;
+  color:#fff;margin-bottom:9px}
+.fix .two p{font-size:15px;margin-top:0;color:#C9D0E8}
+@media(max-width:720px){.fix .two{grid-template-columns:1fr;gap:24px}}
+
+.price{margin-top:clamp(30px,4vw,50px);border-top:2px solid var(--navy)}
+.price>div{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:baseline;
+  padding:19px 0;border-bottom:1px solid var(--line);transition:padding-left .28s var(--ease)}
+.price>div:hover{padding-left:9px}
+.price p{font-size:14.5px;color:var(--ink-2);margin-top:5px;max-width:58ch}
+.price b{font-family:Manrope,sans-serif;font-size:12px;white-space:nowrap;color:var(--ink-3);
+  font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+@media(max-width:560px){.price>div{grid-template-columns:1fr;gap:6px}}
+
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px);
+  margin-top:clamp(32px,4.5vw,54px)}
+@media(max-width:760px){.g3{grid-template-columns:1fr;gap:24px}}
+.g3 img{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--paper-2);border-radius:3px}
+.g3 figcaption{margin-top:12px;font-size:14.5px;color:var(--ink-2)}
+
+.said{background:var(--paper-2)}
+.bigq{font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;font-size:clamp(26px,3.9vw,50px);
+  line-height:1.17;letter-spacing:-.012em;max-width:22ch}
+.by{font-size:13.5px;color:var(--ink-3);margin-top:22px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,58px);
+  margin-top:clamp(38px,5.5vw,70px)}
+@media(max-width:820px){.pair{grid-template-columns:1fr;gap:32px}}
+.pair p{font-size:16px;color:var(--ink-2)}
+.pair cite{display:block;font-style:normal;font-size:13.5px;color:var(--ink-3);margin-top:13px}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,70px)}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
+.rows{border-top:2px solid var(--navy);margin-top:26px}
+.rows>div{display:grid;grid-template-columns:118px 1fr;gap:18px;padding:15px 0;
+  border-bottom:1px solid var(--line);font-size:16px}
+.rows dt{font-size:12.5px;color:var(--ink-3);padding-top:4px}
+.rows a:hover{color:var(--navy)}
+@media(max-width:520px){.rows>div{grid-template-columns:1fr;gap:3px}}
+.map{aspect-ratio:16/10;background:var(--paper-2);overflow:hidden;border-radius:3px}
+.map iframe{width:100%;height:100%;border:0}
+form{margin-top:20px;display:grid;gap:15px}
+label{display:block;font-size:12.5px;color:var(--ink-3);margin-bottom:7px}
+input,textarea{width:100%;background:var(--card);border:1px solid var(--line-2);color:var(--ink);
+  padding:13px 15px;font:400 16px/1.5 Manrope,sans-serif;border-radius:3px;transition:border-color .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--navy)}
+textarea{min-height:100px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fine{font-size:12.5px;color:var(--ink-3);line-height:1.6;max-width:52ch}
+.sent{display:none;padding:13px 15px;border:1px solid var(--navy);background:var(--navy-soft);
+  font-size:15px;border-radius:3px}
+.sent a{color:var(--navy);text-decoration:underline}
+
+footer{border-top:1px solid var(--line);padding:34px 0 44px;font-size:14px;color:var(--ink-3)}
+.fin{display:flex;gap:26px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+footer a:hover{color:var(--navy)}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:8px;padding:9px 12px;
+  background:rgba(244,245,247,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  width:100%;max-width:100vw}
+.bar a{flex:1 1 0;min-width:0;white-space:nowrap;text-align:center;justify-content:center;
+  padding:13px 10px;font-size:15px}
+@media(max-width:760px){.bar{display:flex}body{padding-bottom:70px}}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <nav class="w nav">
+    <a class="brand" href="#">Академия Сервиса<s>Червонная, 20/1</s></a>
+    <a class="lk" href="#byudzhet">Под ваш бюджет</a>
+    <a class="lk" href="#raboty">Работы</a>
+    <a class="lk" href="#oshibka">Если ошиблись</a>
+    <a class="lk" href="#otzyvy">Отзывы</a>
+    <a class="lk" href="#kontakty">Контакты</a>
+    <a class="btn" href="tel:+79137089090">Записаться</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Автосервис и запчасти · Червонная, 20/1 · Первомайский район</p>
+    <h1 class="up">Деталь подбирают<br>под <em>ваш</em> бюджет,<br>а не под свой</h1>
+    <p class="sub up">На каждую позицию есть несколько вариантов: от недорогого до оригинала.
+      Разницу объясняют словами, а выбор оставляют вам. Свой склад и авторазбор — поэтому
+      машина не стоит в ожидании поставки.</p>
+    <div class="acts up">
+      <a class="btn" href="tel:+79137089090">+7 913 708-90-90
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#byudzhet">Как считаем</a>
+    </div>
+    <div class="figs up">
+      <div><b>4,8</b><span>по 153 отзывам в 2ГИС</span></div>
+      <div><b>25 марок</b><span>держим и заказываем запчасти</span></div>
+      <div><b>Свой разбор</b><span>и склад расходников на месте</span></div>
+      <div><b>7 дней</b><span>Пн–Пт 9:00–20:00, Сб–Вс 10:00–19:00</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="w up">
+    <div class="plate"><img src="photo/arm.jpg"
+      alt="Изношенный рычаг подвески, снятый с автомобиля" fetchpriority="high"></div>
+    <div class="cap"><span>Снятый рычаг: сайлентблок разбит насквозь</span><span>Червонная, 20/1</span></div>
+  </div>
+</section>
+
+<section id="byudzhet">
+  <div class="w">
+    <p class="tag up">Под ваш бюджет</p>
+    <h2 class="up" style="margin-top:14px">Три варианта на одну деталь</h2>
+    <p class="q2 up" style="margin-top:20px;font-size:17px">Не «нужна запчасть за столько-то»,
+      а три цены с объяснением разницы. Иногда честный ответ звучит так: на этот узел
+      экономить можно, а вот здесь дешёвая деталь вернёт вас сюда через полгода.</p>
+    <div class="tiers">
+      <div class="up"><b>Бюджет</b><u>Недорогие аналоги</u>
+        <p>Когда машину готовят к продаже или ездят немного. Работает, но ресурс скромный —
+          и мы об этом скажем заранее.</p></div>
+      <div class="up"><b>Середина</b><u>Проверенные бренды</u>
+        <p>Оптимальный вариант для большинства узлов: заметно дешевле оригинала,
+          а по ресурсу отличий почти нет.</p></div>
+      <div class="up"><b>Оригинал</b><u>Заводская деталь</u>
+        <p>Для узлов, где ошибка дорого стоит, и для машин, которые держат долго.
+          Заказываем под VIN.</p></div>
+    </div>
+    <p class="q2 up" style="margin-top:24px;font-size:15px">«Подбирают детали от дешёвых
+      китайских до оригинальных японских. Всё зависит от вашего бюджета» — из отзыва
+      Ольги Зеленской, которая обслуживается здесь два года.</p>
+  </div>
+</section>
+
+<section id="raboty">
+  <div class="w">
+    <p class="tag up">Работы</p>
+    <h2 class="up" style="margin-top:14px">Что делаем</h2>
+    <div class="price">
+      <div class="up"><div><h3>Диагностика ходовой</h3>
+        <p>Показываем снятое: по разбитому сайлентблоку или закисшей шаровой видно всё
+          без объяснений.</p></div>
+        <b>с подъёмником</b></div>
+      <div class="up"><div><h3>Ремонт ходовой части</h3>
+        <p>Рычаги, шаровые, стойки, ступицы, сайлентблоки. После Горного Алтая
+          сюда возвращаются регулярно.</p></div>
+        <b>по осмотру</b></div>
+      <div class="up"><div><h3>Двигатели</h3>
+        <p>Ремонт бензиновых моторов, устранение течей, замена узлов, ремонт инжекторов.</p></div>
+        <b>по дефектовке</b></div>
+      <div class="up"><div><h3>Стартеры и генераторы</h3>
+        <p>Щётки, бендикс, обмотка, регулятор. Если генератор уже «чинили» в другом месте —
+          посмотрим, что там на самом деле.</p></div>
+        <b>ремонт узла</b></div>
+      <div class="up"><div><h3>Аппаратная замена масла</h3>
+        <p>Двигатель и коробка. Заодно проверяем все жидкости и говорим, что доливать.</p></div>
+        <b>по регламенту</b></div>
+      <div class="up"><div><h3>Антикоррозийная обработка</h3>
+        <p>Днище, арки и скрытые полости. Одна из тех вещей, за которые здесь берут
+          вменяемые деньги.</p></div>
+        <b>кузов целиком</b></div>
+      <div class="up"><div><h3>Электроника и электрика</h3>
+        <p>Проводка, датчики, блоки, лампы, аккумуляторы — есть в наличии и на замену,
+          и на подзарядку.</p></div>
+        <b>по проблеме</b></div>
+      <div class="up"><div><h3>Климат и кондиционер</h3>
+        <p>Заправка, поиск утечек, обслуживание отопителя.</p></div>
+        <b>сезонно</b></div>
+      <div class="up"><div><h3>Выхлопная система</h3>
+        <p>Ремонт и замена элементов, устранение прогаров.</p></div>
+        <b>по узлу</b></div>
+      <div class="up"><div><h3>Шиномонтаж</h3>
+        <p>Переобувка и замена колодок заодно, без переезда в другое место.</p></div>
+        <b>по записи</b></div>
+      <div class="up"><div><h3>Запчасти и авторазбор</h3>
+        <p>25 марок: от Toyota и Honda до Mercedes-Benz, Porsche и Volvo. Что-то стоит
+          на складе, что-то снимаем со своего разбора.</p></div>
+        <b>склад и заказ</b></div>
+    </div>
+    <div class="g3">
+      <figure class="up"><img src="photo/balljoint.jpg" alt="Разрушенная шаровая опора, снятая с автомобиля" loading="lazy" decoding="async">
+        <figcaption>Шаровая, до которой лучше было не доводить. Показываем такое всегда.</figcaption></figure>
+      <figure class="up"><img src="photo/bushing.jpg" alt="Разбитый сайлентблок рычага крупным планом" loading="lazy" decoding="async">
+        <figcaption>Разбитый сайлентблок — частая причина стука и увода руля.</figcaption></figure>
+      <figure class="up"><img src="photo/under.jpg" alt="Днище автомобиля на подъёмнике" loading="lazy" decoding="async">
+        <figcaption>Днище перед антикором: сначала смотрим, потом обрабатываем.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="oshibka">
+  <div class="w">
+    <div class="fix up">
+      <p class="tag">Если ошиблись</p>
+      <h2 style="margin-top:14px">Недочёт исправляем сами<br>и за свой счёт</h2>
+      <p>Ошибиться может любой сервис. Разница в том, что происходит потом. Здесь был случай,
+        когда клиентка написала плохой отзыв, — директор разобрался лично, недочёт исправили
+        и денег за это не взяли. Отзыв она сняла сама.</p>
+      <div class="two">
+        <div><b>Приезжайте сразу</b>
+          <p>Что-то не так после ремонта — не ждите и не спорьте в отзывах. Смотрим вместе
+            и разбираемся на месте.</p></div>
+        <div><b>Звоним по ходу</b>
+          <p>Если в процессе вскрылось что-то ещё, звоним и обсуждаем, а не ставим
+            перед фактом при выдаче.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy" class="said">
+  <div class="w">
+    <p class="tag up">Отзывы · 4,8 из 5 по 153 оценкам в 2ГИС</p>
+    <blockquote class="up" style="margin-top:22px">
+      <p class="bigq">«Ничего лишнего не насоветовал, как делают некоторые.
+        Вся работа и запчасти только по делу»</p>
+      <p class="by">Дмитрий Иванов · 19 июля 2026 · про администратора Антона</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>Чинились в другой СТО, говорили, всё ок. Полгода спустя снова горит лампочка.
+          Здесь всё поменяли — то, что меняли на предыдущей СТО, просто под снос было.
+          Нашли ещё одну поломку, о которой никто не говорил, исправили.</p>
+        <cite>Анастасия Куцова · 1 августа 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Вопрос решён благодаря директору, которому огромное спасибо за исправленные
+          недочёты и за то, что не остался в стороне. Отдельная благодарность, что не взяли
+          за это деньги.</p>
+        <cite>Светлана Мазур · 11 июля 2026 · сняла свой негативный отзыв</cite>
+      </blockquote>
+    </div>
+    <div class="g3">
+      <figure class="up"><img src="photo/office.jpg" alt="Клиентская зона автосервиса Академия Сервиса" loading="lazy" decoding="async">
+        <figcaption>Клиентская зона: можно подождать здесь, пока смотрят машину.</figcaption></figure>
+      <figure class="up"><img src="photo/lexus.jpg" alt="Салон автомобиля клиента после обслуживания" loading="lazy" decoding="async">
+        <figcaption>Берём и премиум, и рабочие машины — по 25 маркам.</figcaption></figure>
+      <figure class="up"><img src="photo/van.jpg" alt="Микроавтобус клиента у сервиса" loading="lazy" decoding="async">
+        <figcaption>Коммерческий транспорт тоже обслуживаем.</figcaption></figure>
+    </div>
+    <div class="acts up" style="margin-top:38px">
+      <a class="btn g" href="https://2gis.ru/firm/70000001031402816" target="_blank" rel="noopener">
+        Все 153 отзыва в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty">
+  <div class="w split">
+    <div class="up">
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:14px">Червонная, 20/1</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>Червонная улица, 20/1<br><span class="q2">Первомайский район, Новосибирск</span></dd></div>
+        <div><dt>Телефоны</dt><dd><a href="tel:+79137089090">+7 913 708-90-90</a><br>
+          <a href="tel:+79130696957">+7 913 069-69-57</a></dd></div>
+        <div><dt>Режим</dt><dd>Пн–Пт 9:00–20:00<br>Сб, Вс 10:00–19:00</dd></div>
+        <div><dt>Почта</dt><dd><a href="mailto:ooo.sibmarket@yandex.ru">ooo.sibmarket@yandex.ru</a></dd></div>
+        <div><dt>Ещё</dt><dd>Эвакуация машины к нам, если она не на ходу</dd></div>
+        <div><dt>Оплата</dt><dd>Наличные, перевод с карты</dd></div>
+      </div>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="tel:+79137089090">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/70000001031402816" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <iframe loading="lazy" title="Карта: Червонная улица, 20/1"
+          src="https://yandex.ru/map-widget/v1/?ll=83.125972%2C54.943639&z=16&text=Новосибирск%2C%20Червонная%20улица%2C%2020%2F1"></iframe>
+      </div>
+      <h2 style="font-size:clamp(26px,3vw,38px);margin-top:34px">Записаться</h2>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Ольга"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 913 000-00-00"></div>
+        <div><label for="c">Машина</label><input id="c" name="car" placeholder="Toyota Camry, 2014"></div>
+        <div><label for="m">Что нужно</label><textarea id="m" name="message" placeholder="Стучит подвеска после Алтая, нужна диагностика"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cmp">Компания</label><input id="cmp" name="company" tabindex="-1" autocomplete="off"></div>
+        <button class="btn" type="submit">Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Нажимая кнопку, вы соглашаетесь на обработку своих контактов, чтобы мы
+          могли перезвонить. Больше ни для чего они не используются.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">Академия Сервиса<s>Червонная, 20/1</s></div>
+    Червонная улица, 20/1, Новосибирск · Пн–Пт 9:00–20:00, Сб–Вс 10:00–19:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+79137089090">+7 913 708-90-90</a>
+    <a href="mailto:ooo.sibmarket@yandex.ru">ooo.sibmarket@yandex.ru</a>
+    <a href="https://2gis.ru/firm/70000001031402816" target="_blank" rel="noopener">2ГИС</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+79137089090">Позвонить</a>
+  <a class="btn g" href="#byudzhet">Как считаем</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"Академия Сервиса",
+"description":"Автосервис и запчасти: ходовая, двигатели, инжекторы, электроника, стартеры и генераторы, климат, антикоррозийная обработка, шиномонтаж, авторазбор",
+"address":{"@type":"PostalAddress","streetAddress":"Червонная улица, 20/1","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":54.943639,"longitude":83.125972},
+"telephone":"+79137089090","email":"ooo.sibmarket@yandex.ru",
+"openingHoursSpecification":[
+{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"20:00"},
+{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"10:00","closes":"19:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"153","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/70000001031402816"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и запишем на время.';ok.style.display='block';f.reset();return}}catch(_){}}
+  ok.innerHTML='Приём заявок пока настраивается. Позвоните, пожалуйста: <a href="tel:+79137089090">+7 913 708-90-90</a> — или напишите на <a href="mailto:ooo.sibmarket@yandex.ru">ooo.sibmarket@yandex.ru</a>.';
+  ok.style.display='block';
+});
+</script>
+</body>
+</html>
