@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Emka — автосервис на Большой 307а, Новосибирск</title>
-<meta name="description" content="Автосервис Emka на Большой, 307а: кондиционеры, электроника, ходовая, развал-схождение, фаркопы. 4.9 по 578 отзывам. Ежедневно 9:00–20:00. +7 383 207-57-16.">
+<meta name="description" content="Автосервис Emka на Большой, 307а: ходовая, двигатель, автоэлектрика, развал-схождение, диагностика, кондиционеры. Срок называют и держат. 4.9 по 578 отзывам. Ежедневно 9:00–20:00.">
 <meta name="robots" content="noindex,nofollow">
 <meta property="og:title" content="Emka — автосервис в Ленинском районе">
-<meta property="og:description" content="Кондиционер, который снова холодит. Диагностика с приборами, рассрочка без процентов.">
-<meta property="og:image" content="photo/ac-station.jpg">
+<meta property="og:description" content="Сказали три часа — значит три часа. Ходовая, электрика, развал, климат. Рассрочка без процентов.">
+<meta property="og:image" content="photo/bay.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23F4F8FA'/><text x='16' y='24' font-size='21' font-family='Helvetica' font-weight='300' text-anchor='middle' fill='%230E7FA8'>e</text></svg>">
 <link rel="stylesheet" href="../fonts/exo-2.css">
 <link rel="stylesheet" href="../fonts/golos-text.css">
@@ -104,6 +104,19 @@ header.on{background:rgba(244,248,250,.94);backdrop-filter:blur(14px);
   letter-spacing:.1em;color:var(--blue);margin-bottom:12px}
 .symp p{font-size:15.5px;color:var(--ink-2)}
 
+/* Четыре обещания — всё это дословно из отзывов, ничего не придумано */
+.promise{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,22px);
+  margin-top:clamp(30px,4vw,50px)}
+@media(max-width:900px){.promise{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.promise{grid-template-columns:1fr}}
+.promise>div{background:var(--card);border:1px solid var(--line);border-radius:8px;
+  padding:clamp(22px,2.6vw,30px)}
+.promise svg{width:24px;height:24px;stroke:var(--blue);fill:none;stroke-width:1.7;margin-bottom:14px}
+.promise h3{margin-bottom:8px}
+.promise p{font-size:15px;color:var(--ink-2);line-height:1.6}
+.promise cite{display:block;font-style:normal;font-size:13px;color:var(--ink-3);
+  margin-top:12px;padding-top:11px;border-top:1px solid var(--line)}
+
 /* Рассрочка — редкая для автосервиса вещь, поэтому отдельным блоком */
 .pay{background:var(--blue);color:#fff;border-radius:8px;padding:clamp(28px,4vw,54px);
   margin-top:clamp(32px,4.5vw,54px)}
@@ -187,9 +200,10 @@ footer a:hover{color:var(--blue)}
 <header id="hd">
   <nav class="w nav">
     <a class="brand" href="#">emka</a>
-    <a class="lk" href="#klimat">Кондиционер</a>
-    <a class="lk" href="#rassrochka">Рассрочка</a>
+    <a class="lk" href="#obeshchaniya">Как работаем</a>
     <a class="lk" href="#raboty">Работы</a>
+    <a class="lk" href="#klimat">Кондиционеры</a>
+    <a class="lk" href="#rassrochka">Рассрочка</a>
     <a class="lk" href="#otzyvy">Отзывы</a>
     <a class="lk" href="#kontakty">Контакты</a>
     <a class="btn" href="tel:+73832075716">Записаться</a>
@@ -201,9 +215,9 @@ footer a:hover{color:var(--blue)}
 <section class="hero">
   <div class="w">
     <p class="tag up">Автосервис · Большая улица, 307а · Ленинский район, Новосибирск</p>
-    <h1 class="up">Кондиционер,<br>который снова <em>холодит</em></h1>
-    <p class="sub up">Заправка станцией с вакуумацией, поиск утечек красителем, замер
-      давления в контурах. Плюс всё остальное: ходовая, электрика, развал, фаркопы.</p>
+    <h1 class="up">Сказали три часа —<br>значит <em>три часа</em></h1>
+    <p class="sub up">Ходовая, двигатель, автоэлектрика, развал-схождение, диагностика
+      и климат. Срок называют до начала работ и в него укладываются.</p>
     <div class="acts up">
       <a class="btn" href="tel:+73832075716">+7 383 207-57-16
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -220,35 +234,101 @@ footer a:hover{color:var(--blue)}
 
 <section style="padding-top:0">
   <div class="w up">
-    <div class="plate"><img src="photo/ac-station.jpg"
-      alt="Станция заправки кондиционеров в цехе Emka" fetchpriority="high"></div>
+    <div class="plate"><img src="photo/bay.jpg"
+      alt="Ремонтный цех автосервиса Emka" fetchpriority="high"></div>
     <div class="cap"><span>Большая, 307а</span><span>Снимок клиента, 2ГИС</span></div>
+  </div>
+</section>
+
+<section id="obeshchaniya">
+  <div class="w">
+    <p class="tag up">Как работаем</p>
+    <h2 class="up" style="margin-top:14px">Четыре вещи,<br>за которые сюда возвращаются</h2>
+    <p class="q2 up" style="margin-top:18px;font-size:17px">Это не обещания с потолка —
+      всё четыре пункта повторяются в отзывах чаще остального.</p>
+    <div class="promise">
+      <div class="up">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8v4l3 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <h3>Срок держат</h3>
+        <p>Называем время до начала работ и укладываемся в него.</p>
+        <cite>«Если говорят, что будет готово через три часа, то так оно и есть» — Давид Творогов</cite>
+      </div>
+      <div class="up">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+        <h3>Лишнего не пишут</h3>
+        <p>Говорим только то, что действительно нужно сделать сейчас.</p>
+        <cite>«Лишнего не накручивают, говорят только по факту» — Евгений Манский</cite>
+      </div>
+      <div class="up">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l7.5 3v5.4c0 4.6-3 8.4-7.5 10.6-4.5-2.2-7.5-6-7.5-10.6V5.5z"/></svg>
+        <h3>Гарантия настоящая</h3>
+        <p>Если после ремонта проблема вернулась — разбираемся за свой счёт.</p>
+        <cite>«Гарантию реально предоставляют. Убедился лично» — Сергей Александрович</cite>
+      </div>
+      <div class="up">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        <h3>Можно смотреть</h3>
+        <p>Ремонт не прячут: подойдите и посмотрите, что делают с машиной. Кофе бесплатный.</p>
+        <cite>«И кофе можно выпить, и машину посмотреть, как ремонтируют» — Владимир Хмельницкий</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="raboty">
+  <div class="w">
+    <p class="tag up">Работы</p>
+    <h2 class="up" style="margin-top:14px">Ходовая, мотор,<br>электрика, кузовные мелочи</h2>
+    <div class="works">
+      <div class="up"><span>Ремонт ходовой части</span><em>стойки, рычаги</em></div>
+      <div class="up"><span>Развал-схождение</span><em>на стенде</em></div>
+      <div class="up"><span>Ремонт рулевых реек</span><em>с восстановлением</em></div>
+      <div class="up"><span>Ремонт карданных валов</span><em>балансировка</em></div>
+      <div class="up"><span>Ремонт бензиновых двигателей</span><em>с разбором</em></div>
+      <div class="up"><span>Замена масла и фильтров</span><em>ТО</em></div>
+      <div class="up"><span>Компьютерная диагностика</span><em>по коду ошибки</em></div>
+      <div class="up"><span>Автоэлектрика и проводка</span><em>поиск причины</em></div>
+      <div class="up"><span>Ремонт электронных систем</span><em>блоки, датчики</em></div>
+      <div class="up"><span>Стартеры и генераторы</span><em>ремонт узла</em></div>
+      <div class="up"><span>Ремонт выхлопных систем</span><em>сварка</em></div>
+      <div class="up"><span>Сварочные работы</span><em>кузов, глушитель</em></div>
+      <div class="up"><span>Обслуживание кондиционера</span><em>станцией</em></div>
+      <div class="up"><span>Установка фаркопа</span><em>переоборудование</em></div>
+      <div class="up"><span>Отогрев автомобилей</span><em>зимой</em></div>
+      <div class="up"><span>Подбор запчастей</span><em>58 марок</em></div>
+    </div>
+    <div class="g3">
+      <figure class="up"><img src="photo/bay2.jpg" alt="Автомобиль на подъёмнике в цехе Emka" loading="lazy" decoding="async">
+        <figcaption>«По ремонту ходовой части езжу только сюда» — Павел Картофельников.</figcaption></figure>
+      <figure class="up"><img src="photo/scanner.jpg" alt="Диагностический сканер в салоне автомобиля" loading="lazy" decoding="async">
+        <figcaption>Диагностика прибором: ошибку показывают вам на экране.</figcaption></figure>
+      <figure class="up"><img src="photo/coffee.jpg" alt="Кофейный аппарат в зоне ожидания" loading="lazy" decoding="async">
+        <figcaption>Кофе бесплатно, Wi-Fi есть — ремонт редко бывает быстрым.</figcaption></figure>
+    </div>
   </div>
 </section>
 
 <section id="klimat">
   <div class="w">
-    <p class="tag up">Климат</p>
-    <h2 class="up" style="margin-top:14px">Почему кондиционер<br>перестаёт холодить</h2>
-    <p class="q2 up" style="margin-top:20px;font-size:17px">Чаще всего дело не в компрессоре,
-      хотя менять предлагают именно его. Мы идём по порядку и не меняем узлы наугад —
-      это дольше на один визит, зато дешевле в разы.</p>
+    <p class="tag up">Отдельная тема</p>
+    <h2 class="up" style="margin-top:14px">Кондиционер, который<br>перестал холодить</h2>
+    <p class="q2 up" style="margin-top:18px;font-size:17px">Это тот случай, когда причину
+      ищут дольше обычного, а менять узлы наугад дорого. Поэтому идём по порядку — дольше
+      на один визит, зато дешевле в разы. Компрессор меняем только тогда, когда доказано,
+      что дело в нём.</p>
     <div class="klimat">
       <div class="up"><h3>Полная заправка с вакуумацией</h3>
-        <p>Сначала убираем из системы сомнительный фреон и заправляем начисто. Часто
-          проблема заканчивается здесь — просто было мало газа или залито не то.</p></div>
+        <p>Убираем сомнительный фреон и заправляем начисто. Часто проблема заканчивается
+          здесь — просто было мало газа или залито не то.</p></div>
       <div class="up"><h3>Краситель для поиска утечек</h3>
-        <p>Добавляем в систему проявочный краситель. Если где-то травит — он покажет
-          место: чаще всего это соединения трубок у компрессора.</p></div>
+        <p>Если где-то травит — проявочный краситель покажет место. Чаще всего это
+          соединения трубок у компрессора.</p></div>
       <div class="up"><h3>Тест на жаре с манометрами</h3>
-        <p>Машина стоит на солнце, а к системе подключён аппарат: смотрим, в какой момент
-          начинает расти давление и в каком контуре.</p></div>
+        <p>Машина стоит на солнце, к системе подключён аппарат: смотрим, в какой момент
+          и в каком контуре растёт давление.</p></div>
       <div class="up"><h3>Фильтр-осушитель и кольца</h3>
         <p>Забитый фильтр даёт ровно ту картину, когда «сначала холодит, а через полчаса
-          дует тёплым». Меняем фильтр и уплотнители, заправляем заново.</p></div>
-      <div class="up"><h3>Проверка на повторе</h3>
-        <p>Заново гоняем систему и смотрим давление. Компрессор меняем только тогда,
-          когда доказано, что дело в нём.</p></div>
+          дует тёплым». Меняем и заправляем заново.</p></div>
     </div>
     <div class="symp">
       <div class="up"><b>СИМПТОМ 01</b>
@@ -256,7 +336,7 @@ footer a:hover{color:var(--blue)}
       <div class="up"><b>СИМПТОМ 02</b>
         <p>Заправляли у уличных заправщиков — и стало хуже, чем было.</p></div>
       <div class="up"><b>СИМПТОМ 03</b>
-        <p>В трёх местах развели руками или сразу предложили менять компрессор и радиатор.</p></div>
+        <p>В трёх местах развели руками или сразу предложили менять компрессор.</p></div>
     </div>
   </div>
 </section>
@@ -277,57 +357,23 @@ footer a:hover{color:var(--blue)}
   </div>
 </section>
 
-<section id="raboty">
-  <div class="w">
-    <p class="tag up">Работы</p>
-    <h2 class="up" style="margin-top:14px">Электрика, ходовая,<br>мотор, переоборудование</h2>
-    <div class="works">
-      <div class="up"><span>Обслуживание кондиционера</span><em>станцией</em></div>
-      <div class="up"><span>Ремонт электронных систем</span><em>блоки, проводка</em></div>
-      <div class="up"><span>Компьютерная диагностика</span><em>по коду ошибки</em></div>
-      <div class="up"><span>Ремонт ходовой части</span><em>стойки, рычаги</em></div>
-      <div class="up"><span>Развал-схождение</span><em>на стенде</em></div>
-      <div class="up"><span>Ремонт рулевых реек</span><em>с восстановлением</em></div>
-      <div class="up"><span>Ремонт карданных валов</span><em>балансировка</em></div>
-      <div class="up"><span>Ремонт бензиновых двигателей</span><em>с разбором</em></div>
-      <div class="up"><span>Стартеры и генераторы</span><em>электрика</em></div>
-      <div class="up"><span>Ремонт выхлопных систем</span><em>сварка</em></div>
-      <div class="up"><span>Сварочные работы</span><em>кузов, глушитель</em></div>
-      <div class="up"><span>Замена масла и фильтров</span><em>ТО</em></div>
-      <div class="up"><span>Установка фаркопа</span><em>переоборудование</em></div>
-      <div class="up"><span>Отогрев автомобилей</span><em>зимой</em></div>
-    </div>
-    <div class="g3">
-      <figure class="up"><img src="photo/ac-work.jpg" alt="Работа с системой кондиционирования автомобиля" loading="lazy" decoding="async">
-        <figcaption>Кондиционер разбирают по контуру, а не меняют компрессор наугад.</figcaption></figure>
-      <figure class="up"><img src="photo/scanner.jpg" alt="Диагностический сканер в салоне автомобиля" loading="lazy" decoding="async">
-        <figcaption>Диагностика прибором: ошибку показывают вам на экране.</figcaption></figure>
-      <figure class="up"><img src="photo/coffee.jpg" alt="Кофейный аппарат в зоне ожидания" loading="lazy" decoding="async">
-        <figcaption>Кофе бесплатно, Wi-Fi есть — ремонт редко бывает быстрым.</figcaption></figure>
-    </div>
-  </div>
-</section>
-
 <section id="otzyvy" class="said">
   <div class="w">
     <p class="tag up">Отзывы · 4,9 из 5 по 578 оценкам в 2ГИС</p>
     <blockquote class="up" style="margin-top:22px">
-      <p class="bigq">«Объездил кучу станций — все разводили руками»</p>
-      <p class="by">Иван Максимов · 23 июня 2026</p>
+      <p class="bigq">«Мастера работают на опыте. Лишнего не накручивают»</p>
+      <p class="by">Евгений Манский · 31 июля 2026</p>
     </blockquote>
     <div class="pair">
       <blockquote class="up">
-        <p>Наконец-то кто-то помог мне полностью победить кондиционер на моём Субару.
-          Услышав симптомы, сразу предупредили, что диагностика будет непростая. Сделали
-          заправку, добавили краситель, подключили аппарат и на тесте увидели, что зашкаливает
-          давление в контуре. Поменяли фильтр и уплотнители — езжу уже месяц, морозит хорошо.</p>
-        <cite>Иван Максимов · 23 июня 2026</cite>
+        <p>Нужно было выяснить причину, почему вентиляторы не работают. Дело оказалось
+          в проводке. Автоэлектрика — рекомендую. Цены очень адекватные, руки из нужного места.</p>
+        <cite>Андрей · 1 июля 2026</cite>
       </blockquote>
       <blockquote class="up">
-        <p>Заправлял кондиционер после уличных заправщиков, который плохо холодил.
-          Заправили специальной станцией, сделали вакуумацию, сомнительный фреон
-          из моей машины удалили. Сейчас езжу с кондиционером, не открывая окон.</p>
-        <cite>Евгений Антоненко · 6 июля 2026</cite>
+        <p>Только этому автосервису доверяю делать развал-схождение на моём БМВ.
+          Рекомендовал знакомый. Всё отлично.</p>
+        <cite>Николай Тарасов · 19 июня 2026</cite>
       </blockquote>
     </div>
     <div class="acts up" style="margin-top:38px">
@@ -372,8 +418,8 @@ footer a:hover{color:var(--blue)}
       <form id="f" data-endpoint="" novalidate>
         <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Иван"></div>
         <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 913 000-00-00"></div>
-        <div><label for="c">Машина</label><input id="c" name="car" placeholder="Subaru Forester, 2014"></div>
-        <div><label for="m">Что беспокоит</label><textarea id="m" name="message" placeholder="Кондиционер холодит минут двадцать, потом дует тёплым"></textarea></div>
+        <div><label for="c">Машина</label><input id="c" name="car" placeholder="Ford Focus, 2013"></div>
+        <div><label for="m">Что беспокоит</label><textarea id="m" name="message" placeholder="Стучит спереди на кочках, хочу диагностику ходовой"></textarea></div>
         <button class="btn" type="submit">Отправить
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         <p class="fine">Нажимая кнопку, вы соглашаетесь на обработку своих контактов, чтобы мы
