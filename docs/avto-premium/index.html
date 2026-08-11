@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex,nofollow">
 <meta property="og:title" content="AUTOPREMIUM — автосервис для благородных марок">
 <meta property="og:description" content="Infiniti, Lexus, Nissan и ещё десять марок. Три премии 2ГИС, 4,9 по 201 отзыву. Улица Фрунзе, 104Б.">
-<meta property="og:image" content="photo/infiniti.jpg">
+<meta property="og:image" content="photo/hero.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0A0B'/><path d='M7 10.5c3-1.6 15-1.6 18 0v7.2c0 4.6-5.2 7.6-9 9.3-3.8-1.7-9-4.7-9-9.3z' fill='none' stroke='%23C0A063' stroke-width='2.2'/><text x='16' y='21' font-size='11' font-family='Helvetica' font-weight='700' text-anchor='middle' fill='%23C0A063'>A</text></svg>">
 <link rel="stylesheet" href="../fonts/cormorant-garamond.css">
 <link rel="stylesheet" href="../fonts/manrope.css">
@@ -50,14 +50,31 @@ em{font-style:italic;color:var(--gold)}
 .q2{color:var(--bone-2)}
 .rule{height:1px;background:linear-gradient(90deg,var(--gold-2),transparent);margin:clamp(30px,4vw,46px) 0}
 
-.btn{display:inline-flex;align-items:center;gap:11px;font-family:Manrope,sans-serif;
+/* Кнопка повторяет геометрию герба: нижний правый угол срезан так же,
+   как сходится к острию щит на их знаке. Заливка при наведении
+   проходит слева направо, стрелка уходит следом. */
+.btn{--cut:15px;position:relative;isolation:isolate;overflow:hidden;
+  display:inline-flex;align-items:center;gap:13px;font-family:Manrope,sans-serif;
   font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;
-  padding:18px 32px;background:var(--gold);color:var(--void);
-  transition:background .25s var(--ease),transform .25s,letter-spacing .25s}
-.btn:hover{background:#D3B379;transform:translateY(-2px);letter-spacing:.19em}
-.btn.g{background:transparent;color:var(--bone);border:1px solid var(--line-2)}
-.btn.g:hover{border-color:var(--gold);color:var(--gold);background:transparent}
-.btn svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:1.6}
+  padding:19px 34px;color:var(--void);background:var(--gold);
+  clip-path:polygon(0 0,100% 0,100% calc(100% - var(--cut)),
+    calc(100% - var(--cut)) 100%,0 100%);
+  transition:color .3s var(--ease),transform .3s var(--ease),letter-spacing .3s var(--ease)}
+.btn::after{content:"";position:absolute;inset:0;z-index:-1;background:#D7BA82;
+  transform:translateX(-101%);transition:transform .48s var(--ease)}
+.btn:hover{transform:translateY(-2px);letter-spacing:.2em}
+.btn:hover::after{transform:none}
+.btn svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:1.6;
+  transition:transform .38s var(--ease)}
+.btn:hover svg{transform:translateX(6px)}
+
+/* Контурный вариант: рамка нарисована подложкой, иначе срез разорвал бы border */
+.btn.g{color:var(--bone);background:var(--line-2)}
+.btn.g::before{content:"";position:absolute;inset:1px;z-index:-2;background:var(--void);
+  clip-path:polygon(0 0,100% 0,100% calc(100% - var(--cut)),
+    calc(100% - var(--cut)) 100%,0 100%)}
+.btn.g::after{background:var(--gold)}
+.btn.g:hover{color:var(--void)}
 
 /* Знак: щит с пятью звёздами */
 .crest{width:34px;height:38px;flex:none}
@@ -86,10 +103,15 @@ header.on{background:rgba(10,10,11,.9);backdrop-filter:blur(16px);
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;
   padding:0 0 clamp(38px,6vw,72px)}
 .hero .shot{position:absolute;inset:0;z-index:0}
-.hero .shot img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+.hero .shot img{width:100%;height:100%;object-fit:cover;object-position:center 46%}
 .hero .veil{position:absolute;inset:0;z-index:1;
-  background:linear-gradient(180deg,rgba(10,10,11,.86) 0%,rgba(10,10,11,.42) 30%,
-    rgba(10,10,11,.72) 66%,var(--void) 100%)}
+  background:
+    linear-gradient(90deg,rgba(10,10,11,.88) 0%,rgba(10,10,11,.58) 40%,rgba(10,10,11,.06) 74%),
+    linear-gradient(180deg,rgba(10,10,11,.78) 0%,rgba(10,10,11,.26) 30%,
+      rgba(10,10,11,.66) 66%,var(--void) 100%)}
+@media(max-width:820px){.hero .veil{background:
+    linear-gradient(180deg,rgba(10,10,11,.84) 0%,rgba(10,10,11,.40) 26%,
+      rgba(10,10,11,.80) 58%,var(--void) 100%)}}
 .hero .w{position:relative;z-index:2;width:100%}
 .hero .eyebrow{display:block;margin-bottom:clamp(18px,2.4vw,26px)}
 .hero h1{max-width:15ch}
@@ -306,8 +328,8 @@ button[disabled],.btn[disabled]{opacity:.4;cursor:not-allowed}
 <main>
 
 <section class="hero">
-  <div class="shot"><img src="photo/infiniti.jpg"
-    alt="Infiniti тёмного цвета у сервиса Авто Премиум, горят задние фонари" fetchpriority="high"></div>
+  <div class="shot"><img src="photo/hero.jpg"
+    alt="Infiniti FX тёмного цвета на чёрных дисках у сервиса Авто Премиум" fetchpriority="high"></div>
   <div class="veil"></div>
   <div class="w">
     <span class="eyebrow up">Автосервис для благородных марок · с 2012 года</span>
@@ -372,7 +394,7 @@ button[disabled],.btn[disabled]{opacity:.4;cursor:not-allowed}
 </section>
 
 <div class="band up">
-  <img src="photo/fx.jpg" alt="Infiniti FX чёрного цвета у сервиса Авто Премиум" loading="lazy" decoding="async">
+  <img src="photo/infiniti.jpg" alt="Задние фонари Infiniti вечером у сервиса Авто Премиум" loading="lazy" decoding="async">
 </div>
 
 <section class="story" id="dvigatel">
