@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>У Филина — автоэлектрика и ремонт электроники, Карла Либкнехта, 210</title>
+<meta name="description" content="Сервисный центр «У Филина», Карла Либкнехта, 210: автоэлектрика, ремонт блоков управления и приборных панелей на уровне платы, компьютерная диагностика, сигнализации, центральные замки, кондиционеры, ремонт бензиновых двигателей и инжекторов. 4,7 по 225 отзывам, ежедневно 11:00–20:00.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="У Филина — берёмся за то, от чего отмахнулись">
+<meta property="og:description" content="Автоэлектрика и ремонт электроники: блок управления паяем, а не меняем. Карла Либкнехта, 210. 4,7 по 225 отзывам.">
+<meta property="og:image" content="photo/master.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2314110D'/><circle cx='11' cy='14' r='4.2' fill='%23E8A93A'/><circle cx='21' cy='14' r='4.2' fill='%23E8A93A'/><circle cx='11' cy='14' r='1.6' fill='%2314110D'/><circle cx='21' cy='14' r='1.6' fill='%2314110D'/></svg>">
+<link rel="stylesheet" href="../fonts/bitter.css">
+<link rel="stylesheet" href="../fonts/manrope.css">
+<style>
+/* Филин видит в темноте — и на их же фотографии мастер работает
+   с налобным фонарём. Отсюда тёмная страница и янтарный свет.
+   Содержательно сайт про одно: сюда едут с электрикой, от которой
+   в других сервисах отмахнулись, и здесь блок управления ремонтируют
+   на уровне платы, а не меняют целиком. Главный блок — справочник
+   «симптом → куда смотреть», он полезен даже до звонка. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --night:#14110D; --night-2:#1D1913; --card:#221D16; --card-2:#2B251C;
+  --paper:#F2EDE4; --paper-2:#C8C0B2; --paper-3:#948C7E;
+  --line:#332C22; --line-2:#463D30;
+  --amber:#E8A93A; --amber-2:#C88C22; --amber-soft:rgba(232,169,58,.14);
+  --wrap:1060px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--night);color:var(--paper);
+  font:400 16.5px/1.75 Manrope,-apple-system,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(58px,8vw,106px) 0}
+h1,h2,h3{font-family:Bitter,Georgia,serif}
+h1,h2{font-weight:600;line-height:1.12;letter-spacing:-.028em;text-wrap:balance}
+h1{font-size:clamp(31px,4.9vw,62px)}
+h2{font-size:clamp(24px,3.3vw,42px)}
+h3{font-size:18.5px;font-weight:600;line-height:1.36;letter-spacing:-.014em}
+p{max-width:60ch}
+em{font-style:normal;color:var(--amber)}
+.tag{font-family:Manrope,sans-serif;font-size:11px;font-weight:800;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--amber)}
+.q2{color:var(--paper-2)}
+
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:Manrope,sans-serif;
+  font-weight:700;font-size:15.5px;padding:15px 26px;background:var(--amber);color:var(--night);
+  border-radius:4px;transition:background .22s var(--ease),transform .22s}
+.btn:hover{background:var(--amber-2);transform:translateY(-2px)}
+.btn.g{background:transparent;color:var(--paper);border:1px solid var(--line-2)}
+.btn.g:hover{border-color:var(--amber);color:var(--amber)}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:16px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(20,17,13,.95);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:10px 0}
+.nav{display:flex;align-items:center;gap:25px}
+.brand{margin-right:auto;font-family:Bitter,Georgia,serif;font-weight:700;
+  font-size:21px;letter-spacing:-.02em;line-height:1.1}
+.brand s{display:block;text-decoration:none;font-family:Manrope,sans-serif;font-size:9px;
+  font-weight:700;letter-spacing:.19em;text-transform:uppercase;color:var(--amber);margin-top:3px}
+.lk{font-size:14.5px;color:var(--paper-2);transition:color .2s}
+.lk:hover{color:var(--amber)}
+@media(max-width:1000px){.lk{display:none}}
+@media(max-width:460px){.nav{gap:10px}.brand{font-size:18px}.btn{padding:12px 14px;font-size:13.5px}}
+
+.hero{padding-top:clamp(120px,16vw,190px);padding-bottom:clamp(34px,5vw,56px);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-8%;left:50%;transform:translateX(-50%);
+  width:min(1100px,150%);height:560px;pointer-events:none;
+  background:radial-gradient(ellipse at center,rgba(232,169,58,.13),transparent 68%)}
+.hero>*{position:relative}
+.hero h1{margin:18px 0 24px}
+.hero .sub{font-size:clamp(16.5px,1.8vw,19px);color:var(--paper-2);max-width:48ch;line-height:1.68}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,40px);
+  margin-top:clamp(42px,6vw,72px);padding-top:26px;border-top:1px solid var(--line)}
+.figs b{display:block;font-family:Bitter,Georgia,serif;font-weight:600;
+  font-size:clamp(22px,2.8vw,36px);letter-spacing:-.035em;line-height:1;font-variant-numeric:tabular-nums}
+.figs span{display:block;margin-top:10px;font-size:12.5px;color:var(--paper-3);line-height:1.5}
+@media(max-width:700px){.figs{grid-template-columns:repeat(2,1fr)}}
+
+.plate{overflow:hidden;background:var(--card);border-radius:4px}
+.plate img{width:100%;aspect-ratio:21/9;object-fit:cover;object-position:center 45%}
+@media(max-width:700px){.plate img{aspect-ratio:4/3}}
+.cap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:11px;
+  font-size:12.5px;color:var(--paper-3)}
+
+/* Справочник: симптом → куда смотреть */
+.symp{margin-top:clamp(30px,4vw,48px);border-top:1px solid var(--line-2)}
+.symp>div{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(18px,4vw,52px);
+  padding:clamp(20px,2.6vw,28px) 0;border-bottom:1px solid var(--line);
+  transition:padding-left .3s var(--ease),background .3s var(--ease)}
+.symp>div:hover{padding-left:12px;background:linear-gradient(90deg,var(--amber-soft),transparent 60%)}
+.symp dt{font-family:Bitter,Georgia,serif;font-weight:600;font-size:clamp(17px,2vw,22px);
+  line-height:1.3;letter-spacing:-.018em;color:var(--paper)}
+.symp dd{font-size:15.5px;color:var(--paper-2);line-height:1.66}
+@media(max-width:760px){.symp>div{grid-template-columns:1fr;gap:8px}}
+
+/* Ремонт платы вместо замены блока */
+.board{background:var(--card);border:1px solid var(--line-2);border-radius:4px;
+  padding:clamp(28px,4.2vw,56px);margin-top:clamp(30px,4vw,48px)}
+.board>p{color:var(--paper-2);margin-top:16px;font-size:16.5px}
+.board ul{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:14px 32px;margin-top:26px}
+.board li{font-size:15.5px;color:var(--paper-2);padding-left:22px;position:relative}
+.board li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;
+  border:2px solid var(--amber);border-radius:50%}
+@media(max-width:640px){.board ul{grid-template-columns:1fr}}
+.board .money{margin-top:clamp(24px,3vw,32px);padding-top:20px;border-top:1px solid var(--line-2);
+  font-size:15.5px;color:var(--paper-2);max-width:64ch}
+
+.price{margin-top:clamp(30px,4vw,50px);border-top:2px solid var(--amber)}
+.price>div{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:baseline;
+  padding:19px 0;border-bottom:1px solid var(--line);transition:padding-left .28s var(--ease)}
+.price>div:hover{padding-left:9px}
+.price p{font-size:14.5px;color:var(--paper-2);margin-top:5px;max-width:58ch}
+.price b{font-family:Manrope,sans-serif;font-size:12px;white-space:nowrap;color:var(--paper-3);
+  font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:560px){.price>div{grid-template-columns:1fr;gap:6px}}
+
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px);
+  margin-top:clamp(32px,4.5vw,54px)}
+@media(max-width:860px){.g3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.g3{grid-template-columns:1fr;gap:22px}}
+.g3 img{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--card);border-radius:4px}
+.g3 figcaption{margin-top:11px;font-size:14px;color:var(--paper-2)}
+
+.said{background:var(--night-2)}
+.bigq{font-family:Bitter,Georgia,serif;font-weight:600;font-size:clamp(20px,2.7vw,35px);
+  line-height:1.24;letter-spacing:-.028em;max-width:24ch}
+.by{font-size:13.5px;color:var(--paper-3);margin-top:22px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,56px);
+  margin-top:clamp(38px,5.5vw,68px)}
+@media(max-width:820px){.pair{grid-template-columns:1fr;gap:32px}}
+.pair p{font-size:16px;color:var(--paper-2)}
+.pair cite{display:block;font-style:normal;font-size:13.5px;color:var(--paper-3);margin-top:13px}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,68px)}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
+.rows{border-top:2px solid var(--amber);margin-top:26px}
+.rows>div{display:grid;grid-template-columns:118px 1fr;gap:18px;padding:15px 0;
+  border-bottom:1px solid var(--line);font-size:16px}
+.rows dt{font-size:12.5px;color:var(--paper-3);padding-top:4px}
+.rows a:hover{color:var(--amber)}
+@media(max-width:520px){.rows>div{grid-template-columns:1fr;gap:3px}}
+.map{aspect-ratio:16/10;background:var(--card);overflow:hidden;border-radius:4px}
+.map iframe{width:100%;height:100%;border:0}
+form{margin-top:20px;display:grid;gap:15px}
+label{display:block;font-size:12.5px;color:var(--paper-3);margin-bottom:7px}
+input,textarea{width:100%;background:var(--card);border:1px solid var(--line-2);color:var(--paper);
+  padding:13px 15px;font:400 16px/1.5 Manrope,sans-serif;border-radius:4px;transition:border-color .2s}
+input::placeholder,textarea::placeholder{color:#6E6759}
+input:focus,textarea:focus{outline:none;border-color:var(--amber)}
+textarea{min-height:100px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fine{font-size:12.5px;color:var(--paper-3);line-height:1.6;max-width:52ch}
+.sent{display:none;padding:13px 15px;border:1px solid var(--amber);background:var(--amber-soft);
+  font-size:15px;border-radius:4px}
+.sent a{color:var(--amber);text-decoration:underline}
+
+footer{border-top:1px solid var(--line);padding:34px 0 44px;font-size:14px;color:var(--paper-3)}
+.fin{display:flex;gap:26px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+footer a:hover{color:var(--amber)}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:8px;padding:9px 12px;
+  background:rgba(20,17,13,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  width:100%;max-width:100vw}
+.bar a{flex:1 1 0;min-width:0;white-space:nowrap;text-align:center;justify-content:center;
+  padding:13px 10px;font-size:15px}
+@media(max-width:760px){.bar{display:flex}body{padding-bottom:70px}}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <nav class="w nav">
+    <a class="brand" href="#">У Филина<s>Либкнехта, 210</s></a>
+    <a class="lk" href="#simptomy">Симптомы</a>
+    <a class="lk" href="#plata">Ремонт блоков</a>
+    <a class="lk" href="#raboty">Работы</a>
+    <a class="lk" href="#otzyvy">Отзывы</a>
+    <a class="lk" href="#kontakty">Контакты</a>
+    <a class="btn" href="tel:+79994502623">Записаться</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Сервисный центр · Карла Либкнехта, 210 · Октябрьский район</p>
+    <h1 class="up">Сюда приезжают<br>с тем, от чего <em>отмахнулись</em></h1>
+    <p class="sub up">Гаснет приборка. Не работает замок водительской двери. Не работают
+      дворники и кондиционер сразу. В обычном сервисе на такое разводят руками —
+      потому что это электрика, и её нельзя заменить одной деталью. Мы занимаемся
+      именно ею.</p>
+    <div class="acts up">
+      <a class="btn" href="tel:+79994502623">+7 999 450-26-23
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#simptomy">Найти свой симптом</a>
+    </div>
+    <div class="figs up">
+      <div><b>4,7</b><span>по 225 отзывам в 2ГИС</span></div>
+      <div><b>7 дней</b><span>ежедневно с 11:00 до 20:00</span></div>
+      <div><b>1995+</b><span>берём и машины девяностых, и гибриды</span></div>
+      <div><b>Плата</b><span>ремонтируем блок, а не покупаем новый</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="w up">
+    <div class="plate"><img src="photo/master.jpg"
+      alt="Мастер с налобным фонарём работает в моторном отсеке автомобиля" fetchpriority="high"></div>
+    <div class="cap"><span>Налобный фонарь — основной инструмент электрика</span><span>Карла Либкнехта, 210, первый этаж</span></div>
+  </div>
+</section>
+
+<section id="simptomy">
+  <div class="w">
+    <p class="tag up">Справочник</p>
+    <h2 class="up" style="margin-top:14px">Симптом — и куда<br>мы будем смотреть</h2>
+    <p class="up" style="margin-top:18px;color:var(--paper-2)">Это не диагноз по телефону,
+      а объяснение, почему такие вещи вообще чинятся. Найдите похожее на своё —
+      и звоните, дальше разберёмся на месте.</p>
+    <dl class="symp">
+      <div class="up"><dt>Гаснет приборная панель</dt>
+        <dd>Чаще всего это не «панель умерла», а пропайка внутри или питание,
+          которое теряется на разъёме. Панель снимается, разбирается и проверяется
+          отдельно от машины.</dd></div>
+      <div class="up"><dt>Не работает замок одной двери</dt>
+        <dd>Обычно виноват не сам замок, а перелом провода в гофре между дверью
+          и кузовом — место, куда почти никто не смотрит. Прозваниваем жгут.</dd></div>
+      <div class="up"><dt>Отказали сразу дворники и кондиционер</dt>
+        <dd>Два разных прибора отказывают одновременно только по одной причине —
+          общая цепь или общий блок. Значит, искать нужно там, а не менять моторчик.</dd></div>
+      <div class="up"><dt>После дождя или мойки машина «сходит с ума»</dt>
+        <dd>Влага в блоке управления двигателем или коробкой. Блок вскрывается,
+          сушится, дорожки восстанавливаются — до того как он окончательно умрёт.</dd></div>
+      <div class="up"><dt>Двигатель троит, ошибки по форсункам</dt>
+        <dd>Может выгореть ветка управления форсунками внутри блока. Мы меняем
+          силовые ключи на плате — все, а не только сгоревший, чтобы не возвращаться.</dd></div>
+      <div class="up"><dt>Сигнализация живёт своей жизнью</dt>
+        <dd>Установка, замена со снятием старой, ремонт после чужой работы.
+          Часто проблема в том, как её ставили, а не в самой системе.</dd></div>
+      <div class="up"><dt>Кондиционер дует тёплым</dt>
+        <dd>Диагностика по давлению, поиск утечки, заправка. Если после первой
+          попытки не помогло — доводим до результата, а не отправляем «ездить, смотреть».</dd></div>
+      <div class="up"><dt>Хочется, чтобы приборка светилась иначе</dt>
+        <dd>Пересвет приборной панели: меняем подсветку на нужный цвет.
+          Работа аккуратная и делается один раз.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="plata">
+  <div class="w">
+    <div class="board up">
+      <p class="tag">Ремонт электроники</p>
+      <h2 style="margin-top:14px">Блок управления<br>дешевле починить, чем купить</h2>
+      <p>Когда в сервисе говорят «нужен новый блок», разговор заканчивается суммой,
+        сравнимой с ремонтом половины машины. Почти всегда внутри блока вышел из строя
+        один элемент — и его можно заменить.</p>
+      <ul>
+        <li>Блоки управления двигателем и коробкой</li>
+        <li>Приборные панели: подсветка, стрелки, пропайка</li>
+        <li>Силовые ключи управления форсунками</li>
+        <li>Блоки комфорта и центрального замка</li>
+        <li>Восстановление после попадания влаги</li>
+        <li>Ремонт проводки и жгутов, а не «скрутка и синяя изолента»</li>
+      </ul>
+      <p class="money">Отдельно про деньги: сначала мы вскрываем и смотрим, потом называем цену.
+        Если ремонт невозможен — скажем прямо и не возьмём за попытку. Это честнее,
+        чем продать вам блок, который потом окажется не нужен.</p>
+    </div>
+  </div>
+</section>
+
+<section id="raboty">
+  <div class="w">
+    <p class="tag up">Работы</p>
+    <h2 class="up" style="margin-top:14px">Что делаем</h2>
+    <div class="price">
+      <div class="up"><div><h3>Автоэлектрика</h3>
+        <p>Проводка, жгуты, разъёмы, питание, массы. Ищем причину прозвонкой,
+          а не заменой деталей по очереди.</p></div>
+        <b>наш профиль</b></div>
+      <div class="up"><div><h3>Ремонт блоков управления</h3>
+        <p>ЭБУ двигателя и коробки, блоки комфорта. Пайка, замена элементов,
+          восстановление после влаги.</p></div>
+        <b>на уровне платы</b></div>
+      <div class="up"><div><h3>Приборные панели</h3>
+        <p>Гаснет, врёт, не показывает. Ремонт, пропайка и пересвет
+          в нужный цвет.</p></div>
+        <b>со снятием</b></div>
+      <div class="up"><div><h3>Компьютерная диагностика</h3>
+        <p>Ошибки показываем на экране и объясняем, что каждая значит.
+          Без «там всё плохо, надо менять».</p></div>
+        <b>с объяснением</b></div>
+      <div class="up"><div><h3>Сигнализации</h3>
+        <p>Установка, замена со снятием старой системы,
+          ремонт после чужой установки.</p></div>
+        <b>под ключ</b></div>
+      <div class="up"><div><h3>Кондиционеры</h3>
+        <p>Диагностика по давлению, поиск утечки, замена уплотнений,
+          заправка. Доводим до холода.</p></div>
+        <b>сезонно</b></div>
+      <div class="up"><div><h3>Ремонт бензиновых двигателей</h3>
+        <p>Цепь ГРМ с направляющими, инжекторы, навесное. Показываем
+          на экране, почему цепь растянулась.</p></div>
+        <b>по дефектовке</b></div>
+      <div class="up"><div><h3>Инжекторы и топливная</h3>
+        <p>Чистка и проверка форсунок, диагностика подачи топлива.</p></div>
+        <b>по узлу</b></div>
+      <div class="up"><div><h3>Свет и оптика</h3>
+        <p>Не работают фары заднего хода, габариты, поворотники —
+          разбираемся с цепью, а не ставим лампочку наугад.</p></div>
+        <b>по цепи</b></div>
+    </div>
+
+    <div class="g3">
+      <figure class="up"><img src="photo/cluster.jpg" alt="Снятая приборная панель автомобиля на верстаке" loading="lazy" decoding="async">
+        <figcaption>Приборная панель снимается и разбирается на столе — там видно то, что не видно в машине.</figcaption></figure>
+      <figure class="up"><img src="photo/wires.jpg" alt="Разобранная центральная консоль с проводкой" loading="lazy" decoding="async">
+        <figcaption>Иногда, чтобы добраться до одного разъёма, приходится разобрать полсалона.</figcaption></figure>
+      <figure class="up"><img src="photo/laptop.jpg" alt="Ноутбук с диагностической программой у моторного отсека" loading="lazy" decoding="async">
+        <figcaption>Диагностика — не «цешкой ткнуть»: смотрим живые данные и показываем их вам.</figcaption></figure>
+      <figure class="up"><img src="photo/inside.jpg" alt="Мастер с фонарём работает внутри передней панели" loading="lazy" decoding="async">
+        <figcaption>Работа лёжа под панелью — обычное дело, если ищешь перелом провода.</figcaption></figure>
+      <figure class="up"><img src="photo/panel.jpg" alt="Светящаяся приборная панель автомобиля" loading="lazy" decoding="async">
+        <figcaption>Пересвет приборки: подсветка меняется на нужный цвет и работает дальше как родная.</figcaption></figure>
+      <figure class="up"><img src="photo/bmw.jpg" alt="Автомобиль BMW в боксе сервиса" loading="lazy" decoding="async">
+        <figcaption>Марки любые: к нам едут и на свежих немцах, и на машинах девяностых.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy" class="said">
+  <div class="w">
+    <p class="tag up">Отзывы · 4,7 из 5 по 225 оценкам в 2ГИС</p>
+    <blockquote class="up" style="margin-top:22px">
+      <p class="bigq">«Не работал кондиционер и дворники, в предыдущих местах только
+        руками разводили»</p>
+      <p class="by">Андрей · 25 июля 2026</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>Обратился с нерешаемой проблемой: перестал работать замок водительской двери
+          на приусе, плюс гасла приборная панель. Все предыдущие сервисы отмахивались
+          и плели что попало. Записался по времени, оставил машину, бонусом прогулялся
+          по частному сектору. Исправили все проблемы.</p>
+        <cite>Konstantin Lebedev · 15 июня 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Обратился с проблемой сгоревшего ЭБУ на Jeep Grand Cherokee: выгорела одна
+          из веток управления форсунками. Всё восстановили, причём заменили ключи
+          управления на всех шести ветках.</p>
+        <cite>Денис · 24 июня 2026</cite>
+      </blockquote>
+    </div>
+    <div class="acts up" style="margin-top:36px">
+      <a class="btn g" href="https://2gis.ru/firm/141265769975020" target="_blank" rel="noopener">
+        Все 225 отзывов в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty">
+  <div class="w split">
+    <div class="up">
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:14px">Карла Либкнехта, 210</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>Карла Либкнехта, 210, 1 этаж<br><span class="q2">Октябрьский район, Новосибирск</span></dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+79994502623">+7 999 450-26-23</a></dd></div>
+        <div><dt>Режим</dt><dd>Ежедневно 11:00–20:00, без выходных</dd></div>
+        <div><dt>Как удобно</dt><dd>Машину можно оставить и вернуться позже — вокруг частный сектор, есть где пройтись</dd></div>
+        <div><dt>Оплата</dt><dd>Наличными, переводом с карты</dd></div>
+      </div>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="tel:+79994502623">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/141265769975020" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <iframe loading="lazy" title="Карта: Карла Либкнехта, 210"
+          src="https://yandex.ru/map-widget/v1/?ll=82.980415%2C55.014205&z=16&text=Новосибирск%2C%20Карла%20Либкнехта%2C%20210"></iframe>
+      </div>
+      <h2 style="font-size:clamp(21px,2.5vw,31px);margin-top:34px">Записаться</h2>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Константин"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 913 000-00-00"></div>
+        <div><label for="c">Машина</label><input id="c" name="car" placeholder="Toyota Prius 30"></div>
+        <div><label for="m">Что происходит</label><textarea id="m" name="message" placeholder="Гаснет приборка и не открывается водительская дверь"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cmp">Компания</label><input id="cmp" name="company" tabindex="-1" autocomplete="off"></div>
+        <button class="btn" type="submit">Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Нажимая кнопку, вы соглашаетесь на обработку своих контактов, чтобы мы
+          могли перезвонить. Больше ни для чего они не используются.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">У Филина<s>Либкнехта, 210</s></div>
+    Карла Либкнехта, 210, Новосибирск · ежедневно 11:00–20:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+79994502623">+7 999 450-26-23</a>
+    <a href="https://2gis.ru/firm/141265769975020" target="_blank" rel="noopener">2ГИС</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+79994502623">Позвонить</a>
+  <a class="btn g" href="#simptomy">Симптомы</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"У Филина, сервисный центр",
+"description":"Автоэлектрика, ремонт блоков управления и приборных панелей на уровне платы, компьютерная диагностика, сигнализации, кондиционеры, ремонт бензиновых двигателей и инжекторов",
+"address":{"@type":"PostalAddress","streetAddress":"Карла Либкнехта, 210","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":55.014205,"longitude":82.980415},
+"telephone":"+79994502623",
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"11:00","closes":"20:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"225","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/141265769975020"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и запишем на время.';ok.style.display='block';f.reset();return}}catch(_){}}
+  ok.innerHTML='Приём заявок пока настраивается. Позвоните, пожалуйста: <a href="tel:+79994502623">+7 999 450-26-23</a>.';
+  ok.style.display='block';
+});
+</script>
+</body>
+</html>
