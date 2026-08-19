@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Как дома — автокомплекс в Бердске, Лунная улица, 89</title>
+<meta name="description" content="Автокомплекс «Как дома», Бердск, Лунная улица, 89: ремонт ходовой, двигателей, стартеров и генераторов, рулевых реек, выхлопных систем, электроники, развал-схождение, сварка, замена масла. Свой автомагазин, масла на розлив, эвакуатор. Ремзона под видеонаблюдением — 28 камер. 4,5 по 203 отзывам, ежедневно 9:00–20:00.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Как дома — больше чем сервис. Бердск, Лунная, 89">
+<meta property="og:description" content="Ремзона под 28 камерами: можете попросить видеозапись своего ремонта. Свой магазин, масла на розлив, эвакуатор.">
+<meta property="og:image" content="photo/facade.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23E2661C'/><path d='M6 15L16 7l10 8v10H6z' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../fonts/rubik.css">
+<link rel="stylesheet" href="../fonts/onest.css">
+<style>
+/* На стене у них висит собственная надпись: «БОЛЬШЕ ЧЕМ СЕРВИС».
+   А в ответе на злой отзыв владелец пишет, что в ремзоне 28 камер
+   и он готов выдать клиенту видеозапись его ремонта. Это и есть
+   ответ на главный страх автовладельца — «меня обманут, а я не увижу».
+   Поэтому вся страница построена вокруг записи и открытости.
+   Цвета сняты с их фасада: оранжевый и белый. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#F4F2EF; --paper-2:#E6E2DC; --card:#FCFBF9;
+  --ink:#1E1E1F; --ink-2:#53534F; --ink-3:#8A8A84;
+  --line:#DEDAD3; --line-2:#C6C1B8;
+  --org:#E2661C; --org-2:#B84C0D; --org-soft:#FBEADF;
+  --coal:#1E1E1F;
+  --wrap:1070px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);
+  font:400 16.5px/1.75 Onest,-apple-system,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(58px,8vw,106px) 0}
+section[id]{scroll-margin-top:80px}
+h1,h2,h3{font-family:Rubik,-apple-system,sans-serif}
+h1,h2{font-weight:600;line-height:1.1;letter-spacing:-.032em;text-wrap:balance}
+h1{font-size:clamp(32px,5.1vw,64px)}
+h2{font-size:clamp(24px,3.3vw,43px)}
+h3{font-size:18.5px;font-weight:500;line-height:1.35;letter-spacing:-.012em}
+p{max-width:60ch}
+em{font-style:normal;color:var(--org)}
+.tag{font-family:Rubik,sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--org)}
+.q2{color:var(--ink-2)}
+
+/* Кнопка в форме товарного ярлыка — у них половина дела это магазин */
+.btn{--nib:13px;position:relative;isolation:isolate;overflow:hidden;
+  display:inline-flex;align-items:center;gap:11px;font-family:Rubik,sans-serif;
+  font-weight:500;font-size:15px;padding:16px 26px 16px 32px;background:var(--org);color:#fff;
+  clip-path:polygon(var(--nib) 0,100% 0,100% 100%,var(--nib) 100%,0 50%);
+  transition:transform .28s var(--ease),color .28s var(--ease)}
+.btn::after{content:"";position:absolute;inset:0;z-index:-1;background:var(--org-2);
+  transform:translateX(-101%);transition:transform .45s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:hover::after{transform:none}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;
+  transition:transform .34s var(--ease)}
+.btn:hover svg{transform:translateX(5px)}
+.btn.g{color:var(--ink);background:var(--line-2)}
+.btn.g::before{content:"";position:absolute;inset:1px;z-index:-2;background:var(--paper);
+  clip-path:polygon(var(--nib) 0,100% 0,100% 100%,var(--nib) 100%,0 50%)}
+.btn.g::after{background:var(--org)}
+.btn.g:hover{color:#fff}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:16px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(244,242,239,.95);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:10px 0}
+.nav{display:flex;align-items:center;gap:24px}
+.brand{margin-right:auto;font-family:Rubik,sans-serif;font-weight:600;
+  font-size:20px;letter-spacing:-.02em;line-height:1.1}
+.brand s{display:block;text-decoration:none;font-family:Onest,sans-serif;font-size:9px;
+  font-weight:600;letter-spacing:.19em;text-transform:uppercase;color:var(--org);margin-top:3px}
+.lk{font-size:14.5px;color:var(--ink-2);transition:color .2s}
+.lk:hover{color:var(--org)}
+@media(max-width:1000px){.lk{display:none}}
+@media(max-width:440px){.nav{gap:11px}.brand{font-size:18px}.btn{padding:13px 17px 13px 22px;font-size:13.5px}}
+
+.hero{padding-top:clamp(120px,16vw,190px);padding-bottom:clamp(34px,5vw,56px)}
+.hero h1{margin:18px 0 24px}
+.hero .sub{font-size:clamp(16.5px,1.8vw,19px);color:var(--ink-2);max-width:48ch;line-height:1.68}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,40px);
+  margin-top:clamp(42px,6vw,72px);padding-top:26px;border-top:1px solid var(--line)}
+.figs b{display:block;font-family:Rubik,sans-serif;font-weight:600;
+  font-size:clamp(22px,2.8vw,36px);letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.figs span{display:block;margin-top:10px;font-size:12.5px;color:var(--ink-3);line-height:1.5}
+@media(max-width:700px){.figs{grid-template-columns:repeat(2,1fr)}}
+
+.plate{overflow:hidden;background:var(--paper-2);border-radius:4px}
+.plate img{width:100%;aspect-ratio:21/9;object-fit:cover;object-position:center 55%}
+@media(max-width:700px){.plate img{aspect-ratio:4/3}}
+.cap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:11px;
+  font-size:12.5px;color:var(--ink-3)}
+
+/* 28 камер — главный разворот */
+.cams{background:var(--coal);color:#fff;border-radius:4px;
+  padding:clamp(28px,4.2vw,58px);margin-top:clamp(30px,4vw,48px)}
+.cams h2{color:#fff}
+.cams .tag{color:#F0A46A}
+.cams>p{color:#BEBBB6;margin-top:16px;font-size:16.5px}
+.grid28{display:grid;grid-template-columns:repeat(14,1fr);gap:7px;
+  margin:clamp(28px,3.6vw,42px) 0 clamp(22px,3vw,32px);max-width:520px}
+.grid28 i{aspect-ratio:1;border:1.5px solid #6B5B4E;border-radius:50%;display:block;
+  position:relative}
+.grid28 i::after{content:"";position:absolute;inset:26%;border-radius:50%;background:var(--org);
+  opacity:.85}
+@media(max-width:560px){.grid28{grid-template-columns:repeat(7,1fr);max-width:280px}}
+.cams ol{list-style:none;counter-reset:c;display:grid;gap:15px}
+.cams li{counter-increment:c;display:grid;grid-template-columns:32px 1fr;gap:16px;
+  font-size:15.5px;color:#D6D2CC;line-height:1.62;max-width:66ch}
+.cams li::before{content:counter(c);font-family:Rubik,sans-serif;font-weight:500;font-size:13px;
+  width:28px;height:28px;border:1px solid #6B5B4E;border-radius:50%;color:#F0A46A;
+  display:flex;align-items:center;justify-content:center}
+
+/* Больше чем сервис: что ещё есть на площадке */
+.more{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,2.8vw,30px);
+  margin-top:clamp(30px,4vw,48px)}
+@media(max-width:780px){.more{grid-template-columns:1fr}}
+.more article{background:var(--card);border:1px solid var(--line);border-radius:4px;
+  padding:clamp(24px,3vw,34px);transition:border-color .25s var(--ease),transform .25s var(--ease)}
+.more article:hover{border-color:var(--org);transform:translateY(-3px)}
+.more h3{margin-bottom:12px;font-size:21px;font-weight:600}
+.more p{font-size:15.5px;color:var(--ink-2)}
+
+.price{margin-top:clamp(30px,4vw,50px);border-top:2px solid var(--ink)}
+.price>div{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:baseline;
+  padding:19px 0;border-bottom:1px solid var(--line);transition:padding-left .28s var(--ease)}
+.price>div:hover{padding-left:9px}
+.price p{font-size:14.5px;color:var(--ink-2);margin-top:5px;max-width:58ch}
+.price b{font-family:Rubik,sans-serif;font-size:12px;white-space:nowrap;color:var(--ink-3);
+  font-weight:500;letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:560px){.price>div{grid-template-columns:1fr;gap:6px}}
+
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px);
+  margin-top:clamp(32px,4.5vw,54px)}
+@media(max-width:860px){.g3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.g3{grid-template-columns:1fr;gap:22px}}
+.g3 img{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--paper-2);border-radius:4px}
+.g3 figcaption{margin-top:11px;font-size:14px;color:var(--ink-2)}
+
+.said{background:var(--paper-2)}
+.bigq{font-family:Rubik,sans-serif;font-weight:600;font-size:clamp(20px,2.7vw,36px);
+  line-height:1.2;letter-spacing:-.032em;max-width:23ch}
+.by{font-size:13.5px;color:var(--ink-3);margin-top:22px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,56px);
+  margin-top:clamp(38px,5.5vw,68px)}
+@media(max-width:820px){.pair{grid-template-columns:1fr;gap:32px}}
+.pair p{font-size:16px;color:var(--ink-2)}
+.pair cite{display:block;font-style:normal;font-size:13.5px;color:var(--ink-3);margin-top:13px}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,68px)}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
+.rows{border-top:2px solid var(--ink);margin-top:26px}
+.rows>div{display:grid;grid-template-columns:118px 1fr;gap:18px;padding:15px 0;
+  border-bottom:1px solid var(--line);font-size:16px}
+.rows dt{font-size:12.5px;color:var(--ink-3);padding-top:4px}
+.rows a:hover{color:var(--org)}
+@media(max-width:520px){.rows>div{grid-template-columns:1fr;gap:3px}}
+.map{aspect-ratio:16/10;background:var(--paper-2);overflow:hidden;border-radius:4px}
+.map iframe{width:100%;height:100%;border:0}
+form{margin-top:20px;display:grid;gap:15px}
+label{display:block;font-size:12.5px;color:var(--ink-3);margin-bottom:7px}
+input,textarea{width:100%;background:var(--card);border:1px solid var(--line-2);color:var(--ink);
+  padding:13px 15px;font:400 16px/1.5 Onest,sans-serif;border-radius:4px;transition:border-color .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--org)}
+textarea{min-height:100px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fine{font-size:12.5px;color:var(--ink-3);line-height:1.6;max-width:52ch}
+.sent{display:none;padding:13px 15px;border:1px solid var(--org);background:var(--org-soft);
+  font-size:15px;border-radius:4px}
+.sent a{color:var(--org-2);text-decoration:underline}
+
+footer{border-top:1px solid var(--line);padding:34px 0 44px;font-size:14px;color:var(--ink-3)}
+.fin{display:flex;gap:26px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+footer a:hover{color:var(--org)}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:8px;padding:9px 12px;
+  background:rgba(244,242,239,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  width:100%;max-width:100vw}
+.bar a{flex:1 1 0;min-width:0;white-space:nowrap;text-align:center;justify-content:center;
+  padding:13px 10px;font-size:14.5px}
+@media(max-width:760px){.bar{display:flex}body{padding-bottom:70px}}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--org);outline-offset:3px}
+/* --- 152-ФЗ --- */
+/* --- 152-ФЗ: согласие, cookie, отложенная карта --- */
+.agree{display:grid;grid-template-columns:19px 1fr;gap:12px;align-items:start;
+  font:400 13.5px/1.55 inherit;font-family:inherit;letter-spacing:normal;text-transform:none;
+  color:inherit;margin:0;cursor:pointer;max-width:52ch}
+.agree span{display:block;letter-spacing:normal;text-transform:none}
+.agree input{width:19px;height:19px;margin:2px 0 0;accent-color:currentColor;cursor:pointer;flex:none}
+.agree a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.agree.opt{opacity:.8}
+button[disabled],.btn[disabled]{opacity:.4;cursor:not-allowed}
+.mapstub{position:absolute;inset:0;display:flex;flex-direction:column;gap:12px;
+  align-items:center;justify-content:center;text-align:center;padding:22px;
+  font-size:13.5px;line-height:1.5;background:rgba(127,127,127,.10)}
+.mapstub button{font:inherit;font-size:13px;padding:11px 20px;cursor:pointer;
+  border:1px solid currentColor;background:transparent;color:inherit;border-radius:3px}
+.mapstub button:hover{opacity:.72}
+.map{position:relative}
+#ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:95;display:none;max-width:440px;
+  padding:18px 20px;background:#101114;color:#F2F0EC;font-size:13.5px;line-height:1.6;
+  border:1px solid rgba(255,255,255,.14);border-radius:6px;
+  box-shadow:0 18px 48px rgba(0,0,0,.45)}
+#ck.on{display:block}
+#ck a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+#ck .ckb{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+#ck button{font:inherit;font-size:12.5px;font-weight:600;letter-spacing:.04em;padding:11px 20px;
+  cursor:pointer;border-radius:4px;border:1px solid rgba(255,255,255,.3);
+  background:transparent;color:#F2F0EC}
+#ck button.y{background:#F2F0EC;color:#101114;border-color:#F2F0EC}
+#ck button:hover{opacity:.85}
+@media(max-width:760px){#ck{bottom:84px;left:10px;right:10px}}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <nav class="w nav">
+    <a class="brand" href="#">Как дома<s>Бердск, Лунная, 89</s></a>
+    <a class="lk" href="#kamery">28 камер</a>
+    <a class="lk" href="#bolshe">Больше чем сервис</a>
+    <a class="lk" href="#raboty">Работы</a>
+    <a class="lk" href="#otzyvy">Отзывы</a>
+    <a class="lk" href="#kontakty">Контакты</a>
+    <a class="btn" href="tel:+79130152777">Записаться</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Автокомплекс · Бердск, Лунная улица, 89</p>
+    <h1 class="up">Ремзону у нас<br>не прячут <em>за дверью</em></h1>
+    <p class="sub up">Двадцать восемь камер пишут всё, что происходит с вашей машиной.
+      Если после ремонта остались сомнения — попросите видеозапись, отдадим.
+      Это дешевле, чем спорить, и честнее, чем обещать на словах.</p>
+    <div class="acts up">
+      <a class="btn" href="tel:+79130152777">+7 913 015-27-77
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#kamery">Как это работает</a>
+    </div>
+    <div class="figs up">
+      <div><b>4,5</b><span>по 203 отзывам в 2ГИС</span></div>
+      <div><b>28 камер</b><span>в ремзоне, с записью звука</span></div>
+      <div><b>8 лет</b><span>столько к нам ездят постоянные клиенты</span></div>
+      <div><b>7 дней</b><span>ежедневно с 9:00 до 20:00</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="w up">
+    <div class="plate"><img src="photo/facade.jpg"
+      alt="Здание автокомплекса «Как дома» на Лунной улице в Бердске" fetchpriority="high"></div>
+    <div class="cap"><span>Лунная, 89 · сервис и автомагазин в одном здании</span><span>Ежедневно 9:00–20:00, без выходных</span></div>
+  </div>
+</section>
+
+<section id="kamery">
+  <div class="w">
+    <div class="cams up">
+      <p class="tag">Видеонаблюдение</p>
+      <h2 style="margin-top:14px">Двадцать восемь камер.<br>И запись звука</h2>
+      <p>Самый частый страх при выборе сервиса — что деталь не поменяют, а деньги возьмут.
+        Спорить об этом бессмысленно, поэтому мы сделали так, чтобы спорить было не о чем.</p>
+
+      <div class="grid28" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
+
+      <ol>
+        <li>Камеры стоят по всей ремзоне, с разными углами обзора — так, чтобы каждый пост
+          был виден с двух сторон.</li>
+        <li>Пишется не только картинка, но и звук: слышно, что мастер говорит про вашу машину.</li>
+        <li>Архив хранится два месяца. В этот срок вы можете попросить видеозапись
+          своего ремонта — выдадим полностью, без вырезок.</li>
+        <li>Если вы хотите просто постоять рядом и посмотреть — скажите на приёмке,
+          проведём. Ремзона закрыта по технике безопасности, а не потому,
+          что там есть что прятать.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="bolshe">
+  <div class="w">
+    <p class="tag up">Больше чем сервис</p>
+    <h2 class="up" style="margin-top:14px">Так написано у нас на стене.<br>Вот что за этим стоит</h2>
+    <div class="more">
+      <article class="up">
+        <h3>Свой автомагазин</h3>
+        <p>Запчасти, расходники, автохимия — в том же здании. Работаем и в розницу,
+          и оптом, есть доставка. Искать деталь по городу и везти её самому не нужно.</p>
+      </article>
+      <article class="up">
+        <h3>Масла на розлив</h3>
+        <p>Можно взять ровно столько, сколько нужно на долив, а не покупать канистру
+          целиком. Спецжидкости и автокосметика тоже есть.</p>
+      </article>
+      <article class="up">
+        <h3>Эвакуатор</h3>
+        <p>Машина не заводится или после аварии — привезём сами. Не нужно искать
+          перевозчика и объяснять ему, куда ехать.</p>
+      </article>
+      <article class="up">
+        <h3>Комната ожидания</h3>
+        <p>Диван, кофе, телевизор и Wi-Fi. Короткий ремонт можно спокойно
+          переждать здесь и не искать, где убить два часа в Бердске.</p>
+      </article>
+    </div>
+    <div class="g3">
+      <figure class="up"><img src="photo/motto.jpg" alt="Надпись на стене: больше чем сервис" loading="lazy" decoding="async">
+        <figcaption>Эта надпись висит у нас в зале приёмки. Дальше по странице — что мы под ней имеем в виду.</figcaption></figure>
+      <figure class="up"><img src="photo/rack.jpg" alt="Стеллаж с автохимией и маслами в магазине" loading="lazy" decoding="async">
+        <figcaption>Магазин на площадке: масла, фильтры, автохимия. Подберём под ваш мотор.</figcaption></figure>
+      <figure class="up"><img src="photo/tow.jpg" alt="Эвакуатор с автомобилем" loading="lazy" decoding="async">
+        <figcaption>Свой эвакуатор — довезём машину, которая не едет, в любое время.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="raboty">
+  <div class="w">
+    <p class="tag up">Работы</p>
+    <h2 class="up" style="margin-top:14px">Что делаем</h2>
+    <div class="price">
+      <div class="up"><div><h3>Ходовая часть</h3>
+        <p>Стойки, рычаги, сайлентблоки, ступицы, тормоза. Проточка тормозных дисков
+          вместо покупки нового комплекта.</p></div>
+        <b>по осмотру</b></div>
+      <div class="up"><div><h3>Компьютерная диагностика</h3>
+        <p>Ошибки читаем и объясняем, что каждая значит. Даём распечатку —
+          с ней можно спокойно подумать день.</p></div>
+        <b>с распечаткой</b></div>
+      <div class="up"><div><h3>Ремонт двигателя</h3>
+        <p>Течи, навесное, замена узлов. Сложные случаи разбираем вместе с вами
+          и показываем, что нашли.</p></div>
+        <b>по дефектовке</b></div>
+      <div class="up"><div><h3>Замена масла</h3>
+        <p>Двигатель, коробка, вариатор, мосты. Объём заливаем по регламенту
+          вашей машины и показываем уровень после.</p></div>
+        <b>по регламенту</b></div>
+      <div class="up"><div><h3>Стартеры и генераторы</h3>
+        <p>Ремонт узла: щётки, регулятор, подшипники. Снимаем и ставим сами.</p></div>
+        <b>ремонт узла</b></div>
+      <div class="up"><div><h3>Рулевые рейки</h3>
+        <p>Течь, стук, тяжёлый руль. Если рейку достаточно подтянуть —
+          так и скажем, менять не заставим.</p></div>
+        <b>по дефекту</b></div>
+      <div class="up"><div><h3>Развал-схождение</h3>
+        <p>После работ с подвеской и отдельно, если машину уводит
+          или резину ест с одной стороны.</p></div>
+        <b>на стенде</b></div>
+      <div class="up"><div><h3>Выхлопная система</h3>
+        <p>Ремонт и замена, сварочные работы. Отдельно — тюнинг выхлопа,
+          если хочется другого звука.</p></div>
+        <b>по объёму</b></div>
+      <div class="up"><div><h3>Электрика и электроника</h3>
+        <p>Проводка, датчики, электрооборудование. Ищем причину,
+          а не меняем детали по очереди.</p></div>
+        <b>по проблеме</b></div>
+      <div class="up"><div><h3>Магазин запчастей</h3>
+        <p>Более тридцати марок, розница и опт, доставка. Можно купить
+          деталь отдельно, не заезжая на ремонт.</p></div>
+        <b>в наличии</b></div>
+    </div>
+
+    <div class="g3">
+      <figure class="up"><img src="photo/shop.jpg" alt="Торговый зал автомагазина" loading="lazy" decoding="async">
+        <figcaption>Приёмка и магазин рядом: пока машину смотрят, можно выбрать масло.</figcaption></figure>
+      <figure class="up"><img src="photo/oils.jpg" alt="Бочки и канистры с маслом на стеллаже" loading="lazy" decoding="async">
+        <figcaption>Масла на розлив — берёте ровно столько, сколько нужно.</figcaption></figure>
+      <figure class="up"><img src="photo/part.jpg" alt="Снятая деталь подвески в руке" loading="lazy" decoding="async">
+        <figcaption>Снятые детали показываем и отдаём, если захотите забрать.</figcaption></figure>
+      <figure class="up"><img src="photo/wheel.jpg" alt="Колёсный диск крупным планом" loading="lazy" decoding="async">
+        <figcaption>Шиномонтаж и замена колодок — при том же заезде.</figcaption></figure>
+      <figure class="up"><img src="photo/lounge.jpg" alt="Комната ожидания с телевизором" loading="lazy" decoding="async">
+        <figcaption>Зона ожидания: телевизор, Wi-Fi и вид на улицу.</figcaption></figure>
+      <figure class="up"><img src="photo/coffee.jpg" alt="Столик с кофе в зоне ожидания" loading="lazy" decoding="async">
+        <figcaption>Кофе за наш счёт. Мелочь, но название обязывает.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy" class="said">
+  <div class="w">
+    <p class="tag up">Отзывы · 4,5 из 5 по 203 оценкам в 2ГИС</p>
+    <blockquote class="up" style="margin-top:22px">
+      <p class="bigq">«Я бы назвал это СТО не „Как дома“, а лучше, чем дома»</p>
+      <p class="by">Сергей Маслов · 4 мая 2026</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>Обслуживаюсь регулярно уже лет восемь, претензий нет. Авто оставляю и не парюсь,
+          знаю, что парни всё сделают на пять. Даже если какие-то проблемы — позвонят
+          и всё обсудят.</p>
+        <cite>Алексей Лычкин · 15 января 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Гостеприимно приняли, посмотрели авто, объяснили причину неисправности —
+          был скрип в подвеске. На следующий день записали на ремонт. Доволен и качеством,
+          и ценовой политикой. Скрипа как не бывало.</p>
+        <cite>Сергей Маслов · 4 мая 2026</cite>
+      </blockquote>
+    </div>
+    <div class="acts up" style="margin-top:36px">
+      <a class="btn g" href="https://2gis.ru/firm/70000001036160239" target="_blank" rel="noopener">
+        Все 203 отзыва в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty">
+  <div class="w split">
+    <div class="up">
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:14px">Бердск, Лунная, 89</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>Лунная улица, 89<br><span class="q2">Бердск, Новосибирская область</span></dd></div>
+        <div><dt>Телефоны</dt><dd><a href="tel:+79130152777">+7 913 015-27-77</a><br>
+          <a href="tel:+79130159777">+7 913 015-97-77</a></dd></div>
+        <div><dt>Режим</dt><dd>Ежедневно 9:00–20:00, без выходных</dd></div>
+        <div><dt>Магазин</dt><dd>Запчасти и автохимия, розница и опт, доставка</dd></div>
+        <div><dt>Эвакуатор</dt><dd>Свой, привезём машину к нам</dd></div>
+        <div><dt>Оплата</dt><dd>Картой, наличными, по QR-коду, через банк</dd></div>
+      </div>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="tel:+79130152777">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/70000001036160239" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <div class="mapstub" data-src="https://yandex.ru/map-widget/v1/?ll=83.069665%2C54.734641&z=16&text=Бердск%2C%20Лунная%20улица%2C%2089" data-title="Карта: Бердск, Лунная улица, 89">
+          <span>Карта загружается с сервера «Яндекса» и устанавливает свои cookie.</span>
+          <button type="button">Показать карту</button>
+        </div>
+      </div>
+      <h2 style="font-size:clamp(21px,2.5vw,31px);margin-top:34px">Записаться</h2>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Сергей"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 913 000-00-00"></div>
+        <div><label for="c">Машина</label><input id="c" name="car" placeholder="Toyota Corolla, 2012"></div>
+        <div><label for="m">Что нужно</label><textarea id="m" name="message" placeholder="Скрип в подвеске на кочках"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cmp">Компания</label><input id="cmp" name="company" tabindex="-1" autocomplete="off"></div>
+        <label class="agree"><input type="checkbox" id="ag" name="consent" required>
+          <span>Я даю согласие на обработку моих персональных данных в соответствии
+          с <a href="privacy/" target="_blank" rel="noopener">Политикой обработки персональных данных</a></span></label>
+        <label class="agree opt"><input type="checkbox" id="adv" name="ads">
+          <span>Хочу получать напоминания о плановом обслуживании и сообщения об акциях
+          (необязательно)</span></label>
+        <button id="sb" class="btn" type="submit" disabled>Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Заявку обрабатываем только для того, чтобы перезвонить
+          и записать вас на удобное время. Согласие можно отозвать в любой момент —
+          порядок описан в <a href="privacy/">политике</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="ck" role="dialog" aria-label="Файлы cookie">
+  Мы используем файлы cookie: технически необходимые для работы страницы и те, что
+  устанавливает виджет «Яндекс.Карт». Аналитику и рекламные счётчики без вашего согласия
+  не подключаем. Подробности — в <a href="privacy/">Политике обработки персональных данных</a>.
+  <div class="ckb">
+    <button class="y" type="button" data-ck="y">Принять</button>
+    <button type="button" data-ck="n">Отклонить</button>
+  </div>
+</div>
+
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">Как дома<s>Бердск, Лунная, 89</s></div>
+    Лунная улица, 89, Бердск · ежедневно 9:00–20:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+79130152777">+7 913 015-27-77</a>
+    <a href="https://2gis.ru/firm/70000001036160239" target="_blank" rel="noopener">2ГИС</a>
+    <a href="privacy/">Политика обработки персональных данных</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+79130152777">Позвонить</a>
+  <a class="btn g" href="#kamery">28 камер</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"Как дома, автокомплекс",
+"description":"Ремонт ходовой части, двигателей, стартеров и генераторов, рулевых реек, выхлопных систем, электроники, развал-схождение, сварочные работы, замена масла, компьютерная диагностика. Собственный автомагазин, масла на розлив, эвакуатор. Ремзона под видеонаблюдением.",
+"address":{"@type":"PostalAddress","streetAddress":"Лунная улица, 89","addressLocality":"Бердск","addressRegion":"Новосибирская область","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":54.734641,"longitude":83.069665},
+"telephone":"+79130152777",
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"09:00","closes":"20:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.5","reviewCount":"203","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/70000001036160239"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и запишем на время.';ok.style.display='block';f.reset();return}}catch(_){}}
+  ok.innerHTML='Приём заявок пока настраивается. Позвоните, пожалуйста: <a href="tel:+79130152777">+7 913 015-27-77</a>.';
+  ok.style.display='block';
+});
+</script>
+<script>
+(function(){
+  var K='ck-choice', box=document.getElementById('ck');
+  function loadMap(){
+    document.querySelectorAll('.mapstub[data-src]').forEach(function(s){
+      var f=document.createElement('iframe');
+      f.loading='lazy'; f.title=s.dataset.title||'Карта проезда'; f.src=s.dataset.src;
+      f.style.width='100%'; f.style.height='100%'; f.style.border='0';
+      s.parentNode.appendChild(f); s.remove();
+    });
+  }
+  var saved=null; try{saved=localStorage.getItem(K)}catch(e){}
+  if(saved==='y'){loadMap()} else if(!saved && box){box.classList.add('on')}
+  if(box) box.addEventListener('click',function(e){
+    var b=e.target.closest('[data-ck]'); if(!b)return;
+    try{localStorage.setItem(K,b.dataset.ck)}catch(e){}
+    box.classList.remove('on'); if(b.dataset.ck==='y') loadMap();
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.mapstub button')) loadMap();
+  });
+  var ag=document.getElementById('ag'), sb=document.getElementById('sb');
+  if(ag&&sb){ var sync=function(){sb.disabled=!ag.checked}; sync();
+    ag.addEventListener('change',sync); }
+})();
+</script>
+</body>
+</html>
