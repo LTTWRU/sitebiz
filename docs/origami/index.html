@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Origami — автосервис на Большой, 270: ходовая, двигатель, автоэлектрика</title>
+<meta name="description" content="Автосервис Origami, Новосибирск, Большая улица, 270 (Ленинский район). Ремонт ходовой части, двигателя и автоэлектрики, стартеры и генераторы, ремонт инжекторов и выхлопных систем, замена масла, шиномонтаж, отогрев автомобилей. Диагностическая карта с ценой по каждой строке, договор заказ-наряд, гарантия до 1 года. Ежедневно 9:00–20:00, 4,7 по 748 отзывам. Три адреса в городе.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Origami — собираем обратно ровно то, что было">
+<meta property="og:description" content="Большая, 270. Диагностическая карта с ценой по каждой строке и гарантия до года. Ежедневно 9:00–20:00.">
+<meta property="og:image" content="photo/priem.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230E0E10'/><path d='M6 22L16 6l10 16z' fill='none' stroke='%23E02B25' stroke-width='2.4' stroke-linejoin='round'/><path d='M16 6v16' stroke='%23E02B25' stroke-width='2.4'/></svg>">
+<link rel="stylesheet" href="../fonts/montserrat.css">
+<link rel="stylesheet" href="../fonts/commissioner.css">
+<style>
+/* Название обязывает: оригами складывают из одного листа, без клея
+   и без лишних деталей. Ровно этого от автосервиса и хотят — чтобы
+   разобрали и собрали обратно то же самое. У них для этого есть два
+   печатных документа: диагностическая карта с легендой состояний узлов
+   и договор заказ-наряд со строкой «с объёмом работ и первоначальной
+   стоимостью согласен». Оба стоят в середине страницы, потому что
+   именно они отвечают на главные претензии в отзывах. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --void:#0E0E10; --surf:#17171A; --surf-2:#1F1F23;
+  --bone:#EDEBE8; --bone-2:#9C9A97; --bone-3:#6E6C6A;
+  --line:#2A2A2E; --line-2:#3B3B41;
+  --rd:#E02B25; --rd-2:#B01A16; --bulb:#F0B860;
+  --wrap:1060px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--void);color:var(--bone);
+  font:400 16.5px/1.74 Commissioner,-apple-system,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(58px,8vw,104px) 0}
+section[id]{scroll-margin-top:80px}
+h1,h2,h3{font-family:Montserrat,-apple-system,sans-serif}
+h1,h2{font-weight:800;line-height:1.05;letter-spacing:-.04em;text-wrap:balance}
+h1{font-size:clamp(32px,5.3vw,64px)}
+h2{font-size:clamp(24px,3.4vw,43px)}
+h3{font-size:19px;font-weight:700;line-height:1.3;letter-spacing:-.024em}
+p{max-width:60ch;color:var(--bone-2)}
+em{font-style:normal;color:var(--rd)}
+.tag{font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rd)}
+.q2{color:var(--bone-2)}
+
+/* Кнопка-лист: два противоположных угла загнуты, как на сложенном листе */
+.btn{--f:15px;position:relative;isolation:isolate;overflow:hidden;
+  display:inline-flex;align-items:center;gap:11px;font-family:Montserrat,sans-serif;
+  font-weight:700;font-size:14.5px;letter-spacing:-.01em;padding:16px 30px;
+  background:var(--rd);color:#fff;
+  clip-path:polygon(var(--f) 0,100% 0,100% calc(100% - var(--f)),
+    calc(100% - var(--f)) 100%,0 100%,0 var(--f));
+  transition:transform .28s var(--ease),color .28s var(--ease)}
+.btn::after{content:"";position:absolute;inset:0;z-index:-1;background:var(--rd-2);
+  transform:translate(-101%,101%);transition:transform .5s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:hover::after{transform:none}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;
+  transition:transform .34s var(--ease)}
+.btn:hover svg{transform:translateX(5px)}
+.btn.g{color:var(--bone);background:var(--line-2)}
+.btn.g::before{content:"";position:absolute;inset:1.5px;z-index:-2;background:var(--void);
+  clip-path:polygon(var(--f) 0,100% 0,100% calc(100% - var(--f)),
+    calc(100% - var(--f)) 100%,0 100%,0 var(--f))}
+.btn.g::after{background:var(--rd)}
+.btn.g:hover{color:#fff}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:16px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(14,14,16,.94);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:10px 0}
+.nav{display:flex;align-items:center;gap:24px}
+.brand{margin-right:auto;font-family:Montserrat,sans-serif;font-weight:800;
+  font-size:20px;letter-spacing:-.045em;line-height:1.15}
+.brand s{display:block;text-decoration:none;font-family:Commissioner,sans-serif;font-size:9px;
+  font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--rd);margin-top:3px}
+.lk{font-size:14.5px;color:var(--bone-2);transition:color .2s}
+.lk:hover{color:var(--bone)}
+@media(max-width:1020px){.lk{display:none}}
+@media(max-width:460px){.nav{gap:11px}.brand{font-size:17px}.btn{padding:13px 21px;font-size:13px}}
+
+.hero{padding-top:clamp(120px,16vw,186px);padding-bottom:0;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;left:50%;top:-160px;transform:translateX(-50%);
+  width:min(900px,120%);height:520px;pointer-events:none;
+  background:radial-gradient(ellipse at center,rgba(240,184,96,.13),transparent 68%)}
+.hero>.w{position:relative}
+.hero h1{margin:18px 0 24px}
+.hero .sub{font-size:clamp(16.5px,1.8vw,19px);color:var(--bone-2);max-width:50ch;line-height:1.68}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,40px);
+  margin-top:clamp(40px,6vw,70px);padding-top:26px;border-top:1px solid var(--line)}
+.figs b{display:block;font-family:Montserrat,sans-serif;font-weight:800;color:var(--bone);
+  font-size:clamp(21px,2.7vw,34px);letter-spacing:-.055em;line-height:1;font-variant-numeric:tabular-nums}
+.figs span{display:block;margin-top:10px;font-size:12.5px;color:var(--bone-3);line-height:1.5}
+@media(max-width:700px){.figs{grid-template-columns:repeat(2,1fr)}}
+
+.shot{margin-top:clamp(40px,6vw,72px)}
+.shot img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--surf)}
+.shot figcaption{margin-top:13px;font-size:13.5px;color:var(--bone-3);max-width:62ch}
+@media(max-width:640px){.shot img{aspect-ratio:4/3}}
+
+/* Тезис */
+.thesis{background:var(--surf);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,36px);
+  margin-top:clamp(28px,3.6vw,44px)}
+@media(max-width:800px){.tgrid{grid-template-columns:1fr}}
+.tgrid h3{color:var(--bone);margin-bottom:10px}
+.tgrid p{font-size:14.5px}
+
+/* Диагностическая карта */
+.card2{display:grid;grid-template-columns:.95fr 1fr;gap:clamp(28px,5vw,60px);align-items:start;
+  margin-top:clamp(30px,4vw,48px)}
+@media(max-width:880px){.card2{grid-template-columns:1fr;gap:30px}}
+.card2 img{width:100%;object-fit:cover;background:var(--surf);border:1px solid var(--line)}
+.card2 figcaption{margin-top:11px;font-size:13px;color:var(--bone-3)}
+.legend{border-top:2px solid var(--rd)}
+.legend>div{display:grid;grid-template-columns:44px 1fr;gap:18px;padding:15px 0;
+  border-bottom:1px solid var(--line);align-items:center;
+  transition:padding-left .3s var(--ease),background .3s var(--ease)}
+.legend>div:hover{padding-left:10px;background:linear-gradient(90deg,rgba(224,43,37,.10),transparent 65%)}
+.legend .sym{width:38px;height:38px;display:grid;place-items:center;border:1px solid var(--line-2);
+  font-family:Montserrat,sans-serif;font-weight:700;font-size:16px;color:var(--rd)}
+.legend .sym svg{width:19px;height:19px;stroke:var(--rd);fill:none;stroke-width:2.4}
+.legend b{display:block;font-family:Montserrat,sans-serif;font-weight:700;font-size:15.5px;
+  letter-spacing:-.02em;color:var(--bone)}
+.legend span{display:block;font-size:13.5px;color:var(--bone-2);margin-top:3px;line-height:1.5}
+
+/* Договор и гарантия */
+.deal{background:var(--surf)}
+.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,60px);align-items:start;
+  margin-top:clamp(28px,3.6vw,44px)}
+@media(max-width:880px){.dgrid{grid-template-columns:1fr;gap:30px}}
+.dgrid img{width:100%;object-fit:cover;background:var(--surf-2);border:1px solid var(--line)}
+.dgrid figcaption{margin-top:11px;font-size:13px;color:var(--bone-3)}
+.terms{display:grid;gap:0}
+.terms>div{padding:20px 0;border-bottom:1px solid var(--line)}
+.terms>div:first-child{border-top:2px solid var(--bulb);padding-top:20px}
+.terms dt{font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(20px,2.4vw,28px);
+  letter-spacing:-.045em;color:var(--bulb);line-height:1;margin-bottom:9px}
+.terms dd{font-size:14.5px;color:var(--bone-2);line-height:1.62}
+.terms dd b{color:var(--bone);font-weight:600}
+.sign{margin-top:clamp(28px,3.6vw,42px);border:1px solid var(--rd);padding:clamp(22px,3vw,30px);
+  background:rgba(224,43,37,.07)}
+.sign p{color:var(--bone);font-size:16px;max-width:none}
+.sign strong{font-family:Montserrat,sans-serif;font-weight:800;letter-spacing:-.02em}
+
+/* Услуги */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,26px);
+  margin-top:clamp(28px,3.6vw,44px)}
+@media(max-width:820px){.svc{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.svc{grid-template-columns:1fr}}
+.svc div{border-top:2px solid var(--line-2);padding-top:14px;transition:border-color .25s var(--ease)}
+.svc div:hover{border-top-color:var(--rd)}
+.svc b{display:block;font-family:Montserrat,sans-serif;font-size:16px;font-weight:700;
+  letter-spacing:-.022em;margin-bottom:6px;color:var(--bone)}
+.svc p{font-size:14.5px}
+
+/* Адреса */
+.pts{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.6vw,26px);
+  margin-top:clamp(28px,3.6vw,44px)}
+@media(max-width:820px){.pts{grid-template-columns:1fr}}
+.pts article{border:1px solid var(--line);padding:clamp(22px,2.8vw,28px);
+  transition:border-color .25s var(--ease),transform .25s var(--ease)}
+.pts article:hover{border-color:var(--rd);transform:translateY(-3px)}
+.pts article.here{border-color:var(--rd);background:rgba(224,43,37,.07)}
+.pts .mark{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--rd);margin-bottom:10px}
+.pts h3{color:var(--bone);margin-bottom:8px}
+.pts a{font-size:15.5px;color:var(--bone-2);transition:color .2s}
+.pts a:hover{color:var(--rd)}
+
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.8vw,20px);
+  margin-top:clamp(28px,3.6vw,44px)}
+@media(max-width:700px){.g3{grid-template-columns:1fr 1fr}}
+.g3 img{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--surf)}
+.g3 figcaption{margin-top:9px;font-size:13px;color:var(--bone-2)}
+
+.said{background:var(--surf)}
+.bigq{font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(21px,3vw,38px);
+  line-height:1.15;letter-spacing:-.042em;max-width:22ch;color:var(--bone)}
+.by{font-size:12.5px;color:var(--bone-3);margin-top:22px;letter-spacing:.04em}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,56px);
+  margin-top:clamp(36px,5vw,60px)}
+@media(max-width:820px){.pair{grid-template-columns:1fr;gap:32px}}
+.pair p{font-size:16px}
+.pair cite{display:block;font-style:normal;font-size:12.5px;color:var(--bone-3);margin-top:13px}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,68px)}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
+.rows{border-top:2px solid var(--bone);margin-top:26px}
+.rows>div{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:15px 0;
+  border-bottom:1px solid var(--line);font-size:16px}
+.rows dt{font-size:11px;color:var(--bone-3);padding-top:5px;
+  text-transform:uppercase;letter-spacing:.09em;font-weight:600}
+.rows dd{color:var(--bone)}
+.rows a:hover{color:var(--rd)}
+@media(max-width:520px){.rows>div{grid-template-columns:1fr;gap:3px}}
+.map{aspect-ratio:16/10;background:var(--surf);overflow:hidden}
+.map iframe{width:100%;height:100%;border:0}
+form{margin-top:20px;display:grid;gap:15px}
+label{display:block;font-size:11px;color:var(--bone-3);margin-bottom:7px;
+  text-transform:uppercase;letter-spacing:.09em;font-weight:600}
+input,textarea{width:100%;background:var(--surf);border:1px solid var(--line-2);color:var(--bone);
+  padding:13px 15px;font:400 16px/1.5 Commissioner,sans-serif;transition:border-color .2s}
+input::placeholder,textarea::placeholder{color:var(--bone-3)}
+input:focus,textarea:focus{outline:none;border-color:var(--rd)}
+textarea{min-height:100px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fine{font-size:12.5px;color:var(--bone-3);line-height:1.6;max-width:52ch}
+.sent{display:none;padding:13px 15px;border:1px solid var(--rd);background:rgba(224,43,37,.12);
+  font-size:15px;color:var(--bone)}
+.sent a{color:#FF8480;text-decoration:underline}
+
+footer{border-top:1px solid var(--line);padding:34px 0 44px;font-size:14px;color:var(--bone-3)}
+.fin{display:flex;gap:26px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+footer a:hover{color:var(--rd)}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:8px;padding:9px 12px;
+  background:rgba(14,14,16,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  width:100%;max-width:100vw}
+.bar a{flex:1 1 0;min-width:0;white-space:nowrap;text-align:center;justify-content:center;
+  padding:13px 12px;font-size:14px}
+@media(max-width:760px){.bar{display:flex}body{padding-bottom:70px}}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--rd);outline-offset:3px}
+/* --- 152-ФЗ --- */
+/* --- 152-ФЗ: согласие, cookie, отложенная карта --- */
+.agree{display:grid;grid-template-columns:19px 1fr;gap:12px;align-items:start;
+  font:400 13.5px/1.55 inherit;font-family:inherit;letter-spacing:normal;text-transform:none;
+  color:inherit;margin:0;cursor:pointer;max-width:52ch}
+.agree span{display:block;letter-spacing:normal;text-transform:none}
+.agree input{width:19px;height:19px;margin:2px 0 0;accent-color:currentColor;cursor:pointer;flex:none}
+.agree a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.agree.opt{opacity:.8}
+button[disabled],.btn[disabled]{opacity:.4;cursor:not-allowed}
+.mapstub{position:absolute;inset:0;display:flex;flex-direction:column;gap:12px;
+  align-items:center;justify-content:center;text-align:center;padding:22px;
+  font-size:13.5px;line-height:1.5;background:rgba(127,127,127,.10)}
+.mapstub button{font:inherit;font-size:13px;padding:11px 20px;cursor:pointer;
+  border:1px solid currentColor;background:transparent;color:inherit;border-radius:3px}
+.mapstub button:hover{opacity:.72}
+.map{position:relative}
+#ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:95;display:none;max-width:440px;
+  padding:18px 20px;background:#101114;color:#F2F0EC;font-size:13.5px;line-height:1.6;
+  border:1px solid rgba(255,255,255,.14);border-radius:6px;
+  box-shadow:0 18px 48px rgba(0,0,0,.45)}
+#ck.on{display:block}
+#ck a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+#ck .ckb{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+#ck button{font:inherit;font-size:12.5px;font-weight:600;letter-spacing:.04em;padding:11px 20px;
+  cursor:pointer;border-radius:4px;border:1px solid rgba(255,255,255,.3);
+  background:transparent;color:#F2F0EC}
+#ck button.y{background:#F2F0EC;color:#101114;border-color:#F2F0EC}
+#ck button:hover{opacity:.85}
+@media(max-width:760px){#ck{bottom:84px;left:10px;right:10px}}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <nav class="w nav">
+    <a class="brand" href="#">Origami<s>Большая, 270</s></a>
+    <a class="lk" href="#list">Почему Origami</a>
+    <a class="lk" href="#karta">Диагностическая карта</a>
+    <a class="lk" href="#garantiya">Договор и гарантия</a>
+    <a class="lk" href="#adresa">Три адреса</a>
+    <a class="lk" href="#kontakty">Контакты</a>
+    <a class="btn" href="tel:+73832123270">Записаться</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Автосервис · Большая улица, 270 · Ленинский район · три адреса в городе</p>
+    <h1 class="up">Разберём и соберём<br>ровно то, что было.<br><em>Без лишних деталей</em></h1>
+    <p class="sub up">Ходовая часть, двигатель, автоэлектрика, стартеры и генераторы, инжекторы,
+      выхлоп, шиномонтаж, отогрев зимой. Всё, что мы нашли, вы видите на диагностической карте
+      с ценой по каждой строке — до того, как мы начнём.</p>
+    <div class="acts up">
+      <a class="btn" href="tel:+73832123270">+7 383 212-32-70
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#karta">Как выглядит наша карта</a>
+    </div>
+    <div class="figs up">
+      <div><b>4,7</b><span>по 748 отзывам в 2ГИС</span></div>
+      <div><b>3 адреса</b><span>Большая, Чемская, Большевистская</span></div>
+      <div><b>До 1 года</b><span>гарантия на оригинальные запчасти и их замену</span></div>
+      <div><b>7 дней</b><span>ежедневно с 9:00 до 20:00</span></div>
+    </div>
+    <figure class="shot up">
+      <img src="photo/priem.jpg" alt="Зона приёмки автосервиса Origami: красная стойка, лампы, витрина" fetchpriority="high" decoding="async">
+      <figcaption>Приёмка на Большой, 270. Здесь вам заполняют карту и подписывают
+        договор — до того, как машина заедет на подъёмник.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="list" class="thesis">
+  <div class="w">
+    <p class="tag up">Почему Origami</p>
+    <h2 class="up" style="margin-top:14px">Оригами складывают<br>из одного листа</h2>
+    <p class="up" style="margin-top:18px">Без клея, без ножниц и без деталей со стороны.
+      Разворачиваешь — и получаешь тот же лист, целый. Мы взяли это название не ради красоты:
+      от автосервиса хотят ровно того же.</p>
+    <div class="tgrid">
+      <article class="up">
+        <h3>Ничего не добавляем от себя</h3>
+        <p>В карту попадает то, что мы действительно нашли, а не то, что могло бы пригодиться.
+          Каждый пункт можно проверить в другом сервисе — мы к этому спокойно относимся.</p>
+      </article>
+      <article class="up">
+        <h3>Ничего не остаётся лишним</h3>
+        <p>Разобрали — собрали в том же составе. Крепёж, клипсы, хомуты, защита: всё
+          возвращается на место, а не остаётся в коробке «так и было».</p>
+      </article>
+      <article class="up">
+        <h3>Сгиб виден заранее</h3>
+        <p>Стоимость каждой позиции проставляется до начала работ, а не появляется
+          в счёте после. Итог вы видите раньше, чем машина заедет в бокс.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="karta">
+  <div class="w">
+    <p class="tag up">Главный документ</p>
+    <h2 class="up" style="margin-top:14px">Диагностическая карта:<br>у каждого узла — <em>статус</em></h2>
+    <p class="up" style="margin-top:18px">Это не список «надо поменять». Это бланк, где напротив
+      каждого узла стоит один из шести значков — и вы сразу видите разницу между «требует замены»
+      и «просто долить». Рядом от руки проставляется цена, если работу делать.</p>
+    <div class="card2">
+      <figure class="up">
+        <img src="photo/karta.jpg" alt="Заполненная диагностическая карта Origami с состоянием узлов и ценами" loading="lazy" decoding="async">
+        <figcaption>Настоящая карта после осмотра. Данные клиента на снимке скрыты,
+          итог по этой машине — 20 360 ₽.</figcaption>
+      </figure>
+      <div class="legend">
+        <div class="up">
+          <span class="sym"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l5 5L20 7"/></svg></span>
+          <div><b>В допуске</b><span>Узел исправен, ничего делать не нужно. Таких строк
+            в карте обычно больше всего.</span></div>
+        </div>
+        <div class="up">
+          <span class="sym"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span>
+          <div><b>Рекомендовано к замене</b><span>Ездить можно, но ресурс на исходе.
+            Это то, что можно спокойно отложить и спланировать.</span></div>
+        </div>
+        <div class="up">
+          <span class="sym"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg></span>
+          <div><b>Требует замены</b><span>Откладывать нельзя: влияет на безопасность
+            или потянет за собой другие узлы.</span></div>
+        </div>
+        <div class="up">
+          <span class="sym">П</span>
+          <div><b>Требует доп. проверок</b><span>Мы не уверены и честно это отмечаем,
+            вместо того чтобы записать в замену на всякий случай.</span></div>
+        </div>
+        <div class="up">
+          <span class="sym">Д</span>
+          <div><b>Долить</b><span>Уровень жидкости ниже нормы. Отдельный статус — чтобы
+            доливку не путали с ремонтом.</span></div>
+        </div>
+        <div class="up">
+          <span class="sym">Н</span>
+          <div><b>Не проверялось</b><span>Проверить невозможно — например, узел закрыт
+            или нужен разбор. Мы пишем это прямо, а не оставляем пустую клетку.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="garantiya" class="deal">
+  <div class="w">
+    <p class="tag up">Договор и гарантия</p>
+    <h2 class="up" style="margin-top:14px">Три срока гарантии<br>вместо одного «гарантия есть»</h2>
+    <p class="up" style="margin-top:18px">Условия напечатаны на нашем договоре заказ-наряда —
+      их можно прочитать до подписи. Срок зависит от того, что именно делали и какие детали
+      ставили; действует то, что наступит раньше.</p>
+    <div class="dgrid">
+      <dl class="terms">
+        <div class="up"><dt>5 дней / 100 км</dt>
+          <dd>На <b>диагностику, регулировку агрегатов, шиномонтажные и электротехнические
+            работы</b> — то, где результат виден сразу.</dd></div>
+        <div class="up"><dt>3 месяца / 2 000 км</dt>
+          <dd>На <b>неоригинальные запасные части</b> и на их замену.</dd></div>
+        <div class="up"><dt>1 год / 10 000 км</dt>
+          <dd>На <b>оригинальные запасные части</b> и на их замену. Отдельно действует
+            «Честная гарантия» — один год на услуги автосервиса.</dd></div>
+        <div class="up"><dt>Условие</dt>
+          <dd>Гарантия распространяется на запчасти, <b>купленные и установленные у нас</b>.
+            Если деталь ваша, мы всё равно её поставим — просто честно скажем, что отвечаем
+            тогда только за работу.</dd></div>
+      </dl>
+      <figure class="up">
+        <img src="photo/dogovor.jpg" alt="Договор заказ-наряд Origami с условиями гарантии" loading="lazy" decoding="async">
+        <figcaption>Договор заказ-наряд. Данные клиента на снимке скрыты.</figcaption>
+      </figure>
+    </div>
+    <div class="sign up">
+      <p>В договоре есть строка, под которой вы ставите подпись:
+        <strong>«С объёмом работ и первоначальной стоимостью СОГЛАСЕН»</strong>.
+        Всё, что появляется сверх неё, — только после звонка и вашего «да».
+        Это правило, а не пожелание.</p>
+    </div>
+  </div>
+</section>
+
+<section id="raboty">
+  <div class="w">
+    <p class="tag up">Услуги</p>
+    <h2 class="up" style="margin-top:14px">Что делаем</h2>
+    <div class="svc">
+      <div class="up"><b>Ходовая часть</b><p>Наша главная специализация: рычаги, сайлентблоки,
+        ступичные подшипники, стойки, подрамник, тормоза.</p></div>
+      <div class="up"><b>Двигатель</b><p>Диагностика и ремонт, замена масла и расходников,
+        ремни и ролики, сальники.</p></div>
+      <div class="up"><b>Автоэлектрика</b><p>Ремонт электронных систем, поиск обрывов,
+        датчики, свет, диагностика по ошибкам.</p></div>
+      <div class="up"><b>Стартеры и генераторы</b><p>Ремонт узла с проверкой
+        до установки, а не только замена в сборе.</p></div>
+      <div class="up"><b>Инжекторы</b><p>Промывка и ремонт форсунок,
+        диагностика топливной системы.</p></div>
+      <div class="up"><b>Выхлопная система</b><p>Ремонт и замена элементов выпуска,
+        сварка, устранение прогаров.</p></div>
+      <div class="up"><b>Шиномонтаж</b><p>По записи, на конкретное время —
+        чтобы не стоять в сезонной очереди.</p></div>
+      <div class="up"><b>Отогрев автомобилей</b><p>Зимняя услуга, которой нет
+        у большинства сервисов. Приедем и отогреем.</p></div>
+      <div class="up"><b>Запчасти и автохимия</b><p>Своя розница: подвеска, тормозная
+        и топливная системы, электрика, расходники, масла.</p></div>
+    </div>
+    <div class="g3">
+      <figure class="up"><img src="photo/polo.jpg" alt="Автомобиль на двухстоечном подъёмнике в светлом цеху Origami" loading="lazy" decoding="async">
+        <figcaption>Цех на Большой: светло, чисто, машину видно целиком</figcaption></figure>
+      <figure class="up"><img src="photo/rychag.jpg" alt="Рычаг подвески и шаровая опора крупным планом" loading="lazy" decoding="async">
+        <figcaption>Ходовая — то, ради чего к нам чаще всего едут</figcaption></figure>
+      <figure class="up"><img src="photo/podramnik.jpg" alt="Подрамник и элементы крепления подвески снизу" loading="lazy" decoding="async">
+        <figcaption>Осмотр снизу: отсюда и начинается диагностическая карта</figcaption></figure>
+      <figure class="up"><img src="photo/mercedes.jpg" alt="Автомобиль Mercedes на подъёмнике, работают мастера" loading="lazy" decoding="async">
+        <figcaption>Работаем с японцами, немцами, французами и корейцами</figcaption></figure>
+      <figure class="up"><img src="photo/sportage.jpg" alt="Кроссовер Kia Sportage на подъёмнике" loading="lazy" decoding="async">
+        <figcaption>Кроссоверы и внедорожники — тот же порядок работы</figcaption></figure>
+      <figure class="up"><img src="photo/filter.jpg" alt="Масляный фильтр в руке мастера" loading="lazy" decoding="async">
+        <figcaption>Снятое показываем в руках, а не описываем словами</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="adresa">
+  <div class="w">
+    <p class="tag up">Три адреса</p>
+    <h2 class="up" style="margin-top:14px">Origami — это не одна<br>станция, а три</h2>
+    <p class="up" style="margin-top:18px">Порядок работы, документы и гарантия везде одинаковые.
+      Выбирайте тот адрес, до которого ближе.</p>
+    <div class="pts">
+      <article class="up here">
+        <p class="mark">Эта страница</p>
+        <h3>Большая улица, 270</h3>
+        <a href="tel:+73832123270">+7 383 212-32-70</a>
+      </article>
+      <article class="up">
+        <p class="mark">Кировский район</p>
+        <h3>Чемская улица, 1</h3>
+        <a href="tel:+73832126126">+7 383 212-61-26</a>
+      </article>
+      <article class="up">
+        <p class="mark">Октябрьский район</p>
+        <h3>Большевистская улица, 26В</h3>
+        <a href="tel:+73832279822">+7 383 227-98-22</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy" class="said">
+  <div class="w">
+    <p class="tag up">Отзывы · 4,7 из 5 по 748 оценкам в 2ГИС</p>
+    <blockquote class="up" style="margin-top:22px">
+      <p class="bigq">«Никогда бы не подумала, что можно отремонтировать машину без накруток
+        и предвзятости как к женщине за рулём»</p>
+      <p class="by">Алиса Клюш · отзыв в 2ГИС · 12 июня 2026</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>Я с ходовой был на двух сервисах, ремонта хватало на неделю и снова капец.
+          Отремонтировался в Origami в мае — на сегодня вообще без проблем машина.</p>
+        <cite>Денис Скутров · 21 июня 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Мастера подошли к вопросу о замене ступичных подшипников серьёзно. Сделали
+          всё быстро и качественно. Указали на нюансы мастеров, которые проводили
+          до них эту работу.</p>
+        <cite>Никита Сысо · 1 августа 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Последние пару лет там обслуживаюсь. Есть несколько отличных мастеров —
+          сравнивал с другими сервисами, диагнозы ставили на 100% правильно.
+          Цены адекватные.</p>
+        <cite>Виталий Бараксанов · 10 июня 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Клиентоориентированность на первом месте. Быстрый ремонт и консультация,
+          берут любые ремонты в своей сфере.</p>
+        <cite>Елена Беляева · 3 июня 2026</cite>
+      </blockquote>
+    </div>
+    <div class="acts up" style="margin-top:38px">
+      <a class="btn g" href="https://2gis.ru/firm/70000001031952492" target="_blank" rel="noopener">
+        Все 748 отзывов в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty">
+  <div class="w split">
+    <div class="up">
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:14px">Большая улица, 270</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>Большая улица, 270<br><span class="q2">Ленинский район, Новосибирск</span></dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+73832123270">+7 383 212-32-70</a></dd></div>
+        <div><dt>Ещё адреса</dt><dd>Чемская, 1 · <a href="tel:+73832126126">212-61-26</a><br>
+          Большевистская, 26В · <a href="tel:+73832279822">227-98-22</a></dd></div>
+        <div><dt>Режим</dt><dd>Ежедневно 9:00–20:00<br><span class="q2">без выходных</span></dd></div>
+        <div><dt>Документы</dt><dd>Диагностическая карта и договор заказ-наряд на каждый визит</dd></div>
+        <div><dt>Оплата</dt><dd>Картой, наличными, по QR, переводом, через банк, «Плати частями»</dd></div>
+      </div>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="tel:+73832123270">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/70000001031952492" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <div class="mapstub" data-src="https://yandex.ru/map-widget/v1/?ll=82.864811%2C55.009627&z=16&text=Новосибирск%2C%20Большая%20улица%2C%20270" data-title="Карта: Большая улица, 270">
+          <span>Карта загружается с сервера «Яндекса» и устанавливает свои cookie.</span>
+          <button type="button">Показать карту</button>
+        </div>
+      </div>
+      <h2 style="font-size:clamp(21px,2.5vw,31px);margin-top:34px">Записаться</h2>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Алиса"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 913 000-00-00"></div>
+        <div><label for="c">Машина</label><input id="c" name="car" placeholder="Volkswagen Polo, 2015"></div>
+        <div><label for="m">Что беспокоит</label><textarea id="m" name="message" placeholder="Гул при движении, подозрение на ступичный подшипник"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cmp">Компания</label><input id="cmp" name="company" tabindex="-1" autocomplete="off"></div>
+        <label class="agree"><input type="checkbox" id="ag" name="consent" required>
+          <span>Я даю согласие на обработку моих персональных данных в соответствии
+          с <a href="privacy/" target="_blank" rel="noopener">Политикой обработки персональных данных</a></span></label>
+        <label class="agree opt"><input type="checkbox" id="adv" name="ads">
+          <span>Хочу получать напоминания о плановом обслуживании и сообщения об акциях
+          (необязательно)</span></label>
+        <button id="sb" class="btn" type="submit" disabled>Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Заявку обрабатываем только для того, чтобы перезвонить
+          и записать вас на удобное время. Согласие можно отозвать в любой момент —
+          порядок описан в <a href="privacy/">политике</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="ck" role="dialog" aria-label="Файлы cookie">
+  Мы используем файлы cookie: технически необходимые для работы страницы и те, что
+  устанавливает виджет «Яндекс.Карт». Аналитику и рекламные счётчики без вашего согласия
+  не подключаем. Подробности — в <a href="privacy/">Политике обработки персональных данных</a>.
+  <div class="ckb">
+    <button class="y" type="button" data-ck="y">Принять</button>
+    <button type="button" data-ck="n">Отклонить</button>
+  </div>
+</div>
+
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">Origami<s>Большая, 270</s></div>
+    Большая улица, 270, Новосибирск · ежедневно 9:00–20:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+73832123270">+7 383 212-32-70</a>
+    <a href="https://2gis.ru/firm/70000001031952492" target="_blank" rel="noopener">2ГИС</a>
+    <a href="privacy/">Политика обработки персональных данных</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+73832123270">Позвонить</a>
+  <a class="btn g" href="#karta">Карта осмотра</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"Origami",
+"description":"Автосервис по ремонту ходовой части, двигателя и автоэлектрики: ремонт стартеров и генераторов, ремонт электронных систем, ремонт инжекторов и выхлопных систем, замена масла, шиномонтаж, отогрев автомобилей, запчасти для иномарок и автохимия. Диагностическая карта с состоянием каждого узла и стоимостью работ, договор заказ-наряд, гарантия до 1 года.",
+"address":{"@type":"PostalAddress","streetAddress":"Большая улица, 270","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":55.009627,"longitude":82.864811},
+"telephone":"+73832123270",
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"09:00","closes":"20:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"748","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/70000001031952492","https://vk.com/sto.origami"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и запишем на время.';ok.style.display='block';f.reset();return}}catch(_){}}
+  ok.innerHTML='Приём заявок пока настраивается. Позвоните, пожалуйста: <a href="tel:+73832123270">+7 383 212-32-70</a>.';
+  ok.style.display='block';
+});
+</script>
+<script>
+(function(){
+  var K='ck-choice', box=document.getElementById('ck');
+  function loadMap(){
+    document.querySelectorAll('.mapstub[data-src]').forEach(function(s){
+      var f=document.createElement('iframe');
+      f.loading='lazy'; f.title=s.dataset.title||'Карта проезда'; f.src=s.dataset.src;
+      f.style.width='100%'; f.style.height='100%'; f.style.border='0';
+      s.parentNode.appendChild(f); s.remove();
+    });
+  }
+  var saved=null; try{saved=localStorage.getItem(K)}catch(e){}
+  if(saved==='y'){loadMap()} else if(!saved && box){box.classList.add('on')}
+  if(box) box.addEventListener('click',function(e){
+    var b=e.target.closest('[data-ck]'); if(!b)return;
+    try{localStorage.setItem(K,b.dataset.ck)}catch(e){}
+    box.classList.remove('on'); if(b.dataset.ck==='y') loadMap();
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.mapstub button')) loadMap();
+  });
+  var ag=document.getElementById('ag'), sb=document.getElementById('sb');
+  if(ag&&sb){ var sync=function(){sb.disabled=!ag.checked}; sync();
+    ag.addEventListener('change',sync); }
+})();
+</script>
+</body>
+</html>
