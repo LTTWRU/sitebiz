@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Motobox — мотосервис, мотошиномонтаж и хранение в Новосибирске, Покатная, 18</title>
+<meta name="description" content="Motobox, Новосибирск, Покатная улица, 18. Ремонт и тюнинг мототехники: двигатель и КПП, настройка карбюраторов, электрика, нестандартные доработки. Мотошиномонтаж, правка и прокатка дисков, сварка и покраска дисков, замена колодок. Зимнее хранение мотоциклов. Пн–Сб 10:00–19:00, 5,0 по 78 отзывам в 2ГИС.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Motobox — мотосервис на Покатной, 18">
+<meta property="og:description" content="Берёмся за то, от чего отказались другие. Сервис, мотошиномонтаж и зимнее хранение в одном месте. 5,0 по 78 отзывам.">
+<meta property="og:image" content="photo/hero.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23EFEFEC'/><circle cx='8' cy='21' r='5.4' fill='none' stroke='%23E4571D' stroke-width='2.4'/><circle cx='24' cy='21' r='5.4' fill='none' stroke='%23E4571D' stroke-width='2.4'/><path d='M8 21l6-8h6l4 8' fill='none' stroke='%23131417' stroke-width='2.4' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../fonts/montserrat.css">
+<link rel="stylesheet" href="../fonts/golos-text.css">
+<style>
+/* Motobox. Сюжет один и очень сильный: у Константина обломались болты выхлопной,
+   все мастерские города отказались, Владимир взял мотоцикл и сделал за сутки.
+   С этого страница и начинается. Оранжевый — с их же кадров: KTM у ворот
+   и жёлто-синий бокс на Покатной. Кнопка обшита протектором, который
+   при наведении прокатывается по всей поверхности. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pa:#EFEFEC; --pa-2:#E1E1DD; --card:#FFFFFF;
+  --ink:#131417; --ink-2:#525459; --ink-3:#87898F;
+  --line:#D8D8D3; --line-2:#B7B7B1;
+  --or:#E4571D; --or-2:#9E3A0F; --or-soft:#FBE6DA;
+  --wrap:1050px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--pa);color:var(--ink);
+  font:400 16.5px/1.72 "Golos Text",-apple-system,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(58px,8vw,104px) 0}
+section[id]{scroll-margin-top:80px}
+h1,h2,h3{font-family:Montserrat,-apple-system,sans-serif}
+h1,h2{font-weight:800;line-height:1.05;letter-spacing:-.04em;text-wrap:balance}
+h1{font-size:clamp(31px,5vw,58px)}
+h2{font-size:clamp(24px,3.3vw,42px)}
+h3{font-size:18px;font-weight:700;line-height:1.28;letter-spacing:-.03em}
+p{max-width:60ch}
+em{font-style:normal;color:var(--or)}
+.tag{font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--or)}
+.q2{color:var(--ink-2)}
+
+/* Кнопка: слева полоска протектора. При наведении она прокатывается
+   по всей кнопке — как колесо, которое тронулось с места. */
+.btn{position:relative;isolation:isolate;overflow:hidden;
+  display:inline-flex;align-items:center;gap:11px;font-family:Montserrat,sans-serif;
+  font-weight:700;font-size:13.5px;letter-spacing:-.01em;padding:16px 30px 16px 34px;
+  background:var(--ink);color:#F2F2EF;
+  transition:transform .26s var(--ease)}
+.btn::before{content:"";position:absolute;left:0;top:0;bottom:0;width:12px;z-index:1;
+  background:var(--or);
+  -webkit-mask-image:repeating-linear-gradient(-26deg,#000 0 4px,transparent 4px 9px);
+  mask-image:repeating-linear-gradient(-26deg,#000 0 4px,transparent 4px 9px);
+  transition:width .48s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:hover::before{width:100%}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;
+  transition:transform .32s var(--ease);position:relative;z-index:2}
+.btn:hover svg{transform:translateX(5px)}
+.btn.g{color:var(--ink);background:transparent;box-shadow:inset 0 0 0 1.6px var(--line-2)}
+.btn.g:hover{box-shadow:inset 0 0 0 1.6px var(--ink)}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:15px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(239,239,236,.95);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:9px 0}
+.nav{display:flex;align-items:center;gap:22px}
+.brand{margin-right:auto;font-family:Montserrat,sans-serif;font-weight:800;font-size:19px;
+  letter-spacing:-.05em;line-height:1.14;text-transform:uppercase}
+.brand s{display:block;text-decoration:none;font-family:"Golos Text",sans-serif;font-size:9.5px;
+  font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--or);margin-top:4px}
+.lk{font-size:14.5px;color:var(--ink-2);transition:color .2s}
+.lk:hover{color:var(--or)}
+@media(max-width:1060px){.lk{display:none}}
+@media(max-width:460px){.nav{gap:11px}.brand{font-size:16px}.btn{padding:13px 20px 13px 24px;font-size:12.5px}}
+
+.hero{padding-top:clamp(118px,15vw,178px);padding-bottom:clamp(26px,4vw,46px)}
+.hero h1{margin:16px 0 22px}
+.hero .sub{font-size:clamp(16px,1.8vw,18.5px);color:var(--ink-2);max-width:52ch;line-height:1.7}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,3vw,38px);
+  margin-top:clamp(38px,6vw,66px);padding-top:26px;border-top:2px solid var(--ink)}
+.figs b{display:block;font-family:Montserrat,sans-serif;font-weight:800;
+  font-size:clamp(20px,2.6vw,32px);letter-spacing:-.055em;line-height:1.05;
+  font-variant-numeric:tabular-nums;color:var(--or)}
+.figs span{display:block;margin-top:10px;font-size:12.5px;color:var(--ink-3);line-height:1.5}
+@media(max-width:700px){.figs{grid-template-columns:repeat(2,1fr)}}
+
+.shot{margin-top:clamp(34px,5vw,56px)}
+.shot img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--pa-2)}
+.shot figcaption{margin-top:11px;font-size:13.5px;color:var(--ink-3);max-width:58ch}
+
+/* Три двери */
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,26px);
+  margin-top:clamp(32px,4.2vw,50px)}
+@media(max-width:840px){.three{grid-template-columns:1fr}}
+.three article{background:var(--card);border:1px solid var(--line);overflow:hidden;
+  transition:border-color .25s var(--ease),transform .25s var(--ease)}
+.three article:hover{border-color:var(--or);transform:translateY(-3px)}
+.three img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--pa-2)}
+.three .tx{padding:clamp(20px,2.4vw,26px)}
+.three h3{margin-bottom:9px;font-weight:800;font-size:20px}
+.three p{font-size:14.5px;color:var(--ink-2)}
+
+.dark{background:var(--ink);color:#C8CACE}
+.dark .tag{color:#F0834F}
+.dark h2{color:#FFFFFF}
+.dark p{color:#9C9FA5}
+.dark h3{color:#FFFFFF}
+.pull{font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(19px,2.4vw,29px);
+  line-height:1.2;letter-spacing:-.045em;color:#FFFFFF;max-width:27ch;
+  border-left:4px solid var(--or);padding-left:20px;margin-top:26px}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,26px);
+  margin-top:clamp(28px,3.6vw,44px)}
+@media(max-width:820px){.grid3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.grid3{grid-template-columns:1fr}}
+.grid3 div{border-top:2px solid var(--line-2);padding-top:15px;transition:border-color .25s var(--ease)}
+.grid3 div:hover{border-top-color:var(--or)}
+.grid3 b{display:block;font-family:Montserrat,sans-serif;font-weight:800;font-size:16.5px;
+  letter-spacing:-.04em;margin-bottom:7px}
+.grid3 p{font-size:14.5px;color:var(--ink-2)}
+
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,50px);
+  margin-top:clamp(26px,3.4vw,42px)}
+@media(max-width:800px){.fgrid{grid-template-columns:1fr;gap:28px}}
+.fgrid h3{margin-bottom:9px;font-weight:800;font-size:19px}
+.fgrid p{font-size:15.5px}
+
+.pale{background:var(--pa-2)}
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2vw,24px);
+  margin-top:clamp(30px,4vw,48px)}
+@media(max-width:700px){.g2{grid-template-columns:1fr;gap:22px}}
+.g2 img{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--pa-2)}
+.g2 figcaption{margin-top:11px;font-size:14px;color:var(--ink-2)}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.8vw,20px);
+  margin-top:clamp(26px,3.4vw,40px)}
+@media(max-width:700px){.g3{grid-template-columns:1fr 1fr}}
+.g3 img{aspect-ratio:3/4;object-fit:cover;width:100%;background:var(--pa-2)}
+
+.bigq{font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(21px,3vw,38px);
+  line-height:1.14;letter-spacing:-.05em;max-width:22ch}
+.by{font-size:12.5px;color:var(--ink-3);margin-top:22px;letter-spacing:.04em}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,56px);
+  margin-top:clamp(36px,5vw,60px)}
+@media(max-width:820px){.pair{grid-template-columns:1fr;gap:32px}}
+.pair p{font-size:15.5px;color:var(--ink-2)}
+.pair cite{display:block;font-style:normal;font-size:12.5px;color:var(--ink-3);margin-top:13px;
+  letter-spacing:.04em}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,68px)}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
+.rows{border-top:2px solid var(--ink);margin-top:26px}
+.rows>div{display:grid;grid-template-columns:124px 1fr;gap:18px;padding:15px 0;
+  border-bottom:1px solid var(--line);font-size:16px}
+.rows dt{font-size:10.5px;color:var(--ink-3);padding-top:7px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.13em}
+.rows a:hover{color:var(--or)}
+@media(max-width:520px){.rows>div{grid-template-columns:1fr;gap:3px}}
+.map{aspect-ratio:16/10;background:var(--pa-2);overflow:hidden}
+.map iframe{width:100%;height:100%;border:0}
+form{margin-top:20px;display:grid;gap:15px}
+label{display:block;font-size:10.5px;color:var(--ink-3);margin-bottom:7px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.13em}
+input,textarea{width:100%;background:var(--card);border:1px solid var(--line-2);color:var(--ink);
+  padding:13px 15px;font:400 16px/1.5 "Golos Text",sans-serif;transition:border-color .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--or)}
+textarea{min-height:100px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fine{font-size:12.5px;color:var(--ink-3);line-height:1.6;max-width:52ch}
+.sent{display:none;padding:13px 15px;border:1px solid var(--or);background:var(--or-soft);
+  font-size:15px}
+.sent a{color:var(--or-2);text-decoration:underline}
+
+footer{border-top:1px solid var(--line);padding:34px 0 44px;font-size:14px;color:var(--ink-3)}
+.fin{display:flex;gap:26px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+footer a:hover{color:var(--or)}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:8px;padding:9px 12px;
+  background:rgba(239,239,236,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  width:100%;max-width:100vw}
+.bar a{flex:1 1 0;min-width:0;white-space:nowrap;text-align:center;justify-content:center;
+  padding:13px 8px 13px 18px;font-size:12.5px}
+@media(max-width:760px){.bar{display:flex}body{padding-bottom:70px}}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--or);outline-offset:3px}
+/* --- 152-ФЗ --- */
+/* --- 152-ФЗ: согласие, cookie, отложенная карта --- */
+.agree{display:grid;grid-template-columns:19px 1fr;gap:12px;align-items:start;
+  font:400 13.5px/1.55 inherit;font-family:inherit;letter-spacing:normal;text-transform:none;
+  color:inherit;margin:0;cursor:pointer;max-width:52ch}
+.agree span{display:block;letter-spacing:normal;text-transform:none}
+.agree input{width:19px;height:19px;margin:2px 0 0;accent-color:currentColor;cursor:pointer;flex:none}
+.agree a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.agree.opt{opacity:.8}
+button[disabled],.btn[disabled]{opacity:.4;cursor:not-allowed}
+.mapstub{position:absolute;inset:0;display:flex;flex-direction:column;gap:12px;
+  align-items:center;justify-content:center;text-align:center;padding:22px;
+  font-size:13.5px;line-height:1.5;background:rgba(127,127,127,.10)}
+.mapstub button{font:inherit;font-size:13px;padding:11px 20px;cursor:pointer;
+  border:1px solid currentColor;background:transparent;color:inherit;border-radius:3px}
+.mapstub button:hover{opacity:.72}
+.map{position:relative}
+#ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:95;display:none;max-width:440px;
+  padding:18px 20px;background:#101114;color:#F2F0EC;font-size:13.5px;line-height:1.6;
+  border:1px solid rgba(255,255,255,.14);border-radius:6px;
+  box-shadow:0 18px 48px rgba(0,0,0,.45)}
+#ck.on{display:block}
+#ck a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+#ck .ckb{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+#ck button{font:inherit;font-size:12.5px;font-weight:600;letter-spacing:.04em;padding:11px 20px;
+  cursor:pointer;border-radius:4px;border:1px solid rgba(255,255,255,.3);
+  background:transparent;color:#F2F0EC}
+#ck button.y{background:#F2F0EC;color:#101114;border-color:#F2F0EC}
+#ck button:hover{opacity:.85}
+@media(max-width:760px){#ck{bottom:84px;left:10px;right:10px}}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <nav class="w nav">
+    <a class="brand" href="#">Motobox<s>Покатная, 18</s></a>
+    <a class="lk" href="#tri">Три двери</a>
+    <a class="lk" href="#raboty">Что делаем</a>
+    <a class="lk" href="#chestno">Честно</a>
+    <a class="lk" href="#otzyvy">Отзывы</a>
+    <a class="lk" href="#kontakty">Контакты</a>
+    <a class="btn" href="tel:+79231844679">Записаться</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Мотосервис, мотошиномонтаж и хранение · Покатная улица, 18 · Октябрьский район</p>
+    <h1 class="up">Беремся, когда<br>отказались <em>другие</em></h1>
+    <p class="sub up">Константин при самостоятельной замене выхлопной обломал болты
+      на Djebel 250. Все мастерские города отказались — мы забрали мотоцикл и отдали
+      через сутки, вместе с новой трубой. Такие задачи нам интереснее, чем
+      «поменять масло и отпустить».</p>
+    <div class="acts up">
+      <a class="btn" href="tel:+79231844679">+7 923 184-46-79
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#tri">Что у нас есть</a>
+    </div>
+    <div class="figs up">
+      <div><b>5,0</b><span>средняя оценка по 78 отзывам в 2ГИС</span></div>
+      <div><b>3 в одном</b><span>сервис, шиномонтаж и зимнее хранение</span></div>
+      <div><b>По записи</b><span>сроки называем и держим</span></div>
+      <div><b>Пн–Сб</b><span>10:00–19:00, воскресенье — выходной</span></div>
+    </div>
+    <figure class="shot up">
+      <img src="photo/hero.jpg" alt="Дорожный мотоцикл у бокса Motobox" fetchpriority="high" decoding="async">
+      <figcaption>Мотоцикл после обслуживания у наших ворот на Покатной.
+        Сезон в Сибири короткий — простой в ремонте здесь дороже, чем деньги.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="tri">
+  <div class="w">
+    <p class="tag up">Три двери</p>
+    <h2 class="up" style="margin-top:14px">Всё в одном месте —<br>и это не про удобство</h2>
+    <p class="up" style="margin-top:18px;color:var(--ink-2)">Это про то, что мотоцикл не надо
+      возить по городу между сервисом, шиномонтажом и гаражом на зиму. Один адрес,
+      одни люди, одна ответственность.</p>
+    <div class="three">
+      <article class="up">
+        <img src="photo/engine.jpg" alt="Разобранный мотоцикл с извлечённым двигателем в цехе" loading="lazy" decoding="async">
+        <div class="tx"><h3>Сервис</h3>
+          <p>От ТО до полной переборки мотора и восстановления коробки. Карбюраторы,
+            электрика, выхлоп, тормоза, подвеска. Нестандартные доработки — тоже сюда.</p></div>
+      </article>
+      <article class="up">
+        <img src="photo/tyre.jpg" alt="Заднее колесо мотоцикла со свежей резиной" loading="lazy" decoding="async">
+        <div class="tx"><h3>Мотошиномонтаж</h3>
+          <p>Замена баллонов, ремонт, балансировка. Плюс работа с дисками: правка,
+            прокатка, сварка и покраска. Замена колодок — заодно.</p></div>
+      </article>
+      <article class="up">
+        <img src="photo/storage.jpg" alt="Мотоциклы на зимнем хранении в помещении" loading="lazy" decoding="async">
+        <div class="tx"><h3>Зимнее хранение</h3>
+          <p>Мотоцикл стоит у нас в тепле и под присмотром, а весной выезжает
+            обслуженным. Мест немного — договариваться лучше до холодов.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="raboty" class="pale">
+  <div class="w">
+    <p class="tag up">Что делаем</p>
+    <h2 class="up" style="margin-top:14px">Работы, за которые<br>берёмся</h2>
+    <div class="grid3">
+      <div class="up"><b>Двигатель и КПП</b>
+        <p>Полная переборка мотора, восстановление коробки. Такие работы у нас делали
+          и на четырёхцилиндровых спортбайках.</p></div>
+      <div class="up"><b>Карбюраторы</b>
+        <p>Чистка, синхронизация, настройка. Мотоцикл после этого заводится и держит
+          холостые так, как должен.</p></div>
+      <div class="up"><b>Выхлоп и обломанные болты</b>
+        <p>Высверливание, восстановление резьбы, замена трубы. Именно с этим
+          к нам едут после отказов в других местах.</p></div>
+      <div class="up"><b>Подвеска и тормоза</b>
+        <p>Вилка, амортизаторы, колодки, диски. Всё, от чего зависит,
+          доедете ли вы до конца сезона.</p></div>
+      <div class="up"><b>Нестандартные задачи</b>
+        <p>Проставки, дуги, туманки, крепления, переделки под себя. Если задача
+          звучит странно — это к нам.</p></div>
+      <div class="up"><b>Расходники</b>
+        <p>Подскажем, какие брать и где, либо возьмём сами. Навязывать своё
+          не будем: цена расходников — ваше дело.</p></div>
+    </div>
+    <div class="g3">
+      <img class="up" src="photo/shop.jpg" alt="Мастерская Motobox изнутри: мотоциклы, инструмент, домкрат" loading="lazy" decoding="async">
+      <img class="up" src="photo/work.jpg" alt="Мастер за работой с мотоциклом" loading="lazy" decoding="async">
+      <img class="up" src="photo/helmets.jpg" alt="Полка со шлемами в мастерской" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<section id="chestno" class="dark">
+  <div class="w">
+    <p class="tag up">Честно</p>
+    <h2 class="up" style="margin-top:14px">Две вещи,<br>о которых нам пишут</h2>
+    <p class="pull up">«Есть момент со временем — долго ждать записи. Я стал заранее
+      записываться»</p>
+    <p class="up" style="margin-top:20px;font-size:13px;color:#8B8E94">Максим Р. ·
+      отзыв в 2ГИС на пять звёзд, 17 июля 2026</p>
+    <div class="fgrid">
+      <article class="up">
+        <h3>Записываться нужно заранее</h3>
+        <p>Мы небольшие, и это правда: в сезон запись расписана вперёд. Зато срок,
+          который мы назвали, — настоящий: мы не берём мотоцикл, чтобы он месяц стоял
+          в углу. Позвоните и займите время заранее — весной и в начале лета это
+          особенно актуально.</p>
+      </article>
+      <article class="up">
+        <h3>Картой пока не принимаем</h3>
+        <p>Наличные или перевод с карты. Терминала у нас нет, и мы не делаем вид,
+          что он есть, — лучше вы узнаете это сейчас, чем на выдаче.
+          Клиенты нам про терминал уже написали, вопрос в работе.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy">
+  <div class="w">
+    <p class="tag up">Отзывы · 5,0 из 5 по 78 оценкам в 2ГИС</p>
+    <blockquote class="up" style="margin-top:22px">
+      <p class="bigq">«Все мастерские города отказались. Владимир взял мотик.
+        Сделал за сутки»</p>
+      <p class="by">Константин · Suzuki Djebel 250 · отзыв в 2ГИС, 5 июля 2026</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>Последние три года обслуживаю мотоцикл только здесь. Есть зимнее хранение
+          и шиномонтаж — удобно, что всё в одном месте. Ребята всегда консультируют,
+          подсказывают, какие и где расходники приобрести, либо приобретают сами.
+          По срокам обслуживания всегда всё чётко.</p>
+        <cite>Дмитрий Мосеёнков · 16 августа 2025</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Берутся за разную сложную и тонкую работу и, что немаловажно, успешно её выполняют.
+          Полностью перебрали мотор и восстановили КПП на моей Honda CBR 600 F4i.
+          Эмоции только положительные.</p>
+        <cite>Виталий · 31 августа 2025</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Самое важное, что нестандартные задачи тут тоже решают: проставки, туманки, дуги
+          и многое другое. Цены адекватные, разумные, коллектив более чем адекватный.</p>
+        <cite>Максим Р. · 17 июля 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Ценники реальные. Интересовался в других местах — что-то даже дороже. Оставлял
+          мотоцикл на ремонт, вернули как новый. Проделали большую работу быстро
+          и качественно. Плюс рекомендации.</p>
+        <cite>Порто Димидович · 19 июня 2026</cite>
+      </blockquote>
+    </div>
+    <div class="g2">
+      <figure class="up"><img src="photo/travel.jpg" alt="Мотоцикл с багажом на песчаной дороге в путешествии" loading="lazy" decoding="async">
+        <figcaption>Ради этого мотоцикл и готовят. Перед дальней дорогой смотрим то,
+          что ломается далеко от города.</figcaption></figure>
+      <figure class="up"><img src="photo/many.jpg" alt="Ряд мотоциклов в помещении мастерской" loading="lazy" decoding="async">
+        <figcaption>Осенью бокс выглядит так: сезон закончился, начинается хранение
+          и подготовка к весне.</figcaption></figure>
+    </div>
+    <div class="acts up" style="margin-top:38px">
+      <a class="btn g" href="https://2gis.ru/firm/70000001064331238" target="_blank" rel="noopener">
+        Все 78 отзывов в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty" class="pale">
+  <div class="w split">
+    <div class="up">
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:14px">Покатная, 18</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>Покатная улица, 18, 1 этаж<br><span class="q2">Октябрьский район, Новосибирск</span></dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+79231844679">+7 923 184-46-79</a><br>
+          <span class="q2">WhatsApp и Telegram — на этот же номер</span></dd></div>
+        <div><dt>Режим</dt><dd>Пн–Сб 10:00–19:00<br><span class="q2">воскресенье — выходной</span></dd></div>
+        <div><dt>Профиль</dt><dd>Ремонт и тюнинг мототехники, мотошиномонтаж, диски, зимнее хранение</dd></div>
+        <div><dt>Удобства</dt><dd>Wi-Fi для клиентов, возможна запись</dd></div>
+        <div><dt>Оплата</dt><dd>Наличными, переводом с карты</dd></div>
+      </div>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="tel:+79231844679">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/70000001064331238" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <div class="mapstub" data-src="https://yandex.ru/map-widget/v1/?ll=82.941514%2C55.025933&z=17&text=Новосибирск%2C%20Покатная%20улица%2C%2018" data-title="Карта: Покатная улица, 18">
+          <span>Карта загружается с сервера «Яндекса» и устанавливает свои cookie.</span>
+          <button type="button">Показать карту</button>
+        </div>
+      </div>
+      <h2 style="font-size:clamp(21px,2.5vw,31px);margin-top:34px">Записаться</h2>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Константин"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 923 000-00-00"></div>
+        <div><label for="c">Мотоцикл</label><input id="c" name="car" placeholder="Suzuki Djebel 250"></div>
+        <div><label for="m">Что нужно</label><textarea id="m" name="message" placeholder="Обломал болты выхлопной, нужна замена трубы"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cmp">Компания</label><input id="cmp" name="company" tabindex="-1" autocomplete="off"></div>
+        <label class="agree"><input type="checkbox" id="ag" name="consent" required>
+          <span>Я даю согласие на обработку моих персональных данных в соответствии
+          с <a href="privacy/" target="_blank" rel="noopener">Политикой обработки персональных данных</a></span></label>
+        <label class="agree opt"><input type="checkbox" id="adv" name="ads">
+          <span>Хочу получать напоминания о плановом обслуживании и сообщения об акциях
+          (необязательно)</span></label>
+        <button id="sb" class="btn" type="submit" disabled>Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Заявку обрабатываем только для того, чтобы перезвонить
+          и записать вас на удобное время. Согласие можно отозвать в любой момент —
+          порядок описан в <a href="privacy/">политике</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="ck" role="dialog" aria-label="Файлы cookie">
+  Мы используем файлы cookie: технически необходимые для работы страницы и те, что
+  устанавливает виджет «Яндекс.Карт». Аналитику и рекламные счётчики без вашего согласия
+  не подключаем. Подробности — в <a href="privacy/">Политике обработки персональных данных</a>.
+  <div class="ckb">
+    <button class="y" type="button" data-ck="y">Принять</button>
+    <button type="button" data-ck="n">Отклонить</button>
+  </div>
+</div>
+
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">Motobox<s>Покатная, 18</s></div>
+    Покатная улица, 18, Новосибирск · Пн–Сб 10:00–19:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+79231844679">+7 923 184-46-79</a>
+    <a href="https://2gis.ru/firm/70000001064331238" target="_blank" rel="noopener">2ГИС</a>
+    <a href="privacy/">Политика обработки персональных данных</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+79231844679">Позвонить</a>
+  <a class="btn g" href="#raboty">Что делаем</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"Motobox",
+"description":"Ремонт и тюнинг мототехники: переборка двигателя и коробки передач, настройка карбюраторов, выхлопная система, подвеска и тормоза, нестандартные доработки. Мотошиномонтаж, правка и прокатка дисков, сварка и покраска дисков, замена колодок. Зимнее хранение мотоциклов. Wi-Fi для клиентов, работа по записи.",
+"address":{"@type":"PostalAddress","streetAddress":"Покатная улица, 18","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":55.025933,"longitude":82.941514},
+"telephone":"+79231844679",
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"10:00","closes":"19:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"78","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/70000001064331238","https://vk.com/motobox_nsk"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и назовём время.';ok.style.display='block';f.reset();return}}catch(_){}}
+  ok.innerHTML='Приём заявок пока настраивается. Позвоните, пожалуйста: <a href="tel:+79231844679">+7 923 184-46-79</a>.';
+  ok.style.display='block';
+});
+</script>
+<script>
+(function(){
+  var K='ck-choice', box=document.getElementById('ck');
+  function loadMap(){
+    document.querySelectorAll('.mapstub[data-src]').forEach(function(s){
+      var f=document.createElement('iframe');
+      f.loading='lazy'; f.title=s.dataset.title||'Карта проезда'; f.src=s.dataset.src;
+      f.style.width='100%'; f.style.height='100%'; f.style.border='0';
+      s.parentNode.appendChild(f); s.remove();
+    });
+  }
+  var saved=null; try{saved=localStorage.getItem(K)}catch(e){}
+  if(saved==='y'){loadMap()} else if(!saved && box){box.classList.add('on')}
+  if(box) box.addEventListener('click',function(e){
+    var b=e.target.closest('[data-ck]'); if(!b)return;
+    try{localStorage.setItem(K,b.dataset.ck)}catch(e){}
+    box.classList.remove('on'); if(b.dataset.ck==='y') loadMap();
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.mapstub button')) loadMap();
+  });
+  var ag=document.getElementById('ag'), sb=document.getElementById('sb');
+  if(ag&&sb){ var sync=function(){sb.disabled=!ag.checked}; sync();
+    ag.addEventListener('change',sync); }
+})();
+</script>
+</body>
+</html>

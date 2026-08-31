@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Мастер Вмятин — удаление вмятин без покраски (PDR) в Новосибирске, Ленина, 85</title>
+<meta name="description" content="Мастер Вмятин, Новосибирск, улица Ленина, 85. Удаление вмятин без покраски (PDR) с сохранением заводского лакокрасочного покрытия, свой малярный цех, полировка, детейлинг, оклейка, автостёкла и замена линз. Пн–Сб 09:00–19:00, 5,0 по 199 отзывам в 2ГИС.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Мастер Вмятин — вмятина уходит, краска остаётся">
+<meta property="og:description" content="Ленина, 85. PDR-студия в центре: без покраски, без снятия детали, цена не меняется после оценки. 5,0 по 199 отзывам.">
+<meta property="og:image" content="photo/lines.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0B0D'/><path d='M4 10h24M4 16h24M4 22h24' stroke='%23F2C14E' stroke-width='2.2' stroke-linecap='round'/><circle cx='16' cy='16' r='4.4' fill='%230A0B0D' stroke='%23F2C14E' stroke-width='2.2'/></svg>">
+<link rel="stylesheet" href="../fonts/exo-2.css">
+<link rel="stylesheet" href="../fonts/manrope.css">
+<style>
+/* Мастер Вмятин. PDR — это работа со светом: мастер видит вмятину только
+   в отражении полосатой лампы, и по этим полосам ведёт металл обратно.
+   Полосы света и стали мотивом страницы — они в разделителях, в кнопке
+   и в самом тёмном фоне, взятом у их цокольного бокса. Тёплый жёлтый —
+   из ответов владельца на отзывы: он подписывает их сердечком того же цвета.
+   Главная мысль в заголовке — то, ради чего к ним и едут: краска остаётся
+   заводской. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0A0B0D; --bg-2:#131519; --card:#191C21;
+  --ink:#EDEEF0; --ink-2:#9AA0A8; --ink-3:#6B7178;
+  --line:#1F2228; --line-2:#333940;
+  --am:#F2C14E; --am-2:#B08420; --am-soft:rgba(242,193,78,.14);
+  --wrap:1050px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);
+  font:300 16.5px/1.74 Manrope,-apple-system,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(58px,8vw,104px) 0}
+section[id]{scroll-margin-top:80px}
+h1,h2,h3{font-family:"Exo 2",-apple-system,sans-serif;font-weight:600}
+h1,h2{line-height:1.06;letter-spacing:-.03em;text-wrap:balance}
+h1{font-size:clamp(32px,5.2vw,60px)}
+h2{font-size:clamp(24px,3.3vw,42px)}
+h3{font-size:19px;line-height:1.28;letter-spacing:-.02em}
+p{max-width:60ch}
+em{font-style:normal;color:var(--am)}
+.tag{font-family:"Exo 2",sans-serif;font-size:11.5px;font-weight:600;
+  letter-spacing:.17em;text-transform:uppercase;color:var(--am)}
+.q2{color:var(--ink-2)}
+/* Полосы лампы PDR — разделитель разделов */
+.lamp{height:11px;margin-bottom:24px;
+  background-image:repeating-linear-gradient(0deg,var(--line-2) 0 2px,transparent 2px 5px);
+  max-width:96px}
+
+/* Кнопка: по ней идут полосы света, как по панели под лампой.
+   При наведении полосы съезжают, а тёплый свет заливает кнопку слева. */
+.btn{position:relative;isolation:isolate;overflow:hidden;
+  display:inline-flex;align-items:center;gap:11px;font-family:"Exo 2",sans-serif;
+  font-weight:600;font-size:14px;letter-spacing:.01em;padding:16px 30px;
+  background:var(--am);color:#0A0B0D;
+  transition:transform .26s var(--ease),color .26s var(--ease)}
+.btn::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background-image:repeating-linear-gradient(0deg,rgba(10,11,13,.16) 0 2px,transparent 2px 9px);
+  transition:transform .45s var(--ease),opacity .45s var(--ease)}
+.btn::after{content:"";position:absolute;inset:0;z-index:-1;background:#FFFFFF;
+  transform:translateX(-101%);transition:transform .44s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:hover::before{transform:translateY(4.5px);opacity:.45}
+.btn:hover::after{transform:none}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;
+  transition:transform .32s var(--ease);position:relative;z-index:2}
+.btn:hover svg{transform:translateX(5px)}
+.btn.g{color:var(--ink);background:transparent;box-shadow:inset 0 0 0 1.6px var(--line-2)}
+.btn.g::before{background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.1) 0 2px,transparent 2px 9px)}
+.btn.g::after{background:var(--am)}
+.btn.g:hover{color:#0A0B0D}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:15px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(10,11,13,.94);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:9px 0}
+.nav{display:flex;align-items:center;gap:22px}
+.brand{margin-right:auto;font-family:"Exo 2",sans-serif;font-weight:600;font-size:19px;
+  letter-spacing:-.025em;line-height:1.14}
+.brand s{display:block;text-decoration:none;font-family:Manrope,sans-serif;font-size:9.5px;
+  font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--am);margin-top:4px}
+.lk{font-size:14.5px;color:var(--ink-2);transition:color .2s}
+.lk:hover{color:var(--am)}
+@media(max-width:1060px){.lk{display:none}}
+@media(max-width:460px){.nav{gap:11px}.brand{font-size:16px}.btn{padding:13px 20px;font-size:12.5px}}
+
+.hero{padding-top:clamp(118px,15vw,178px);padding-bottom:clamp(26px,4vw,46px)}
+.hero h1{margin:16px 0 22px}
+.hero .sub{font-size:clamp(16px,1.8vw,18.5px);color:var(--ink-2);max-width:52ch;line-height:1.7}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,3vw,38px);
+  margin-top:clamp(38px,6vw,66px);padding-top:26px;border-top:1px solid var(--line-2)}
+.figs b{display:block;font-family:"Exo 2",sans-serif;font-weight:600;
+  font-size:clamp(20px,2.6vw,32px);letter-spacing:-.035em;line-height:1.05;
+  font-variant-numeric:tabular-nums;color:var(--am)}
+.figs span{display:block;margin-top:10px;font-size:12.5px;color:var(--ink-3);line-height:1.5}
+@media(max-width:700px){.figs{grid-template-columns:repeat(2,1fr)}}
+
+.shot{margin-top:clamp(34px,5vw,56px)}
+.shot img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--bg-2)}
+.shot figcaption{margin-top:11px;font-size:13.5px;color:var(--ink-3);max-width:58ch}
+
+/* Как это работает */
+.how{margin-top:clamp(30px,4vw,50px);counter-reset:h}
+.how>div{display:grid;grid-template-columns:56px 1fr;gap:clamp(16px,3vw,30px);
+  padding:clamp(20px,2.7vw,30px) 0;border-bottom:1px solid var(--line);align-items:start;
+  transition:padding-left .3s var(--ease),background .3s var(--ease)}
+.how>div:first-child{border-top:1px solid var(--line-2)}
+.how>div:hover{padding-left:12px;background:linear-gradient(90deg,var(--am-soft),transparent 58%)}
+.how dt{counter-increment:h;font-family:"Exo 2",sans-serif;font-weight:600;
+  font-size:clamp(20px,2.6vw,30px);letter-spacing:-.04em;line-height:1;color:var(--am)}
+.how dt::after{content:counter(h)}
+.how dd{font-size:15.5px;color:var(--ink-2);line-height:1.68}
+.how dd b{display:block;font-family:"Exo 2",sans-serif;font-weight:600;font-size:19px;
+  color:var(--ink);letter-spacing:-.025em;margin-bottom:8px}
+@media(max-width:560px){.how>div{grid-template-columns:1fr;gap:6px}}
+
+.pale{background:var(--bg-2)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,26px);
+  margin-top:clamp(28px,3.6vw,44px)}
+@media(max-width:820px){.grid3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.grid3{grid-template-columns:1fr}}
+.grid3 div{border-top:1px solid var(--line-2);padding-top:15px;transition:border-color .25s var(--ease)}
+.grid3 div:hover{border-top-color:var(--am)}
+.grid3 b{display:block;font-family:"Exo 2",sans-serif;font-weight:600;font-size:17px;
+  letter-spacing:-.025em;margin-bottom:7px}
+.grid3 p{font-size:14.5px;color:var(--ink-2)}
+
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,50px);
+  margin-top:clamp(26px,3.4vw,42px)}
+@media(max-width:800px){.fgrid{grid-template-columns:1fr;gap:28px}}
+.fgrid h3{margin-bottom:9px}
+.fgrid p{font-size:15.5px;color:var(--ink-2)}
+.pull{font-family:"Exo 2",sans-serif;font-weight:600;font-size:clamp(19px,2.4vw,29px);
+  line-height:1.24;letter-spacing:-.03em;color:#FFFFFF;max-width:28ch;
+  border-left:3px solid var(--am);padding-left:20px;margin-top:26px}
+
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2vw,24px);
+  margin-top:clamp(30px,4vw,48px)}
+@media(max-width:700px){.g2{grid-template-columns:1fr;gap:22px}}
+.g2 img{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--bg-2)}
+.g2 figcaption{margin-top:11px;font-size:14px;color:var(--ink-2)}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.8vw,20px);
+  margin-top:clamp(26px,3.4vw,40px)}
+@media(max-width:700px){.g3{grid-template-columns:1fr 1fr}}
+.g3 img{aspect-ratio:3/4;object-fit:cover;width:100%;background:var(--bg-2)}
+
+.bigq{font-family:"Exo 2",sans-serif;font-weight:600;font-size:clamp(21px,3vw,38px);
+  line-height:1.16;letter-spacing:-.035em;max-width:22ch}
+.by{font-size:12.5px;color:var(--ink-3);margin-top:22px;letter-spacing:.04em}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,56px);
+  margin-top:clamp(36px,5vw,60px)}
+@media(max-width:820px){.pair{grid-template-columns:1fr;gap:32px}}
+.pair p{font-size:15.5px;color:var(--ink-2)}
+.pair cite{display:block;font-style:normal;font-size:12.5px;color:var(--ink-3);margin-top:13px;
+  letter-spacing:.04em}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,68px)}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
+.rows{border-top:1px solid var(--line-2);margin-top:26px}
+.rows>div{display:grid;grid-template-columns:124px 1fr;gap:18px;padding:15px 0;
+  border-bottom:1px solid var(--line);font-size:16px}
+.rows dt{font-size:10.5px;color:var(--ink-3);padding-top:7px;font-weight:500;
+  text-transform:uppercase;letter-spacing:.13em}
+.rows a:hover{color:var(--am)}
+@media(max-width:520px){.rows>div{grid-template-columns:1fr;gap:3px}}
+.map{aspect-ratio:16/10;background:var(--bg-2);overflow:hidden}
+.map iframe{width:100%;height:100%;border:0}
+form{margin-top:20px;display:grid;gap:15px}
+label{display:block;font-size:10.5px;color:var(--ink-3);margin-bottom:7px;font-weight:500;
+  text-transform:uppercase;letter-spacing:.13em}
+input,textarea{width:100%;background:var(--bg-2);border:1px solid var(--line-2);color:var(--ink);
+  padding:13px 15px;font:300 16px/1.5 Manrope,sans-serif;transition:border-color .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--am)}
+textarea{min-height:100px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fine{font-size:12.5px;color:var(--ink-3);line-height:1.6;max-width:52ch}
+.sent{display:none;padding:13px 15px;border:1px solid var(--am);background:var(--am-soft);
+  font-size:15px}
+.sent a{color:var(--am);text-decoration:underline}
+
+footer{border-top:1px solid var(--line);padding:34px 0 44px;font-size:14px;color:var(--ink-3)}
+.fin{display:flex;gap:26px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+footer a:hover{color:var(--am)}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:8px;padding:9px 12px;
+  background:rgba(10,11,13,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  width:100%;max-width:100vw}
+.bar a{flex:1 1 0;min-width:0;white-space:nowrap;text-align:center;justify-content:center;
+  padding:13px 8px;font-size:12.5px}
+@media(max-width:760px){.bar{display:flex}body{padding-bottom:70px}}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--am);outline-offset:3px}
+/* --- 152-ФЗ --- */
+/* --- 152-ФЗ: согласие, cookie, отложенная карта --- */
+.agree{display:grid;grid-template-columns:19px 1fr;gap:12px;align-items:start;
+  font:400 13.5px/1.55 inherit;font-family:inherit;letter-spacing:normal;text-transform:none;
+  color:inherit;margin:0;cursor:pointer;max-width:52ch}
+.agree span{display:block;letter-spacing:normal;text-transform:none}
+.agree input{width:19px;height:19px;margin:2px 0 0;accent-color:currentColor;cursor:pointer;flex:none}
+.agree a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.agree.opt{opacity:.8}
+button[disabled],.btn[disabled]{opacity:.4;cursor:not-allowed}
+.mapstub{position:absolute;inset:0;display:flex;flex-direction:column;gap:12px;
+  align-items:center;justify-content:center;text-align:center;padding:22px;
+  font-size:13.5px;line-height:1.5;background:rgba(127,127,127,.10)}
+.mapstub button{font:inherit;font-size:13px;padding:11px 20px;cursor:pointer;
+  border:1px solid currentColor;background:transparent;color:inherit;border-radius:3px}
+.mapstub button:hover{opacity:.72}
+.map{position:relative}
+#ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:95;display:none;max-width:440px;
+  padding:18px 20px;background:#101114;color:#F2F0EC;font-size:13.5px;line-height:1.6;
+  border:1px solid rgba(255,255,255,.14);border-radius:6px;
+  box-shadow:0 18px 48px rgba(0,0,0,.45)}
+#ck.on{display:block}
+#ck a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+#ck .ckb{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+#ck button{font:inherit;font-size:12.5px;font-weight:600;letter-spacing:.04em;padding:11px 20px;
+  cursor:pointer;border-radius:4px;border:1px solid rgba(255,255,255,.3);
+  background:transparent;color:#F2F0EC}
+#ck button.y{background:#F2F0EC;color:#101114;border-color:#F2F0EC}
+#ck button:hover{opacity:.85}
+@media(max-width:760px){#ck{bottom:84px;left:10px;right:10px}}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <nav class="w nav">
+    <a class="brand" href="#">Мастер Вмятин<s>Ленина, 85</s></a>
+    <a class="lk" href="#kak">Как это работает</a>
+    <a class="lk" href="#raboty">Что делаем</a>
+    <a class="lk" href="#tsena">О цене</a>
+    <a class="lk" href="#otzyvy">Отзывы</a>
+    <a class="lk" href="#kontakty">Контакты</a>
+    <a class="btn" href="tel:+79827176929">Записаться</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Удаление вмятин без покраски · улица Ленина, 85 · Железнодорожный район</p>
+    <h1 class="up">Вмятина уходит.<br><em>Краска остаётся</em></h1>
+    <p class="sub up">PDR — это ремонт без шпатлёвки и без покраски: металл возвращают
+      на место изнутри, а заводское лакокрасочное покрытие остаётся тем же, каким было.
+      Для машины это значит отсутствие следов ремонта — и в толщиномере, и при продаже.</p>
+    <div class="acts up">
+      <a class="btn" href="tel:+79827176929">+7 982 717-69-29
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#kak">Как это работает</a>
+    </div>
+    <div class="figs up">
+      <div><b>5,0</b><span>средняя оценка по 199 отзывам в 2ГИС</span></div>
+      <div><b>от 10 минут</b><span>простая вмятина на двери — при вас, без снятия детали</span></div>
+      <div><b>Свой цех</b><span>если без покраски не обойтись, красим сами</span></div>
+      <div><b>Пн–Сб</b><span>09:00–19:00, центр города</span></div>
+    </div>
+    <figure class="shot up">
+      <img src="photo/lines.jpg" alt="Отражение полосатой лампы PDR на крыше автомобиля в боксе" fetchpriority="high" decoding="async">
+      <figcaption>Так мастер видит вмятину. Полосы лампы ломаются там, где металл ушёл, —
+        и выпрямляются, когда он вернулся на место. Никаких «на глаз».</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="kak">
+  <div class="w">
+    <div class="lamp up"></div>
+    <p class="tag up">Как это работает</p>
+    <h2 class="up" style="margin-top:14px">Четыре шага<br>и никакой шпатлёвки</h2>
+    <dl class="how">
+      <div class="up"><dt></dt>
+        <dd><b>Смотрим под лампой и называем цену</b>
+          Оценка бесплатная и занимает несколько минут. Сразу говорим, берёмся ли,
+          сколько это будет стоить и сколько займёт. Названная цена — окончательная.</dd></div>
+      <div class="up"><dt></dt>
+        <dd><b>Находим доступ к обратной стороне</b>
+          Чаще всего — через технологические отверстия, без снятия двери и обшивки.
+          Именно поэтому у нас десять минут там, где в других местах «оставляйте машину».</dd></div>
+      <div class="up"><dt></dt>
+        <dd><b>Выводим металл по отражению</b>
+          Крючок, точка за точкой, под контролем полос света. Заломы рёбер и жёсткие
+          вмятины тоже выводятся — просто дольше.</dd></div>
+      <div class="up"><dt></dt>
+        <dd><b>Проверяем и отдаём</b>
+          Смотрим панель со всех углов и при разном свете. Краску мы не трогали,
+          значит, и следов ремонта нет.</dd></div>
+    </dl>
+    <div class="g2">
+      <figure class="up"><img src="photo/dent.jpg" alt="Вмятина на крыле автомобиля крупным планом перед ремонтом" loading="lazy" decoding="async">
+        <figcaption>Вмятина на крыле — то, с чем к нам приезжают чаще всего.</figcaption></figure>
+      <figure class="up"><img src="photo/hail.jpg" alt="Капот автомобиля со множеством вмятин" loading="lazy" decoding="async">
+        <figcaption>И то, от чего порой отказываются даже опытные мастера.
+          Такие капоты мы тоже беремся выводить.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="raboty" class="pale">
+  <div class="w">
+    <div class="lamp up"></div>
+    <p class="tag up">Что делаем</p>
+    <h2 class="up" style="margin-top:14px">PDR — основное.<br>Но не единственное</h2>
+    <p class="up" style="margin-top:18px;color:var(--ink-2)">В большинстве студий города
+      только PDR: если вмятина с повреждением краски — вас отправляют куда-то ещё.
+      У нас есть свой малярный цех, поэтому машину не надо возить по городу.</p>
+    <div class="grid3">
+      <div class="up"><b>Удаление вмятин без покраски</b>
+        <p>Двери, крылья, капот, крышка багажника, крыша. Простые вмятины —
+          за минуты, сложные с заломами — за часы.</p></div>
+      <div class="up"><b>Покраска</b>
+        <p>Свой цех. Если краска повреждена и без покраски никак, делаем это здесь же,
+          а не «у знакомых через город».</p></div>
+      <div class="up"><b>Полировка</b>
+        <p>Восстановительная полировка кузова и фар — часто финальный штрих
+          после ремонта вмятин.</p></div>
+      <div class="up"><b>Детейлинг</b>
+        <p>Можно сразу привести машину в порядок целиком: кузов, салон,
+          защитные составы.</p></div>
+      <div class="up"><b>Оклейка</b>
+        <p>Защитные и цветные плёнки. Часто едет в паре с PDR: сначала выводим,
+          потом закрываем.</p></div>
+      <div class="up"><b>Стёкла и оптика</b>
+        <p>Установка и ремонт автостёкол, замена линз в фарах — свет становится
+          как новый, а не «немного лучше».</p></div>
+    </div>
+    <div class="g3">
+      <img class="up" src="photo/urus.jpg" alt="Внедорожник премиум-класса в боксе студии" loading="lazy" decoding="async">
+      <img class="up" src="photo/arch.jpg" alt="Вмятина на задней арке автомобиля" loading="lazy" decoding="async">
+      <img class="up" src="photo/blue.jpg" alt="Отражение света на синем крыле автомобиля после ремонта" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<section id="tsena">
+  <div class="w">
+    <div class="lamp up"></div>
+    <p class="tag up">О цене</p>
+    <h2 class="up" style="margin-top:14px">Мы дороже.<br>И объясняем почему</h2>
+    <p class="pull up">«Цена немного выше, но оно того стоит. Цена с момента предварительной
+      оценки не изменилась»</p>
+    <p class="up" style="margin-top:20px;color:var(--ink-2);font-size:13px">Дмитрий Карнасевич ·
+      отзыв в 2ГИС, 19 августа 2026</p>
+    <div class="fgrid">
+      <article class="up">
+        <h3>Что входит в эту разницу</h3>
+        <p>Время мастера и отказ от быстрых компромиссов. Вмятину можно «примять»
+          за пять минут так, что через месяц она проявится обратно, а можно вывести
+          и оставить в покое навсегда. Второе дольше и дороже — и это ровно то,
+          за что вы платите.</p>
+      </article>
+      <article class="up">
+        <h3>Цена не растёт по ходу работы</h3>
+        <p>Сумма, названная при оценке, остаётся прежней. Если в процессе выясняется,
+          что работы больше, — это наш просчёт, а не ваш счёт. Мы говорим об этом заранее,
+          потому что «оказалось дороже» — самая частая обида в кузовном ремонте.</p>
+      </article>
+      <article class="up">
+        <h3>Оценка бесплатная и быстрая</h3>
+        <p>Заезжайте, посмотрим при вас под лампой. Если вмятину дешевле и правильнее
+          закрыть покраской — скажем и это, даже когда PDR был бы для нас выгоднее.</p>
+      </article>
+      <article class="up">
+        <h3>Подстроимся под ваш график</h3>
+        <p>Клиенты пригоняют машину и в семь утра — договориться можно.
+          Мы в центре, на Ленина, 85: заехать по пути на работу проще,
+          чем ехать на окраину.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy" class="pale">
+  <div class="w">
+    <div class="lamp up"></div>
+    <p class="tag up">Отзывы · 5,0 из 5 по 199 оценкам в 2ГИС</p>
+    <blockquote class="up" style="margin-top:22px">
+      <p class="bigq">«На месте вмятины на двери всё сияет и никаких следов от неё.
+        Даже на номер посмотрел: моя это машина?»</p>
+      <p class="by">Юрий Хордиков · отзыв в 2ГИС · 19 июня 2026</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>Выпрямили вмятину на двери за 10 минут. Без лишних слов. Как другие конторы просили
+          оставить машину и снимать дверь. Здесь всё чётко.</p>
+        <cite>German · 20 августа 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Обращался для удаления вмятин без покраски на Toyota Mark II 1986 года. Машина редкая
+          и возрастная, поэтому было важно сохранить лакокрасочное покрытие. Все вмятины убрали
+          аккуратно, без следов ремонта и повреждений краски.</p>
+        <cite>Максим Петровский · 20 июня 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Была приличная вмятина крышки багажника с заломами рёбер — выправили за несколько
+          часов без покраски. Но у них есть и цех покраски, в сторонних организациях
+          только PDR-ремонт. Перечень работ, который они могут проводить, обширный.</p>
+        <cite>Дмитрий Карнасевич · 19 августа 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>При консультации всё подробно и чётко объяснили. Чистый бокс и очень доброжелательные
+          сотрудники. Подстроились под мой график: пригнала машину в 7 утра.
+          Произвели замену линз.</p>
+        <cite>Даня Тихонова · 25 августа 2026</cite>
+      </blockquote>
+    </div>
+    <div class="g2">
+      <figure class="up"><img src="photo/mark2.jpg" alt="Toyota Mark II 1986 года после удаления вмятин без покраски" loading="lazy" decoding="async">
+        <figcaption>Та самая возрастная Mark II: заводская краска осталась нетронутой.</figcaption></figure>
+      <figure class="up"><img src="photo/hood.jpg" alt="Капот чёрного автомобиля с чистым отражением после ремонта" loading="lazy" decoding="async">
+        <figcaption>Чёрный кузов — самая честная проверка: на нём видно любое отклонение.</figcaption></figure>
+    </div>
+    <div class="acts up" style="margin-top:38px">
+      <a class="btn g" href="https://2gis.ru/firm/70000001094349188" target="_blank" rel="noopener">
+        Все 199 отзывов в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty">
+  <div class="w split">
+    <div class="up">
+      <div class="lamp"></div>
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:14px">Ленина, 85</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>улица Ленина, 85, цокольный этаж<br><span class="q2">Железнодорожный район, Новосибирск</span></dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+79827176929">+7 982 717-69-29</a><br>
+          <span class="q2">WhatsApp, Telegram и MAX — на этот же номер</span></dd></div>
+        <div><dt>Режим</dt><dd>Пн–Сб 09:00–19:00<br><span class="q2">воскресенье — выходной</span></dd></div>
+        <div><dt>Профиль</dt><dd>PDR, покраска, полировка, детейлинг, оклейка, автостёкла и оптика</dd></div>
+        <div><dt>Оплата</dt><dd>Наличными, переводом с карты, через банк</dd></div>
+      </div>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="tel:+79827176929">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/70000001094349188" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <div class="mapstub" data-src="https://yandex.ru/map-widget/v1/?ll=82.893898%2C55.040266&z=17&text=Новосибирск%2C%20улица%20Ленина%2C%2085" data-title="Карта: улица Ленина, 85">
+          <span>Карта загружается с сервера «Яндекса» и устанавливает свои cookie.</span>
+          <button type="button">Показать карту</button>
+        </div>
+      </div>
+      <h2 style="font-size:clamp(21px,2.5vw,31px);margin-top:34px">Записаться на оценку</h2>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Юрий"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 982 000-00-00"></div>
+        <div><label for="c">Машина</label><input id="c" name="car" placeholder="Toyota Corolla, 2018"></div>
+        <div><label for="m">Где вмятина</label><textarea id="m" name="message" placeholder="Задняя дверь слева, краска целая"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cmp">Компания</label><input id="cmp" name="company" tabindex="-1" autocomplete="off"></div>
+        <label class="agree"><input type="checkbox" id="ag" name="consent" required>
+          <span>Я даю согласие на обработку моих персональных данных в соответствии
+          с <a href="privacy/" target="_blank" rel="noopener">Политикой обработки персональных данных</a></span></label>
+        <label class="agree opt"><input type="checkbox" id="adv" name="ads">
+          <span>Хочу получать напоминания о плановом обслуживании и сообщения об акциях
+          (необязательно)</span></label>
+        <button id="sb" class="btn" type="submit" disabled>Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Заявку обрабатываем только для того, чтобы перезвонить
+          и записать вас на удобное время. Согласие можно отозвать в любой момент —
+          порядок описан в <a href="privacy/">политике</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="ck" role="dialog" aria-label="Файлы cookie">
+  Мы используем файлы cookie: технически необходимые для работы страницы и те, что
+  устанавливает виджет «Яндекс.Карт». Аналитику и рекламные счётчики без вашего согласия
+  не подключаем. Подробности — в <a href="privacy/">Политике обработки персональных данных</a>.
+  <div class="ckb">
+    <button class="y" type="button" data-ck="y">Принять</button>
+    <button type="button" data-ck="n">Отклонить</button>
+  </div>
+</div>
+
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">Мастер Вмятин<s>Ленина, 85</s></div>
+    улица Ленина, 85, Новосибирск · Пн–Сб 09:00–19:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+79827176929">+7 982 717-69-29</a>
+    <a href="https://2gis.ru/firm/70000001094349188" target="_blank" rel="noopener">2ГИС</a>
+    <a href="privacy/">Политика обработки персональных данных</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+79827176929">Позвонить</a>
+  <a class="btn g" href="#raboty">Что делаем</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoBodyShop","name":"Мастер Вмятин",
+"description":"Компания по удалению вмятин без покраски (PDR) с сохранением заводского лакокрасочного покрытия. Собственный малярный цех, полировка кузова и фар, детейлинг, оклейка защитными и цветными плёнками, установка и ремонт автостёкол, замена линз в фарах.",
+"address":{"@type":"PostalAddress","streetAddress":"улица Ленина, 85","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":55.040266,"longitude":82.893898},
+"telephone":"+79827176929",
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"19:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"199","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/70000001094349188"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и договоримся о времени.';ok.style.display='block';f.reset();return}}catch(_){}}
+  ok.innerHTML='Приём заявок пока настраивается. Позвоните, пожалуйста: <a href="tel:+79827176929">+7 982 717-69-29</a>.';
+  ok.style.display='block';
+});
+</script>
+<script>
+(function(){
+  var K='ck-choice', box=document.getElementById('ck');
+  function loadMap(){
+    document.querySelectorAll('.mapstub[data-src]').forEach(function(s){
+      var f=document.createElement('iframe');
+      f.loading='lazy'; f.title=s.dataset.title||'Карта проезда'; f.src=s.dataset.src;
+      f.style.width='100%'; f.style.height='100%'; f.style.border='0';
+      s.parentNode.appendChild(f); s.remove();
+    });
+  }
+  var saved=null; try{saved=localStorage.getItem(K)}catch(e){}
+  if(saved==='y'){loadMap()} else if(!saved && box){box.classList.add('on')}
+  if(box) box.addEventListener('click',function(e){
+    var b=e.target.closest('[data-ck]'); if(!b)return;
+    try{localStorage.setItem(K,b.dataset.ck)}catch(e){}
+    box.classList.remove('on'); if(b.dataset.ck==='y') loadMap();
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.mapstub button')) loadMap();
+  });
+  var ag=document.getElementById('ag'), sb=document.getElementById('sb');
+  if(ag&&sb){ var sync=function(){sb.disabled=!ag.checked}; sync();
+    ag.addEventListener('change',sync); }
+})();
+</script>
+</body>
+</html>
