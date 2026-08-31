@@ -406,7 +406,8 @@ def patch(html: str) -> tuple[str, list[str]]:
 
     # 3. чекбоксы + блокировка кнопки (кнопка бывает .btn или .act, с id и без)
     if 'id="ag"' not in html:
-        m = re.search(r'([ \t]*)(<button class="(?:btn|act)"[^>]*type="submit"[^>]*>)', html)
+        m = re.search(
+            r'([ \t]*)(<button [^>]*class="(?:btn|act)"[^>]*type="submit"[^>]*>)', html)
         if m:
             indent, tag = m.group(1), m.group(2)
             newtag = tag

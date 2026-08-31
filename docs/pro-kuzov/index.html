@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pro kuzov — центр кузовного ремонта в Новосибирске, улица Мира, 58а</title>
+<meta name="description" content="Pro kuzov, Новосибирск, улица Мира, 58а. Кузовной ремонт после ДТП: восстановление геометрии на стапеле, покраска в цвет, ремонт вмятин, сварка, полировка, автостекло, автооптика, антикоррозийная обработка, аэрография, кузовной ремонт грузовых. Пн–Пт 09:00–20:00, Сб–Вс 10:00–18:00. 4,9 по 176 отзывам в 2ГИС.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Pro kuzov — кузовной ремонт, который сходится по зазорам">
+<meta property="og:description" content="Мира, 58а. Приём сразу после аварии, расчёт в тот же день, фотоотчёт по этапам. 4,9 по 176 отзывам.">
+<meta property="og:image" content="photo/forester.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23F1F2F1'/><rect x='4' y='6' width='10' height='20' fill='none' stroke='%2300879B' stroke-width='2.4'/><rect x='18' y='6' width='10' height='20' fill='none' stroke='%2300879B' stroke-width='2.4'/></svg>">
+<link rel="stylesheet" href="../fonts/geologica.css">
+<link rel="stylesheet" href="../fonts/commissioner.css">
+<style>
+/* Pro kuzov. В отзывах есть фраза, которая для кузовного цеха дороже любых
+   эпитетов: «все кузовные встали по зазорам». Зазор и стал темой страницы —
+   он живёт в кнопке (при наведении щель сходится), в двойных линейках
+   разделов и в самом ритме сетки. Отдельный блок отдан жёсткому отзыву
+   про коррозию через полтора года: там владелец объяснил, откуда она берётся,
+   и это объяснение полезнее, чем ещё одна страница про «качество». */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pa:#F1F2F1; --pa-2:#E3E5E4; --card:#FFFFFF;
+  --ink:#101214; --ink-2:#4E5658; --ink-3:#868E90;
+  --line:#D7DBDA; --line-2:#B4BAB9;
+  --cy:#00879B; --cy-2:#005A69; --cy-soft:#DDEFF2;
+  --wrap:1050px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--pa);color:var(--ink);
+  font:400 16.5px/1.72 Commissioner,-apple-system,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(58px,8vw,104px) 0}
+section[id]{scroll-margin-top:80px}
+h1,h2,h3{font-family:Geologica,-apple-system,sans-serif}
+h1,h2{font-weight:700;line-height:1.05;letter-spacing:-.04em;text-wrap:balance}
+h1{font-size:clamp(31px,5vw,58px)}
+h2{font-size:clamp(24px,3.3vw,42px)}
+h3{font-size:18px;font-weight:500;line-height:1.3;letter-spacing:-.025em}
+p{max-width:60ch}
+em{font-style:normal;color:var(--cy)}
+.tag{font-family:Commissioner,sans-serif;font-size:11.5px;font-weight:600;
+  letter-spacing:.17em;text-transform:uppercase;color:var(--cy)}
+.q2{color:var(--ink-2)}
+/* Двойная линейка с ровным зазором — разделитель разделов */
+.rule{height:7px;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);
+  max-width:64px;margin-bottom:20px}
+
+/* Кнопка: в ней прорезан зазор. При наведении он проезжает вправо
+   и закрывается — ровно то, что делает кузовщик с деталью. */
+.btn{position:relative;isolation:isolate;overflow:hidden;
+  display:inline-flex;align-items:center;gap:11px;font-family:Geologica,sans-serif;
+  font-weight:500;font-size:14px;letter-spacing:-.02em;padding:16px 30px 16px 34px;
+  background:var(--ink);color:#F1F2F1;
+  transition:transform .26s var(--ease),color .26s var(--ease)}
+.btn::before{content:"";position:absolute;top:0;bottom:0;left:15px;width:3px;
+  background:var(--pa);z-index:2;
+  transition:left .42s var(--ease),opacity .32s var(--ease)}
+.btn::after{content:"";position:absolute;inset:0;z-index:-1;background:var(--cy);
+  transform:translateX(-101%);transition:transform .42s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:hover::before{left:calc(100% - 3px);opacity:0}
+.btn:hover::after{transform:none}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;
+  transition:transform .32s var(--ease)}
+.btn:hover svg{transform:translateX(5px)}
+.btn.g{color:var(--ink);background:var(--line-2)}
+.btn.g::before{background:var(--pa)}
+.btn.g:hover{color:#F1F2F1}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:15px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(241,242,241,.95);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:9px 0}
+.nav{display:flex;align-items:center;gap:22px}
+.brand{margin-right:auto;font-family:Geologica,sans-serif;font-weight:700;font-size:19px;
+  letter-spacing:-.05em;line-height:1.14}
+.brand s{display:block;text-decoration:none;font-family:Commissioner,sans-serif;font-size:9.5px;
+  font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--cy);margin-top:4px}
+.lk{font-size:14.5px;color:var(--ink-2);transition:color .2s}
+.lk:hover{color:var(--cy)}
+@media(max-width:1060px){.lk{display:none}}
+@media(max-width:460px){.nav{gap:11px}.brand{font-size:16px}.btn{padding:13px 20px 13px 24px;font-size:12.5px}}
+
+.hero{padding-top:clamp(118px,15vw,178px);padding-bottom:clamp(26px,4vw,46px)}
+.hero h1{margin:16px 0 22px}
+.hero .sub{font-size:clamp(16px,1.8vw,18.5px);color:var(--ink-2);max-width:52ch;line-height:1.7}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,3vw,38px);
+  margin-top:clamp(38px,6vw,66px);padding-top:28px;
+  border-top:2px solid var(--ink);position:relative}
+.figs::before{content:"";position:absolute;left:0;right:0;top:5px;height:2px;background:var(--ink)}
+.figs b{display:block;font-family:Geologica,sans-serif;font-weight:700;
+  font-size:clamp(20px,2.6vw,32px);letter-spacing:-.05em;line-height:1;
+  font-variant-numeric:tabular-nums;color:var(--cy)}
+.figs span{display:block;margin-top:10px;font-size:12.5px;color:var(--ink-3);line-height:1.5}
+@media(max-width:700px){.figs{grid-template-columns:repeat(2,1fr)}}
+
+.shot{margin-top:clamp(34px,5vw,56px)}
+.shot img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--pa-2)}
+.shot figcaption{margin-top:11px;font-size:13.5px;color:var(--ink-3);max-width:58ch}
+
+/* После аварии */
+.after{background:var(--pa-2)}
+.steps{margin-top:clamp(30px,4vw,48px);counter-reset:s}
+.steps>div{display:grid;grid-template-columns:58px 1fr;gap:clamp(16px,3vw,30px);
+  padding:clamp(20px,2.7vw,28px) 0;border-bottom:1px solid var(--line-2);align-items:start;
+  transition:padding-left .3s var(--ease),background .3s var(--ease)}
+.steps>div:first-child{border-top:2px solid var(--ink)}
+.steps>div:hover{padding-left:12px;background:linear-gradient(90deg,var(--cy-soft),transparent 60%)}
+.steps dt{counter-increment:s;font-family:Geologica,sans-serif;font-weight:700;
+  font-size:clamp(20px,2.6vw,30px);letter-spacing:-.06em;line-height:1;color:var(--cy)}
+.steps dt::after{content:counter(s)}
+.steps dd{font-size:15.5px;color:var(--ink-2);line-height:1.66}
+.steps dd b{display:block;font-family:Geologica,sans-serif;font-weight:700;font-size:18px;
+  color:var(--ink);letter-spacing:-.035em;margin-bottom:8px}
+@media(max-width:560px){.steps>div{grid-template-columns:1fr;gap:6px}}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,26px);
+  margin-top:clamp(28px,3.6vw,44px)}
+@media(max-width:820px){.grid3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.grid3{grid-template-columns:1fr}}
+/* Каждая карточка отбита двойной линейкой с зазором */
+.grid3 div{padding-top:15px;position:relative;
+  border-top:2px solid var(--line-2);transition:border-color .25s var(--ease)}
+.grid3 div::before{content:"";position:absolute;left:0;right:0;top:5px;height:2px;
+  background:var(--line-2);transition:background .25s var(--ease)}
+.grid3 div:hover{border-top-color:var(--cy)}
+.grid3 div:hover::before{background:var(--cy)}
+.grid3 b{display:block;font-family:Geologica,sans-serif;font-weight:700;font-size:16.5px;
+  letter-spacing:-.035em;margin-bottom:7px}
+.grid3 p{font-size:14.5px;color:var(--ink-2)}
+
+/* Честно */
+.frank{background:var(--ink);color:#C9D0D2}
+.frank .tag{color:#5FBECD}
+.frank h2{color:#FFFFFF}
+.frank p{color:#A3ADB0}
+.frank .quote{font-size:clamp(16px,1.8vw,19px);line-height:1.62;color:#FFFFFF;
+  border-left:3px solid #5FBECD;padding-left:20px;max-width:60ch;
+  margin-top:clamp(24px,3vw,34px)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,50px);
+  margin-top:clamp(26px,3.4vw,42px)}
+@media(max-width:800px){.fgrid{grid-template-columns:1fr;gap:28px}}
+.frank h3{color:#FFFFFF;margin-bottom:9px;font-weight:700;letter-spacing:-.03em}
+
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2vw,24px);
+  margin-top:clamp(30px,4vw,48px)}
+@media(max-width:700px){.g2{grid-template-columns:1fr;gap:22px}}
+.g2 img{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--pa-2)}
+.g2 figcaption{margin-top:11px;font-size:14px;color:var(--ink-2)}
+
+.bigq{font-family:Geologica,sans-serif;font-weight:700;font-size:clamp(21px,3vw,38px);
+  line-height:1.14;letter-spacing:-.045em;max-width:22ch}
+.by{font-size:12.5px;color:var(--ink-3);margin-top:22px;letter-spacing:.04em}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,56px);
+  margin-top:clamp(36px,5vw,60px)}
+@media(max-width:820px){.pair{grid-template-columns:1fr;gap:32px}}
+.pair p{font-size:15.5px;color:var(--ink-2)}
+.pair cite{display:block;font-style:normal;font-size:12.5px;color:var(--ink-3);margin-top:13px;
+  letter-spacing:.04em}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,68px)}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
+.rows{border-top:2px solid var(--ink);margin-top:26px}
+.rows>div{display:grid;grid-template-columns:124px 1fr;gap:18px;padding:15px 0;
+  border-bottom:1px solid var(--line);font-size:16px}
+.rows dt{font-size:10.5px;color:var(--ink-3);padding-top:7px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.12em}
+.rows a:hover{color:var(--cy)}
+@media(max-width:520px){.rows>div{grid-template-columns:1fr;gap:3px}}
+.map{aspect-ratio:16/10;background:var(--pa-2);overflow:hidden}
+.map iframe{width:100%;height:100%;border:0}
+form{margin-top:20px;display:grid;gap:15px}
+label{display:block;font-size:10.5px;color:var(--ink-3);margin-bottom:7px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.12em}
+input,textarea{width:100%;background:var(--card);border:1px solid var(--line-2);color:var(--ink);
+  padding:13px 15px;font:400 16px/1.5 Commissioner,sans-serif;transition:border-color .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--cy)}
+textarea{min-height:100px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fine{font-size:12.5px;color:var(--ink-3);line-height:1.6;max-width:52ch}
+.sent{display:none;padding:13px 15px;border:1px solid var(--cy);background:var(--cy-soft);
+  font-size:15px}
+.sent a{color:var(--cy-2);text-decoration:underline}
+
+footer{border-top:1px solid var(--line);padding:34px 0 44px;font-size:14px;color:var(--ink-3)}
+.fin{display:flex;gap:26px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+footer a:hover{color:var(--cy)}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:8px;padding:9px 12px;
+  background:rgba(241,242,241,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  width:100%;max-width:100vw}
+.bar a{flex:1 1 0;min-width:0;white-space:nowrap;text-align:center;justify-content:center;
+  padding:13px 8px 13px 16px;font-size:12.5px}
+@media(max-width:760px){.bar{display:flex}body{padding-bottom:70px}}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--cy);outline-offset:3px}
+/* --- 152-ФЗ --- */
+/* --- 152-ФЗ: согласие, cookie, отложенная карта --- */
+.agree{display:grid;grid-template-columns:19px 1fr;gap:12px;align-items:start;
+  font:400 13.5px/1.55 inherit;font-family:inherit;letter-spacing:normal;text-transform:none;
+  color:inherit;margin:0;cursor:pointer;max-width:52ch}
+.agree span{display:block;letter-spacing:normal;text-transform:none}
+.agree input{width:19px;height:19px;margin:2px 0 0;accent-color:currentColor;cursor:pointer;flex:none}
+.agree a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.agree.opt{opacity:.8}
+button[disabled],.btn[disabled]{opacity:.4;cursor:not-allowed}
+.mapstub{position:absolute;inset:0;display:flex;flex-direction:column;gap:12px;
+  align-items:center;justify-content:center;text-align:center;padding:22px;
+  font-size:13.5px;line-height:1.5;background:rgba(127,127,127,.10)}
+.mapstub button{font:inherit;font-size:13px;padding:11px 20px;cursor:pointer;
+  border:1px solid currentColor;background:transparent;color:inherit;border-radius:3px}
+.mapstub button:hover{opacity:.72}
+.map{position:relative}
+#ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:95;display:none;max-width:440px;
+  padding:18px 20px;background:#101114;color:#F2F0EC;font-size:13.5px;line-height:1.6;
+  border:1px solid rgba(255,255,255,.14);border-radius:6px;
+  box-shadow:0 18px 48px rgba(0,0,0,.45)}
+#ck.on{display:block}
+#ck a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+#ck .ckb{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+#ck button{font:inherit;font-size:12.5px;font-weight:600;letter-spacing:.04em;padding:11px 20px;
+  cursor:pointer;border-radius:4px;border:1px solid rgba(255,255,255,.3);
+  background:transparent;color:#F2F0EC}
+#ck button.y{background:#F2F0EC;color:#101114;border-color:#F2F0EC}
+#ck button:hover{opacity:.85}
+@media(max-width:760px){#ck{bottom:84px;left:10px;right:10px}}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <nav class="w nav">
+    <a class="brand" href="#">Pro kuzov<s>улица Мира, 58а</s></a>
+    <a class="lk" href="#avariya">После аварии</a>
+    <a class="lk" href="#raboty">Работы</a>
+    <a class="lk" href="#rzhavchina">Про ржавчину</a>
+    <a class="lk" href="#otzyvy">Отзывы</a>
+    <a class="lk" href="#kontakty">Контакты</a>
+    <a class="btn" href="tel:+79139177757">Записаться</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Центр кузовного ремонта · улица Мира, 58а · Кировский район</p>
+    <h1 class="up">Кузовной ремонт,<br>который сходится<br>по <em>зазорам</em></h1>
+    <p class="sub up">Зазор — это то, по чему кузовщика видно сразу. Деталь можно поставить
+      быстро, а можно поставить так, чтобы через год не пришлось объяснять, почему
+      капот стоит криво. Мы восстанавливаем геометрию на стапеле, красим в цвет
+      и собираем машину по месту — а не «примерно туда».</p>
+    <div class="acts up">
+      <a class="btn" href="tel:+79139177757">+7 913 917-77-57
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#avariya">Что делать после ДТП</a>
+    </div>
+    <div class="figs up">
+      <div><b>4,9</b><span>по 176 отзывам в 2ГИС</span></div>
+      <div><b>7 дней</b><span>Пн–Пт 09:00–20:00, Сб–Вс 10:00–18:00</span></div>
+      <div><b>Фотоотчёт</b><span>по этапам работы, а не только «готово»</span></div>
+      <div><b>Стапель</b><span>восстановление геометрии кузова</span></div>
+    </div>
+    <figure class="shot up">
+      <img src="photo/forester.jpg" alt="Синий Subaru Forester у ворот центра кузовного ремонта Pro kuzov" fetchpriority="high" decoding="async">
+      <figcaption>Ворота на Мира, 58а. Сюда заезжают и после лёгкой парковочной неприятности,
+        и после серьёзного ДТП, и просто на антикор перед зимой.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="avariya" class="after">
+  <div class="w">
+    <div class="rule up"></div>
+    <p class="tag up">После аварии</p>
+    <h2 class="up" style="margin-top:14px">Приезжайте сразу.<br>Считать будем при вас</h2>
+    <p class="up" style="margin-top:18px;color:var(--ink-2)">Самое неприятное после ДТП —
+      не сам ремонт, а неизвестность: сколько это будет стоить и когда машина вернётся.
+      Поэтому мы принимаем сразу, считаем быстро и держим связь всё время, пока машина у нас.
+      Так это описала Екатерина: «Приняли сразу после аварии, были постоянно на связи,
+      во всём помогали, быстро сделали расчёт».</p>
+    <dl class="steps">
+      <div class="up"><dt></dt>
+        <dd><b>Осмотр и предварительный расчёт</b>
+          Смотрим машину и называем предварительную сумму — обычно в тот же день.
+          Скрытые повреждения, если они найдутся при разборе, обсуждаем отдельно.</dd></div>
+      <div class="up"><dt></dt>
+        <dd><b>Согласуем список работ до начала</b>
+          В работу идёт только то, о чём мы договорились. Ничего «заодно» и «раз уж
+          всё равно разобрали» без вашего слова не появляется.</dd></div>
+      <div class="up"><dt></dt>
+        <dd><b>Геометрия, потом железо, потом покраска</b>
+          Сначала стапель и правка, потом кузовные детали по зазорам, и только затем
+          покраска в цвет. Обратный порядок — это когда «покрашено красиво, но стоит косо».</dd></div>
+      <div class="up"><dt></dt>
+        <dd><b>Фотоотчёт по ходу и выдача</b>
+          Присылаем снимки по этапам — вы видите машину, не приезжая. Стараемся отдать
+          в срок или раньше: так бывает чаще, чем наоборот, и мы этим дорожим.</dd></div>
+    </dl>
+    <div class="g2">
+      <figure class="up"><img src="photo/stapel.jpg" alt="Автомобиль с повреждённой задней частью на стапеле в цехе" loading="lazy" decoding="async">
+        <figcaption>Стапель. Без него «поставить деталь» и «восстановить кузов» —
+          это две разные работы.</figcaption></figure>
+      <figure class="up"><img src="photo/dtp.jpg" alt="Минивэн Nissan с повреждённым передним крылом и бампером после ДТП" loading="lazy" decoding="async">
+        <figcaption>Такую машину принимаем в тот же день — и в тот же день считаем.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="raboty">
+  <div class="w">
+    <div class="rule up"></div>
+    <p class="tag up">Работы</p>
+    <h2 class="up" style="margin-top:14px">Что делаем по кузову</h2>
+    <div class="grid3">
+      <div class="up"><b>Восстановление геометрии</b>
+        <p>Правка кузова на стапеле после серьёзных ударов. Замеры — до, во время
+          и после, а не «на глаз».</p></div>
+      <div class="up"><b>Покраска</b>
+        <p>Подбор и покраска в цвет, локальный ремонт, окраска отдельных элементов.
+          Попадание в цвет проверяем на выкрасе.</p></div>
+      <div class="up"><b>Ремонт вмятин</b>
+        <p>От парковочных вмятин до серьёзной деформации панелей. Где можно —
+          выправляем, а не меняем.</p></div>
+      <div class="up"><b>Сварка</b>
+        <p>Замена и восстановление силовых элементов, порогов, арок. Сварка
+          с антикоррозийной обработкой шва.</p></div>
+      <div class="up"><b>Полировка</b>
+        <p>Полировка кузова и фар. Фары часто полируем в подарок к кузовному ремонту —
+          это не акция, а привычка.</p></div>
+      <div class="up"><b>Автостекло и оптика</b>
+        <p>Установка и ремонт автостёкол, установка и ремонт автооптики.
+          Всё на одной площадке.</p></div>
+      <div class="up"><b>Антикоррозийная обработка</b>
+        <p>Полный антикор с фотоотчётом на каждом этапе. Обычно два дня —
+          и машина уходит в зиму спокойно.</p></div>
+      <div class="up"><b>Аэрография</b>
+        <p>Художественная роспись по кузову. Редкая позиция для сервиса —
+          но у нас она есть.</p></div>
+      <div class="up"><b>Грузовые</b>
+        <p>Кузовной ремонт грузовых автомобилей — берёмся и за то, что не влезает
+          в обычный бокс.</p></div>
+    </div>
+    <div class="g2">
+      <figure class="up"><img src="photo/antikor.jpg" alt="Свежая антикоррозийная обработка днища автомобиля" loading="lazy" decoding="async">
+        <figcaption>Антикор. По каждому этапу уходит снимок — вы видите, что покрыто
+          и чем, не залезая под машину.</figcaption></figure>
+      <figure class="up"><img src="photo/arch.jpg" alt="Внутренняя часть колёсной арки и стойка подвески после обработки" loading="lazy" decoding="async">
+        <figcaption>Арки и швы — там, где ржавчина начинается раньше всего.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="rzhavchina" class="frank">
+  <div class="w">
+    <p class="tag up">Честно</p>
+    <h2 class="up" style="margin-top:14px">Про ржавчину<br>после ремонта</h2>
+    <p class="up" style="margin-top:18px">У нас есть отзыв, где человек через полтора года
+      после ремонта нашёл коррозию на пороге и арке. Мы посмотрели его фотографии и ответили
+      подробно — и повторим здесь, потому что это касается не только его.</p>
+    <p class="quote up">Коррозия на порогах и внизу арки вызвана механическими повреждениями:
+      там множество сколов, и в тех местах, где скол доходит до металла, начинается процесс
+      коррозии — металл ржавеет и поднимает краску.</p>
+    <div class="fgrid">
+      <article class="up">
+        <h3>Что это значит для вас</h3>
+        <p>Пороги и низ арок принимают на себя весь гравий с дороги. Свежая краска
+          не делает металл толще: скол до металла зимой — это очаг ржавчины
+          независимо от того, кто и как красил. Поэтому антикор и своевременная
+          подкраска сколов — не допродажа, а обязательная часть ухода.</p>
+      </article>
+      <article class="up">
+        <h3>Что делаем мы</h3>
+        <p>Показываем сколы при приёмке и на выдаче, обрабатываем швы и скрытые
+          полости после сварки, а если вы вернулись с вопросом — смотрим машину
+          и объясняем причину по фотографиям, а не отмахиваемся. Приезжайте сразу,
+          как заметили: на этой стадии всё решается локально и недорого.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy">
+  <div class="w">
+    <div class="rule up"></div>
+    <p class="tag up">Отзывы · 4,9 из 5 по 176 оценкам в 2ГИС</p>
+    <blockquote class="up" style="margin-top:22px">
+      <p class="bigq">«Бампер покрасили идеально, а все кузовные встали по зазорам»</p>
+      <p class="by">Илья Филиппов · отзыв в 2ГИС · 22 ноября 2025</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>Очень порадовало, что здесь с тебя не пытаются взять лишнего: весь список работы
+          был согласован чётко по делу, ещё и фары в подарок отполировали. Админсостав приятен
+          в общении, а мастеру Дмитрию отдельный респект.</p>
+        <cite>Илья Филиппов · 22 ноября 2025</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Приняли сразу после аварии, были постоянно на связи, во всём помогали, быстро
+          сделали расчёт. Однозначно рекомендую, если нужен кузовной ремонт. Хорошее отношение
+          к клиенту это сейчас дорогого стоит.</p>
+        <cite>Екатерина Ш. · 2 сентября 2025</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Обращался для установки антикора. Сделали за 2 дня. На каждом этапе делали
+          фотоотчёт, финальный результат также порадовал.</p>
+        <cite>Отзыв в 2ГИС · 19 сентября 2025</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Спасибо огромное за ваш труд и внимание к деталям. Сделали ремонт просто идеально,
+          вернули авто раньше заявленного срока. Адекватные цены, клиентоориентированность
+          200 %.</p>
+        <cite>Татьяна Горбунова · 13 июня 2026</cite>
+      </blockquote>
+    </div>
+    <div class="g2">
+      <figure class="up"><img src="photo/serena.jpg" alt="Отремонтированный минивэн Nissan Serena после кузовного ремонта" loading="lazy" decoding="async">
+        <figcaption>Та же машина после ремонта. Зазоры, кромки, стыки — на них
+          и смотрят в первую очередь.</figcaption></figure>
+      <figure class="up"><img src="photo/vesta.jpg" alt="Белая Lada Vesta после кузовного ремонта на площадке сервиса" loading="lazy" decoding="async">
+        <figcaption>Работаем и с иномарками, и с отечественными машинами,
+          и с грузовыми.</figcaption></figure>
+    </div>
+    <div class="acts up" style="margin-top:38px">
+      <a class="btn g" href="https://2gis.ru/firm/70000001027397483" target="_blank" rel="noopener">
+        Все 176 отзывов в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty" class="after">
+  <div class="w split">
+    <div class="up">
+      <div class="rule"></div>
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:14px">Улица Мира, 58а</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>улица Мира, 58а, 1 этаж<br><span class="q2">Кировский район, Новосибирск</span></dd></div>
+        <div><dt>Телефоны</dt><dd><a href="tel:+79139177757">+7 913 917-77-57</a><br>
+          <a href="tel:+79833077757">+7 983 307-77-57</a><br>
+          <a href="tel:+73832997757">+7 383 299-77-57</a></dd></div>
+        <div><dt>Режим</dt><dd>Пн–Пт 09:00–20:00<br>Сб–Вс 10:00–18:00</dd></div>
+        <div><dt>Почта</dt><dd><a href="mailto:autoexpress54@mail.ru">autoexpress54@mail.ru</a></dd></div>
+        <div><dt>Доступность</dt><dd>Доступный вход для людей с инвалидностью</dd></div>
+        <div><dt>Оплата</dt><dd>Картой, наличными, переводом с карты, через банк</dd></div>
+      </div>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="tel:+79139177757">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/70000001027397483" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <div class="mapstub" data-src="https://yandex.ru/map-widget/v1/?ll=82.924076%2C54.961170&z=17&text=Новосибирск%2C%20улица%20Мира%2C%2058а" data-title="Карта: улица Мира, 58а">
+          <span>Карта загружается с сервера «Яндекса» и устанавливает свои cookie.</span>
+          <button type="button">Показать карту</button>
+        </div>
+      </div>
+      <h2 style="font-size:clamp(21px,2.5vw,31px);margin-top:34px">Записаться на расчёт</h2>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Екатерина"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 913 000-00-00"></div>
+        <div><label for="c">Машина</label><input id="c" name="car" placeholder="Nissan Serena, 2016"></div>
+        <div><label for="m">Что случилось</label><textarea id="m" name="message" placeholder="Удар в переднее правое крыло, нужен расчёт"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cmp">Компания</label><input id="cmp" name="company" tabindex="-1" autocomplete="off"></div>
+        <label class="agree"><input type="checkbox" id="ag" name="consent" required>
+          <span>Я даю согласие на обработку моих персональных данных в соответствии
+          с <a href="privacy/" target="_blank" rel="noopener">Политикой обработки персональных данных</a></span></label>
+        <label class="agree opt"><input type="checkbox" id="adv" name="ads">
+          <span>Хочу получать напоминания о плановом обслуживании и сообщения об акциях
+          (необязательно)</span></label>
+        <button id="sb" class="btn" type="submit" disabled>Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Заявку обрабатываем только для того, чтобы перезвонить
+          и записать вас на удобное время. Согласие можно отозвать в любой момент —
+          порядок описан в <a href="privacy/">политике</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="ck" role="dialog" aria-label="Файлы cookie">
+  Мы используем файлы cookie: технически необходимые для работы страницы и те, что
+  устанавливает виджет «Яндекс.Карт». Аналитику и рекламные счётчики без вашего согласия
+  не подключаем. Подробности — в <a href="privacy/">Политике обработки персональных данных</a>.
+  <div class="ckb">
+    <button class="y" type="button" data-ck="y">Принять</button>
+    <button type="button" data-ck="n">Отклонить</button>
+  </div>
+</div>
+
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">Pro kuzov<s>улица Мира, 58а</s></div>
+    улица Мира, 58а, Новосибирск · Пн–Пт 09:00–20:00, Сб–Вс 10:00–18:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+79139177757">+7 913 917-77-57</a>
+    <a href="https://2gis.ru/firm/70000001027397483" target="_blank" rel="noopener">2ГИС</a>
+    <a href="privacy/">Политика обработки персональных данных</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+79139177757">Позвонить</a>
+  <a class="btn g" href="#raboty">Работы</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoBodyShop","name":"Pro kuzov",
+"description":"Центр кузовного ремонта: восстановление геометрии кузова на стапеле, покраска и подбор цвета, ремонт вмятин, сварка, полировка кузова и фар, установка и ремонт автостёкол, установка и ремонт автооптики, антикоррозийная обработка, аэрография, кузовной ремонт грузовых автомобилей, ремонт ходовой части и выхлопных систем.",
+"address":{"@type":"PostalAddress","streetAddress":"улица Мира, 58а","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":54.961170,"longitude":82.924076},
+"telephone":"+79139177757","email":"autoexpress54@mail.ru",
+"openingHoursSpecification":[
+{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"20:00"},
+{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"10:00","closes":"18:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"176","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/70000001027397483","https://vk.com/pro_kuzov_nsk"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и договоримся об осмотре.';ok.style.display='block';f.reset();return}}catch(_){}}
+  ok.innerHTML='Приём заявок пока настраивается. Позвоните, пожалуйста: <a href="tel:+79139177757">+7 913 917-77-57</a>.';
+  ok.style.display='block';
+});
+</script>
+<script>
+(function(){
+  var K='ck-choice', box=document.getElementById('ck');
+  function loadMap(){
+    document.querySelectorAll('.mapstub[data-src]').forEach(function(s){
+      var f=document.createElement('iframe');
+      f.loading='lazy'; f.title=s.dataset.title||'Карта проезда'; f.src=s.dataset.src;
+      f.style.width='100%'; f.style.height='100%'; f.style.border='0';
+      s.parentNode.appendChild(f); s.remove();
+    });
+  }
+  var saved=null; try{saved=localStorage.getItem(K)}catch(e){}
+  if(saved==='y'){loadMap()} else if(!saved && box){box.classList.add('on')}
+  if(box) box.addEventListener('click',function(e){
+    var b=e.target.closest('[data-ck]'); if(!b)return;
+    try{localStorage.setItem(K,b.dataset.ck)}catch(e){}
+    box.classList.remove('on'); if(b.dataset.ck==='y') loadMap();
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.mapstub button')) loadMap();
+  });
+  var ag=document.getElementById('ag'), sb=document.getElementById('sb');
+  if(ag&&sb){ var sync=function(){sb.disabled=!ag.checked}; sync();
+    ag.addEventListener('change',sync); }
+})();
+</script>
+</body>
+</html>

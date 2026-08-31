@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Subaru time — сервис и запчасти Subaru в Новосибирске, Писарева, 40/1</title>
+<meta name="description" content="Subaru time, Новосибирск, улица Писарева, 40/1. Автоцентр только по Subaru: диагностика и ремонт двигателя, вариатора, ходовой, печки и кондиционера, замена масла. Свой склад запчастей и контрактные детали по оптовым ценам. Ежедневно 09:00–20:00, 4,9 по 141 отзыву в 2ГИС.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Subaru time — сервис и запчасти только по Subaru">
+<meta property="og:description" content="Писарева, 40/1. Ремонт и склад запчастей в одном месте, без выходных с 9 до 20. 4,9 по 141 отзыву.">
+<meta property="og:image" content="photo/altai.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230E1317'/><circle cx='9' cy='16' r='4.6' fill='none' stroke='%2379C6E8' stroke-width='2.2'/><circle cx='23' cy='16' r='4.6' fill='none' stroke='%2379C6E8' stroke-width='2.2'/><path d='M13.6 16h4.8' stroke='%2379C6E8' stroke-width='2.2'/></svg>">
+<link rel="stylesheet" href="../fonts/oswald.css">
+<link rel="stylesheet" href="../fonts/inter-tight.css">
+<link rel="stylesheet" href="../fonts/ibm-plex-mono.css">
+<style>
+/* Subaru time. Одна марка — значит, можно построить страницу вокруг того,
+   как устроен сам оппозит: два блока смотрят друг на друга через ось.
+   Ремонт слева, склад запчастей справа — так этот бизнес и работает.
+   Тёмный фон взят у их же фотографий: цех, разобранный оппозит на полу,
+   и один светлый кадр с алтайского плато. Отдельный блок — жалоба Руслана
+   на то, что сервис не видно с дороги: она справедливая, и мы её не прячем. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0E1317; --bg-2:#151C21; --card:#1B2429;
+  --ink:#E9EDEF; --ink-2:#9BA7AF; --ink-3:#69777F;
+  --line:#232C33; --line-2:#33404A;
+  --ice:#79C6E8; --ice-2:#3E8FB4; --ice-soft:rgba(121,198,232,.13);
+  --wrap:1060px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);
+  font:400 16.5px/1.72 "Inter Tight",-apple-system,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(58px,8vw,104px) 0}
+section[id]{scroll-margin-top:80px}
+h1,h2,h3{font-family:Oswald,-apple-system,sans-serif;font-weight:500}
+h1,h2{line-height:1.02;letter-spacing:-.005em;text-transform:uppercase;text-wrap:balance}
+h1{font-size:clamp(34px,6.2vw,72px)}
+h2{font-size:clamp(25px,3.7vw,46px)}
+h3{font-size:19px;line-height:1.24;letter-spacing:.005em}
+p{max-width:60ch}
+em{font-style:normal;color:var(--ice)}
+.tag{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:400;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--ice)}
+.q2{color:var(--ink-2)}
+
+/* Кнопка наклонена, как машина в повороте. При наведении выравнивается
+   и заливается льдом — движение, а не просто смена цвета. */
+.btn{position:relative;isolation:isolate;overflow:hidden;transform:skewX(-9deg);
+  display:inline-flex;align-items:center;gap:11px;
+  font-family:Oswald,sans-serif;font-weight:500;font-size:14.5px;letter-spacing:.05em;
+  text-transform:uppercase;padding:15px 30px;background:var(--ice);color:#0B1114;
+  transition:transform .3s var(--ease),color .3s var(--ease)}
+.btn>*{transform:skewX(9deg)}
+.btn::after{content:"";position:absolute;inset:0;z-index:-1;background:#FFFFFF;
+  transform:translateX(-101%);transition:transform .42s var(--ease)}
+.btn:hover{transform:skewX(0deg) translateX(3px)}
+.btn:hover::after{transform:none}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;
+  transition:transform .32s var(--ease)}
+.btn:hover svg{transform:skewX(9deg) translateX(5px)}
+.btn.g{color:var(--ink);background:transparent;box-shadow:inset 0 0 0 1.5px var(--line-2)}
+.btn.g::after{background:var(--ice)}
+.btn.g:hover{color:#0B1114}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:15px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(14,19,23,.94);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:9px 0}
+.nav{display:flex;align-items:center;gap:22px}
+.brand{margin-right:auto;font-family:Oswald,sans-serif;font-weight:500;font-size:20px;
+  letter-spacing:.03em;text-transform:uppercase;line-height:1.1}
+.brand s{display:block;text-decoration:none;font-family:"IBM Plex Mono",monospace;font-size:9.5px;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--ice);margin-top:4px}
+.lk{font-size:14.5px;color:var(--ink-2);transition:color .2s}
+.lk:hover{color:var(--ice)}
+@media(max-width:1060px){.lk{display:none}}
+@media(max-width:460px){.nav{gap:11px}.brand{font-size:17px}.btn{padding:12px 20px;font-size:13px}}
+
+.hero{padding-top:clamp(118px,15vw,180px);padding-bottom:clamp(24px,3vw,40px)}
+.hero h1{margin:16px 0 22px}
+.hero .sub{font-size:clamp(16px,1.8vw,18.5px);color:var(--ink-2);max-width:52ch;line-height:1.7}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,3vw,38px);
+  margin-top:clamp(38px,6vw,64px);padding-top:26px;border-top:1px solid var(--line)}
+.figs b{display:block;font-family:Oswald,sans-serif;font-weight:500;
+  font-size:clamp(22px,2.9vw,36px);letter-spacing:.01em;line-height:1;
+  font-variant-numeric:tabular-nums;color:var(--ice)}
+.figs span{display:block;margin-top:10px;font-size:12.5px;color:var(--ink-3);line-height:1.5}
+@media(max-width:700px){.figs{grid-template-columns:repeat(2,1fr)}}
+
+.shot{margin-top:clamp(34px,5vw,56px)}
+.shot img{width:100%;aspect-ratio:16/7;object-fit:cover;background:var(--bg-2)}
+.shot figcaption{margin-top:11px;font-size:13.5px;color:var(--ink-3);max-width:56ch}
+
+/* Оппозит: два блока смотрят друг на друга через ось */
+.boxer{display:grid;grid-template-columns:1fr 3px 1fr;gap:clamp(18px,3vw,34px);
+  margin-top:clamp(34px,4.5vw,54px);align-items:stretch}
+.boxer .axis{background:linear-gradient(180deg,transparent,var(--ice-2) 18%,var(--ice-2) 82%,transparent)}
+.boxer section,.boxer article{padding:0}
+.boxer .side{background:var(--bg-2);border:1px solid var(--line);padding:clamp(22px,3vw,32px);
+  transition:border-color .25s var(--ease),transform .25s var(--ease)}
+.boxer .side:hover{border-color:var(--ice-2)}
+.boxer .side:first-of-type:hover{transform:translateX(-4px)}
+.boxer .side:last-of-type:hover{transform:translateX(4px)}
+.boxer h3{color:var(--ice);text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px}
+.boxer p{font-size:15px;color:var(--ink-2)}
+.boxer ul{margin-top:16px;list-style:none;display:grid;gap:8px}
+.boxer li{font-size:14.5px;color:var(--ink-2);padding-left:17px;position:relative}
+.boxer li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;
+  background:var(--ice-2)}
+@media(max-width:800px){.boxer{grid-template-columns:1fr}
+  .boxer .axis{height:3px;background:linear-gradient(90deg,transparent,var(--ice-2) 18%,var(--ice-2) 82%,transparent)}
+  .boxer .side:hover{transform:none}}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,26px);
+  margin-top:clamp(28px,3.6vw,44px)}
+@media(max-width:820px){.grid3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.grid3{grid-template-columns:1fr}}
+.grid3 div{border-top:2px solid var(--line-2);padding-top:15px;transition:border-color .25s var(--ease)}
+.grid3 div:hover{border-top-color:var(--ice)}
+.grid3 b{display:block;font-family:Oswald,sans-serif;font-weight:500;font-size:17px;
+  text-transform:uppercase;letter-spacing:.03em;margin-bottom:7px}
+.grid3 p{font-size:14.5px;color:var(--ink-2)}
+
+.pale{background:var(--bg-2)}
+
+/* Честно — светлый блок посреди тёмной страницы, как фары в темноте */
+.frank{background:#E9EDEF;color:#101619}
+.frank .tag{color:#2E6E8C}
+.frank h2{color:#0B1114}
+.frank p{color:#3E4A50}
+.frank .quote{font-family:"IBM Plex Mono",monospace;font-size:14px;line-height:1.66;
+  color:#2E6E8C;border-left:3px solid #79C6E8;padding-left:18px;max-width:60ch;
+  margin-top:clamp(24px,3vw,34px)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,48px);
+  margin-top:clamp(26px,3.4vw,40px)}
+@media(max-width:800px){.fgrid{grid-template-columns:1fr;gap:26px}}
+.frank h3{color:#0B1114;text-transform:uppercase;letter-spacing:.04em;margin-bottom:9px}
+
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2vw,24px);
+  margin-top:clamp(30px,4vw,48px)}
+@media(max-width:700px){.g2{grid-template-columns:1fr;gap:22px}}
+.g2 img{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--bg-2)}
+.g2 figcaption{margin-top:11px;font-size:14px;color:var(--ink-2)}
+
+.bigq{font-family:Oswald,sans-serif;font-weight:500;font-size:clamp(22px,3.2vw,42px);
+  line-height:1.12;letter-spacing:.005em;text-transform:uppercase;max-width:20ch}
+.by{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-3);margin-top:22px;
+  letter-spacing:.05em}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,56px);
+  margin-top:clamp(36px,5vw,60px)}
+@media(max-width:820px){.pair{grid-template-columns:1fr;gap:32px}}
+.pair p{font-size:15.5px;color:var(--ink-2)}
+.pair cite{display:block;font-style:normal;font-family:"IBM Plex Mono",monospace;
+  font-size:12px;color:var(--ink-3);margin-top:13px}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,68px)}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
+.rows{border-top:2px solid var(--ice-2);margin-top:26px}
+.rows>div{display:grid;grid-template-columns:126px 1fr;gap:18px;padding:15px 0;
+  border-bottom:1px solid var(--line);font-size:16px}
+.rows dt{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--ink-3);padding-top:6px;
+  text-transform:uppercase;letter-spacing:.1em}
+.rows a:hover{color:var(--ice)}
+@media(max-width:520px){.rows>div{grid-template-columns:1fr;gap:3px}}
+.map{aspect-ratio:16/10;background:var(--bg-2);overflow:hidden}
+.map iframe{width:100%;height:100%;border:0}
+form{margin-top:20px;display:grid;gap:15px}
+label{display:block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--ink-3);
+  margin-bottom:7px;text-transform:uppercase;letter-spacing:.1em}
+input,textarea{width:100%;background:var(--bg-2);border:1px solid var(--line-2);color:var(--ink);
+  padding:13px 15px;font:400 16px/1.5 "Inter Tight",sans-serif;transition:border-color .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--ice)}
+textarea{min-height:100px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fine{font-size:12.5px;color:var(--ink-3);line-height:1.6;max-width:52ch}
+.sent{display:none;padding:13px 15px;border:1px solid var(--ice-2);background:var(--ice-soft);
+  font-size:15px}
+.sent a{color:var(--ice);text-decoration:underline}
+
+footer{border-top:1px solid var(--line);padding:34px 0 44px;font-size:14px;color:var(--ink-3)}
+.fin{display:flex;gap:26px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+footer a:hover{color:var(--ice)}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:10px;padding:9px 12px;
+  background:rgba(14,19,23,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  width:100%;max-width:100vw}
+.bar a{flex:1 1 0;min-width:0;white-space:nowrap;text-align:center;justify-content:center;
+  padding:13px 8px;font-size:12.5px}
+@media(max-width:760px){.bar{display:flex}body{padding-bottom:70px}}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--ice);outline-offset:3px}
+/* --- 152-ФЗ --- */
+/* --- 152-ФЗ: согласие, cookie, отложенная карта --- */
+.agree{display:grid;grid-template-columns:19px 1fr;gap:12px;align-items:start;
+  font:400 13.5px/1.55 inherit;font-family:inherit;letter-spacing:normal;text-transform:none;
+  color:inherit;margin:0;cursor:pointer;max-width:52ch}
+.agree span{display:block;letter-spacing:normal;text-transform:none}
+.agree input{width:19px;height:19px;margin:2px 0 0;accent-color:currentColor;cursor:pointer;flex:none}
+.agree a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.agree.opt{opacity:.8}
+button[disabled],.btn[disabled]{opacity:.4;cursor:not-allowed}
+.mapstub{position:absolute;inset:0;display:flex;flex-direction:column;gap:12px;
+  align-items:center;justify-content:center;text-align:center;padding:22px;
+  font-size:13.5px;line-height:1.5;background:rgba(127,127,127,.10)}
+.mapstub button{font:inherit;font-size:13px;padding:11px 20px;cursor:pointer;
+  border:1px solid currentColor;background:transparent;color:inherit;border-radius:3px}
+.mapstub button:hover{opacity:.72}
+.map{position:relative}
+#ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:95;display:none;max-width:440px;
+  padding:18px 20px;background:#101114;color:#F2F0EC;font-size:13.5px;line-height:1.6;
+  border:1px solid rgba(255,255,255,.14);border-radius:6px;
+  box-shadow:0 18px 48px rgba(0,0,0,.45)}
+#ck.on{display:block}
+#ck a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+#ck .ckb{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+#ck button{font:inherit;font-size:12.5px;font-weight:600;letter-spacing:.04em;padding:11px 20px;
+  cursor:pointer;border-radius:4px;border:1px solid rgba(255,255,255,.3);
+  background:transparent;color:#F2F0EC}
+#ck button.y{background:#F2F0EC;color:#101114;border-color:#F2F0EC}
+#ck button:hover{opacity:.85}
+@media(max-width:760px){#ck{bottom:84px;left:10px;right:10px}}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <nav class="w nav">
+    <a class="brand" href="#">Subaru time<s>Писарева, 40/1</s></a>
+    <a class="lk" href="#oppozit">Сервис и склад</a>
+    <a class="lk" href="#raboty">Что делаем</a>
+    <a class="lk" href="#nayti">Как нас найти</a>
+    <a class="lk" href="#otzyvy">Отзывы</a>
+    <a class="lk" href="#kontakty">Контакты</a>
+    <a class="btn" href="tel:+79130020519"><span>Записаться</span></a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Автоцентр по Subaru · улица Писарева, 40/1 · Центральный район</p>
+    <h1 class="up">Одна марка.<br>Свой <em>склад</em>.<br>Без выходных</h1>
+    <p class="sub up">Мы занимаемся Subaru — и только ими. Поэтому запчасть чаще всего лежит
+      у нас на полке, а не едет неделю: на месте и оригинал, и контрактные детали
+      по оптовым ценам. Диагностика, ремонт двигателя и вариатора, ходовая, печка,
+      кондиционер — ежедневно с 9 до 20, включая субботу и воскресенье.</p>
+    <div class="acts up">
+      <a class="btn" href="tel:+79130020519"><span>+7 913 002-05-19</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#oppozit"><span>Сервис и запчасти</span></a>
+    </div>
+    <div class="figs up">
+      <div><b>4,9</b><span>по 141 отзыву в 2ГИС</span></div>
+      <div><b>7 дней</b><span>ежедневно 09:00–20:00, выходных нет</span></div>
+      <div><b>Только Subaru</b><span>сервис и склад запчастей под одну марку</span></div>
+      <div><b>Опт</b><span>цены на запчасти оптовые, есть контрактные</span></div>
+    </div>
+    <figure class="shot up">
+      <img src="photo/altai.jpg" alt="Subaru Forester с багажником на крыше на горном плато" fetchpriority="high" decoding="async">
+      <figcaption>Ради таких выходных машину и готовят. Ходовая, охлаждение, масло —
+        перед дорогой проверяем то, что ломается далеко от города.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="oppozit">
+  <div class="w">
+    <p class="tag up">Как это устроено</p>
+    <h2 class="up" style="margin-top:14px">Оппозит: два блока,<br>одна ось</h2>
+    <p class="up" style="margin-top:18px;color:var(--ink-2)">Слева цех, справа склад. Мастер
+      называет деталь — она берётся здесь же, а не заказывается у поставщика с неделей
+      ожидания. Из-за этого и сроки короче, и цена ниже: вы не платите наценку магазина
+      поверх наценки сервиса.</p>
+    <div class="boxer">
+      <div class="side up">
+        <h3>Цех</h3>
+        <p>Диагностика по симптому, а не «покажите чек». Разбираемся, показываем, объясняем
+          и предлагаем варианты — включая тот, который дешевле.</p>
+        <ul>
+          <li>Двигатель: оппозит в разборе, прокладки, течи, охлаждение</li>
+          <li>Вариатор и трансмиссия, включая TR580</li>
+          <li>Ходовая: стойки, рычаги, сайлентблоки, редуктор</li>
+          <li>Печка и кондиционер — в том числе на леворульных</li>
+          <li>Компьютерная диагностика и замена масла</li>
+        </ul>
+      </div>
+      <div class="axis up" aria-hidden="true"></div>
+      <div class="side up">
+        <h3>Склад</h3>
+        <p>Запчасти под Subaru — по всем узлам, от расходников до кузова и оптики.
+          Есть контрактные детали: состояние и цену называем честно, до покупки.</p>
+        <ul>
+          <li>Оригинал и аналоги, расходные материалы, автохимия</li>
+          <li>Контрактные детали с озвученным состоянием</li>
+          <li>Двигатель, трансмиссия, подвеска, тормоза, рулевое</li>
+          <li>Кузов, оптика, стёкла, зеркала, салон</li>
+          <li>Доставка, оплата картой, наличными и по QR</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="raboty" class="pale">
+  <div class="w">
+    <p class="tag up">Что делаем</p>
+    <h2 class="up" style="margin-top:14px">Работы, ради которых<br>едут через город</h2>
+    <div class="grid3">
+      <div class="up"><b>Оппозитный двигатель</b>
+        <p>Течи, прокладки, охлаждение, перегрев. Оппозит снимается и разбирается на месте —
+          у нас для этого есть и площадка, и опыт.</p></div>
+      <div class="up"><b>Вариатор</b>
+        <p>Диагностика TR580 и других коробок по симптомам: рывки, пинки, ошибка на панели.
+          Сначала объясняем причину, потом считаем деньги.</p></div>
+      <div class="up"><b>Ходовая и редуктор</b>
+        <p>Стук накатом, сальники редуктора, рейка, стойки. Проверяем машину целиком —
+          часто дело оказывается не там, где искали.</p></div>
+      <div class="up"><b>Печка и кондиционер</b>
+        <p>Отопитель, климат, заправка кондиционера. Беремся и за леворульные машины,
+          в том числе за то, от чего отказываются другие.</p></div>
+      <div class="up"><b>ТО и расходники</b>
+        <p>Замена масла, фильтров, свечей, ремней. Расходники берём со своего склада,
+          поэтому ТО делается за один визит.</p></div>
+      <div class="up"><b>Подбор и покупка</b>
+        <p>Помогаем подобрать машину под бюджет и разобраться с продавцом. Смотрим
+          предложение до сделки, а не после.</p></div>
+    </div>
+    <div class="g2">
+      <figure class="up"><img src="photo/boxer.jpg" alt="Разобранный оппозитный двигатель Subaru на полу цеха" loading="lazy" decoding="async">
+        <figcaption>Оппозит в разборе. Такую работу нельзя делать «между делом» —
+          под неё выделяется место и день.</figcaption></figure>
+      <figure class="up"><img src="photo/part.jpg" alt="Оригинальная запчасть Subaru в фирменной упаковке с артикулом" loading="lazy" decoding="async">
+        <figcaption>Артикул на упаковке всегда показываем до установки — чтобы вы знали,
+          что именно встало в вашу машину.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="nayti" class="frank">
+  <div class="w">
+    <p class="tag up">Честно</p>
+    <h2 class="up" style="margin-top:14px">Нас плохо видно<br>с дороги</h2>
+    <p class="quote up">«Не смогли найти, где вы… Ни вывесок, ничего, кружили-кружили,
+      так и не попали… Не хочу портить рейтинг из-за этого. Просто сделайте, чтобы вас
+      было хоть немного видно с дороги, если сможете»<br>
+      <span style="color:#69777F">— Руслан Королёв, отзыв в 2ГИС, 27 июня 2026</span></p>
+    <p class="up" style="margin-top:22px">Спорить тут не с чем: это правда, и оценку он нам
+      не снизил только по доброте. Пока с фасадом ничего не решено, работает вот что.</p>
+    <div class="fgrid">
+      <article class="up">
+        <h3>Позвоните, когда подъедете</h3>
+        <p>Мы на первом этаже дома 40/1 по Писарева. Наберите
+          <a href="tel:+79130020519" style="color:#2E6E8C;text-decoration:underline">
+          +7 913 002-05-19</a> с парковки — вас встретят и покажут заезд. Это быстрее,
+          чем ещё один круг по кварталу.</p>
+      </article>
+      <article class="up">
+        <h3>Маршрут — сразу в навигатор</h3>
+        <p>Не ищите по вывеске, стройте маршрут по адресу: карта ведёт точно.
+          Кнопка «Маршрут в 2ГИС» есть внизу страницы и в контактах.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy">
+  <div class="w">
+    <p class="tag up">Отзывы · 4,9 из 5 по 141 оценке в 2ГИС</p>
+    <blockquote class="up" style="margin-top:22px">
+      <p class="bigq">«Никакой воды и попыток навязать лишние услуги — всё объяснили по сути»</p>
+      <p class="by">Отзыв в 2ГИС · диагностика ходовой и двигателя Subaru Forester · 23 июня 2026</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>Нужно было починить дворники на леворукой машине — на других СТО либо отказывались
+          браться за работу, либо называли откровенно завышенные цены, — а ещё отремонтировать
+          печку и кондиционер. Мастера справились со всеми задачами быстро и качественно.
+          Цена оказалась адекватной, без каких-либо скрытых доплат.</p>
+        <cite>Анастасия А. · 12 июня 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Оперативно подобрали необходимые запчасти, быстро доставили и установили.
+          В процессе ремонта держали в курсе о ходе работ; предлагались варианты контрактных
+          запчастей с озвучиванием их состояния и цены; давали советы и объясняли все нюансы.</p>
+        <cite>Шульц Вернер · 10 апреля 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Столкнулся с непонятным стуком при езде накатом на SG5. Выяснилось при осмотре —
+          банально ослабшие гайки на колесе. Но при полном осмотре давануло сальники
+          на редукторе и пролетевшая рейка. Ребята всё исправили оперативно и качественно.</p>
+        <cite>Отзыв в 2ГИС · 20 января 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Менял задние стойки. Всё по делу. Заменили только нужные детали, не навязывали
+          покупку доп. запчастей. Сделали всё максимально аккуратно и быстро. Огромный плюс —
+          работа в выходные дни.</p>
+        <cite>Александр · 5 июля 2026</cite>
+      </blockquote>
+    </div>
+    <div class="g2">
+      <figure class="up"><img src="photo/lift.jpg" alt="Subaru Forester на подъёмнике в цехе Subaru time" loading="lazy" decoding="async">
+        <figcaption>Подъёмник в цехе на Писарева. Осмотр — целиком, а не только по жалобе.</figcaption></figure>
+      <figure class="up"><img src="photo/sketch.jpg" alt="Контурный рисунок Subaru Forester" loading="lazy" decoding="async">
+        <figcaption>Рисунок на стене мастерской. Марка тут не работа, а привычка.</figcaption></figure>
+    </div>
+    <div class="acts up" style="margin-top:38px">
+      <a class="btn g" href="https://2gis.ru/firm/141265770391720" target="_blank" rel="noopener">
+        <span>Все 141 отзыв в 2ГИС</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty" class="pale">
+  <div class="w split">
+    <div class="up">
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:14px">Писарева, 40/1</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>улица Писарева, 40/1, 1 этаж<br><span class="q2">Центральный район, Новосибирск</span></dd></div>
+        <div><dt>Телефоны</dt><dd><a href="tel:+79130020519">+7 913 002-05-19</a><br>
+          <a href="tel:+73833830302">+7 383 383-03-02</a></dd></div>
+        <div><dt>Режим</dt><dd>Ежедневно 09:00–20:00<br><span class="q2">без выходных</span></dd></div>
+        <div><dt>Мессенджеры</dt><dd>Telegram и MAX — на номер сервиса</dd></div>
+        <div><dt>Запчасти</dt><dd>Оригинал, аналоги, контрактные детали, автохимия. Есть доставка</dd></div>
+        <div><dt>Оплата</dt><dd>Картой, наличными, по QR-коду</dd></div>
+      </div>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="tel:+79130020519"><span>Позвонить</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/141265770391720" target="_blank" rel="noopener"><span>Маршрут в 2ГИС</span></a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <div class="mapstub" data-src="https://yandex.ru/map-widget/v1/?ll=82.924629%2C55.049289&z=17&text=Новосибирск%2C%20улица%20Писарева%2C%2040/1" data-title="Карта: улица Писарева, 40/1">
+          <span>Карта загружается с сервера «Яндекса» и устанавливает свои cookie.</span>
+          <button type="button">Показать карту</button>
+        </div>
+      </div>
+      <h2 style="font-size:clamp(21px,2.5vw,31px);margin-top:34px">Записаться</h2>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Анастасия"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 913 000-00-00"></div>
+        <div><label for="c">Машина</label><input id="c" name="car" placeholder="Subaru Forester SJ, 2015"></div>
+        <div><label for="m">Что нужно</label><textarea id="m" name="message" placeholder="Стук накатом спереди, и нужна запчасть — сальник редуктора"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cmp">Компания</label><input id="cmp" name="company" tabindex="-1" autocomplete="off"></div>
+        <label class="agree"><input type="checkbox" id="ag" name="consent" required>
+          <span>Я даю согласие на обработку моих персональных данных в соответствии
+          с <a href="privacy/" target="_blank" rel="noopener">Политикой обработки персональных данных</a></span></label>
+        <label class="agree opt"><input type="checkbox" id="adv" name="ads">
+          <span>Хочу получать напоминания о плановом обслуживании и сообщения об акциях
+          (необязательно)</span></label>
+        <button id="sb" class="btn" type="submit" disabled><span>Отправить</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Заявку обрабатываем только для того, чтобы перезвонить
+          и записать вас на удобное время. Согласие можно отозвать в любой момент —
+          порядок описан в <a href="privacy/">политике</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="ck" role="dialog" aria-label="Файлы cookie">
+  Мы используем файлы cookie: технически необходимые для работы страницы и те, что
+  устанавливает виджет «Яндекс.Карт». Аналитику и рекламные счётчики без вашего согласия
+  не подключаем. Подробности — в <a href="privacy/">Политике обработки персональных данных</a>.
+  <div class="ckb">
+    <button class="y" type="button" data-ck="y">Принять</button>
+    <button type="button" data-ck="n">Отклонить</button>
+  </div>
+</div>
+
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">Subaru time<s>Писарева, 40/1</s></div>
+    улица Писарева, 40/1, Новосибирск · ежедневно 09:00–20:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+79130020519">+7 913 002-05-19</a>
+    <a href="https://2gis.ru/firm/141265770391720" target="_blank" rel="noopener">2ГИС</a>
+    <a href="privacy/">Политика обработки персональных данных</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+79130020519"><span>Позвонить</span></a>
+  <a class="btn g" href="#nayti"><span>Как найти</span></a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"Subaru time",
+"description":"Автоцентр по ремонту автомобилей Subaru и продаже запчастей: компьютерная диагностика, ремонт оппозитных бензиновых двигателей, ремонт вариатора и трансмиссии, ремонт ходовой части, обслуживание отопителя и кондиционера, замена масла. Склад запчастей для Subaru: оригинал, аналоги, контрактные автозапчасти, автохимия. Доставка.",
+"address":{"@type":"PostalAddress","streetAddress":"улица Писарева, 40/1","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":55.049289,"longitude":82.924629},
+"telephone":"+79130020519",
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"09:00","closes":"20:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"141","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/141265770391720"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и запишем на время.';ok.style.display='block';f.reset();return}}catch(_){}}
+  ok.innerHTML='Приём заявок пока настраивается. Позвоните, пожалуйста: <a href="tel:+79130020519">+7 913 002-05-19</a>.';
+  ok.style.display='block';
+});
+</script>
+<script>
+(function(){
+  var K='ck-choice', box=document.getElementById('ck');
+  function loadMap(){
+    document.querySelectorAll('.mapstub[data-src]').forEach(function(s){
+      var f=document.createElement('iframe');
+      f.loading='lazy'; f.title=s.dataset.title||'Карта проезда'; f.src=s.dataset.src;
+      f.style.width='100%'; f.style.height='100%'; f.style.border='0';
+      s.parentNode.appendChild(f); s.remove();
+    });
+  }
+  var saved=null; try{saved=localStorage.getItem(K)}catch(e){}
+  if(saved==='y'){loadMap()} else if(!saved && box){box.classList.add('on')}
+  if(box) box.addEventListener('click',function(e){
+    var b=e.target.closest('[data-ck]'); if(!b)return;
+    try{localStorage.setItem(K,b.dataset.ck)}catch(e){}
+    box.classList.remove('on'); if(b.dataset.ck==='y') loadMap();
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.mapstub button')) loadMap();
+  });
+  var ag=document.getElementById('ag'), sb=document.getElementById('sb');
+  if(ag&&sb){ var sync=function(){sb.disabled=!ag.checked}; sync();
+    ag.addEventListener('change',sync); }
+})();
+</script>
+</body>
+</html>
