@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Правкаям &amp; Ceramic_54 — восстановление фар, керамика и бронеплёнка в Новосибирске, Широкая, 2а к6</title>
+<meta name="description" content="Правкаям &amp; Ceramic_54, Новосибирск, Широкая улица, 2а к6, бокс 115. Восстановление помутневших фар, полировка кузова, керамика, бронепленка на зоны риска, правка вмятин, оклейка салона. Смета до начала работ, сертификат на плёнку, плановый осмотр через неделю. Ежедневно 09:00–19:00, 5,0 по 362 отзывам в 2ГИС.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Правкаям &amp; Ceramic_54 — Широкая, 2а к6">
+<meta property="og:description" content="Возвращаем прозрачность: фары, лак, плёнка, керамика. Три года подряд — премия 2ГИС «Лучший детейлинг». 5,0 по 362 отзывам.">
+<meta property="og:image" content="photo/pair-1.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23E6E8E7'/><path d='M4 19c0-5 4-8 9-8h6c5 0 9 3 9 8z' fill='%23B07E2E'/><path d='M4 19h24' stroke='%2314181A' stroke-width='2.4'/><path d='M8 24h4M14 24h4M20 24h4' stroke='%231E7E9C' stroke-width='2.4' stroke-linecap='round'/></svg>">
+<link rel="stylesheet" href="../fonts/bitter.css">
+<link rel="stylesheet" href="../fonts/onest.css">
+<style>
+/* Правкаям & Ceramic_54.
+   В карточке 2ГИС написано «кузовной ремонт, детейлинг, тюнинг», а половина
+   их собственных снимков — восстановление помутневших фар. С этого и начинаем.
+   Отсюда же двухцветная система: янтарь — это «до» (помутневший рассеиватель),
+   холодный синий — «после». Цвет на странице значит состояние, а не украшение.
+   Серо-зелёный фон взят со стены их бокса, вертикальные полосы — их же
+   светодиодные лампы. Кнопка затянута матовой янтарной плёнкой, которая
+   при наведении сходит слева направо: полировка одним движением. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pa:#E6E8E7; --pa-2:#D6D9D7; --card:#FFFFFF;
+  --ink:#14181A; --ink-2:#4F5658; --ink-3:#848C8E;
+  --line:#CDD1CF; --line-2:#AAB0AD;
+  --dim:#B07E2E; --dim-soft:#F3E7D2;      /* «до»    — помутневшая фара */
+  --clr:#1E7E9C; --clr-2:#12586E; --clr-soft:#DCEDF3;  /* «после» — прозрачная */
+  --wrap:1050px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--pa);color:var(--ink);
+  font:400 16.5px/1.72 Onest,-apple-system,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(58px,8vw,104px) 0}
+section[id]{scroll-margin-top:80px}
+h1,h2,h3{font-family:Bitter,Georgia,serif}
+h1,h2{font-weight:700;line-height:1.08;letter-spacing:-.028em;text-wrap:balance}
+h1{font-size:clamp(30px,4.7vw,55px)}
+h2{font-size:clamp(23px,3.2vw,40px)}
+h3{font-size:18px;font-weight:600;line-height:1.3;letter-spacing:-.02em}
+p{max-width:60ch}
+em{font-style:normal;color:var(--clr-2)}
+.tag{font-family:Onest,sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:.17em;text-transform:uppercase;color:var(--clr-2)}
+.q2{color:var(--ink-2)}
+
+/* Кнопка: матовая янтарная плёнка сходит слева направо. */
+.btn{position:relative;isolation:isolate;overflow:hidden;
+  display:inline-flex;align-items:center;gap:11px;font-family:Onest,sans-serif;
+  font-weight:700;font-size:13.5px;letter-spacing:.01em;padding:16px 30px;
+  background:var(--ink);color:#F3F5F4;border-radius:3px;
+  transition:transform .26s var(--ease),letter-spacing .3s var(--ease)}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(100deg,var(--dim) 0 62%,rgba(176,126,46,.35) 100%);
+  transform-origin:left center;transition:transform .5s var(--ease)}
+.btn:hover,.btn:focus-visible{transform:translateY(-2px);letter-spacing:.026em}
+.btn:hover::before,.btn:focus-visible::before{transform:scaleX(0);transform-origin:right center}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;
+  transition:transform .32s var(--ease)}
+.btn:hover svg{transform:translateX(5px)}
+.btn.g{color:var(--ink);background:transparent;box-shadow:inset 0 0 0 1.6px var(--line-2)}
+.btn.g::before{background:linear-gradient(100deg,var(--dim-soft) 0 62%,rgba(243,231,210,.4) 100%)}
+.btn.g:hover{box-shadow:inset 0 0 0 1.6px var(--clr)}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:15px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(230,232,231,.95);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:9px 0}
+.nav{display:flex;align-items:center;gap:22px}
+.brand{margin-right:auto;font-family:Bitter,serif;font-weight:700;font-size:18px;
+  letter-spacing:-.03em;line-height:1.16}
+.brand s{display:block;text-decoration:none;font-family:Onest,sans-serif;font-size:9.5px;
+  font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--clr-2);margin-top:4px}
+.lk{font-size:14.5px;color:var(--ink-2);transition:color .2s}
+.lk:hover{color:var(--clr-2)}
+@media(max-width:1060px){.lk{display:none}}
+@media(max-width:460px){.nav{gap:11px}.brand{font-size:15.5px}.btn{padding:13px 21px;font-size:12.5px}}
+
+.hero{padding-top:clamp(118px,15vw,178px);padding-bottom:clamp(26px,4vw,46px)}
+.hero h1{margin:16px 0 22px}
+.hero .sub{font-size:clamp(16px,1.8vw,18.5px);color:var(--ink-2);max-width:53ch;line-height:1.7}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,3vw,38px);
+  margin-top:clamp(38px,6vw,66px);padding-top:26px;border-top:2px solid var(--ink)}
+.figs b{display:block;font-family:Bitter,serif;font-weight:700;
+  font-size:clamp(21px,2.6vw,32px);letter-spacing:-.035em;line-height:1.05;
+  font-variant-numeric:tabular-nums;color:var(--clr-2)}
+.figs span{display:block;margin-top:10px;font-size:12.5px;color:var(--ink-3);line-height:1.5}
+@media(max-width:700px){.figs{grid-template-columns:repeat(2,1fr)}}
+
+.shot{margin-top:clamp(34px,5vw,56px)}
+.shot img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--pa-2)}
+/* Пары «до/после» кадрированы под сами фары, а не под широкий экран. */
+.shot.wide img{aspect-ratio:3/2;object-position:center 60%}
+.shot figcaption{margin-top:11px;font-size:13.5px;color:var(--ink-3);max-width:60ch}
+
+/* Пары «до / после»: два кадра встык, подписи разного цвета. */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:clamp(30px,4vw,46px)}
+.ba figure{position:relative;background:var(--pa-2)}
+.ba img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.ba figcaption{position:absolute;left:0;top:0;font-family:Onest,sans-serif;font-size:10.5px;
+  font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;padding:7px 13px}
+.ba .was figcaption{background:var(--dim)}
+.ba .now figcaption{background:var(--clr)}
+.balist{display:grid;gap:clamp(24px,3vw,34px);margin-top:clamp(30px,4vw,44px)}
+.balist > p{font-size:14px;color:var(--ink-3);max-width:64ch}
+@media(max-width:620px){.ba figcaption{font-size:9.5px;padding:6px 9px}}
+
+/* Полосы света с их же потолка — разделитель тёмных блоков. */
+.dark{background:var(--ink);color:#C2C8C9;position:relative}
+.dark::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;
+  background:repeating-linear-gradient(90deg,#F1F4F3 0 22px,transparent 22px 46px);
+  opacity:.5}
+.dark .tag{color:#6FC3DE}
+.dark h2,.dark h3{color:#FFFFFF}
+.dark p{color:#9AA2A4}
+.pull{font-family:Bitter,serif;font-weight:700;font-size:clamp(19px,2.4vw,29px);
+  line-height:1.24;letter-spacing:-.03em;color:#FFFFFF;max-width:28ch;
+  border-left:3px solid var(--clr);padding-left:20px;margin-top:26px}
+
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,26px);
+  margin-top:clamp(32px,4.2vw,50px)}
+@media(max-width:840px){.three{grid-template-columns:1fr}}
+.three article{background:var(--card);border:1px solid var(--line);overflow:hidden;
+  transition:border-color .25s var(--ease),transform .25s var(--ease)}
+.three article:hover{border-color:var(--clr);transform:translateY(-3px)}
+.three img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--pa-2)}
+.three .tx{padding:clamp(20px,2.4vw,26px)}
+.three h3{margin-bottom:9px;font-size:19px}
+.three p{font-size:14.5px;color:var(--ink-2)}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.6vw,30px);
+  margin-top:clamp(30px,4vw,46px)}
+@media(max-width:860px){.grid3{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid3{grid-template-columns:1fr}}
+.grid3 div{padding-top:18px;border-top:1px solid var(--line-2);transition:border-color .25s}
+.grid3 div:hover{border-top-color:var(--clr)}
+.grid3 b{display:block;font-family:Bitter,serif;font-size:17px;font-weight:600;
+  letter-spacing:-.02em;margin-bottom:8px}
+.grid3 p{font-size:14.5px;color:var(--ink-2)}
+
+/* Порядок работы — нумерованная лента, номера значат этапы. */
+.rail{counter-reset:s;display:grid;gap:2px;margin-top:clamp(30px,4vw,46px)}
+.rail article{counter-increment:s;position:relative;padding:22px 24px 22px 68px;
+  background:rgba(255,255,255,.045);transition:background .25s var(--ease)}
+.rail article:hover{background:rgba(255,255,255,.09)}
+.rail article::before{content:counter(s,decimal-leading-zero);position:absolute;left:24px;top:22px;
+  font-family:Onest,sans-serif;font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--clr)}
+.rail h3{margin-bottom:7px;font-size:17.5px}
+.rail p{font-size:14.5px;max-width:66ch}
+@media(max-width:480px){.rail article{padding:18px 18px 18px 56px}.rail article::before{left:18px;top:19px}}
+
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,34px);
+  margin-top:clamp(30px,4vw,44px)}
+@media(max-width:760px){.fgrid{grid-template-columns:1fr}}
+.fgrid h3{margin-bottom:9px}
+.fgrid p{font-size:14.5px}
+
+.pale{background:#EFF0EF}
+.bigq{font-family:Bitter,serif;font-weight:700;font-size:clamp(20px,2.8vw,33px);
+  line-height:1.22;letter-spacing:-.03em;max-width:24ch}
+.by{margin-top:14px;font-size:13px;color:var(--ink-3)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.6vw,28px);
+  margin-top:clamp(32px,4vw,48px)}
+@media(max-width:760px){.pair{grid-template-columns:1fr}}
+.pair blockquote{background:var(--card);border:1px solid var(--line);padding:clamp(20px,2.4vw,26px)}
+.pair p{font-size:14.5px;color:var(--ink-2)}
+.pair cite{display:block;margin-top:13px;font-style:normal;font-size:12.5px;color:var(--ink-3)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,26px);margin-top:clamp(32px,4vw,46px)}
+@media(max-width:700px){.g2{grid-template-columns:1fr}}
+.g2 img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--pa-2)}
+.g2 figcaption{margin-top:10px;font-size:13px;color:var(--ink-3)}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px);margin-top:clamp(28px,3.6vw,42px)}
+@media(max-width:700px){.g3{grid-template-columns:1fr 1fr}}
+.g3 img{width:100%;aspect-ratio:1/1;object-fit:cover;background:var(--pa-2)}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,54px)}
+@media(max-width:900px){.split{grid-template-columns:1fr}}
+.rows{margin-top:24px;display:grid;gap:0}
+.rows div{display:grid;grid-template-columns:118px 1fr;gap:16px;padding:13px 0;
+  border-top:1px solid var(--line)}
+.rows div:last-child{border-bottom:1px solid var(--line)}
+dt{font-size:12.5px;color:var(--ink-3);letter-spacing:.02em}
+dd{font-size:15px}
+dd a{border-bottom:1px solid var(--line-2);transition:border-color .2s}
+dd a:hover{border-bottom-color:var(--clr)}
+.map{position:relative;aspect-ratio:4/3;background:var(--pa-2);border:1px solid var(--line)}
+.mapstub{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:13px;text-align:center;padding:24px}
+.mapstub span{font-size:13.5px;color:var(--ink-2);max-width:34ch}
+.mapstub button{font:inherit;font-size:13.5px;font-weight:700;font-family:Onest,sans-serif;
+  padding:11px 20px;border:0;background:var(--ink);color:#F3F5F4;cursor:pointer;border-radius:3px}
+form{margin-top:20px;display:grid;gap:14px}
+label{display:block;font-size:12.5px;color:var(--ink-3);margin-bottom:6px}
+input,textarea{width:100%;font:inherit;font-size:15px;padding:12px 14px;background:var(--card);
+  border:1px solid var(--line-2);border-radius:3px;color:inherit}
+input:focus,textarea:focus{outline:2px solid var(--clr);outline-offset:1px;border-color:transparent}
+textarea{min-height:96px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink-2);margin:0}
+.agree input{width:auto;flex:none;margin-top:3px}
+.agree a{border-bottom:1px solid var(--line-2)}
+.fine{font-size:12.5px;color:var(--ink-3)}
+.sent{display:none;padding:14px 16px;background:var(--clr-soft);
+  border-left:3px solid var(--clr);font-size:14.5px}
+footer{background:var(--ink);color:#9AA2A4;padding:34px 0;font-size:13.5px}
+.fin{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
+footer a{color:#C2C8C9;border-bottom:1px solid #333B3D}
+footer a:hover{color:#fff}
+footer .brand{color:#fff}
+footer .brand s{color:#6FC3DE}
+
+#ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:80;display:none;
+  background:var(--card);border:1px solid var(--line-2);padding:18px 20px;font-size:13.5px;
+  max-width:640px;box-shadow:0 14px 40px rgba(0,0,0,.16)}
+#ck.on{display:block}
+#ck a{border-bottom:1px solid var(--line-2)}
+.ckb{display:flex;gap:10px;margin-top:13px}
+.ckb button{font:inherit;font-size:13px;font-weight:700;font-family:Onest,sans-serif;
+  padding:9px 17px;border:1px solid var(--line-2);background:transparent;cursor:pointer;border-radius:3px}
+.ckb .y{background:var(--ink);border-color:var(--ink);color:#F3F5F4}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:55;display:none;gap:9px;padding:10px 14px;
+  background:rgba(230,232,231,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+.bar .btn{flex:1;justify-content:center;padding:13px 10px}
+@media(max-width:700px){.bar{display:flex}body{padding-bottom:70px}}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+/* --- 152-ФЗ --- */
+/* --- 152-ФЗ: согласие, cookie, отложенная карта --- */
+.agree{display:grid;grid-template-columns:19px 1fr;gap:12px;align-items:start;
+  font:400 13.5px/1.55 inherit;font-family:inherit;letter-spacing:normal;text-transform:none;
+  color:inherit;margin:0;cursor:pointer;max-width:52ch}
+.agree span{display:block;letter-spacing:normal;text-transform:none}
+.agree input{width:19px;height:19px;margin:2px 0 0;accent-color:currentColor;cursor:pointer;flex:none}
+.agree a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.agree.opt{opacity:.8}
+button[disabled],.btn[disabled]{opacity:.4;cursor:not-allowed}
+.mapstub{position:absolute;inset:0;display:flex;flex-direction:column;gap:12px;
+  align-items:center;justify-content:center;text-align:center;padding:22px;
+  font-size:13.5px;line-height:1.5;background:rgba(127,127,127,.10)}
+.mapstub button{font:inherit;font-size:13px;padding:11px 20px;cursor:pointer;
+  border:1px solid currentColor;background:transparent;color:inherit;border-radius:3px}
+.mapstub button:hover{opacity:.72}
+.map{position:relative}
+#ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:95;display:none;max-width:440px;
+  padding:18px 20px;background:#101114;color:#F2F0EC;font-size:13.5px;line-height:1.6;
+  border:1px solid rgba(255,255,255,.14);border-radius:6px;
+  box-shadow:0 18px 48px rgba(0,0,0,.45)}
+#ck.on{display:block}
+#ck a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+#ck .ckb{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+#ck button{font:inherit;font-size:12.5px;font-weight:600;letter-spacing:.04em;padding:11px 20px;
+  cursor:pointer;border-radius:4px;border:1px solid rgba(255,255,255,.3);
+  background:transparent;color:#F2F0EC}
+#ck button.y{background:#F2F0EC;color:#101114;border-color:#F2F0EC}
+#ck button:hover{opacity:.85}
+@media(max-width:760px){#ck{bottom:84px;left:10px;right:10px}}
+</style>
+</head>
+<body>
+
+<header id="hd"><div class="w nav">
+  <div class="brand">Правкаям &amp; Ceramic_54<s>Широкая, 2а к6</s></div>
+  <a class="lk" href="#fary">Фары</a>
+  <a class="lk" href="#rabota">Как работаем</a>
+  <a class="lk" href="#otzyvy">Отзывы</a>
+  <a class="btn" href="tel:+79607888947">+7 960 788-89-47</a>
+</div></header>
+
+<main>
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Детейлинг-студия · Ленинский район</p>
+    <h1 class="up">Возвращаем<br>прозрачность</h1>
+    <p class="sub up">Фары, лак, плёнка, керамика. В карточке 2ГИС мы записаны как кузовной
+      ремонт, но половина работ, которые мы снимаем, — это <em>помутневшие фары,
+      которые снова светят</em>. Три года подряд — премия 2ГИС «Лучший детейлинг».</p>
+    <div class="acts up">
+      <a class="btn" href="tel:+79607888947">Позвонить
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#fary">Посмотреть до и после</a>
+    </div>
+    <div class="figs up">
+      <div><b>5,0</b><span>средняя оценка в 2ГИС по 362 отзывам</span></div>
+      <div><b>3 года</b><span>подряд премия 2ГИС «Лучший детейлинг»: 2023, 2025, 2026</span></div>
+      <div><b>7 дней</b><span>через неделю после оклейки ждём вас на плановый осмотр</span></div>
+      <div><b>Без выходных</b><span>ежедневно с 09:00 до 19:00</span></div>
+    </div>
+    <figure class="shot wide up">
+      <img src="photo/pair-1.jpg" alt="Один автомобиль в двух состояниях: слева помутневшая жёлтая фара, справа она же прозрачная после восстановления" width="1400" height="933">
+      <figcaption>Одна машина, один день. Слева — как приехала, справа — как уехала.
+        Такие пары мы снимаем на каждой работе: по ним видно результат, а не обещание.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="fary" class="pale">
+  <div class="w">
+    <p class="tag up">Фары</p>
+    <h2 class="up" style="margin-top:14px">Мутная фара светит<br>вдвое хуже новой</h2>
+    <p class="up" style="margin-top:20px;color:var(--ink-2)">Рассеиватель мутнеет не снаружи,
+      а по всей толщине: песок, реагенты и ультрафиолет съедают заводский лак, и пластик
+      начинает рассеивать свет вместо того, чтобы его собирать. Фара горит, но дорогу
+      уже не освещает. Мы снимаем повреждённый слой, шлифуем в несколько зёрен
+      и закрываем новым защитным составом — иначе через сезон всё вернётся.</p>
+
+    <div class="balist">
+      <div class="ba up">
+        <figure class="was"><img src="photo/dim-1.jpg" alt="Помутневшая жёлтая фара седана до восстановления" loading="lazy" decoding="async">
+          <figcaption>До</figcaption></figure>
+        <figure class="now"><img src="photo/clear-1.jpg" alt="Та же фара после восстановления: прозрачный рассеиватель, видна отражающая чаша" loading="lazy" decoding="async">
+          <figcaption>После</figcaption></figure>
+      </div>
+      <div class="ba up">
+        <figure class="was"><img src="photo/dim-3.jpg" alt="Фара с матовым помутневшим рассеивателем" loading="lazy" decoding="async">
+          <figcaption>До</figcaption></figure>
+        <figure class="now"><img src="photo/clear-3.jpg" alt="Та же фара после полировки: рассеиватель прозрачный, видна лампа" loading="lazy" decoding="async">
+          <figcaption>После</figcaption></figure>
+      </div>
+      <div class="ba up">
+        <figure class="was"><img src="photo/dim-2.jpg" alt="Передняя часть седана с помутневшей фарой до работ" loading="lazy" decoding="async">
+          <figcaption>До</figcaption></figure>
+        <figure class="now"><img src="photo/clear-2.jpg" alt="Та же машина после: фара прозрачная, отражает свет бокса" loading="lazy" decoding="async">
+          <figcaption>После</figcaption></figure>
+      </div>
+      <p class="up">Пары сняты в один заезд, с одной точки и при одном свете. Мы специально
+        не переставляем машину и не меняем ракурс между кадрами — иначе сравнивать нечего.</p>
+    </div>
+
+    <figure class="shot wide up" style="margin-top:clamp(30px,4vw,44px)">
+      <img src="photo/pair-2.jpg" alt="Второй пример: слева фара с мутным жёлтым рассеивателем, справа она же прозрачная" loading="lazy" decoding="async">
+      <figcaption>Эта работа сделана на машине, без снятия блока: так быстрее и дешевле,
+        когда помутнение ещё не дошло до кромок.</figcaption>
+    </figure>
+
+    <div class="g3">
+      <img class="up" src="photo/lamp-1.jpg" alt="Снятая фара на верстаке после восстановления" loading="lazy" decoding="async">
+      <img class="up" src="photo/lamp-2.jpg" alt="Восстановленная фара крупным планом на тёмном покрытии" loading="lazy" decoding="async">
+      <img class="up" src="photo/lamp-3.jpg" alt="Две восстановленные фары рядом" loading="lazy" decoding="async">
+    </div>
+    <p class="up" style="margin-top:16px;font-size:13.5px;color:var(--ink-3)">Часть работ делаем
+      со снятием: так обрабатывается вся поверхность, включая кромки у крыла, — там мутнеет
+      в первую очередь и оттуда же обычно начинается заново.</p>
+  </div>
+</section>
+
+<section id="uslugi">
+  <div class="w">
+    <p class="tag up">Что делаем</p>
+    <h2 class="up" style="margin-top:14px">Всё, что должно<br>быть прозрачным</h2>
+    <div class="three">
+      <article class="up">
+        <img src="photo/lexus.jpg" alt="Белый Lexus RX после полировки и нанесения керамики" loading="lazy" decoding="async">
+        <div class="tx"><h3>Полировка и керамика</h3>
+          <p>Убираем паутинку и риски, выравниваем лак, закрываем составом. Тёмные машины
+            после этого перестают выглядеть серыми в пасмурный день.</p></div>
+      </article>
+      <article class="up">
+        <img src="photo/vezel.jpg" alt="Белый Honda Vezel в светлом боксе после комплекса работ" loading="lazy" decoding="async">
+        <div class="tx"><h3>Бронеплёнка</h3>
+          <p>Зоны риска, капот, фары и туманки. На плёнку выдаём сертификат
+            оригинальности — по нему видно, что именно наклеено на вашу машину.</p></div>
+      </article>
+      <article class="up">
+        <img src="photo/cabin.jpg" alt="Салон автомобиля: центральная консоль и отделка алькантарой" loading="lazy" decoding="async">
+        <div class="tx"><h3>Салон</h3>
+          <p>Химчистка, восстановление, оклейка внутренних элементов и порогов.
+            Алькантара и кожа — отдельно и аккуратно.</p></div>
+      </article>
+    </div>
+    <figure class="shot up" style="margin-top:clamp(30px,4vw,44px)">
+      <img src="photo/bay.jpg" alt="Бокс студии изнутри: белый автомобиль под переносной лампой" loading="lazy" decoding="async">
+      <figcaption>Бокс 115 на Широкой. Переносная лампа — не для красоты: под ней видно
+        риски и «паутинку», которых при верхнем свете не разглядеть.</figcaption>
+    </figure>
+    <div class="grid3">
+      <div class="up"><b>Восстановление фар</b>
+        <p>Шлифовка в несколько зёрен и защитный состав сверху. Со снятием или
+          на машине — смотрим по кузову и по тому, насколько запущен рассеиватель.</p></div>
+      <div class="up"><b>Правка вмятин</b>
+        <p>С этого начиналась студия, отсюда и название. Правим без покраски там,
+          где краска цела, — деталь остаётся заводской.</p></div>
+      <div class="up"><b>Покраска</b>
+        <p>Когда править нечего: глубокие сколы, задиры, сквозные повреждения лака.
+          Красим локально, если так честнее по деньгам.</p></div>
+      <div class="up"><b>Консервация моторного отсека</b>
+        <p>Подкапотное пространство моется, сушится и закрывается составом.
+          Реже закисает и легче обслуживается зимой.</p></div>
+      <div class="up"><b>Оклейка оптики</b>
+        <p>Фары и задние фонари под плёнку — прозрачную или тонирующую.
+          Дешевле, чем менять блок после камня с трассы.</p></div>
+      <div class="up"><b>Уход после</b>
+        <p>Рассказываем, чем мыть и чего не делать, чтобы плёнка и керамика
+          отработали свой срок, а не половину.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="rabota" class="dark">
+  <div class="w">
+    <p class="tag up">Как работаем</p>
+    <h2 class="up" style="margin-top:14px">Пять правил,<br>о которых пишут в отзывах</h2>
+    <p class="pull up">«Все дополнительные работы согласовывались со мной по звонку
+      и выполнялись только после моего одобрения»</p>
+    <p class="up" style="margin-top:18px;font-size:13px;color:#818A8C">Отзыв в 2ГИС
+      на пять звёзд, 31 января 2026 · Mercedes C-класса</p>
+    <div class="rail">
+      <article class="up">
+        <h3>Смета до начала</h3>
+        <p>Считаем работы и материалы заранее и показываем варианты: где можно взять
+          проще и дешевле, а где экономить не стоит. Дальше решаете вы.</p>
+      </article>
+      <article class="up">
+        <h3>Допработы — только с вашего согласия</h3>
+        <p>Если по ходу вскрылось что-то ещё, мы звоним и объясняем. Ничего не делаем
+          молча, чтобы потом не объяснять сумму на выдаче.</p>
+      </article>
+      <article class="up">
+        <h3>Видно, что происходит с машиной</h3>
+        <p>Выкладываем ход работ в сторис Telegram. Машина стоит у нас несколько дней —
+          вам не нужно звонить и спрашивать, на каком она этапе.</p>
+      </article>
+      <article class="up">
+        <h3>Сертификат на плёнку</h3>
+        <p>После оклейки выдаём документ, подтверждающий оригинальность материала.
+          Он же нужен, если по плёнке когда-нибудь придётся предъявлять гарантию.</p>
+      </article>
+      <article class="up">
+        <h3>Плановый осмотр через неделю</h3>
+        <p>Через семь дней ждём вас обратно: смотрим кромки, углы и сложные изгибы,
+          при необходимости подтягиваем. Это бесплатно и входит в работу.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="chestno">
+  <div class="w">
+    <p class="tag up">Честно</p>
+    <h2 class="up" style="margin-top:14px">Плёнка не прячет<br>глубокие сколы</h2>
+    <div class="fgrid">
+      <article class="up">
+        <h3>Что нам написали</h3>
+        <p style="color:var(--ink-2)">«Не поставили меня в известность перед оклейкой,
+          что сколы слишком глубокие на капоте, и после оклейки останутся пузыри».
+          Отзыв на одну звезду, 23 июня 2026.</p>
+        <p style="margin-top:14px;color:var(--ink-2)">Претензия справедливая по сути:
+          человек должен был узнать об этом до работ, а не после.</p>
+      </article>
+      <article class="up">
+        <h3>Как это устроено на самом деле</h3>
+        <p style="color:var(--ink-2)">Плёнка повторяет рельеф. Над глубоким сколом
+          она не ложится ровно: остаётся воздух, и скол становится заметнее, чем был.
+          Растушёвка помогает только на мелких.</p>
+        <p style="margin-top:14px;color:var(--ink-2)">Поэтому осмотр лакокрасочного
+          покрытия до оклейки — обязательный этап. Если сколы глубокие, мы скажем об этом
+          до начала: сначала косметический ремонт, потом плёнка. Это дороже
+          и дольше — и мы предупредим, даже если из-за этого вы уедете думать.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy" class="pale">
+  <div class="w">
+    <p class="tag up">Отзывы · 5,0 из 5 по 362 оценкам в 2ГИС</p>
+    <blockquote class="up" style="margin-top:22px">
+      <p class="bigq">«Выбирал из множества по отзывам и рейтингу по всему Нск.
+        Ездил консультироваться в несколько студий»</p>
+      <p class="by">Andrew · Volkswagen Tiguan · отзыв в 2ГИС, 10 марта 2026</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>Обклеивал здесь зоны риска и некоторые слабые части кузова, нанесение керамики,
+          обклеен внутренний интерьер. Перед началом была очень подробная консультация
+          по каждому элементу. По окончании выдали сертификат, подтверждающий
+          оригинальность плёнки.</p>
+        <cite>Алексей Луценко · 5 июля 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Всю смету заранее согласовали, предложили альтернативные варианты по выбору
+          материала, дали рекомендации. После 7 дней приехал на регламентный осмотр —
+          всё проверили и дали гарантию.</p>
+        <cite>Отзыв в 2ГИС · 6 ноября 2025</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Загонял свой Mercedes C-класса на большой комплекс работ: оклейка, полировка,
+          керамика, консервация моторного отсека. Пересмотрел много детейлингов,
+          но остановился именно на этом и не ошибся.</p>
+        <cite>Отзыв в 2ГИС · 31 января 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Мой автомобиль буквально засиял новизной. Я очень придирчивый клиент,
+          обращался уже трижды, а отзыв оставляю только сейчас — после первого раза
+          я уже понял профессионализм и полностью стал доверять.</p>
+        <cite>Павел · Honda Vezel RS · 22 февраля 2026</cite>
+      </blockquote>
+    </div>
+    <div class="g2">
+      <figure class="up"><img src="photo/corolla.jpg" alt="Чёрная Toyota Corolla в боксе после полировки: на кузове отражаются лампы" loading="lazy" decoding="async">
+        <figcaption>Чёрный цвет после полировки и защиты становится глубоким.
+          Отражения ламп на капоте — это и есть проверка: на плохом лаке они размазаны.</figcaption></figure>
+      <figure class="up"><img src="photo/road.jpg" alt="Белый Volkswagen на горной дороге" loading="lazy" decoding="async">
+        <figcaption>Машина после оклейки зон риска — уже в дороге. Ради этого плёнку
+          и клеят: щебень с трассы прилетает в капот, а не в лак.</figcaption></figure>
+    </div>
+    <div class="acts up" style="margin-top:38px">
+      <a class="btn g" href="https://2gis.ru/firm/141266769835886" target="_blank" rel="noopener">
+        Все 362 отзыва в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty">
+  <div class="w split">
+    <div class="up">
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:14px">Широкая, 2а к6</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>Широкая улица, 2а к6, бокс 115, 1 этаж<br><span class="q2">Ленинский район, Новосибирск</span></dd></div>
+        <div><dt>Телефоны</dt><dd><a href="tel:+79607888947">+7 960 788-89-47</a><br>
+          <a href="tel:+79134721411">+7 913 472-14-11</a><br>
+          <a href="tel:+79133928588">+7 913 392-85-88</a></dd></div>
+        <div><dt>Мессенджеры</dt><dd>WhatsApp и Telegram — на те же номера<br>
+          <span class="q2">ход работ выкладываем в сторис Telegram</span></dd></div>
+        <div><dt>Режим</dt><dd>Ежедневно 09:00–19:00<br><span class="q2">без выходных</span></dd></div>
+        <div><dt>Профиль</dt><dd>Восстановление фар, полировка, керамика, бронеплёнка, правка вмятин, покраска, салон</dd></div>
+        <div><dt>Оплата</dt><dd>Наличными, переводом с карты</dd></div>
+      </div>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="tel:+79607888947">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/141266769835886" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <div class="mapstub" data-src="https://yandex.ru/map-widget/v1/?ll=82.861780%2C54.995381&z=17&text=Новосибирск%2C%20Широкая%20улица%2C%202а%20к6" data-title="Карта: Широкая улица, 2а к6">
+          <span>Карта загружается с сервера «Яндекса» и устанавливает свои cookie.</span>
+          <button type="button">Показать карту</button>
+        </div>
+      </div>
+      <h2 style="font-size:clamp(21px,2.5vw,31px);margin-top:34px">Записаться</h2>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Альберт"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 960 000-00-00"></div>
+        <div><label for="c">Машина</label><input id="c" name="car" placeholder="Toyota Allion, 2006"></div>
+        <div><label for="m">Что нужно</label><textarea id="m" name="message" placeholder="Помутнели фары, хочу восстановить"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cmp">Компания</label><input id="cmp" name="company" tabindex="-1" autocomplete="off"></div>
+        <label class="agree"><input type="checkbox" id="ag" name="consent" required>
+          <span>Я даю согласие на обработку моих персональных данных в соответствии
+          с <a href="privacy/" target="_blank" rel="noopener">Политикой обработки персональных данных</a></span></label>
+        <label class="agree opt"><input type="checkbox" id="adv" name="ads">
+          <span>Хочу получать напоминания о плановом обслуживании и сообщения об акциях
+          (необязательно)</span></label>
+        <button id="sb" class="btn" type="submit" disabled>Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Заявку обрабатываем только для того, чтобы перезвонить,
+          посчитать смету и записать вас на удобное время.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="ck" role="dialog" aria-label="Файлы cookie">
+  Мы используем файлы cookie: технически необходимые для работы страницы и те, что
+  устанавливает виджет «Яндекс.Карт». Аналитику и рекламные счётчики без вашего согласия
+  не подключаем. Подробности — в <a href="privacy/">Политике обработки персональных данных</a>.
+  <div class="ckb">
+    <button class="y" type="button" data-ck="y">Принять</button>
+    <button type="button" data-ck="n">Отклонить</button>
+  </div>
+</div>
+
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">Правкаям &amp; Ceramic_54<s>Широкая, 2а к6</s></div>
+    Широкая улица, 2а к6, бокс 115, Новосибирск · ежедневно 09:00–19:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+79607888947">+7 960 788-89-47</a>
+    <a href="https://2gis.ru/firm/141266769835886" target="_blank" rel="noopener">2ГИС</a>
+    <a href="privacy/">Политика обработки персональных данных</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+79607888947">Позвонить</a>
+  <a class="btn g" href="#fary">До и после</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"Правкаям & Ceramic_54",
+"description":"Детейлинг-студия: восстановление помутневших фар со снятием и на автомобиле, полировка кузова, керамическое покрытие, бронепленка на зоны риска и оптику, правка вмятин без покраски, локальная покраска, химчистка и оклейка салона, консервация моторного отсека. Смета до начала работ, согласование дополнительных работ по звонку, сертификат оригинальности плёнки, плановый осмотр через семь дней.",
+"address":{"@type":"PostalAddress","streetAddress":"Широкая улица, 2а к6, бокс 115","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":54.995381,"longitude":82.86178},
+"telephone":"+79607888947",
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"09:00","closes":"19:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"362","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/141266769835886"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и посчитаем смету.';ok.style.display='block';f.reset();return}}catch(_){}}
+  ok.innerHTML='Приём заявок пока настраивается. Позвоните, пожалуйста: <a href="tel:+79607888947">+7 960 788-89-47</a>.';
+  ok.style.display='block';
+});
+</script>
+<script>
+(function(){
+  var K='ck-choice', box=document.getElementById('ck');
+  function loadMap(){
+    document.querySelectorAll('.mapstub[data-src]').forEach(function(s){
+      var f=document.createElement('iframe');
+      f.loading='lazy'; f.title=s.dataset.title||'Карта проезда'; f.src=s.dataset.src;
+      f.style.width='100%'; f.style.height='100%'; f.style.border='0';
+      s.parentNode.appendChild(f); s.remove();
+    });
+  }
+  var saved=null; try{saved=localStorage.getItem(K)}catch(e){}
+  if(saved==='y'){loadMap()} else if(!saved && box){box.classList.add('on')}
+  if(box) box.addEventListener('click',function(e){
+    var b=e.target.closest('[data-ck]'); if(!b)return;
+    try{localStorage.setItem(K,b.dataset.ck)}catch(e){}
+    box.classList.remove('on'); if(b.dataset.ck==='y') loadMap();
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.mapstub button')) loadMap();
+  });
+})();
+</script>
+<script>
+(function(){
+  var K='ck-choice', box=document.getElementById('ck');
+  function loadMap(){
+    document.querySelectorAll('.mapstub[data-src]').forEach(function(s){
+      var f=document.createElement('iframe');
+      f.loading='lazy'; f.title=s.dataset.title||'Карта проезда'; f.src=s.dataset.src;
+      f.style.width='100%'; f.style.height='100%'; f.style.border='0';
+      s.parentNode.appendChild(f); s.remove();
+    });
+  }
+  var saved=null; try{saved=localStorage.getItem(K)}catch(e){}
+  if(saved==='y'){loadMap()} else if(!saved && box){box.classList.add('on')}
+  if(box) box.addEventListener('click',function(e){
+    var b=e.target.closest('[data-ck]'); if(!b)return;
+    try{localStorage.setItem(K,b.dataset.ck)}catch(e){}
+    box.classList.remove('on'); if(b.dataset.ck==='y') loadMap();
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.mapstub button')) loadMap();
+  });
+  var ag=document.getElementById('ag'), sb=document.getElementById('sb');
+  if(ag&&sb){ var sync=function(){sb.disabled=!ag.checked}; sync();
+    ag.addEventListener('change',sync); }
+})();
+</script>
+</body>
+</html>
