@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Обзвон автобизнесов — sitebiz</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="../fonts/ibm-plex-mono.css">
+<style>
+:root{
+  --paper:#FBFAF7; --card:#FFFFFF; --sunk:#F2F0EB;
+  --ink:#14171B; --ink-2:#565C64; --ink-3:#8A8F97;
+  --rule:#E3E0D9; --rule-2:#CBC7BD;
+  --nav:#26405E; --nav-soft:#E8EDF3;
+  --call:#B0342A; --call-bg:#FCF0EE; --call-edge:#E8B5AE;
+  --wait:#8A6006; --wait-bg:#FCF5E6; --wait-edge:#E5CE9A;
+  --deal:#1B6449; --deal-bg:#E8F2ED; --deal-edge:#A5CDBA;
+  --off:#7E838A;  --off-bg:#F1F1EF;  --off-edge:#CFD1CE;
+  --new-edge:#C9CFD8;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#131519; --card:#191C21; --sunk:#1E2127;
+    --ink:#E9EAEC; --ink-2:#A3A8B0; --ink-3:#767B84;
+    --rule:#282C33; --rule-2:#3A3F47;
+    --nav:#8FB0D6; --nav-soft:#1B2530;
+    --call:#F0837A; --call-bg:#291A19; --call-edge:#5E312C;
+    --wait:#E0AC44; --wait-bg:#272013; --wait-edge:#5B4A22;
+    --deal:#66C9A0; --deal-bg:#12251E; --deal-edge:#2C5545;
+    --off:#8C9096;  --off-bg:#1E2127;  --off-edge:#383C42;
+    --new-edge:#343A43;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#131519; --card:#191C21; --sunk:#1E2127;
+  --ink:#E9EAEC; --ink-2:#A3A8B0; --ink-3:#767B84;
+  --rule:#282C33; --rule-2:#3A3F47;
+  --nav:#8FB0D6; --nav-soft:#1B2530;
+  --call:#F0837A; --call-bg:#291A19; --call-edge:#5E312C;
+  --wait:#E0AC44; --wait-bg:#272013; --wait-edge:#5B4A22;
+  --deal:#66C9A0; --deal-bg:#12251E; --deal-edge:#2C5545;
+  --off:#8C9096;  --off-bg:#1E2127;  --off-edge:#383C42;
+  --new-edge:#343A43;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);
+  font:400 14.5px/1.5 "IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased}
+h1,.ttl,.pill{font-family:"Arial Narrow",Arial,sans-serif}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--nav);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:24px 16px 100px}
+
+/* ── шапка ─────────────────────────────────────────── */
+.top{display:flex;gap:20px;align-items:flex-end;flex-wrap:wrap;
+  border-bottom:2px solid var(--ink);padding-bottom:14px}
+h1{font-size:clamp(22px,2.9vw,30px);font-weight:700;letter-spacing:-.015em;line-height:1.08}
+h1 small{display:block;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:10.5px;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--nav);margin-bottom:6px}
+.hmeta{margin-left:auto;text-align:right;font-size:12px;color:var(--ink-2);line-height:1.7}
+.flag{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;
+  padding:3px 10px;border:1px solid var(--rule-2);border-radius:999px;color:var(--ink-3)}
+.flag i{width:6px;height:6px;border-radius:50%;background:currentColor;flex:none}
+.flag.ok{color:var(--deal);border-color:var(--deal-edge)}
+.flag.busy{color:var(--wait);border-color:var(--wait-edge)}
+.flag.err{color:var(--call);border-color:var(--call-edge)}
+
+/* ── панель ────────────────────────────────────────── */
+.bar{position:sticky;top:0;z-index:20;background:var(--paper);
+  padding:12px 0 11px;border-bottom:1px solid var(--rule)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;
+  border:1px solid var(--rule-2);border-radius:8px;font-size:13px;
+  font-family:"Arial Narrow",Arial,sans-serif;font-weight:600;background:var(--card);
+  transition:border-color .15s,background .15s,color .15s}
+.tab u{text-decoration:none;font-family:"IBM Plex Mono",monospace;font-size:11.5px;
+  font-weight:400;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.tab:hover{border-color:var(--ink-3)}
+.tab[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tab[aria-pressed="true"] u{color:var(--paper);opacity:.6}
+.tab .sq{width:8px;height:8px;border-radius:2px;flex:none}
+.q-call .sq{background:var(--call)} .q-sent .sq{background:var(--wait)}
+.q-deal .sq{background:var(--deal)} .q-no .sq{background:var(--off)}
+.q-new .sq{background:var(--nav)}   .q-hd .sq{background:var(--rule-2)}
+.row2{display:flex;gap:9px;margin-top:10px;flex-wrap:wrap;align-items:center}
+.search{flex:1 1 260px;min-width:0;display:flex;align-items:center;gap:9px;
+  border:1px solid var(--rule-2);border-radius:8px;background:var(--card);padding:0 12px}
+.search input{flex:1;border:0;background:none;padding:9px 0;font:inherit;font-size:14px;
+  color:inherit;min-width:0}
+.search input:focus{outline:none}
+.search svg{width:15px;height:15px;stroke:var(--ink-3);fill:none;stroke-width:2;flex:none}
+.tool{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--rule-2);
+  border-radius:8px;background:var(--card);padding:9px 12px;font-size:13.5px;
+  font-family:"Arial Narrow",Arial,sans-serif;font-weight:600;transition:border-color .15s}
+.tool:hover{border-color:var(--ink)}
+.tool svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+select.tool{padding-right:10px}
+.tool.go{background:var(--nav);color:#fff;border-color:var(--nav)}
+.tool.go:hover{filter:brightness(1.12)}
+.tool.warn{background:var(--wait-bg);color:var(--wait);border-color:var(--wait-edge)}
+.tool[hidden]{display:none}
+
+/* ── карточка ──────────────────────────────────────── */
+.list{display:grid;gap:8px;margin-top:14px}
+.b{position:relative;background:var(--card);border:1px solid var(--rule);
+  border-left:3px solid var(--new-edge);border-radius:7px;padding:13px 15px 12px;
+  transition:opacity .25s,background .25s,border-color .25s}
+.b.s-call{border-left-color:var(--call);background:var(--call-bg)}
+.b.s-sent{border-left-color:var(--wait);background:var(--wait-bg)}
+.b.s-deal{border-left-color:var(--deal);background:var(--deal-bg)}
+.b.s-no{border-left-color:var(--off);background:var(--off-bg)}
+.b.s-no .bname{color:var(--ink-2)}
+.b.leaving{opacity:0;transform:scale(.98);transition:opacity .3s,transform .3s}
+
+.bhead{display:flex;gap:12px;align-items:flex-start}
+.bname{font-size:16px;font-weight:600;letter-spacing:-.01em;line-height:1.25}
+.baddr{font-size:12.5px;color:var(--ink-3);margin-top:2px}
+.bside{margin-left:auto;text-align:right;flex:none;display:flex;flex-direction:column;
+  gap:3px;align-items:flex-end;padding-right:26px}
+.brate{font-size:12.5px;color:var(--ink-2);white-space:nowrap}
+.brate b{font-size:14px;font-weight:600;color:var(--ink)}
+.blink{font-size:11.5px;color:var(--nav);text-decoration:none;border-bottom:1px solid transparent}
+.blink:hover{border-bottom-color:currentColor}
+.x{position:absolute;top:9px;right:9px;width:26px;height:26px;border-radius:6px;
+  display:grid;place-items:center;color:var(--ink-3);transition:background .15s,color .15s}
+.x svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+.x:hover{background:var(--sunk);color:var(--call)}
+.b.hidden-row .x:hover{color:var(--nav)}
+
+.tels{display:flex;gap:5px 16px;flex-wrap:wrap;margin-top:9px;align-items:baseline}
+.tel{font-family:"IBM Plex Mono",monospace;font-size:14px;font-variant-numeric:tabular-nums;
+  text-decoration:none;border-bottom:1px dotted var(--rule-2);white-space:nowrap;
+  transition:color .15s,border-color .15s}
+.tel:hover{color:var(--nav);border-bottom-color:var(--nav)}
+.tel em{font-style:normal;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:10px;
+  letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);margin-right:4px}
+.addtel{font-size:12.5px;color:var(--ink-3);border-bottom:1px dotted var(--rule-2)}
+.hook{font-size:12.5px;color:var(--ink-2);margin-top:7px}
+.hook b{color:var(--nav);font-weight:600}
+
+/* один ряд управления */
+.ctl{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:11px}
+.stat{appearance:none;-webkit-appearance:none;border:1px solid var(--rule-2);border-radius:8px;
+  background:var(--card);padding:9px 30px 9px 12px;font:inherit;font-size:13.5px;
+  font-family:"Arial Narrow",Arial,sans-serif;font-weight:600;cursor:pointer;min-width:150px;
+  background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),
+                   linear-gradient(135deg,currentColor 50%,transparent 50%);
+  background-position:calc(100% - 16px) calc(50% + 1px),calc(100% - 11px) calc(50% + 1px);
+  background-size:5px 5px,5px 5px;background-repeat:no-repeat;
+  transition:border-color .15s,background-color .15s,color .15s}
+.stat:hover{border-color:var(--ink-3)}
+.s-call .stat{color:var(--call);border-color:var(--call-edge);background-color:var(--card)}
+.s-sent .stat{color:var(--wait);border-color:var(--wait-edge)}
+.s-deal .stat{color:var(--deal);border-color:var(--deal-edge)}
+.s-no .stat{color:var(--off);border-color:var(--off-edge)}
+.dt{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--rule-2);
+  border-radius:8px;background:var(--card);padding:8px 11px;font-size:13px}
+.dt svg{width:14px;height:14px;stroke:var(--ink-3);fill:none;stroke-width:2;flex:none}
+.dt input{border:0;background:none;font:inherit;font-size:13px;color:inherit;
+  font-family:"IBM Plex Mono",monospace;width:126px;padding:0}
+.dt input:focus{outline:none}
+.dt .when{font-size:12px;color:var(--ink-3);white-space:nowrap}
+.dt.soon{border-color:var(--call-edge)}
+.dt.soon svg{stroke:var(--call)} .dt.soon .when{color:var(--call);font-weight:500}
+.stale{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;color:var(--wait);
+  border:1px dashed var(--wait-edge);border-radius:8px;padding:7px 11px}
+.stale[hidden]{display:none}
+
+.note{margin-top:8px;border:1px solid var(--rule-2);border-radius:8px;background:var(--card);
+  padding:9px 12px;font-size:13.5px;line-height:1.55;min-height:38px;
+  white-space:pre-wrap;word-break:break-word;transition:border-color .15s,box-shadow .15s}
+.note:focus{outline:none;border-color:var(--nav);box-shadow:0 0 0 2px var(--nav-soft)}
+.note:empty::before{content:attr(data-ph);color:var(--ink-3)}
+
+@media(max-width:640px){
+  .bside{padding-right:0;margin-left:0;text-align:left;align-items:flex-start;
+    flex-direction:row;gap:12px;flex-wrap:wrap}
+  .bhead{flex-direction:column;gap:6px;padding-right:30px}
+  .stat{flex:1 1 100%;min-width:0}
+  .dt{flex:1 1 100%}
+  .dt input{flex:1;width:auto}
+}
+
+.empty{padding:44px 20px;text-align:center;color:var(--ink-3);font-size:14px}
+.foot{margin-top:30px;padding-top:14px;border-top:1px solid var(--rule);
+  font-size:11.5px;color:var(--ink-3);display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between}
+.ro{margin-top:12px;border:1px solid var(--wait-edge);background:var(--wait-bg);color:var(--wait);
+  border-radius:8px;padding:11px 14px;font-size:13px}
+
+/* ── печать ────────────────────────────────────────── */
+@page{size:A4 landscape;margin:9mm}
+@media print{
+  :root{--paper:#fff;--card:#fff;--sunk:#fff;--ink:#000;--ink-2:#333;--ink-3:#555;
+    --rule:#c8c8c8;--rule-2:#8c8c8c;--nav:#1d3450;
+    --call-bg:#f8ece9;--wait-bg:#faf3e3;--deal-bg:#eaf3ee;--off-bg:#f2f2f2}
+  body{background:#fff;font-size:8.6pt;line-height:1.32}
+  .wrap{max-width:none;padding:0}
+  .bar,.x,.flag,.no-print,.ro,.stale{display:none!important}
+  h1{font-size:17pt} h1 small{font-size:6.6pt;margin-bottom:4px}
+  .hmeta{font-size:7.4pt}
+  .list{gap:4px;margin-top:9px}
+  .b{padding:5px 8px 6px;border-radius:0;break-inside:avoid;page-break-inside:avoid;
+    border-left-width:2.5px}
+  .b.hidden-row{display:none}
+  .bname{font-size:9.6pt} .baddr{font-size:7pt}
+  .bside{padding-right:0}
+  .tels{margin-top:3px;gap:2px 12px}
+  .tel{font-size:8.2pt;border-bottom:0}
+  .hook{font-size:7.2pt;margin-top:2px}
+  .ctl{margin-top:4px;gap:6px}
+  .stat{appearance:none;background-image:none;border:1px solid #555;padding:1px 7px;
+    font-size:7.6pt;min-width:0;color:#000!important;border-radius:3px}
+  .dt{padding:1px 6px;font-size:7.6pt;border-color:#bbb}
+  .dt svg{display:none} .dt input{display:none} .dt .when{font-size:7.6pt;color:#000}
+  .note{margin-top:3px;min-height:20px;font-size:7.6pt;padding:2px 6px;
+    border-color:#bbb;border-style:dashed;border-radius:0}
+  .note:empty::before{content:""}
+  .blink{font-size:6.8pt;border:0}
+  .foot{margin-top:10px;font-size:6.8pt}
+  a{text-decoration:none;color:inherit}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1><small>sitebiz · Новосибирск</small>Обзвон автобизнесов<br>с готовыми сайтами</h1>
+  <div class="hmeta">
+    <span class="flag" id="flag"><i></i>загрузка…</span><br>
+    Показано <b id="shown">0</b> из <b id="total">0</b> · сайты: lttwru.github.io/sitebiz/<br>
+    Телефоны из 2ГИС на 1 сентября 2026
+  </div>
+</header>
+
+<div class="ro" id="ro">Пометки хранятся в браузере, в котором вы их поставили: у коллеги
+  на его устройстве будет свой список, и друг друга вы не видите. Чтобы свести —
+  «Выгрузить» у себя и «Загрузить» у него. Очистка данных сайта в браузере стирает пометки,
+  поэтому раз в неделю выгружайте файл.</div>
+
+<div class="bar no-print">
+  <div class="tabs">
+    <button class="tab" data-f="all" aria-pressed="true">Все<u>0</u></button>
+    <button class="tab q-call" data-f="call"><i class="sq"></i>Перезвонить<u>0</u></button>
+    <button class="tab q-sent" data-f="sent"><i class="sq"></i>Ждём ответа<u>0</u></button>
+    <button class="tab q-new"  data-f="new"><i class="sq"></i>Не звонил<u>0</u></button>
+    <button class="tab q-deal" data-f="deal"><i class="sq"></i>Согласился<u>0</u></button>
+    <button class="tab q-no"   data-f="no"><i class="sq"></i>Отказался<u>0</u></button>
+    <button class="tab q-hd"   data-f="hd"><i class="sq"></i>Убранные<u>0</u></button>
+  </div>
+  <div class="row2">
+    <label class="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <input id="q" type="search" placeholder="Поиск по названию или телефону">
+    </label>
+    <select class="tool" id="sort" aria-label="Порядок">
+      <option value="status">Сначала кому звонить</option>
+      <option value="date">По дате перезвона</option>
+      <option value="reviews">По числу отзывов</option>
+      <option value="name">По названию</option>
+    </select>
+    <button class="tool warn" id="resort" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg>Обновить порядок</button>
+    <button class="tool go" id="addbiz">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Бизнес</button>
+    <button class="tool" id="print">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4v-6h16v6h-2M8 14h8v7H8z"/></svg>Печать</button>
+    <button class="tool" id="csv">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>CSV</button>
+    <button class="tool" id="save" title="Сохранить свои пометки файлом, чтобы передать коллеге">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11l3 3v13H5zM8 4v6h7V4M8 20v-6h8v6"/></svg>Выгрузить</button>
+    <button class="tool" id="load" title="Принять пометки из файла коллеги">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V8M7 12l5-5 5 5M4 4h16"/></svg>Загрузить</button>
+    <input type="file" id="loadfile" accept="application/json,.json" hidden>
+  </div>
+</div>
+
+<div class="list" id="list"></div>
+
+<div class="foot">
+  <span>Прайс: сайт 5 000 ₽ + логотип 3 000 ₽ разово · обслуживание 2 000 ₽/мес ·
+    правки до публикации бесплатно</span>
+  <span>Список сам не пересобирается: отметили статус — карточка осталась на месте</span>
+</div>
+</div>
+
+<script type="application/json" id="st">{"v":2,"base":"https://lttwru.github.io/sitebiz/","biz":[{"s":"shinomontazh-titova","n":"Шиномонтажная мастерская","a":"улица Титова, 220 к1","d":"Ленинский","r":"4,8","c":544,"p":["+7 913 386-62-09"],"m":[],"h":"сайта нет вообще","k":["круглосуточно"],"g":"https://2gis.ru/firm/70000001045544020"},{"s":"oniks","n":"ОНИКС","a":"автотехцентр, улица Петухова, 69/3","d":"Кировский","r":"4,8","c":598,"p":["+7 383 286-75-60","+7 952 911-44-22","+7 383 286-40-98","+7 913 007-41-08"],"m":[],"h":"сайта нет вообще","k":["премия 2ГИС 2023"],"g":"https://2gis.ru/firm/141266769590733"},{"s":"dnk-avto","n":"ДНК авто","a":"Нижегородская улица, 268 к3","d":"Октябрьский","r":"4,8","c":222,"p":["+7 383 354-99-44","+7 906 995-73-06"],"m":[],"h":"сайта нет вообще","k":["25+ видов работ"],"g":"https://2gis.ru/firm/70000001055759455"},{"s":"level-wash","n":"LEVEL","a":"автомойка и детейлинг, Семьи Шамшиных, 61 к1","d":"Центральный","r":"4,8","c":239,"p":["+7 913 721-00-61"],"m":[],"h":"сайта нет вообще","k":["центр города"],"g":"https://2gis.ru/firm/70000001039069082"},{"s":"dunay","n":"Дунай","a":"автокомплекс, улица Дунаевского, 11 к1","d":"Калининский","r":"4,5","c":417,"p":["+7 913 915-00-68","+7 383 291-00-68"],"m":[],"h":"сайта нет вообще","k":["мойка + шиномонтаж"],"g":"https://2gis.ru/firm/141265771678108"},{"s":"avtopark-dovatora","n":"Автопарк","a":"автосервис, улица Доватора, 11","d":"Дзержинский","r":"4,9","c":163,"p":["+7 383 310-55-55"],"m":[],"h":"сайта нет вообще","k":["бесплатная диагностика"],"g":"https://2gis.ru/firm/70000001035370648"},{"s":"city-motors-plus","n":"Сити Моторс Плюс","a":"автомастерская, улица Связистов, 131/1Б","d":"Ленинский","r":"4,5","c":118,"p":["+7 383 239-09-72","+7 383 239-09-73"],"m":[],"h":"сайта нет вообще","k":["15 марок"],"g":"https://2gis.ru/firm/70000001006160320"},{"s":"renault-center","n":"Renault Center","a":"сервис и запчасти, улица Кошурникова, 61Б","d":"Октябрьский","r":"4,6","c":355,"p":["+7 383 287-67-77","+7 913 480-00-95","+7 383 239-34-10","+7 383 214-24-91"],"m":[],"h":"сайта нет вообще","k":["кузовной цех"],"g":"https://2gis.ru/firm/70000001019382933"},{"s":"avtoservis-sibiryakov","n":"Автосервис и автомойка","a":"улица Сибиряков-Гвардейцев, 56Б","d":"Кировский","r":"4,5","c":262,"p":["+7 953 885-57-88","+7 953 895-94-88"],"m":[],"h":"сайта нет вообще","k":["сервис + мойка"],"g":"https://2gis.ru/firm/141265769348224"},{"s":"feniks","n":"Феникс","a":"автосервис и запчасти, Молодогвардейская улица, 2","d":"Первомайский","r":"4,8","c":259,"p":["+7 913 376-16-88","+7 923 705-44-44","+7 923 172-07-77"],"m":[],"h":"сайта нет вообще","k":["моторный цех","авторазбор"],"g":"https://2gis.ru/firm/70000001020283303"},{"s":"autobox54","n":"Autobox54","a":"развал-схождение и ходовая, Широкая улица, 40/1","d":"Ленинский","r":"5,0","c":304,"p":["+7 993 007-79-51"],"m":[],"h":"сайт не открывается","k":[],"g":"https://2gis.ru/firm/70000001025742434"},{"s":"asia-ostrovskogo","n":"Азия","a":"ремонт рулевых реек, улица Николая Островского, 70","d":"Центральный","r":"4,9","c":249,"p":["+7 383 286-73-94","+7 905 951-84-47","+7 913 002-73-94"],"m":[],"h":"заглушка вместо сайта","k":["рулевые рейки"],"g":"https://2gis.ru/firm/141265769359700"},{"s":"avtozdrav","n":"АвтоЗдрав","a":"СТО, Волочаевская улица, 64а","d":"Дзержинский","r":"4,6","c":128,"p":["+7 383 255-02-10","+7 962 835-02-10","+7 962 829-85-88"],"m":[],"h":"сайт не адаптивный","k":["сервисная книжка"],"g":"https://2gis.ru/firm/141265771763497"},{"s":"rem-zona","n":"Рем Зона","a":"автокомплекс, Большая улица, 580а","d":"Ленинский","r":"4,9","c":704,"p":["+7 953 802-26-63"],"m":[],"h":"только WhatsApp","k":[],"g":"https://2gis.ru/firm/70000001031929834"},{"s":"honda-san","n":"Хонда-Сан","a":"автокомплекс, Большевистская улица, 125/3","d":"Октябрьский","r":"4,5","c":598,"p":["+7 933 350-23-99","+7 952 911-54-76","+7 901 452-93-05"],"m":[],"h":"только соцсети","k":["одна марка"],"g":"https://2gis.ru/firm/141265769687227"},{"s":"emka","n":"Emka","a":"автосервис, Большая улица, 307а","d":"Ленинский","r":"4,9","c":578,"p":["+7 383 207-57-16"],"m":[{"n":"+7 913 901-17-41","t":"WhatsApp"}],"h":"только соцсети","k":["рассрочка 0 %"],"g":"https://2gis.ru/firm/70000001066416107"},{"s":"bykof","n":"Bykof","a":"шиномонтаж и хранение шин, Пермская улица, 59/2","d":"Новосибирск","r":"4,9","c":371,"p":["+7 913 018-15-15"],"m":[],"h":"домен припаркован","k":["хранение шин"],"g":"https://2gis.ru/firm/141265769745845"},{"s":"avto-premium","n":"Авто Премиум (Autopremium)","a":"автосервис для благородных марок: Infiniti, Lexus, Nissan, улица Фрунзе, 104Б","d":"Центральный","r":"4,9","c":201,"p":["+7 383 239-22-10","+7 383 310-58-08"],"m":[{"n":"+7 983 310-22-10","t":"Telegram"}],"h":"только Telegram","k":["Infiniti · Lexus · Nissan","3 премии 2ГИС","свой магазин запчастей","авто с аукциона Японии"],"g":"https://2gis.ru/firm/141265770954081"},{"s":"maks-detailing","n":"Макс","a":"кузовной ремонт, покраска и детейлинг, Пролетарская улица, 271а","d":"Октябрьский","r":"5,0","c":440,"p":["+7 913 913-00-36","+7 999 321-00-36"],"m":[],"h":"только WhatsApp","k":[],"g":"https://2gis.ru/firm/70000001074181259"},{"s":"most","n":"Мост","a":"СТО, Владимировская улица, 2ж к3","d":"Железнодорожный","r":"4,9","c":89,"p":["+7 913 377-98-66"],"m":[],"h":"сайта нет вообще","k":["лучший 2025 и 2026","ремонт электромобилей"],"g":"https://2gis.ru/firm/70000001044237221"},{"s":"subaru-service-nsk","n":"Subaru Service Nsk","a":"сервис только для Subaru, Сибиряков-Гвардейцев, 47 к9","d":"Кировский","r":"4,8","c":332,"p":["+7 383 255-00-30","+7 983 000-03-03","+7 983 000-05-05","+7 903 934-55-33"],"m":[],"h":"только соцсети","k":["одна марка","запчасти из Японии"],"g":"https://2gis.ru/firm/141266769701112"},{"s":"avto-frantsiya","n":"Авто-Франция","a":"сервис Citroen и Peugeot, Выборная улица, 26 к1","d":"Октябрьский","r":"4,9","c":366,"p":["+7 913 207-38-14","+7 383 380-36-47","+7 952 912-56-06","+7 953 780-36-47","+7 952 901-53-35"],"m":[],"h":"только соцсети","k":["две марки","свой эвакуатор"],"g":"https://2gis.ru/firm/70000001027010947"},{"s":"luna-avto","n":"Луна авто","a":"сервисная станция, Станционная улица, 98/2","d":"Ленинский","r":"4,7","c":340,"p":["+7 383 233-53-33"],"m":[],"h":"только ВКонтакте","k":["номинант 2026","грузовой и дизель"],"g":"https://2gis.ru/firm/70000001033836273"},{"s":"avto-tochka","n":"Авто-Точка","a":"автосервис в Бердске, Водосточная улица, 18","d":"Бердск","r":"4,8","c":438,"p":["+7 913 001-77-99"],"m":[],"h":"только соцсети","k":["3D-развал"],"g":"https://2gis.ru/firm/70000001007025733"},{"s":"absdisk54","n":"АБСДиск54","a":"шинный центр и покраска дисков, Бориса Богаткова, 163а к2","d":"Октябрьский","r":"4,6","c":410,"p":["+7 913 067-05-42"],"m":[{"n":"+7 913 068-97-37","t":"WhatsApp"}],"h":"только соцсети","k":["13 лет","порошковая окраска"],"g":"https://2gis.ru/firm/70000001060470631"},{"s":"stoavto","n":"STOAvto","a":"автосервис, шиномонтаж и мойка, улица Курчатова, 37 к1","d":"Калининский","r":"4,5","c":215,"p":["+7 913 006-57-99"],"m":[],"h":"только мессенджеры","k":["сервис + мойка","моторный цех"],"g":"https://2gis.ru/firm/70000001029392115"},{"s":"sibiriya-motors","n":"Сибирия Моторс","a":"автокомплекс, 2-я Высокогорная улица, 40","d":"Октябрьский","r":"4,8","c":210,"p":["+7 952 921-50-04"],"m":[],"h":"только мессенджеры","k":["турбины и дизель","40 марок"],"g":"https://2gis.ru/firm/70000001067853499"},{"s":"akademiya-servisa","n":"Академия Сервиса","a":"автосервис и запчасти, Червонная улица, 20/1","d":"Первомайский","r":"4,8","c":153,"p":["+7 913 708-90-90","+7 913 069-69-57"],"m":[],"h":"только WhatsApp","k":["свой разбор","антикор"],"g":"https://2gis.ru/firm/70000001031402816"},{"s":"mamitsu","n":"Мамитсу","a":"автосервис Mazda, Mitsubishi и Subaru, Станционная улица, 51","d":"Ленинский","r":"4,7","c":147,"p":["+7 983 001-22-24","+7 983 138-88-98"],"m":[],"h":"только соцсети","k":["три марки","клиент-центр"],"g":"https://2gis.ru/firm/70000001031848842"},{"s":"avtoklubservis","n":"Автоклубсервис","a":"автосервис, Светлановская улица, 50/6","d":"Заельцовский","r":"4,7","c":93,"p":["+7 383 214-50-93","+7 951 393-53-93"],"m":[],"h":"сайта нет вообще","k":["19 марок","акт на работы"],"g":"https://2gis.ru/firm/70000001020003945"},{"s":"maxservice54","n":"MAXservice 54","a":"развал-схождение и шиномонтаж, Троллейная улица, 76 к1","d":"Ленинский","r":"4,7","c":408,"p":["+7 383 380-22-86","+7 953 790-61-16"],"m":[],"h":"только соцсети","k":["гарантия полгода"],"g":"https://2gis.ru/firm/141265770431770"},{"s":"avtokompleks54","n":"Автокомплекс54","a":"автосервис, улица Петухова, 152/2","d":"Кировский","r":"4,5","c":277,"p":["+7 383 288-48-48"],"m":[],"h":"сайта нет вообще","k":["антикор"],"g":"https://2gis.ru/firm/70000001042063710"},{"s":"sto-pochinok","n":"СТО Починок","a":"автосервис, улица Баумана, 27","d":"Первомайский","r":"4,5","c":124,"p":["+7 383 335-74-16","+7 993 017-86-80"],"m":[],"h":"только мессенджеры","k":["мониторы из бокса","моторный цех"],"g":"https://2gis.ru/firm/70000001026793495"},{"s":"impuls-avto","n":"Импульс-авто","a":"автосервис, улица Мусы Джалиля, 25","d":"Советский, Академгородок","r":"4,9","c":344,"p":["+7 383 209-10-08"],"m":[{"n":"+7 929 382-66-60","t":"WhatsApp"}],"h":"оба сайта мертвы","k":["спецтехника"],"g":"https://2gis.ru/firm/70000001093452109"},{"s":"transsibreal","n":"Транссибреал","a":"круглосуточный автосервис, улица Петухова, 17д к4","d":"Кировский","r":"4,9","c":303,"p":["+7 383 380-02-60","+7 383 380-90-30","+7 952 926-88-55"],"m":[],"h":"только соцсети","k":["круглосуточно","грузовые и спецтехника"],"g":"https://2gis.ru/firm/141265769668342"},{"s":"subarubox","n":"СубаруБокс","a":"сервис и тюнинг Subaru, Комбинатская улица, 1/1","d":"Дзержинский","r":"4,7","c":284,"p":["+7 913 943-69-45","+7 913 750-28-88"],"m":[],"h":"вместо сайта телеграм","k":["только Subaru","свой склад"],"g":"https://2gis.ru/firm/141265770744753"},{"s":"praym","n":"Прайм","a":"автокомплекс, Промышленная улица, 20Б к2, Криводановка","d":"с. Криводановка","r":"4,7","c":283,"p":["+7 913 784-12-13"],"m":[],"h":"только WhatsApp","k":["сервис + мойка + кафе","мойка от 300 ₽"],"g":"https://2gis.ru/firm/141265770493306"},{"s":"epitsentr","n":"Эпицентр","a":"шиномонтаж, улица Немировича-Данченко, 15","d":"Ленинский","r":"4,8","c":266,"p":["+7 383 299-79-39"],"m":[{"n":"+7 965 822-00-29","t":"WhatsApp"}],"h":"хостинг не оплачен","k":["до 21:00"],"g":"https://2gis.ru/firm/70000001044921071"},{"s":"chistaya-sloboda","n":"Автосервис на Чистой слободе","a":"9-й Порт-Артурский переулок, 74","d":"Ленинский","r":"4,6","c":265,"p":["+7 383 381-13-84"],"m":[{"n":"+7 953 795-69-81","t":"WhatsApp"}],"h":"только WhatsApp","k":["работа по записи","берут мото"],"g":"https://2gis.ru/firm/70000001043898461"},{"s":"berloga-servis","n":"Берлога-Сервис","a":"СТО, Советская улица, 1в, Верх-Тула","d":"с. Верх-Тула","r":"5,0","c":101,"p":["+7 962 839-28-28"],"m":[],"h":"только соцсети","k":["дизель и ультразвук"],"g":"https://2gis.ru/firm/70000001075215494"},{"s":"post-5","n":"Пост №5","a":"автосервис, улица Селезнёва, 98","d":"Дзержинский","r":"5,0","c":100,"p":["+7 995 574-19-94"],"m":[],"h":"конструктор taplink","k":["подбор авто"],"g":"https://2gis.ru/firm/70000001083379390"},{"s":"shinomontazh-svetlanovskaya","n":"Koltsov Motors (Шиномонтажная мастерская)","a":"Светлановская, 2/2","d":"Заельцовский","r":"5,0","c":96,"p":["+7 993 003-99-99"],"m":[],"h":"без сайта","k":["покраска дисков","хранение шин"],"g":"https://2gis.ru/firm/70000001082507563"},{"s":"gbsh-1","n":"ГБШ-1","a":"автосервис, Гусинобродское шоссе, 1","d":"Октябрьский","r":"4,6","c":53,"p":["+7 383 299-13-53"],"m":[],"h":"сайта нет вообще","k":["стартеры и генераторы","автозвук"],"g":"https://2gis.ru/firm/141266769977668"},{"s":"avtoservis-timiryazeva","n":"Автосервис (Тимирязева, 3/5)","a":"посёлок Тулинский, Тимирязева, 3/5","d":"Новосибирский, пос. Тулинский","r":"4,9","c":52,"p":["+7 903 930-32-05"],"m":[],"h":"сайта нет вообще","k":["только Mercedes-Benz"],"g":"https://2gis.ru/firm/70000001040327771"},{"s":"avto-profi","n":"Авто-Профи","a":"торгово-сервисный центр, улица Чапаева, 21","d":"Первомайский","r":"4,8","c":263,"p":["+7 383 383-06-90","+7 383 383-60-93"],"m":[{"n":"+7 913 003-06-90","t":"WhatsApp"}],"h":"вместо сайта Telegram","k":["магазин + сервис","75 марок"],"g":"https://2gis.ru/firm/70000001007521303"},{"s":"avtoinzhener","n":"АВТОИНЖЕНЕР","a":"автосервис и ремонт рулевых реек, Северный проезд, 29","d":"Кировский","r":"4,8","c":254,"p":["+7 383 292-69-99","+7 913 916-69-99","+7 913 018-69-99"],"m":[],"h":"только WhatsApp","k":["рулевые рейки","Mobil 1"],"g":"https://2gis.ru/firm/141265769420320"},{"s":"sun-servis","n":"Sun сервис","a":"автосервис и автоэлектрика, улица Доватора, 11","d":"Дзержинский","r":"4,6","c":235,"p":["+7 923 777-75-98"],"m":[{"n":"+7 923 222-21-98","t":"WhatsApp"}],"h":"только WhatsApp","k":["автоэлектрика","пневмоподвеска"],"g":"https://2gis.ru/firm/141265771422419"},{"s":"remtseh","n":"Ремцех","a":"СТО с моторным цехом, Большая улица, 255 к1","d":"Ленинский","r":"4,6","c":234,"p":["+7 383 310-10-66","+7 383 310-10-99","+7 983 510-10-66","+7 983 510-10-99"],"m":[],"h":"только мессенджеры","k":["моторный цех","АКПП и турбины"],"g":"https://2gis.ru/firm/141266769654072"},{"s":"skr-service","n":"Skr service","a":"автосервис, Лазурная улица, 27/4","d":"Октябрьский","r":"4,9","c":235,"p":["+7 383 277-22-44","+7 952 902-52-22"],"m":[{"n":"+7 983 308-82-22","t":"Telegram"}],"h":"только соцсети","k":["BMW и Mercedes","подбор перед покупкой"],"g":"https://2gis.ru/firm/70000001064783653"},{"s":"u-filina","n":"У Филина","a":"сервисный центр, Карла Либкнехта, 210","d":"Октябрьский","r":"4,7","c":225,"p":["+7 999 450-26-23"],"m":[],"h":"только WhatsApp","k":["автоэлектрика","ремонт блоков управления"],"g":"https://2gis.ru/firm/141265769975020"},{"s":"ilanka-motors","n":"Иланка-моторс","a":"СТО, Дачная улица, 62/2","d":"Заельцовский","r":"4,5","c":219,"p":["+7 383 375-44-14","+7 383 285-44-14"],"m":[],"h":"только ВКонтакте","k":["бесплатная диагностика ходовой","развал на стенде"],"g":"https://2gis.ru/firm/141265770608862"},{"s":"a-servis","n":"А-Сервис","a":"автокомплекс, Тайгинская улица, 3 к2","d":"Калининский","r":"4,9","c":212,"p":["+7 383 363-90-82","+7 952 938-56-48","+7 953 797-63-41"],"m":[],"h":"только WhatsApp","k":["«Лучший автосервис 2025»","своя автомойка"],"g":"https://2gis.ru/firm/70000001089703882"},{"s":"avtika","n":"Автика","a":"автомастерская, Сибиряков-Гвардейцев, 68/1","d":"Кировский","r":"4,9","c":212,"p":["+7 953 803-18-18","+7 383 205-20-49","+7 913 476-80-78"],"m":[],"h":"вместо сайта max.ru","k":["стартеры и генераторы","контрактные моторы"],"g":"https://2gis.ru/firm/70000001018991595"},{"s":"mehanik","n":"Механик","a":"автосервис, улица Немировича-Данченко, 120а","d":"Кировский","r":"4,2","c":205,"p":["+7 383 388-55-48"],"m":[],"h":"только MAX","k":["работа по заказ-наряду","до 21:00"],"g":"https://2gis.ru/firm/141265770894605"},{"s":"kak-doma","n":"Как дома","a":"автокомплекс, Бердск, Лунная улица, 89","d":"Бердск","r":"4,5","c":203,"p":["+7 913 015-27-77","+7 913 015-97-77"],"m":[],"h":"только мессенджеры","k":["28 камер в ремзоне","свой магазин","эвакуатор"],"g":"https://2gis.ru/firm/70000001036160239"},{"s":"pro","n":"Про (PRO)","a":"Выборная улица, 163","d":"Октябрьский","r":"4,8","c":201,"p":["+7 913 061-84-40"],"m":[],"h":"только WhatsApp","k":["моторный цех","АКПП","автозвук"],"g":"https://2gis.ru/firm/70000001017838769"},{"s":"avtoareal","n":"Автоареал","a":"автосервис и установочный центр StarLine, Pandora, Бинар, Софийская, 12/2","d":"Советский","r":"4,8","c":197,"p":["+7 913 202-76-66"],"m":[],"h":"только соцсети","k":["StarLine · Pandora · Бинар","проверка перед покупкой"],"g":"https://2gis.ru/firm/70000001007219086"},{"s":"avtoforsazh","n":"Автофорсаж","a":"круглосуточное СТО, Гусинобродское шоссе, 62 к10","d":"Октябрьский","r":"4,9","c":199,"p":["+7 993 952-02-02","+7 383 381-74-51"],"m":[],"h":"только соцсети","k":["круглосуточно","свой эвакуатор","выездной сервис"],"g":"https://2gis.ru/firm/70000001080093729"},{"s":"sancho","n":"Станция Дядюшки Санчо","a":"автосервис, улица Авиастроителей, 13/1","d":"Дзержинский","r":"4,7","c":194,"p":["+7 962 835-21-10","+7 383 255-21-10"],"m":[],"h":"только мессенджеры","k":["мото и гибриды","зона ожидания","магазин аксессуаров"],"g":"https://2gis.ru/firm/70000001030839510"},{"s":"diagnostika-mihail","n":"Диагностика у Михаила","a":"Лазурная улица, 27а","d":"Октябрьский","r":"4,8","c":120,"p":["+7 913 912-57-90","+7 903 935-32-26"],"m":[],"h":"сайта нет вообще","k":["один мастер","японские марки","подогреватели и автозвук"],"g":"https://2gis.ru/firm/141265769535508"},{"s":"evropeyskiy","n":"Европейский","a":"Большая улица, 252 к2","d":"Ленинский","r":"4,7","c":88,"p":["+7 909 529-33-99","+7 995 129-33-99"],"m":[],"h":"только соцсети (MAX, Telegram)","k":["кузов + моторный цех","мото, гибриды, ГБО","свой эвакуатор и мотоэвакуатор"],"g":"https://2gis.ru/firm/70000001070237518"},{"s":"red-service","n":"Red Service","a":"Красный проспект, 72","d":"Центральный","r":"4,9","c":83,"p":["+7 960 797-26-96"],"m":[],"h":"только соцсети (WhatsApp, Telegram)","k":["мастерская + магазин запчастей","развал-схождение","рейтинг 4.9"],"g":"https://2gis.ru/firm/141266769751389"},{"s":"mb-life-style","n":"Mb-life style","a":"улица Бестужева, 40 к1","d":"Заельцовский","r":"4,7","c":83,"p":["+7 923 157-01-67"],"m":[],"h":"только WhatsApp","k":["специализация Mercedes-Benz","впуск, пневмоподвеска, АКПП","кузовом не занимаются"],"g":"https://2gis.ru/firm/70000001034346596"},{"s":"elektroceh","n":"Электроцех","a":"улица Демакова, 30/6","d":"Советский","r":"4,7","c":74,"p":["+7 913 734-48-23","+7 983 320-09-99"],"m":[],"h":"только WhatsApp","k":["автоэлектрика: стартеры и генераторы","магазин запчастей","гарантия 90 дней"],"g":"https://2gis.ru/firm/70000001045724437"},{"s":"respekt","n":"Респект","a":"Выборная улица, 122/2 к1","d":"Октябрьский","r":"4,8","c":73,"p":["+7 913 920-08-80"],"m":[],"h":"только соцсети (Telegram, WhatsApp)","k":["премия 2ГИС 2026","сервис + своя мойка","ежедневно 10–21"],"g":"https://2gis.ru/firm/70000001103624399"},{"s":"avtoresurs","n":"Авторесурс","a":"Пермская улица, 14","d":"Ленинский","r":"4,5","c":51,"p":["+7 383 258-09-09","+7 962 838-09-09","+7 383 255-83-70"],"m":[],"h":"сайта нет вообще","k":["сервис + магазин запчастей","руководитель отвечает лично","Пн–Пт 9–20"],"g":"https://2gis.ru/firm/141265770027373"},{"s":"favorit-avto","n":"Фаворит-Авто","a":"Тюменская улица, 10","d":"Кировский","r":"5,0","c":47,"p":["+7 983 127-27-69"],"m":[],"h":"сайта нет вообще","k":["рейтинг 5,0 — все отзывы на пять","АКПП, дизель, гибриды","ежедневно 10–20"],"g":"https://2gis.ru/firm/70000001112727867"},{"s":"oskar","n":"Оскар","a":"улица Фрунзе, 67/4","d":"Дзержинский","r":"4,7","c":1230,"p":["+7 913 912-42-44","+7 913 767-55-25"],"m":[{"n":"+7 913 917-02-94","t":"WhatsApp"}],"h":"только соцсети (ВКонтакте, WhatsApp)","k":["автомойка + детейлинг + шиномонтаж","07:00–24:00 без выходных"],"g":"https://2gis.ru/firm/141265770100966"},{"s":"origami","n":"Origami","a":"Большая улица, 270","d":"Ленинский","r":"4,7","c":748,"p":["+7 383 212-32-70"],"m":[],"h":"только ВКонтакте","k":["сеть из трёх адресов","диагностическая карта и договор","гарантия до 1 года"],"g":"https://2gis.ru/firm/70000001031952492"},{"s":"art-transmission","n":"Art transmission","a":"улица Кропоткина, 445","d":"Калининский","r":"4,8","c":86,"p":["+7 983 310-12-27","+7 383 239-12-27"],"m":[],"h":"сайта нет","k":["АКПП, вариаторы, DSG","дилер GT-Cruizer с 2021","Пн–Пт 10:00–20:00"],"g":"https://2gis.ru/firm/70000001039233217"},{"s":"subaru-time","n":"Subaru time","a":"улица Писарева, 40/1","d":"Центральный","r":"4,9","c":141,"p":["+7 913 002-05-19","+7 383 383-03-02"],"m":[],"h":"только соцсети","k":["сервис + склад запчастей","только Subaru","ежедневно 09:00–20:00"],"g":"https://2gis.ru/firm/141265770391720"},{"s":"mb-specialist","n":"Независимый специалист MB","a":"Большевистская улица, 125/6","d":"Октябрьский","r":"4,9","c":72,"p":["+7 913 715-75-55"],"m":[],"h":"только мессенджеры","k":["только Mercedes-Benz","Xentry и заказ-наряд","Пн–Пт 09:00–17:00"],"g":"https://2gis.ru/firm/70000001062332353"},{"s":"sibstarter","n":"СибСтартер","a":"улица Фрунзе, 104а","d":"Центральный","r":"4,4","c":309,"p":["+7 383 227-84-04"],"m":[],"h":"сайта нет","k":["стартеры и генераторы","три филиала","испытательный стенд"],"g":"https://2gis.ru/firm/141265770926864"},{"s":"pro-kuzov","n":"Pro kuzov","a":"улица Мира, 58а","d":"Кировский","r":"4,9","c":176,"p":["+7 913 917-77-57","+7 983 307-77-57","+7 383 299-77-57"],"m":[],"h":"только соцсети","k":["кузовной центр","стапель и покраска","7 дней в неделю"],"g":"https://2gis.ru/firm/70000001027397483"},{"s":"laki-service","n":"ЛакиService","a":"улица Мясниковой, 17","d":"Калининский","r":"5,0","c":171,"p":["+7 913 748-33-00","+7 913 204-55-77","+7 952 926-34-18"],"m":[],"h":"только соцсети","k":["покраска и кузов","своя окрасочная камера","5.0 по 171 отзыву"],"g":"https://2gis.ru/firm/70000001057610090"},{"s":"avtorom","n":"АвтоРом","a":"Макаренко, 672","d":"Калининский","r":"4,8","c":113,"p":["+7 951 383-10-00"],"m":[],"h":"только соцсети","k":["реставрация и кузов","пескоструй и антикор","три отдельных цеха"],"g":"https://2gis.ru/firm/70000001035310396"},{"s":"master-vmyatin","n":"Мастер Вмятин","a":"улица Ленина, 85","d":"Железнодорожный","r":"5,0","c":199,"p":["+7 982 717-69-29"],"m":[],"h":"только соцсети","k":["PDR без покраски","свой малярный цех","5.0 по 199 отзывам"],"g":"https://2gis.ru/firm/70000001094349188"},{"s":"motobox","n":"Motobox","a":"Покатная улица, 18","d":"Октябрьский","r":"5,0","c":78,"p":["+7 923 184-46-79"],"m":[],"h":"только соцсети","k":["мотосервис","мотошиномонтаж","зимнее хранение"],"g":"https://2gis.ru/firm/70000001064331238"},{"s":"kolesa-nsk","n":"Kolesa Nsk","a":"улица Гаранина, 14 к1","d":"Октябрьский","r":"5,0","c":128,"p":["+7 983 133-77-11"],"m":[],"h":"вместо сайта Telegram","k":["шиномонтаж и хранение","дошиповка с гарантией 2 года","ежедневно 8–21"],"g":"https://2gis.ru/firm/70000001080063211"},{"s":"avilon-plus","n":"Авилон Плюс","a":"Троллейная улица, 85/1 к1","d":"Ленинский","r":"4,8","c":152,"p":["+7 923 246-26-44","+7 983 510-62-07"],"m":[],"h":"только WhatsApp","k":["климат: кондиционер и печка","свой магазин запчастей","японцы и корейцы"],"g":"https://2gis.ru/firm/70000001007420574"},{"s":"chisto","n":"Чисто!","a":"Выставочная улица, 15/2 к1","d":"Ленинский","r":"4,8","c":321,"p":["+7 913 773-44-88"],"m":[],"h":"сайта нет","k":["три формата мойки","ежедневно 9–21","зал ожидания и кофе"],"g":"https://2gis.ru/firm/70000001043724243"},{"s":"crystal","n":"Crystal","a":"площадь Карла Маркса, 1 к5","d":"Ленинский","r":"4,7","c":335,"p":["+7 951 365-24-10"],"m":[],"h":"только мессенджеры","k":["мойка и детейлинг","жидкое стекло и бронеплёнка","ежедневно 9–22"],"g":"https://2gis.ru/firm/70000001038224305"},{"s":"clean-me","n":"Clean me","a":"Автогенная улица, 140 к5","d":"Октябрьский","r":"4,8","c":491,"p":["+7 383 375-18-19"],"m":[],"h":"сайта нет","k":["тёплая мойка самообслуживания","круглосуточно 24/7","4 поста, есть грузовые"],"g":"https://2gis.ru/firm/70000001101278708"},{"s":"lime-detailing","n":"Lime detailing","a":"улица Курчатова, 3 к1","d":"Калининский","r":"4,9","c":236,"p":["+7 913 794-33-33","+7 983 705-25-25"],"m":[],"h":"вместо сайта соцсети","k":["премия 2ГИС «Лучший детейлинг 2026»","мойка паром","аренда тёплого бокса"],"g":"https://2gis.ru/firm/70000001095662276"},{"s":"hameleon","n":"Хамелеон","a":"Ионосферная улица, 3/3","d":"","r":"5,0","c":173,"p":["+7 983 002-55-56","+7 913 068-78-88"],"m":[],"h":"только мессенджеры","k":["кузов и покраска","пескоструй и антикор","5.0 по 173 отзывам"],"g":"https://2gis.ru/firm/70000001038885975"},{"s":"vdetailing","n":"Вдетейлинг","a":"Нижегородская улица, 272","d":"Октябрьский","r":"5,0","c":330,"p":["+7 913 013-66-77","+7 939 487-88-78"],"m":[],"h":"только Telegram","k":["премия 2ГИС «Лучший детейлинг 2026»","выкуп авто и страхование","обучение детейлингу"],"g":"https://2gis.ru/firm/70000001064215731"},{"s":"ferrari-wash","n":"Автомойка Ferrari","a":"улица Жуковского, 88","d":"Заельцовский","r":"4,5","c":405,"p":["+7 913 985-80-54"],"m":[],"h":"только соцсети","k":["до 10 машин","ежедневно 9:00–23:00","моют и грузовые"],"g":"https://2gis.ru/firm/141266769976237"},{"s":"moyka-serafimovicha","n":"Мойка на Серафимовича","a":"улица Серафимовича, 30 к1","d":"Ленинский","r":"4,6","c":724,"p":["+7 383 380-25-77"],"m":[],"h":"сайта нет","k":["робот + самообслуживание","круглосуточно 24/7","724 отзыва"],"g":"https://2gis.ru/firm/141265770559927"},{"s":"airbrush","n":"Airbrush","a":"улица Доватора, 11","d":"Дзержинский","r":"4,9","c":194,"p":["+7 901 247-79-96"],"m":[],"h":"только мессенджеры","k":["кузов, дизель, турбины","детейлинг и тюнинг","свой магазин запчастей"],"g":"https://2gis.ru/firm/70000001048141803"}],"ed":{"shinomontazh-titova":{"st":"call","dt":"2026-09-01","nt":"Звонил, ссылка отправлена. Перезвонить.","hd":false},"oniks":{"st":"call","dt":"2026-09-02","nt":"Перезвонит сам через неделю.","hd":false},"dnk-avto":{"st":"call","dt":"2026-09-01","nt":"Договорились созвониться 01.09 после обеда.","hd":false},"level-wash":{"st":"sent","dt":"2026-08-17","nt":"Просил перезвонить через неделю.","hd":false},"dunay":{"st":"call","dt":"2026-09-01","nt":"Звонить 01.09 во второй половине дня.","hd":false},"avtopark-dovatora":{"st":"call","dt":"2026-09-01","nt":"Станислав. Скинули в MAX. Перезвонить 01.09 в 14:00. Второй номер +7 983 510-55-55.","hd":false},"city-motors-plus":{"st":"no","dt":"","nt":"Отказался.","hd":false},"renault-center":{"st":"no","dt":"","nt":"Сказал, что сайт не нужен.","hd":false},"avtoservis-sibiryakov":{"st":"call","dt":"2026-09-01","nt":"Ссылка отправлена 10.08, трубку не берут. Пробовать 01.09.","hd":false},"feniks":{"st":"no","dt":"","nt":"Сказал, что сайт не нужен.","hd":false},"autobox54":{"st":"call","dt":"2026-08-11","nt":"Ссылка отправлена 10.08. Набрать после обеда 11.08.","hd":false},"asia-ostrovskogo":{"st":"deal","dt":"","nt":"Согласовал: сайт 5 000 ₽ + логотип 3 000 ₽ разово, обслуживание 2 000 ₽/мес. Ждём оплату, затем публикация на домене.","hd":false},"avtozdrav":{"st":"no","dt":"","nt":"Сказал, что сайт не нужен.","hd":false},"rem-zona":{"st":"call","dt":"2026-09-01","nt":"Руководитель Станислав. Перезвонить 01.09.","hd":false},"honda-san":{"st":"call","dt":"2026-09-01","nt":"Перезвонить 01.09.","hd":false},"emka":{"st":"sent","dt":"","nt":"Предложение отправлено в мессенджер и на почту, ждём ответа.","hd":false},"bykof":{"st":"no","dt":"","nt":"Сказали, что сайт у них есть и не нужен. При проверке 10.08 домен bykof.ru отдавал заглушку хостинга Timeweb — возможно, речь о другой странице. Если поднимут свой сайт и он не откроется, повод вернуться.","hd":false},"avto-premium":{"st":"call","dt":"2026-09-01","nt":"Перезвонить 01.09.","hd":false},"maks-detailing":{"st":"call","dt":"2026-09-01","nt":"Просили перезвонить. Номер из записки +7 913 913-00-36.","hd":false},"most":{"st":"sent","dt":"","nt":"Евгений. Отправили в MAX.","hd":false},"subaru-service-nsk":{"st":"call","dt":"2026-09-01","nt":"Нужен Роман. Звонить 01.09 в 12:00, номер +7 983 000-03-03.","hd":false},"avto-frantsiya":{"st":"sent","dt":"","nt":"Кирилл. Скинули пакет.","hd":false},"luna-avto":{"st":"no","dt":"","nt":"","hd":false},"avto-tochka":{"st":"call","dt":"2026-09-01","nt":"Бросили трубку. Пробовать ещё раз.","hd":false},"absdisk54":{"st":"no","dt":"","nt":"Отказ. Ранее отправляли КП в MAX.","hd":false},"stoavto":{"st":"no","dt":"","nt":"Отказ.","hd":false},"sibiriya-motors":{"st":"no","dt":"","nt":"Отказ.","hd":false},"akademiya-servisa":{"st":"sent","dt":"","nt":"Илья Олегович. Скинули в MAX.","hd":false},"mamitsu":{"st":"call","dt":"2026-09-03","nt":"Дата 03.09. В записке строка зачёркнута — уточнить, актуально ли.","hd":false},"avtoklubservis":{"st":"new","dt":"","nt":"","hd":false},"maxservice54":{"st":"call","dt":"2026-09-02","nt":"Звонить в среду 02.09 в 9:00. Номер из записки +7 953 790-61-16.","hd":false},"avtokompleks54":{"st":"no","dt":"","nt":"Отказ.","hd":false},"sto-pochinok":{"st":"no","dt":"","nt":"Отказ.","hd":false},"impuls-avto":{"st":"call","dt":"2026-09-01","nt":"Просили перезвонить.","hd":false},"transsibreal":{"st":"no","dt":"","nt":"Отказ. Ирина Александровна.","hd":false},"subarubox":{"st":"no","dt":"","nt":"","hd":false},"praym":{"st":"call","dt":"2026-09-01","nt":"Дмитрий. Звонить 01.09 с 9:00 до 19:00.","hd":false},"epitsentr":{"st":"no","dt":"","nt":"Отказ.","hd":false},"chistaya-sloboda":{"st":"call","dt":"2026-09-01","nt":"Нет ответа.","hd":false},"berloga-servis":{"st":"sent","dt":"","nt":"Скинули в MAX перед звонком.","hd":false},"post-5":{"st":"sent","dt":"","nt":"Отправили на почту.","hd":false},"shinomontazh-svetlanovskaya":{"st":"no","dt":"","nt":"Отказ (в записке — Koltsov).","hd":false},"gbsh-1":{"st":"no","dt":"","nt":"Отказ.","hd":false},"avtoservis-timiryazeva":{"st":"no","dt":"","nt":"","hd":false},"avto-profi":{"st":"call","dt":"2026-09-01","nt":"Иннокентий Каренович. Обещали перезвонить сами.","hd":false},"avtoinzhener":{"st":"call","dt":"2026-09-01","nt":"Вячеслав. Просил написать на почту, потом перезвонить.","hd":false},"sun-servis":{"st":"call","dt":"2026-09-01","nt":"Скинули сайт в MAX. Перезвонить 01.09.","hd":false},"remtseh":{"st":"call","dt":"2026-09-01","nt":"Константин. Скинули в MAX, просил перезвонить.","hd":false},"skr-service":{"st":"no","dt":"","nt":"Отказ. Контакт — Роман.","hd":false},"u-filina":{"st":"call","dt":"2026-09-01","nt":"Нет ответа. Звонить 01.09.","hd":false},"ilanka-motors":{"st":"sent","dt":"","nt":"Отправили предложение на почту.","hd":false},"a-servis":{"st":"call","dt":"2026-09-01","nt":"Скинули в MAX. Перезвонить 01.09 в 18:00.","hd":false},"avtika":{"st":"call","dt":"2026-09-01","nt":"Нет ответа.","hd":false},"mehanik":{"st":"sent","dt":"","nt":"Отправили на почту.","hd":false},"kak-doma":{"st":"call","dt":"2026-09-01","nt":"Алексей. Скинули в MAX. Перезвонить 01.09 с 12:00.","hd":false},"pro":{"st":"sent","dt":"","nt":"Сергей. Скинули в MAX.","hd":false},"avtoareal":{"st":"call","dt":"2026-09-01","nt":"Скинули в MAX. Перезвонить 01.09 после 13:00.","hd":false},"avtoforsazh":{"st":"call","dt":"2026-08-31","nt":"Звонить сегодня в 16:20.","hd":false},"sancho":{"st":"sent","dt":"","nt":"Отправили в MAX.","hd":false},"diagnostika-mihail":{"st":"call","dt":"2026-09-01","nt":"Телефон отключён. Искать другой контакт.","hd":false},"evropeyskiy":{"st":"call","dt":"2026-09-01","nt":"Позвонить 01.09.","hd":false},"red-service":{"st":"sent","dt":"","nt":"Скинули в MAX.","hd":false},"mb-life-style":{"st":"call","dt":"2026-09-02","nt":"Перезвонить в среду 02.09 в 17:00.","hd":false},"elektroceh":{"st":"sent","dt":"","nt":"Борис. Скинули в MAX.","hd":false},"respekt":{"st":"no","dt":"","nt":"Отказ.","hd":false},"avtoresurs":{"st":"new","dt":"","nt":"","hd":false},"favorit-avto":{"st":"new","dt":"","nt":"","hd":false},"oskar":{"st":"call","dt":"2026-09-01","nt":"Не ответили по обоим номерам.","hd":false},"origami":{"st":"call","dt":"2026-09-01","nt":"Дали номер мастера +7 383 212-32-70 — звонить туда.","hd":false}},"add":[],"t":1788279794458}</script>
+<script>
+const $ = (s, r) => (r || document).querySelector(s);
+const el = (t, c, x) => { const n = document.createElement(t); if (c) n.className = c;
+  if (x != null) n.textContent = x; return n; };
+const svg = d => { const s = document.createElementNS('http://www.w3.org/2000/svg','svg');
+  s.setAttribute('viewBox','0 0 24 24'); s.setAttribute('aria-hidden','true');
+  const p = document.createElementNS('http://www.w3.org/2000/svg','path');
+  p.setAttribute('d', d); s.append(p); return s; };
+
+let S = JSON.parse($('#st').textContent);
+const LS = 'sitebiz-obzvon-v2';
+try { const l = localStorage.getItem(LS);
+  if (l) { const p = JSON.parse(l);
+    if (p && p.t > (S.t || 0)) { S.ed = p.ed; S.add = p.add; S.t = p.t; } } } catch (e) {}
+
+const LABELS = { new:'Не звонил', sent:'Ждём ответа', call:'Перезвонить',
+                 deal:'Согласился', no:'Отказался' };
+const ORDER  = { call:0, sent:1, new:2, deal:3, no:4 };
+const MON = ['янв','фев','мар','апр','мая','июн','июл','авг','сен','окт','ноя','дек'];
+const today = new Date(); today.setHours(0,0,0,0);
+
+const blank = () => ({ st:'new', dt:'', nt:'', hd:false });
+const rec = b => b.id ? b : !b.s ? blank()
+  : (S.ed[b.s] || (S.ed[b.s] = blank()));
+const items = () => S.biz.concat(S.add);
+
+/* ── сохранение ─────────────────────────────────────────
+   Страница лежит на GitHub Pages и записывать ей некуда, кроме
+   браузера того, кто её открыл. Поэтому пометки у каждого свои,
+   а сводятся они файлом: «Пометки» → выгрузить / загрузить. */
+let timer = null;
+
+function flag(cls, text) {
+  const f = $('#flag'); f.className = 'flag ' + cls;
+  f.innerHTML = ''; f.append(el('i'), document.createTextNode(text));
+}
+function localSave() {
+  try {
+    localStorage.setItem(LS, JSON.stringify({ t:S.t, ed:S.ed, add:S.add }));
+    return true;
+  } catch (e) { return false; }
+}
+function touch() {
+  S.t = Date.now();
+  flag('busy', 'сохраняю…');
+  clearTimeout(timer);
+  timer = setTimeout(() => flag(...(localSave()
+    ? ['ok', 'сохранено в этом браузере']
+    : ['err', 'браузер не даёт сохранить — выгрузите пометки файлом'])), 500);
+}
+
+/* Пометки одним файлом: чтобы передать свои или принять чужие. */
+function marksOut() {
+  return JSON.stringify({ what:'sitebiz-obzvon', t:S.t, ed:S.ed, add:S.add }, null, 1);
+}
+function marksIn(text) {
+  let p;
+  try { p = JSON.parse(text); } catch (e) { return 'Это не файл пометок.'; }
+  if (!p || p.what !== 'sitebiz-obzvon' || !p.ed) return 'Это не файл пометок.';
+  let n = 0;
+  Object.entries(p.ed).forEach(([k, r]) => {
+    if (!k || !r) return;
+    const mine = S.ed[k];
+    const empty = x => !x || (x.st === 'new' && !x.dt && !x.nt && !x.hd);
+    /* Своё непустое не затираем молча — берём чужое только там,
+       где у нас пусто, либо если чужой файл новее. */
+    if (empty(mine) || (p.t || 0) > (S.t || 0)) {
+      if (JSON.stringify(mine) !== JSON.stringify(r)) { S.ed[k] = r; n++; }
+    }
+  });
+  (p.add || []).forEach(b => {
+    if (!b || !b.id) return;
+    const i = S.add.findIndex(x => x.id === b.id);
+    if (i >= 0) S.add[i] = b; else { S.add.push(b); n++; }
+  });
+  if (n) { touch(); render(); }
+  return n ? ('Принято изменений: ' + n + '.') : 'Нового в файле не оказалось.';
+}
+
+function saveFile(name, text, mime) {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([text], { type: mime }));
+  a.download = name; document.body.append(a); a.click();
+  setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+}
+
+/* ── состояние вида ─────────────────────────────────── */
+let filter = 'all', query = '', sortBy = 'status', stale = false;
+
+function matches(b) {
+  const r = rec(b), q = query.trim().toLowerCase();
+  if (filter === 'hd') { if (!r.hd) return false; }
+  else if (r.hd) return false;
+  if (filter !== 'all' && filter !== 'hd' && r.st !== filter) return false;
+  if (!q) return true;
+  return [b.n, b.a, b.d, r.nt, (b.p||[]).join(' '), (b.m||[]).map(m=>m.n).join(' ')]
+    .join(' ').toLowerCase().includes(q);
+}
+function ordered(list) {
+  return list.slice().sort((x, y) => {
+    const rx = rec(x), ry = rec(y);
+    if (sortBy === 'name') return x.n.localeCompare(y.n, 'ru');
+    if (sortBy === 'reviews') return (y.c||0) - (x.c||0);
+    if (sortBy === 'date') {
+      const a = rx.dt || '9999', b = ry.dt || '9999';
+      return a === b ? x.n.localeCompare(y.n, 'ru') : (a < b ? -1 : 1);
+    }
+    const d = (ORDER[rx.st] ?? 9) - (ORDER[ry.st] ?? 9);
+    if (d) return d;
+    if (rx.st === 'call' || rx.st === 'sent') {
+      const a = rx.dt || '9999', b = ry.dt || '9999';
+      if (a !== b) return a < b ? -1 : 1;
+    }
+    return (y.c||0) - (x.c||0);
+  });
+}
+function counts() {
+  const c = { all:0, call:0, sent:0, new:0, deal:0, no:0, hd:0 };
+  items().forEach(b => { const r = rec(b);
+    if (r.hd) { c.hd++; return; } c.all++; c[r.st] = (c[r.st]||0) + 1; });
+  return c;
+}
+function refreshBar() {
+  const c = counts();
+  document.querySelectorAll('.tab').forEach(t => {
+    t.setAttribute('aria-pressed', String(t.dataset.f === filter));
+    const u = $('u', t); if (u) u.textContent = c[t.dataset.f] ?? 0;
+  });
+  $('#shown').textContent = $('#list').querySelectorAll('.b:not(.leaving)').length;
+  $('#total').textContent = items().length;
+  $('#resort').hidden = !stale;
+}
+function markStale() { if (!stale) { stale = true; $('#resort').hidden = false; } }
+
+/* ── карточка ───────────────────────────────────────── */
+function whenText(s) {
+  if (!s) return '';
+  const d = new Date(s + 'T00:00:00'); if (isNaN(d)) return s;
+  const diff = Math.round((d - today) / 86400000);
+  const base = d.getDate() + ' ' + MON[d.getMonth()];
+  if (diff < 0)   return base + ' · просрочено ' + (-diff) + ' дн.';
+  if (diff === 0) return base + ' · сегодня';
+  if (diff === 1) return base + ' · завтра';
+  return base + ' · через ' + diff + ' дн.';
+}
+
+/* перекрашивает карточку на месте — список при этом не двигается */
+function paint(n) {
+  const b = n._b, r = rec(b);
+  n.className = 'b s-' + r.st + (r.hd ? ' hidden-row' : '');
+  n._stat.value = r.st;
+  n._dtIn.value = r.dt || '';
+  n._when.textContent = whenText(r.dt);
+  n._dt.classList.toggle('soon', !!r.dt && new Date(r.dt + 'T00:00:00') <= today);
+  n._x.title = r.hd ? 'Вернуть в список' : 'Убрать из списка';
+  n._stale.hidden = matches(b);
+}
+
+function card(b) {
+  const r = rec(b);
+  const n = el('article'); n._b = b;
+
+  const head = el('div', 'bhead');
+  const left = el('div');
+  const nm = el('div', 'bname', b.n);
+  if (b.id) { nm.contentEditable = 'true';
+    nm.addEventListener('input', () => { b.n = nm.innerText.replace(/ /g,' '); touch(); }); }
+  left.append(nm);
+  if (b.a || b.d) left.append(el('div', 'baddr', [b.a, b.d].filter(Boolean).join(' · ')));
+  head.append(left);
+
+  const side = el('div', 'bside');
+  if (b.r) { const rt = el('div', 'brate');
+    rt.append(el('b', null, b.r), document.createTextNode(' ★ · ' + (b.c||0) + ' отз.'));
+    side.append(rt); }
+  if (b.s) { const a = el('a', 'blink', 'сайт /' + b.s + '/');
+    a.href = S.base + b.s + '/'; a.target = '_blank'; a.rel = 'noopener'; side.append(a); }
+  if (b.g) { const g = el('a', 'blink no-print', 'карточка 2ГИС');
+    g.href = b.g; g.target = '_blank'; g.rel = 'noopener'; side.append(g); }
+  head.append(side);
+  n.append(head);
+
+  const x = el('button', 'x'); x.append(svg('M6 6l12 12M18 6L6 18'));
+  x.addEventListener('click', () => {
+    const rr = rec(b);
+    if (rr.hd) { rr.hd = false; touch(); paint(n); refreshBar(); markStale(); return; }
+    rr.hd = true; touch();
+    n.classList.add('leaving');
+    setTimeout(() => { n.remove(); refreshBar(); }, 300);
+  });
+  n.append(x); n._x = x;
+
+  const tels = el('div', 'tels');
+  (b.p || []).forEach(p => { const a = el('a', 'tel', p);
+    a.href = 'tel:' + p.replace(/[^\d+]/g, ''); tels.append(a); });
+  (b.m || []).forEach(m => { const a = el('a', 'tel');
+    a.href = 'tel:' + m.n.replace(/[^\d+]/g, '');
+    a.append(el('em', null, m.t), document.createTextNode(m.n)); tels.append(a); });
+  if (b.id) { const add = el('button', 'addtel no-print', '+ телефон');
+    add.addEventListener('click', () => { const v = prompt('Телефон');
+      if (v) { b.p = (b.p||[]).concat(v.trim()); touch();
+        const a = el('a', 'tel', v.trim()); a.href = 'tel:' + v.replace(/[^\d+]/g,'');
+        tels.insertBefore(a, add); } });
+    tels.append(add); }
+  n.append(tels);
+
+  if (b.h || (b.k && b.k.length)) {
+    const h = el('div', 'hook');
+    if (b.h) h.append(el('b', null, b.h));
+    if (b.k && b.k.length) h.append(document.createTextNode((b.h ? ' · ' : '') + b.k.join(' · ')));
+    n.append(h);
+  }
+
+  const ctl = el('div', 'ctl');
+  const sel = el('select', 'stat');
+  Object.keys(LABELS).forEach(code => {
+    const o = el('option', null, LABELS[code]); o.value = code; sel.append(o); });
+  sel.value = r.st;
+  sel.addEventListener('change', () => {
+    const rr = rec(b); rr.st = sel.value;
+    if (rr.st === 'call' && !rr.dt) {
+      const d = new Date(); d.setDate(d.getDate() + 1); rr.dt = d.toISOString().slice(0, 10);
+    }
+    touch(); paint(n); refreshBar(); markStale();
+  });
+  ctl.append(sel); n._stat = sel;
+
+  const dt = el('label', 'dt'); dt.append(svg('M7 3v3M17 3v3M4 8h16M5 6h14v14H5z'));
+  const din = el('input'); din.type = 'date'; din.value = r.dt || '';
+  din.addEventListener('change', () => { rec(b).dt = din.value; touch(); paint(n); markStale(); });
+  const when = el('span', 'when', whenText(r.dt));
+  dt.append(din, when); ctl.append(dt);
+  n._dt = dt; n._dtIn = din; n._when = when;
+
+  const staleTag = el('span', 'stale', 'не подходит под фильтр');
+  staleTag.hidden = true; ctl.append(staleTag); n._stale = staleTag;
+  n.append(ctl);
+
+  const note = el('div', 'note');
+  note.contentEditable = 'true';
+  note.dataset.ph = 'Что ответили, о чём договорились…';
+  note.textContent = r.nt || '';
+  note.addEventListener('input', () => {
+    rec(b).nt = note.innerText.replace(/ /g, ' '); touch(); });
+  n.append(note);
+
+  paint(n);
+  return n;
+}
+
+/* ── полная перерисовка (только по явному действию) ─── */
+function render() {
+  const list = $('#list'); list.innerHTML = '';
+  const v = ordered(items().filter(matches));
+  if (!v.length) list.append(el('div', 'empty', 'Ничего не нашлось. Смените фильтр или очистите поиск.'));
+  else v.forEach(b => list.append(card(b)));
+  stale = false;
+  refreshBar();
+}
+
+/* ── панель ─────────────────────────────────────────── */
+document.querySelectorAll('.tab').forEach(t =>
+  t.addEventListener('click', () => { filter = t.dataset.f; render(); window.scrollTo(0, 0); }));
+let qt = null;
+$('#q').addEventListener('input', e => {
+  query = e.target.value; clearTimeout(qt); qt = setTimeout(render, 200); });
+$('#sort').addEventListener('change', e => { sortBy = e.target.value; render(); });
+$('#resort').addEventListener('click', () => { render(); window.scrollTo({top:0, behavior:'smooth'}); });
+$('#print').addEventListener('click', () => print());
+$('#addbiz').addEventListener('click', () => {
+  const nb = { id:'x' + Date.now(), n:'Новый бизнес', a:'', d:'', p:[], m:[], k:[],
+               st:'new', dt:'', nt:'', hd:false };
+  S.add.unshift(nb);
+  filter = 'all'; query = ''; $('#q').value = '';
+  touch(); render(); window.scrollTo({ top:0, behavior:'smooth' });
+  const first = $('.b .bname'); if (first) { first.focus();
+    const rg = document.createRange(); rg.selectNodeContents(first);
+    const sl = getSelection(); sl.removeAllRanges(); sl.addRange(rg); }
+});
+$('#csv').addEventListener('click', () => {
+  const rows = [['Бизнес','Адрес','Район','Телефоны','Рейтинг','Отзывов','Статус',
+                 'Перезвонить','Заметка','Сайт']];
+  ordered(items().filter(matches)).forEach(b => { const r = rec(b);
+    rows.push([b.n, b.a || '', b.d || '',
+      (b.p||[]).concat((b.m||[]).map(m => m.t + ' ' + m.n)).join(' / '),
+      b.r || '', b.c || '', LABELS[r.st] || '', r.dt || '',
+      (r.nt||'').replace(/\n/g,' '), b.s ? S.base + b.s + '/' : '']); });
+  const csv = '﻿' + rows.map(r => r.map(v =>
+    '"' + String(v).replace(/"/g, '""') + '"').join(';')).join('\r\n');
+  saveFile('obzvon-' + new Date().toISOString().slice(0,10) + '.csv', csv,
+           'text/csv;charset=utf-8');
+});
+
+$('#save').addEventListener('click', () =>
+  saveFile('pometki-' + new Date().toISOString().slice(0,10) + '.json',
+           marksOut(), 'application/json'));
+$('#load').addEventListener('click', () => $('#loadfile').click());
+$('#loadfile').addEventListener('change', e => {
+  const f = e.target.files && e.target.files[0];
+  if (!f) return;
+  const r = new FileReader();
+  r.onload = () => alert(marksIn(String(r.result)));
+  r.readAsText(f);
+  e.target.value = '';
+});
+
+render();
+flag('ok', 'пометки сохраняются в этом браузере');
+</script>
+</body>
+</html>
