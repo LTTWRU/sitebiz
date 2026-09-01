@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Legenda — автомоечный комплекс до полуночи в Новосибирске, Ереванская, 43 к1</title>
+<meta name="description" content="Legenda, автомоечный комплекс, Новосибирск, Ереванская улица, 43 к1. Ручная и бесконтактная мойка, химчистка салона, мойка двигателя, полировка кузова. Семь постов, зал ожидания на втором этаже с диванами, чаем и Wi-Fi. Плёнка, перетяжка салона, шумоизоляция, хромирование. Ежедневно с 09:00 до 24:00. 4,5 по 302 отзывам в 2ГИС.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Legenda — мойка до полуночи, Ереванская, 43 к1">
+<meta property="og:description" content="Помыть машину в одиннадцать вечера. Семь постов, зал ожидания с диванами и чаем. Ежедневно 09:00–24:00.">
+<meta property="og:image" content="photo/hall-night.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2315181D'/><circle cx='16' cy='16' r='9' fill='none' stroke='%237FA8D8' stroke-width='2.2'/><path d='M16 11v5l3.5 2' stroke='%23E9ECF1' stroke-width='2' stroke-linecap='round' fill='none'/></svg>">
+<link rel="stylesheet" href="../fonts/spectral.css">
+<link rel="stylesheet" href="../fonts/onest.css">
+<style>
+/* Legenda, Ереванская 43 к1.
+   Пригодных фотографий у них всего четыре — остальное клиенты присылали
+   как претензии. Зато эти четыре сняты вечером и говорят ровно то, что нужно:
+   мойка работает до полуночи, а наверху есть зал, где ждут не в машине.
+   Для человека, который освободился в десять вечера, это и есть предложение.
+   Поэтому страница тёмная, а холодный синий взят с экрана в их же зале.
+   Кнопка при наведении загорается: свет ещё горит. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pa:#15181D; --pa-2:#101317; --card:#1E222A; --card-2:#262B34;
+  --ink:#E9ECF1; --ink-2:#A6ADBA; --ink-3:#78808E;
+  --line:#2A2F38; --line-2:#3C424D;
+  --ac:#7FA8D8; --ac-2:#A6C4EA; --ac-soft:#1B2735;
+  --wrap:1050px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--pa);color:var(--ink);
+  font:400 16.5px/1.72 Onest,-apple-system,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(58px,8vw,104px) 0}
+section[id]{scroll-margin-top:80px}
+h1,h2,h3{font-family:Spectral,Georgia,serif}
+h1,h2{font-weight:600;line-height:1.1;letter-spacing:-.022em;text-wrap:balance}
+h1{font-size:clamp(31px,5vw,58px)}
+h2{font-size:clamp(24px,3.3vw,41px)}
+h3{font-size:19px;font-weight:600;line-height:1.28;letter-spacing:-.015em}
+p{max-width:60ch}
+em{font-style:normal;color:var(--ac-2)}
+.tag{font-family:Onest,sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:.17em;text-transform:uppercase;color:var(--ac)}
+.q2{color:var(--ink-2)}
+
+/* Кнопка загорается при наведении — свет ещё горит. */
+.btn{position:relative;display:inline-flex;align-items:center;gap:11px;
+  font-family:Onest,sans-serif;font-weight:700;font-size:13.5px;letter-spacing:.01em;
+  padding:16px 30px;background:var(--card-2);color:var(--ink-2);
+  box-shadow:inset 0 0 0 1.5px var(--line-2);
+  transition:color .3s var(--ease),box-shadow .4s var(--ease),background .3s var(--ease)}
+.btn:hover,.btn:focus-visible{color:#FFFFFF;background:var(--ac-soft);
+  box-shadow:inset 0 0 0 1.5px var(--ac),0 0 26px -4px rgba(127,168,216,.55)}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;
+  transition:transform .32s var(--ease)}
+.btn:hover svg{transform:translateX(5px)}
+.btn.g{background:transparent}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:15px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(21,24,29,.95);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:9px 0}
+.nav{display:flex;align-items:center;gap:22px}
+.brand{margin-right:auto;font-family:Spectral,serif;font-weight:600;font-size:19px;
+  letter-spacing:-.01em;line-height:1.16}
+.brand s{display:block;text-decoration:none;font-family:Onest,sans-serif;font-size:9.5px;
+  font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--ac);margin-top:4px}
+.lk{font-size:14.5px;color:var(--ink-2);transition:color .2s}
+.lk:hover{color:var(--ac-2)}
+@media(max-width:1060px){.lk{display:none}}
+@media(max-width:460px){.nav{gap:11px}.brand{font-size:16px}.btn{padding:13px 21px;font-size:12.5px}}
+
+.hero{padding-top:clamp(118px,15vw,178px);padding-bottom:clamp(26px,4vw,46px)}
+.hero h1{margin:16px 0 22px}
+.hero .sub{font-size:clamp(16px,1.8vw,18.5px);color:var(--ink-2);max-width:53ch;line-height:1.7}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,3vw,38px);
+  margin-top:clamp(38px,6vw,66px);padding-top:26px;border-top:2px solid var(--line-2)}
+.figs b{display:block;font-family:Spectral,serif;font-weight:600;
+  font-size:clamp(21px,2.7vw,33px);letter-spacing:-.025em;line-height:1.05;
+  font-variant-numeric:tabular-nums;color:var(--ac-2)}
+.figs span{display:block;margin-top:10px;font-size:12.5px;color:var(--ink-3);line-height:1.5}
+@media(max-width:700px){.figs{grid-template-columns:repeat(2,1fr)}}
+
+.shot{margin-top:clamp(34px,5vw,56px)}
+.shot img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--pa-2)}
+.shot figcaption{margin-top:11px;font-size:13.5px;color:var(--ink-3);max-width:60ch}
+
+/* Часы работы полосой: видно, когда почти все уже закрыты. */
+.clock{margin-top:clamp(32px,4.2vw,50px);border:1px solid var(--line);background:var(--card)}
+.clock .r{display:grid;grid-template-columns:132px 1fr;gap:clamp(14px,2vw,24px);
+  align-items:center;padding:17px clamp(16px,2.2vw,24px);border-bottom:1px solid var(--line)}
+.clock .r:last-child{border-bottom:0}
+.clock .r b{font-family:Onest,sans-serif;font-size:13px;font-weight:700;color:var(--ink-2)}
+.clock .bar2{position:relative;height:16px;background:var(--pa-2)}
+.clock .bar2 i{position:absolute;top:0;bottom:0;display:block}
+.clock .us i{background:var(--ac)}
+.clock .them i{background:var(--line-2)}
+.clock .lb{margin-top:9px;display:flex;justify-content:space-between;
+  font-size:11.5px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,26px);
+  margin-top:clamp(32px,4.2vw,50px)}
+@media(max-width:840px){.three{grid-template-columns:1fr}}
+.three article{background:var(--card);border:1px solid var(--line);padding:clamp(20px,2.4vw,26px);
+  transition:border-color .25s var(--ease),transform .25s var(--ease)}
+.three article:hover{border-color:var(--ac);transform:translateY(-3px)}
+.three h3{margin-bottom:9px}
+.three p{font-size:14.5px;color:var(--ink-2)}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.6vw,30px);
+  margin-top:clamp(30px,4vw,46px)}
+@media(max-width:860px){.grid3{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid3{grid-template-columns:1fr}}
+.grid3 div{padding-top:18px;border-top:1px solid var(--line-2);transition:border-color .25s}
+.grid3 div:hover{border-top-color:var(--ac)}
+.grid3 b{display:block;font-family:Spectral,serif;font-size:18px;font-weight:600;
+  letter-spacing:-.015em;margin-bottom:8px}
+.grid3 p{font-size:14.5px;color:var(--ink-2)}
+
+.pale{background:var(--pa-2)}
+.pull{font-family:Spectral,serif;font-weight:600;font-size:clamp(19px,2.4vw,29px);
+  line-height:1.28;letter-spacing:-.022em;color:#FFFFFF;max-width:30ch;
+  border-left:3px solid var(--ac);padding-left:20px;margin-top:26px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,34px);
+  margin-top:clamp(30px,4vw,44px)}
+@media(max-width:760px){.fgrid{grid-template-columns:1fr}}
+.fgrid h3{margin-bottom:9px}
+.fgrid p{font-size:14.5px;color:var(--ink-2)}
+
+.bigq{font-family:Spectral,serif;font-weight:600;font-size:clamp(20px,2.8vw,33px);
+  line-height:1.24;letter-spacing:-.025em;max-width:25ch}
+.by{margin-top:14px;font-size:13px;color:var(--ink-3)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.6vw,28px);
+  margin-top:clamp(32px,4vw,48px)}
+@media(max-width:760px){.pair{grid-template-columns:1fr}}
+.pair blockquote{background:var(--card);border:1px solid var(--line);padding:clamp(20px,2.4vw,26px)}
+.pair p{font-size:14.5px;color:var(--ink-2)}
+.pair cite{display:block;margin-top:13px;font-style:normal;font-size:12.5px;color:var(--ink-3)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,26px);margin-top:clamp(32px,4vw,46px)}
+@media(max-width:700px){.g2{grid-template-columns:1fr}}
+.g2 img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--pa-2)}
+.g2 figcaption{margin-top:10px;font-size:13px;color:var(--ink-3)}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,54px)}
+@media(max-width:900px){.split{grid-template-columns:1fr}}
+.rows{margin-top:24px;display:grid;gap:0}
+.rows div{display:grid;grid-template-columns:118px 1fr;gap:16px;padding:13px 0;
+  border-top:1px solid var(--line)}
+.rows div:last-child{border-bottom:1px solid var(--line)}
+dt{font-size:12.5px;color:var(--ink-3);letter-spacing:.02em}
+dd{font-size:15px}
+dd a{border-bottom:1px solid var(--line-2);transition:border-color .2s}
+dd a:hover{border-bottom-color:var(--ac)}
+.map{position:relative;aspect-ratio:4/3;background:var(--pa-2);border:1px solid var(--line)}
+.mapstub{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:13px;text-align:center;padding:24px}
+.mapstub span{font-size:13.5px;color:var(--ink-2);max-width:34ch}
+.mapstub button{font:inherit;font-size:13.5px;font-weight:700;font-family:Onest,sans-serif;
+  padding:11px 20px;border:0;background:var(--ac);color:#12161B;cursor:pointer}
+form{margin-top:20px;display:grid;gap:14px}
+label{display:block;font-size:12.5px;color:var(--ink-3);margin-bottom:6px}
+input,textarea{width:100%;font:inherit;font-size:15px;padding:12px 14px;background:var(--card);
+  border:1px solid var(--line-2);color:inherit}
+input:focus,textarea:focus{outline:2px solid var(--ac);outline-offset:1px;border-color:transparent}
+textarea{min-height:96px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink-2);margin:0}
+.agree input{width:auto;flex:none;margin-top:3px}
+.agree a{border-bottom:1px solid var(--line-2)}
+.fine{font-size:12.5px;color:var(--ink-3)}
+.sent{display:none;padding:14px 16px;background:var(--ac-soft);
+  border-left:3px solid var(--ac);font-size:14.5px}
+footer{background:var(--pa-2);color:var(--ink-3);padding:34px 0;font-size:13.5px;
+  border-top:1px solid var(--line)}
+.fin{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
+footer a{color:var(--ink-2);border-bottom:1px solid var(--line-2)}
+footer a:hover{color:var(--ink)}
+footer .brand{color:var(--ink)}
+
+#ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:80;display:none;
+  background:var(--card);border:1px solid var(--line-2);padding:18px 20px;font-size:13.5px;
+  max-width:640px;box-shadow:0 14px 40px rgba(0,0,0,.55)}
+#ck.on{display:block}
+#ck a{border-bottom:1px solid var(--line-2)}
+.ckb{display:flex;gap:10px;margin-top:13px}
+.ckb button{font:inherit;font-size:13px;font-weight:700;font-family:Onest,sans-serif;
+  padding:9px 17px;border:1px solid var(--line-2);background:transparent;color:inherit;cursor:pointer}
+.ckb .y{background:var(--ac);border-color:var(--ac);color:#12161B}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:55;display:none;gap:9px;padding:10px 14px;
+  background:rgba(16,19,23,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+.bar .btn{flex:1;justify-content:center;padding:13px 10px}
+@media(max-width:700px){.bar{display:flex}body{padding-bottom:70px}}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+/* --- 152-ФЗ --- */
+/* --- 152-ФЗ: согласие, cookie, отложенная карта --- */
+.agree{display:grid;grid-template-columns:19px 1fr;gap:12px;align-items:start;
+  font:400 13.5px/1.55 inherit;font-family:inherit;letter-spacing:normal;text-transform:none;
+  color:inherit;margin:0;cursor:pointer;max-width:52ch}
+.agree span{display:block;letter-spacing:normal;text-transform:none}
+.agree input{width:19px;height:19px;margin:2px 0 0;accent-color:currentColor;cursor:pointer;flex:none}
+.agree a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.agree.opt{opacity:.8}
+button[disabled],.btn[disabled]{opacity:.4;cursor:not-allowed}
+.mapstub{position:absolute;inset:0;display:flex;flex-direction:column;gap:12px;
+  align-items:center;justify-content:center;text-align:center;padding:22px;
+  font-size:13.5px;line-height:1.5;background:rgba(127,127,127,.10)}
+.mapstub button{font:inherit;font-size:13px;padding:11px 20px;cursor:pointer;
+  border:1px solid currentColor;background:transparent;color:inherit;border-radius:3px}
+.mapstub button:hover{opacity:.72}
+.map{position:relative}
+#ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:95;display:none;max-width:440px;
+  padding:18px 20px;background:#101114;color:#F2F0EC;font-size:13.5px;line-height:1.6;
+  border:1px solid rgba(255,255,255,.14);border-radius:6px;
+  box-shadow:0 18px 48px rgba(0,0,0,.45)}
+#ck.on{display:block}
+#ck a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+#ck .ckb{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+#ck button{font:inherit;font-size:12.5px;font-weight:600;letter-spacing:.04em;padding:11px 20px;
+  cursor:pointer;border-radius:4px;border:1px solid rgba(255,255,255,.3);
+  background:transparent;color:#F2F0EC}
+#ck button.y{background:#F2F0EC;color:#101114;border-color:#F2F0EC}
+#ck button:hover{opacity:.85}
+@media(max-width:760px){#ck{bottom:84px;left:10px;right:10px}}
+</style>
+</head>
+<body>
+
+<header id="hd"><div class="w nav">
+  <div class="brand">Legenda<s>Ереванская, 43 к1</s></div>
+  <a class="lk" href="#vecher">Вечер</a>
+  <a class="lk" href="#zal">Зал</a>
+  <a class="lk" href="#otzyvy">Отзывы</a>
+  <a class="btn" href="tel:+79134680846">+7 913 468-08-46</a>
+</div></header>
+
+<main>
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Автомоечный комплекс · Заельцовский район</p>
+    <h1 class="up">Помыть машину<br>в одиннадцать вечера</h1>
+    <p class="sub up">Семь постов, ручная и бесконтактная мойка, химчистка, полировка.
+      Работаем <em>каждый день с девяти утра до полуночи</em> — когда почти все
+      в городе уже закрылись, а вы только освободились.</p>
+    <div class="acts up">
+      <a class="btn" href="tel:+79134680846">Позвонить
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#zal">Зал ожидания</a>
+    </div>
+    <div class="figs up">
+      <div><b>4,5</b><span>средняя оценка в 2ГИС по 302 отзывам</span></div>
+      <div><b>до 24:00</b><span>ежедневно, включая субботу и воскресенье</span></div>
+      <div><b>7 постов</b><span>принимаем до семи машин одновременно</span></div>
+      <div><b>2-й этаж</b><span>зал ожидания с диванами, чаем и Wi-Fi</span></div>
+    </div>
+    <figure class="shot up">
+      <img src="photo/hall-night.jpg" alt="Зал ожидания вечером: диваны, большой экран, приставка на столе" width="1050" height="1400">
+      <figcaption>Зал ожидания в одиннадцатом часу. Пока машину моют, тут смотрят
+        и играют — а не сидят на улице у ворот.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="vecher" class="pale">
+  <div class="w">
+    <p class="tag up">Вечер</p>
+    <h2 class="up" style="margin-top:14px">Пятнадцать часов<br>подряд</h2>
+    <p class="up" style="margin-top:20px;color:var(--ink-2)">Мы посмотрели режим работы
+      52 моек Новосибирска по карточкам 2ГИС: 29 из них закрываются в восемь вечера
+      или раньше, ещё 12 — в девять. До одиннадцати и дольше работают три.
+      Мы — одна из этих трёх, и вечерние часы у нас обычно самые свободные.</p>
+    <div class="clock up">
+      <div class="r us"><b>Legenda</b>
+        <div>
+          <div class="bar2"><i style="left:37.5%;right:0"></i></div>
+          <div class="lb"><span>00:00</span><span>09:00</span><span>24:00</span></div>
+        </div>
+      </div>
+      <div class="r them"><b>Чаще всего в городе</b>
+        <div>
+          <div class="bar2"><i style="left:37.5%;right:16.7%"></i></div>
+          <div class="lb"><span>00:00</span><span>09:00</span><span>20:00</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="up" style="margin-top:16px;font-size:13.5px;color:var(--ink-3)">Полосы —
+      это часы, когда можно приехать. Нижняя — самый частый режим по городу,
+      до восьми вечера; у нас правый край доходит до полуночи.</p>
+    <div class="g2">
+      <figure class="up"><img src="photo/bay.jpg" alt="Автомобиль на посту мойки вечером" loading="lazy" decoding="async">
+        <figcaption>Пост в конце смены. Вечером машин меньше, значит,
+          на вашу тратят больше времени.</figcaption></figure>
+      <figure class="up"><img src="photo/dom.jpg" alt="Здание мойки с воротами и вывеской" loading="lazy" decoding="async">
+        <figcaption>Ереванская, 43 к1. Заезд прямо с улицы, ворота видно
+          с дороги — вечером они подсвечены.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="zal">
+  <div class="w">
+    <p class="tag up">Зал ожидания</p>
+    <h2 class="up" style="margin-top:14px">Второй этаж —<br>это не приёмная</h2>
+    <p class="up" style="margin-top:20px;color:var(--ink-2)">Мойка занимает от сорока минут
+      до полутора часов, и всё это время надо где-то быть. У нас наверху большой зал:
+      мягкие диваны, экран, приставка, чай и Wi-Fi. Клиентка написала об этом в отзыве
+      раньше, чем мы успели сами: «на втором этаже большой холл для ожидания
+      с большими мягкими диванами, можно заказать чай».</p>
+    <figure class="shot up">
+      <img src="photo/hall-day.jpg" alt="Зал ожидания днём: диваны, телевизор, отделка деревом" loading="lazy" decoding="async">
+      <figcaption>Тот же зал при дневном свете.</figcaption>
+    </figure>
+    <div class="three">
+      <article class="up"><h3>Записаться можно</h3>
+        <p>Приехать без записи тоже получится — но в выходной день лучше
+          позвонить заранее и занять время.</p></article>
+      <article class="up"><h3>Wi-Fi и розетки</h3>
+        <p>Если час ожидания надо потратить на работу, а не на сериал,
+          такая возможность есть.</p></article>
+      <article class="up"><h3>Чай и кофе</h3>
+        <p>За отдельные деньги. Один клиент справедливо заметил, что за такую цену
+          чай мог бы быть и не в пакетике, — замечание принято.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="uslugi" class="pale">
+  <div class="w">
+    <p class="tag up">Что делаем</p>
+    <h2 class="up" style="margin-top:14px">Мойка, салон<br>и переделки</h2>
+    <div class="grid3">
+      <div class="up"><b>Комплексная мойка</b>
+        <p>Кузов, стёкла, диски, салон, продувка и сушка. От 1600 ₽ —
+          цена зависит от размера машины.</p></div>
+      <div class="up"><b>Бесконтактная</b>
+        <p>Когда нужно быстро и без риска для свежего лака.
+          Обычно это вопрос двадцати минут.</p></div>
+      <div class="up"><b>Химчистка салона</b>
+        <p>Ткань, кожа, потолок, багажник. Работа на несколько часов —
+          лучше договариваться заранее.</p></div>
+      <div class="up"><b>Мойка двигателя</b>
+        <p>С укрытием электрики. Делаем перед продажей машины
+          и перед сезонной диагностикой.</p></div>
+      <div class="up"><b>Полировка кузова</b>
+        <p>Восстановительная и защитная. После неё имеет смысл
+          сразу поговорить про плёнку.</p></div>
+      <div class="up"><b>Плёнка и салон</b>
+        <p>Оклейка плёнкой, перетяжка салона, шумоизоляция, хромирование.
+          Это уже не мойка, а отдельная работа со сроком.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="chestno">
+  <div class="w">
+    <p class="tag up">Честно</p>
+    <h2 class="up" style="margin-top:14px">За такие деньги<br>недочётов быть не должно</h2>
+    <p class="pull up">«Когда платишь 1900 ₽ за комплексную мойку, таких недочётов
+      при мытье кузова и фар быть не должно»</p>
+    <p class="up" style="margin-top:18px;font-size:13px;color:var(--ink-3)">Евгений ·
+      отзыв в 2ГИС на три звезды, 26 августа 2026</p>
+    <div class="fgrid">
+      <article class="up">
+        <h3>Так и есть</h3>
+        <p>Мы не дешёвая мойка, и спрос с нас соответствующий. В отзывах пишут
+          про грязь на стыке багажника, про разводы и отпечатки после продувки,
+          про воск, который просили, но не почувствовали. Такие вещи видны сразу
+          и портят всё впечатление, каким бы удобным ни был зал наверху.</p>
+      </article>
+      <article class="up">
+        <h3>Что с этим делать</h3>
+        <p>Осматривайте машину вместе с мойщиком при свете и до оплаты —
+          это нормально и правильно. Багажник, пороги, стык у крышки,
+          фары, дверные ручки: именно там чаще всего и остаётся.</p>
+        <p style="margin-top:14px">Если что-то пропустили — скажите сразу, домоем.
+          Это быстрее и честнее, чем разбираться потом в отзыве.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy" class="pale">
+  <div class="w">
+    <p class="tag up">Отзывы · 4,5 из 5 по 302 оценкам в 2ГИС</p>
+    <blockquote class="up" style="margin-top:22px">
+      <p class="bigq">«Мою автомобиль два года в Легенде и ни разу не пожалела»</p>
+      <p class="by">Светлана · отзыв в 2ГИС, 14 сентября 2024</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>На втором этаже большой холл для ожидания с большими мягкими диванами,
+          можно заказать чай и другое. Моют очень качественно, цена соответствует.</p>
+        <cite>Светлана · 14 сентября 2024</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Заехала без записи, приняли быстро. Машину помыли отлично.</p>
+        <cite>Ангелина · 23 февраля 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Можно спокойно записаться, приехать и помыться.</p>
+        <cite>Александр · 10 января 2024</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Удобный заезд, вежливый персонал, удобный зал ожидания, хорошее расположение.
+          Быстро записывают и моют тоже быстро.</p>
+        <cite>Евгений · 26 августа 2026 · из отзыва на три звезды</cite>
+      </blockquote>
+    </div>
+    <div class="acts up" style="margin-top:38px">
+      <a class="btn g" href="https://2gis.ru/firm/70000001007209706" target="_blank" rel="noopener">
+        Все 302 отзыва в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty">
+  <div class="w split">
+    <div class="up">
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:14px">Ереванская, 43 к1</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>Ереванская улица, 43 к1<br><span class="q2">Заельцовский район, Новосибирск</span></dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+79134680846">+7 913 468-08-46</a></dd></div>
+        <div><dt>Режим</dt><dd>Ежедневно 09:00–24:00<br><span class="q2">без выходных</span></dd></div>
+        <div><dt>Посты</dt><dd>До 7 машин одновременно, возможна запись</dd></div>
+        <div><dt>Профиль</dt><dd>Мойка ручная и бесконтактная, химчистка, двигатель, полировка; плёнка, перетяжка, шумоизоляция</dd></div>
+        <div><dt>Оплата</dt><dd>Наличными, переводом с карты</dd></div>
+      </div>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="tel:+79134680846">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/70000001007209706" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <div class="mapstub" data-src="https://yandex.ru/map-widget/v1/?ll=82.896119%2C55.074065&z=17&text=Новосибирск%2C%20Ереванская%20улица%2C%2043%20к1" data-title="Карта: Ереванская улица, 43 к1">
+          <span>Карта загружается с сервера «Яндекса» и устанавливает свои cookie.</span>
+          <button type="button">Показать карту</button>
+        </div>
+      </div>
+      <h2 style="font-size:clamp(21px,2.5vw,31px);margin-top:34px">Записаться</h2>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Светлана"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 913 000-00-00"></div>
+        <div><label for="c">Машина</label><input id="c" name="car" placeholder="Kia Sorento"></div>
+        <div><label for="m">Что нужно</label><textarea id="m" name="message" placeholder="Комплекс сегодня после десяти вечера"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cmp">Компания</label><input id="cmp" name="company" tabindex="-1" autocomplete="off"></div>
+        <label class="agree"><input type="checkbox" id="ag" name="consent" required>
+          <span>Я даю согласие на обработку моих персональных данных в соответствии
+          с <a href="privacy/" target="_blank" rel="noopener">Политикой обработки персональных данных</a></span></label>
+        <label class="agree opt"><input type="checkbox" id="adv" name="ads">
+          <span>Хочу получать напоминания о плановом обслуживании и сообщения об акциях
+          (необязательно)</span></label>
+        <button id="sb" class="btn" type="submit" disabled>Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Заявку обрабатываем только для того, чтобы перезвонить
+          и записать вас на удобное время.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="ck" role="dialog" aria-label="Файлы cookie">
+  Мы используем файлы cookie: технически необходимые для работы страницы и те, что
+  устанавливает виджет «Яндекс.Карт». Аналитику и рекламные счётчики без вашего согласия
+  не подключаем. Подробности — в <a href="privacy/">Политике обработки персональных данных</a>.
+  <div class="ckb">
+    <button class="y" type="button" data-ck="y">Принять</button>
+    <button type="button" data-ck="n">Отклонить</button>
+  </div>
+</div>
+
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">Legenda<s>Ереванская, 43 к1</s></div>
+    Ереванская улица, 43 к1, Новосибирск · ежедневно 09:00–24:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+79134680846">+7 913 468-08-46</a>
+    <a href="https://2gis.ru/firm/70000001007209706" target="_blank" rel="noopener">2ГИС</a>
+    <a href="privacy/">Политика обработки персональных данных</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+79134680846">Позвонить</a>
+  <a class="btn g" href="#uslugi">Услуги</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoWash","name":"Legenda",
+"description":"Автомоечный комплекс на семь постов: комплексная ручная мойка, бесконтактная мойка, химчистка салона, мойка двигателя, полировка кузова. Зал ожидания на втором этаже с диванами, чаем и Wi-Fi, возможна запись. Также оклейка плёнкой, перетяжка салона, шумоизоляция и хромирование. Работаем ежедневно с 09:00 до 24:00.",
+"address":{"@type":"PostalAddress","streetAddress":"Ереванская улица, 43 к1","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":55.074065,"longitude":82.896119},
+"telephone":"+79134680846",
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"09:00","closes":"24:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.5","reviewCount":"302","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/70000001007209706"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и запишем на удобное время.';ok.style.display='block';f.reset();return}}catch(_){}}
+  ok.innerHTML='Приём заявок пока настраивается. Позвоните, пожалуйста: <a href="tel:+79134680846">+7 913 468-08-46</a>.';
+  ok.style.display='block';
+});
+</script>
+<script>
+(function(){
+  var K='ck-choice', box=document.getElementById('ck');
+  function loadMap(){
+    document.querySelectorAll('.mapstub[data-src]').forEach(function(s){
+      var f=document.createElement('iframe');
+      f.loading='lazy'; f.title=s.dataset.title||'Карта проезда'; f.src=s.dataset.src;
+      f.style.width='100%'; f.style.height='100%'; f.style.border='0';
+      s.parentNode.appendChild(f); s.remove();
+    });
+  }
+  var saved=null; try{saved=localStorage.getItem(K)}catch(e){}
+  if(saved==='y'){loadMap()} else if(!saved && box){box.classList.add('on')}
+  if(box) box.addEventListener('click',function(e){
+    var b=e.target.closest('[data-ck]'); if(!b)return;
+    try{localStorage.setItem(K,b.dataset.ck)}catch(e){}
+    box.classList.remove('on'); if(b.dataset.ck==='y') loadMap();
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.mapstub button')) loadMap();
+  });
+})();
+</script>
+<script>
+(function(){
+  var K='ck-choice', box=document.getElementById('ck');
+  function loadMap(){
+    document.querySelectorAll('.mapstub[data-src]').forEach(function(s){
+      var f=document.createElement('iframe');
+      f.loading='lazy'; f.title=s.dataset.title||'Карта проезда'; f.src=s.dataset.src;
+      f.style.width='100%'; f.style.height='100%'; f.style.border='0';
+      s.parentNode.appendChild(f); s.remove();
+    });
+  }
+  var saved=null; try{saved=localStorage.getItem(K)}catch(e){}
+  if(saved==='y'){loadMap()} else if(!saved && box){box.classList.add('on')}
+  if(box) box.addEventListener('click',function(e){
+    var b=e.target.closest('[data-ck]'); if(!b)return;
+    try{localStorage.setItem(K,b.dataset.ck)}catch(e){}
+    box.classList.remove('on'); if(b.dataset.ck==='y') loadMap();
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.mapstub button')) loadMap();
+  });
+  var ag=document.getElementById('ag'), sb=document.getElementById('sb');
+  if(ag&&sb){ var sync=function(){sb.disabled=!ag.checked}; sync();
+    ag.addEventListener('change',sync); }
+})();
+</script>
+</body>
+</html>

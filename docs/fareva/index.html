@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Фарева — выхлоп, тормоза и автоэлектрика для Honda и Subaru в Новосибирске, Изыскателей, 44</title>
+<meta name="description" content="Фарева, Новосибирск, улица Изыскателей, 44. Ремонт и сварка выхлопных систем, проточка тормозных дисков, ремонт стоек и ходовой, бензиновые двигатели, стартеры и генераторы, рулевые рейки, компьютерная диагностика на вибростенде, автоэлектрика и установка сигнализаций, климат, замена масла, магазин запчастей для японских марок. Вт–Сб 10:00–20:00. 4,4 по 136 отзывам в 2ГИС.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Фарева — Изыскателей, 44">
+<meta property="og:description" content="Выхлоп варим сами, а не меняем в сборе. Honda и Subaru, проточка дисков, вибростенд, сигнализации. 4,4 по 136 отзывам.">
+<meta property="og:image" content="photo/weld.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23E9EDEE'/><path d='M4 20h10c4 0 4-8 8-8h6' fill='none' stroke='%230E5B5B' stroke-width='3.4' stroke-linecap='round'/><circle cx='27' cy='12' r='3.4' fill='%23141B1D'/></svg>">
+<link rel="stylesheet" href="../fonts/inter-tight.css">
+<link rel="stylesheet" href="../fonts/golos-text.css">
+<style>
+/* Фарева, Изыскателей 44.
+   В карточке шестнадцать направлений, но фотографии говорят яснее:
+   больше половины кадров — выхлопная система, причём с процессом сварки
+   и гибки трубы. Значит, они её варят, а не меняют в сборе, и это прямой
+   денежный аргумент для клиента. С него и начинаем.
+   Цвет — сине-зелёный «бензиновый» отлив на стали трубы, фон — бетон пола.
+   Кнопка при наведении гнётся, как труба на их же снимке. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pa:#E9EDEE; --pa-2:#D7DDDE; --card:#FFFFFF;
+  --ink:#141B1D; --ink-2:#48565A; --ink-3:#7C8C90;
+  --line:#C8D1D2; --line-2:#A4B0B2;
+  --ac:#0E5B5B; --ac-2:#0A4444; --ac-soft:#D6E6E4;
+  --wrap:1050px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--pa);color:var(--ink);
+  font:400 16.5px/1.72 "Golos Text",-apple-system,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(58px,8vw,104px) 0}
+section[id]{scroll-margin-top:80px}
+h1,h2,h3{font-family:"Inter Tight",-apple-system,sans-serif}
+h1,h2{font-weight:700;line-height:1.04;letter-spacing:-.045em;text-wrap:balance}
+h1{font-size:clamp(32px,5.2vw,60px)}
+h2{font-size:clamp(24px,3.4vw,43px)}
+h3{font-size:18px;font-weight:600;line-height:1.28;letter-spacing:-.03em}
+p{max-width:60ch}
+em{font-style:normal;color:var(--ac)}
+.tag{font-family:"Inter Tight",sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:.17em;text-transform:uppercase;color:var(--ac)}
+.q2{color:var(--ink-2)}
+
+/* Кнопка гнётся, как труба: углы уходят в радиус по диагонали. */
+.btn{position:relative;display:inline-flex;align-items:center;gap:11px;
+  font-family:"Inter Tight",sans-serif;font-weight:600;font-size:13.5px;letter-spacing:-.005em;
+  padding:16px 30px;background:var(--ink);color:#EDF1F1;border-radius:0;
+  transition:border-radius .42s var(--ease),background .3s var(--ease),transform .26s var(--ease)}
+.btn:hover,.btn:focus-visible{background:var(--ac);transform:translateY(-2px);
+  border-radius:22px 3px 22px 3px}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;
+  transition:transform .32s var(--ease)}
+.btn:hover svg{transform:translateX(5px)}
+.btn.g{color:var(--ink);background:transparent;box-shadow:inset 0 0 0 1.6px var(--line-2)}
+.btn.g:hover{background:transparent;box-shadow:inset 0 0 0 1.6px var(--ac)}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:15px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(233,237,238,.95);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:9px 0}
+.nav{display:flex;align-items:center;gap:22px}
+.brand{margin-right:auto;font-family:"Inter Tight",sans-serif;font-weight:700;font-size:19px;
+  letter-spacing:-.05em;line-height:1.14}
+.brand s{display:block;text-decoration:none;font-family:"Golos Text",sans-serif;font-size:9.5px;
+  font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ac);margin-top:4px}
+.lk{font-size:14.5px;color:var(--ink-2);transition:color .2s}
+.lk:hover{color:var(--ac)}
+@media(max-width:1060px){.lk{display:none}}
+@media(max-width:460px){.nav{gap:11px}.brand{font-size:16px}.btn{padding:13px 21px;font-size:12.5px}}
+
+.hero{padding-top:clamp(118px,15vw,178px);padding-bottom:clamp(26px,4vw,46px)}
+.hero h1{margin:16px 0 22px}
+.hero .sub{font-size:clamp(16px,1.8vw,18.5px);color:var(--ink-2);max-width:53ch;line-height:1.7}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,3vw,38px);
+  margin-top:clamp(38px,6vw,66px);padding-top:26px;border-top:2px solid var(--ink)}
+.figs b{display:block;font-family:"Inter Tight",sans-serif;font-weight:700;
+  font-size:clamp(20px,2.6vw,32px);letter-spacing:-.06em;line-height:1.05;
+  font-variant-numeric:tabular-nums;color:var(--ac)}
+.figs span{display:block;margin-top:10px;font-size:12.5px;color:var(--ink-3);line-height:1.5}
+@media(max-width:700px){.figs{grid-template-columns:repeat(2,1fr)}}
+
+.shot{margin-top:clamp(34px,5vw,56px)}
+.shot img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--pa-2)}
+.shot figcaption{margin-top:11px;font-size:13.5px;color:var(--ink-3);max-width:60ch}
+
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,26px);
+  margin-top:clamp(32px,4.2vw,50px)}
+@media(max-width:840px){.three{grid-template-columns:1fr}}
+.three article{background:var(--card);border:1px solid var(--line);overflow:hidden;
+  transition:border-color .25s var(--ease),transform .25s var(--ease)}
+.three article:hover{border-color:var(--ac);transform:translateY(-3px)}
+.three img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--pa-2)}
+.three .tx{padding:clamp(20px,2.4vw,26px)}
+.three h3{margin-bottom:9px;font-size:19px}
+.three p{font-size:14.5px;color:var(--ink-2)}
+
+/* Два пути с трубой: замена в сборе и ремонт по месту. */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.6vw,28px);
+  margin-top:clamp(32px,4.2vw,50px)}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+.two article{padding:clamp(22px,2.6vw,30px);border:1px solid var(--line);background:var(--card)}
+.two article.now{border-color:var(--ac);border-width:2px}
+.two b{display:block;font-family:"Inter Tight",sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px}
+.two article.now b{color:var(--ac)}
+.two h3{font-size:21px;margin-bottom:11px}
+.two p{font-size:14.5px;color:var(--ink-2)}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.6vw,30px);
+  margin-top:clamp(30px,4vw,46px)}
+@media(max-width:860px){.grid3{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid3{grid-template-columns:1fr}}
+.grid3 div{padding-top:18px;border-top:1px solid var(--line-2);transition:border-color .25s}
+.grid3 div:hover{border-top-color:var(--ac)}
+.grid3 b{display:block;font-family:"Inter Tight",sans-serif;font-size:17px;font-weight:600;
+  letter-spacing:-.03em;margin-bottom:8px}
+.grid3 p{font-size:14.5px;color:var(--ink-2)}
+
+.dark{background:var(--ink);color:#A9B7BA}
+.dark .tag{color:#66B5B0}
+.dark h2,.dark h3{color:#FFFFFF}
+.dark p{color:#94A3A6}
+.pull{font-family:"Inter Tight",sans-serif;font-weight:700;font-size:clamp(19px,2.4vw,29px);
+  line-height:1.2;letter-spacing:-.05em;color:#FFFFFF;max-width:28ch;
+  border-left:3px solid var(--ac);padding-left:20px;margin-top:26px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,34px);
+  margin-top:clamp(30px,4vw,44px)}
+@media(max-width:760px){.fgrid{grid-template-columns:1fr}}
+.fgrid h3{margin-bottom:9px}
+.fgrid p{font-size:14.5px}
+
+.pale{background:#F1F4F4}
+.bigq{font-family:"Inter Tight",sans-serif;font-weight:700;font-size:clamp(20px,2.8vw,33px);
+  line-height:1.16;letter-spacing:-.05em;max-width:24ch}
+.by{margin-top:14px;font-size:13px;color:var(--ink-3)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.6vw,28px);
+  margin-top:clamp(32px,4vw,48px)}
+@media(max-width:760px){.pair{grid-template-columns:1fr}}
+.pair blockquote{background:var(--card);border:1px solid var(--line);padding:clamp(20px,2.4vw,26px)}
+.pair p{font-size:14.5px;color:var(--ink-2)}
+.pair cite{display:block;margin-top:13px;font-style:normal;font-size:12.5px;color:var(--ink-3)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,26px);margin-top:clamp(32px,4vw,46px)}
+@media(max-width:700px){.g2{grid-template-columns:1fr}}
+.g2 img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--pa-2)}
+.g2 figcaption{margin-top:10px;font-size:13px;color:var(--ink-3)}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px);margin-top:clamp(28px,3.6vw,42px)}
+@media(max-width:700px){.g3{grid-template-columns:1fr 1fr}}
+.g3 img{width:100%;aspect-ratio:1/1;object-fit:cover;background:var(--pa-2)}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,54px)}
+@media(max-width:900px){.split{grid-template-columns:1fr}}
+.rows{margin-top:24px;display:grid;gap:0}
+.rows div{display:grid;grid-template-columns:118px 1fr;gap:16px;padding:13px 0;
+  border-top:1px solid var(--line)}
+.rows div:last-child{border-bottom:1px solid var(--line)}
+dt{font-size:12.5px;color:var(--ink-3);letter-spacing:.02em}
+dd{font-size:15px}
+dd a{border-bottom:1px solid var(--line-2);transition:border-color .2s}
+dd a:hover{border-bottom-color:var(--ac)}
+.map{position:relative;aspect-ratio:4/3;background:var(--pa-2);border:1px solid var(--line)}
+.mapstub{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:13px;text-align:center;padding:24px}
+.mapstub span{font-size:13.5px;color:var(--ink-2);max-width:34ch}
+.mapstub button{font:inherit;font-size:13.5px;font-weight:600;font-family:"Inter Tight",sans-serif;
+  padding:11px 20px;border:0;background:var(--ink);color:#EDF1F1;cursor:pointer}
+form{margin-top:20px;display:grid;gap:14px}
+label{display:block;font-size:12.5px;color:var(--ink-3);margin-bottom:6px}
+input,textarea{width:100%;font:inherit;font-size:15px;padding:12px 14px;background:var(--card);
+  border:1px solid var(--line-2);color:inherit}
+input:focus,textarea:focus{outline:2px solid var(--ac);outline-offset:1px;border-color:transparent}
+textarea{min-height:96px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink-2);margin:0}
+.agree input{width:auto;flex:none;margin-top:3px}
+.agree a{border-bottom:1px solid var(--line-2)}
+.fine{font-size:12.5px;color:var(--ink-3)}
+.sent{display:none;padding:14px 16px;background:var(--ac-soft);
+  border-left:3px solid var(--ac);font-size:14.5px}
+footer{background:var(--ink);color:#94A3A6;padding:34px 0;font-size:13.5px}
+.fin{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
+footer a{color:#B7C4C6;border-bottom:1px solid #29373A}
+footer a:hover{color:#fff}
+footer .brand{color:#fff}
+footer .brand s{color:#66B5B0}
+
+#ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:80;display:none;
+  background:var(--card);border:1px solid var(--line-2);padding:18px 20px;font-size:13.5px;
+  max-width:640px;box-shadow:0 14px 40px rgba(20,27,29,.16)}
+#ck.on{display:block}
+#ck a{border-bottom:1px solid var(--line-2)}
+.ckb{display:flex;gap:10px;margin-top:13px}
+.ckb button{font:inherit;font-size:13px;font-weight:600;font-family:"Inter Tight",sans-serif;
+  padding:9px 17px;border:1px solid var(--line-2);background:transparent;cursor:pointer}
+.ckb .y{background:var(--ink);border-color:var(--ink);color:#EDF1F1}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:55;display:none;gap:9px;padding:10px 14px;
+  background:rgba(233,237,238,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+.bar .btn{flex:1;justify-content:center;padding:13px 10px}
+@media(max-width:700px){.bar{display:flex}body{padding-bottom:70px}}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+/* --- 152-ФЗ --- */
+/* --- 152-ФЗ: согласие, cookie, отложенная карта --- */
+.agree{display:grid;grid-template-columns:19px 1fr;gap:12px;align-items:start;
+  font:400 13.5px/1.55 inherit;font-family:inherit;letter-spacing:normal;text-transform:none;
+  color:inherit;margin:0;cursor:pointer;max-width:52ch}
+.agree span{display:block;letter-spacing:normal;text-transform:none}
+.agree input{width:19px;height:19px;margin:2px 0 0;accent-color:currentColor;cursor:pointer;flex:none}
+.agree a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.agree.opt{opacity:.8}
+button[disabled],.btn[disabled]{opacity:.4;cursor:not-allowed}
+.mapstub{position:absolute;inset:0;display:flex;flex-direction:column;gap:12px;
+  align-items:center;justify-content:center;text-align:center;padding:22px;
+  font-size:13.5px;line-height:1.5;background:rgba(127,127,127,.10)}
+.mapstub button{font:inherit;font-size:13px;padding:11px 20px;cursor:pointer;
+  border:1px solid currentColor;background:transparent;color:inherit;border-radius:3px}
+.mapstub button:hover{opacity:.72}
+.map{position:relative}
+#ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:95;display:none;max-width:440px;
+  padding:18px 20px;background:#101114;color:#F2F0EC;font-size:13.5px;line-height:1.6;
+  border:1px solid rgba(255,255,255,.14);border-radius:6px;
+  box-shadow:0 18px 48px rgba(0,0,0,.45)}
+#ck.on{display:block}
+#ck a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+#ck .ckb{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+#ck button{font:inherit;font-size:12.5px;font-weight:600;letter-spacing:.04em;padding:11px 20px;
+  cursor:pointer;border-radius:4px;border:1px solid rgba(255,255,255,.3);
+  background:transparent;color:#F2F0EC}
+#ck button.y{background:#F2F0EC;color:#101114;border-color:#F2F0EC}
+#ck button:hover{opacity:.85}
+@media(max-width:760px){#ck{bottom:84px;left:10px;right:10px}}
+</style>
+</head>
+<body>
+
+<header id="hd"><div class="w nav">
+  <div class="brand">Фарева<s>Изыскателей, 44</s></div>
+  <a class="lk" href="#vyhlop">Выхлоп</a>
+  <a class="lk" href="#raboty">Работы</a>
+  <a class="lk" href="#otzyvy">Отзывы</a>
+  <a class="btn" href="tel:+73832998830">+7 383 299-88-30</a>
+</div></header>
+
+<main>
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Автосервис и запчасти · Кировский район</p>
+    <h1 class="up">Выхлоп варим,<br>а не меняем<br>в сборе</h1>
+    <p class="sub up">Honda и Subaru — наш профиль, но берём и остальных японцев.
+      Выхлопная система, тормоза с проточкой дисков, ходовая, электрика и сигнализации.
+      И свой магазин запчастей: <em>ту деталь, которую нашли, можно тут же и поставить</em>.</p>
+    <div class="acts up">
+      <a class="btn" href="tel:+73832998830">Позвонить
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#vyhlop">Про выхлоп</a>
+    </div>
+    <div class="figs up">
+      <div><b>4,4</b><span>средняя оценка в 2ГИС по 136 отзывам</span></div>
+      <div><b>Honda</b><span>и Subaru — марки, по которым у нас больше всего опыта</span></div>
+      <div><b>13 марок</b><span>запчастей в наличии: от Acura и Lexus до Suzuki и Kia</span></div>
+      <div><b>Вибростенд</b><span>ищем стуки и вибрации, которые «на ходу пропадают»</span></div>
+    </div>
+    <figure class="shot up">
+      <img src="photo/weld.jpg" alt="Мастер варит и подгоняет трубу выхлопной системы в цехе" width="1400" height="1050">
+      <figcaption>Труба гнётся и варится здесь же. Поэтому чинить систему у нас
+        обычно дешевле, чем покупать её в сборе.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="vyhlop" class="pale">
+  <div class="w">
+    <p class="tag up">Выхлопная система</p>
+    <h2 class="up" style="margin-top:14px">Два ответа<br>на прогоревшую трубу</h2>
+    <p class="up" style="margin-top:20px;color:var(--ink-2)">Прогорела банка, треснула
+      гофра, отвалился резонатор — вариантов всегда два, и они сильно отличаются по деньгам.
+      Мы делаем второй и говорим об этом сразу.</p>
+    <div class="two">
+      <article class="up">
+        <b>Как чаще всего</b>
+        <h3>Замена в сборе</h3>
+        <p>Снимается вся магистраль, ставится новая — вместе с теми участками,
+          которые ещё живые. Быстро для сервиса и дорого для вас,
+          особенно если оригинала на вашу машину уже не найти.</p>
+      </article>
+      <article class="up now">
+        <b>Как у нас</b>
+        <h3>Ремонт по месту</h3>
+        <p>Вырезаем прогоревший участок, гнём и варим новую трубу под вашу машину,
+          ставим гофру или банку — и оставляем то, что ещё отработает.
+          Дольше по времени, заметно дешевле по сумме.</p>
+      </article>
+    </div>
+    <div class="g3">
+      <img class="up" src="photo/pipe-1.jpg" alt="Готовая труба выхлопной системы на полу цеха" loading="lazy" decoding="async">
+      <img class="up" src="photo/under-2.jpg" alt="Днище автомобиля на подъёмнике с выхлопной системой" loading="lazy" decoding="async">
+      <img class="up" src="photo/under-3.jpg" alt="Установленная выхлопная система под автомобилем" loading="lazy" decoding="async">
+    </div>
+    <p class="up" style="margin-top:16px;font-size:13.5px;color:var(--ink-3)">Слева — труба,
+      согнутая под конкретную машину. Дальше она же на месте: по такой работе видно,
+      что ставилось не «примерно подходящее».</p>
+  </div>
+</section>
+
+<section id="tormoza">
+  <div class="w">
+    <p class="tag up">Тормоза</p>
+    <h2 class="up" style="margin-top:14px">Диск можно проточить,<br>а не выбрасывать</h2>
+    <p class="up" style="margin-top:20px;color:var(--ink-2)">Если руль или педаль бьют
+      при торможении, дело обычно не в колодках, а в биении диска. Пока толщина позволяет,
+      диск протачивается прямо на машине и работает дальше — это дешевле пары новых
+      и честнее, чем менять «на всякий случай». Если запас толщины уже выбран,
+      мы скажем об этом и не станем точить в ноль.</p>
+    <div class="g2">
+      <figure class="up"><img src="photo/disc-1.jpg" alt="Тормозной диск и суппорт до обработки" loading="lazy" decoding="async">
+        <figcaption>Диск с выработкой и следами перегрева.</figcaption></figure>
+      <figure class="up"><img src="photo/disc-2.jpg" alt="Тот же тормозной диск после проточки: ровная блестящая поверхность" loading="lazy" decoding="async">
+        <figcaption>Он же после проточки: поверхность ровная, биения нет.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="raboty" class="pale">
+  <div class="w">
+    <p class="tag up">Что ещё делаем</p>
+    <h2 class="up" style="margin-top:14px">Сервис и магазин<br>в одном месте</h2>
+    <div class="grid3">
+      <div class="up"><b>Ходовая</b>
+        <p>Стойки, рычаги, сайлентблоки, ступицы. Ремонт стоек — отдельно:
+          не всё нужно менять в сборе.</p></div>
+      <div class="up"><b>Двигатель и диагностика</b>
+        <p>Бензиновые моторы, компьютерная диагностика. Вибростенд помогает
+          поймать то, что на подъёмнике молчит.</p></div>
+      <div class="up"><b>Автоэлектрика</b>
+        <p>Электронные системы, стартеры и генераторы, оптика. Сложные машины —
+          гибриды и новые Lexus — тоже берём.</p></div>
+      <div class="up"><b>Сигнализации</b>
+        <p>Установка и настройка, автозапуск. Обходим иммобилайзер без вшития
+          ключа, штатный брелок остаётся рабочим.</p></div>
+      <div class="up"><b>Рулевые рейки и климат</b>
+        <p>Ремонт реек, обслуживание кондиционера, замена масла
+          и спецжидкостей.</p></div>
+      <div class="up"><b>Запчасти</b>
+        <p>Acura, Honda, Hyundai, Infiniti, Isuzu, Kia, Lexus, Mazda, Mitsubishi,
+          Nissan, Subaru, Suzuki, Toyota. Подберём и контрактные.</p></div>
+    </div>
+    <div class="g3">
+      <img class="up" src="photo/bay.jpg" alt="Цех с подъёмниками и автомобилями" loading="lazy" decoding="async">
+      <img class="up" src="photo/lexus.jpg" alt="Автомобиль с открытым капотом на подъёмнике" loading="lazy" decoding="async">
+      <img class="up" src="photo/lift.jpg" alt="Универсал на подъёмнике в цехе" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<section id="chestno" class="dark">
+  <div class="w">
+    <p class="tag up">Честно</p>
+    <h2 class="up" style="margin-top:14px">4,4 — и мы это<br>не прячем</h2>
+    <p class="pull up">«Ни разу не пытались навязать чего-то лишнего,
+      а советуют только то, что действительно необходимо»</p>
+    <p class="up" style="margin-top:18px;font-size:13px;color:#7C8B8E">Никита ·
+      постоянный клиент больше двух лет · отзыв в 2ГИС, 30 ноября 2025</p>
+    <div class="fgrid">
+      <article class="up">
+        <h3>Оценка ниже, чем у соседей</h3>
+        <p>У многих сервисов в округе 4,8 и 4,9, у нас 4,4 по 136 отзывам.
+          Мы работаем давно, машин через нас прошло много, и недовольные среди них
+          были. Прочитайте отзывы целиком, а не только оценку: там видно,
+          из-за чего именно.</p>
+      </article>
+      <article class="up">
+        <h3>Понедельник и воскресенье — выходные</h3>
+        <p>Мы работаем со вторника по субботу, с 10:00 до 20:00. Это неудобно тем,
+          кто может только в выходной, — и лучше вы узнаете об этом здесь,
+          чем приехав к закрытым воротам.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy">
+  <div class="w">
+    <p class="tag up">Отзывы · 4,4 из 5 по 136 оценкам в 2ГИС</p>
+    <blockquote class="up" style="margin-top:22px">
+      <p class="bigq">«Взялись за установку без проблем, хотя многие установщики
+        категорически отказывались»</p>
+      <p class="by">Кирилл · сигнализация на Lexus · отзыв в 2ГИС, 17 ноября 2024</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>Я их постоянный клиент уже больше двух лет, и за это время они помогли мне
+          с двумя моими хондами. Ребята не просто чинили, а действительно вникали
+          в каждую проблему: всегда готовы проконсультировать, объяснить и помочь
+          найти запчасти, даже подобрать и заказать контрактные.</p>
+        <cite>Никита · Honda Avancier · 30 ноября 2025</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Обошли иммобилайзер без вшития ключа. Все функции бесключевого доступа
+          остались со штатного брелока. Всё сделали быстро, качественно, недорого.
+          Спасибо автоэлектрику за работу.</p>
+        <cite>Кирилл · 17 ноября 2024</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Так как машина новая, гибрид, на установку потребовалось чуть больше времени,
+          мастер справился с задачей. Сигнализация установлена, автозапуск работает.
+          Персонал дружелюбный.</p>
+        <cite>Павел · Toyota Harrier · 21 ноября 2024</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Хороший автосервис. Внимательное отношение к клиенту и к автомобилю.
+          Не первый год здесь ремонтируется мой авто, и всё отлично.</p>
+        <cite>Дмитрий · 20 июня 2026</cite>
+      </blockquote>
+    </div>
+    <div class="g2">
+      <figure class="up"><img src="photo/orthia.jpg" alt="Белая Honda Orthia у сервиса" loading="lazy" decoding="async">
+        <figcaption>Honda девяностых и двухтысячных — машины, по которым у нас больше
+          всего опыта и запчастей.</figcaption></figure>
+      <figure class="up"><img src="photo/forester.jpg" alt="Subaru с разобранной передней частью в цехе" loading="lazy" decoding="async">
+        <figcaption>Subaru — вторая марка, под которую у нас есть и понимание,
+          и детали.</figcaption></figure>
+    </div>
+    <div class="acts up" style="margin-top:38px">
+      <a class="btn g" href="https://2gis.ru/firm/141265771510256" target="_blank" rel="noopener">
+        Все 136 отзывов в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty" class="pale">
+  <div class="w split">
+    <div class="up">
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:14px">Изыскателей, 44</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>улица Изыскателей, 44<br><span class="q2">Кировский район, Новосибирск</span></dd></div>
+        <div><dt>Телефоны</dt><dd><a href="tel:+73832998830">+7 383 299-88-30</a><br>
+          <a href="tel:+73832997740">+7 383 299-77-40</a><br>
+          <a href="tel:+73832997730">+7 383 299-77-30</a></dd></div>
+        <div><dt>Мессенджеры</dt><dd>Telegram и WhatsApp — <a href="tel:+79513987730">+7 951 398-77-30</a></dd></div>
+        <div><dt>Режим</dt><dd>Вт–Сб 10:00–20:00<br><span class="q2">понедельник и воскресенье — выходные</span></dd></div>
+        <div><dt>Профиль</dt><dd>Выхлоп, тормоза, ходовая, двигатель, электрика и сигнализации, климат, запчасти</dd></div>
+        <div><dt>Оплата</dt><dd>Картой, наличными, через банк</dd></div>
+      </div>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="tel:+73832998830">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/141265771510256" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <div class="mapstub" data-src="https://yandex.ru/map-widget/v1/?ll=82.912580%2C54.973662&z=17&text=Новосибирск%2C%20улица%20Изыскателей%2C%2044" data-title="Карта: улица Изыскателей, 44">
+          <span>Карта загружается с сервера «Яндекса» и устанавливает свои cookie.</span>
+          <button type="button">Показать карту</button>
+        </div>
+      </div>
+      <h2 style="font-size:clamp(21px,2.5vw,31px);margin-top:34px">Записаться</h2>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Никита"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 951 000-00-00"></div>
+        <div><label for="c">Машина</label><input id="c" name="car" placeholder="Honda Accord, 2004"></div>
+        <div><label for="m">Что нужно</label><textarea id="m" name="message" placeholder="Прогорела банка глушителя, гудит"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cmp">Компания</label><input id="cmp" name="company" tabindex="-1" autocomplete="off"></div>
+        <label class="agree"><input type="checkbox" id="ag" name="consent" required>
+          <span>Я даю согласие на обработку моих персональных данных в соответствии
+          с <a href="privacy/" target="_blank" rel="noopener">Политикой обработки персональных данных</a></span></label>
+        <label class="agree opt"><input type="checkbox" id="adv" name="ads">
+          <span>Хочу получать напоминания о плановом обслуживании и сообщения об акциях
+          (необязательно)</span></label>
+        <button id="sb" class="btn" type="submit" disabled>Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Заявку обрабатываем только для того, чтобы перезвонить,
+          уточнить задачу и записать вас на удобное время.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="ck" role="dialog" aria-label="Файлы cookie">
+  Мы используем файлы cookie: технически необходимые для работы страницы и те, что
+  устанавливает виджет «Яндекс.Карт». Аналитику и рекламные счётчики без вашего согласия
+  не подключаем. Подробности — в <a href="privacy/">Политике обработки персональных данных</a>.
+  <div class="ckb">
+    <button class="y" type="button" data-ck="y">Принять</button>
+    <button type="button" data-ck="n">Отклонить</button>
+  </div>
+</div>
+
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">Фарева<s>Изыскателей, 44</s></div>
+    улица Изыскателей, 44, Новосибирск · Вт–Сб 10:00–20:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+73832998830">+7 383 299-88-30</a>
+    <a href="https://2gis.ru/firm/141265771510256" target="_blank" rel="noopener">2ГИС</a>
+    <a href="privacy/">Политика обработки персональных данных</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+73832998830">Позвонить</a>
+  <a class="btn g" href="#vyhlop">Про выхлоп</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"Фарева",
+"description":"Специализированный автосервис и магазин запчастей: ремонт и сварка выхлопных систем по месту, проточка тормозных дисков, ремонт стоек и ходовой части, бензиновые двигатели, стартеры и генераторы, рулевые рейки, компьютерная диагностика с вибростендом, ремонт электронных систем, установка и настройка автосигнализаций с автозапуском, автооптика, обслуживание климатических систем, замена масла, тюнинг и аксессуары. Запчасти для Acura, Honda, Hyundai, Infiniti, Isuzu, Kia, Lexus, Mazda, Mitsubishi, Nissan, Subaru, Suzuki и Toyota.",
+"address":{"@type":"PostalAddress","streetAddress":"улица Изыскателей, 44","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":54.973662,"longitude":82.91258},
+"telephone":"+73832998830",
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"10:00","closes":"20:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.4","reviewCount":"136","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/141265771510256"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и договоримся о времени.';ok.style.display='block';f.reset();return}}catch(_){}}
+  ok.innerHTML='Приём заявок пока настраивается. Позвоните, пожалуйста: <a href="tel:+73832998830">+7 383 299-88-30</a>.';
+  ok.style.display='block';
+});
+</script>
+<script>
+(function(){
+  var K='ck-choice', box=document.getElementById('ck');
+  function loadMap(){
+    document.querySelectorAll('.mapstub[data-src]').forEach(function(s){
+      var f=document.createElement('iframe');
+      f.loading='lazy'; f.title=s.dataset.title||'Карта проезда'; f.src=s.dataset.src;
+      f.style.width='100%'; f.style.height='100%'; f.style.border='0';
+      s.parentNode.appendChild(f); s.remove();
+    });
+  }
+  var saved=null; try{saved=localStorage.getItem(K)}catch(e){}
+  if(saved==='y'){loadMap()} else if(!saved && box){box.classList.add('on')}
+  if(box) box.addEventListener('click',function(e){
+    var b=e.target.closest('[data-ck]'); if(!b)return;
+    try{localStorage.setItem(K,b.dataset.ck)}catch(e){}
+    box.classList.remove('on'); if(b.dataset.ck==='y') loadMap();
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.mapstub button')) loadMap();
+  });
+})();
+</script>
+<script>
+(function(){
+  var K='ck-choice', box=document.getElementById('ck');
+  function loadMap(){
+    document.querySelectorAll('.mapstub[data-src]').forEach(function(s){
+      var f=document.createElement('iframe');
+      f.loading='lazy'; f.title=s.dataset.title||'Карта проезда'; f.src=s.dataset.src;
+      f.style.width='100%'; f.style.height='100%'; f.style.border='0';
+      s.parentNode.appendChild(f); s.remove();
+    });
+  }
+  var saved=null; try{saved=localStorage.getItem(K)}catch(e){}
+  if(saved==='y'){loadMap()} else if(!saved && box){box.classList.add('on')}
+  if(box) box.addEventListener('click',function(e){
+    var b=e.target.closest('[data-ck]'); if(!b)return;
+    try{localStorage.setItem(K,b.dataset.ck)}catch(e){}
+    box.classList.remove('on'); if(b.dataset.ck==='y') loadMap();
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.mapstub button')) loadMap();
+  });
+  var ag=document.getElementById('ag'), sb=document.getElementById('sb');
+  if(ag&&sb){ var sync=function(){sb.disabled=!ag.checked}; sync();
+    ag.addEventListener('change',sync); }
+})();
+</script>
+</body>
+</html>

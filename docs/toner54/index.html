@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Toner54 — тонировка автостёкол в Новосибирске, Кошурникова, 21 к1</title>
+<meta name="description" content="Toner54, центр тонировки, Новосибирск, улица Кошурникова, 21 к1. Тонировка лобового и передних стёкол по ГОСТ, задняя полусфера без снятия стёкол, атермальная плёнка, работа с плёнкой клиента. Мойка, химчистка салона, мойка двигателя, полировка, зал ожидания. Ежедневно 10:00–20:00. 4,7 по 246 отзывам в 2ГИС.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Toner54 — тонировка на Кошурникова, 21 к1">
+<meta property="og:description" content="Плёнку выбирают по тому, что видно изнутри, а не по тому, как машина выглядит снаружи. Тонировка по ГОСТ и без снятия стёкол. 4,7 по 246 отзывам.">
+<meta property="og:image" content="photo/night.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23EFEFF1'/><rect x='4' y='7' width='6' height='18' fill='%23D5D6DA'/><rect x='11' y='7' width='6' height='18' fill='%23A0A2A8'/><rect x='18' y='7' width='6' height='18' fill='%2355575E'/><rect x='25' y='7' width='3' height='18' fill='%23101114'/></svg>">
+<link rel="stylesheet" href="../fonts/unbounded.css">
+<link rel="stylesheet" href="../fonts/commissioner.css">
+<style>
+/* Toner54, Кошурникова 21 к1.
+   Лучшее, что у них есть, — снимки, сделанные ИЗНУТРИ салона через плёнку,
+   в том числе ночью. Именно это и волнует человека перед тонировкой,
+   а показывают все обычно наоборот — машину снаружи. С этого и строим.
+   Единственный цвет на странице — зелёный: им отмечено то, что проходит
+   по ГОСТу. Всё остальное — серая шкала светопропускания, от прозрачного
+   до глухого. Кнопка при наведении затягивается плёнкой сверху вниз. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pa:#EFEFF1; --pa-2:#DEDFE2; --card:#FFFFFF;
+  --ink:#101114; --ink-2:#4B4D54; --ink-3:#82858C;
+  --line:#D2D3D7; --line-2:#AFB1B7;
+  /* шкала светопропускания: от прозрачного к глухому */
+  --t95:#E4E5E8; --t75:#B8BABF; --t50:#8A8D94; --t20:#4E5158; --t05:#22242A;
+  --ok:#3E8E5A; --ok-soft:#DFEDE4;
+  --wrap:1050px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--pa);color:var(--ink);
+  font:400 16.5px/1.72 Commissioner,-apple-system,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(58px,8vw,104px) 0}
+section[id]{scroll-margin-top:80px}
+h1,h2,h3{font-family:Unbounded,-apple-system,sans-serif}
+h1,h2{font-weight:600;line-height:1.12;letter-spacing:-.045em;text-wrap:balance}
+h1{font-size:clamp(27px,4.2vw,49px)}
+h2{font-size:clamp(21px,2.9vw,36px)}
+h3{font-size:17px;font-weight:500;line-height:1.32;letter-spacing:-.03em}
+p{max-width:60ch}
+em{font-style:normal;color:var(--ok)}
+.tag{font-family:Commissioner,sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:.17em;text-transform:uppercase;color:var(--ink-3)}
+.q2{color:var(--ink-2)}
+
+/* Кнопка: плёнка ложится сверху вниз и затемняет её. */
+.btn{position:relative;isolation:isolate;overflow:hidden;
+  display:inline-flex;align-items:center;gap:11px;font-family:Commissioner,sans-serif;
+  font-weight:700;font-size:13.5px;letter-spacing:.01em;padding:16px 30px;
+  background:var(--t95);color:var(--ink);
+  transition:color .34s var(--ease),transform .26s var(--ease)}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--ink);
+  transform:scaleY(0);transform-origin:top;transition:transform .42s var(--ease)}
+.btn:hover,.btn:focus-visible{color:#F1F1F3;transform:translateY(-2px)}
+.btn:hover::before,.btn:focus-visible::before{transform:scaleY(1)}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;
+  transition:transform .32s var(--ease)}
+.btn:hover svg{transform:translateX(5px)}
+.btn.g{background:transparent;box-shadow:inset 0 0 0 1.6px var(--line-2)}
+.btn.g::before{background:var(--t20)}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:15px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(239,239,241,.95);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:9px 0}
+.nav{display:flex;align-items:center;gap:22px}
+.brand{margin-right:auto;font-family:Unbounded,sans-serif;font-weight:600;font-size:17px;
+  letter-spacing:-.06em;line-height:1.14}
+.brand s{display:block;text-decoration:none;font-family:Commissioner,sans-serif;font-size:9.5px;
+  font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3);margin-top:4px}
+.lk{font-size:14.5px;color:var(--ink-2);transition:color .2s}
+.lk:hover{color:var(--ink)}
+@media(max-width:1060px){.lk{display:none}}
+@media(max-width:460px){.nav{gap:11px}.brand{font-size:14.5px}.btn{padding:13px 20px;font-size:12.5px}}
+
+.hero{padding-top:clamp(118px,15vw,178px);padding-bottom:clamp(26px,4vw,46px)}
+.hero h1{margin:16px 0 22px}
+.hero .sub{font-size:clamp(16px,1.8vw,18.5px);color:var(--ink-2);max-width:53ch;line-height:1.7}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,3vw,38px);
+  margin-top:clamp(38px,6vw,66px);padding-top:26px;border-top:2px solid var(--ink)}
+.figs b{display:block;font-family:Unbounded,sans-serif;font-weight:600;
+  font-size:clamp(18px,2.3vw,28px);letter-spacing:-.06em;line-height:1.08;
+  font-variant-numeric:tabular-nums}
+.figs span{display:block;margin-top:10px;font-size:12.5px;color:var(--ink-3);line-height:1.5}
+@media(max-width:700px){.figs{grid-template-columns:repeat(2,1fr)}}
+
+.shot{margin-top:clamp(34px,5vw,56px)}
+.shot img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--pa-2)}
+.shot figcaption{margin-top:11px;font-size:13.5px;color:var(--ink-3);max-width:60ch}
+
+/* Шкала светопропускания: то, что проходит по ГОСТу, помечено зелёным. */
+.scale{margin-top:clamp(32px,4.2vw,50px);border:1px solid var(--line);background:var(--card)}
+.scale .r{display:grid;grid-template-columns:74px 1fr 130px;gap:clamp(12px,2vw,22px);
+  align-items:center;padding:15px clamp(16px,2.2vw,24px);border-bottom:1px solid var(--line)}
+.scale .r:last-child{border-bottom:0}
+.scale i{font-style:normal;font-family:Unbounded,sans-serif;font-size:14px;font-weight:600;
+  letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+.scale .sw{height:26px}
+.scale .n{font-size:12.5px;color:var(--ink-3);text-align:right}
+.scale .n.ok{color:var(--ok);font-weight:600}
+@media(max-width:560px){.scale .r{grid-template-columns:58px 1fr;}.scale .n{grid-column:1/-1;text-align:left}}
+
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,26px);
+  margin-top:clamp(32px,4.2vw,50px)}
+@media(max-width:840px){.three{grid-template-columns:1fr}}
+.three article{background:var(--card);border:1px solid var(--line);overflow:hidden;
+  transition:border-color .25s var(--ease),transform .25s var(--ease)}
+.three article:hover{border-color:var(--ink);transform:translateY(-3px)}
+.three img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--pa-2)}
+.three .tx{padding:clamp(20px,2.4vw,26px)}
+.three h3{margin-bottom:9px;font-size:18px}
+.three p{font-size:14.5px;color:var(--ink-2)}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.6vw,30px);
+  margin-top:clamp(30px,4vw,46px)}
+@media(max-width:860px){.grid3{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid3{grid-template-columns:1fr}}
+.grid3 div{padding-top:18px;border-top:1px solid var(--line-2);transition:border-color .25s}
+.grid3 div:hover{border-top-color:var(--ink)}
+.grid3 b{display:block;font-family:Unbounded,sans-serif;font-size:15px;font-weight:600;
+  letter-spacing:-.05em;margin-bottom:8px}
+.grid3 p{font-size:14.5px;color:var(--ink-2)}
+
+.dark{background:var(--ink);color:#A9ABB2}
+.dark .tag{color:#8E9199}
+.dark h2,.dark h3{color:#FFFFFF}
+.dark p{color:#93969E}
+.dark em{color:#69C08A}
+.pull{font-family:Unbounded,sans-serif;font-weight:600;font-size:clamp(17px,2.1vw,26px);
+  line-height:1.28;letter-spacing:-.05em;color:#FFFFFF;max-width:28ch;
+  border-left:3px solid #69C08A;padding-left:20px;margin-top:26px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,34px);
+  margin-top:clamp(30px,4vw,44px)}
+@media(max-width:760px){.fgrid{grid-template-columns:1fr}}
+.fgrid h3{margin-bottom:9px}
+.fgrid p{font-size:14.5px}
+
+.pale{background:#F5F5F7}
+.bigq{font-family:Unbounded,sans-serif;font-weight:600;font-size:clamp(18px,2.4vw,29px);
+  line-height:1.26;letter-spacing:-.05em;max-width:25ch}
+.by{margin-top:14px;font-size:13px;color:var(--ink-3)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.6vw,28px);
+  margin-top:clamp(32px,4vw,48px)}
+@media(max-width:760px){.pair{grid-template-columns:1fr}}
+.pair blockquote{background:var(--card);border:1px solid var(--line);padding:clamp(20px,2.4vw,26px)}
+.pair p{font-size:14.5px;color:var(--ink-2)}
+.pair cite{display:block;margin-top:13px;font-style:normal;font-size:12.5px;color:var(--ink-3)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,26px);margin-top:clamp(32px,4vw,46px)}
+@media(max-width:700px){.g2{grid-template-columns:1fr}}
+.g2 img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--pa-2)}
+.g2 figcaption{margin-top:10px;font-size:13px;color:var(--ink-3)}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px);margin-top:clamp(28px,3.6vw,42px)}
+@media(max-width:700px){.g3{grid-template-columns:1fr 1fr}}
+.g3 img{width:100%;aspect-ratio:3/4;object-fit:cover;background:var(--pa-2)}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,54px)}
+@media(max-width:900px){.split{grid-template-columns:1fr}}
+.rows{margin-top:24px;display:grid;gap:0}
+.rows div{display:grid;grid-template-columns:118px 1fr;gap:16px;padding:13px 0;
+  border-top:1px solid var(--line)}
+.rows div:last-child{border-bottom:1px solid var(--line)}
+dt{font-size:12.5px;color:var(--ink-3);letter-spacing:.02em}
+dd{font-size:15px}
+dd a{border-bottom:1px solid var(--line-2);transition:border-color .2s}
+dd a:hover{border-bottom-color:var(--ink)}
+.map{position:relative;aspect-ratio:4/3;background:var(--pa-2);border:1px solid var(--line)}
+.mapstub{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:13px;text-align:center;padding:24px}
+.mapstub span{font-size:13.5px;color:var(--ink-2);max-width:34ch}
+.mapstub button{font:inherit;font-size:13.5px;font-weight:700;font-family:Commissioner,sans-serif;
+  padding:11px 20px;border:0;background:var(--ink);color:#F1F1F3;cursor:pointer}
+form{margin-top:20px;display:grid;gap:14px}
+label{display:block;font-size:12.5px;color:var(--ink-3);margin-bottom:6px}
+input,textarea{width:100%;font:inherit;font-size:15px;padding:12px 14px;background:var(--card);
+  border:1px solid var(--line-2);color:inherit}
+input:focus,textarea:focus{outline:2px solid var(--ink);outline-offset:1px;border-color:transparent}
+textarea{min-height:96px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink-2);margin:0}
+.agree input{width:auto;flex:none;margin-top:3px}
+.agree a{border-bottom:1px solid var(--line-2)}
+.fine{font-size:12.5px;color:var(--ink-3)}
+.sent{display:none;padding:14px 16px;background:var(--ok-soft);
+  border-left:3px solid var(--ok);font-size:14.5px}
+footer{background:var(--ink);color:#93969E;padding:34px 0;font-size:13.5px}
+.fin{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
+footer a{color:#B4B7BD;border-bottom:1px solid #2A2C32}
+footer a:hover{color:#fff}
+footer .brand{color:#fff}
+
+#ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:80;display:none;
+  background:var(--card);border:1px solid var(--line-2);padding:18px 20px;font-size:13.5px;
+  max-width:640px;box-shadow:0 14px 40px rgba(16,17,20,.18)}
+#ck.on{display:block}
+#ck a{border-bottom:1px solid var(--line-2)}
+.ckb{display:flex;gap:10px;margin-top:13px}
+.ckb button{font:inherit;font-size:13px;font-weight:700;font-family:Commissioner,sans-serif;
+  padding:9px 17px;border:1px solid var(--line-2);background:transparent;cursor:pointer}
+.ckb .y{background:var(--ink);border-color:var(--ink);color:#F1F1F3}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:55;display:none;gap:9px;padding:10px 14px;
+  background:rgba(239,239,241,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+.bar .btn{flex:1;justify-content:center;padding:13px 10px}
+@media(max-width:700px){.bar{display:flex}body{padding-bottom:70px}}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+/* --- 152-ФЗ --- */
+/* --- 152-ФЗ: согласие, cookie, отложенная карта --- */
+.agree{display:grid;grid-template-columns:19px 1fr;gap:12px;align-items:start;
+  font:400 13.5px/1.55 inherit;font-family:inherit;letter-spacing:normal;text-transform:none;
+  color:inherit;margin:0;cursor:pointer;max-width:52ch}
+.agree span{display:block;letter-spacing:normal;text-transform:none}
+.agree input{width:19px;height:19px;margin:2px 0 0;accent-color:currentColor;cursor:pointer;flex:none}
+.agree a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.agree.opt{opacity:.8}
+button[disabled],.btn[disabled]{opacity:.4;cursor:not-allowed}
+.mapstub{position:absolute;inset:0;display:flex;flex-direction:column;gap:12px;
+  align-items:center;justify-content:center;text-align:center;padding:22px;
+  font-size:13.5px;line-height:1.5;background:rgba(127,127,127,.10)}
+.mapstub button{font:inherit;font-size:13px;padding:11px 20px;cursor:pointer;
+  border:1px solid currentColor;background:transparent;color:inherit;border-radius:3px}
+.mapstub button:hover{opacity:.72}
+.map{position:relative}
+#ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:95;display:none;max-width:440px;
+  padding:18px 20px;background:#101114;color:#F2F0EC;font-size:13.5px;line-height:1.6;
+  border:1px solid rgba(255,255,255,.14);border-radius:6px;
+  box-shadow:0 18px 48px rgba(0,0,0,.45)}
+#ck.on{display:block}
+#ck a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+#ck .ckb{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+#ck button{font:inherit;font-size:12.5px;font-weight:600;letter-spacing:.04em;padding:11px 20px;
+  cursor:pointer;border-radius:4px;border:1px solid rgba(255,255,255,.3);
+  background:transparent;color:#F2F0EC}
+#ck button.y{background:#F2F0EC;color:#101114;border-color:#F2F0EC}
+#ck button:hover{opacity:.85}
+@media(max-width:760px){#ck{bottom:84px;left:10px;right:10px}}
+</style>
+</head>
+<body>
+
+<header id="hd"><div class="w nav">
+  <div class="brand">Toner54<s>Кошурникова, 21 к1</s></div>
+  <a class="lk" href="#iznutri">Что видно</a>
+  <a class="lk" href="#gost">ГОСТ</a>
+  <a class="lk" href="#otzyvy">Отзывы</a>
+  <a class="btn" href="tel:+73832585990">+7 383 258-59-90</a>
+</div></header>
+
+<main>
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Центр тонировки · Дзержинский район</p>
+    <h1 class="up">Плёнку выбирают<br>по тому, что видно<br>изнутри</h1>
+    <p class="sub up">Снаружи любая тонировка выглядит одинаково хорошо. Вопрос в другом:
+      <em>как вы будете видеть зеркала вечером и разметку в дождь</em>. Поэтому мы показываем
+      кадры из салона, а не только машину с улицы.</p>
+    <div class="acts up">
+      <a class="btn" href="tel:+73832585990">Позвонить
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#iznutri">Взгляд из салона</a>
+    </div>
+    <div class="figs up">
+      <div><b>4,7</b><span>средняя оценка в 2ГИС по 246 отзывам</span></div>
+      <div><b>Меньше суток</b><span>от звонка до готовой машины — по отзыву клиента</span></div>
+      <div><b>Без снятия</b><span>заднюю полусферу тонируем, не вынимая стёкла</span></div>
+      <div><b>7 дней</b><span>работаем ежедневно с 10:00 до 20:00</span></div>
+    </div>
+    <figure class="shot up">
+      <img src="photo/night.jpg" alt="Вид из салона автомобиля через тонированное лобовое стекло на вечернюю улицу" width="1050" height="1400">
+      <figcaption>Вечерняя дорога через нашу плёнку. Именно этот кадр стоит смотреть
+        перед тем, как выбирать затемнение, — а не фото машины на солнце.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="iznutri" class="pale">
+  <div class="w">
+    <p class="tag up">Взгляд из салона</p>
+    <h2 class="up" style="margin-top:14px">Три кадра,<br>снятых с водительского места</h2>
+    <div class="g3">
+      <img class="up" src="photo/inside-1.jpg" alt="Вид через боковое стекло на вечернюю улицу из салона" loading="lazy" decoding="async">
+      <img class="up" src="photo/inside-2.jpg" alt="Боковое зеркало и стойка, видимые через тонированное стекло днём" loading="lazy" decoding="async">
+      <img class="up" src="photo/inside-3.jpg" alt="Передняя дверь и зеркало изнутри салона" loading="lazy" decoding="async">
+    </div>
+    <p class="up" style="margin-top:18px;color:var(--ink-2)">Мы не ретушируем эти снимки
+      и не поднимаем яркость. Тёмная плёнка на передних стёклах красиво выглядит на парковке
+      и мешает при перестроении в сумерках — это надо знать до, а не после. Если вы приедете
+      с задачей «сделайте максимально глухо», мы сначала покажем, как это выглядит изнутри.</p>
+  </div>
+</section>
+
+<section id="gost">
+  <div class="w">
+    <p class="tag up">Закон</p>
+    <h2 class="up" style="margin-top:14px">Что можно, а что<br>остановят на посту</h2>
+    <p class="up" style="margin-top:20px;color:var(--ink-2)">Светопропускание измеряется
+      в процентах: сколько света проходит через стекло с плёнкой. Для лобового и передних
+      боковых норма установлена ГОСТом, для задних ограничений нет. Зелёным ниже отмечено то,
+      что проходит проверку.</p>
+    <div class="scale up">
+      <div class="r"><i>95 %</i><div class="sw" style="background:var(--t95)"></div>
+        <div class="n ok">атермальная, лобовое — можно</div></div>
+      <div class="r"><i>75 %</i><div class="sw" style="background:var(--t75)"></div>
+        <div class="n ok">минимум для лобового по ГОСТ</div></div>
+      <div class="r"><i>70 %</i><div class="sw" style="background:linear-gradient(90deg,var(--t75),var(--t50))"></div>
+        <div class="n ok">минимум для передних боковых</div></div>
+      <div class="r"><i>50 %</i><div class="sw" style="background:var(--t50)"></div>
+        <div class="n">только задние стёкла</div></div>
+      <div class="r"><i>20 %</i><div class="sw" style="background:var(--t20)"></div>
+        <div class="n">только задние стёкла</div></div>
+      <div class="r"><i>5 %</i><div class="sw" style="background:var(--t05)"></div>
+        <div class="n">задняя полусфера, «в ноль»</div></div>
+    </div>
+    <p class="up" style="margin-top:18px;font-size:13.5px;color:var(--ink-3)">Мы измеряем
+      светопропускание готового стекла прибором и говорим цифру до того, как вы уедете.
+      Если вам нужна тонировка передних стёкол ниже нормы — мы объясним риск и не станем
+      обещать, что «не остановят».</p>
+    <div class="g2">
+      <figure class="up"><img src="photo/camry-1.jpg" alt="Седан после тонировки в помещении центра" loading="lazy" decoding="async">
+        <figcaption>Атермальная плёнка на лобовом: снаружи почти незаметна,
+          но режет жару и ультрафиолет.</figcaption></figure>
+      <figure class="up"><img src="photo/camry-2.jpg" alt="Тот же седан на улице днём после тонировки" loading="lazy" decoding="async">
+        <figcaption>Она же на дневном свету. Разница со штатным стеклом
+          видна только в отражении.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="raboty" class="pale">
+  <div class="w">
+    <p class="tag up">Что делаем</p>
+    <h2 class="up" style="margin-top:14px">Тонировка<br>и всё вокруг неё</h2>
+    <div class="grid3">
+      <div class="up"><b>Лобовое стекло</b>
+        <p>Замена старой плёнки и установка новой. Атермальные плёнки
+          проходят по ГОСТу и при этом заметно снижают нагрев.</p></div>
+      <div class="up"><b>Передние боковые</b>
+        <p>Съёмная и обычная. Считаем светопропускание вместе со стеклом,
+          а не по паспорту плёнки.</p></div>
+      <div class="up"><b>Задняя полусфера</b>
+        <p>Тонируем без снятия стёкол: не трогаем уплотнители, обогрев
+          и антенны. На внедорожниках и универсалах — тоже.</p></div>
+      <div class="up"><b>Ваша плёнка</b>
+        <p>Привезли свой материал — поставим. Не отказываем и не накручиваем
+          за это, но за саму плёнку тогда не отвечаем.</p></div>
+      <div class="up"><b>Растонировка</b>
+        <p>Снимаем старую плёнку и чистим стекло от клея. После неудачной
+          тонировки это первое, с чего придётся начать.</p></div>
+      <div class="up"><b>Мойка и детейлинг</b>
+        <p>Комплексная мойка от 500 ₽, мойка двигателя, полировка кузова.
+          Есть зал ожидания и запись.</p></div>
+    </div>
+    <div class="three">
+      <article class="up">
+        <img src="photo/niva.jpg" alt="Белая Lada Niva с затонированной задней полусферой" loading="lazy" decoding="async">
+        <div class="tx"><h3>Задняя полусфера, Niva</h3>
+          <p>Тот случай, когда стёкла снимать нельзя, а сделать надо.
+            От звонка до выдачи — меньше суток.</p></div>
+      </article>
+      <article class="up">
+        <img src="photo/sandero.jpg" alt="Хэтчбек с тонированными боковыми стёклами" loading="lazy" decoding="async">
+        <div class="tx"><h3>Боковые и задние</h3>
+          <p>Самый частый заказ: перед оставляем по норме, назад
+            ставим то затемнение, которое нравится.</p></div>
+      </article>
+      <article class="up">
+        <img src="photo/estima.jpg" alt="Минивэн после тонировки" loading="lazy" decoding="async">
+        <div class="tx"><h3>Минивэны и универсалы</h3>
+          <p>Много стекла и сложные формы. Считаем по площади,
+            а не «по количеству дверей».</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="chestno" class="dark">
+  <div class="w">
+    <p class="tag up">Честно</p>
+    <h2 class="up" style="margin-top:14px">Про мойку. Оба плохих<br>отзыва — про неё</h2>
+    <p class="pull up">«Тонировщик по телефону не решает за мойку»</p>
+    <p class="up" style="margin-top:18px;font-size:13px;color:#7E818A">Отзыв в 2ГИС
+      на одну звезду, 9 декабря 2025</p>
+    <div class="fgrid">
+      <article class="up">
+        <h3>Что произошло</h3>
+        <p>Человеку по телефону сказали, что мойщик будет через полчаса. Он приехал,
+          прождал ещё полчаса и выяснил, что мойка не работает. Второй отзыв —
+          про химчистку салона, после которой пришлось ехать перемывать в другое место.</p>
+      </article>
+      <article class="up">
+        <h3>Что из этого следует</h3>
+        <p>Мы центр тонировки. Мойка и химчистка у нас есть, но это не то,
+          чем мы сильны, — и по телефону про них лучше спрашивать отдельно,
+          а не через тонировщика.</p>
+        <p style="margin-top:14px">Если вам нужна именно химчистка — скажите прямо,
+          и мы честно ответим, стоит ли ехать к нам сегодня. <em>За тонировку
+          мы отвечаем полностью</em>: 4,7 по 246 отзывам собраны на ней.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy">
+  <div class="w">
+    <p class="tag up">Отзывы · 4,7 из 5 по 246 оценкам в 2ГИС</p>
+    <blockquote class="up" style="margin-top:22px">
+      <p class="bigq">«От звонка до результата меньше суток, затонировали заднюю
+        полусферу на ниве без снятия стёкол»</p>
+      <p class="by">Дмитрий · отзыв в 2ГИС, 7 марта 2026</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>Знаю данную контору уже более 5 лет. Списался, попросил сделать своей плёнкой —
+          не отказали, вошли в положение, договорились в удобное для всех время,
+          сделали всё быстро и качественно.</p>
+        <cite>Андрей · 17 февраля 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Делал тонировку лобового и передних стёкол. Работа выполнена качественно,
+          вид отличный.</p>
+        <cite>Арсений · 30 декабря 2025</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Не первый раз сюда обращаюсь по тонировке авто — делают быстро
+          и качественно.</p>
+        <cite>Отзыв в 2ГИС · 29 июня 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>После замены лба принял решение обновить и бока — обращусь сюда же.</p>
+        <cite>Андрей · 17 февраля 2026</cite>
+      </blockquote>
+    </div>
+    <figure class="up" style="margin-top:clamp(32px,4vw,46px)">
+      <img src="photo/banner.jpg" alt="Автомобиль у баннера центра тонировки" loading="lazy" decoding="async"
+        style="width:100%;aspect-ratio:16/9;object-fit:cover">
+      <figcaption style="margin-top:10px;font-size:13px;color:var(--ink-3)">Кошурникова, 21 к1.
+        Работаем в одном помещении с детейлинг-студией, поэтому машину можно
+        и затонировать, и привести в порядок за один заезд.</figcaption>
+    </figure>
+    <div class="acts up" style="margin-top:38px">
+      <a class="btn g" href="https://2gis.ru/firm/70000001028057660" target="_blank" rel="noopener">
+        Все 246 отзывов в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty" class="pale">
+  <div class="w split">
+    <div class="up">
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:14px">Кошурникова, 21 к1</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>улица Кошурникова, 21 к1<br><span class="q2">Дзержинский район, Новосибирск</span></dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+73832585990">+7 383 258-59-90</a></dd></div>
+        <div><dt>Мессенджеры</dt><dd>WhatsApp и Telegram — <a href="tel:+79628385990">+7 962 838-59-90</a><br>
+          <span class="q2">есть группа во ВКонтакте</span></dd></div>
+        <div><dt>Режим</dt><dd>Ежедневно 10:00–20:00<br><span class="q2">без выходных</span></dd></div>
+        <div><dt>Профиль</dt><dd>Тонировка стёкол, растонировка, атермальные плёнки; мойка, химчистка, полировка</dd></div>
+        <div><dt>Оплата</dt><dd>Картой, наличными, через банк, электронным кошельком</dd></div>
+      </div>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="tel:+73832585990">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/70000001028057660" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <div class="mapstub" data-src="https://yandex.ru/map-widget/v1/?ll=82.969180%2C55.042318&z=17&text=Новосибирск%2C%20улица%20Кошурникова%2C%2021%20к1" data-title="Карта: улица Кошурникова, 21 к1">
+          <span>Карта загружается с сервера «Яндекса» и устанавливает свои cookie.</span>
+          <button type="button">Показать карту</button>
+        </div>
+      </div>
+      <h2 style="font-size:clamp(19px,2.3vw,28px);margin-top:34px">Записаться</h2>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Арсений"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 962 000-00-00"></div>
+        <div><label for="c">Машина</label><input id="c" name="car" placeholder="Toyota Camry, 2011"></div>
+        <div><label for="m">Что нужно</label><textarea id="m" name="message" placeholder="Задняя полусфера и передние по ГОСТу"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cmp">Компания</label><input id="cmp" name="company" tabindex="-1" autocomplete="off"></div>
+        <label class="agree"><input type="checkbox" id="ag" name="consent" required>
+          <span>Я даю согласие на обработку моих персональных данных в соответствии
+          с <a href="privacy/" target="_blank" rel="noopener">Политикой обработки персональных данных</a></span></label>
+        <label class="agree opt"><input type="checkbox" id="adv" name="ads">
+          <span>Хочу получать напоминания о плановом обслуживании и сообщения об акциях
+          (необязательно)</span></label>
+        <button id="sb" class="btn" type="submit" disabled>Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Заявку обрабатываем только для того, чтобы перезвонить,
+          назвать стоимость и записать вас на удобное время.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="ck" role="dialog" aria-label="Файлы cookie">
+  Мы используем файлы cookie: технически необходимые для работы страницы и те, что
+  устанавливает виджет «Яндекс.Карт». Аналитику и рекламные счётчики без вашего согласия
+  не подключаем. Подробности — в <a href="privacy/">Политике обработки персональных данных</a>.
+  <div class="ckb">
+    <button class="y" type="button" data-ck="y">Принять</button>
+    <button type="button" data-ck="n">Отклонить</button>
+  </div>
+</div>
+
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">Toner54<s>Кошурникова, 21 к1</s></div>
+    улица Кошурникова, 21 к1, Новосибирск · ежедневно 10:00–20:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+73832585990">+7 383 258-59-90</a>
+    <a href="https://2gis.ru/firm/70000001028057660" target="_blank" rel="noopener">2ГИС</a>
+    <a href="privacy/">Политика обработки персональных данных</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+73832585990">Позвонить</a>
+  <a class="btn g" href="#gost">Про ГОСТ</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"Toner54",
+"description":"Центр тонировки автостёкол: тонировка лобового и передних боковых стёкол с соблюдением норм светопропускания, атермальные плёнки, задняя полусфера без снятия стёкол, съёмная тонировка, растонировка и очистка стекла от клея, работа с плёнкой клиента, замер светопропускания прибором. Также комплексная мойка, химчистка салона, мойка двигателя и полировка кузова, зал ожидания и запись.",
+"address":{"@type":"PostalAddress","streetAddress":"улица Кошурникова, 21 к1","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":55.042318,"longitude":82.96918},
+"telephone":"+73832585990",
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"10:00","closes":"20:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"246","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/70000001028057660","https://vk.com/tonerrf"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и назовём время.';ok.style.display='block';f.reset();return}}catch(_){}}
+  ok.innerHTML='Приём заявок пока настраивается. Позвоните, пожалуйста: <a href="tel:+73832585990">+7 383 258-59-90</a>.';
+  ok.style.display='block';
+});
+</script>
+<script>
+(function(){
+  var K='ck-choice', box=document.getElementById('ck');
+  function loadMap(){
+    document.querySelectorAll('.mapstub[data-src]').forEach(function(s){
+      var f=document.createElement('iframe');
+      f.loading='lazy'; f.title=s.dataset.title||'Карта проезда'; f.src=s.dataset.src;
+      f.style.width='100%'; f.style.height='100%'; f.style.border='0';
+      s.parentNode.appendChild(f); s.remove();
+    });
+  }
+  var saved=null; try{saved=localStorage.getItem(K)}catch(e){}
+  if(saved==='y'){loadMap()} else if(!saved && box){box.classList.add('on')}
+  if(box) box.addEventListener('click',function(e){
+    var b=e.target.closest('[data-ck]'); if(!b)return;
+    try{localStorage.setItem(K,b.dataset.ck)}catch(e){}
+    box.classList.remove('on'); if(b.dataset.ck==='y') loadMap();
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.mapstub button')) loadMap();
+  });
+})();
+</script>
+<script>
+(function(){
+  var K='ck-choice', box=document.getElementById('ck');
+  function loadMap(){
+    document.querySelectorAll('.mapstub[data-src]').forEach(function(s){
+      var f=document.createElement('iframe');
+      f.loading='lazy'; f.title=s.dataset.title||'Карта проезда'; f.src=s.dataset.src;
+      f.style.width='100%'; f.style.height='100%'; f.style.border='0';
+      s.parentNode.appendChild(f); s.remove();
+    });
+  }
+  var saved=null; try{saved=localStorage.getItem(K)}catch(e){}
+  if(saved==='y'){loadMap()} else if(!saved && box){box.classList.add('on')}
+  if(box) box.addEventListener('click',function(e){
+    var b=e.target.closest('[data-ck]'); if(!b)return;
+    try{localStorage.setItem(K,b.dataset.ck)}catch(e){}
+    box.classList.remove('on'); if(b.dataset.ck==='y') loadMap();
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.mapstub button')) loadMap();
+  });
+  var ag=document.getElementById('ag'), sb=document.getElementById('sb');
+  if(ag&&sb){ var sync=function(){sb.disabled=!ag.checked}; sync();
+    ag.addEventListener('change',sync); }
+})();
+</script>
+</body>
+</html>
