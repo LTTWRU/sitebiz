@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Вдетейлинг — детейлинг, мойка и всё вокруг машины, Нижегородская, 272</title>
+<meta name="description" content="Вдетейлинг, Новосибирск, Нижегородская улица, 272. Премия 2ГИС «Лучший детейлинг 2026». Комплексная мойка от 1500 ₽, химчистка салона, полировка кузова, мойка двигателя и днища, антикоррозийная обработка, тонирование, автостёкла, климат, аренда тёплого бокса. Плюс выкуп и продажа автомобилей, ОСАГО и КАСКО. Ежедневно 09:00–18:00, 5,0 по 330 отзывам.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Вдетейлинг — всё, что бывает с машиной, на одной площадке">
+<meta property="og:description" content="Нижегородская, 272. Премия 2ГИС «Лучший детейлинг 2026». Детейлинг, антикор, тонирование, выкуп и страхование. 5,0 по 330 отзывам.">
+<meta property="og:image" content="photo/audi.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23141312'/><path d='M7 9l9 16 9-16' fill='none' stroke='%23C8A96A' stroke-width='2.6' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../fonts/manrope.css">
+<link rel="stylesheet" href="../fonts/golos-text.css">
+<style>
+/* Вдетейлинг. Их собственная заставка — золотисто-бежевая надпись на чёрном
+   кузове, отсюда палитра. Но главное не цвет, а список: у них на одной
+   площадке детейлинг, антикор, тонировка, стёкла, климат, выкуп и продажа
+   машин, страхование и даже обучение детейлингу. Это не «широкий профиль»,
+   а редкая штука — весь жизненный цикл машины в одном адресе. Так страница
+   и построена: не услуги списком, а этапы жизни автомобиля. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#141312; --bg-2:#1D1B19; --card:#242220;
+  --ink:#EFEBE4; --ink-2:#A39C91; --ink-3:#77706A;
+  --line:#282523; --line-2:#3B3733;
+  --gd:#C8A96A; --gd-2:#8C7238; --gd-soft:rgba(200,169,106,.14);
+  --wrap:1050px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);
+  font:400 16.5px/1.74 "Golos Text",-apple-system,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(58px,8vw,104px) 0}
+section[id]{scroll-margin-top:80px}
+h1,h2,h3{font-family:Manrope,-apple-system,sans-serif}
+h1,h2{font-weight:800;line-height:1.05;letter-spacing:-.05em;text-wrap:balance}
+h1{font-size:clamp(30px,4.8vw,56px)}
+h2{font-size:clamp(24px,3.3vw,42px)}
+h3{font-size:19px;font-weight:800;line-height:1.28;letter-spacing:-.04em}
+p{max-width:60ch}
+em{font-style:normal;color:var(--gd)}
+.tag{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gd)}
+.q2{color:var(--ink-2)}
+.rule{height:1px;background:linear-gradient(90deg,var(--gd),transparent);max-width:180px;
+  margin-bottom:24px}
+
+/* Кнопка-стопка: при наведении из-под неё выезжает вторая пластина —
+   как ещё одна услуга, которую здесь тоже сделают. */
+.btn{position:relative;isolation:isolate;
+  display:inline-flex;align-items:center;gap:11px;font-family:Manrope,sans-serif;
+  font-weight:800;font-size:13.5px;letter-spacing:-.03em;padding:16px 28px;
+  background:var(--gd);color:#141312;
+  transition:transform .28s var(--ease)}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--gd-2);
+  transition:transform .34s var(--ease)}
+.btn:hover{transform:translate(-3px,-3px)}
+.btn:hover::before{transform:translate(6px,6px)}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.4;
+  transition:transform .32s var(--ease)}
+.btn:hover svg{transform:translateX(5px)}
+.btn.g{color:var(--ink);background:transparent;box-shadow:inset 0 0 0 1.6px var(--line-2)}
+.btn.g::before{background:var(--line-2)}
+.btn.g:hover{box-shadow:inset 0 0 0 1.6px var(--gd)}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:15px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(20,19,18,.95);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:9px 0}
+.nav{display:flex;align-items:center;gap:22px}
+.brand{margin-right:auto;font-family:Manrope,sans-serif;font-weight:800;font-size:18px;
+  letter-spacing:.06em;line-height:1.14;text-transform:uppercase;color:var(--gd)}
+.brand s{display:block;text-decoration:none;font-family:"Golos Text",sans-serif;font-size:9.5px;
+  font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3);margin-top:4px}
+.lk{font-size:14.5px;color:var(--ink-2);transition:color .2s}
+.lk:hover{color:var(--gd)}
+@media(max-width:1060px){.lk{display:none}}
+@media(max-width:460px){.nav{gap:11px}.brand{font-size:15px}.btn{padding:13px 18px;font-size:12.5px}}
+
+.hero{padding-top:clamp(118px,15vw,178px);padding-bottom:clamp(26px,4vw,46px)}
+.hero h1{margin:18px 0 24px}
+.hero .sub{font-size:clamp(16px,1.8vw,18.5px);color:var(--ink-2);max-width:52ch;line-height:1.72}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.award{display:inline-flex;align-items:center;gap:14px;margin-top:4px;
+  border:1px solid var(--gd);padding:10px 20px 10px 13px}
+.award svg{width:25px;height:25px;flex:none;stroke:var(--gd);fill:none;stroke-width:1.8}
+.award b{font-family:Manrope,sans-serif;font-weight:800;font-size:13.5px;
+  letter-spacing:-.03em;line-height:1.25;color:var(--ink)}
+.award span{display:block;font-weight:400;font-family:"Golos Text",sans-serif;font-size:12px;
+  letter-spacing:.02em;color:var(--gd);margin-top:2px}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,3vw,38px);
+  margin-top:clamp(38px,6vw,66px);padding-top:26px;border-top:1px solid var(--line-2)}
+.figs b{display:block;font-family:Manrope,sans-serif;font-weight:800;
+  font-size:clamp(19px,2.5vw,30px);letter-spacing:-.06em;line-height:1.08;
+  font-variant-numeric:tabular-nums;color:var(--gd)}
+.figs span{display:block;margin-top:10px;font-size:12.5px;color:var(--ink-3);line-height:1.5}
+@media(max-width:700px){.figs{grid-template-columns:repeat(2,1fr)}}
+
+.shot{margin-top:clamp(34px,5vw,56px)}
+.shot img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--bg-2)}
+.shot figcaption{margin-top:11px;font-size:13.5px;color:var(--ink-3);max-width:58ch}
+
+/* Жизненный цикл машины */
+.life{margin-top:clamp(32px,4.2vw,52px);counter-reset:l}
+.life>div{display:grid;grid-template-columns:78px 1fr;gap:clamp(16px,3vw,30px);
+  padding:clamp(22px,2.8vw,30px) 0;border-bottom:1px solid var(--line);align-items:start;
+  transition:padding-left .3s var(--ease),background .3s var(--ease)}
+.life>div:first-child{border-top:1px solid var(--line-2)}
+.life>div:hover{padding-left:12px;background:linear-gradient(90deg,var(--gd-soft),transparent 58%)}
+.life dt{counter-increment:l;font-family:Manrope,sans-serif;font-weight:800;font-size:11px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--gd);padding-top:8px}
+.life dt::after{content:"Этап 0" counter(l)}
+.life dd{font-size:15.5px;color:var(--ink-2);line-height:1.7}
+.life dd b{display:block;font-family:Manrope,sans-serif;font-weight:800;font-size:20px;
+  color:var(--ink);letter-spacing:-.045em;margin-bottom:8px}
+@media(max-width:560px){.life>div{grid-template-columns:1fr;gap:7px}}
+
+.pale{background:var(--bg-2)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,26px);
+  margin-top:clamp(28px,3.6vw,44px)}
+@media(max-width:820px){.grid3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.grid3{grid-template-columns:1fr}}
+.grid3 div{border-top:1px solid var(--line-2);padding-top:15px;transition:border-color .25s var(--ease)}
+.grid3 div:hover{border-top-color:var(--gd)}
+.grid3 b{display:block;font-family:Manrope,sans-serif;font-weight:800;font-size:16.5px;
+  letter-spacing:-.045em;margin-bottom:7px}
+.grid3 p{font-size:14.5px;color:var(--ink-2)}
+
+.school{border:1px solid var(--gd);padding:clamp(24px,3.2vw,40px);
+  margin-top:clamp(32px,4vw,50px);display:grid;grid-template-columns:1fr auto;gap:28px;
+  align-items:center}
+@media(max-width:760px){.school{grid-template-columns:1fr}}
+.school h3{font-size:clamp(21px,2.6vw,30px);margin-bottom:10px;color:var(--ink)}
+.school p{font-size:15.5px;color:var(--ink-2)}
+.school .n{font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(30px,4.4vw,58px);
+  letter-spacing:-.07em;line-height:.95;color:var(--gd);text-align:center;white-space:nowrap}
+.school .n span{display:block;font-family:"Golos Text",sans-serif;font-weight:500;font-size:11.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-top:10px}
+
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,50px);
+  margin-top:clamp(26px,3.4vw,42px)}
+@media(max-width:800px){.fgrid{grid-template-columns:1fr;gap:28px}}
+.fgrid h3{margin-bottom:9px}
+.fgrid p{font-size:15.5px;color:var(--ink-2)}
+
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2vw,24px);
+  margin-top:clamp(30px,4vw,48px)}
+@media(max-width:700px){.g2{grid-template-columns:1fr;gap:22px}}
+.g2 img{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--bg-2)}
+.g2 figcaption{margin-top:11px;font-size:14px;color:var(--ink-2)}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.8vw,20px);
+  margin-top:clamp(26px,3.4vw,40px)}
+@media(max-width:700px){.g3{grid-template-columns:1fr 1fr}}
+.g3 img{aspect-ratio:3/4;object-fit:cover;width:100%;background:var(--bg-2)}
+
+.bigq{font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(21px,3vw,38px);
+  line-height:1.16;letter-spacing:-.05em;max-width:22ch}
+.by{font-size:12.5px;color:var(--ink-3);margin-top:22px;letter-spacing:.04em}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,56px);
+  margin-top:clamp(36px,5vw,60px)}
+@media(max-width:820px){.pair{grid-template-columns:1fr;gap:32px}}
+.pair p{font-size:15.5px;color:var(--ink-2)}
+.pair cite{display:block;font-style:normal;font-size:12.5px;color:var(--ink-3);margin-top:13px;
+  letter-spacing:.04em}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,68px)}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
+.rows{border-top:1px solid var(--line-2);margin-top:26px}
+.rows>div{display:grid;grid-template-columns:124px 1fr;gap:18px;padding:15px 0;
+  border-bottom:1px solid var(--line);font-size:16px}
+.rows dt{font-size:10.5px;color:var(--ink-3);padding-top:7px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.13em}
+.rows a:hover{color:var(--gd)}
+@media(max-width:520px){.rows>div{grid-template-columns:1fr;gap:3px}}
+.map{aspect-ratio:16/10;background:var(--bg-2);overflow:hidden}
+.map iframe{width:100%;height:100%;border:0}
+form{margin-top:20px;display:grid;gap:15px}
+label{display:block;font-size:10.5px;color:var(--ink-3);margin-bottom:7px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.13em}
+input,textarea{width:100%;background:var(--bg-2);border:1px solid var(--line-2);color:var(--ink);
+  padding:13px 15px;font:400 16px/1.5 "Golos Text",sans-serif;transition:border-color .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--gd)}
+textarea{min-height:100px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fine{font-size:12.5px;color:var(--ink-3);line-height:1.6;max-width:52ch}
+.sent{display:none;padding:13px 15px;border:1px solid var(--gd);background:var(--gd-soft);
+  font-size:15px}
+.sent a{color:var(--gd);text-decoration:underline}
+
+footer{border-top:1px solid var(--line);padding:34px 0 44px;font-size:14px;color:var(--ink-3)}
+.fin{display:flex;gap:26px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+footer a:hover{color:var(--gd)}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:10px;padding:9px 12px;
+  background:rgba(20,19,18,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  width:100%;max-width:100vw}
+.bar a{flex:1 1 0;min-width:0;white-space:nowrap;text-align:center;justify-content:center;
+  padding:13px 8px;font-size:12.5px}
+@media(max-width:760px){.bar{display:flex}body{padding-bottom:70px}}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--gd);outline-offset:3px}
+/* --- 152-ФЗ --- */
+/* --- 152-ФЗ: согласие, cookie, отложенная карта --- */
+.agree{display:grid;grid-template-columns:19px 1fr;gap:12px;align-items:start;
+  font:400 13.5px/1.55 inherit;font-family:inherit;letter-spacing:normal;text-transform:none;
+  color:inherit;margin:0;cursor:pointer;max-width:52ch}
+.agree span{display:block;letter-spacing:normal;text-transform:none}
+.agree input{width:19px;height:19px;margin:2px 0 0;accent-color:currentColor;cursor:pointer;flex:none}
+.agree a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.agree.opt{opacity:.8}
+button[disabled],.btn[disabled]{opacity:.4;cursor:not-allowed}
+.mapstub{position:absolute;inset:0;display:flex;flex-direction:column;gap:12px;
+  align-items:center;justify-content:center;text-align:center;padding:22px;
+  font-size:13.5px;line-height:1.5;background:rgba(127,127,127,.10)}
+.mapstub button{font:inherit;font-size:13px;padding:11px 20px;cursor:pointer;
+  border:1px solid currentColor;background:transparent;color:inherit;border-radius:3px}
+.mapstub button:hover{opacity:.72}
+.map{position:relative}
+#ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:95;display:none;max-width:440px;
+  padding:18px 20px;background:#101114;color:#F2F0EC;font-size:13.5px;line-height:1.6;
+  border:1px solid rgba(255,255,255,.14);border-radius:6px;
+  box-shadow:0 18px 48px rgba(0,0,0,.45)}
+#ck.on{display:block}
+#ck a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+#ck .ckb{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+#ck button{font:inherit;font-size:12.5px;font-weight:600;letter-spacing:.04em;padding:11px 20px;
+  cursor:pointer;border-radius:4px;border:1px solid rgba(255,255,255,.3);
+  background:transparent;color:#F2F0EC}
+#ck button.y{background:#F2F0EC;color:#101114;border-color:#F2F0EC}
+#ck button:hover{opacity:.85}
+@media(max-width:760px){#ck{bottom:84px;left:10px;right:10px}}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <nav class="w nav">
+    <a class="brand" href="#">Вдетейлинг<s>Нижегородская, 272</s></a>
+    <a class="lk" href="#etapy">Этапы</a>
+    <a class="lk" href="#uslugi">Услуги</a>
+    <a class="lk" href="#shkola">Обучение</a>
+    <a class="lk" href="#otzyvy">Отзывы</a>
+    <a class="lk" href="#kontakty">Контакты</a>
+    <a class="btn" href="tel:+79130136677">Записаться</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Детейлинг-центр · Нижегородская улица, 272 · Октябрьский район</p>
+    <h1 class="up">Всё, что бывает<br>с машиной, —<br>на <em>одной площадке</em></h1>
+    <div class="up">
+      <div class="award">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8 15l-2 7 6-3 6 3-2-7"/></svg>
+        <b>Премия 2ГИС<span>Лучший детейлинг 2026 года</span></b>
+      </div>
+    </div>
+    <p class="sub up" style="margin-top:26px">Помыть, отполировать, обработать от коррозии,
+      затонировать, поменять стекло, заправить кондиционер, подготовить к продаже,
+      выкупить, оформить страховку. Обычно за этим ездят в пять разных мест —
+      у нас всё это на Нижегородской, 272.</p>
+    <div class="acts up">
+      <a class="btn" href="tel:+79130136677">+7 913 013-66-77
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#etapy">Что мы умеем</a>
+    </div>
+    <div class="figs up">
+      <div><b>5,0</b><span>средняя оценка по 330 отзывам в 2ГИС</span></div>
+      <div><b>от 1 500 ₽</b><span>комплексная мойка · цену уточняйте</span></div>
+      <div><b>7 дней</b><span>ежедневно 09:00–18:00</span></div>
+      <div><b>Тёплый бокс</b><span>можно арендовать под свои работы</span></div>
+    </div>
+    <figure class="shot up">
+      <img src="photo/audi.jpg" alt="Чёрный Audi после детейлинга в боксе Вдетейлинг" fetchpriority="high" decoding="async">
+      <figcaption>Чёрный кузов после полировки. Отсюда всё и началось —
+        детейлинг у нас основное, остальное выросло вокруг него.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="etapy" class="pale">
+  <div class="w">
+    <div class="rule up"></div>
+    <p class="tag up">Этапы</p>
+    <h2 class="up" style="margin-top:14px">Машина проходит<br>через нас целиком</h2>
+    <p class="up" style="margin-top:18px;color:var(--ink-2)">Мы собрали на одной площадке то,
+      что обычно раскидано по городу. Не потому что «широкий профиль», а потому что клиенту
+      с машиной нужно примерно одно и то же — и лучше, когда за это отвечают одни руки.</p>
+    <dl class="life">
+      <div class="up"><dt></dt>
+        <dd><b>Купили машину</b>
+          Первым делом — химчистка салона и багажника. Даже двадцатилетний салон
+          после нормальной химчистки становится практически как новый. Дальше —
+          антикор, тонировка, стёкла, климат: всё, что новый владелец обычно
+          откладывает на потом.</dd></div>
+      <div class="up"><dt></dt>
+        <dd><b>Ездите</b>
+          Регулярная мойка и уход: кузов, салон, двигатель, днище. Полировка,
+          устранение мелких сколов и царапин, оклейка зон риска — капот, кромки,
+          пороги, чтобы новые сколы не появлялись.</dd></div>
+      <div class="up"><dt></dt>
+        <dd><b>Готовите к продаже</b>
+          Предпродажная подготовка: кузов, салон, оптика, двигатель. Машина
+          на фотографиях и машина при осмотре — это, как известно, две разные машины.
+          Мы делаем так, чтобы это была одна.</dd></div>
+      <div class="up"><dt></dt>
+        <dd><b>Продаёте или меняете</b>
+          Выкупаем автомобили и помогаем с продажей. Здесь же — ОСАГО, КАСКО
+          и помощь в оформлении кредита, чтобы не ехать за этим отдельно.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="uslugi">
+  <div class="w">
+    <div class="rule up"></div>
+    <p class="tag up">Услуги</p>
+    <h2 class="up" style="margin-top:14px">Что делаем</h2>
+    <div class="grid3">
+      <div class="up"><b>Комплексная мойка</b>
+        <p>Кузов и салон целиком, бесконтактная мойка, мойка двигателя и днища.
+          Комплекс — от 1 500 ₽.</p></div>
+      <div class="up"><b>Химчистка салона</b>
+        <p>Сиденья, потолок, пластик, багажник. Работаем и с возрастными машинами,
+          где грязь въелась за годы.</p></div>
+      <div class="up"><b>Полировка</b>
+        <p>Восстановительная полировка кузова, удаление мелких сколов и царапин.
+          После — рассказываем, как ухаживать дальше.</p></div>
+      <div class="up"><b>Оклейка зон риска</b>
+        <p>Плёнка на капот, кромки, пороги, зеркала. Дешевле, чем полный оклей,
+          и закрывает главное.</p></div>
+      <div class="up"><b>Антикор</b>
+        <p>Антикоррозийная обработка днища и скрытых полостей. В Сибири это
+          не роскошь, а сроки жизни кузова.</p></div>
+      <div class="up"><b>Тонирование и стёкла</b>
+        <p>Тонирование автостёкол, установка и ремонт стёкол. Всё на месте,
+          без поездки в другой сервис.</p></div>
+      <div class="up"><b>Климат</b>
+        <p>Обслуживание климатических систем: кондиционер летом, отопитель зимой.</p></div>
+      <div class="up"><b>Кузовной ремонт</b>
+        <p>Ремонт вмятин и полировка после него. Небольшие работы, которые
+          не требуют полноценного кузовного цеха.</p></div>
+      <div class="up"><b>Аренда тёплого бокса</b>
+        <p>Нужно самому повозиться с машиной зимой? Бокс можно арендовать —
+          со светом, теплом и местом вокруг машины.</p></div>
+    </div>
+    <div class="g3">
+      <img class="up" src="photo/salon.jpg" alt="Салон возрастного автомобиля после химчистки" loading="lazy" decoding="async">
+      <img class="up" src="photo/trunk.jpg" alt="Чистый багажник автомобиля после химчистки" loading="lazy" decoding="async">
+      <img class="up" src="photo/under.jpg" alt="Днище автомобиля после антикоррозийной обработки" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<section id="shkola" class="pale">
+  <div class="w">
+    <div class="rule up"></div>
+    <p class="tag up">Обучение</p>
+    <h2 class="up" style="margin-top:14px">У нас можно<br>научиться этому самому</h2>
+    <p class="up" style="margin-top:18px;color:var(--ink-2)">Мы обучаем детейлингу —
+      с практикой на реальных машинах, а не на слайдах. Один из наших выпускников
+      написал об этом отзыв, а потом остался у нас работать. Это, пожалуй, лучшая
+      рекомендация, которую может получить студия: люди, которые видели процесс изнутри,
+      хотят в нём остаться.</p>
+    <div class="school up">
+      <div>
+        <h3>Курс детейлинга с практикой</h3>
+        <p>Разбираем химию, инструмент, полировку, химчистку и защитные покрытия.
+          Учим не «делать красиво на камеру», а получать повторяемый результат
+          на любой машине. Лучшим предлагаем работу у себя.</p>
+      </div>
+      <div class="n">5,0<span>по 330 отзывам</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy">
+  <div class="w">
+    <div class="rule up"></div>
+    <p class="tag up">Отзывы · 5,0 из 5 по 330 оценкам в 2ГИС</p>
+    <blockquote class="up" style="margin-top:22px">
+      <p class="bigq">«Для машины, которой 20 лет, салон стал практически как новый»</p>
+      <p class="by">Артём Бостанарь · химчистка после покупки · отзыв в 2ГИС, 18 августа 2026</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>Спасибо Дмитрию за ускорение процесса, так как машина нужна была на следующий день —
+          парни справились за сутки. Почистили и багажник. Всем, кто участвовал,
+          огромное спасибо за проделанную работу.</p>
+        <cite>Артём Бостанарь · 18 августа 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Отдал машину на детейлинг и полировку — результат супер. Кузов засиял как новенький,
+          царапины почти не видны. Мастера всё сделали аккуратно и быстро, объяснили,
+          как дальше ухаживать за авто.</p>
+        <cite>Ульяна · 15 августа 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Оклеивали зоны риска и подкрашивали скол. Работа выполнена на 10/10
+          по очень приятной цене. Всё качественно и быстро.</p>
+        <cite>Алина Сергеева · 27 августа 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Проходил обучение в данном детейлинг-центре — остался очень доволен. После обучения
+          мне предложили работу в этой же студии, что особенно приятно. Спасибо всему коллективу
+          за обучение, поддержку и профессиональный подход.</p>
+        <cite>Руслан · 13 августа 2026</cite>
+      </blockquote>
+    </div>
+    <div class="g2">
+      <figure class="up"><img src="photo/polo.jpg" alt="Чёрный седан после предпродажной подготовки" loading="lazy" decoding="async">
+        <figcaption>Предпродажная подготовка. Такую машину смотрят дольше
+          и торгуются меньше.</figcaption></figure>
+      <figure class="up"><img src="photo/seat2.jpg" alt="Заднее сиденье автомобиля после химчистки салона" loading="lazy" decoding="async">
+        <figcaption>Салон после химчистки. Именно за него нас хвалят чаще,
+          чем за кузов.</figcaption></figure>
+    </div>
+    <div class="acts up" style="margin-top:38px">
+      <a class="btn g" href="https://2gis.ru/firm/70000001064215731" target="_blank" rel="noopener">
+        Все 330 отзывов в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty" class="pale">
+  <div class="w split">
+    <div class="up">
+      <div class="rule"></div>
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:14px">Нижегородская, 272</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>Нижегородская улица, 272<br><span class="q2">Октябрьский район, Новосибирск</span></dd></div>
+        <div><dt>Телефоны</dt><dd><a href="tel:+79130136677">+7 913 013-66-77</a><br>
+          <a href="tel:+79394878878">+7 939 487-88-78</a><br>
+          <span class="q2">Telegram — на оба номера</span></dd></div>
+        <div><dt>Режим</dt><dd>Ежедневно 09:00–18:00<br><span class="q2">без выходных</span></dd></div>
+        <div><dt>Профиль</dt><dd>Детейлинг, мойка, антикор, тонировка, стёкла, климат, выкуп и продажа авто, страхование</dd></div>
+        <div><dt>Удобства</dt><dd>Зал ожидания, Wi-Fi, запись, аренда тёплого бокса</dd></div>
+        <div><dt>Оплата</dt><dd>Картой, наличными, по QR-коду, переводом, через банк</dd></div>
+      </div>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="tel:+79130136677">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/70000001064215731" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <div class="mapstub" data-src="https://yandex.ru/map-widget/v1/?ll=82.978653%2C54.999617&z=17&text=Новосибирск%2C%20Нижегородская%20улица%2C%20272" data-title="Карта: Нижегородская улица, 272">
+          <span>Карта загружается с сервера «Яндекса» и устанавливает свои cookie.</span>
+          <button type="button">Показать карту</button>
+        </div>
+      </div>
+      <h2 style="font-size:clamp(21px,2.5vw,31px);margin-top:34px">Записаться</h2>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Артём"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 913 000-00-00"></div>
+        <div><label for="c">Машина</label><input id="c" name="car" placeholder="Volkswagen Polo, 2014"></div>
+        <div><label for="m">Что нужно</label><textarea id="m" name="message" placeholder="Химчистка салона после покупки и антикор днища"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cmp">Компания</label><input id="cmp" name="company" tabindex="-1" autocomplete="off"></div>
+        <label class="agree"><input type="checkbox" id="ag" name="consent" required>
+          <span>Я даю согласие на обработку моих персональных данных в соответствии
+          с <a href="privacy/" target="_blank" rel="noopener">Политикой обработки персональных данных</a></span></label>
+        <label class="agree opt"><input type="checkbox" id="adv" name="ads">
+          <span>Хочу получать напоминания о плановом обслуживании и сообщения об акциях
+          (необязательно)</span></label>
+        <button id="sb" class="btn" type="submit" disabled>Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Заявку обрабатываем только для того, чтобы перезвонить
+          и записать вас на удобное время. Согласие можно отозвать в любой момент —
+          порядок описан в <a href="privacy/">политике</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="ck" role="dialog" aria-label="Файлы cookie">
+  Мы используем файлы cookie: технически необходимые для работы страницы и те, что
+  устанавливает виджет «Яндекс.Карт». Аналитику и рекламные счётчики без вашего согласия
+  не подключаем. Подробности — в <a href="privacy/">Политике обработки персональных данных</a>.
+  <div class="ckb">
+    <button class="y" type="button" data-ck="y">Принять</button>
+    <button type="button" data-ck="n">Отклонить</button>
+  </div>
+</div>
+
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">Вдетейлинг<s>Нижегородская, 272</s></div>
+    Нижегородская улица, 272, Новосибирск · ежедневно 09:00–18:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+79130136677">+7 913 013-66-77</a>
+    <a href="https://2gis.ru/firm/70000001064215731" target="_blank" rel="noopener">2ГИС</a>
+    <a href="privacy/">Политика обработки персональных данных</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+79130136677">Позвонить</a>
+  <a class="btn g" href="#uslugi">Услуги</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoWash","name":"Вдетейлинг",
+"description":"Детейлинг-центр и автомойка: комплексная и бесконтактная мойка, химчистка салона, полировка кузова, мойка двигателя и днища, оклейка зон риска, антикоррозийная обработка, тонирование автостёкол, установка и ремонт автостёкол, обслуживание климатических систем, ремонт вмятин, аренда тёплого бокса, предпродажная подготовка. Выкуп и продажа автомобилей, ОСАГО и КАСКО, помощь в оформлении кредита, обучение детейлингу. Премия 2ГИС «Лучший детейлинг 2026».",
+"address":{"@type":"PostalAddress","streetAddress":"Нижегородская улица, 272","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":54.999617,"longitude":82.978653},
+"telephone":"+79130136677",
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"09:00","closes":"18:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"330","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/70000001064215731"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и назовём время.';ok.style.display='block';f.reset();return}}catch(_){}}
+  ok.innerHTML='Приём заявок пока настраивается. Позвоните, пожалуйста: <a href="tel:+79130136677">+7 913 013-66-77</a>.';
+  ok.style.display='block';
+});
+</script>
+<script>
+(function(){
+  var K='ck-choice', box=document.getElementById('ck');
+  function loadMap(){
+    document.querySelectorAll('.mapstub[data-src]').forEach(function(s){
+      var f=document.createElement('iframe');
+      f.loading='lazy'; f.title=s.dataset.title||'Карта проезда'; f.src=s.dataset.src;
+      f.style.width='100%'; f.style.height='100%'; f.style.border='0';
+      s.parentNode.appendChild(f); s.remove();
+    });
+  }
+  var saved=null; try{saved=localStorage.getItem(K)}catch(e){}
+  if(saved==='y'){loadMap()} else if(!saved && box){box.classList.add('on')}
+  if(box) box.addEventListener('click',function(e){
+    var b=e.target.closest('[data-ck]'); if(!b)return;
+    try{localStorage.setItem(K,b.dataset.ck)}catch(e){}
+    box.classList.remove('on'); if(b.dataset.ck==='y') loadMap();
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.mapstub button')) loadMap();
+  });
+  var ag=document.getElementById('ag'), sb=document.getElementById('sb');
+  if(ag&&sb){ var sync=function(){sb.disabled=!ag.checked}; sync();
+    ag.addEventListener('change',sync); }
+})();
+</script>
+</body>
+</html>

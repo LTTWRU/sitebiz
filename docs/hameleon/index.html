@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Хамелеон — центр кузовного ремонта и покраски, Ионосферная, 3/3</title>
+<meta name="description" content="Хамелеон, Новосибирск, Ионосферная улица, 3/3. Центр кузовного ремонта: покраска и подбор цвета, восстановление геометрии, ремонт вмятин, сварка, пескоструйная обработка, эпоксидное грунтование, антикоррозийная обработка рамы, днища и скрытых полостей, детейлинг. Фото- и видеоотчёт по этапам. Пн–Пт 09:00–20:00, Сб до 16:00. 5,0 по 173 отзывам.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Хамелеон — цвет в цвет, а машина у нас часы, а не недели">
+<meta property="og:description" content="Ионосферная, 3/3. Покраска, пескоструй, антикор. Детали и краску готовим заранее. 5,0 по 173 отзывам.">
+<meta property="og:image" content="photo/guns.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23F2F1EE'/><rect x='4' y='6' width='6' height='20' fill='%231F7A7A'/><rect x='10' y='6' width='6' height='20' fill='%233E5BC0'/><rect x='16' y='6' width='6' height='20' fill='%23A8367F'/><rect x='22' y='6' width='6' height='20' fill='%23C4622A'/></svg>">
+<link rel="stylesheet" href="../fonts/literata.css">
+<link rel="stylesheet" href="../fonts/commissioner.css">
+<style>
+/* Хамелеон. Название про цвет, поэтому вместо одного акцента у страницы веер
+   выкрасов — четыре плашки, которыми маляр подбирает оттенок. Главный сюжет
+   взят из отзыва Ларисы и ответа владельца: детали заказывают и краску
+   подбирают до приезда машины, поэтому в сервисе она стоит часы, а не недели.
+   Второй — их же практика: видео- и фотоотчёт по этапам и согласование всего,
+   что вылезло сверх наряда. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pa:#F2F1EE; --pa-2:#E4E2DD; --card:#FFFFFF;
+  --ink:#16181A; --ink-2:#545752; --ink-3:#8A8D86;
+  --line:#DBD9D2; --line-2:#BCB9B0;
+  --ac:#A8367F; --ac-2:#701F55; --ac-soft:#F6E6F0;
+  --c1:#1F7A7A; --c2:#3E5BC0; --c3:#A8367F; --c4:#C4622A;
+  --wrap:1040px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--pa);color:var(--ink);
+  font:400 16.5px/1.74 Commissioner,-apple-system,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(58px,8vw,104px) 0}
+section[id]{scroll-margin-top:80px}
+h1,h2,h3{font-family:Literata,Georgia,serif;font-weight:600}
+h1,h2{line-height:1.1;letter-spacing:-.03em;text-wrap:balance}
+h1{font-size:clamp(29px,4.6vw,54px)}
+h2{font-size:clamp(23px,3.1vw,40px)}
+h3{font-size:19px;line-height:1.3;letter-spacing:-.02em}
+p{max-width:60ch}
+em{font-style:normal;color:var(--ac)}
+.tag{font-size:11.5px;font-weight:600;letter-spacing:.17em;text-transform:uppercase;color:var(--ac)}
+.q2{color:var(--ink-2)}
+/* Веер выкрасов — разделитель разделов */
+.fan{display:flex;gap:3px;margin-bottom:24px}
+.fan i{display:block;width:22px;height:10px}
+.fan i:nth-child(1){background:var(--c1)}
+.fan i:nth-child(2){background:var(--c2)}
+.fan i:nth-child(3){background:var(--c3)}
+.fan i:nth-child(4){background:var(--c4)}
+
+/* Кнопка держит слева четыре выкраса. При наведении они разъезжаются веером,
+   а кнопка заливается цветом. */
+.btn{position:relative;isolation:isolate;overflow:hidden;
+  display:inline-flex;align-items:center;gap:11px;font-family:Literata,Georgia,serif;
+  font-weight:600;font-size:14px;letter-spacing:-.015em;padding:16px 28px 16px 44px;
+  background:var(--ink);color:#F2F1EE;
+  transition:transform .26s var(--ease)}
+.btn::before{content:"";position:absolute;left:16px;top:50%;width:18px;height:14px;
+  margin-top:-7px;z-index:2;
+  background-image:linear-gradient(90deg,var(--c1) 0 25%,var(--c2) 25% 50%,
+    var(--c3) 50% 75%,var(--c4) 75% 100%);
+  transition:width .42s var(--ease),transform .42s var(--ease)}
+.btn::after{content:"";position:absolute;inset:0;z-index:-1;background:var(--ac);
+  transform:translateY(101%);transition:transform .42s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:hover::before{width:24px;transform:skewX(-14deg)}
+.btn:hover::after{transform:none}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;
+  transition:transform .32s var(--ease)}
+.btn:hover svg{transform:translateX(5px)}
+.btn.g{color:var(--ink);background:transparent;box-shadow:inset 0 0 0 1.6px var(--line-2)}
+.btn.g:hover{color:#F2F1EE}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:15px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(242,241,238,.95);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:9px 0}
+.nav{display:flex;align-items:center;gap:22px}
+.brand{margin-right:auto;font-family:Literata,Georgia,serif;font-weight:600;font-size:19px;
+  letter-spacing:-.035em;line-height:1.14}
+.brand s{display:block;text-decoration:none;font-family:Commissioner,sans-serif;font-size:9.5px;
+  font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--ac);margin-top:4px}
+.lk{font-size:14.5px;color:var(--ink-2);transition:color .2s}
+.lk:hover{color:var(--ac)}
+@media(max-width:1060px){.lk{display:none}}
+@media(max-width:460px){.nav{gap:11px}.brand{font-size:16px}
+  .btn{padding:13px 18px 13px 36px;font-size:12.5px}}
+
+.hero{padding-top:clamp(118px,15vw,178px);padding-bottom:clamp(26px,4vw,46px)}
+.hero h1{margin:16px 0 22px}
+.hero .sub{font-size:clamp(16px,1.8vw,18.5px);color:var(--ink-2);max-width:52ch;line-height:1.72}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,3vw,38px);
+  margin-top:clamp(38px,6vw,66px);padding-top:26px;border-top:1px solid var(--line-2);
+  position:relative}
+.figs::before{content:"";position:absolute;left:0;top:-3px;width:88px;height:5px;
+  background-image:linear-gradient(90deg,var(--c1) 0 25%,var(--c2) 25% 50%,
+    var(--c3) 50% 75%,var(--c4) 75% 100%)}
+.figs b{display:block;font-family:Literata,Georgia,serif;font-weight:600;
+  font-size:clamp(19px,2.5vw,30px);letter-spacing:-.04em;line-height:1.08;
+  font-variant-numeric:tabular-nums;color:var(--ac)}
+.figs span{display:block;margin-top:10px;font-size:12.5px;color:var(--ink-3);line-height:1.5}
+@media(max-width:700px){.figs{grid-template-columns:repeat(2,1fr)}}
+
+.shot{margin-top:clamp(34px,5vw,56px)}
+.shot img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--pa-2)}
+.shot figcaption{margin-top:11px;font-size:13.5px;color:var(--ink-3);max-width:58ch}
+
+/* Порядок */
+.pale{background:var(--pa-2)}
+.ord{margin-top:clamp(30px,4vw,50px);counter-reset:o}
+.ord>div{display:grid;grid-template-columns:60px 1fr;gap:clamp(16px,3vw,30px);
+  padding:clamp(20px,2.7vw,30px) 0;border-bottom:1px solid var(--line-2);align-items:start;
+  transition:padding-left .3s var(--ease)}
+.ord>div:first-child{border-top:2px solid var(--ink)}
+.ord>div:hover{padding-left:12px}
+.ord dt{counter-increment:o;font-family:Literata,Georgia,serif;font-weight:600;
+  font-size:clamp(20px,2.6vw,30px);letter-spacing:-.05em;line-height:1;color:var(--ink-3);
+  transition:color .3s var(--ease)}
+.ord dt::after{content:"0" counter(o)}
+.ord>div:nth-child(1):hover dt{color:var(--c1)}
+.ord>div:nth-child(2):hover dt{color:var(--c2)}
+.ord>div:nth-child(3):hover dt{color:var(--c3)}
+.ord>div:nth-child(4):hover dt{color:var(--c4)}
+.ord dd{font-size:15.5px;color:var(--ink-2);line-height:1.68}
+.ord dd b{display:block;font-family:Literata,Georgia,serif;font-weight:600;font-size:19px;
+  color:var(--ink);letter-spacing:-.03em;margin-bottom:8px}
+@media(max-width:560px){.ord>div{grid-template-columns:1fr;gap:6px}}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,26px);
+  margin-top:clamp(28px,3.6vw,44px)}
+@media(max-width:820px){.grid3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.grid3{grid-template-columns:1fr}}
+.grid3 div{border-top:2px solid var(--line-2);padding-top:15px;transition:border-color .25s var(--ease)}
+.grid3 div:hover{border-top-color:var(--ac)}
+.grid3 b{display:block;font-family:Literata,Georgia,serif;font-weight:600;font-size:17px;
+  letter-spacing:-.03em;margin-bottom:7px}
+.grid3 p{font-size:14.5px;color:var(--ink-2)}
+
+/* Было / стало */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2.4vw,26px);
+  margin-top:clamp(30px,4vw,48px)}
+@media(max-width:700px){.ba{grid-template-columns:1fr}}
+.ba figure{position:relative;overflow:hidden}
+.ba img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--pa-2);
+  transition:transform .5s var(--ease)}
+.ba figure:hover img{transform:scale(1.03)}
+.ba figcaption{position:absolute;left:0;top:0;padding:7px 15px;font-family:Literata,Georgia,serif;
+  font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.ba .was figcaption{background:var(--ink);color:var(--pa)}
+.ba .now figcaption{background:var(--c1);color:#fff}
+
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,50px);
+  margin-top:clamp(26px,3.4vw,42px)}
+@media(max-width:800px){.fgrid{grid-template-columns:1fr;gap:28px}}
+.fgrid h3{margin-bottom:9px}
+.fgrid p{font-size:15.5px;color:var(--ink-2)}
+
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2vw,24px);
+  margin-top:clamp(30px,4vw,48px)}
+@media(max-width:700px){.g2{grid-template-columns:1fr;gap:22px}}
+.g2 img{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--pa-2)}
+.g2 figcaption{margin-top:11px;font-size:14px;color:var(--ink-2)}
+
+.bigq{font-family:Literata,Georgia,serif;font-weight:600;font-size:clamp(20px,2.9vw,36px);
+  line-height:1.2;letter-spacing:-.035em;max-width:23ch}
+.by{font-size:12.5px;color:var(--ink-3);margin-top:22px;letter-spacing:.04em}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,56px);
+  margin-top:clamp(36px,5vw,60px)}
+@media(max-width:820px){.pair{grid-template-columns:1fr;gap:32px}}
+.pair p{font-size:15.5px;color:var(--ink-2)}
+.pair cite{display:block;font-style:normal;font-size:12.5px;color:var(--ink-3);margin-top:13px;
+  letter-spacing:.04em}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,68px)}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
+.rows{border-top:2px solid var(--ink);margin-top:26px}
+.rows>div{display:grid;grid-template-columns:124px 1fr;gap:18px;padding:15px 0;
+  border-bottom:1px solid var(--line);font-size:16px}
+.rows dt{font-size:10.5px;color:var(--ink-3);padding-top:7px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.13em}
+.rows a:hover{color:var(--ac)}
+@media(max-width:520px){.rows>div{grid-template-columns:1fr;gap:3px}}
+.map{aspect-ratio:16/10;background:var(--pa-2);overflow:hidden}
+.map iframe{width:100%;height:100%;border:0}
+form{margin-top:20px;display:grid;gap:15px}
+label{display:block;font-size:10.5px;color:var(--ink-3);margin-bottom:7px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.13em}
+input,textarea{width:100%;background:var(--card);border:1px solid var(--line-2);color:var(--ink);
+  padding:13px 15px;font:400 16px/1.5 Commissioner,sans-serif;transition:border-color .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--ac)}
+textarea{min-height:100px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fine{font-size:12.5px;color:var(--ink-3);line-height:1.6;max-width:52ch}
+.sent{display:none;padding:13px 15px;border:1px solid var(--ac);background:var(--ac-soft);
+  font-size:15px}
+.sent a{color:var(--ac-2);text-decoration:underline}
+
+footer{border-top:1px solid var(--line);padding:34px 0 44px;font-size:14px;color:var(--ink-3)}
+.fin{display:flex;gap:26px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+footer a:hover{color:var(--ac)}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:8px;padding:9px 12px;
+  background:rgba(242,241,238,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  width:100%;max-width:100vw}
+.bar a{flex:1 1 0;min-width:0;white-space:nowrap;text-align:center;justify-content:center;
+  padding:13px 8px 13px 32px;font-size:12.5px}
+@media(max-width:760px){.bar{display:flex}body{padding-bottom:70px}}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
+/* --- 152-ФЗ --- */
+/* --- 152-ФЗ: согласие, cookie, отложенная карта --- */
+.agree{display:grid;grid-template-columns:19px 1fr;gap:12px;align-items:start;
+  font:400 13.5px/1.55 inherit;font-family:inherit;letter-spacing:normal;text-transform:none;
+  color:inherit;margin:0;cursor:pointer;max-width:52ch}
+.agree span{display:block;letter-spacing:normal;text-transform:none}
+.agree input{width:19px;height:19px;margin:2px 0 0;accent-color:currentColor;cursor:pointer;flex:none}
+.agree a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.agree.opt{opacity:.8}
+button[disabled],.btn[disabled]{opacity:.4;cursor:not-allowed}
+.mapstub{position:absolute;inset:0;display:flex;flex-direction:column;gap:12px;
+  align-items:center;justify-content:center;text-align:center;padding:22px;
+  font-size:13.5px;line-height:1.5;background:rgba(127,127,127,.10)}
+.mapstub button{font:inherit;font-size:13px;padding:11px 20px;cursor:pointer;
+  border:1px solid currentColor;background:transparent;color:inherit;border-radius:3px}
+.mapstub button:hover{opacity:.72}
+.map{position:relative}
+#ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:95;display:none;max-width:440px;
+  padding:18px 20px;background:#101114;color:#F2F0EC;font-size:13.5px;line-height:1.6;
+  border:1px solid rgba(255,255,255,.14);border-radius:6px;
+  box-shadow:0 18px 48px rgba(0,0,0,.45)}
+#ck.on{display:block}
+#ck a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+#ck .ckb{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+#ck button{font:inherit;font-size:12.5px;font-weight:600;letter-spacing:.04em;padding:11px 20px;
+  cursor:pointer;border-radius:4px;border:1px solid rgba(255,255,255,.3);
+  background:transparent;color:#F2F0EC}
+#ck button.y{background:#F2F0EC;color:#101114;border-color:#F2F0EC}
+#ck button:hover{opacity:.85}
+@media(max-width:760px){#ck{bottom:84px;left:10px;right:10px}}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <nav class="w nav">
+    <a class="brand" href="#">Хамелеон<s>Ионосферная, 3/3</s></a>
+    <a class="lk" href="#poryadok">Порядок работы</a>
+    <a class="lk" href="#raboty">Работы</a>
+    <a class="lk" href="#antikor">Пескоструй и антикор</a>
+    <a class="lk" href="#otzyvy">Отзывы</a>
+    <a class="lk" href="#kontakty">Контакты</a>
+    <a class="btn" href="tel:+79830025556">Записаться</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Центр кузовного ремонта и покраски · Ионосферная улица, 3/3</p>
+    <h1 class="up">Машина стоит у нас<br><em>часы</em>, а не недели</h1>
+    <p class="sub up">Детали мы заказываем и краску подбираем до того, как вы пригнали
+      автомобиль. Пока идёт поставка, вы ездите. Когда всё готово — приезжаете
+      на назначенное время, и машина возвращается к вам в тот же день.
+      Замена и покраска бампера с противотуманкой у нас недавно заняла четыре часа.</p>
+    <div class="acts up">
+      <a class="btn" href="tel:+79830025556">+7 983 002-55-56
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#poryadok">Как это устроено</a>
+    </div>
+    <div class="figs up">
+      <div><b>5,0</b><span>средняя оценка по 173 отзывам в 2ГИС</span></div>
+      <div><b>4 часа</b><span>машина в сервисе, когда деталь и краска готовы</span></div>
+      <div><b>Фото и видео</b><span>отчёт по каждому этапу работ</span></div>
+      <div><b>Пн–Сб</b><span>Пн–Пт 09:00–20:00, Сб до 16:00</span></div>
+    </div>
+    <figure class="shot up">
+      <img src="photo/guns.jpg" alt="Краскопульты на стене малярного цеха «Хамелеон»" fetchpriority="high" decoding="async">
+      <figcaption>Наш инструмент. Цвет в цвет — это не удача, а подбор: выкрас,
+        проверка при разном свете и только потом покраска.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="poryadok" class="pale">
+  <div class="w">
+    <div class="fan up"><i></i><i></i><i></i><i></i></div>
+    <p class="tag up">Порядок работы</p>
+    <h2 class="up" style="margin-top:14px">Ждать деталь<br>должны мы, а не вы</h2>
+    <p class="up" style="margin-top:18px;color:var(--ink-2)">Обычная история в кузовном ремонте:
+      машину забирают, ставят в угол и ждут запчасть неделю. Мы делаем наоборот —
+      и это единственная причина, по которой у нас получаются такие сроки.</p>
+    <dl class="ord">
+      <div class="up"><dt></dt>
+        <dd><b>Осмотр и цена</b>
+          Смотрим повреждение, ориентируем по стоимости и составляем наряд-договор.
+          Всё, что мы собираемся делать, вы видите на бумаге до начала работ.</dd></div>
+      <div class="up"><dt></dt>
+        <dd><b>Заказываем деталь и подбираем краску</b>
+          Обычно это самая долгая часть — около пяти дней. Всё это время машина
+          у вас, а не у нас.</dd></div>
+      <div class="up"><dt></dt>
+        <dd><b>Приглашаем на конкретное время</b>
+          Когда деталь пришла и выкрас готов, звоним и назначаем день.
+          Приезжаете — и работа начинается сразу, а не после ожидания.</dd></div>
+      <div class="up"><dt></dt>
+        <dd><b>Работа с отчётом и согласованием</b>
+          По ходу присылаем фото и видео. Всё, что вылезло сверх наряда, согласовываем
+          отдельно — молча дописывать в счёт мы не умеем.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="raboty">
+  <div class="w">
+    <div class="fan up"><i></i><i></i><i></i><i></i></div>
+    <p class="tag up">Работы</p>
+    <h2 class="up" style="margin-top:14px">Кузов, цвет и защита</h2>
+    <div class="grid3">
+      <div class="up"><b>Покраска и подбор цвета</b>
+        <p>«Подобрать цвет в цвет может не каждый — считай, 90 % работы». Делаем выкрас
+          и проверяем совпадение до того, как красить деталь.</p></div>
+      <div class="up"><b>Восстановление геометрии</b>
+        <p>Правка кузова после ударов. Сначала геометрия, потом железо, потом краска —
+          в другом порядке смысла нет.</p></div>
+      <div class="up"><b>Ремонт вмятин</b>
+        <p>Выправляем то, что можно выправить, вместо замены детали.
+          Особенно когда деталь редкая или дорогая.</p></div>
+      <div class="up"><b>Сварка</b>
+        <p>Пороги, арки, силовые элементы. Шов обрабатывается и защищается,
+          а не просто закрашивается.</p></div>
+      <div class="up"><b>Полировка</b>
+        <p>Восстановительная полировка кузова: матовость, риски, следы
+          от щёток автомоек.</p></div>
+      <div class="up"><b>Детейлинг</b>
+        <p>Уход за кузовом и салоном после ремонта — чтобы машина уезжала
+          не только починенной, но и в порядке.</p></div>
+    </div>
+    <div class="g2">
+      <figure class="up"><img src="photo/bumper.jpg" alt="Загрунтованный бампер на стойке в малярном цехе" loading="lazy" decoding="async">
+        <figcaption>Бампер в грунте, готовый к покраске. Деталь красится снятой —
+          так прокрашиваются кромки.</figcaption></figure>
+      <figure class="up"><img src="photo/wrx.jpg" alt="Синий Subaru Impreza WRX после кузовного ремонта" loading="lazy" decoding="async">
+        <figcaption>Яркие цвета — отдельная история: на них любая ошибка подбора
+          видна с трёх метров.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="antikor" class="pale">
+  <div class="w">
+    <div class="fan up"><i></i><i></i><i></i><i></i></div>
+    <p class="tag up">Пескоструй и антикор</p>
+    <h2 class="up" style="margin-top:14px">Раму и днище<br>чистим до металла</h2>
+    <p class="up" style="margin-top:18px;color:var(--ink-2)">Это отдельное направление,
+      и оно у нас поставлено серьёзно: пескоструйная обработка, высокопрочный эпоксидный грунт,
+      антикоррозийные составы на арки, днище и скрытые полости. Перед началом работ мастер
+      объясняет технологию целиком, а по ходу присылает фото и видео — включая те места,
+      которые вы никогда не увидите сами.</p>
+    <div class="ba">
+      <figure class="was up"><figcaption>Было</figcaption>
+        <img src="photo/rust.jpg" alt="Коррозия на кузовном элементе автомобиля до обработки" loading="lazy" decoding="async"></figure>
+      <figure class="now up"><figcaption>Стало</figcaption>
+        <img src="photo/frame.jpg" alt="Днище автомобиля после пескоструя и эпоксидного грунтования" loading="lazy" decoding="async"></figure>
+    </div>
+    <div class="fgrid">
+      <article class="up">
+        <h3>Пескоструй</h3>
+        <p>Снимаем ржавчину и старое покрытие до чистого металла. Только после этого
+          видно настоящий объём работ — и он почти всегда больше, чем кажется снаружи.</p>
+      </article>
+      <article class="up">
+        <h3>Эпоксидный грунт и составы</h3>
+        <p>Высокопрочный эпоксидный грунт, затем антикоррозийные составы по технологии,
+          включая скрытые полости. Задний мост, рама, арки, днище — по отдельности,
+          а не «побрызгали снизу».</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy">
+  <div class="w">
+    <div class="fan up"><i></i><i></i><i></i><i></i></div>
+    <p class="tag up">Отзывы · 5,0 из 5 по 173 оценкам в 2ГИС</p>
+    <blockquote class="up" style="margin-top:22px">
+      <p class="bigq">«Машина на ремонте находилась всего 4 часа, чему я несказанно рада»</p>
+      <p class="by">Лариса · замена и покраска заднего бампера · отзыв в 2ГИС, 4 июля 2026</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>Обработали арки и днище, а также скрытые полости антикоррозийными составами.
+          Перед выполнением работ и заключением наряда-договора получил от специалиста центра
+          исчерпывающую информацию по технологиям. Во время работ получал видео- и фотоотчёты
+          с подробнейшими комментариями мастера.</p>
+        <cite>Валерий Петрищев · 3 июля 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Обращался с просьбой привести в порядок задний мост и заднюю часть рамы от Toyota.
+          Качественно и аккуратно обработали пескоструем, загрунтовали высокопрочным
+          эпоксидным грунтом. Все работы выполнили строго в оговорённые сроки.</p>
+        <cite>Александр Гребнев · 20 августа 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Подобрать цвет в цвет может не каждый — считай, 90 % работы сделано, если цвет
+          чёткий и покраска без подтёков. Мастер Евгений и с тем, и с другим справился.
+          Благодарен за работу, чёткие сроки и приемлемую цену.</p>
+        <cite>Ник Бас · 28 августа 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Всё, что вылазило по машине сверху, — согласовывали всегда. Ребята вежливые,
+          отзывчивые, работы выполнили максимально качественно за вменяемые деньги.</p>
+        <cite>Олег · 18 июля 2026</cite>
+      </blockquote>
+    </div>
+    <div class="g2">
+      <figure class="up"><img src="photo/axle.jpg" alt="Задний мост автомобиля после пескоструйной обработки и грунтования" loading="lazy" decoding="async">
+        <figcaption>Тот самый задний мост Toyota — после пескоструя и эпоксидного грунта.</figcaption></figure>
+      <figure class="up"><img src="photo/under2.jpg" alt="Днище автомобиля, обработанное защитными составами" loading="lazy" decoding="async">
+        <figcaption>То, что вы не увидите без подъёмника. Поэтому и присылаем видео.</figcaption></figure>
+    </div>
+    <div class="acts up" style="margin-top:38px">
+      <a class="btn g" href="https://2gis.ru/firm/70000001038885975" target="_blank" rel="noopener">
+        Все 173 отзыва в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty" class="pale">
+  <div class="w split">
+    <div class="up">
+      <div class="fan"><i></i><i></i><i></i><i></i></div>
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:14px">Ионосферная, 3/3</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>Ионосферная улица, 3/3<br><span class="q2">Новосибирск</span></dd></div>
+        <div><dt>Телефоны</dt><dd><a href="tel:+79830025556">+7 983 002-55-56</a><br>
+          <a href="tel:+79130687888">+7 913 068-78-88</a><br>
+          <span class="q2">WhatsApp и Telegram — на первый номер</span></dd></div>
+        <div><dt>Почта</dt><dd><a href="mailto:chameleon-nsk@mail.ru">chameleon-nsk@mail.ru</a></dd></div>
+        <div><dt>Режим</dt><dd>Пн–Пт 09:00–20:00, Сб 09:00–16:00<br><span class="q2">воскресенье — выходной</span></dd></div>
+        <div><dt>Профиль</dt><dd>Покраска, геометрия, вмятины, сварка, пескоструй, антикор, детейлинг</dd></div>
+        <div><dt>Оплата</dt><dd>Картой, наличными, через банк</dd></div>
+      </div>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="tel:+79830025556">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/70000001038885975" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <div class="mapstub" data-src="https://yandex.ru/map-widget/v1/?ll=83.125324%2C54.844821&z=16&text=Новосибирск%2C%20Ионосферная%20улица%2C%203/3" data-title="Карта: Ионосферная улица, 3/3">
+          <span>Карта загружается с сервера «Яндекса» и устанавливает свои cookie.</span>
+          <button type="button">Показать карту</button>
+        </div>
+      </div>
+      <h2 style="font-size:clamp(21px,2.5vw,31px);margin-top:34px">Записаться на осмотр</h2>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Лариса"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 983 000-00-00"></div>
+        <div><label for="c">Машина и цвет</label><input id="c" name="car" placeholder="Subaru Impreza, синий"></div>
+        <div><label for="m">Что нужно</label><textarea id="m" name="message" placeholder="Заменить и покрасить задний бампер, сломана противотуманка"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cmp">Компания</label><input id="cmp" name="company" tabindex="-1" autocomplete="off"></div>
+        <label class="agree"><input type="checkbox" id="ag" name="consent" required>
+          <span>Я даю согласие на обработку моих персональных данных в соответствии
+          с <a href="privacy/" target="_blank" rel="noopener">Политикой обработки персональных данных</a></span></label>
+        <label class="agree opt"><input type="checkbox" id="adv" name="ads">
+          <span>Хочу получать напоминания о плановом обслуживании и сообщения об акциях
+          (необязательно)</span></label>
+        <button id="sb" class="btn" type="submit" disabled>Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Заявку обрабатываем только для того, чтобы перезвонить
+          и записать вас на удобное время. Согласие можно отозвать в любой момент —
+          порядок описан в <a href="privacy/">политике</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="ck" role="dialog" aria-label="Файлы cookie">
+  Мы используем файлы cookie: технически необходимые для работы страницы и те, что
+  устанавливает виджет «Яндекс.Карт». Аналитику и рекламные счётчики без вашего согласия
+  не подключаем. Подробности — в <a href="privacy/">Политике обработки персональных данных</a>.
+  <div class="ckb">
+    <button class="y" type="button" data-ck="y">Принять</button>
+    <button type="button" data-ck="n">Отклонить</button>
+  </div>
+</div>
+
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">Хамелеон<s>Ионосферная, 3/3</s></div>
+    Ионосферная улица, 3/3, Новосибирск · Пн–Пт 09:00–20:00, Сб до 16:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+79830025556">+7 983 002-55-56</a>
+    <a href="https://2gis.ru/firm/70000001038885975" target="_blank" rel="noopener">2ГИС</a>
+    <a href="privacy/">Политика обработки персональных данных</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+79830025556">Позвонить</a>
+  <a class="btn g" href="#raboty">Работы</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoBodyShop","name":"Хамелеон",
+"description":"Центр кузовного ремонта: покраска и подбор цвета, восстановление геометрии кузова, ремонт вмятин, сварочные работы, полировка, пескоструйная обработка, высокопрочное эпоксидное грунтование, антикоррозийная обработка рамы, днища, арок и скрытых полостей, детейлинг. Наряд-договор до начала работ, фото- и видеоотчёт по этапам.",
+"address":{"@type":"PostalAddress","streetAddress":"Ионосферная улица, 3/3","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":54.844821,"longitude":83.125324},
+"telephone":"+79830025556","email":"chameleon-nsk@mail.ru",
+"openingHoursSpecification":[
+{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"20:00"},
+{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"09:00","closes":"16:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"173","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/70000001038885975"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и сориентируем по цене и срокам.';ok.style.display='block';f.reset();return}}catch(_){}}
+  ok.innerHTML='Приём заявок пока настраивается. Позвоните, пожалуйста: <a href="tel:+79830025556">+7 983 002-55-56</a>.';
+  ok.style.display='block';
+});
+</script>
+<script>
+(function(){
+  var K='ck-choice', box=document.getElementById('ck');
+  function loadMap(){
+    document.querySelectorAll('.mapstub[data-src]').forEach(function(s){
+      var f=document.createElement('iframe');
+      f.loading='lazy'; f.title=s.dataset.title||'Карта проезда'; f.src=s.dataset.src;
+      f.style.width='100%'; f.style.height='100%'; f.style.border='0';
+      s.parentNode.appendChild(f); s.remove();
+    });
+  }
+  var saved=null; try{saved=localStorage.getItem(K)}catch(e){}
+  if(saved==='y'){loadMap()} else if(!saved && box){box.classList.add('on')}
+  if(box) box.addEventListener('click',function(e){
+    var b=e.target.closest('[data-ck]'); if(!b)return;
+    try{localStorage.setItem(K,b.dataset.ck)}catch(e){}
+    box.classList.remove('on'); if(b.dataset.ck==='y') loadMap();
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.mapstub button')) loadMap();
+  });
+  var ag=document.getElementById('ag'), sb=document.getElementById('sb');
+  if(ag&&sb){ var sync=function(){sb.disabled=!ag.checked}; sync();
+    ag.addEventListener('change',sync); }
+})();
+</script>
+</body>
+</html>
