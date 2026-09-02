@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Siberian Custom — автосервис и гараж самообслуживания, Новосибирск, Выборная, 26 к1</title>
+<meta name="description" content="Siberian Custom, Новосибирск, Выборная улица, 26 к1, бокс 15. Автосервис и аренда поста для самостоятельного ремонта: яма, двухстоечный и четырёхстоечный подъёмник, весь инструмент включён в час аренды. Ремонт ходовой, двигателей, МКПП и АКПП, инжектора, выхлопа, аппаратная замена масла, развал-схождение. Магазин запчастей рядом. Ежедневно 09:00–20:00. 4,9 по 110 отзывам в 2ГИС.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Siberian Custom — Выборная, 26 к1">
+<meta property="og:description" content="Можно отдать мастеру, а можно арендовать пост и сделать самому. Яма, подъёмники и весь инструмент в цене часа. 4,9 по 110 отзывам.">
+<meta property="og:image" content="photo/podemnik.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2316181A'/><path d='M6 24V11.5a10 10 0 0 1 20 0V24' fill='none' stroke='%23ECEDEA' stroke-width='2.6'/><path d='M11 24v-6h10v6' fill='none' stroke='%23B3312C' stroke-width='2.6'/></svg>">
+<link rel="stylesheet" href="../fonts/manrope.css">
+<link rel="stylesheet" href="../fonts/commissioner.css">
+<style>
+/* Siberian Custom, Выборная 26 к1, бокс 15.
+   Главное отличие от всех соседних СТО — здесь два способа починить
+   машину: отдать мастеру или арендовать пост и покрутить гайки самому.
+   На их же баннере в цеху так и написано: «Аренда подъёмника или ямы
+   с инструментом для самостоятельного ремонта авто». С этого и начинаем.
+   Структурный приём — таблица выбора поста (яма / двухстоечный /
+   четырёхстоечный) с честной колонкой «для чего не подходит». Она
+   выросла прямо из отзыва на одну звезду: человек взял четырёхстоечный
+   для работы снизу и не смог там нормально работать. Такую ошибку
+   должен ловить сайт, а не клиент своими деньгами.
+   Кнопка при наведении «открывает ворота»: две половины заливки
+   разъезжаются в стороны. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pa:#ECEDEA; --pa-2:#E0E2DD; --card:#FFFFFF;
+  --ink:#16181A; --ink-2:#525659; --ink-3:#888C8F;
+  --line:#D2D4D0; --line-2:#B0B3AE;
+  --ac:#B3312C; --ac-2:#8C231F; --ac-soft:#F7E1DF;
+  --wrap:1060px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  /* разметка на краю ямы — единственная декоративная текстура страницы */
+  --hazard:repeating-linear-gradient(-45deg,
+    rgba(22,24,26,.22) 0 5px, rgba(22,24,26,0) 5px 11px);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--pa);color:var(--ink);
+  font:400 16.5px/1.73 "Commissioner",-apple-system,BlinkMacSystemFont,sans-serif;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(56px,7.6vw,100px) 0}
+section[id]{scroll-margin-top:78px}
+
+h1,h2,h3{font-family:"Manrope",-apple-system,sans-serif;font-weight:700;
+  letter-spacing:-.035em;line-height:1.07;text-wrap:balance}
+h1{font-size:clamp(33px,5.4vw,62px);letter-spacing:-.045em}
+h2{font-size:clamp(25px,3.5vw,42px)}
+h3{font-size:clamp(18px,2vw,22px);line-height:1.24;letter-spacing:-.025em}
+p{max-width:64ch}
+em{font-style:normal;box-shadow:inset 0 -.52em 0 var(--ac-soft)}
+
+.tag{font-family:"Manrope",sans-serif;font-size:11.5px;font-weight:700;
+  letter-spacing:.17em;text-transform:uppercase;color:var(--ac);
+  display:inline-flex;align-items:center;gap:10px}
+.tag::before{content:"";width:46px;height:9px;background:var(--hazard);
+  background-color:var(--pa-2);border-radius:1px;flex:none}
+.tag.q{color:var(--ink-3)}
+
+.up{opacity:0;transform:translateY(15px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .up{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  .btn::before,.btn::after{transition:none!important}
+}
+
+/* кнопка: две створки заливки разъезжаются, как ворота бокса */
+.btn{position:relative;overflow:hidden;isolation:isolate;
+  display:inline-flex;align-items:center;gap:9px;
+  padding:14px 25px;border:0;border-radius:2px;cursor:pointer;
+  background:var(--ink);color:#fff;
+  font-family:"Manrope",sans-serif;font-size:15.5px;font-weight:700;letter-spacing:-.015em;
+  transition:color .3s var(--ease)}
+.btn::before,.btn::after{content:"";position:absolute;top:0;bottom:0;width:50.5%;
+  z-index:-1;background:var(--ac);transition:transform .42s var(--ease)}
+.btn::before{left:0}
+.btn::after{right:0}
+.btn:hover::before,.btn:focus-visible::before{transform:translateX(-100%)}
+.btn:hover::after,.btn:focus-visible::after{transform:translateX(100%)}
+.btn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;
+  transition:transform .3s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn.g{background:transparent;color:var(--ink);
+  box-shadow:inset 0 0 0 1.6px var(--ink)}
+.btn.g::before,.btn.g::after{background:transparent}
+.btn.g:hover{box-shadow:inset 0 0 0 1.6px var(--ac)}
+.btn.g:hover::before,.btn.g:hover::after{background:var(--ac-soft)}
+.btn.lt{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.6px rgba(255,255,255,.35)}
+.btn.lt::before,.btn.lt::after{background:transparent}
+.btn.lt:hover{box-shadow:inset 0 0 0 1.6px #fff}
+:focus-visible{outline:2.5px solid var(--ac);outline-offset:3px;border-radius:2px}
+.acts{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+
+header{position:sticky;top:0;z-index:60;background:rgba(236,237,234,.9);
+  backdrop-filter:blur(9px);border-bottom:1px solid transparent;transition:border-color .3s}
+header.on{border-bottom-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;
+  min-height:62px;max-width:var(--wrap);margin:0 auto;padding:0 26px}
+.brand{font-family:"Manrope",sans-serif;font-weight:800;font-size:18px;
+  letter-spacing:-.04em;display:flex;align-items:baseline;gap:10px}
+.brand s{text-decoration:none;font-weight:600;font-size:10.5px;letter-spacing:.11em;
+  color:var(--ink-3);text-transform:uppercase}
+.menu{display:flex;gap:23px;font-size:14px;color:var(--ink-2)}
+.menu a{position:relative;padding:3px 0}
+.menu a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;
+  background:var(--ac);transform:scaleX(0);transform-origin:left;
+  transition:transform .3s var(--ease)}
+.menu a:hover{color:var(--ink)}
+.menu a:hover::after{transform:scaleX(1)}
+@media (max-width:960px){.menu{display:none}}
+.navtel{font-size:14px;font-weight:600;white-space:nowrap}
+@media (max-width:560px){.navtel{display:none}}
+
+/* герой: два пути */
+.hero{padding:clamp(38px,5.6vw,70px) 0 0}
+.hero h1{max-width:15ch;margin-top:20px}
+.hero .sub{margin-top:22px;font-size:clamp(16.5px,1.7vw,19px);color:var(--ink-2);max-width:55ch}
+.ways{margin-top:34px;display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border:1.5px solid var(--ink)}
+@media (max-width:720px){.ways{grid-template-columns:1fr}}
+.ways>div{padding:24px 22px 26px}
+.ways>div:first-child{border-right:1.5px solid var(--ink)}
+@media (max-width:720px){.ways>div:first-child{border-right:0;border-bottom:1.5px solid var(--ink)}}
+.ways .n{font-family:"Manrope",sans-serif;font-size:11.5px;font-weight:700;
+  letter-spacing:.17em;text-transform:uppercase;color:var(--ink-3)}
+.ways h3{margin:10px 0 9px}
+.ways p{font-size:15.4px;color:var(--ink-2)}
+.ways .and{grid-column:1/-1;padding:0}
+.heroimg{margin-top:clamp(30px,4vw,50px);position:relative;overflow:hidden;
+  background:var(--ink);border-radius:2px}
+.heroimg img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:50% 58%}
+.heroimg .cap{position:absolute;inset:auto 0 0 0;padding:46px 22px 15px;
+  background:linear-gradient(transparent,rgba(22,24,26,.85));
+  font-size:13px;color:rgba(255,255,255,.85)}
+
+.facts{margin-top:24px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line)}
+.facts div{background:var(--pa);padding:16px 15px}
+.facts b{display:block;font-family:"Manrope",sans-serif;font-weight:800;
+  font-size:clamp(25px,3.2vw,37px);letter-spacing:-.05em;line-height:1}
+.facts s{text-decoration:none;display:block;margin-top:6px;font-size:13px;color:var(--ink-2)}
+@media (max-width:720px){.facts{grid-template-columns:1fr 1fr}}
+
+/* выбор поста — спина страницы */
+.posts{margin-top:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:900px){.posts{grid-template-columns:1fr}}
+.post{background:var(--card);border:1px solid var(--line);border-radius:2px;
+  display:flex;flex-direction:column;overflow:hidden;
+  transition:border-color .3s var(--ease),transform .3s var(--ease)}
+.post:hover{border-color:var(--line-2);transform:translateY(-3px)}
+.post .stripe{height:9px;background:var(--hazard);background-color:var(--pa-2)}
+.post .body{padding:20px 20px 22px;display:flex;flex-direction:column;gap:12px;flex:1}
+.post h3{margin-bottom:2px}
+.post .row{font-size:14.8px;line-height:1.6;padding-top:12px;border-top:1px solid var(--line)}
+.post .row b{display:block;font-family:"Manrope",sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;margin-bottom:5px}
+.post .yes b{color:#2E6B45}
+.post .no b{color:var(--ac)}
+.post .row span{color:var(--ink-2)}
+.post img{width:100%;aspect-ratio:16/10;object-fit:cover}
+
+/* что входит */
+.incl{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line)}
+@media (max-width:820px){.incl{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.incl{grid-template-columns:1fr}}
+.incl div{background:var(--pa);padding:19px 18px}
+.incl h3{font-size:17px;margin-bottom:7px}
+.incl p{font-size:14.8px;color:var(--ink-2)}
+
+/* мастера */
+.dark{background:var(--ink);color:#E6E7E4}
+.dark h2,.dark h3{color:#fff}
+.dark p{color:#B0B4B7}
+.dark .tag{color:#E5786F}
+.dark .tag::before{background:repeating-linear-gradient(-45deg,
+  rgba(255,255,255,.42) 0 5px,rgba(255,255,255,0) 5px 11px);background-color:#1F2225}
+.dark .srv div{background:#1F2225;border-color:#2C3033}
+.srv{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:820px){.srv{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.srv{grid-template-columns:1fr}}
+.srv div{border:1px solid var(--line);border-radius:2px;padding:16px 17px;
+  font-size:15.3px;transition:border-color .3s}
+.srv div:hover{border-color:var(--ac)}
+.srv b{display:block;font-family:"Manrope",sans-serif;font-weight:700;font-size:16px;
+  letter-spacing:-.02em;margin-bottom:5px}
+.srv s{text-decoration:none;color:#93979A;font-size:14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+.two img{border-radius:2px;width:100%;aspect-ratio:4/3;object-fit:cover}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+@media (max-width:760px){.three{grid-template-columns:1fr 1fr}}
+.three img{border-radius:2px;width:100%;aspect-ratio:1/1;object-fit:cover}
+
+/* запчасти */
+.parts{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3.4vw,46px);
+  align-items:center}
+@media (max-width:820px){.parts{grid-template-columns:1fr}}
+.parts img{border-radius:2px;width:100%;aspect-ratio:4/3;object-fit:cover}
+
+/* честный блок */
+.honest{background:var(--pa-2)}
+.hgrid{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:820px){.hgrid{grid-template-columns:1fr}}
+.hgrid article{background:var(--card);border:1px solid var(--line);border-radius:2px;
+  padding:22px 21px}
+.hgrid h3{margin-bottom:9px;font-size:18px}
+.hgrid p{font-size:15.2px;color:var(--ink-2)}
+.said{font-size:14.6px;color:var(--ink-3);border-left:3px solid var(--line-2);
+  padding-left:13px;margin-bottom:13px}
+.claim{margin-top:26px;border-left:3px solid var(--ac);padding:3px 0 3px 17px;
+  font-size:15.5px;color:var(--ink-2);max-width:62ch}
+.claim b{display:block;font-family:"Manrope",sans-serif;font-size:11.5px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--ac);margin-bottom:7px}
+
+/* отзывы */
+blockquote{background:var(--card);border:1px solid var(--line);border-radius:2px;
+  padding:21px 20px}
+blockquote p{font-size:15.4px;color:var(--ink-2)}
+blockquote cite{display:block;margin-top:12px;font-style:normal;font-size:13px;
+  color:var(--ink-3)}
+.bigq{font-family:"Manrope",sans-serif;font-weight:700;letter-spacing:-.035em;
+  font-size:clamp(21px,2.9vw,33px);line-height:1.18;color:var(--ink)!important;max-width:23ch}
+.by{margin-top:13px;font-size:13px;color:var(--ink-3)}
+.pair{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:760px){.pair{grid-template-columns:1fr}}
+
+/* контакты */
+.pale{background:var(--pa-2)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,3.6vw,52px)}
+@media (max-width:860px){.split{grid-template-columns:1fr}}
+.rows{margin-top:22px;display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.rows>div{background:var(--pa-2);padding:14px 16px;display:grid;
+  grid-template-columns:116px 1fr;gap:14px;align-items:baseline}
+@media (max-width:520px){.rows>div{grid-template-columns:1fr;gap:4px}}
+dt{font-family:"Manrope",sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--ink-3)}
+dd{font-size:15.3px}
+dd a{border-bottom:1px solid var(--line-2)}
+dd a:hover{border-bottom-color:var(--ac)}
+.q2{color:var(--ink-2);font-size:14px}
+.map{aspect-ratio:16/11;background:var(--pa);border:1px solid var(--line);
+  border-radius:2px;overflow:hidden;position:relative}
+
+form{margin-top:16px;display:grid;gap:13px}
+label{display:block;font-family:"Manrope",sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+input,textarea{width:100%;background:var(--card);border:1px solid var(--line);
+  border-radius:2px;padding:12px 13px;font:400 15.4px/1.5 "Commissioner",sans-serif;
+  color:var(--ink);transition:border-color .22s}
+input:focus,textarea:focus{outline:none;border-color:var(--ac)}
+textarea{min-height:94px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fine{font-size:13px;color:var(--ink-3);max-width:52ch}
+.sent{display:none;background:var(--ac-soft);border:1px solid var(--ac);border-radius:2px;
+  padding:14px 16px;font-size:15px;margin-top:14px}
+
+footer{background:var(--ink);color:#93979A;padding:38px 0;font-size:14px}
+footer a{color:#D2D5D7}
+footer a:hover{color:#E5786F}
+.fin{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap}
+footer .brand{color:#fff}
+footer .brand s{color:#75797C}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:9px;
+  padding:9px 13px calc(9px + env(safe-area-inset-bottom));
+  background:rgba(236,237,234,.96);backdrop-filter:blur(9px);border-top:1px solid var(--line)}
+.bar .btn{flex:1;justify-content:center;padding:12px;font-size:15px}
+@media (max-width:700px){.bar{display:flex}body{padding-bottom:74px}}
+/* --- 152-ФЗ --- */
+/* --- 152-ФЗ: согласие, cookie, отложенная карта --- */
+.agree{display:grid;grid-template-columns:19px 1fr;gap:12px;align-items:start;
+  font:400 13.5px/1.55 inherit;font-family:inherit;letter-spacing:normal;text-transform:none;
+  color:inherit;margin:0;cursor:pointer;max-width:52ch}
+.agree span{display:block;letter-spacing:normal;text-transform:none}
+.agree input{width:19px;height:19px;margin:2px 0 0;accent-color:currentColor;cursor:pointer;flex:none}
+.agree a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.agree.opt{opacity:.8}
+button[disabled],.btn[disabled]{opacity:.4;cursor:not-allowed}
+.mapstub{position:absolute;inset:0;display:flex;flex-direction:column;gap:12px;
+  align-items:center;justify-content:center;text-align:center;padding:22px;
+  font-size:13.5px;line-height:1.5;background:rgba(127,127,127,.10)}
+.mapstub button{font:inherit;font-size:13px;padding:11px 20px;cursor:pointer;
+  border:1px solid currentColor;background:transparent;color:inherit;border-radius:3px}
+.mapstub button:hover{opacity:.72}
+.map{position:relative}
+#ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:95;display:none;max-width:440px;
+  padding:18px 20px;background:#101114;color:#F2F0EC;font-size:13.5px;line-height:1.6;
+  border:1px solid rgba(255,255,255,.14);border-radius:6px;
+  box-shadow:0 18px 48px rgba(0,0,0,.45)}
+#ck.on{display:block}
+#ck a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+#ck .ckb{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+#ck button{font:inherit;font-size:12.5px;font-weight:600;letter-spacing:.04em;padding:11px 20px;
+  cursor:pointer;border-radius:4px;border:1px solid rgba(255,255,255,.3);
+  background:transparent;color:#F2F0EC}
+#ck button.y{background:#F2F0EC;color:#101114;border-color:#F2F0EC}
+#ck button:hover{opacity:.85}
+@media(max-width:760px){#ck{bottom:84px;left:10px;right:10px}}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <nav class="nav">
+    <a class="brand" href="#top">Siberian Custom<s>Выборная, 26 к1</s></a>
+    <div class="menu">
+      <a href="#posty">Выбор поста</a>
+      <a href="#vhodit">Что входит</a>
+      <a href="#mastera">Ремонт у мастеров</a>
+      <a href="#chestno">Честно</a>
+      <a href="#kontakty">Контакты</a>
+    </div>
+    <a class="navtel" href="tel:+79139155422">+7 913 915-54-22</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="w">
+    <span class="tag">Автосервис и гараж самообслуживания</span>
+    <h1>Можно отдать мастеру. А можно взять ключи и сделать самому.</h1>
+    <p class="sub">Пятнадцатый бокс на Выборной работает в двух режимах сразу.
+      Одни оставляют машину и уезжают на такси, другие платят за час подъёмника
+      и лезут под неё сами. Инструмент, свет и тепло в обоих случаях одни и те же.</p>
+
+    <div class="ways">
+      <div>
+        <div class="n">Способ первый</div>
+        <h3>Отдать в ремонт</h3>
+        <p>Ходовая, двигатели, коробки, инжектор, выхлоп, оптика, масло и развал.
+          Запчасти подбирают и заказывают сами — бегать по сайтам не нужно.</p>
+      </div>
+      <div>
+        <div class="n">Способ второй</div>
+        <h3>Арендовать пост</h3>
+        <p>Яма или подъёмник с полным набором инструмента. Минимальная аренда —
+          один час. Всё, что лежит в боксе, уже входит в цену.</p>
+      </div>
+    </div>
+
+    <div class="acts" style="margin-top:26px">
+      <a class="btn" href="tel:+79139155422">Позвонить и занять пост
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#posty">Какой пост выбрать</a>
+    </div>
+
+    <div class="heroimg">
+      <img src="photo/banner.jpg" alt="Баннер в цеху: «Автосервис самообслуживания — аренда подъёмника или ямы с инструментом для самостоятельного ремонта авто», логотип Siberian Custom">
+      <div class="cap">Это написано у них прямо на стене цеха — и это редкость для Новосибирска</div>
+    </div>
+
+    <div class="facts">
+      <div><b>4,9</b><s>по 110 отзывам в 2ГИС</s></div>
+      <div><b>3</b><s>типа поста на выбор</s></div>
+      <div><b>1 час</b><s>минимальная аренда</s></div>
+      <div><b>09–20</b><s>без выходных</s></div>
+    </div>
+  </div>
+</section>
+
+<section id="posty">
+  <div class="w">
+    <span class="tag">Выбор поста</span>
+    <h2 style="margin-top:18px">Половина неудачных визитов — это неправильно выбранный пост</h2>
+    <p style="margin-top:16px;color:var(--ink-2)">Подъёмник и яма решают разные задачи,
+      и по телефону это редко проговаривают. Поэтому напишем прямо: <em>что на каждом
+      посту делать удобно, а что — мучение</em>. Не уверены — назовите работу,
+      подскажем на месте.</p>
+
+    <div class="posts">
+      <div class="post up">
+        <div class="stripe"></div>
+        <img src="photo/yama.jpg" alt="Смотровая яма в боксе, края размечены чёрно-жёлтой полосой">
+        <div class="body">
+          <h3>Смотровая яма</h3>
+          <div class="row yes"><b>Для чего хорош</b><span>Выхлоп, глушитель, защита,
+            слив масла, коробка, всё, где нужно стоять в полный рост и работать
+            вверх руками. Инструмент кладётся на край, не надо ничего держать на весу.</span></div>
+          <div class="row no"><b>Что неудобно</b><span>Колёса остаются на полу:
+            снять ступицу, рычаг или пружину не выйдет. Внизу прохладнее, чем в цеху.</span></div>
+        </div>
+      </div>
+
+      <div class="post up">
+        <div class="stripe"></div>
+        <img src="photo/podemnik.jpg" alt="Subaru Forester на двухстоечном подъёмнике в боксе">
+        <div class="body">
+          <h3>Двухстоечный подъёмник</h3>
+          <div class="row yes"><b>Для чего хорош</b><span>Подвеска, тормоза, ступицы,
+            рычаги, сайлентблоки — всё, где колесо должно висеть в воздухе.
+            Полный доступ к аркам и днищу, машина на нужной вам высоте.</span></div>
+          <div class="row no"><b>Что неудобно</b><span>Нужно правильно найти точки
+            подхвата: у части кроссоверов и рамных они нестандартные. Если сомневаетесь —
+            позовите мастера, он поставит.</span></div>
+        </div>
+      </div>
+
+      <div class="post up">
+        <div class="stripe"></div>
+        <img src="photo/boks.jpg" alt="Рабочий бокс: верстак, инструментальная тележка и машина с открытым капотом">
+        <div class="body">
+          <h3>Четырёхстоечный подъёмник</h3>
+          <div class="row yes"><b>Для чего хорош</b><span>Развал-схождение, работа
+            с выхлопом и днищем, долгая диагностика: машина стоит на своих колёсах,
+            заехать и съехать можно за минуту.</span></div>
+          <div class="row no"><b>Что неудобно</b><span>Он поднимает машину целиком
+            вместе с колёсами и <em>не даёт снять подвеску</em>. Под низким седаном
+            в полный рост там не встать. Собираетесь снимать подрамник или стойки —
+            берите двухстоечный, так честнее.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="vhodit" class="pale">
+  <div class="w">
+    <span class="tag">Что входит в час</span>
+    <h2 style="margin-top:18px">Отдельно за инструмент платить не нужно</h2>
+    <p style="margin-top:16px;color:var(--ink-2)">Это тот случай, когда лучше всего
+      сказали сами клиенты: «всё, что в боксе из инвентаря, — за всё уплачено,
+      отдельно платить не нужно».</p>
+
+    <div class="incl">
+      <div><h3>Ключи и головки</h3><p>Наборы, трещотки, съёмники, динамометрический,
+        компрессор с пневмоинструментом. Своё привозить можно, но не обязательно.</p></div>
+      <div><h3>Свет</h3><p>Лампы под потолком и переноска. Если в яме темно —
+        принесут фонарик, это тоже из отзывов.</p></div>
+      <div><h3>Тепло</h3><p>Зимой в боксе можно работать в футболке.
+        Про сквозняк от ворот честно написали ниже.</p></div>
+      <div><h3>Стойки и домкраты</h3><p>Подкатные домкраты, страховочные подставки,
+        стойка для снятия агрегатов, кран для двигателя.</p></div>
+      <div><h3>Вода, мыло, чай</h3><p>Раковина с жидким мылом, кулер, микроволновка.
+        Чаем угощают — про это в отзывах пишут чаще, чем про инструмент.</p></div>
+      <div><h3>Помощь рядом</h3><p>Застряли на своём ремонте — мастер подойдёт
+        и подскажет. Возьмётся доделать — договоритесь отдельно.</p></div>
+    </div>
+
+    <div class="two">
+      <img src="photo/instrument.jpg" alt="Раскрытый набор ключей и головок на верстаке">
+      <img src="photo/chay.jpg" alt="Кулер с водой, микроволновка и тумба в зоне ожидания">
+    </div>
+  </div>
+</section>
+
+<section id="mastera" class="dark">
+  <div class="w">
+    <span class="tag">Если крутить самому не хочется</span>
+    <h2 style="margin-top:18px">Тогда работают мастера</h2>
+    <p style="margin-top:16px;max-width:60ch">В том же боксе — обычный автосервис,
+      и работы здесь берут глубокие. Головку блока разбирают до распредвалов,
+      двигатель снимают в сборе с коробкой, гидроблок АКПП раскладывают на плёнке
+      и дефектуют по узлам. Это не «поменяли колодки и всё».</p>
+
+    <div class="srv">
+      <div><b>Ходовая часть</b><s>Рычаги, сайлентблоки, ступицы, ремонт стоек, рулевые рейки</s></div>
+      <div><b>Двигатели</b><s>Бензиновые и дизельные, от замены ГРМ до переборки</s></div>
+      <div><b>МКПП и АКПП</b><s>Снятие, ремонт, гидроблок, замена масла</s></div>
+      <div><b>Инжектор</b><s>Диагностика и ремонт топливной аппаратуры</s></div>
+      <div><b>Выхлопная система</b><s>Ремонт и замена, сварка, гофры и катализаторы</s></div>
+      <div><b>Автооптика</b><s>Установка и ремонт фар и фонарей</s></div>
+      <div><b>Замена масла</b><s>В том числе аппаратная, с промывкой системы</s></div>
+      <div><b>Развал-схождение</b><s>После ремонта подвески — обязательно</s></div>
+      <div><b>Электрика</b><s>Генератор, стартер, проводка, дополнительное оборудование</s></div>
+    </div>
+
+    <div class="three">
+      <img src="photo/motor.jpg" alt="Снятый двигатель в сборе с коробкой на подставке в боксе">
+      <img src="photo/gbc.jpg" alt="Разобранная головка блока цилиндров с распредвалами">
+      <img src="photo/akpp.jpg" alt="Разложенный на плёнке гидроблок автоматической коробки">
+    </div>
+
+    <div class="acts" style="margin-top:30px">
+      <a class="btn lt" href="tel:+79139155422">Описать проблему по телефону
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section id="zapchasti">
+  <div class="w parts">
+    <div class="up">
+      <span class="tag">Запчасти</span>
+      <h2 style="margin-top:18px">Магазин — в соседней двери</h2>
+      <p style="margin-top:16px;color:var(--ink-2)">Самое обидное в самостоятельном
+        ремонте — разобрать машину и обнаружить, что нужного сальника нет,
+        а магазин закрылся. Здесь расходники и крепёж лежат рядом с боксом:
+        масло, фильтры, тормозная, подвеска, ремни, электрика, оптика, стёкла.</p>
+      <p style="margin-top:14px;color:var(--ink-2)">Чего нет в наличии — закажут
+        под ваш VIN. Клиенты пишут об этом отдельно: «можно заказать у них
+        все запчасти, а не бегать в поисках по сайтам».</p>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="https://wa.me/79139155422" target="_blank" rel="noopener">
+          Спросить наличие в WhatsApp
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="up"><img src="photo/stol.jpg" alt="Стол с расходниками и красные страховочные подставки в боксе"></div>
+  </div>
+</section>
+
+<section id="chestno" class="honest">
+  <div class="w">
+    <span class="tag">Честно</span>
+    <h2 style="margin-top:18px">Два отзыва на одну звезду — и оба про быт, а не про ремонт</h2>
+    <p style="margin-top:16px;color:var(--ink-2)">При 110 отзывах и рейтинге 4,9
+      прятать эти два бессмысленно. Тем более что претензии в них конкретные,
+      и на них есть что ответить.</p>
+
+    <div class="hgrid">
+      <article>
+        <p class="said">«Пол неровный, перепад 10 см — гидравлическую стойку
+          ровно не поставить»</p>
+        <h3>Правда. Бокс старый</h3>
+        <p>Пол залит давно и идеально ровным не стал. Если вам предстоит снимать
+          подрамник, коробку или что-то тяжёлое на стойке — скажите об этом
+          при записи. Поставим на ровный участок и дадим вторую стойку,
+          чтобы вы не держали агрегат одной рукой.</p>
+      </article>
+      <article>
+        <p class="said">«Ворота открываются часто, тепловой завесы нет —
+          моментально холодно»</p>
+        <h3>Тоже правда, зимой это чувствуется</h3>
+        <p>В общем боксе несколько постов, и ворота открывают чужие машины.
+          Если работа долгая и мёрзнуть не хочется — просите пост в глубине
+          бокса, там разница ощутимая. Работать в футболке зимой можно,
+          но не в двух метрах от ворот.</p>
+      </article>
+      <article>
+        <p class="said">«Грязно, вода еле бежит, чтобы руки помыть»</p>
+        <h3>Это исправляют, и об этом пишут в новых отзывах</h3>
+        <p>Отзывы 2026 года выглядят иначе: «чистое помещение, чистый инструмент»,
+          «жидкое мыло отлично отмывает руки после ремонта». Если вы всё-таки
+          застали грязный пост — не молчите, скажите администратору сразу,
+          а не в отзыве через неделю.</p>
+      </article>
+      <article>
+        <p class="said">«Хозяин СТО хамит»</p>
+        <h3>За это извиняемся отдельно</h3>
+        <p>Аренда поста — услуга, где клиент и так волнуется: он собирается
+          разбирать свою машину сам. Резкий разговор в такой момент —
+          это не «характер», это плохая работа. Если так вышло — напишите
+          в WhatsApp на номер владельца, разберёмся с конкретной сменой.</p>
+      </article>
+    </div>
+
+    <div class="claim">
+      <b>Что из этого следует</b>
+      Сюда не стоит ехать за глянцем: это рабочий бокс с бетонным полом,
+      сквозняком от ворот и запахом масла. Сюда стоит ехать за тем,
+      что в глянцевом сервисе не купишь, — за возможностью самому залезть
+      под свою машину, имея под рукой нормальный инструмент, свет и человека,
+      который подскажет.
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy">
+  <div class="w">
+    <span class="tag q">Отзывы · 4,9 из 5 по 110 оценкам в 2ГИС</span>
+    <blockquote class="up" style="margin-top:22px;background:transparent;border:0;padding:0">
+      <p class="bigq">«Прекрасное место, где ты можешь обслужить свою машину.
+        Всё, что в боксе из инвентаря, — за всё уплачено, отдельно платить не нужно»</p>
+      <p class="by">Яна Н. · отзыв в 2ГИС, 28 ноября 2024</p>
+    </blockquote>
+
+    <div class="pair">
+      <blockquote class="up">
+        <p>Пользовался как услугами СТО самообслуживания, так и просто СТО. Всё отлично
+          и по уровню услуг, и по обслуживанию. Всегда найдут промежуток времени для работы
+          на подъёмнике; последний раз в авральном режиме ремонтировал генератор — сутки.
+          Рекомендую и любителям самим покрутить гайки, и просто для ремонта авто.</p>
+        <cite>Дмитрий Слободин · 6 апреля 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Выражаю благодарность мастеру Евгению Борисовичу! В короткие сроки заменил
+          ступицу переднего колеса и отремонтировал рулевую рейку на Форде Фокусе 2,
+          был всегда на связи в мессенджере. У Евгения рядом свой магазин
+          с регулярными поставками — не пришлось самостоятельно покупать детали.</p>
+        <cite>Роман Чурсинов · 23 июля 2025</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Отличное место для обслуживания своего автомобиля. Есть инструмент
+          и различные приспособления. Ещё и горячим чаем угостили! Чистое помещение.
+          Чистый инструмент. А если в яме вам темно — фонарик принесут!</p>
+        <cite>Отзыв в 2ГИС · 29 апреля 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Работу выполняют на все 100. Внимательные, всегда подберут по бюджету
+          запчасти, ничего лишнего не накрутят. Можно так же арендовать подъёмник,
+          если будешь ремонтировать самостоятельно.</p>
+        <cite>Ксения Воропанова · 8 января 2025</cite>
+      </blockquote>
+    </div>
+
+    <div class="acts up" style="margin-top:32px">
+      <a class="btn g" href="https://2gis.ru/firm/70000001033037966" target="_blank" rel="noopener">
+        Все 110 отзывов в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty" class="pale">
+  <div class="w split">
+    <div class="up">
+      <span class="tag">Контакты</span>
+      <h2 style="margin-top:16px">Выборная, 26 к1, бокс 15</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>Выборная улица, 26 к1, пятнадцатый бокс<br>
+          <span class="q2">Октябрьский район, Новосибирск</span></dd></div>
+        <div><dt>Телефоны</dt><dd><a href="tel:+79139155422">+7 913 915-54-22</a><br>
+          <a href="tel:+73832915422">+7 383 291-54-22</a></dd></div>
+        <div><dt>Мессенджеры</dt><dd><a href="https://wa.me/79139155422" target="_blank" rel="noopener">WhatsApp</a>
+          и <a href="https://vk.com/siberiancustom54" target="_blank" rel="noopener">ВКонтакте</a></dd></div>
+        <div><dt>Режим</dt><dd>Ежедневно 09:00–20:00, без выходных</dd></div>
+        <div><dt>Оплата</dt><dd>Картой, наличными, переводом и через банк</dd></div>
+        <div><dt>Аренда</dt><dd>Яма, двухстоечный и четырёхстоечный подъёмник.
+          Минимум — один час, инструмент включён</dd></div>
+      </div>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="tel:+79139155422">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/70000001033037966" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+
+    <div class="up">
+      <div class="map">
+        <div class="mapstub" data-src="https://yandex.ru/map-widget/v1/?ll=82.988191%2C54.990916&z=17&text=Новосибирск%2C%20Выборная%20улица%2C%2026%20к1" data-title="Карта: Выборная улица, 26 к1">
+          <span>Карта загружается с сервера «Яндекса» и устанавливает свои cookie.</span>
+          <button type="button">Показать карту</button>
+        </div>
+      </div>
+      <h2 style="font-size:clamp(21px,2.5vw,30px);margin-top:32px">Записаться</h2>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label>
+          <input id="n" name="name" required autocomplete="name" placeholder="Дмитрий"></div>
+        <div><label for="p">Телефон</label>
+          <input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 913 000-00-00"></div>
+        <div><label for="c">Машина</label>
+          <input id="c" name="car" placeholder="Subaru Forester, 2008"></div>
+        <div><label for="m">Что делаете и на каком посту</label>
+          <textarea id="m" name="message" placeholder="Меняю рычаги и сайлентблоки сам, нужен двухстоечный на 3 часа"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cmp">Компания</label>
+          <input id="cmp" name="company" tabindex="-1" autocomplete="off"></div>
+        <label class="agree"><input type="checkbox" id="ag" name="consent" required>
+          <span>Я даю согласие на обработку моих персональных данных в соответствии
+          с <a href="privacy/" target="_blank" rel="noopener">Политикой обработки персональных данных</a></span></label>
+        <label class="agree opt"><input type="checkbox" id="adv" name="ads">
+          <span>Хочу получать напоминания о плановом обслуживании и сообщения об акциях
+          (необязательно)</span></label>
+        <button id="sb" class="btn" type="submit" disabled>Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Заявку обрабатываем только затем, чтобы перезвонить
+          и сказать, когда свободен нужный пост.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="ck" role="dialog" aria-label="Файлы cookie">
+  Мы используем файлы cookie: технически необходимые для работы страницы и те, что
+  устанавливает виджет «Яндекс.Карт». Аналитику и рекламные счётчики без вашего согласия
+  не подключаем. Подробности — в <a href="privacy/">Политике обработки персональных данных</a>.
+  <div class="ckb">
+    <button class="y" type="button" data-ck="y">Принять</button>
+    <button type="button" data-ck="n">Отклонить</button>
+  </div>
+</div>
+
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">Siberian Custom<s>Выборная, 26 к1</s></div>
+    Выборная улица, 26 к1, бокс 15, Новосибирск · ежедневно 09:00–20:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+79139155422">+7 913 915-54-22</a>
+    <a href="https://vk.com/siberiancustom54" target="_blank" rel="noopener">ВКонтакте</a>
+    <a href="https://2gis.ru/firm/70000001033037966" target="_blank" rel="noopener">2ГИС</a>
+    <a href="privacy/">Политика обработки персональных данных</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+79139155422">Позвонить</a>
+  <a class="btn g" href="#posty">Выбор поста</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"Siberian Custom",
+"description":"Автосервис и гараж самообслуживания: аренда смотровой ямы, двухстоечного и четырёхстоечного подъёмника с полным набором инструмента для самостоятельного ремонта, а также ремонт ходовой части, бензиновых и дизельных двигателей, МКПП и АКПП, инжекторов, выхлопных систем, установка и ремонт автооптики, аппаратная замена масла и развал-схождение. Магазин запчастей рядом с боксом.",
+"address":{"@type":"PostalAddress","streetAddress":"Выборная улица, 26 к1, бокс 15","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":54.990916,"longitude":82.988191},
+"telephone":"+79139155422",
+"openingHoursSpecification":[
+ {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"09:00","closes":"20:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"110","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/70000001033037966","https://vk.com/siberiancustom54"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и скажем, когда свободен пост.';ok.style.display='block';f.reset();return}}catch(_){}}
+  ok.innerHTML='Приём заявок пока настраивается. Позвоните, пожалуйста: <a href="tel:+79139155422">+7 913 915-54-22</a>.';
+  ok.style.display='block';
+});
+</script>
+<script>
+(function(){
+  var K='ck-choice', box=document.getElementById('ck');
+  function loadMap(){
+    document.querySelectorAll('.mapstub[data-src]').forEach(function(s){
+      var f=document.createElement('iframe');
+      f.loading='lazy'; f.title=s.dataset.title||'Карта проезда'; f.src=s.dataset.src;
+      f.style.width='100%'; f.style.height='100%'; f.style.border='0';
+      s.parentNode.appendChild(f); s.remove();
+    });
+  }
+  var saved=null; try{saved=localStorage.getItem(K)}catch(e){}
+  if(saved==='y'){loadMap()} else if(!saved && box){box.classList.add('on')}
+  if(box) box.addEventListener('click',function(e){
+    var b=e.target.closest('[data-ck]'); if(!b)return;
+    try{localStorage.setItem(K,b.dataset.ck)}catch(e){}
+    box.classList.remove('on'); if(b.dataset.ck==='y') loadMap();
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.mapstub button')) loadMap();
+  });
+  var ag=document.getElementById('ag'), sb=document.getElementById('sb');
+  if(ag&&sb){ var sync=function(){sb.disabled=!ag.checked}; sync();
+    ag.addEventListener('change',sync); }
+})();
+</script>
+</body>
+</html>

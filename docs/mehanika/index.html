@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Механика — автосервис у дома в Новосибирске, 25 лет Октября, 11/2</title>
+<meta name="description" content="Механика, автосервис, Новосибирск, улица 25 лет Октября, 11/2. Ремонт ходовой части, развал-схождение, замена масла, выхлопные системы, кузовной ремонт, сварка, покраска и полировка. Принимаем без записи «через недельку», показываем снятую деталь и не навязываем лишнего. Пн–Пт 09:00–18:00, Сб–Вс до 17:00. 4,5 по 84 отзывам в 2ГИС.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Механика — 25 лет Октября, 11/2">
+<meta property="og:description" content="Сервис у дома: принимают сегодня, показывают снятую деталь и не навязывают лишнего. 4,5 по 84 отзывам.">
+<meta property="og:image" content="photo/dom.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23EFECE4'/><path d='M16 5l9 5.5v11L16 27l-9-5.5v-11z' fill='none' stroke='%231C1A17' stroke-width='2.4' stroke-linejoin='round'/><circle cx='16' cy='16' r='4' fill='%238B4A2B'/></svg>">
+<link rel="stylesheet" href="../fonts/geologica.css">
+<link rel="stylesheet" href="../fonts/golos-text.css">
+<style>
+/* Механика, 25 лет Октября 11/2.
+   Маленькое СТО у дома, и в отзывах это слышно дословно: «примут без
+   мучительных записей через недельку», «лишнего не навязывают», «если
+   не делают — отправят к другим ребятам». Этим и продаём, а не списком услуг.
+   На стене их цеха стоят фигурки, собранные из гаек, болтов и головок —
+   такого нет больше нигде, поэтому им отдан отдельный блок.
+   Кнопка при наведении сдвигается рывками, как трещотка. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pa:#EFECE4; --pa-2:#E0DCD1; --card:#FFFFFF;
+  --ink:#1C1A17; --ink-2:#54504A; --ink-3:#8B867D;
+  --line:#D8D3C7; --line-2:#B5AFA1;
+  --ac:#8B4A2B; --ac-2:#6E3820; --ac-soft:#F0E1D7;
+  --wrap:1050px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--pa);color:var(--ink);
+  font:400 16.5px/1.72 "Golos Text",-apple-system,sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(58px,8vw,104px) 0}
+section[id]{scroll-margin-top:80px}
+h1,h2,h3{font-family:Geologica,-apple-system,sans-serif}
+h1,h2{font-weight:600;line-height:1.06;letter-spacing:-.038em;text-wrap:balance}
+h1{font-size:clamp(31px,5.1vw,59px)}
+h2{font-size:clamp(24px,3.3vw,42px)}
+h3{font-size:18px;font-weight:500;line-height:1.28;letter-spacing:-.028em}
+p{max-width:60ch}
+em{font-style:normal;color:var(--ac)}
+.tag{font-family:Geologica,sans-serif;font-size:11px;font-weight:500;
+  letter-spacing:.17em;text-transform:uppercase;color:var(--ac)}
+.q2{color:var(--ink-2)}
+
+/* Кнопка сдвигается рывками — как трещотка на один щелчок. */
+.btn{position:relative;isolation:isolate;overflow:hidden;
+  display:inline-flex;align-items:center;gap:11px;font-family:Geologica,sans-serif;
+  font-weight:500;font-size:13.5px;letter-spacing:-.01em;padding:16px 30px;
+  background:var(--ink);color:#F3F0E9;
+  transition:transform .3s steps(3,end),color .3s var(--ease)}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--ac);
+  transform:translateX(-101%);transition:transform .34s steps(4,end)}
+.btn:hover,.btn:focus-visible{transform:translateX(5px)}
+.btn:hover::before,.btn:focus-visible::before{transform:translateX(0)}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;
+  transition:transform .3s steps(3,end)}
+.btn:hover svg{transform:translateX(4px)}
+.btn.g{color:var(--ink);background:transparent;box-shadow:inset 0 0 0 1.6px var(--line-2)}
+.btn.g:hover{color:#F3F0E9}
+
+header{position:fixed;inset:0 0 auto;z-index:60;padding:15px 0;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),padding .3s,border-color .3s}
+header.on{background:rgba(239,236,228,.95);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding:9px 0}
+.nav{display:flex;align-items:center;gap:22px}
+.brand{margin-right:auto;font-family:Geologica,sans-serif;font-weight:600;font-size:19px;
+  letter-spacing:-.04em;line-height:1.14}
+.brand s{display:block;text-decoration:none;font-family:"Golos Text",sans-serif;font-size:9.5px;
+  font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ac);margin-top:4px}
+.lk{font-size:14.5px;color:var(--ink-2);transition:color .2s}
+.lk:hover{color:var(--ac)}
+@media(max-width:1060px){.lk{display:none}}
+@media(max-width:460px){.nav{gap:11px}.brand{font-size:16px}.btn{padding:13px 21px;font-size:12.5px}}
+
+.hero{padding-top:clamp(118px,15vw,178px);padding-bottom:clamp(26px,4vw,46px)}
+.hero h1{margin:16px 0 22px}
+.hero .sub{font-size:clamp(16px,1.8vw,18.5px);color:var(--ink-2);max-width:53ch;line-height:1.7}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,3vw,38px);
+  margin-top:clamp(38px,6vw,66px);padding-top:26px;border-top:2px solid var(--ink)}
+.figs b{display:block;font-family:Geologica,sans-serif;font-weight:600;
+  font-size:clamp(20px,2.6vw,32px);letter-spacing:-.05em;line-height:1.05;
+  font-variant-numeric:tabular-nums;color:var(--ac)}
+.figs span{display:block;margin-top:10px;font-size:12.5px;color:var(--ink-3);line-height:1.5}
+@media(max-width:700px){.figs{grid-template-columns:repeat(2,1fr)}}
+
+.shot{margin-top:clamp(34px,5vw,56px)}
+.shot img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--pa-2)}
+.shot figcaption{margin-top:11px;font-size:13.5px;color:var(--ink-3);max-width:60ch}
+
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,26px);
+  margin-top:clamp(32px,4.2vw,50px)}
+@media(max-width:840px){.three{grid-template-columns:1fr}}
+.three article{background:var(--card);border:1px solid var(--line);overflow:hidden;
+  transition:border-color .25s var(--ease),transform .25s var(--ease)}
+.three article:hover{border-color:var(--ac);transform:translateY(-3px)}
+.three img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--pa-2)}
+.three .tx{padding:clamp(20px,2.4vw,26px)}
+.three h3{margin-bottom:9px;font-size:19px}
+.three p{font-size:14.5px;color:var(--ink-2)}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.6vw,30px);
+  margin-top:clamp(30px,4vw,46px)}
+@media(max-width:860px){.grid3{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid3{grid-template-columns:1fr}}
+.grid3 div{padding-top:18px;border-top:1px solid var(--line-2);transition:border-color .25s}
+.grid3 div:hover{border-top-color:var(--ac)}
+.grid3 b{display:block;font-family:Geologica,sans-serif;font-size:17px;font-weight:500;
+  letter-spacing:-.035em;margin-bottom:8px}
+.grid3 p{font-size:14.5px;color:var(--ink-2)}
+
+.dark{background:var(--ink);color:#B3ADA3}
+.dark .tag{color:#D08A63}
+.dark h2,.dark h3{color:#FFFFFF}
+.dark p{color:#9C968C}
+.dark em{color:#D08A63}
+.pull{font-family:Geologica,sans-serif;font-weight:600;font-size:clamp(19px,2.4vw,29px);
+  line-height:1.24;letter-spacing:-.045em;color:#FFFFFF;max-width:29ch;
+  border-left:3px solid var(--ac);padding-left:20px;margin-top:26px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,34px);
+  margin-top:clamp(30px,4vw,44px)}
+@media(max-width:760px){.fgrid{grid-template-columns:1fr}}
+.fgrid h3{margin-bottom:9px}
+.fgrid p{font-size:14.5px}
+
+.pale{background:#F6F4EE}
+.bigq{font-family:Geologica,sans-serif;font-weight:600;font-size:clamp(20px,2.8vw,33px);
+  line-height:1.18;letter-spacing:-.045em;max-width:24ch}
+.by{margin-top:14px;font-size:13px;color:var(--ink-3)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.6vw,28px);
+  margin-top:clamp(32px,4vw,48px)}
+@media(max-width:760px){.pair{grid-template-columns:1fr}}
+.pair blockquote{background:var(--card);border:1px solid var(--line);padding:clamp(20px,2.4vw,26px)}
+.pair p{font-size:14.5px;color:var(--ink-2)}
+.pair cite{display:block;margin-top:13px;font-style:normal;font-size:12.5px;color:var(--ink-3)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,26px);margin-top:clamp(32px,4vw,46px)}
+@media(max-width:700px){.g2{grid-template-columns:1fr}}
+.g2 img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--pa-2)}
+.g2 figcaption{margin-top:10px;font-size:13px;color:var(--ink-3)}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px);margin-top:clamp(28px,3.6vw,42px)}
+@media(max-width:700px){.g3{grid-template-columns:1fr 1fr}}
+.g3 img{width:100%;aspect-ratio:1/1;object-fit:cover;background:var(--pa-2)}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,54px)}
+@media(max-width:900px){.split{grid-template-columns:1fr}}
+.rows{margin-top:24px;display:grid;gap:0}
+.rows div{display:grid;grid-template-columns:118px 1fr;gap:16px;padding:13px 0;
+  border-top:1px solid var(--line)}
+.rows div:last-child{border-bottom:1px solid var(--line)}
+dt{font-size:12.5px;color:var(--ink-3);letter-spacing:.02em}
+dd{font-size:15px}
+dd a{border-bottom:1px solid var(--line-2);transition:border-color .2s}
+dd a:hover{border-bottom-color:var(--ac)}
+.map{position:relative;aspect-ratio:4/3;background:var(--pa-2);border:1px solid var(--line)}
+.mapstub{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:13px;text-align:center;padding:24px}
+.mapstub span{font-size:13.5px;color:var(--ink-2);max-width:34ch}
+.mapstub button{font:inherit;font-size:13.5px;font-weight:500;font-family:Geologica,sans-serif;
+  padding:11px 20px;border:0;background:var(--ink);color:#F3F0E9;cursor:pointer}
+form{margin-top:20px;display:grid;gap:14px}
+label{display:block;font-size:12.5px;color:var(--ink-3);margin-bottom:6px}
+input,textarea{width:100%;font:inherit;font-size:15px;padding:12px 14px;background:var(--card);
+  border:1px solid var(--line-2);color:inherit}
+input:focus,textarea:focus{outline:2px solid var(--ac);outline-offset:1px;border-color:transparent}
+textarea{min-height:96px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink-2);margin:0}
+.agree input{width:auto;flex:none;margin-top:3px}
+.agree a{border-bottom:1px solid var(--line-2)}
+.fine{font-size:12.5px;color:var(--ink-3)}
+.sent{display:none;padding:14px 16px;background:var(--ac-soft);
+  border-left:3px solid var(--ac);font-size:14.5px}
+footer{background:var(--ink);color:#9C968C;padding:34px 0;font-size:13.5px}
+.fin{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
+footer a{color:#B3ADA3;border-bottom:1px solid #322E29}
+footer a:hover{color:#fff}
+footer .brand{color:#fff}
+footer .brand s{color:#D08A63}
+
+#ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:80;display:none;
+  background:var(--card);border:1px solid var(--line-2);padding:18px 20px;font-size:13.5px;
+  max-width:640px;box-shadow:0 14px 40px rgba(28,26,23,.18)}
+#ck.on{display:block}
+#ck a{border-bottom:1px solid var(--line-2)}
+.ckb{display:flex;gap:10px;margin-top:13px}
+.ckb button{font:inherit;font-size:13px;font-weight:500;font-family:Geologica,sans-serif;
+  padding:9px 17px;border:1px solid var(--line-2);background:transparent;cursor:pointer}
+.ckb .y{background:var(--ink);border-color:var(--ink);color:#F3F0E9}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:55;display:none;gap:9px;padding:10px 14px;
+  background:rgba(239,236,228,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+.bar .btn{flex:1;justify-content:center;padding:13px 10px}
+.bar .btn:hover{transform:none}
+@media(max-width:700px){.bar{display:flex}body{padding-bottom:70px}}
+
+.up{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+/* --- 152-ФЗ --- */
+/* --- 152-ФЗ: согласие, cookie, отложенная карта --- */
+.agree{display:grid;grid-template-columns:19px 1fr;gap:12px;align-items:start;
+  font:400 13.5px/1.55 inherit;font-family:inherit;letter-spacing:normal;text-transform:none;
+  color:inherit;margin:0;cursor:pointer;max-width:52ch}
+.agree span{display:block;letter-spacing:normal;text-transform:none}
+.agree input{width:19px;height:19px;margin:2px 0 0;accent-color:currentColor;cursor:pointer;flex:none}
+.agree a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.agree.opt{opacity:.8}
+button[disabled],.btn[disabled]{opacity:.4;cursor:not-allowed}
+.mapstub{position:absolute;inset:0;display:flex;flex-direction:column;gap:12px;
+  align-items:center;justify-content:center;text-align:center;padding:22px;
+  font-size:13.5px;line-height:1.5;background:rgba(127,127,127,.10)}
+.mapstub button{font:inherit;font-size:13px;padding:11px 20px;cursor:pointer;
+  border:1px solid currentColor;background:transparent;color:inherit;border-radius:3px}
+.mapstub button:hover{opacity:.72}
+.map{position:relative}
+#ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:95;display:none;max-width:440px;
+  padding:18px 20px;background:#101114;color:#F2F0EC;font-size:13.5px;line-height:1.6;
+  border:1px solid rgba(255,255,255,.14);border-radius:6px;
+  box-shadow:0 18px 48px rgba(0,0,0,.45)}
+#ck.on{display:block}
+#ck a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+#ck .ckb{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+#ck button{font:inherit;font-size:12.5px;font-weight:600;letter-spacing:.04em;padding:11px 20px;
+  cursor:pointer;border-radius:4px;border:1px solid rgba(255,255,255,.3);
+  background:transparent;color:#F2F0EC}
+#ck button.y{background:#F2F0EC;color:#101114;border-color:#F2F0EC}
+#ck button:hover{opacity:.85}
+@media(max-width:760px){#ck{bottom:84px;left:10px;right:10px}}
+</style>
+</head>
+<body>
+
+<header id="hd"><div class="w nav">
+  <div class="brand">Механика<s>25 лет Октября, 11/2</s></div>
+  <a class="lk" href="#detali">Детали</a>
+  <a class="lk" href="#raboty">Работы</a>
+  <a class="lk" href="#otzyvy">Отзывы</a>
+  <a class="btn" href="tel:+79139855911">+7 913 985-59-11</a>
+</div></header>
+
+<main>
+<section class="hero">
+  <div class="w">
+    <p class="tag up">Автосервис · Калининский район</p>
+    <h1 class="up">Без записи<br>«через недельку»</h1>
+    <p class="sub up">Ходовая, развал-схождение, масло, выхлоп, кузов и сварка.
+      Маленькое СТО у дома, куда можно заехать сегодня. И где, по словам наших клиентов,
+      <em>лишнего не навязывают</em>, а если работа не наша — скажут прямо
+      и подскажут, к кому.</p>
+    <div class="acts up">
+      <a class="btn" href="tel:+79139855911">Позвонить
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#detali">Как мы работаем</a>
+    </div>
+    <div class="figs up">
+      <div><b>4,5</b><span>средняя оценка в 2ГИС по 84 отзывам</span></div>
+      <div><b>7 дней</b><span>Пн–Пт с 09:00 до 18:00, суббота и воскресенье до 17:00</span></div>
+      <div><b>Свой район</b><span>«многие на районе хорошо отзываются» — из отзыва клиента</span></div>
+      <div><b>Без навязывания</b><span>чаще всего именно об этом и пишут</span></div>
+    </div>
+    <figure class="shot up">
+      <img src="photo/dom.jpg" alt="Здание автосервиса Механика с жёлтыми воротами и вывесками «ремонт ходовой» и «развал-схождение»" width="1400" height="1050">
+      <figcaption>25 лет Октября, 11/2. Два бокса, жёлтые ворота, вывески читаются с дороги —
+        и это, по сути, весь наш маркетинг.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="detali" class="pale">
+  <div class="w">
+    <p class="tag up">Как мы работаем</p>
+    <h2 class="up" style="margin-top:14px">Снятую деталь<br>показываем в руках</h2>
+    <p class="up" style="margin-top:20px;color:var(--ink-2)">Самый частый способ обмануть
+      в сервисе — заменить то, что ещё живое, и рассказать об этом словами. Поэтому у нас
+      простое правило: то, что сняли, вы видите; то, что ставим, вы видите тоже —
+      в упаковке и до установки.</p>
+    <div class="g2">
+      <figure class="up"><img src="photo/part-old.jpg" alt="Мастер держит в руке снятую с автомобиля изношенную деталь" loading="lazy" decoding="async">
+        <figcaption>Что сняли. По люфту и выработке видно, почему её меняем.</figcaption></figure>
+      <figure class="up"><img src="photo/part-new.jpg" alt="Оригинальная деталь Honda в заводской упаковке в руках мастера" loading="lazy" decoding="async">
+        <figcaption>Что ставим. Оригинал или аналог — решаете вы, но упаковку
+          показываем до, а не после.</figcaption></figure>
+    </div>
+    <div class="three">
+      <article class="up">
+        <img src="photo/lift.jpg" alt="Кроссовер на ножничном подъёмнике со снятыми колёсами" loading="lazy" decoding="async">
+        <div class="tx"><h3>Ходовая и развал</h3>
+          <p>Стойки, рычаги, сайлентблоки, ступицы. После ремонта —
+            сход-развал, иначе смысла в ремонте мало.</p></div>
+      </article>
+      <article class="up">
+        <img src="photo/bay.jpg" alt="Внутри бокса: мастер за работой, стопка шин, оборудование" loading="lazy" decoding="async">
+        <div class="tx"><h3>Работаем в боксе</h3>
+          <p>Не на улице и не «по-быстрому у ворот». Это медленнее,
+            но иначе нормально не сделать.</p></div>
+      </article>
+      <article class="up">
+        <img src="photo/santafe.jpg" alt="Задняя часть кроссовера Hyundai" loading="lazy" decoding="async">
+        <div class="tx"><h3>Кузов и сварка</h3>
+          <p>Вмятины, покраска, полировка, сварочные работы —
+            в соседнем боксе, но это тоже мы.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="figurki">
+  <div class="w">
+    <p class="tag up">Мелочь, но наша</p>
+    <h2 class="up" style="margin-top:14px">Из того,<br>что осталось</h2>
+    <p class="up" style="margin-top:20px;color:var(--ink-2)">На стене цеха стоят фигурки,
+      собранные из гаек, болтов и головок: мотоциклы, человечки, инструмент, ставший
+      скульптурой. Их никто не заказывал — это просто то, что делают руками
+      в свободную минуту.</p>
+    <p class="up" style="margin-top:16px;color:var(--ink-2)">К качеству ремонта это отношения
+      не имеет. Но по такой мелочи обычно понятно, работают здесь «на поток» или всё-таки
+      с интересом к железу.</p>
+    <div class="g3">
+      <img class="up" src="photo/art-1.jpg" alt="Фигурки, собранные из гаек и головок, на кирпичной стене цеха" loading="lazy" decoding="async">
+      <img class="up" src="photo/art-2.jpg" alt="Мотоцикл, собранный из болтов и деталей, на полке в цехе" loading="lazy" decoding="async">
+      <img class="up" src="photo/art-3.jpg" alt="Ещё одна фигурка из метизов рядом со старым дорожным знаком" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<section id="raboty" class="pale">
+  <div class="w">
+    <p class="tag up">Что делаем</p>
+    <h2 class="up" style="margin-top:14px">Список короткий —<br>и это осознанно</h2>
+    <div class="grid3">
+      <div class="up"><b>Ходовая часть</b>
+        <p>Стойки и амортизаторы, рычаги, сайлентблоки, шаровые, ступичные
+          подшипники, стабилизатор.</p></div>
+      <div class="up"><b>Развал-схождение</b>
+        <p>После замены элементов подвески и после любого удара по колесу.
+          Делается на стенде, а не «на глаз».</p></div>
+      <div class="up"><b>Замена масла</b>
+        <p>Двигатель, коробка, фильтры. Своё масло привезти можно —
+          скажем, подходит оно или нет.</p></div>
+      <div class="up"><b>Выхлопная система</b>
+        <p>Ремонт и замена участков, гофры, банки. Варим,
+          а не только меняем в сборе.</p></div>
+      <div class="up"><b>Кузовной ремонт</b>
+        <p>Вмятины, покраска, полировка, сварка. Небольшие работы
+          и восстановление после мелких ДТП.</p></div>
+      <div class="up"><b>Чего не делаем</b>
+        <p>Мы не берёмся за всё подряд. Если задача не наша, скажем сразу
+          и подскажем, к кому съездить, — так и в отзывах пишут.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="chestno" class="dark">
+  <div class="w">
+    <p class="tag up">Честно</p>
+    <h2 class="up" style="margin-top:14px">Колесо на улице<br>мы правда не снимаем</h2>
+    <p class="pull up">«Колесо на улице не снимают, принципиально.
+      Помочь отказались, перекур был»</p>
+    <p class="up" style="margin-top:18px;font-size:13px;color:#8A857B">Отзыв в 2ГИС
+      на одну звезду, 30 июня 2024</p>
+    <div class="fgrid">
+      <article class="up">
+        <h3>Почему так</h3>
+        <p>Мы работаем в боксе, на подъёмнике и с нормальным инструментом.
+          Снимать колесо на асфальте у ворот — это домкрат, грязь и риск сорвать
+          резьбу или уронить машину. Мы этого не делаем и делать не будем.</p>
+      </article>
+      <article class="up">
+        <h3>Но человек был прав в другом</h3>
+        <p>Ему просто отказали, да ещё и в перекур. Отказ и объяснение —
+          разные вещи: можно было сказать, через сколько освободится бокс,
+          или подсказать ближайший шиномонтаж.</p>
+        <p style="margin-top:14px">Если мы вам не подходим по времени или по задаче,
+          вы должны узнать это в первую минуту разговора — <em>вместе с тем,
+          куда ехать вместо нас</em>.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy">
+  <div class="w">
+    <p class="tag up">Отзывы · 4,5 из 5 по 84 оценкам в 2ГИС</p>
+    <blockquote class="up" style="margin-top:22px">
+      <p class="bigq">«Всегда быстро примут без мучительных записей
+        „через недельку“»</p>
+      <p class="by">Надежда · Hyundai Creta · отзыв в 2ГИС, 30 июня 2024</p>
+    </blockquote>
+    <div class="pair">
+      <blockquote class="up">
+        <p>Два года обслуживаю машину у них. Всегда всё расскажут, покажут, успокоят,
+          если где-то что-то мне наговорили лишнего. А бывали случаи, что экстренно
+          пришлось обратиться к другим СТО — и те приписывали много левого.</p>
+        <cite>Александра · 4 июля 2024</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Если они что-то не делают, то отправят к другим ребятам.
+          В соседнем боксе ребята делали бампер — им тоже огромное спасибо.</p>
+        <cite>Александра · 4 июля 2024</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>На простом языке всё расскажут, не навязывают услуги, всё чётко и по делу.
+          Сегодня в очередной раз меня спасли.</p>
+        <cite>Надежда · 30 июня 2024</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Здесь работают хорошие ребята, и слаженный, стабильный коллектив это доказывает.
+          Многие на районе хорошо отзываются о данном СТО.</p>
+        <cite>Александра · 28 мая 2025</cite>
+      </blockquote>
+    </div>
+    <div class="acts up" style="margin-top:38px">
+      <a class="btn g" href="https://2gis.ru/firm/141265769946204" target="_blank" rel="noopener">
+        Все 84 отзыва в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty" class="pale">
+  <div class="w split">
+    <div class="up">
+      <p class="tag">Контакты</p>
+      <h2 style="margin-top:14px">25 лет Октября, 11/2</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>улица 25 лет Октября, 11/2<br><span class="q2">Калининский район, Новосибирск</span></dd></div>
+        <div><dt>Телефоны</dt><dd><a href="tel:+79139855911">+7 913 985-59-11</a><br>
+          <a href="tel:+73832135911">+7 383 213-59-11</a></dd></div>
+        <div><dt>WhatsApp</dt><dd>на мобильный номер</dd></div>
+        <div><dt>Режим</dt><dd>Пн–Пт 09:00–18:00<br>Сб и Вс 09:00–17:00</dd></div>
+        <div><dt>Профиль</dt><dd>Ходовая, развал-схождение, масло, выхлоп, кузовной ремонт и сварка</dd></div>
+        <div><dt>Запись</dt><dd>Можно без записи — но лучше позвонить и уточнить, свободен ли бокс</dd></div>
+      </div>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="tel:+79139855911">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/141265769946204" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="up">
+      <div class="map">
+        <div class="mapstub" data-src="https://yandex.ru/map-widget/v1/?ll=82.961059%2C55.075296&z=17&text=Новосибирск%2C%20улица%2025%20лет%20Октября%2C%2011/2" data-title="Карта: улица 25 лет Октября, 11/2">
+          <span>Карта загружается с сервера «Яндекса» и устанавливает свои cookie.</span>
+          <button type="button">Показать карту</button>
+        </div>
+      </div>
+      <h2 style="font-size:clamp(21px,2.5vw,31px);margin-top:34px">Записаться</h2>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label><input id="n" name="name" required autocomplete="name" placeholder="Надежда"></div>
+        <div><label for="p">Телефон</label><input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 913 000-00-00"></div>
+        <div><label for="c">Машина</label><input id="c" name="car" placeholder="Hyundai Creta, 2019"></div>
+        <div><label for="m">Что нужно</label><textarea id="m" name="message" placeholder="Стучит спереди, нужна диагностика ходовой"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cmp">Компания</label><input id="cmp" name="company" tabindex="-1" autocomplete="off"></div>
+        <label class="agree"><input type="checkbox" id="ag" name="consent" required>
+          <span>Я даю согласие на обработку моих персональных данных в соответствии
+          с <a href="privacy/" target="_blank" rel="noopener">Политикой обработки персональных данных</a></span></label>
+        <label class="agree opt"><input type="checkbox" id="adv" name="ads">
+          <span>Хочу получать напоминания о плановом обслуживании и сообщения об акциях
+          (необязательно)</span></label>
+        <button id="sb" class="btn" type="submit" disabled>Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Заявку обрабатываем только для того, чтобы перезвонить
+          и сказать, когда свободен бокс.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="ck" role="dialog" aria-label="Файлы cookie">
+  Мы используем файлы cookie: технически необходимые для работы страницы и те, что
+  устанавливает виджет «Яндекс.Карт». Аналитику и рекламные счётчики без вашего согласия
+  не подключаем. Подробности — в <a href="privacy/">Политике обработки персональных данных</a>.
+  <div class="ckb">
+    <button class="y" type="button" data-ck="y">Принять</button>
+    <button type="button" data-ck="n">Отклонить</button>
+  </div>
+</div>
+
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">Механика<s>25 лет Октября, 11/2</s></div>
+    улица 25 лет Октября, 11/2, Новосибирск · Пн–Пт 09:00–18:00, Сб–Вс до 17:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+79139855911">+7 913 985-59-11</a>
+    <a href="https://2gis.ru/firm/141265769946204" target="_blank" rel="noopener">2ГИС</a>
+    <a href="privacy/">Политика обработки персональных данных</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+79139855911">Позвонить</a>
+  <a class="btn g" href="#raboty">Что делаем</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"Механика",
+"description":"Автосервис у дома: ремонт ходовой части, развал-схождение на стенде, замена масла и фильтров, ремонт и сварка выхлопных систем, кузовной ремонт, ремонт вмятин, покраска, полировка и сварочные работы. Принимаем без длительной записи, снятые детали показываем клиенту, лишних работ не навязываем.",
+"address":{"@type":"PostalAddress","streetAddress":"улица 25 лет Октября, 11/2","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":55.075296,"longitude":82.961059},
+"telephone":"+79139855911",
+"openingHoursSpecification":[
+ {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"},
+ {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"09:00","closes":"17:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.5","reviewCount":"84","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/141265769946204"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и скажем, когда подъехать.';ok.style.display='block';f.reset();return}}catch(_){}}
+  ok.innerHTML='Приём заявок пока настраивается. Позвоните, пожалуйста: <a href="tel:+79139855911">+7 913 985-59-11</a>.';
+  ok.style.display='block';
+});
+</script>
+<script>
+(function(){
+  var K='ck-choice', box=document.getElementById('ck');
+  function loadMap(){
+    document.querySelectorAll('.mapstub[data-src]').forEach(function(s){
+      var f=document.createElement('iframe');
+      f.loading='lazy'; f.title=s.dataset.title||'Карта проезда'; f.src=s.dataset.src;
+      f.style.width='100%'; f.style.height='100%'; f.style.border='0';
+      s.parentNode.appendChild(f); s.remove();
+    });
+  }
+  var saved=null; try{saved=localStorage.getItem(K)}catch(e){}
+  if(saved==='y'){loadMap()} else if(!saved && box){box.classList.add('on')}
+  if(box) box.addEventListener('click',function(e){
+    var b=e.target.closest('[data-ck]'); if(!b)return;
+    try{localStorage.setItem(K,b.dataset.ck)}catch(e){}
+    box.classList.remove('on'); if(b.dataset.ck==='y') loadMap();
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.mapstub button')) loadMap();
+  });
+  var ag=document.getElementById('ag'), sb=document.getElementById('sb');
+  if(ag&&sb){ var sync=function(){sb.disabled=!ag.checked}; sync();
+    ag.addEventListener('change',sync); }
+})();
+</script>
+</body>
+</html>

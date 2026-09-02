@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Black Auto — автомойка на Кирова, 291, Новосибирск</title>
+<meta name="description" content="Black Auto, автомойка, Новосибирск, улица Кирова, 291. Комплексная мойка, химчистка салона, мойка двигателя, полировка кузова. Два поста, запись по телефону, зал ожидания с телевизором, приставкой и баром. Ежедневно 09:00–23:00. 4,9 по 107 отзывам в 2ГИС.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Black Auto — Кирова, 291">
+<meta property="og:description" content="Заезд узкий — про это честно. Всё остальное: 4,9 по 107 отзывам, зал ожидания с приставкой и баром, работаем до одиннадцати вечера.">
+<meta property="og:image" content="photo/fasad.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0A0C'/><rect x='5' y='9' width='22' height='3' fill='%235C7CFF'/><circle cx='16' cy='21' r='5.5' fill='%2334C26A'/></svg>">
+<link rel="stylesheet" href="../fonts/cormorant-garamond.css">
+<link rel="stylesheet" href="../fonts/golos-text.css">
+<style>
+/* Black Auto, Кирова 291.
+   Редкий случай: 4,9 по 107 отзывам, и среди тридцати отзывов с текстом
+   нет ни одной единицы. Претензия ровно одна и повторяется четыре раза — узкий заезд
+   («от заезда начинается паника», «ворота узкие», «неудобный заезд,
+   а так в восторге»). Поэтому страница начинается именно с неё:
+   возражение, которое клиент всё равно услышит от соседа, лучше снять
+   самим — и тут же показать во дворе Dodge Ram 1500, который туда заехал.
+   Палитра взята с их фасада буквально: чёрный профлист, белые световые
+   буквы, синяя неоновая нить и зелёный сигнальный фонарь над воротами.
+   Ничего другого на странице не подсвечивается.
+   Кнопка при наведении ловит блик — как мокрый чёрный лак под лампой. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pa:#0A0A0C; --pa-2:#101014; --card:#15151A;
+  --ink:#F1F2F4; --ink-2:#9C9EA6; --ink-3:#6B6D75;
+  --line:#23232A; --line-2:#35353F;
+  --ac:#5C7CFF; --ac-2:#8098FF; --ac-soft:rgba(92,124,255,.13);
+  --ok:#34C26A;
+  --wrap:1050px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--pa);color:var(--ink);
+  font:400 16.5px/1.74 "Golos Text",-apple-system,BlinkMacSystemFont,sans-serif;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(56px,7.4vw,100px) 0}
+section[id]{scroll-margin-top:78px}
+
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:300;
+  line-height:1.03;text-wrap:balance;letter-spacing:-.005em}
+h1{font-size:clamp(40px,7.4vw,86px)}
+h2{font-size:clamp(30px,4.6vw,56px)}
+h3{font-family:"Golos Text",sans-serif;font-weight:600;font-size:clamp(17px,1.9vw,20px);
+  line-height:1.3;letter-spacing:-.015em}
+p{max-width:64ch;color:var(--ink-2)}
+em{font-style:normal;color:var(--ink);background:rgba(92,124,255,.16);
+  padding:1px 4px;border-radius:2px;box-decoration-break:clone;
+  -webkit-box-decoration-break:clone}
+
+/* неоновая нить под рубрикой — единственный декоративный элемент */
+.tag{display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.19em;
+  text-transform:uppercase;color:var(--ink-3);padding-bottom:9px;position:relative}
+.tag::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:2px;
+  background:var(--ac);box-shadow:0 0 9px 1px rgba(92,124,255,.65);border-radius:2px}
+.pill{display:inline-flex;align-items:center;gap:9px;font-size:13px;color:var(--ink-2);
+  border:1px solid var(--line-2);border-radius:99px;padding:6px 14px 6px 11px}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--ok);
+  box-shadow:0 0 8px 1px rgba(52,194,106,.75);font-style:normal;flex:none}
+
+.up{opacity:0;transform:translateY(15px);transition:opacity .62s var(--ease),transform .62s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .up{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  .btn::after{display:none}
+}
+
+/* кнопка: по мокрому лаку проходит блик */
+.btn{position:relative;overflow:hidden;isolation:isolate;
+  display:inline-flex;align-items:center;gap:9px;
+  padding:14px 25px;border-radius:2px;cursor:pointer;border:0;
+  background:var(--ink);color:#0A0A0C;
+  font:600 15.5px/1 "Golos Text",sans-serif;letter-spacing:-.01em;
+  transition:background .25s var(--ease)}
+.btn::after{content:"";position:absolute;top:-60%;bottom:-60%;width:32%;left:-45%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.85),transparent);
+  transform:skewX(-18deg);pointer-events:none}
+.btn:hover::after,.btn:focus-visible::after{animation:blik .62s var(--ease)}
+@keyframes blik{to{left:118%}}
+.btn:hover{background:#fff}
+.btn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;
+  transition:transform .3s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn.g{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line-2)}
+.btn.g::after{background:linear-gradient(100deg,transparent,rgba(255,255,255,.16),transparent)}
+.btn.g:hover{background:transparent;box-shadow:inset 0 0 0 1.5px var(--ac)}
+:focus-visible{outline:2.5px solid var(--ac);outline-offset:3px;border-radius:2px}
+.acts{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+
+header{position:sticky;top:0;z-index:60;background:rgba(10,10,12,.88);
+  backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+header.on{border-bottom-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;
+  min-height:62px;max-width:var(--wrap);margin:0 auto;padding:0 26px}
+.brand{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:23px;
+  letter-spacing:.01em;display:flex;align-items:baseline;gap:11px}
+.brand s{text-decoration:none;font-family:"Golos Text",sans-serif;font-size:10.5px;
+  font-weight:500;letter-spacing:.13em;color:var(--ink-3);text-transform:uppercase}
+.menu{display:flex;gap:24px;font-size:14px;color:var(--ink-2)}
+.menu a{position:relative;padding:3px 0}
+.menu a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1.5px;
+  background:var(--ac);transform:scaleX(0);transform-origin:left;
+  transition:transform .3s var(--ease)}
+.menu a:hover{color:var(--ink)}
+.menu a:hover::after{transform:scaleX(1)}
+@media (max-width:940px){.menu{display:none}}
+.navtel{font-size:14px;font-weight:600;white-space:nowrap}
+@media (max-width:560px){.navtel{display:none}}
+
+/* герой */
+.hero{padding:clamp(34px,5vw,64px) 0 0}
+.hero h1{margin-top:20px;max-width:13ch}
+.hero h1 span{color:var(--ink-3)}
+.hero .sub{margin-top:24px;font-size:clamp(16.5px,1.7vw,19px);max-width:54ch}
+.hrow{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.heroimg{margin-top:clamp(30px,4vw,52px);border:1px solid var(--line);border-radius:3px;
+  overflow:hidden;position:relative}
+.heroimg img{width:100%;aspect-ratio:21/9;object-fit:cover}
+.heroimg .cap{position:absolute;inset:auto 0 0 0;padding:40px 20px 14px;
+  background:linear-gradient(transparent,rgba(10,10,12,.9));font-size:13px;color:var(--ink-2)}
+.facts{margin-top:24px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line)}
+.facts div{background:var(--pa);padding:17px 15px}
+.facts b{display:block;font-family:"Cormorant Garamond",serif;font-weight:300;
+  font-size:clamp(30px,4vw,46px);line-height:.95;letter-spacing:-.01em}
+.facts s{text-decoration:none;display:block;margin-top:8px;font-size:12.8px;color:var(--ink-2)}
+@media (max-width:720px){.facts{grid-template-columns:1fr 1fr}}
+
+/* заезд */
+.zaezd{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(24px,3.4vw,46px);
+  align-items:start;margin-top:32px}
+@media (max-width:860px){.zaezd{grid-template-columns:1fr}}
+.zaezd img{border:1px solid var(--line);border-radius:3px;width:100%;
+  aspect-ratio:4/3;object-fit:cover}
+.tips{display:grid;gap:0;border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.tips div{padding:17px 19px;border-bottom:1px solid var(--line);background:var(--card)}
+.tips div:last-child{border-bottom:0}
+.tips b{display:block;font-size:11px;font-weight:600;letter-spacing:.17em;
+  text-transform:uppercase;color:var(--ac-2);margin-bottom:6px}
+.tips p{font-size:15.2px;max-width:none}
+.said{border-left:2px solid var(--line-2);padding-left:15px;margin:20px 0;
+  font-family:"Cormorant Garamond",serif;font-size:clamp(20px,2.4vw,27px);
+  font-weight:300;font-style:italic;line-height:1.28;color:var(--ink)}
+.said cite{display:block;margin-top:11px;font:400 12.5px/1.5 "Golos Text",sans-serif;
+  font-style:normal;color:var(--ink-3)}
+
+/* лаунж */
+.pale{background:var(--pa-2)}
+.grid{margin-top:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:860px){.grid{grid-template-columns:1fr 1fr}}
+@media (max-width:540px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:3px;
+  padding:21px 20px 23px;transition:border-color .3s var(--ease),transform .3s var(--ease)}
+.card:hover{border-color:var(--line-2);transform:translateY(-3px)}
+.card h3{margin-bottom:8px}
+.card p{font-size:15px;max-width:none}
+.num{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:34px;
+  line-height:1;color:var(--ac);display:block;margin-bottom:11px}
+
+/* услуги */
+.srv{margin-top:30px;display:grid;gap:1px;background:var(--line);
+  border:1px solid var(--line)}
+.srv>div{background:var(--pa);padding:20px 21px;display:grid;
+  grid-template-columns:200px 1fr;gap:22px;align-items:baseline;
+  transition:background .3s var(--ease)}
+.srv>div:hover{background:var(--card)}
+@media (max-width:680px){.srv>div{grid-template-columns:1fr;gap:6px}}
+.srv h3{font-family:"Cormorant Garamond",serif;font-weight:300;
+  font-size:clamp(22px,2.6vw,30px);letter-spacing:0}
+.srv p{font-size:15.2px;max-width:none}
+
+/* тщательность */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+.two img{border:1px solid var(--line);border-radius:3px;width:100%;
+  aspect-ratio:4/3;object-fit:cover}
+
+/* отзывы */
+blockquote{background:var(--card);border:1px solid var(--line);border-radius:3px;
+  padding:21px 20px}
+blockquote p{font-size:15.3px}
+blockquote cite{display:block;margin-top:12px;font-style:normal;font-size:12.5px;
+  color:var(--ink-3)}
+.bigq{font-family:"Cormorant Garamond",serif;font-weight:300;
+  font-size:clamp(25px,3.7vw,44px);line-height:1.14;color:var(--ink)!important;
+  max-width:20ch}
+.by{margin-top:15px;font-size:12.5px;color:var(--ink-3)}
+.pair{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:760px){.pair{grid-template-columns:1fr}}
+
+/* контакты */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,3.6vw,52px)}
+@media (max-width:860px){.split{grid-template-columns:1fr}}
+.rows{margin-top:22px;display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.rows>div{background:var(--pa-2);padding:14px 16px;display:grid;
+  grid-template-columns:112px 1fr;gap:14px;align-items:baseline}
+@media (max-width:520px){.rows>div{grid-template-columns:1fr;gap:4px}}
+dt{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+dd{font-size:15.3px}
+dd a{border-bottom:1px solid var(--line-2)}
+dd a:hover{border-bottom-color:var(--ac)}
+.q2{color:var(--ink-2);font-size:14px}
+.map{aspect-ratio:16/11;background:var(--card);border:1px solid var(--line);
+  border-radius:3px;overflow:hidden;position:relative}
+
+form{margin-top:16px;display:grid;gap:13px}
+label{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+input,textarea{width:100%;background:var(--card);border:1px solid var(--line);
+  border-radius:2px;padding:12px 13px;font:400 15.4px/1.5 "Golos Text",sans-serif;
+  color:var(--ink);transition:border-color .22s}
+input:focus,textarea:focus{outline:none;border-color:var(--ac)}
+textarea{min-height:94px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fine{font-size:13px;color:var(--ink-3);max-width:52ch}
+.sent{display:none;background:var(--ac-soft);border:1px solid var(--ac);border-radius:2px;
+  padding:14px 16px;font-size:15px;margin-top:14px}
+
+footer{border-top:1px solid var(--line);color:var(--ink-3);padding:36px 0;font-size:14px}
+footer a{color:var(--ink-2)}
+footer a:hover{color:var(--ac-2)}
+.fin{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap}
+footer .brand{color:var(--ink)}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:9px;
+  padding:9px 13px calc(9px + env(safe-area-inset-bottom));
+  background:rgba(10,10,12,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+.bar .btn{flex:1;justify-content:center;padding:12px;font-size:15px}
+@media (max-width:700px){.bar{display:flex}body{padding-bottom:74px}}
+/* --- 152-ФЗ --- */
+/* --- 152-ФЗ: согласие, cookie, отложенная карта --- */
+.agree{display:grid;grid-template-columns:19px 1fr;gap:12px;align-items:start;
+  font:400 13.5px/1.55 inherit;font-family:inherit;letter-spacing:normal;text-transform:none;
+  color:inherit;margin:0;cursor:pointer;max-width:52ch}
+.agree span{display:block;letter-spacing:normal;text-transform:none}
+.agree input{width:19px;height:19px;margin:2px 0 0;accent-color:currentColor;cursor:pointer;flex:none}
+.agree a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.agree.opt{opacity:.8}
+button[disabled],.btn[disabled]{opacity:.4;cursor:not-allowed}
+.mapstub{position:absolute;inset:0;display:flex;flex-direction:column;gap:12px;
+  align-items:center;justify-content:center;text-align:center;padding:22px;
+  font-size:13.5px;line-height:1.5;background:rgba(127,127,127,.10)}
+.mapstub button{font:inherit;font-size:13px;padding:11px 20px;cursor:pointer;
+  border:1px solid currentColor;background:transparent;color:inherit;border-radius:3px}
+.mapstub button:hover{opacity:.72}
+.map{position:relative}
+#ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:95;display:none;max-width:440px;
+  padding:18px 20px;background:#101114;color:#F2F0EC;font-size:13.5px;line-height:1.6;
+  border:1px solid rgba(255,255,255,.14);border-radius:6px;
+  box-shadow:0 18px 48px rgba(0,0,0,.45)}
+#ck.on{display:block}
+#ck a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+#ck .ckb{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+#ck button{font:inherit;font-size:12.5px;font-weight:600;letter-spacing:.04em;padding:11px 20px;
+  cursor:pointer;border-radius:4px;border:1px solid rgba(255,255,255,.3);
+  background:transparent;color:#F2F0EC}
+#ck button.y{background:#F2F0EC;color:#101114;border-color:#F2F0EC}
+#ck button:hover{opacity:.85}
+@media(max-width:760px){#ck{bottom:84px;left:10px;right:10px}}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <nav class="nav">
+    <a class="brand" href="#top">Black Auto<s>Кирова, 291</s></a>
+    <div class="menu">
+      <a href="#zaezd">Заезд</a>
+      <a href="#zal">Пока моют</a>
+      <a href="#uslugi">Услуги</a>
+      <a href="#tshatelno">Тщательность</a>
+      <a href="#kontakty">Контакты</a>
+    </div>
+    <a class="navtel" href="tel:+79231470988">+7 923 147-09-88</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="w">
+    <span class="tag">Автомойка · Кирова, 291</span>
+    <h1>Заезд узкий.<br><span>Всё остальное — на 4,9</span></h1>
+    <p class="sub">Сто семь отзывов, и в тех, где есть текст, повторяется одно и то же:
+      «помыли отлично», «цена равна качеству», «зона ожидания супер».
+      А недовольство у всех ровно одно — ворота.
+      Поэтому начинаем с них, а не прячем на третьем экране.</p>
+    <div class="hrow">
+      <a class="btn" href="tel:+79231470988">Записаться на мойку
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#zaezd">Как сюда заехать</a>
+      <span class="pill"><i></i>Работаем до 23:00, семь дней в неделю</span>
+    </div>
+
+    <div class="heroimg">
+      <img src="photo/fasad.jpg" alt="Фасад Black Auto ночью: чёрный профлист, световые буквы, синяя неоновая нить и зелёный сигнальный фонарь над воротами">
+      <div class="cap">Те самые ворота, о которых пишут в отзывах. Ночью их видно издалека</div>
+    </div>
+
+    <div class="facts">
+      <div><b>4,9</b><s>по 107 отзывам в 2ГИС</s></div>
+      <div><b>2</b><s>машины моют одновременно</s></div>
+      <div><b>09–23</b><s>работаем до одиннадцати вечера</s></div>
+      <div><b>7</b><s>дней в неделю, без выходных</s></div>
+    </div>
+  </div>
+</section>
+
+<section id="zaezd">
+  <div class="w">
+    <span class="tag">Честно о главном</span>
+    <h2 style="margin-top:18px">Про ворота</h2>
+
+    <p class="said">«От заезда, конечно, начинается паника.
+      Но главное — результат и цена = качество»
+      <cite>Анастасия Герчук · отзыв в 2ГИС, 5 января 2026</cite></p>
+
+    <p>Заезд действительно неширокий — об этом написали четверо. Мы не можем
+      раздвинуть стены, зато можем сделать так, чтобы первый раз прошёл спокойно.
+      <em>Ни в одном отзыве нет ни слова о поцарапанной на въезде машине</em> —
+      только о нервах. Но нервы тоже считаются, и делать вид, что их нет,
+      мы не будем.</p>
+
+    <div class="zaezd">
+      <div class="tips">
+        <div><b>Правило первое</b>
+          <p>Заезжайте медленно и по центру. Кажется, что не пройдёте, —
+            почти всегда проходите. Габариты ворот больше, чем выглядят из-за руля.</p></div>
+        <div><b>Правило второе</b>
+          <p>Не уверены — просто посигнальте. Мойщик выйдет и покажет руками,
+            куда брать. Это нормальная просьба, а не признак неопытности.</p></div>
+        <div><b>Правило третье</b>
+          <p>Зимой у выезда наметает сугроб — про это тоже писали в отзыве.
+            Если после снегопада намело, скажите, снег уберут: чистить его
+            наша работа, а не ваша.</p></div>
+        <div><b>И контраргумент</b>
+          <p>На фото — Dodge Ram 1500 с двойной кабиной, один из самых крупных
+            пикапов на наших дорогах. Он заехал, помылся и выехал.
+            Ваш кроссовер точно пройдёт.</p></div>
+      </div>
+      <div>
+        <img src="photo/ram.jpg" alt="Полноразмерный пикап Dodge Ram 1500 внутри моечного бокса Black Auto">
+        <p class="said" style="margin-bottom:0">«Даже при внушительных габаритах
+          спокойно заехал в ворота, не знаю почему остальные жалуются»
+          <cite>Отзыв в 2ГИС, 2 мая 2026</cite></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="zal" class="pale">
+  <div class="w">
+    <span class="tag">Пока моют</span>
+    <h2 style="margin-top:18px">Ожидание здесь — часть услуги</h2>
+    <p style="margin-top:18px">Обычно на мойке выбор простой: мёрзнуть на улице
+      или сидеть в машине у соседнего поста. Здесь есть зал, и в отзывах
+      про него пишут чаще, чем про саму мойку.</p>
+
+    <div class="grid">
+      <div class="card"><span class="num">01</span>
+        <h3>Большой телевизор и приставка</h3>
+        <p>«Уютная зона с большим телевизором и приставкой — время пролетело
+          незаметно», «поиграл в Xbox, всё было супер». Это цитаты, не обещания.</p></div>
+      <div class="card"><span class="num">02</span>
+        <h3>Бар с напитками</h3>
+        <p>Кофе и чай с собой, холодные напитки — на месте. Комплексная мойка
+          идёт не пять минут, и лучше провести их с чашкой.</p></div>
+      <div class="card"><span class="num">03</span>
+        <h3>Wi-Fi</h3>
+        <p>Если надо доработать или ответить на письма — сеть открыта
+          для клиентов, пароль спросите на стойке.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="uslugi">
+  <div class="w">
+    <span class="tag">Услуги</span>
+    <h2 style="margin-top:18px">Что делаем</h2>
+
+    <div class="srv">
+      <div>
+        <h3>Комплексная мойка</h3>
+        <p>Кузов, диски, арки, стёкла, сушка, протяжка проёмов и порогов.
+          Плюс обработка резинок дверей и продувка воздухом, если попросите.</p>
+      </div>
+      <div>
+        <h3>Химчистка салона</h3>
+        <p>Сиденья, ковролин, потолок, пластик. «Сиденья теперь как новые» —
+          отзыв про химчистку сидений, а не про рекламный буклет.</p>
+      </div>
+      <div>
+        <h3>Мойка двигателя</h3>
+        <p>С защитой электрики и разъёмов. Делаем, когда подкапотное
+          действительно требует, а не «на всякий случай».</p>
+      </div>
+      <div>
+        <h3>Полировка кузова</h3>
+        <p>Восстановительная и защитная. После покупки машины с рук —
+          обычно самое заметное, что можно с ней сделать за один день.</p>
+      </div>
+      <div>
+        <h3>Запись</h3>
+        <p>Постов два, и в вечерние часы они заняты. Позвоните — назовём время,
+          в которое не придётся ждать в очереди на улице.</p>
+      </div>
+    </div>
+
+    <div class="acts" style="margin-top:32px">
+      <a class="btn" href="tel:+79231470988">Позвонить и записаться
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="https://2gis.ru/firm/70000001098336293" target="_blank" rel="noopener">
+        Цены и фото в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="tshatelno" class="pale">
+  <div class="w">
+    <span class="tag">Тщательность</span>
+    <h2 style="margin-top:18px">Там, где другие не моют</h2>
+
+    <p class="said">«Помыли на совесть — там, где другие не моют,
+      потому что нашли маленький нож, который был утерян больше года назад»
+      <cite>Ivan Krasovskii · отзыв в 2ГИС, 27 мая 2026</cite></p>
+
+    <p>Это, пожалуй, лучшая рекомендация, которую может получить мойка.
+      Вещь, пролежавшая под сиденьем год, находится только тогда, когда салон
+      разбирают, а не проходят пылесосом по видимым местам.</p>
+    <p style="margin-top:14px">Из той же серии — следы старой тонировки на стёклах:
+      их снимают отдельно, руками, и в обычный комплекс это не входит нигде.
+      Здесь сняли. <em>Скажите, что вас смущает в машине</em>, — и это станет
+      частью работы, а не «мы такое не делаем».</p>
+
+    <div class="two">
+      <img src="photo/porsche.jpg" alt="Мойщик обходит с пеногенератором белый Porsche Cayenne в боксе">
+      <img src="photo/posle.jpg" alt="Чистый серый Toyota RAV4 у выезда с мойки">
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy">
+  <div class="w">
+    <span class="tag">Отзывы · 4,9 из 5 по 107 оценкам</span>
+    <blockquote class="up" style="margin-top:24px;background:transparent;border:0;padding:0">
+      <p class="bigq">«Машина стала просто неузнаваемой — такая чистота,
+        что даже не ожидали»</p>
+      <p class="by">Ксения Ануфриева · отзыв в 2ГИС, 7 ноября 2025</p>
+    </blockquote>
+
+    <div class="pair">
+      <blockquote class="up">
+        <p>Особенно порадовало место ожидания: уютная зона с большим телевизором
+          и приставкой — время пролетело незаметно. А бар с холодными и горячими
+          напитками добавил приятного комфорта. Живём рядом, теперь точно будем
+          заезжать регулярно.</p>
+        <cite>Ксения Ануфриева · 7 ноября 2025</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>После покупки нужно было полностью помыть машину. Справились на отлично,
+          помыли всё просто идеально. Также отмыли следы старой тонировки
+          на стёклах, буду приезжать ещё.</p>
+        <cite>Клим Чернышев · 28 октября 2025</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Вежливый персонал, отличная зона ожидания, мойщики выполняют свою работу
+          качественно без косяков. Цена = качество, 10 из 10.</p>
+        <cite>Zloy Shuma · 15 августа 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Давно искал такую мойку, находятся рядом с работой, обговорили моменты,
+          машину намыли отлично. Делал ещё химчистку сидушек — сидушки теперь
+          как новые, буду заезжать ещё.</p>
+        <cite>Владислав Вадимович · 17 мая 2026</cite>
+      </blockquote>
+    </div>
+
+    <div class="acts up" style="margin-top:34px">
+      <a class="btn g" href="https://2gis.ru/firm/70000001098336293" target="_blank" rel="noopener">
+        Все 107 отзывов в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty" class="pale">
+  <div class="w split">
+    <div class="up">
+      <span class="tag">Контакты</span>
+      <h2 style="margin-top:16px">Кирова, 291</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>улица Кирова, 291<br>
+          <span class="q2">Октябрьский район, Новосибирск</span></dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+79231470988">+7 923 147-09-88</a></dd></div>
+        <div><dt>Режим</dt><dd>Ежедневно 09:00–23:00, без выходных</dd></div>
+        <div><dt>Посты</dt><dd>Два — моем до двух машин одновременно</dd></div>
+        <div><dt>Оплата</dt><dd>Картой, наличными, переводом, по QR-коду
+          и «Плати частями»</dd></div>
+        <div><dt>В зале</dt><dd>Телевизор, приставка, бар с напитками, Wi-Fi</dd></div>
+      </div>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="tel:+79231470988">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/70000001098336293" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+
+    <div class="up">
+      <div class="map">
+        <div class="mapstub" data-src="https://yandex.ru/map-widget/v1/?ll=82.971947%2C55.005440&z=17&text=Новосибирск%2C%20улица%20Кирова%2C%20291" data-title="Карта: улица Кирова, 291">
+          <span>Карта загружается с сервера «Яндекса» и устанавливает свои cookie.</span>
+          <button type="button">Показать карту</button>
+        </div>
+      </div>
+      <h2 style="font-size:clamp(22px,3vw,34px);margin-top:32px">Записаться</h2>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label>
+          <input id="n" name="name" required autocomplete="name" placeholder="Ксения"></div>
+        <div><label for="p">Телефон</label>
+          <input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 923 000-00-00"></div>
+        <div><label for="c">Машина</label>
+          <input id="c" name="car" placeholder="Mazda CX-5"></div>
+        <div><label for="m">Что нужно и когда</label>
+          <textarea id="m" name="message" placeholder="Комплекс и химчистка сидений, желательно после семи вечера"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cmp">Компания</label>
+          <input id="cmp" name="company" tabindex="-1" autocomplete="off"></div>
+        <label class="agree"><input type="checkbox" id="ag" name="consent" required>
+          <span>Я даю согласие на обработку моих персональных данных в соответствии
+          с <a href="privacy/" target="_blank" rel="noopener">Политикой обработки персональных данных</a></span></label>
+        <label class="agree opt"><input type="checkbox" id="adv" name="ads">
+          <span>Хочу получать напоминания о плановом обслуживании и сообщения об акциях
+          (необязательно)</span></label>
+        <button id="sb" class="btn" type="submit" disabled>Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Заявку обрабатываем только затем, чтобы перезвонить
+          и подтвердить время.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="ck" role="dialog" aria-label="Файлы cookie">
+  Мы используем файлы cookie: технически необходимые для работы страницы и те, что
+  устанавливает виджет «Яндекс.Карт». Аналитику и рекламные счётчики без вашего согласия
+  не подключаем. Подробности — в <a href="privacy/">Политике обработки персональных данных</a>.
+  <div class="ckb">
+    <button class="y" type="button" data-ck="y">Принять</button>
+    <button type="button" data-ck="n">Отклонить</button>
+  </div>
+</div>
+
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">Black Auto<s>Кирова, 291</s></div>
+    улица Кирова, 291, Новосибирск · ежедневно 09:00–23:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+79231470988">+7 923 147-09-88</a>
+    <a href="https://2gis.ru/firm/70000001098336293" target="_blank" rel="noopener">2ГИС</a>
+    <a href="privacy/">Политика обработки персональных данных</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+79231470988">Позвонить</a>
+  <a class="btn g" href="#uslugi">Услуги</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoWash","name":"Black Auto",
+"description":"Автомойка на два поста: комплексная мойка кузова, химчистка салона, мойка двигателя и полировка кузова. Запись по телефону, зал ожидания с телевизором, игровой приставкой, баром и Wi-Fi. Работаем ежедневно с 09:00 до 23:00.",
+"address":{"@type":"PostalAddress","streetAddress":"улица Кирова, 291","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":55.00544,"longitude":82.971947},
+"telephone":"+79231470988",
+"openingHoursSpecification":[
+ {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"09:00","closes":"23:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"107","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/70000001098336293"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и подтвердим время.';ok.style.display='block';f.reset();return}}catch(_){}}
+  ok.innerHTML='Приём заявок пока настраивается. Позвоните, пожалуйста: <a href="tel:+79231470988">+7 923 147-09-88</a>.';
+  ok.style.display='block';
+});
+</script>
+<script>
+(function(){
+  var K='ck-choice', box=document.getElementById('ck');
+  function loadMap(){
+    document.querySelectorAll('.mapstub[data-src]').forEach(function(s){
+      var f=document.createElement('iframe');
+      f.loading='lazy'; f.title=s.dataset.title||'Карта проезда'; f.src=s.dataset.src;
+      f.style.width='100%'; f.style.height='100%'; f.style.border='0';
+      s.parentNode.appendChild(f); s.remove();
+    });
+  }
+  var saved=null; try{saved=localStorage.getItem(K)}catch(e){}
+  if(saved==='y'){loadMap()} else if(!saved && box){box.classList.add('on')}
+  if(box) box.addEventListener('click',function(e){
+    var b=e.target.closest('[data-ck]'); if(!b)return;
+    try{localStorage.setItem(K,b.dataset.ck)}catch(e){}
+    box.classList.remove('on'); if(b.dataset.ck==='y') loadMap();
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.mapstub button')) loadMap();
+  });
+  var ag=document.getElementById('ag'), sb=document.getElementById('sb');
+  if(ag&&sb){ var sync=function(){sb.disabled=!ag.checked}; sync();
+    ag.addEventListener('change',sync); }
+})();
+</script>
+</body>
+</html>

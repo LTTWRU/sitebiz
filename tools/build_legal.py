@@ -425,7 +425,7 @@ def patch(html: str) -> tuple[str, list[str]]:
         done.append("fine")
 
     # 5. отложенная карта
-    m = re.search(r'<iframe loading="lazy" title="([^"]+)"\s*\n?\s*src="([^"]+)"></iframe>', html)
+    m = re.search(r'<iframe loading="lazy" title="([^"]+)"\s*\n?\s*src="([^"]+)"[^>]*></iframe>', html)
     if m:
         title, src = m.group(1), m.group(2)
         stub = (f'<div class="mapstub" data-src="{src}" data-title="{title}">'

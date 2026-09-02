@@ -569,29 +569,6 @@ f.addEventListener('submit',async e=>{
   document.addEventListener('click',function(e){
     if(e.target.closest('.mapstub button')) loadMap();
   });
-})();
-</script>
-<script>
-(function(){
-  var K='ck-choice', box=document.getElementById('ck');
-  function loadMap(){
-    document.querySelectorAll('.mapstub[data-src]').forEach(function(s){
-      var f=document.createElement('iframe');
-      f.loading='lazy'; f.title=s.dataset.title||'Карта проезда'; f.src=s.dataset.src;
-      f.style.width='100%'; f.style.height='100%'; f.style.border='0';
-      s.parentNode.appendChild(f); s.remove();
-    });
-  }
-  var saved=null; try{saved=localStorage.getItem(K)}catch(e){}
-  if(saved==='y'){loadMap()} else if(!saved && box){box.classList.add('on')}
-  if(box) box.addEventListener('click',function(e){
-    var b=e.target.closest('[data-ck]'); if(!b)return;
-    try{localStorage.setItem(K,b.dataset.ck)}catch(e){}
-    box.classList.remove('on'); if(b.dataset.ck==='y') loadMap();
-  });
-  document.addEventListener('click',function(e){
-    if(e.target.closest('.mapstub button')) loadMap();
-  });
   var ag=document.getElementById('ag'), sb=document.getElementById('sb');
   if(ag&&sb){ var sync=function(){sb.disabled=!ag.checked}; sync();
     ag.addEventListener('change',sync); }

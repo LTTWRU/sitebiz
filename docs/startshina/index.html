@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>StartShina — б/у шины и диски с шиномонтажом, Новосибирск, Восточный посёлок, 34</title>
+<meta name="description" content="StartShina, Новосибирск, улица Восточный посёлок, 34. Склад б/у шин и дисков с шиномонтажом во дворе: подбираем комплект под размер и бюджет, тут же переобуваем, снятое укладываем в багажник. Аренда колёс, выкуп б/у шин, ремонт порезов, ошиповка, доставка. Пн–Пт 10:00–19:00, Сб–Вс 10:00–17:00. 4,8 по 127 отзывам в 2ГИС.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="StartShina — Восточный посёлок, 34">
+<meta property="og:description" content="Склад б/у шин и дисков с шиномонтажом во дворе: подобрали, переобули, снятое уложили в багажник. 4,8 по 127 отзывам.">
+<meta property="og:image" content="photo/hero.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2317161A'/><circle cx='16' cy='16' r='10.5' fill='none' stroke='%23F2621B' stroke-width='4'/><circle cx='16' cy='16' r='3.4' fill='%23E7E4DE'/></svg>">
+<link rel="stylesheet" href="../fonts/inter-tight.css">
+<link rel="stylesheet" href="../fonts/onest.css">
+<link rel="stylesheet" href="../fonts/ibm-plex-mono.css">
+<style>
+/* StartShina, Восточный посёлок 34.
+   Это не сервис и не магазин по отдельности: склад б/у шин и дисков,
+   а шиномонтаж стоит в том же дворе. В отзывах это повторяется дословно
+   почти в каждом: «купил и тут же переобули», «подобрали, на месте
+   переобули», «20 минут и уехали». Значит, продаём один заезд, а не
+   список услуг.
+   Структурный приём взят с их же фотографии склада: на боковинах шин
+   от руки написаны типоразмеры — «195 65 15», «MATADOR 195 55 15».
+   Поэтому все подписи и рубрики на странице набраны моноширинным
+   шрифтом и выглядят как эти метки маркером.
+   Кнопка при наведении «катится»: протектор на заливке уходит вбок. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pa:#E7E4DE; --pa-2:#DCD8D0; --card:#FFFFFF;
+  --ink:#17161A; --ink-2:#54525A; --ink-3:#8A8790;
+  --line:#CFCAC1; --line-2:#B2ACA1;
+  --ac:#F2621B; --ac-2:#C64B0E; --ac-soft:#FBE3D6;
+  --wrap:1060px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--pa);color:var(--ink);
+  font:400 16.5px/1.72 "Onest",-apple-system,BlinkMacSystemFont,sans-serif;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.w{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{padding:clamp(56px,7.6vw,102px) 0}
+section[id]{scroll-margin-top:78px}
+
+h1,h2,h3{font-family:"Inter Tight",-apple-system,sans-serif;
+  letter-spacing:-.028em;line-height:1.06;text-wrap:balance;font-weight:500}
+h1{font-size:clamp(34px,5.8vw,66px);font-weight:400}
+h2{font-size:clamp(25px,3.6vw,44px)}
+h3{font-size:clamp(18px,2vw,23px);line-height:1.22}
+p{max-width:64ch}
+em{font-style:normal;box-shadow:inset 0 -.5em 0 var(--ac-soft)}
+
+/* метка маркером на боковине — основной приём страницы */
+.sz{font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ink-2);display:inline-block;
+  padding:5px 10px 4px;border:1.5px solid var(--line-2);
+  border-radius:2px;transform:rotate(-.7deg)}
+.sz.ac{color:var(--ac-2);border-color:var(--ac)}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+
+.up{opacity:0;transform:translateY(15px);transition:opacity .62s var(--ease),transform .62s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .up{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* кнопка: заливка с протектором, при наведении протектор катится */
+.btn{position:relative;overflow:hidden;isolation:isolate;
+  display:inline-flex;align-items:center;gap:9px;
+  padding:14px 24px;border:1.6px solid var(--ac);border-radius:3px;
+  background:var(--ac);color:#fff;cursor:pointer;
+  font-family:"Inter Tight",sans-serif;font-size:16px;font-weight:500;letter-spacing:-.01em;
+  transition:border-color .25s var(--ease),background .25s var(--ease)}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:repeating-linear-gradient(102deg,
+    rgba(0,0,0,.19) 0 6px, rgba(0,0,0,0) 6px 17px);
+  background-size:34px 100%;background-position:0 0;opacity:.32;
+  transition:opacity .3s var(--ease)}
+.btn:hover::before,.btn:focus-visible::before{opacity:.8}
+.btn:hover::before,.btn:focus-visible::before{animation:tread .62s linear infinite}
+@keyframes tread{from{background-position:0 0}to{background-position:34px 0}}
+.btn:hover,.btn:focus-visible{background:var(--ac-2);border-color:var(--ac-2)}
+.btn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;
+  transition:transform .3s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn.g{background:transparent;color:var(--ink);border-color:var(--line-2)}
+.btn.g::before{background:repeating-linear-gradient(102deg,
+  rgba(23,22,26,.10) 0 6px, rgba(0,0,0,0) 6px 17px);background-size:34px 100%;opacity:0;
+  transition:opacity .25s}
+.btn.g:hover{background:transparent;border-color:var(--ink)}
+.btn.g:hover::before{opacity:1}
+.btn.lt{border-color:rgba(255,255,255,.4);background:transparent;color:#fff}
+.btn.lt:hover{background:transparent;border-color:#fff}
+:focus-visible{outline:2.5px solid var(--ac);outline-offset:3px;border-radius:2px}
+.acts{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+
+/* шапка */
+header{position:sticky;top:0;z-index:60;background:rgba(231,228,222,.9);
+  backdrop-filter:blur(9px);border-bottom:1px solid transparent;transition:border-color .3s}
+header.on{border-bottom-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;
+  min-height:62px;max-width:var(--wrap);margin:0 auto;padding:0 26px}
+.brand{font-family:"Inter Tight",sans-serif;font-weight:500;font-size:19px;
+  letter-spacing:-.03em;display:flex;align-items:baseline;gap:10px}
+.brand s{text-decoration:none;font-family:"IBM Plex Mono",monospace;font-size:10.5px;
+  letter-spacing:.1em;color:var(--ink-3);text-transform:uppercase}
+.menu{display:flex;gap:24px;font-size:14px;color:var(--ink-2)}
+.menu a{position:relative;padding:3px 0}
+.menu a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1.5px;
+  background:var(--ac);transform:scaleX(0);transform-origin:left;
+  transition:transform .3s var(--ease)}
+.menu a:hover{color:var(--ink)}
+.menu a:hover::after{transform:scaleX(1)}
+@media (max-width:900px){.menu{display:none}}
+.navtel{font-family:"IBM Plex Mono",monospace;font-size:13.5px;font-weight:500;white-space:nowrap}
+@media (max-width:560px){.navtel{display:none}}
+
+/* герой */
+.hero{padding:clamp(40px,6vw,74px) 0 0}
+.hero .lead{max-width:20ch}
+.hero p.sub{margin-top:22px;font-size:clamp(16.5px,1.7vw,19px);color:var(--ink-2);max-width:56ch}
+.quoteline{margin-top:20px;padding-left:14px;border-left:2.5px solid var(--ac);
+  font-size:14.5px;color:var(--ink-2);max-width:48ch}
+.quoteline b{font-weight:400;color:var(--ink)}
+.heroimg{margin-top:clamp(34px,4.6vw,58px);position:relative;
+  border-radius:4px;overflow:hidden;background:var(--ink)}
+.heroimg img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:50% 84%}
+.heroimg .cap{position:absolute;left:0;bottom:0;right:0;padding:44px 22px 16px;
+  background:linear-gradient(transparent,rgba(23,22,26,.82));
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(255,255,255,.86)}
+.facts{margin-top:26px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line)}
+.facts div{background:var(--pa);padding:16px 15px}
+.facts b{display:block;font-family:"Inter Tight",sans-serif;font-weight:200;
+  font-size:clamp(27px,3.4vw,40px);letter-spacing:-.04em;line-height:1}
+.facts s{text-decoration:none;display:block;margin-top:6px;font-size:13px;color:var(--ink-2)}
+@media (max-width:720px){.facts{grid-template-columns:1fr 1fr}}
+
+/* один заезд */
+.steps{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+@media (max-width:820px){.steps{grid-template-columns:1fr}}
+.step{border-top:2px solid var(--ink);padding-top:16px}
+.step:nth-child(2){border-top-color:var(--ac)}
+.step .n{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;
+  color:var(--ink-3)}
+.step h3{margin:9px 0 8px}
+.step p{font-size:15.4px;color:var(--ink-2)}
+.arrow{margin-top:30px;display:flex;align-items:center;gap:14px;
+  font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-3)}
+.arrow i{flex:1;height:1.5px;background:var(--line-2);font-style:normal}
+
+/* склад */
+.dark{background:var(--ink);color:#EFEDE9}
+.dark h2,.dark h3{color:#fff}
+.dark p{color:#B6B3BA}
+.dark .sz{color:#B6B3BA;border-color:rgba(255,255,255,.24)}
+.dark .sz.ac{color:#FF8A4C;border-color:var(--ac)}
+.dark .card{background:#1F1E23;border-color:#2E2C33}
+.sklad{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;margin-top:32px}
+@media (max-width:820px){.sklad{grid-template-columns:1fr}}
+.sklad img{border-radius:3px;width:100%;height:100%;object-fit:cover;min-height:230px}
+.sizes{margin-top:34px;display:flex;flex-wrap:wrap;gap:9px}
+.sizes .sz{font-size:12.5px;padding:7px 11px 6px;letter-spacing:.08em}
+.sizes .sz:nth-child(3n){transform:rotate(.8deg)}
+.sizes .sz:nth-child(5n){transform:rotate(-1.4deg)}
+.note{margin-top:22px;font-size:14.5px;color:#9A97A0;max-width:58ch}
+.dark .note em{box-shadow:inset 0 -.5em 0 rgba(242,98,27,.28)}
+
+/* услуги */
+.grid{margin-top:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:860px){.grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:3px;
+  padding:22px 20px 24px;transition:border-color .3s var(--ease),transform .3s var(--ease)}
+.card:hover{border-color:var(--line-2);transform:translateY(-3px)}
+.card h3{font-size:19px;margin:11px 0 8px}
+.card p{font-size:15px;color:var(--ink-2)}
+
+/* аренда */
+.rent{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(24px,3.4vw,48px);
+  align-items:center}
+@media (max-width:820px){.rent{grid-template-columns:1fr}}
+.rent img{border-radius:3px;aspect-ratio:4/3;object-fit:cover;width:100%}
+.rentlist{margin-top:20px;display:grid;gap:12px}
+.rentlist div{display:flex;gap:12px;font-size:15.4px;color:var(--ink-2);
+  padding-bottom:12px;border-bottom:1px dashed var(--line)}
+.rentlist div:last-child{border-bottom:0}
+.rentlist b{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;
+  color:var(--ac-2);white-space:nowrap;padding-top:3px;min-width:64px}
+
+/* честный блок */
+.honest{background:var(--pa-2)}
+.hcols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,3vw,42px);margin-top:28px}
+@media (max-width:820px){.hcols{grid-template-columns:1fr}}
+.hcols article{background:var(--card);border:1px solid var(--line);border-radius:3px;
+  padding:24px 22px}
+.hcols article h3{margin-bottom:10px}
+.hcols article p{font-size:15.4px;color:var(--ink-2)}
+.claim{border-left:3px solid var(--ink);padding:2px 0 2px 16px;margin-top:26px;
+  font-size:15.5px;color:var(--ink-2);max-width:62ch}
+.claim b{display:block;font-family:"IBM Plex Mono",monospace;font-size:11.5px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:7px;
+  font-weight:500}
+
+/* отзывы */
+blockquote{background:var(--card);border:1px solid var(--line);border-radius:3px;
+  padding:22px 21px}
+blockquote p{font-size:15.6px;color:var(--ink-2)}
+blockquote cite{display:block;margin-top:13px;font-style:normal;
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.09em;
+  color:var(--ink-3)}
+.bigq{font-family:"Inter Tight",sans-serif;font-weight:400;letter-spacing:-.028em;
+  font-size:clamp(22px,3vw,34px);line-height:1.16;color:var(--ink)!important;
+  max-width:22ch}
+.by{margin-top:14px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;
+  letter-spacing:.09em;color:var(--ink-3)}
+.pair{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:760px){.pair{grid-template-columns:1fr}}
+
+/* контакты */
+.pale{background:var(--pa-2)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,3.6vw,54px)}
+@media (max-width:860px){.split{grid-template-columns:1fr}}
+.rows{margin-top:22px;display:grid;gap:1px;background:var(--line);
+  border:1px solid var(--line)}
+.rows>div{background:var(--pa-2);padding:14px 16px;display:grid;
+  grid-template-columns:118px 1fr;gap:14px;align-items:baseline}
+@media (max-width:520px){.rows>div{grid-template-columns:1fr;gap:4px}}
+dt{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--ink-3)}
+dd{font-size:15.4px}
+dd a{border-bottom:1px solid var(--line-2)}
+dd a:hover{border-bottom-color:var(--ac)}
+.q2{color:var(--ink-2);font-size:14px}
+.map{aspect-ratio:16/11;background:var(--pa);border:1px solid var(--line);
+  border-radius:3px;overflow:hidden;position:relative}
+
+form{margin-top:16px;display:grid;gap:13px}
+label{display:block;font-family:"IBM Plex Mono",monospace;font-size:11.5px;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+input,textarea{width:100%;background:var(--card);border:1px solid var(--line);
+  border-radius:3px;padding:12px 13px;font:400 15.5px/1.5 "Onest",sans-serif;
+  color:var(--ink);transition:border-color .22s}
+input:focus,textarea:focus{outline:none;border-color:var(--ac)}
+textarea{min-height:96px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fine{font-size:13px;color:var(--ink-3);max-width:52ch}
+.sent{display:none;background:var(--ac-soft);border:1px solid var(--ac);
+  border-radius:3px;padding:14px 16px;font-size:15px;margin-top:14px}
+
+footer{background:var(--ink);color:#9A97A0;padding:38px 0;font-size:14px}
+footer a{color:#D6D3D9}
+footer a:hover{color:var(--ac)}
+.fin{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap}
+footer .brand{color:#fff}
+footer .brand s{color:#7D7A83}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:9px;
+  padding:9px 13px calc(9px + env(safe-area-inset-bottom));
+  background:rgba(231,228,222,.96);backdrop-filter:blur(9px);
+  border-top:1px solid var(--line)}
+.bar .btn{flex:1;justify-content:center;padding:12px 12px;font-size:15px}
+@media (max-width:700px){.bar{display:flex}body{padding-bottom:74px}}
+/* --- 152-ФЗ --- */
+/* --- 152-ФЗ: согласие, cookie, отложенная карта --- */
+.agree{display:grid;grid-template-columns:19px 1fr;gap:12px;align-items:start;
+  font:400 13.5px/1.55 inherit;font-family:inherit;letter-spacing:normal;text-transform:none;
+  color:inherit;margin:0;cursor:pointer;max-width:52ch}
+.agree span{display:block;letter-spacing:normal;text-transform:none}
+.agree input{width:19px;height:19px;margin:2px 0 0;accent-color:currentColor;cursor:pointer;flex:none}
+.agree a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.agree.opt{opacity:.8}
+button[disabled],.btn[disabled]{opacity:.4;cursor:not-allowed}
+.mapstub{position:absolute;inset:0;display:flex;flex-direction:column;gap:12px;
+  align-items:center;justify-content:center;text-align:center;padding:22px;
+  font-size:13.5px;line-height:1.5;background:rgba(127,127,127,.10)}
+.mapstub button{font:inherit;font-size:13px;padding:11px 20px;cursor:pointer;
+  border:1px solid currentColor;background:transparent;color:inherit;border-radius:3px}
+.mapstub button:hover{opacity:.72}
+.map{position:relative}
+#ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:95;display:none;max-width:440px;
+  padding:18px 20px;background:#101114;color:#F2F0EC;font-size:13.5px;line-height:1.6;
+  border:1px solid rgba(255,255,255,.14);border-radius:6px;
+  box-shadow:0 18px 48px rgba(0,0,0,.45)}
+#ck.on{display:block}
+#ck a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+#ck .ckb{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+#ck button{font:inherit;font-size:12.5px;font-weight:600;letter-spacing:.04em;padding:11px 20px;
+  cursor:pointer;border-radius:4px;border:1px solid rgba(255,255,255,.3);
+  background:transparent;color:#F2F0EC}
+#ck button.y{background:#F2F0EC;color:#101114;border-color:#F2F0EC}
+#ck button:hover{opacity:.85}
+@media(max-width:760px){#ck{bottom:84px;left:10px;right:10px}}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <nav class="nav">
+    <a class="brand" href="#top">StartShina<s>Восточный посёлок, 34</s></a>
+    <div class="menu">
+      <a href="#zaezd">Один заезд</a>
+      <a href="#sklad">Склад</a>
+      <a href="#uslugi">Услуги</a>
+      <a href="#datchiki">Честно</a>
+      <a href="#kontakty">Контакты</a>
+    </div>
+    <a class="navtel" href="tel:+79231448111">+7 923 144-81-11</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="w">
+    <span class="sz ac">Б/У шины и диски · шиномонтаж во дворе</span>
+    <h1 class="lead" style="margin-top:20px">Приехали на своих.<br>Уехали на других.</h1>
+    <p class="sub">Склад б/у шин и дисков, и прямо в этом же дворе — подъёмник,
+      балансировка и домкраты. Называете размер и бюджет, мы выносим варианты,
+      тут же переобуваем, а снятый комплект укладываем вам в багажник.</p>
+    <p class="quoteline"><b>«Быстрый шиномонтаж — 20 минут и уехали»</b><br>
+      отзыв в 2ГИС, 11 июня 2026 года</p>
+    <div class="acts" style="margin-top:28px">
+      <a class="btn" href="tel:+79231448111">Позвонить и назвать размер
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn g" href="#sklad">Что на складе</a>
+    </div>
+
+    <div class="heroimg">
+      <img src="photo/hero.jpg" alt="Двор StartShina: автомобиль на домкрате у ворот, вдоль стены — стопки шин">
+      <div class="cap">Восточный посёлок, 34 · машина уже на домкрате, комплект рядом</div>
+    </div>
+
+    <div class="facts">
+      <div><b>4,8</b><s>по 127 отзывам в 2ГИС</s></div>
+      <div><b>R13–R21</b><s>легковые размеры</s></div>
+      <div><b>7</b><s>дней в неделю</s></div>
+      <div><b>1</b><s>заезд: подбор и монтаж</s></div>
+    </div>
+  </div>
+</section>
+
+<section id="zaezd">
+  <div class="w">
+    <span class="sz">Как это выглядит</span>
+    <h2 style="margin-top:18px">Магазин и шиномонтаж — это одни и те же ворота</h2>
+    <p style="margin-top:16px;color:var(--ink-2)">Обычно за резиной едут в одно место,
+      а переобуваться — в другое, и между ними половина субботы. Здесь склад и подъёмник
+      стоят во дворе друг напротив друга, поэтому <em>всё закрывается за один приезд</em>.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="n">01</div>
+        <h3>Называете размер и сумму</h3>
+        <p>Размер написан на боковине — например, 195/65 R15. Не нашли — скажите
+          марку и год, подберём по машине. Бюджет тоже называйте сразу: под него
+          и будем искать.</p>
+      </div>
+      <div class="step">
+        <div class="n">02</div>
+        <h3>Выносим варианты и показываем износ</h3>
+        <p>Смотрите комплект живьём: остаток протектора, год выпуска, боковины,
+          латки. Что не понравилось — не берёте, вынесем следующий.</p>
+      </div>
+      <div class="step">
+        <div class="n">03</div>
+        <h3>Переобуваем и грузим снятое</h3>
+        <p>Балансируем, ставим, а старый комплект укладываем в багажник —
+          или выкупаем, если он вам больше не нужен.</p>
+      </div>
+    </div>
+
+    <div class="arrow">
+      <span>Приехали</span><i></i><span>Уехали на новом комплекте</span>
+    </div>
+  </div>
+</section>
+
+<section id="sklad" class="dark">
+  <div class="w">
+    <span class="sz ac">Склад</span>
+    <h2 style="margin-top:18px">Размеры написаны прямо на боковинах</h2>
+    <p style="margin-top:16px;max-width:60ch">Никакой базы и артикулов: комплекты
+      стоят в ангаре стопками, на каждой маркером подписан типоразмер. Так быстрее —
+      мастер идёт вдоль ряда и снимает нужную стопку, пока вы ждёте у ворот.</p>
+
+    <div class="sklad">
+      <img src="photo/sklad.jpg" alt="Ангар со стопками шин, на боковинах маркером подписаны размеры">
+      <img src="photo/diski.jpg" alt="Деревянные стеллажи с литыми дисками: Lexus, BMW, Mitsubishi">
+    </div>
+
+    <p style="margin-top:34px;max-width:60ch">Диски лежат на деревянных стеллажах
+      в соседнем боксе — литьё и штамповка, легковые и кроссоверные. Подбираем
+      по диаметру, разболтовке, вылету и центральному отверстию, а не «на глаз».</p>
+
+    <div class="sizes">
+      <span class="sz">175/70 R13</span>
+      <span class="sz">185/65 R14</span>
+      <span class="sz">185/60 R15</span>
+      <span class="sz ac">195/65 R15</span>
+      <span class="sz ac">195/55 R15</span>
+      <span class="sz">205/55 R16</span>
+      <span class="sz">205/60 R16</span>
+      <span class="sz">215/60 R16</span>
+      <span class="sz">215/55 R17</span>
+      <span class="sz">225/45 R17</span>
+      <span class="sz">225/65 R17</span>
+      <span class="sz">235/60 R18</span>
+      <span class="sz">235/55 R18</span>
+      <span class="sz">245/45 R18</span>
+      <span class="sz">255/50 R19</span>
+      <span class="sz">265/50 R20</span>
+    </div>
+    <p class="note">Это ходовые размеры, а не список наличия: склад б/у меняется
+      каждый день. <em>Напишите свой размер в WhatsApp — ответим фотографией
+      того, что стоит сегодня</em>, с остатком протектора и годом.
+      Двумя оранжевыми отмечены размеры, которые видно на фотографии выше.</p>
+
+    <div class="acts" style="margin-top:30px">
+      <a class="btn" href="https://wa.me/79231448111" target="_blank" rel="noopener">
+        Спросить размер в WhatsApp
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn lt" href="tel:+79231448111">+7 923 144-81-11</a>
+    </div>
+  </div>
+</section>
+
+<section id="uslugi">
+  <div class="w">
+    <span class="sz">Услуги</span>
+    <h2 style="margin-top:18px">Что ещё делаем с колёсами</h2>
+
+    <div class="grid">
+      <div class="card">
+        <span class="sz">Шиномонтаж</span>
+        <h3>Переобувка и балансировка</h3>
+        <p>Легковые и кроссоверы. Диски не царапаем — про это в отзывах пишут
+          отдельно, и мы этим дорожим.</p>
+      </div>
+      <div class="card">
+        <span class="sz">Ремонт</span>
+        <h3>Ремонт порезов</h3>
+        <p>Боковые и протекторные порезы — жгутом, латкой или грибком, в зависимости
+          от того, куда пришёлся удар. Если ремонт не держит нагрузку, скажем честно.</p>
+      </div>
+      <div class="card">
+        <span class="sz">Зима</span>
+        <h3>Ошиповка</h3>
+        <p>Дошиповываем облысевшие ряды и ошиповываем «липучку» под шип, если
+          рисунок и глубина протектора это позволяют.</p>
+      </div>
+      <div class="card">
+        <span class="sz">Продажа</span>
+        <h3>Б/у шины и диски</h3>
+        <p>Комплектами и поштучно — на замену одному пробитому колесу тоже
+          подберём пару по износу.</p>
+      </div>
+      <div class="card">
+        <span class="sz">Выкуп</span>
+        <h3>Выкупаем ваш б/у комплект</h3>
+        <p>Не хотите везти старую резину домой и хранить на балконе — оценим
+          на месте и выкупим. Часть суммы уйдёт в зачёт нового комплекта.</p>
+      </div>
+      <div class="card">
+        <span class="sz">Доставка</span>
+        <h3>Привозим комплект</h3>
+        <p>Если ехать некогда, довезём подобранные колёса по городу — договариваемся
+          по звонку.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="arenda" class="pale">
+  <div class="w rent">
+    <div class="up">
+      <span class="sz ac">Редкая услуга</span>
+      <h2 style="margin-top:18px">Колёса можно взять в аренду</h2>
+      <p style="margin-top:16px;color:var(--ink-2)">Не всякая ситуация стоит покупки
+        комплекта. Иногда колёса нужны на неделю — и тогда логичнее взять их,
+        а потом вернуть.</p>
+      <div class="rentlist">
+        <div><b>Перегон</b><span>Пригнать машину из другого города и вернуть
+          комплект, не оставляя его в гараже навсегда.</span></div>
+        <div><b>Ремонт</b><span>Свои диски уехали на прокатку или в покраску —
+          подменные позволяют не ставить машину на прикол.</span></div>
+        <div><b>Поездка</b><span>Одна вылазка за город по грязи, ради которой
+          не хочется покупать второй комплект.</span></div>
+        <div><b>Продажа</b><span>Показать машину покупателю на нормальных колёсах,
+          а свои дорогие оставить себе.</span></div>
+      </div>
+      <div class="acts" style="margin-top:26px">
+        <a class="btn" href="tel:+79231448111">Спросить про аренду
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="up">
+      <img src="photo/vhod.jpg" alt="Ворота StartShina, вдоль стены стопки шин и стальные диски">
+    </div>
+  </div>
+</section>
+
+<section id="datchiki">
+  <div class="w">
+    <span class="sz">Честно</span>
+    <h2 style="margin-top:18px">Про датчики давления в б/у дисках</h2>
+    <p style="margin-top:16px;color:var(--ink-2)">У нас есть отзыв на одну звезду,
+      и он про это. Человек купил комплект дисков с датчиками давления на KIA,
+      диски оказались хорошие, а датчики — нет: после диагностики три из четырёх
+      не работали, на панели постоянно горела лампа. Разберём, почему так вышло
+      и что мы изменили.</p>
+
+    <div class="hcols">
+      <article>
+        <h3>Почему датчик из б/у диска часто мёртв</h3>
+        <p>Внутри датчика TPMS — несъёмная батарейка на 5–7 лет. Если диск снят
+          с машины 2016 года, датчик уже отработал ресурс, и это не видно снаружи:
+          он выглядит как новый.</p>
+        <p style="margin-top:12px">Второе: датчик привязан к конкретному автомобилю
+          своим идентификатором. Даже живой датчик с чужой машины нужно прописать
+          в блок вашей — сам он не «подхватится».</p>
+      </article>
+      <article>
+        <h3>Что мы изменили</h3>
+        <p>Датчики в б/у дисках мы больше не подаём как рабочий комплект.
+          Если они стоят внутри — это бонус «как есть», и мы говорим об этом
+          до оплаты, а не после.</p>
+        <p style="margin-top:12px">Проверить их можно только сканером TPMS,
+          и мы прямо советуем сделать это у электрика перед тем, как рассчитывать
+          на них. Диски при этом продаются как диски — за их состояние отвечаем.</p>
+      </article>
+    </div>
+
+    <div class="claim">
+      <b>И главное из того отзыва</b>
+      Обиднее всего там была не поломка, а фраза «на контакт не выходят».
+      Разбитая цена и мёртвый датчик — вещи решаемые; неотвеченный звонок — нет.
+      Если после покупки у нас что-то пошло не так, звоните на тот же номер,
+      что и при заказе: мы работаем в одном дворе семь дней в неделю и никуда
+      не деваемся.
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy" class="pale">
+  <div class="w">
+    <span class="sz">Отзывы · 4,8 из 5 по 127 оценкам в 2ГИС</span>
+    <blockquote class="up" style="margin-top:24px;background:transparent;border:0;padding:0">
+      <p class="bigq">«Приехал, озвучил бюджет, подобрали отличный вариант шин,
+        переобули и уложили сменённые шины в машину»</p>
+      <p class="by">Роман Р. · отзыв в 2ГИС, 23 апреля 2026</p>
+    </blockquote>
+
+    <div class="pair">
+      <blockquote class="up">
+        <p>Была здесь не первый раз, брала зиму и сегодня меняла старое лето.
+          Подобрали просто отличнейшую резину по приемлемой цене, переобули,
+          с полным вниманием подошли к запросу. Тихая, аккуратная резина, отлично
+          держит в городе и на трассе.</p>
+        <cite>Юлия Соболева · 24 июля 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Отличный шиномонтаж. Приняли без очереди, всё сделали аккуратно,
+          диски не поцарапали. Видно, что работают профессионалы.</p>
+        <cite>Максим Симонов · 15 мая 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Купили резину и сразу переобули. Без воды всё по факту. Берём не в первый
+          раз шину и диски. Цены честные, ребята гостеприимные.</p>
+        <cite>Ксения Николаевна · 10 августа 2026</cite>
+      </blockquote>
+      <blockquote class="up">
+        <p>Спасибо ребятам за оперативность. Нужны были шины и монтаж —
+          всё делается в одном месте. Очень удобно.</p>
+        <cite>Валентина · 19 мая 2026</cite>
+      </blockquote>
+    </div>
+
+    <div class="acts up" style="margin-top:34px">
+      <a class="btn g" href="https://2gis.ru/firm/70000001038911756" target="_blank" rel="noopener">
+        Все 127 отзывов в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty">
+  <div class="w split">
+    <div class="up">
+      <span class="sz">Контакты</span>
+      <h2 style="margin-top:16px">Восточный посёлок, 34</h2>
+      <div class="rows">
+        <div><dt>Адрес</dt><dd>улица Восточный посёлок, 34, первый этаж<br>
+          <span class="q2">Ленинский район, Новосибирск</span></dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+79231448111">+7 923 144-81-11</a></dd></div>
+        <div><dt>Мессенджеры</dt><dd><a href="https://wa.me/79231448111" target="_blank" rel="noopener">WhatsApp</a>,
+          <a href="https://t.me/+79231448111" target="_blank" rel="noopener">Telegram</a> и MAX —
+          на этот же номер</dd></div>
+        <div><dt>Режим</dt><dd>Пн–Пт 10:00–19:00<br>Сб и Вс 10:00–17:00</dd></div>
+        <div><dt>Оплата</dt><dd>Наличными и переводом с карты</dd></div>
+        <div><dt>Профиль</dt><dd>Б/у шины и диски, шиномонтаж, ремонт порезов,
+          ошиповка, аренда колёс, выкуп, доставка</dd></div>
+      </div>
+      <div class="acts" style="margin-top:24px">
+        <a class="btn" href="tel:+79231448111">Позвонить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn g" href="https://2gis.ru/firm/70000001038911756" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+
+    <div class="up">
+      <div class="map">
+        <div class="mapstub" data-src="https://yandex.ru/map-widget/v1/?ll=82.868170%2C55.000459&z=17&text=Новосибирск%2C%20улица%20Восточный%20посёлок%2C%2034" data-title="Карта: улица Восточный посёлок, 34">
+          <span>Карта загружается с сервера «Яндекса» и устанавливает свои cookie.</span>
+          <button type="button">Показать карту</button>
+        </div>
+      </div>
+      <h2 style="font-size:clamp(21px,2.5vw,30px);margin-top:32px">Написать нам</h2>
+      <div class="sent" id="ok"></div>
+      <form id="f" data-endpoint="" novalidate>
+        <div><label for="n">Как вас зовут</label>
+          <input id="n" name="name" required autocomplete="name" placeholder="Роман"></div>
+        <div><label for="p">Телефон</label>
+          <input id="p" name="phone" type="tel" required autocomplete="tel" placeholder="+7 923 000-00-00"></div>
+        <div><label for="c">Машина или размер</label>
+          <input id="c" name="car" placeholder="195/65 R15 или Toyota Corolla, 2012"></div>
+        <div><label for="m">Что нужно</label>
+          <textarea id="m" name="message" placeholder="Нужен комплект зимы на 16-е литьё, бюджет до…"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cmp">Компания</label>
+          <input id="cmp" name="company" tabindex="-1" autocomplete="off"></div>
+        <label class="agree"><input type="checkbox" id="ag" name="consent" required>
+          <span>Я даю согласие на обработку моих персональных данных в соответствии
+          с <a href="privacy/" target="_blank" rel="noopener">Политикой обработки персональных данных</a></span></label>
+        <label class="agree opt"><input type="checkbox" id="adv" name="ads">
+          <span>Хочу получать напоминания о плановом обслуживании и сообщения об акциях
+          (необязательно)</span></label>
+        <button id="sb" class="btn" type="submit" disabled>Отправить
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">Заявку обрабатываем только затем, чтобы перезвонить
+          и сказать, есть ли ваш размер.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="ck" role="dialog" aria-label="Файлы cookie">
+  Мы используем файлы cookie: технически необходимые для работы страницы и те, что
+  устанавливает виджет «Яндекс.Карт». Аналитику и рекламные счётчики без вашего согласия
+  не подключаем. Подробности — в <a href="privacy/">Политике обработки персональных данных</a>.
+  <div class="ckb">
+    <button class="y" type="button" data-ck="y">Принять</button>
+    <button type="button" data-ck="n">Отклонить</button>
+  </div>
+</div>
+
+
+<footer><div class="w fin">
+  <div><div class="brand" style="margin-bottom:9px">StartShina<s>Восточный посёлок, 34</s></div>
+    улица Восточный посёлок, 34, Новосибирск · Пн–Пт 10:00–19:00, Сб–Вс 10:00–17:00</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <a href="tel:+79231448111">+7 923 144-81-11</a>
+    <a href="https://wa.me/79231448111" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://2gis.ru/firm/70000001038911756" target="_blank" rel="noopener">2ГИС</a>
+    <a href="privacy/">Политика обработки персональных данных</a>
+  </div>
+</div></footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+79231448111">Позвонить</a>
+  <a class="btn g" href="#sklad">Склад</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoPartsStore","name":"StartShina",
+"description":"Магазин б/у шин и дисков с собственным шиномонтажом: подбор комплекта по размеру и бюджету, переобувка и балансировка на месте, ремонт порезов, ошиповка шин, аренда колёс, выкуп б/у автошин и доставка по Новосибирску.",
+"address":{"@type":"PostalAddress","streetAddress":"улица Восточный посёлок, 34","addressLocality":"Новосибирск","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":55.000459,"longitude":82.86817},
+"telephone":"+79231448111",
+"openingHoursSpecification":[
+ {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"10:00","closes":"19:00"},
+ {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"10:00","closes":"17:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"127","bestRating":"5"},
+"sameAs":["https://2gis.ru/firm/70000001038911756"]}
+</script>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),
+  {threshold:.05,rootMargin:'0px 0px -50px'});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); if(!f.reportValidity())return;
+  const url=f.dataset.endpoint;
+  if(url){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    if(r.ok){ok.textContent='Заявка принята. Перезвоним и скажем, есть ли ваш размер.';ok.style.display='block';f.reset();return}}catch(_){}}
+  ok.innerHTML='Приём заявок пока настраивается. Позвоните, пожалуйста: <a href="tel:+79231448111">+7 923 144-81-11</a>.';
+  ok.style.display='block';
+});
+</script>
+<script>
+(function(){
+  var K='ck-choice', box=document.getElementById('ck');
+  function loadMap(){
+    document.querySelectorAll('.mapstub[data-src]').forEach(function(s){
+      var f=document.createElement('iframe');
+      f.loading='lazy'; f.title=s.dataset.title||'Карта проезда'; f.src=s.dataset.src;
+      f.style.width='100%'; f.style.height='100%'; f.style.border='0';
+      s.parentNode.appendChild(f); s.remove();
+    });
+  }
+  var saved=null; try{saved=localStorage.getItem(K)}catch(e){}
+  if(saved==='y'){loadMap()} else if(!saved && box){box.classList.add('on')}
+  if(box) box.addEventListener('click',function(e){
+    var b=e.target.closest('[data-ck]'); if(!b)return;
+    try{localStorage.setItem(K,b.dataset.ck)}catch(e){}
+    box.classList.remove('on'); if(b.dataset.ck==='y') loadMap();
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.mapstub button')) loadMap();
+  });
+  var ag=document.getElementById('ag'), sb=document.getElementById('sb');
+  if(ag&&sb){ var sync=function(){sb.disabled=!ag.checked}; sync();
+    ag.addEventListener('change',sync); }
+})();
+</script>
+</body>
+</html>
