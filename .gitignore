@@ -15,3 +15,10 @@ assets/
 out/
 deploy/*/config.php
 deploy/*/zayavki.log
+
+# Служебные зависимости для проверок
+node_modules/
+package-lock.json
+
+# Снимки и промежуточные файлы проверок
+out/

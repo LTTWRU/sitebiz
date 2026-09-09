@@ -1,0 +1,8 @@
+{
+  "name": "sitebiz-tools",
+  "private": true,
+  "description": "Служебные зависимости для проверок страниц. Сам пакет sitebiz работает без Node.",
+  "dependencies": {
+    "playwright-core": "1.63.0"
+  }
+}
